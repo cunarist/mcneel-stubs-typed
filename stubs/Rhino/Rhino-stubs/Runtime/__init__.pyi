@@ -1,10 +1,10 @@
 from typing import Tuple, Set, Iterable, List, overload
 from enum import Enum
 
-from InProcess import *
-from InteropWrappers import *
-from Notifications import *
-from RhinoAccounts import *
+from .InProcess import *
+from .InteropWrappers import *
+from .Notifications import *
+from .RhinoAccounts import *
 
 __all__ = ['InProcess', 'InteropWrappers', 'Notifications', 'RhinoAccounts']
 

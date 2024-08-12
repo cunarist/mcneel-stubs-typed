@@ -1,8 +1,8 @@
 from typing import Tuple, Set, Iterable, List, overload
 from enum import Enum
 
-from Controls import *
-from Gumball import *
+from .Controls import *
+from .Gumball import *
 
 __all__ = ['Controls', 'Gumball']
 

@@ -1,9 +1,9 @@
 from typing import Tuple, Set, Iterable, List, overload
 from enum import Enum
 
-from Custom import *
-from SnapShots import *
-from Tables import *
+from .Custom import *
+from .SnapShots import *
+from .Tables import *
 
 __all__ = ['Custom', 'SnapShots', 'Tables']
 

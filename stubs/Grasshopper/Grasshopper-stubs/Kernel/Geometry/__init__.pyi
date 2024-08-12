@@ -1,10 +1,10 @@
 from typing import Tuple, Set, Iterable, List, overload
 from enum import Enum
 
-from ConvexHull import *
-from Delaunay import *
-from SpatialTrees import *
-from Voronoi import *
+from .ConvexHull import *
+from .Delaunay import *
+from .SpatialTrees import *
+from .Voronoi import *
 
 __all__ = ['ConvexHull', 'Delaunay', 'SpatialTrees', 'Voronoi']
 

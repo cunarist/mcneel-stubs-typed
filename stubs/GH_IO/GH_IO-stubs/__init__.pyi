@@ -1,9 +1,9 @@
 from typing import Tuple, Set, Iterable, List, overload
 from enum import Enum
 
-from Serialization import *
-from Types import *
-from UserInterface import *
+from .Serialization import *
+from .Types import *
+from .UserInterface import *
 
 __all__ = ['Serialization', 'Types', 'UserInterface']
 

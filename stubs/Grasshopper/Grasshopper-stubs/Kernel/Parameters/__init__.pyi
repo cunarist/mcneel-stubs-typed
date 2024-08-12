@@ -1,7 +1,7 @@
 from typing import Tuple, Set, Iterable, List, overload
 from enum import Enum
 
-from Hints import *
+from .Hints import *
 
 __all__ = ['Hints']
 

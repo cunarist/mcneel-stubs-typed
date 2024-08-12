@@ -1,10 +1,10 @@
 from typing import Tuple, Set, Iterable, List, overload
 from enum import Enum
 
-from Drawing import *
-from Forms import *
-from IO import *
-from Threading import *
+from .Drawing import *
+from .Forms import *
+from .IO import *
+from .Threading import *
 
 __all__ = ['Drawing', 'Forms', 'IO', 'Threading']
 

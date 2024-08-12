@@ -1,7 +1,7 @@
 from typing import Tuple, Set, Iterable, List, overload
 from enum import Enum
 
-from Transforms import *
+from .Transforms import *
 
 __all__ = ['Transforms']
 

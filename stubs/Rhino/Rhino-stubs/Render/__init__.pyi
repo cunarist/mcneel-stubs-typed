@@ -1,13 +1,13 @@
 from typing import Tuple, Set, Iterable, List, overload
 from enum import Enum
 
-from ChangeQueue import *
-from ChildSlotNames import *
-from DataSources import *
-from Fields import *
-from ParameterNames import *
-from PostEffects import *
-from UI import *
+from .ChangeQueue import *
+from .ChildSlotNames import *
+from .DataSources import *
+from .Fields import *
+from .ParameterNames import *
+from .PostEffects import *
+from .UI import *
 
 __all__ = ['ChangeQueue', 'ChildSlotNames', 'DataSources', 'Fields', 'ParameterNames', 'PostEffects', 'UI']
 

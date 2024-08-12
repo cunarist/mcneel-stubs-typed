@@ -1,7 +1,7 @@
 from typing import Tuple, Set, Iterable, List, overload
 from enum import Enum
 
-from SketchElements import *
+from .SketchElements import *
 
 __all__ = ['SketchElements']
 
