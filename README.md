@@ -1,3 +1,5 @@
+> This is a fork of the original `mcneel/pythonstubs` repository, intended for use by Edit Collective.
+
 # McNeel python stubs
 
 [![PyPI](https://img.shields.io/pypi/v/Rhino-stubs.svg)](https://pypi.org/project/Rhino-stubs)
