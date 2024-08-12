@@ -411,9 +411,9 @@ namespace PyStubblerLib
                             continue;
 
                         var parameter = parameters[i];
-                        if (swapFirstTwoParams && i == 0 && parameters.Length > 1)
+                        if (method.IsStatic && swapFirstTwoParams && i == 0 && parameters.Length > 1)
                             parameter = parameters[1];
-                        else if (swapFirstTwoParams && i == 1)
+                        else if (method.IsStatic && swapFirstTwoParams && i == 1)
                             parameter = parameters[0];
 
                         if (addComma)
