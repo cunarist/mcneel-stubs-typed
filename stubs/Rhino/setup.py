@@ -17,7 +17,7 @@ def find_stubs(package):
 
 setuptools.setup(
     name="Rhino-stubs",
-    version="7.7.21140",
+    version="7.37.24107",
     package_data=find_stubs("Rhino-stubs"),
     packages=['Rhino-stubs'],
     author="Robert McNeel & Associates",
