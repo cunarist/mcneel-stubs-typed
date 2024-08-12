@@ -428,7 +428,7 @@ namespace PyStubblerLib
             if (rc.EndsWith("[]"))
             {
                 string partial = ToPythonType(rc.Substring(0, rc.Length - 2));
-                return $"Set({partial})";
+                return $"Set[{partial}]";
             }
 
             if (rc.EndsWith("*"))
