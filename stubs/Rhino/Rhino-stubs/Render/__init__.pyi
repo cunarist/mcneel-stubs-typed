@@ -71,6 +71,7 @@ class BasicMaterialParameterNames:
     def __init__(self): ...
 
 
+from ..Runtime import CommonObject
 class CachedTextureCoordinates(CommonObject):
     def Contains(self, item: Point3d) -> bool: ...
     def CopyTo(self, array: Set[Point3d], arrayIndex: int) -> None: ...
@@ -1905,6 +1906,7 @@ class RenderReturnCode(Enum):
     InternalError = 11
 
 
+from ..Runtime import CommonObject
 class RenderSettings(CommonObject):
     @overload
     def __init__(self): ...
@@ -2621,6 +2623,7 @@ class TextureGraphInfo:
     def SetAmountW(self, d: float) -> None: ...
 
 
+from ..DocObjects import ModelComponent
 class TextureMapping(ModelComponent):
     def CreateBoxMapping(plane: Plane, dx: Interval, dy: Interval, dz: Interval, capped: bool) -> TextureMapping: ...
     def CreateCustomMeshMapping(mesh: Mesh) -> TextureMapping: ...

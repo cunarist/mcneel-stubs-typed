@@ -64,6 +64,7 @@ class CustomPointObject(PointObject):
     def Dispose(self) -> None: ...
 
 
+from ...Display import DrawEventArgs
 class GripsDrawEventArgs(DrawEventArgs):
     @overload
     def DrawControlPolygonLine(self, line: Line, startStatus: GripStatus, endStatus: GripStatus) -> None: ...

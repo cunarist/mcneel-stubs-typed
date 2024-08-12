@@ -1033,6 +1033,7 @@ class BrepLoopType(Enum):
     PointOnSurface = 5
 
 
+from ..Runtime import CommonObject
 class BrepRegion(CommonObject):
     def BoundaryBrep(self) -> Brep: ...
     @property
@@ -1046,6 +1047,7 @@ class BrepRegion(CommonObject):
     def GetFaceSides(self) -> Set[BrepRegionFaceSide]: ...
 
 
+from ..Runtime import CommonObject
 class BrepRegionFaceSide(CommonObject):
     @property
     def Brep(self) -> Brep: ...
@@ -2274,6 +2276,7 @@ class ForceText(Enum):
     HintLeft = 5
 
 
+from ..Runtime import CommonObject
 class GeometryBase(CommonObject):
     def ComponentIndex(self) -> ComponentIndex: ...
     def DataCRC(self, currentRemainder: UInt32) -> UInt32: ...
@@ -2492,6 +2495,7 @@ class HiddenLineDrawingSegment:
     def SegmentVisibility(self) -> Visibility: ...
 
 
+from ..DocObjects import ModelComponent
 class InstanceDefinitionGeometry(ModelComponent):
     def __init__(self): ...
     @property
@@ -4685,6 +4689,7 @@ class PolyCurve(Curve):
     def SegmentIndexes(self, subdomain: Interval) -> Tuple[int, int, int]: ...
 
 
+from ..Collections import Point3dList
 class Polyline(Point3dList):
     @overload
     def __init__(self): ...

@@ -201,8 +201,14 @@ namespace PyStubblerLib
                   stubType.BaseType.FullName.StartsWith(ns[0]) &&
                   stubType.BaseType.FullName.IndexOf('+') < 0 &&
                   stubType.BaseType.FullName.IndexOf('`') < 0
-                  )
+                ) {
+                    var relativeNamespace = FindRelativeNamespace(
+                        stubType.Namespace, stubType.BaseType.Namespace
+                    );
+                    if (relativeNamespace != "" && relativeNamespace != ".")
+                        sb.AppendLine($"from {relativeNamespace} import {stubType.BaseType.Name}");
                     sb.AppendLine($"class {stubType.Name}({stubType.BaseType.Name}):");
+                }
                 else
                     sb.AppendLine($"class {stubType.Name}:");
 
@@ -414,6 +420,46 @@ namespace PyStubblerLib
             else if (s == "or")
                 return "or_";
             return s;
+        }
+
+        private static string FindRelativeNamespace(string from, string to)
+        {
+            // Split the paths into components
+            var fromParts = from.Split('.');
+            var toParts = to.Split('.');
+
+            // Find the common prefix
+            int commonLength = 0;
+            int minLength = Math.Min(fromParts.Length, toParts.Length);
+            for (int i = 0; i < minLength; i++)
+            {
+                if (fromParts[i] == toParts[i])
+                {
+                    commonLength++;
+                }
+                else
+                {
+                    break;
+                }
+            }
+
+            // Create the relative path
+            var relativePathParts = new List<string>();
+
+            // Add "." for each level up from the 'from' path
+            for (int i = commonLength; i < fromParts.Length; i++)
+            {
+                relativePathParts.Add(".");
+            }
+
+            // Add the remaining parts of the 'to' path
+            for (int i = commonLength; i < toParts.Length; i++)
+            {
+                relativePathParts.Add("." + toParts[i]);
+            }
+
+            // Join the parts into a single string
+            return string.Join("", relativePathParts);
         }
 
         private static string ToPythonType(string s)

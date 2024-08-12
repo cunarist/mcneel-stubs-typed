@@ -319,12 +319,14 @@ class GH_Cluster_OBSOLETE(GH_Component):
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ..Attributes import GH_ComponentAttributes
 class GH_ClusterAttributes(GH_ComponentAttributes):
     def __init__(self, owner: GH_Cluster): ...
     def RespondToMouseDoubleClick(self, sender: GH_Canvas, e: GH_CanvasMouseEvent) -> GH_ObjectResponse: ...
     def SetupTooltip(self, point: PointF, e: GH_TooltipDisplayEventArgs) -> None: ...
 
 
+from ..Attributes import GH_ComponentAttributes
 class GH_ClusterAttributes_OBSOLETE(GH_ComponentAttributes):
     def __init__(self, owner: GH_Cluster_OBSOLETE): ...
     @property
@@ -337,6 +339,7 @@ class GH_ClusterAttributes_OBSOLETE(GH_ComponentAttributes):
     def SetupTooltip(self, point: PointF, e: GH_TooltipDisplayEventArgs) -> None: ...
 
 
+from ..Undo import GH_ObjectUndoAction
 class GH_ClusterDocumentIdAction(GH_ObjectUndoAction):
     def __init__(self, cluster: GH_Cluster): ...
 
@@ -434,14 +437,17 @@ class GH_ClusterOutputHookAttributes:
     def SetupTooltip(self, canvasPoint: PointF, e: GH_TooltipDisplayEventArgs) -> None: ...
 
 
+from ..Undo import GH_ObjectUndoAction
 class GH_ClusterPasswordUndoAction(GH_ObjectUndoAction):
     def __init__(self, cluster: GH_Cluster): ...
 
 
+from ..Undo import GH_ObjectUndoAction
 class GH_ClusterPreviewDocumentAction(GH_ObjectUndoAction):
     def __init__(self, cluster: GH_Cluster): ...
 
 
+from ..Undo import GH_ObjectUndoAction
 class GH_ClusterPropertiesUndoAction(GH_ObjectUndoAction):
     def __init__(self, cluster: GH_Cluster): ...
 
@@ -451,6 +457,7 @@ class GH_ClusterProtection(Enum):
     Protected = 1
 
 
+from ..Undo import GH_ObjectUndoAction
 class GH_ClusterReferenceAction(GH_ObjectUndoAction):
     def __init__(self, cluster: GH_Cluster): ...
 
@@ -658,6 +665,7 @@ class GH_ConstantObject:
     def Kind(self) -> GH_ParamKind: ...
 
 
+from ..Attributes import GH_FloatingParamAttributes
 class GH_ConstantObjectAttributes(GH_FloatingParamAttributes):
     def __init__(self, owner: GH_ConstantObject): ...
     @property
@@ -2214,6 +2222,7 @@ class GH_TimerAttributes:
     def TimerWire(anchor: PointF, box: RectangleF) -> GraphicsPath: ...
 
 
+from ...GUI.Canvas.Interaction import GH_AbstractInteraction
 class GH_TimerTargetInteraction(GH_AbstractInteraction):
     def __init__(self, timer: GH_Timer, canvas: GH_Canvas, e: GH_CanvasMouseEvent): ...
     def Destroy(self) -> None: ...

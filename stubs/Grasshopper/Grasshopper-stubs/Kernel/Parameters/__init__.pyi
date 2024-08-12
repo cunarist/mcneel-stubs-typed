@@ -8,6 +8,7 @@ __all__ = ['Hints']
 
 
 
+from ..Undo import GH_ObjectUndoAction
 class GH_ExpressionUndoAction(GH_ObjectUndoAction):
     def __init__(self, obj: IGH_DocumentObject, expression: str): ...
     @property
@@ -69,6 +70,7 @@ class GH_Receiver:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ..Attributes import GH_FloatingParamAttributes
 class GH_ReceiverAttributes(GH_FloatingParamAttributes):
     def __init__(self, owner: GH_Receiver): ...
 

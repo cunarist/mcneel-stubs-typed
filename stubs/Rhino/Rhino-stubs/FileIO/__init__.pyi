@@ -482,6 +482,7 @@ class File3dmNotes:
     def WindowRectangle(self, value: Rectangle) -> None: ...
 
 
+from ..DocObjects import ModelComponent
 class File3dmObject(ModelComponent):
     @overload
     def Equals(self, obj: Object) -> bool: ...

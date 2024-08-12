@@ -602,6 +602,7 @@ class GetPoint(GetBaseClass):
     def TryGetBasePoint(self) -> Tuple[bool, Point3d]: ...
 
 
+from ...Display import DrawEventArgs
 class GetPointDrawEventArgs(DrawEventArgs):
     @property
     def CurrentPoint(self) -> Point3d: ...

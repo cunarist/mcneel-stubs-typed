@@ -1197,6 +1197,7 @@ class HistoryRecord:
     def SetVector3ds(self, id: int, values: Iterable[Vector3d]) -> bool: ...
 
 
+from ..Geometry import InstanceDefinitionGeometry
 class InstanceDefinition(InstanceDefinitionGeometry):
     @overload
     def CreatePreviewBitmap(self, definedViewportProjection: DefinedViewportProjection, bitmapSize: Size) -> Bitmap: ...
@@ -1742,6 +1743,7 @@ class MeshObject(RhinoObject):
     def MeshGeometry(self) -> Mesh: ...
 
 
+from ..Runtime import CommonObject
 class ModelComponent(CommonObject):
     def ClearId(self) -> None: ...
     def ClearIndex(self) -> None: ...
@@ -1826,6 +1828,7 @@ class NamedViewWidgetObject(RhinoObject):
     def AssociatedNamedView(self) -> str: ...
 
 
+from ..Runtime import CommonObject
 class ObjectAttributes(CommonObject):
     def __init__(self): ...
     def AddHideInDetailOverride(self, detailId: Guid) -> bool: ...
@@ -2687,6 +2690,7 @@ class TextOrientation(Enum):
     InView = 1
 
 
+from ..Runtime import CommonObject
 class Texture(CommonObject):
     def __init__(self): ...
     @property
@@ -2846,6 +2850,7 @@ class ViewInfoFocalBlurModes(Enum):
     Manual = 2
 
 
+from ..Runtime import CommonObject
 class ViewportInfo(CommonObject):
     @overload
     def __init__(self): ...
