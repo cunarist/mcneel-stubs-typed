@@ -300,11 +300,12 @@ namespace PyStubblerLib
                     methodNames[method.Name] = count;
                 }
 
+                var swapFirstTwoParams = false;
                 foreach (var method in methods)
                 {
                     if (method.GetCustomAttribute(typeof(System.ObsoleteAttribute)) != null)
                         continue;
-
+                        
                     if (method.DeclaringType != stubType)
                         continue;
                     var parameters = method.GetParameters();
@@ -333,7 +334,13 @@ namespace PyStubblerLib
                     else if (method.Name.StartsWith("op_")) {
                         if (methodNames[method.Name] > 1)
                             sb.AppendLine("    @overload");
-                        var isLeft = (parameters.Length > 0 && parameters[0].ParameterType == stubType);
+                        var isRight = (
+                            parameters.Length > 1
+                            && parameters[0].ParameterType != stubType
+                            && parameters[1].ParameterType == stubType
+                        );
+                        if (isRight)
+                            swapFirstTwoParams = true;
                         string propName;
                         if (method.Name == "op_Equality")
                             propName = "__eq__";
@@ -348,29 +355,29 @@ namespace PyStubblerLib
                         else if (method.Name == "op_LessThanOrEqual")
                             propName = "__le__";
                         else if (method.Name == "op_Addition")
-                            propName = isLeft ? "__add__" : "__radd__";
+                            propName = !isRight ? "__add__" : "__radd__";
                         else if (method.Name == "op_Subtraction")
-                            propName = isLeft ? "__sub__" : "__rsub__";
+                            propName = !isRight ? "__sub__" : "__rsub__";
                         else if (method.Name == "op_Multiply")
-                            propName = isLeft ? "__mul__" : "__rmul__";
+                            propName = !isRight ? "__mul__" : "__rmul__";
                         else if (method.Name == "op_Division")
-                            propName = isLeft ? "__truediv__" : "__rtruediv__";
+                            propName = !isRight ? "__truediv__" : "__rtruediv__";
                         else if (method.Name == "op_IntegerDivision")
-                            propName = isLeft ? "__floordiv__" : "__rfloordiv__";
+                            propName = !isRight ? "__floordiv__" : "__rfloordiv__";
                         else if (method.Name == "op_Modulus")
-                            propName = isLeft ? "__mod__" : "__rmod__";
+                            propName = !isRight ? "__mod__" : "__rmod__";
                         else if (method.Name == "op_Exponent")
-                            propName = isLeft ? "__pow__" : "__rpow__";
+                            propName = !isRight ? "__pow__" : "__rpow__";
                         else if (method.Name == "op_LeftShift")
-                            propName = isLeft ? "__lshift__" : "__rlshift__";
+                            propName = !isRight ? "__lshift__" : "__rlshift__";
                         else if (method.Name == "op_RightShift")
-                            propName = isLeft ? "__rshift__" : "__rrshift__";
+                            propName = !isRight ? "__rshift__" : "__rrshift__";
                         else if (method.Name == "op_BitwiseAnd")
-                            propName = isLeft ? "__and__" : "__rand__";
+                            propName = !isRight ? "__and__" : "__rand__";
                         else if (method.Name == "op_BitwiseOr")
-                            propName = isLeft ? "__or__" : "__ror__";
+                            propName = !isRight ? "__or__" : "__ror__";
                         else if (method.Name == "op_ExclusiveOr")
-                            propName = isLeft ? "__xor__" : "__rxor__";
+                            propName = !isRight ? "__xor__" : "__rxor__";
                         else if (method.Name == "op_UnaryNegation")
                             propName = "__neg__";
                         else if (method.Name == "op_UnaryPlus")
@@ -403,10 +410,16 @@ namespace PyStubblerLib
                         if (parameters[i].IsOut)
                             continue;
 
+                        var parameter = parameters[i];
+                        if (swapFirstTwoParams && i == 0 && parameters.Length > 1)
+                            parameter = parameters[1];
+                        else if (swapFirstTwoParams && i == 1)
+                            parameter = parameters[0];
+
                         if (addComma)
                             sb.Append(", ");
 
-                        sb.Append($"{SafePythonName(parameters[i].Name)}: {ToPythonType(parameters[i].ParameterType)}");
+                        sb.Append($"{SafePythonName(parameter.Name)}: {ToPythonType(parameter.ParameterType)}");
                         addComma = true;
                     }
                     sb.Append(")");
