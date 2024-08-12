@@ -398,9 +398,9 @@ namespace PyStubblerLib
         {
             if (s == "from")
                 return "from_";
-            if (s == "class")
+            else if (s == "class")
                 return "class_";
-            if (s == "in")
+            else if (s == "in")
                 return "in_";
             return s;
         }
