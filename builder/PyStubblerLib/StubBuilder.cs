@@ -333,54 +333,53 @@ namespace PyStubblerLib
                     else if (method.Name.StartsWith("op_")) {
                         if (methodNames[method.Name] > 1)
                             sb.AppendLine("    @overload");
+                        var isLeft = (parameters.Length > 0 && parameters[0].ParameterType == stubType);
                         string propName;
-                        if (method.Name == "op_Equality") 
+                        if (method.Name == "op_Equality")
                             propName = "__eq__";
-                        else if (method.Name == "op_Inequality") 
+                        else if (method.Name == "op_Inequality")
                             propName = "__ne__";
-                        else if (method.Name == "op_GreaterThan") 
+                        else if (method.Name == "op_GreaterThan")
                             propName = "__gt__";
-                        else if (method.Name == "op_GreaterThanOrEqual") 
+                        else if (method.Name == "op_GreaterThanOrEqual")
                             propName = "__ge__";
-                        else if (method.Name == "op_LessThan") 
+                        else if (method.Name == "op_LessThan")
                             propName = "__lt__";
-                        else if (method.Name == "op_LessThanOrEqual") 
+                        else if (method.Name == "op_LessThanOrEqual")
                             propName = "__le__";
-                        else if (method.Name == "op_Addition") 
-                            propName = "__add__";
-                        else if (method.Name == "op_Subtraction") 
-                            propName = "__sub__";
-                        else if (method.Name == "op_Multiply") 
-                            propName = "__mul__";
-                        else if (method.Name == "op_Division") 
-                            propName = "__truediv__";
-                        else if (method.Name == "op_IntegerDivision") 
-                            propName = "__floordiv__";
-                        else if (method.Name == "op_Modulus") 
-                            propName = "__mod__";
-                        else if (method.Name == "op_Exponent") 
-                            propName = "__pow__";
-                        else if (method.Name == "op_UnaryNegation") 
+                        else if (method.Name == "op_Addition")
+                            propName = isLeft ? "__add__" : "__radd__";
+                        else if (method.Name == "op_Subtraction")
+                            propName = isLeft ? "__sub__" : "__rsub__";
+                        else if (method.Name == "op_Multiply")
+                            propName = isLeft ? "__mul__" : "__rmul__";
+                        else if (method.Name == "op_Division")
+                            propName = isLeft ? "__truediv__" : "__rtruediv__";
+                        else if (method.Name == "op_IntegerDivision")
+                            propName = isLeft ? "__floordiv__" : "__rfloordiv__";
+                        else if (method.Name == "op_Modulus")
+                            propName = isLeft ? "__mod__" : "__rmod__";
+                        else if (method.Name == "op_Exponent")
+                            propName = isLeft ? "__pow__" : "__rpow__";
+                        else if (method.Name == "op_LeftShift")
+                            propName = isLeft ? "__lshift__" : "__rlshift__";
+                        else if (method.Name == "op_RightShift")
+                            propName = isLeft ? "__rshift__" : "__rrshift__";
+                        else if (method.Name == "op_BitwiseAnd")
+                            propName = isLeft ? "__and__" : "__rand__";
+                        else if (method.Name == "op_BitwiseOr")
+                            propName = isLeft ? "__or__" : "__ror__";
+                        else if (method.Name == "op_ExclusiveOr")
+                            propName = isLeft ? "__xor__" : "__rxor__";
+                        else if (method.Name == "op_UnaryNegation")
                             propName = "__neg__";
-                        else if (method.Name == "op_UnaryPlus") 
+                        else if (method.Name == "op_UnaryPlus")
                             propName = "__pos__";
-                        else if (method.Name == "op_BitwiseAnd") 
-                            propName = "__and__";
-                        else if (method.Name == "op_BitwiseOr") 
-                            propName = "__or__";
-                        else if (method.Name == "op_ExclusiveOr") 
-                            propName = "__xor__";
-                        else if (method.Name == "op_Concatenate") 
-                            propName = "__add__";
-                        else if (method.Name == "op_LeftShift") 
-                            propName = "__lshift__";
-                        else if (method.Name == "op_RightShift") 
-                            propName = "__rshift__";
-                        else if (method.Name == "op_OnesComplement") 
+                        else if (method.Name == "op_OnesComplement")
                             propName = "__invert__";
-                        else if (method.Name == "op_False") 
-                            propName = "__bool__";
-                        else if (method.Name == "op_True") 
+                        else if (method.Name == "op_Concatenate")
+                            propName = "__add__";
+                        else if (method.Name == "op_False" || method.Name == "op_True")
                             propName = "__bool__";
                         else 
                             propName = method.Name;
