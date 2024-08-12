@@ -16,6 +16,8 @@ class Branch(Enum):
     Release = 4
 
 
+from .Serialization import GH_IWriter
+from .Serialization import GH_IReader
 class GH_ISerializable:
     def Read(self, reader: GH_IReader) -> bool: ...
     def Write(self, writer: GH_IWriter) -> bool: ...

@@ -3,6 +3,7 @@ from enum import Enum
 
 
 
+from ...DocObjects import TextureType
 class PhysicallyBased:
     def FromTextureType(textureType: TextureType) -> str: ...
     @property

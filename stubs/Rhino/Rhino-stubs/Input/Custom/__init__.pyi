@@ -64,6 +64,7 @@ class GeometryAttributeFilter(Enum):
     AcceptAllAttributes = 4294967295
 
 
+from ...Geometry import Arc
 class GetArc:
     def __init__(self): ...
     def Dispose(self) -> None: ...
@@ -90,6 +91,8 @@ class GetArc:
     def DeformablePointCount(self, value: int) -> None: ...
 
 
+from ...Geometry import Point3d
+from ...UI import LocalizeStringPair
 class GetBaseClass:
     def AcceptColor(self, enable: bool) -> None: ...
     def AcceptCustomMessage(self, enable: bool) -> None: ...
@@ -181,6 +184,9 @@ class GetBaseClass:
     def View(self) -> RhinoView: ...
 
 
+from .. import RhinoDoc
+from ...Geometry import Point3d
+from ...UI import LocalizeStringPair
 class GetCancel(GetBaseClass):
     def __init__(self): ...
     def add_TaskCompleted(self, value: EventHandler) -> None: ...
@@ -207,6 +213,7 @@ class GetCancel(GetBaseClass):
     def WaitAll(self, tasks: Iterable[Task], doc: RhinoDoc) -> Result: ...
 
 
+from ...Geometry import Circle
 class GetCircle:
     def __init__(self): ...
     def Dispose(self) -> None: ...
@@ -237,6 +244,7 @@ class GetCircle:
     def InDiameterMode(self, value: bool) -> None: ...
 
 
+from ...Geometry import Cone
 class GetCone:
     def __init__(self): ...
     def Dispose(self) -> None: ...
@@ -279,6 +287,7 @@ class GetCone:
     def InDiameterMode(self, value: bool) -> None: ...
 
 
+from ...Geometry import Cylinder
 class GetCylinder:
     def __init__(self): ...
     def Dispose(self) -> None: ...
@@ -313,6 +322,8 @@ class GetCylinder:
     def InDiameterMode(self, value: bool) -> None: ...
 
 
+from ...Geometry import NurbsSurface
+from ...Geometry import Mesh
 class GetEllipsoid:
     def __init__(self): ...
     def Dispose(self) -> None: ...
@@ -352,6 +363,8 @@ class GetFileNameMode(Enum):
     SaveWorksession = 18
 
 
+from ...Geometry import Point3d
+from ...UI import LocalizeStringPair
 class GetInteger(GetBaseClass):
     def __init__(self): ...
     def Get(self) -> GetResult: ...
@@ -361,6 +374,8 @@ class GetInteger(GetBaseClass):
     def SetUpperLimit(self, upperLimit: int, strictlyLessThan: bool) -> None: ...
 
 
+from ...Geometry import Line
+from ...Geometry import Point3d
 class GetLine:
     def __init__(self): ...
     def Dispose(self) -> None: ...
@@ -414,6 +429,8 @@ class GetLineMode(Enum):
     CPlaneNormalVector = 9
 
 
+from ...Geometry import Point3d
+from ...UI import LocalizeStringPair
 class GetNumber(GetBaseClass):
     def __init__(self): ...
     def Get(self) -> GetResult: ...
@@ -421,6 +438,14 @@ class GetNumber(GetBaseClass):
     def SetUpperLimit(self, upperLimit: float, strictlyLessThan: bool) -> None: ...
 
 
+from .. import RhinoDoc
+from ...DocObjects import ObjectType
+from ...DocObjects import RhinoObject
+from ...Geometry import GeometryBase
+from ...Geometry import ComponentIndex
+from ...DocObjects import ObjRef
+from ...Geometry import Point3d
+from ...UI import LocalizeStringPair
 class GetObject(GetBaseClass):
     def __init__(self): ...
     def ActiveGetObject(doc: RhinoDoc) -> GetObject: ...
@@ -499,6 +524,9 @@ class GetObject(GetBaseClass):
     def SetPressEnterWhenDonePrompt(self, prompt: str) -> None: ...
 
 
+from ...DocObjects import RhinoObject
+from ...Geometry import GeometryBase
+from ...Geometry import ComponentIndex
 class GetObjectGeometryFilter:
     def __init__(self, object: Object, method: IntPtr): ...
     def BeginInvoke(self, rhObject: RhinoObject, geometry: GeometryBase, componentIndex: ComponentIndex, callback: AsyncCallback, object: Object) -> IAsyncResult: ...
@@ -506,11 +534,28 @@ class GetObjectGeometryFilter:
     def Invoke(self, rhObject: RhinoObject, geometry: GeometryBase, componentIndex: ComponentIndex) -> bool: ...
 
 
+from ...Geometry import Point3d
+from ...UI import LocalizeStringPair
 class GetOption(GetBaseClass):
     def __init__(self): ...
     def Get(self) -> GetResult: ...
 
 
+from ...Geometry import Point3d
+from ...Display import RhinoViewport
+from ...Geometry import Plane
+from ...UI import CursorStyle
+from ...Geometry import Set[Point3d]
+from ...Geometry import Line
+from ...Geometry import Arc
+from ...Geometry import Circle
+from ...Geometry import Sphere
+from ...Geometry import Cylinder
+from ...Geometry import Curve
+from ...Geometry import Surface
+from ...Geometry import Brep
+from ...Geometry import Mesh
+from ...UI import LocalizeStringPair
 class GetPoint(GetBaseClass):
     def __init__(self): ...
     def add_DynamicDraw(self, value: EventHandler) -> None: ...
@@ -631,6 +676,8 @@ class GetPointMouseEventArgs:
     def WindowPoint(self) -> Point: ...
 
 
+from ...Geometry import Polyline
+from ...Geometry import Point3d
 class GetPolyline:
     def __init__(self): ...
     def Dispose(self) -> None: ...
@@ -662,6 +709,7 @@ class GetPolyline:
     def SetFirstPoint(self, point: Point3d) -> None: ...
 
 
+from ...Geometry import Sphere
 class GetSphere:
     def __init__(self): ...
     def Dispose(self) -> None: ...
@@ -677,12 +725,15 @@ class GetSphere:
     def InDiameterMode(self, value: bool) -> None: ...
 
 
+from ...Geometry import Point3d
+from ...UI import LocalizeStringPair
 class GetString(GetBaseClass):
     def __init__(self): ...
     def Get(self) -> GetResult: ...
     def GetLiteralString(self) -> GetResult: ...
 
 
+from ...Geometry import Torus
 class GetTorus:
     def __init__(self): ...
     def Dispose(self) -> None: ...
@@ -730,6 +781,23 @@ class GetTorus:
     def VerticalDirectionMinimumCount(self, value: int) -> None: ...
 
 
+from ...Collections import TransformObjectList
+from ...Display import RhinoViewport
+from ...Geometry import Point3d
+from ...Geometry import Transform
+from ...Geometry import Plane
+from ...UI import CursorStyle
+from ...Geometry import Set[Point3d]
+from ...Geometry import Line
+from ...Geometry import Arc
+from ...Geometry import Circle
+from ...Geometry import Sphere
+from ...Geometry import Cylinder
+from ...Geometry import Curve
+from ...Geometry import Surface
+from ...Geometry import Brep
+from ...Geometry import Mesh
+from ...UI import LocalizeStringPair
 class GetTransform(GetPoint):
     def AddTransformObjects(self, list: TransformObjectList) -> None: ...
     def CalculateTransform(self, viewport: RhinoViewport, point: Point3d) -> Transform: ...
@@ -746,6 +814,8 @@ class GetTransform(GetPoint):
     def Transform(self, value: Transform) -> None: ...
 
 
+from ...Geometry import Brep
+from ...Geometry import Mesh
 class GetTruncatedCone:
     def __init__(self): ...
     def Dispose(self) -> None: ...
@@ -842,6 +912,7 @@ class OptionInteger:
     def CurrentValue(self, value: int) -> None: ...
 
 
+from ...UI import LocalizeStringPair
 class OptionToggle:
     @overload
     def __init__(self, initialValue: bool, offValue: str, onValue: str): ...
@@ -856,6 +927,17 @@ class OptionToggle:
     def CurrentValue(self, value: bool) -> None: ...
 
 
+from ...Display import RhinoView
+from ...Geometry import Line
+from ...Geometry import Transform
+from ...Geometry import BoundingBox
+from ...Geometry import Point3d
+from ...Geometry import Set[Point3d]
+from ...Geometry import PointCloud
+from ...Geometry import BezierCurve
+from ...Geometry import NurbsCurve
+from ...Geometry import Mesh
+from ...Geometry import Point2d
 class PickContext:
     def __init__(self): ...
     def Dispose(self) -> None: ...
@@ -920,6 +1002,7 @@ class PickStyle(Enum):
     CrossingPick = 3
 
 
+from .. import RhinoDoc
 class TaskCompleteEventArgs:
     def __init__(self, task: Task, doc: RhinoDoc): ...
     @property

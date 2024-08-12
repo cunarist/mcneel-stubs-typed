@@ -9,15 +9,59 @@ class ClassIdAttribute:
     def Id(self) -> Guid: ...
 
 
+from ...Geometry import ComponentIndex
+from ...Display import VisualAnalysisMode
+from ...FileIO import TextLog
+from ...Geometry import MeshType
+from ...Geometry import MeshingParameters
+from ...UI.Gumball import GumballFrame
+from ...Display import DisplayPipelineAttributes
+from ...Geometry import BoundingBox
+from ...Geometry import Transform
+from ...Render import TextureMapping
+from ...Render import RenderMaterial
+from ...Display import RhinoViewport
+from ...Geometry import ComponentStatus
+from ...FileIO import SerializationOptions
 class CustomBrepObject(BrepObject):
     pass
 
 
+from ...Geometry import ComponentIndex
+from ...Display import VisualAnalysisMode
+from ...FileIO import TextLog
+from ...Geometry import MeshType
+from ...Geometry import MeshingParameters
+from ...UI.Gumball import GumballFrame
+from ...Display import DisplayPipelineAttributes
+from ...Geometry import BoundingBox
+from ...Geometry import Transform
+from ...Render import TextureMapping
+from ...Render import RenderMaterial
+from ...Display import RhinoViewport
+from ...Geometry import ComponentStatus
+from ...FileIO import SerializationOptions
 class CustomCurveObject(CurveObject):
     @overload
     def Dispose(self) -> None: ...
 
 
+from ...Geometry import Point3d
+from ...Geometry import Transform
+from ...Geometry import Vector3d
+from ...Geometry import ComponentIndex
+from ...Display import VisualAnalysisMode
+from ...FileIO import TextLog
+from ...Geometry import MeshType
+from ...Geometry import MeshingParameters
+from ...UI.Gumball import GumballFrame
+from ...Display import DisplayPipelineAttributes
+from ...Geometry import BoundingBox
+from ...Render import TextureMapping
+from ...Render import RenderMaterial
+from ...Display import RhinoViewport
+from ...Geometry import ComponentStatus
+from ...FileIO import SerializationOptions
 class CustomGripObject(GripObject):
     def __init__(self): ...
     @overload
@@ -37,6 +81,20 @@ class CustomGripObject(GripObject):
     def Weight(self, value: float) -> None: ...
 
 
+from ...Geometry import ComponentIndex
+from ...Display import VisualAnalysisMode
+from ...FileIO import TextLog
+from ...Geometry import MeshType
+from ...Geometry import MeshingParameters
+from ...UI.Gumball import GumballFrame
+from ...Display import DisplayPipelineAttributes
+from ...Geometry import BoundingBox
+from ...Geometry import Transform
+from ...Render import TextureMapping
+from ...Render import RenderMaterial
+from ...Display import RhinoViewport
+from ...Geometry import ComponentStatus
+from ...FileIO import SerializationOptions
 class CustomMeshObject(MeshObject):
     @overload
     def Dispose(self) -> None: ...
@@ -59,11 +117,27 @@ class CustomObjectGrips:
     def NewLocation(self, value: bool) -> None: ...
 
 
+from ...Geometry import ComponentIndex
+from ...Display import VisualAnalysisMode
+from ...FileIO import TextLog
+from ...Geometry import MeshType
+from ...Geometry import MeshingParameters
+from ...UI.Gumball import GumballFrame
+from ...Display import DisplayPipelineAttributes
+from ...Geometry import BoundingBox
+from ...Geometry import Transform
+from ...Render import TextureMapping
+from ...Render import RenderMaterial
+from ...Display import RhinoViewport
+from ...Geometry import ComponentStatus
+from ...FileIO import SerializationOptions
 class CustomPointObject(PointObject):
     @overload
     def Dispose(self) -> None: ...
 
 
+from ...Geometry import Line
+from ...Geometry import Point3d
 from ...Display import DrawEventArgs
 class GripsDrawEventArgs(DrawEventArgs):
     @overload
@@ -118,6 +192,7 @@ class UnknownUserData(UserData):
     def __init__(self, pointerNativeUserData: IntPtr): ...
 
 
+from ...Runtime import CommonObject
 class UserData:
     def Copy(source: CommonObject, destination: CommonObject) -> None: ...
     def Dispose(self) -> None: ...

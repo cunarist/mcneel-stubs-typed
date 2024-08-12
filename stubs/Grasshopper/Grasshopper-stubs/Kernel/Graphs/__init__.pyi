@@ -97,6 +97,8 @@ class GH_GaussianGraph(GH_AbstractGraph):
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ...GUI.Canvas import GH_Canvas
+from ...GUI import GH_CanvasMouseEvent
 class GH_GraphContainer:
     @overload
     def __init__(self, n_graph: IGH_Graph): ...

@@ -121,6 +121,7 @@ class GH_CssStyleSheet:
     def IsStyleDefined(self, style: GH_CssStyle) -> bool: ...
 
 
+from ...Kernel import IGH_InstanceDescription
 class GH_HtmlFormatter:
     @overload
     def __init__(self): ...
@@ -167,6 +168,7 @@ class GH_HtmlFormatterPalette(Enum):
     Magenta = 8
 
 
+from ...Kernel import GH_DocumentObject
 class GH_HtmlHelpPopup:
     def __init__(self): ...
     def CloseAllPopupDialogs() -> None: ...

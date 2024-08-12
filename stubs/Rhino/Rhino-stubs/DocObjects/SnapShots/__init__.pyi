@@ -3,6 +3,13 @@ from enum import Enum
 
 
 
+from .. import RhinoDoc
+from ...FileIO import BinaryArchiveWriter
+from ...FileIO import BinaryArchiveReader
+from ...Geometry import Transform
+from ...Geometry import BoundingBox
+from ...Runtime.InteropWrappers import SimpleArrayBinaryArchiveReader
+from ...FileIO import TextLog
 class SnapShotsClient:
     def __init__(self): ...
     def AnimateDocument(self, doc: RhinoDoc, dPos: float, archive_start: BinaryArchiveReader, archive_stop: BinaryArchiveReader) -> bool: ...

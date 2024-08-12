@@ -75,6 +75,15 @@ class GH_Archive:
     def WriteToFile(self, fileName: str, overwrite: bool, rememberPath: bool) -> bool: ...
 
 
+from ..Types import GH_Point2D
+from ..Types import GH_Point3D
+from ..Types import GH_Point4D
+from ..Types import GH_Interval1D
+from ..Types import GH_Interval2D
+from ..Types import GH_Line
+from ..Types import GH_BoundingBox
+from ..Types import GH_Plane
+from ..Types import GH_Version
 class GH_Chunk:
     def AddComment(self, comment_text: str) -> None: ...
     def AddMessage(self, m: str, t: GH_Message_Type) -> None: ...
@@ -521,6 +530,15 @@ class GH_IChunk:
     def Name(self) -> str: ...
 
 
+from ..Types import GH_Point2D
+from ..Types import GH_Point3D
+from ..Types import GH_Point4D
+from ..Types import GH_Interval1D
+from ..Types import GH_Interval2D
+from ..Types import GH_Line
+from ..Types import GH_BoundingBox
+from ..Types import GH_Plane
+from ..Types import GH_Version
 class GH_IReader:
     @overload
     def ChunkExists(self, name: str) -> bool: ...
@@ -764,6 +782,15 @@ class GH_IReader:
     def TryGetVersion(self, item_name: str, item_index: int, value: GH_Version) -> Tuple[bool, GH_Version]: ...
 
 
+from ..Types import GH_Point2D
+from ..Types import GH_Point3D
+from ..Types import GH_Point4D
+from ..Types import GH_Interval1D
+from ..Types import GH_Interval2D
+from ..Types import GH_Line
+from ..Types import GH_BoundingBox
+from ..Types import GH_Plane
+from ..Types import GH_Version
 class GH_IWriter:
     def AddComment(self, comment_text: str) -> None: ...
     @overload
@@ -911,6 +938,15 @@ class GH_IXmlSupport:
     def Write(self, writer: XmlWriter) -> None: ...
 
 
+from ..Types import GH_Point2D
+from ..Types import GH_Point3D
+from ..Types import GH_Point4D
+from ..Types import GH_Interval1D
+from ..Types import GH_Interval2D
+from ..Types import GH_Line
+from ..Types import GH_BoundingBox
+from ..Types import GH_Plane
+from ..Types import GH_Version
 class GH_LooseChunk(GH_Chunk):
     @overload
     def __init__(self, chunk_name: str): ...

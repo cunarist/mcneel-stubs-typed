@@ -36,6 +36,8 @@ class IPostEffects:
     def PostEffectFromId(self, uuid: Guid) -> PostEffect: ...
 
 
+from ...PlugIns import PlugIn
+from .. import RhinoDoc
 class PostEffect:
     def __init__(self): ...
     def AddUISections(self, ui: PostEffectUI) -> None: ...
@@ -190,6 +192,7 @@ class PostEffectType(Enum):
     Late = 2
 
 
+from ...UI.Controls import ICollapsibleSection
 class PostEffectUI:
     def AddSection(self, section: ICollapsibleSection) -> None: ...
     def Dispose(self) -> None: ...

@@ -139,6 +139,7 @@ class RcpLabelItem(RcpItem):
     def Text(self, AutoPropertyValue: str) -> None: ...
 
 
+from ...Kernel import GH_Document
 class RcpLayout:
     @overload
     def __init__(self, document: GH_Document): ...
@@ -223,6 +224,7 @@ class RcpSeparatorItem(RcpItem):
     def Render(self, graphics: Graphics) -> None: ...
 
 
+from ...Kernel import GH_Document
 class RemoteControlPanel:
     def __init__(self): ...
     @property

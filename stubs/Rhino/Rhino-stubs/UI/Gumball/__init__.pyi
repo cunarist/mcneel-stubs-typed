@@ -123,6 +123,11 @@ class GumballAppearanceSettings:
     def TranslateZXEnabled(self, value: bool) -> None: ...
 
 
+from ...Geometry import Transform
+from ...Geometry import Point3d
+from ...Geometry import Line
+from ...Input.Custom import PickContext
+from ...Input.Custom import GetPoint
 class GumballDisplayConduit:
     def __init__(self): ...
     def CheckShiftAndControlKeys(self) -> None: ...
@@ -155,6 +160,8 @@ class GumballDisplayConduit:
     def UpdateGumball(self, point: Point3d, worldLine: Line) -> bool: ...
 
 
+from ...Geometry import Plane
+from ...Geometry import Vector3d
 class GumballFrame:
     @property
     def Plane(self) -> Plane: ...
@@ -194,6 +201,16 @@ class GumballMode(Enum):
     ExtrudeZ = 20
 
 
+from ...Geometry import BoundingBox
+from ...Geometry import Plane
+from ...Geometry import Line
+from ...Geometry import Arc
+from ...Geometry import Circle
+from ...Geometry import Ellipse
+from ...Geometry import Light
+from ...Geometry import Hatch
+from ...Geometry import Curve
+from ...Geometry import Extrusion
 class GumballObject:
     def __init__(self): ...
     def Dispose(self) -> None: ...

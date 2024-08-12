@@ -68,6 +68,7 @@ class GH_CurveOffsetCorner(Enum):
     Fillet = 2
 
 
+from ..Types import IGH_GeometricGoo
 class GH_SanityXForm:
     def __init__(self): ...
     def CreateSanityXForms(self, box: BoundingBox) -> bool: ...

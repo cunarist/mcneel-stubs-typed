@@ -71,6 +71,9 @@ class BasicMaterialParameterNames:
     def __init__(self): ...
 
 
+from ..Geometry import Point3d
+from ..Geometry import Set[Point3d]
+from ..FileIO import SerializationOptions
 from ..Runtime import CommonObject
 class CachedTextureCoordinates(CommonObject):
     def Contains(self, item: Point3d) -> bool: ...
@@ -103,6 +106,7 @@ class ChangeContexts(Enum):
     Script = 9
 
 
+from ..Display import Color4f
 class Channel:
     def AddValue(self, x: int, y: int, value: Color4f) -> None: ...
     def Clone(self) -> Channel: ...
@@ -429,6 +433,9 @@ class CustomRenderContentAttribute:
     def IsPrivate(self, value: bool) -> None: ...
 
 
+from ..DocObjects import ViewportInfo
+from ..DocObjects import RhinoObject
+from ..Display import DisplayPipelineAttributes
 class CustomRenderMeshProvider2(CustomRenderMeshProvider):
     @overload
     def BoundingBox(self, vp: ViewportInfo, obj: RhinoObject, requestingPlugIn: Guid, preview: bool) -> BoundingBox: ...
@@ -444,6 +451,10 @@ class CustomRenderMeshProvider2(CustomRenderMeshProvider):
     def WillBuildCustomMeshes(self, vp: ViewportInfo, obj: RhinoObject, doc: RhinoDoc, requestingPlugIn: Guid, attrs: DisplayPipelineAttributes) -> bool: ...
 
 
+from ..Geometry import Point3d
+from ..Geometry import Vector3d
+from ..Display import Color4f
+from ..Geometry import Point2d
 class Decal:
     def ConstPointer(self) -> IntPtr: ...
     def Create(createParams: DecalCreateParams) -> Decal: ...
@@ -492,6 +503,8 @@ class Decal:
     def UVBounds(self, minUOut: float, minVOut: float, maxUOut: float, maxVOut: float) -> Tuple[float, float, float, float]: ...
 
 
+from ..Geometry import Point3d
+from ..Geometry import Vector3d
 class DecalCreateParams:
     def __init__(self): ...
     @property
@@ -588,6 +601,7 @@ class Decals:
     def Remove(self, decal: Decal) -> bool: ...
 
 
+from ..Display import DisplayPipelineAttributes
 class DisplayPipelineSettingsChangedEventArgs:
     def __init__(self, dpa: DisplayPipelineAttributes): ...
     @property
@@ -615,6 +629,7 @@ class DocumentOrFreeFloatingBase(FreeFloatingBase):
     def EndChange(self) -> bool: ...
 
 
+from ..Display import DisplayPipeline
 class DrawMiddlegroundEventArgs:
     def __init__(self, dp: DisplayPipeline): ...
     @property
@@ -663,6 +678,7 @@ class FreeFloatingBase:
     def CopyFrom(self, src: FreeFloatingBase) -> None: ...
 
 
+from ..Geometry import Vector2d
 class GroundPlane(DocumentOrFreeFloatingBase):
     @overload
     def __init__(self): ...
@@ -796,6 +812,7 @@ class ImageFileEventArgs:
     def SessionId(self) -> Guid: ...
 
 
+from ..Display import DisplayPipeline
 class InitFramebufferEventArgs:
     def __init__(self, dp: DisplayPipeline): ...
     @property
@@ -812,6 +829,7 @@ class it_strategy(Enum):
     ContentSelection = 1
 
 
+from ..Geometry import Light
 class LightArray:
     @overload
     def __init__(self): ...
@@ -825,6 +843,8 @@ class LightArray:
     def CppPointer(self) -> IntPtr: ...
 
 
+from ..PlugIns import PlugIn
+from ..Geometry import Light
 class LightManagerSupport:
     def DeleteLight(self, doc: RhinoDoc, light: Light, bUndelete: bool) -> bool: ...
     def GetLights(self, doc: RhinoDoc, light_array: LightArray) -> Tuple[LightArray]: ...
@@ -845,6 +865,7 @@ class LightManagerSupport:
     def UnGroup(self, doc: RhinoDoc, light_array: LightArray) -> Tuple[LightArray]: ...
 
 
+from ..Geometry import Light
 class LightManagerSupportClient:
     def __init__(self, doc_uuid: UInt32): ...
     def DeleteLight(self, light: Light) -> None: ...
@@ -915,6 +936,7 @@ class LoadMultipleFlags(Enum):
     Preload = 1
 
 
+from ..Geometry import Transform
 class MappingTag:
     def __init__(self): ...
     @property
@@ -978,6 +1000,7 @@ class PixelBuffer:
     def Buffer(self) -> IntPtr: ...
 
 
+from .DataSources import MetaData
 class PreviewAppearance:
     def __init__(self, pRenderContent: IntPtr): ...
     def Background(self) -> PreviewBackground: ...
@@ -1112,6 +1135,10 @@ class RdkUndoRecord:
     def SetDescription(self, description: str) -> None: ...
 
 
+from ..PlugIns import PlugIn
+from ..DocObjects import ViewInfo
+from ..Display import DisplayPipelineAttributes
+from ..DocObjects import ViewportInfo
 class RealtimeDisplayMode:
     def add_HudLockButtonDoubleClicked(self, value: EventHandler) -> None: ...
     def add_HudLockButtonLeftClicked(self, value: EventHandler) -> None: ...
@@ -1282,6 +1309,10 @@ class RenderChannels(DocumentOrFreeFloatingBase):
     def Mode(self, value: Modes) -> None: ...
 
 
+from ..PlugIns import PlugIn
+from .Fields import Field
+from ..UI.Controls import ICollapsibleSection
+from .DataSources import ContentFactory
 class RenderContent:
     def add_ContentAdded(value: EventHandler) -> None: ...
     def add_ContentChanged(value: EventHandler) -> None: ...
@@ -1634,6 +1665,9 @@ class RenderEndEventArgs:
     def __init__(self): ...
 
 
+from .Fields import Field
+from ..UI.Controls import ICollapsibleSection
+from .DataSources import ContentFactory
 class RenderEnvironment(RenderContent):
     @property
     def CurrentEnvironment() -> RenderEnvironment: ...
@@ -1670,6 +1704,12 @@ class RenderingSources(Enum):
     SnapShot = 3
 
 
+from ..DocObjects import Material
+from ..DocObjects import ObjRef
+from ..DocObjects import TextureType
+from .Fields import Field
+from ..UI.Controls import ICollapsibleSection
+from .DataSources import ContentFactory
 class RenderMaterial(RenderContent):
     @overload
     def AssignTo(self, or_: ObjRef) -> bool: ...
@@ -1755,6 +1795,7 @@ class RenderMaterialTable:
     def Remove(self, c: RenderMaterial) -> bool: ...
 
 
+from ..PlugIns import PlugIn
 class RenderPanels:
     def FromRenderSessionId(plugIn: PlugIn, panelType: Type, renderSessionId: Guid) -> Object: ...
     def RegisterPanel(self, plugin: PlugIn, renderPanelType: RenderPanelType, panelType: Type, renderEngineId: Guid, caption: str, alwaysShow: bool, initialShow: bool) -> None: ...
@@ -1764,6 +1805,8 @@ class RenderPanelType(Enum):
     RenderWindow = 0
 
 
+from ..Display import RhinoView
+from ..DocObjects import ViewportInfo
 class RenderPipeline:
     def CloseWindow(self) -> bool: ...
     def CommandResult(self) -> Result: ...
@@ -1814,6 +1857,11 @@ class RenderPlugInList:
     def __init__(self): ...
 
 
+from ..Geometry import Sphere
+from ..Geometry import Box
+from ..Geometry import PlaneSurface
+from ..Geometry import Cone
+from ..Geometry import Plane
 class RenderPrimitive:
     def Dispose(self) -> None: ...
     @property
@@ -1833,6 +1881,13 @@ class RenderPrimitive:
     def TryGetSphere(self) -> Tuple[bool, Sphere]: ...
 
 
+from ..Geometry import Mesh
+from ..Geometry import Transform
+from ..Geometry import Sphere
+from ..Geometry import Cone
+from ..Geometry import Plane
+from ..Geometry import PlaneSurface
+from ..Geometry import Box
 class RenderPrimitiveList:
     @overload
     def Add(self, mesh: Mesh, material: RenderMaterial) -> None: ...
@@ -1906,6 +1961,8 @@ class RenderReturnCode(Enum):
     InternalError = 11
 
 
+from ..Display import BackgroundStyle
+from ..FileIO import SerializationOptions
 from ..Runtime import CommonObject
 class RenderSettings(CommonObject):
     @overload
@@ -2031,12 +2088,19 @@ class RenderSuccessCode(Enum):
     Failed = 1
 
 
+from ..PlugIns import PlugIn
 class RenderTabs:
     def FromRenderSessionId(plugIn: PlugIn, tabType: Type, renderSessionId: Guid) -> Object: ...
     def RegisterTab(self, plugin: PlugIn, tabType: Type, renderEngineId: Guid, caption: str, icon: Icon) -> None: ...
     def SessionIdFromTab(tab: Object) -> Guid: ...
 
 
+from ..DocObjects import RhinoObject
+from ..Geometry import Vector3d
+from ..Geometry import Point3d
+from .Fields import Field
+from ..UI.Controls import ICollapsibleSection
+from .DataSources import ContentFactory
 class RenderTexture(RenderContent):
     def CreateEvaluator(self, evaluatorFlags: TextureEvaluatorFlags) -> TextureEvaluator: ...
     @property
@@ -2110,6 +2174,9 @@ class RenderTextureTable:
     def Remove(self, c: RenderTexture) -> bool: ...
 
 
+from ..DocObjects import ViewInfo
+from ..DocObjects import ViewportInfo
+from ..Display import Set[Color4f]
 class RenderWindow:
     def add_Cloned(value: EventHandler) -> None: ...
     def AddChannel(self, channel: StandardChannels) -> bool: ...
@@ -2271,6 +2338,9 @@ class SimulatedEnvironment:
     def StringFromProjection(projection: BackgroundProjections) -> str: ...
 
 
+from ..DocObjects import Texture
+from ..Geometry import Vector2d
+from ..Display import Color4f
 class SimulatedTexture:
     @overload
     def __init__(self): ...
@@ -2554,6 +2624,7 @@ class SupportOptions:
     def UseRenderedPreview() -> bool: ...
 
 
+from ..Display import Color4f
 class TexturedColor:
     def __init__(self, name: str, value: Color4f, on: bool, amount: Single): ...
 
@@ -2576,6 +2647,9 @@ class TextureEnvironmentMappingMode(Enum):
     Hemispherical = 9
 
 
+from ..Geometry import Point3d
+from ..Geometry import Vector3d
+from ..Display import Color4f
 class TextureEvaluator:
     def Dispose(self) -> None: ...
     @overload
@@ -2623,6 +2697,16 @@ class TextureGraphInfo:
     def SetAmountW(self, d: float) -> None: ...
 
 
+from ..Geometry import Transform
+from ..Geometry import Point3d
+from ..Geometry import Vector3d
+from ..Geometry import Plane
+from ..Geometry import Interval
+from ..Geometry import Sphere
+from ..Geometry import Cylinder
+from ..Geometry import Mesh
+from ..Geometry import ComponentStatus
+from ..FileIO import SerializationOptions
 from ..DocObjects import ModelComponent
 class TextureMapping(ModelComponent):
     def CreateBoxMapping(plane: Plane, dx: Interval, dy: Interval, dz: Interval, capped: bool) -> TextureMapping: ...
@@ -2742,6 +2826,12 @@ class TimeZone:
     def TimeZones() -> int: ...
 
 
+from ..Display import Color4f
+from ..DocObjects import RhinoObject
+from ..Geometry import Vector3d
+from .Fields import Field
+from ..UI.Controls import ICollapsibleSection
+from .DataSources import ContentFactory
 class TwoColorRenderTexture(RenderTexture):
     @property
     def Color1(self) -> Color4f: ...

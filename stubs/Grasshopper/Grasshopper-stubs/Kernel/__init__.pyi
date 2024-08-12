@@ -31,6 +31,8 @@ class AutoSaveFileFormatChangedEventHandler:
     def Invoke(self) -> None: ...
 
 
+from ..GUI import GH_ColourPicker
+from ..GUI.Base import GH_ColourPickerEventArgs
 class ColourEventHandler:
     def __init__(self, TargetObject: Object, TargetMethod: IntPtr): ...
     def BeginInvoke(self, sender: GH_ColourPicker, e: GH_ColourPickerEventArgs, DelegateCallback: AsyncCallback, DelegateAsyncState: Object) -> IAsyncResult: ...
@@ -136,6 +138,8 @@ class FilePathChangedEventHandler:
     def Invoke(self, sender: Object, e: GH_DocFilePathEventArgs) -> None: ...
 
 
+from .Undo import IGH_UndoAction
+from .Undo import GH_UndoRecord
 class GH_ActiveObject(GH_DocumentObject):
     def AddRuntimeMessage(self, level: GH_RuntimeMessageLevel, text: str) -> None: ...
     def AppendAdditionalMenuItems(self, menu: ToolStripDropDown) -> None: ...
@@ -415,6 +419,8 @@ class GH_ClipboardType(Enum):
     Global = 2
 
 
+from .Undo import IGH_UndoAction
+from .Undo import GH_UndoRecord
 class GH_Component(GH_ActiveObject):
     def AddedToDocument(self, document: GH_Document) -> None: ...
     def AppendAdditionalMenuItems(self, menu: ToolStripDropDown) -> None: ...
@@ -708,6 +714,34 @@ class GH_Conversion(Enum):
     Both = 2
 
 
+from .Types import UVInterval
+from .Types import Complex
+from .Types import IGH_GeometricGoo
+from .Types import GH_Boolean
+from .Types import GH_Integer
+from .Types import GH_Number
+from .Types import GH_ComplexNumber
+from .Types import GH_Time
+from .Types import GH_String
+from .Types import GH_Colour
+from .Types import GH_Guid
+from .Types import GH_Interval
+from .Types import GH_Interval2D
+from .Types import GH_Matrix
+from .Types import GH_Vector
+from .Types import GH_Point
+from .Types import GH_Plane
+from .Types import GH_Box
+from .Types import GH_Rectangle
+from .Types import GH_Circle
+from .Types import GH_Arc
+from .Types import GH_Line
+from .Types import GH_Curve
+from .Types import GH_Surface
+from .Types import GH_Brep
+from .Types import GH_SubD
+from .Types import GH_Mesh
+from .Types import GH_MeshFace
 class GH_Convert:
     def BackSolveExpression(exp: str, variable: str, target: float, minimum: float, maximum: float, steps: int) -> Tuple[bool, float, float]: ...
     def ByteArrayToCommonObject(data: Set[Byte]) -> T: ...
@@ -1007,6 +1041,10 @@ class GH_DocSettingsEventArgs:
     def Kind(self) -> GH_DocumentSettings: ...
 
 
+from ..GUI.Alignment import GH_Align
+from ..GUI.Alignment import GH_Distribute
+from .Expressions import GH_Variant
+from .Undo import GH_UndoRecord
 class GH_Document:
     def __init__(self): ...
     def ActiveObjects(self) -> List: ...
@@ -1436,6 +1474,10 @@ class GH_DocumentIO:
     def SubsidiaryDocumentSavePrompt(documentName: str, modified: bool, modifiedSubsidiaries: int) -> DialogResult: ...
 
 
+from .Undo import IGH_UndoAction
+from .Undo import GH_UndoRecord
+from ..GUI import KeyDownEventHandler
+from ..GUI import TextChangedEventHandler
 class GH_DocumentObject(GH_InstanceDescription):
     def add_AttributesChanged(self, obj: AttributesChangedEventHandler) -> None: ...
     def add_DisplayExpired(self, obj: DisplayExpiredEventHandler) -> None: ...
@@ -1833,6 +1875,30 @@ class GH_FontServer:
     def StringWidth(text: Iterable[str], font: Font) -> int: ...
 
 
+from .Types import Complex
+from .Types import GH_Boolean
+from .Types import GH_Integer
+from .Types import GH_Matrix
+from .Types import GH_Number
+from .Types import GH_ComplexNumber
+from .Types import GH_Colour
+from .Types import GH_Time
+from .Types import GH_Interval
+from .Types import GH_Interval2D
+from .Types import GH_Point
+from .Types import GH_Vector
+from .Types import GH_Plane
+from .Types import GH_Line
+from .Types import GH_Circle
+from .Types import GH_Arc
+from .Types import GH_Curve
+from .Types import GH_Surface
+from .Types import GH_Brep
+from .Types import GH_SubD
+from .Types import GH_Box
+from .Types import GH_Mesh
+from .Types import GH_MeshFace
+from .Types import IGH_GeometricGoo
 class GH_Format:
     def DefaultCulture() -> IFormatProvider: ...
     @overload
@@ -1988,6 +2054,7 @@ class GH_GHXHarvester:
     def HarvestPivots(node: GH_IReader) -> List: ...
 
 
+from .Graphs import IGH_Graph
 class GH_GraphProxy:
     def __init__(self, nGraph: IGH_Graph, T: Type): ...
     def CompareTo(self, other: GH_GraphProxy) -> int: ...
@@ -2639,6 +2706,7 @@ class GH_ProfilerMode(Enum):
     Memory = 2
 
 
+from .Special import GH_Group
 class GH_RelevantObjectData:
     def __init__(self, pt: PointF): ...
     def CreateBalloonData(self, obj: IGH_DocumentObject) -> None: ...
@@ -2975,6 +3043,7 @@ class GH_StateTagLayoutDirection(Enum):
     Right = 1
 
 
+from ..GUI import GH_TooltipDisplayEventArgs
 class GH_StateTagList:
     def __init__(self): ...
     @property
@@ -3043,6 +3112,9 @@ class GH_UndoOperation(Enum):
     Redo = 5
 
 
+from .Undo import GH_UndoRecord
+from .Undo import IGH_UndoAction
+from .Undo import Set[IGH_UndoAction]
 class GH_UndoUtil:
     @overload
     def CreateAddObjectEvent(self, name: str, objs: Iterable[IGH_DocumentObject]) -> GH_UndoRecord: ...
@@ -3243,6 +3315,7 @@ class GH_WireTopologyDiagram:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ..GUI import GH_TooltipDisplayEventArgs
 class GH_ZuiAction:
     @property
     def Name(self) -> str: ...
@@ -3290,6 +3363,9 @@ class IGH_ActiveObject:
     def Phase(self, Value: GH_SolutionPhase) -> None: ...
 
 
+from ..GUI.Canvas import GH_Canvas
+from ..GUI.Canvas import GH_CanvasChannel
+from ..GUI import GH_CanvasMouseEvent
 class IGH_Attributes:
     def AppendToAttributeTree(self, attributes: List) -> None: ...
     def ExpireLayout(self) -> None: ...
@@ -3413,6 +3489,9 @@ class IGH_ContextualParameter:
     def Prompt(self) -> str: ...
 
 
+from .Data import IGH_DataTree
+from .Data import IGH_Structure
+from .Data import GH_Structure
 class IGH_DataAccess:
     def AbortComponentSolution(self) -> None: ...
     def BlitData(self, paramIndex: int, tree: GH_Structure, overwrite: bool) -> bool: ...
@@ -3464,6 +3543,8 @@ class IGH_DebugDescription:
     def AppendToDebugLog(self, writer: GH_DebugDescriptionWriter) -> None: ...
 
 
+from .Undo import IGH_UndoAction
+from .Undo import GH_UndoRecord
 class IGH_DocumentObject:
     def add_AttributesChanged(self, obj: AttributesChangedEventHandler) -> None: ...
     def add_DisplayExpired(self, obj: DisplayExpiredEventHandler) -> None: ...
@@ -3619,6 +3700,8 @@ class IGH_ObjectProxy:
     def Exposure(self, Value: GH_Exposure) -> None: ...
 
 
+from .Data import GH_Path
+from .Data import IGH_Structure
 class IGH_Param:
     @overload
     def AddSource(self, source: IGH_Param) -> None: ...
@@ -3846,6 +3929,7 @@ class IGH_VariableParameterComponent:
     def VariableParameterMaintenance(self) -> None: ...
 
 
+from ..GUI import GH_VariableParameterManager
 class IGH_VarParamComponent:
     def ConstructVariable(self, e: GH_VarParamEventArgs) -> IGH_Param: ...
     @property
@@ -3874,6 +3958,10 @@ class ModifiedChangedEventHandler:
     def Invoke(self, sender: Object, e: GH_DocModifiedEventArgs) -> None: ...
 
 
+from ..GUI import GH_TooltipDisplayEventArgs
+from ..GUI.Canvas import GH_Canvas
+from ..GUI.Canvas import GH_CanvasChannel
+from ..GUI import GH_CanvasMouseEvent
 class NullParamAttributes:
     def __init__(self, param: IGH_Param): ...
     def Read(self, reader: GH_IReader) -> bool: ...

@@ -56,6 +56,27 @@ class GetResult(Enum):
     User1 = 4294967295
 
 
+from ..Geometry import Point3d
+from ..DocObjects import MeshObject
+from ..DocObjects import ObjectType
+from ..DocObjects import ObjRef
+from .Custom import GetObjectGeometryFilter
+from ..DocObjects import Set[ObjRef]
+from ..Geometry import Plane
+from ..Geometry import Set[Point3d]
+from ..Display import RhinoView
+from ..Geometry import Box
+from ..Geometry import MeshingParameters
+from ..DocObjects import Set[GripObject]
+from ..DocObjects import GripObject
+from ..Geometry import NurbsCurve
+from ..Geometry import Line
+from ..Geometry import Polyline
+from ..Geometry import Arc
+from ..Geometry import Circle
+from ..Geometry import LinearDimension
+from .Custom import GetFileNameMode
+from ..Display import ViewCaptureSettings
 class RhinoGet:
     @property
     def AllBitmapFileTypes() -> BitmapFileTypes: ...

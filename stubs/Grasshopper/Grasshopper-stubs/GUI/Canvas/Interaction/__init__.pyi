@@ -3,6 +3,8 @@ from enum import Enum
 
 
 
+from .. import GH_CanvasMouseEvent
+from .. import GH_TooltipDisplayEventArgs
 class GH_AbstractInteraction:
     def Destroy(self) -> None: ...
     @property
@@ -27,6 +29,8 @@ class GH_AbstractInteraction:
     def SetupTooltip(self, canvasPoint: PointF, e: GH_TooltipDisplayEventArgs) -> None: ...
 
 
+from .. import GH_CanvasMouseEvent
+from .. import GH_TooltipDisplayEventArgs
 class GH_CycleInteraction(GH_AbstractInteraction):
     def __init__(self, parentCanvas: GH_Canvas): ...
     def Destroy(self) -> None: ...
@@ -40,6 +44,9 @@ class GH_CycleInteraction(GH_AbstractInteraction):
     def RespondToMouseUp(self, sender: GH_Canvas, e: GH_CanvasMouseEvent) -> GH_ObjectResponse: ...
 
 
+from .. import GH_CanvasMouseEvent
+from ....Kernel import IGH_Attributes
+from .. import GH_TooltipDisplayEventArgs
 class GH_DragInteraction(GH_AbstractInteraction):
     def __init__(self, canvas: GH_Canvas, e: GH_CanvasMouseEvent): ...
     def AddAttribute(self, attribute: IGH_Attributes) -> None: ...
@@ -54,6 +61,9 @@ class GH_DragInteraction(GH_AbstractInteraction):
     def RespondToMouseUp(self, sender: GH_Canvas, e: GH_CanvasMouseEvent) -> GH_ObjectResponse: ...
 
 
+from ....Kernel import IGH_ObjectProxy
+from .. import GH_CanvasMouseEvent
+from .. import GH_TooltipDisplayEventArgs
 class GH_DumpInteraction(GH_AbstractInteraction):
     @overload
     def __init__(self, parent: GH_Canvas): ...
@@ -67,12 +77,16 @@ class GH_DumpInteraction(GH_AbstractInteraction):
     def RespondToMouseDown(self, sender: GH_Canvas, e: GH_CanvasMouseEvent) -> GH_ObjectResponse: ...
 
 
+from .. import GH_CanvasMouseEvent
+from .. import GH_TooltipDisplayEventArgs
 class GH_PanInteraction(GH_AbstractInteraction):
     def __init__(self, iParent: GH_Canvas, mEvent: GH_CanvasMouseEvent): ...
     def RespondToMouseMove(self, sender: GH_Canvas, e: GH_CanvasMouseEvent) -> GH_ObjectResponse: ...
     def RespondToMouseUp(self, sender: GH_Canvas, e: GH_CanvasMouseEvent) -> GH_ObjectResponse: ...
 
 
+from .. import GH_CanvasMouseEvent
+from .. import GH_TooltipDisplayEventArgs
 class GH_RadialMenuInteraction(GH_AbstractInteraction):
     def __init__(self, canvas: GH_Canvas, e: GH_CanvasMouseEvent): ...
     def Destroy(self) -> None: ...
@@ -87,6 +101,9 @@ class GH_RadialMenuInteraction(GH_AbstractInteraction):
     def SetupTooltip(self, point: PointF, e: GH_TooltipDisplayEventArgs) -> None: ...
 
 
+from .. import GH_CanvasMouseEvent
+from ....Kernel import IGH_Param
+from .. import GH_TooltipDisplayEventArgs
 class GH_RewireInteraction(GH_AbstractInteraction):
     def __init__(self, iParent: GH_Canvas, mEvent: GH_CanvasMouseEvent, Source: IGH_Param): ...
     def Destroy(self) -> None: ...
@@ -98,6 +115,8 @@ class GH_RewireInteraction(GH_AbstractInteraction):
     def RespondToMouseUp(self, sender: GH_Canvas, e: GH_CanvasMouseEvent) -> GH_ObjectResponse: ...
 
 
+from .. import GH_CanvasMouseEvent
+from .. import GH_TooltipDisplayEventArgs
 class GH_SketchInteraction(GH_AbstractInteraction):
     def __init__(self, iParent: GH_Canvas): ...
     def Destroy(self) -> None: ...
@@ -107,6 +126,9 @@ class GH_SketchInteraction(GH_AbstractInteraction):
     def RespondToMouseUp(self, sender: GH_Canvas, e: GH_CanvasMouseEvent) -> GH_ObjectResponse: ...
 
 
+from .. import GH_CanvasMouseEvent
+from ....Kernel import IGH_Attributes
+from .. import GH_TooltipDisplayEventArgs
 class GH_SplitInteraction(GH_AbstractInteraction):
     def __init__(self, canvas: GH_Canvas, e: GH_CanvasMouseEvent): ...
     def AddAttribute(self, Attribute: IGH_Attributes) -> None: ...
@@ -117,6 +139,8 @@ class GH_SplitInteraction(GH_AbstractInteraction):
     def RespondToMouseUp(self, sender: GH_Canvas, e: GH_CanvasMouseEvent) -> GH_ObjectResponse: ...
 
 
+from .. import GH_CanvasMouseEvent
+from .. import GH_TooltipDisplayEventArgs
 class GH_WindowSelectInteraction(GH_AbstractInteraction):
     def __init__(self, canvas: GH_Canvas, mEvent: GH_CanvasMouseEvent): ...
     def Destroy(self) -> None: ...
@@ -128,6 +152,9 @@ class GH_WindowSelectInteraction(GH_AbstractInteraction):
     def RespondToMouseUp(self, sender: GH_Canvas, e: GH_CanvasMouseEvent) -> GH_ObjectResponse: ...
 
 
+from .. import GH_CanvasMouseEvent
+from ....Kernel import IGH_Param
+from .. import GH_TooltipDisplayEventArgs
 class GH_WireInteraction(GH_AbstractInteraction):
     def __init__(self, iParent: GH_Canvas, mEvent: GH_CanvasMouseEvent, Source: IGH_Param): ...
     def Destroy(self) -> None: ...
@@ -138,6 +165,8 @@ class GH_WireInteraction(GH_AbstractInteraction):
     def RespondToMouseUp(self, sender: GH_Canvas, e: GH_CanvasMouseEvent) -> GH_ObjectResponse: ...
 
 
+from .. import GH_CanvasMouseEvent
+from .. import GH_TooltipDisplayEventArgs
 class GH_ZoomInteraction(GH_AbstractInteraction):
     def __init__(self, iParent: GH_Canvas, mEvent: GH_CanvasMouseEvent): ...
     def RespondToMouseMove(self, sender: GH_Canvas, e: GH_CanvasMouseEvent) -> GH_ObjectResponse: ...

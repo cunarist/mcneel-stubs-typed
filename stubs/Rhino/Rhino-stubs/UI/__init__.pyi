@@ -18,6 +18,8 @@ class CursorStyle(Enum):
     CrosshairCopy = 7
 
 
+from ..Display import Color4f
+from ..Render import Sun
 class Dialogs:
     def KillSplash() -> None: ...
     def SetCustomColorDialog(handler: EventHandler) -> None: ...
@@ -70,6 +72,7 @@ class DistanceDisplayMode(Enum):
     FeetInches = 2
 
 
+from ..Geometry import Mesh
 class DrawingUtilities:
     @overload
     def BitmapFromIconResource(resourceName: str, assembly: Assembly) -> Bitmap: ...
@@ -125,6 +128,7 @@ class GetColorEventArgs:
     def SelectedColor(self, value: Color) -> None: ...
 
 
+from ..Display import Color4f
 class IDialogService:
     def ObjectToWindowHandle(self, window: Object, useMainRhinoWindowWhenNull: bool) -> IntPtr: ...
     def ShowColorDialog(self, parent: Object, color: Color4f, allowAlpha: bool, colorCallback: OnColorChangedEvent) -> Tuple[bool, Color4f]: ...
@@ -196,6 +200,7 @@ class LOC:
     def STR(english: str, assemblyOrObject: Object) -> str: ...
 
 
+from ..DocObjects import DimensionStyle
 class Localization:
     def FormatArea(area: float, units: UnitSystem, dimStyle: DimensionStyle, alternate: bool) -> str: ...
     def FormatDistanceAndTolerance(distance: float, units: UnitSystem, dimStyle: DimensionStyle, alternate: bool) -> str: ...
@@ -299,6 +304,9 @@ class NamedColorList:
     def Name(self, value: str) -> None: ...
 
 
+from ..DocObjects import RhinoObject
+from ..DocObjects import Set[RhinoObject]
+from ..DocObjects import ObjectType
 class ObjectPropertiesPage:
     @overload
     def AnySelectedObject(self) -> bool: ...
@@ -349,6 +357,7 @@ class ObjectPropertiesPageCollection:
     def DocumentRuntimeSerialNumber(self) -> UInt32: ...
 
 
+from ..DocObjects import ObjectType
 class ObjectPropertiesPageEventArgs:
     def __init__(self, page: ObjectPropertiesPage): ...
     @property
@@ -383,6 +392,7 @@ class ObjectPropertiesPageEventArgs:
     def IncludesObjectsType(self, objectTypes: ObjectType, allMustMatch: bool) -> bool: ...
 
 
+from ..Display import Color4f
 class OnColorChangedEvent:
     def __init__(self, object: Object, method: IntPtr): ...
     def BeginInvoke(self, color: Color4f, callback: AsyncCallback, object: Object) -> IAsyncResult: ...
@@ -427,6 +437,7 @@ class OptionPageButtons(Enum):
     ApplyButton = 2
 
 
+from ..Commands import RunMode
 class OptionsDialogPage(StackedDialogPage):
     def RunScript(self, doc: RhinoDoc, mode: RunMode) -> Result: ...
 
@@ -472,6 +483,7 @@ class PanelIds:
     def Texture() -> Guid: ...
 
 
+from ..PlugIns import PlugIn
 class Panels:
     def add_Closed(value: EventHandler) -> None: ...
     def add_Show(value: EventHandler) -> None: ...
@@ -796,6 +808,7 @@ class StackedDialogPage:
     def SetEnglishPageTitle(self, newPageTile: str) -> None: ...
 
 
+from ..Geometry import Point3d
 class StatusBar:
     def ClearMessagePane() -> None: ...
     @overload

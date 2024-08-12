@@ -44,6 +44,7 @@ class BoundingBoxDisplayMode(Enum):
     OnDuringDynamicDisplay = 2
 
 
+from ..Geometry import BoundingBox
 class CalculateBoundingBoxEventArgs(DrawEventArgs):
     @property
     def BoundingBox(self) -> BoundingBox: ...
@@ -126,6 +127,7 @@ class ColorCMYK:
     def Y(self, value: float) -> None: ...
 
 
+from ..Geometry import Point3d
 class ColorGradient:
     def __init__(self): ...
     @property
@@ -418,6 +420,13 @@ class CullObjectEventArgs(DrawEventArgs):
     def CullObject(self, value: bool) -> None: ...
 
 
+from ..Geometry import Point3d
+from ..Geometry import Line
+from ..Geometry import Vector3d
+from ..Geometry import Arc
+from ..Geometry import Circle
+from ..Geometry import Curve
+from ..Geometry import Plane
 class CustomDisplay:
     def __init__(self, enable: bool): ...
     @overload
@@ -512,6 +521,7 @@ class DisplayBitmap:
     def SetBlendFunction(self, source: BlendMode, destination: BlendMode) -> None: ...
 
 
+from ..Geometry import Vector3d
 class DisplayBitmapDrawList:
     def __init__(self): ...
     @property
@@ -533,6 +543,8 @@ class DisplayBitmapDrawList:
     def Sort(self, cameraDirection: Vector3d) -> Set[int]: ...
 
 
+from ..DocObjects import ObjectType
+from ..DocObjects import ActiveSpace
 class DisplayConduit:
     @property
     def Enabled(self) -> bool: ...
@@ -558,6 +570,8 @@ class DisplayEngine:
     def Dispose(self) -> None: ...
 
 
+from ..DocObjects import Material
+from ..DocObjects import Texture
 class DisplayMaterial:
     @overload
     def __init__(self): ...
@@ -733,6 +747,40 @@ class DisplayModeDescription:
     def UpdateDisplayMode(displayMode: DisplayModeDescription) -> bool: ...
 
 
+from ..Geometry import Point3d
+from ..Geometry import PointCloud
+from ..Geometry import Vector3d
+from ..Geometry import Line
+from ..Geometry import Set[Line]
+from ..Geometry import TextDot
+from ..Geometry import Hatch
+from ..Geometry import Mesh
+from ..Geometry import BoundingBox
+from ..Geometry import Box
+from ..DocObjects import ConstructionPlane
+from ..Geometry import Point2d
+from ..Geometry import Plane
+from ..DocObjects import TextHorizontalAlignment
+from ..DocObjects import TextVerticalAlignment
+from ..Geometry import TextEntity
+from ..Geometry import Transform
+from ..DocObjects import RhinoObject
+from ..DocObjects import InstanceDefinition
+from ..Geometry import AnnotationBase
+from ..Geometry import Arrowhead
+from ..Geometry import Arc
+from ..Geometry import Circle
+from ..Geometry import Sphere
+from ..Geometry import Torus
+from ..Geometry import Cylinder
+from ..Geometry import Cone
+from ..Geometry import Curve
+from ..Geometry import Surface
+from ..Geometry import ParticleSystem
+from ..DocObjects import ViewportInfo
+from ..Geometry import SubD
+from ..Geometry import Brep
+from ..Geometry import Extrusion
 class DisplayPipeline:
     def add_CalculateBoundingBox(value: EventHandler) -> None: ...
     def add_CalculateBoundingBoxZoomExtents(value: EventHandler) -> None: ...
@@ -1427,6 +1475,7 @@ class PointStyle(Enum):
     ArrowTip = 15
 
 
+from ..Geometry import Point2d
 class RhinoPageView(RhinoView):
     def add_PageViewSpaceChange(value: EventHandler) -> None: ...
     def AddDetailView(self, title: str, corner0: Point2d, corner1: Point2d, initialProjection: DefinedViewportProjection) -> DetailViewObject: ...
@@ -1469,6 +1518,7 @@ class RhinoPageView(RhinoView):
     def SetPageAsActive(self) -> None: ...
 
 
+from ..Geometry import Point2d
 class RhinoView:
     def add_Create(value: EventHandler) -> None: ...
     def add_Destroy(value: EventHandler) -> None: ...
@@ -1557,6 +1607,17 @@ class RhinoView:
     def SpeedTest(self, frameCount: int, freezeDrawList: bool, direction: int, angleDeltaRadians: float) -> float: ...
 
 
+from ..Geometry import Plane
+from ..Geometry import BoundingBox
+from ..Geometry import Point3d
+from ..Geometry import Vector3d
+from ..DocObjects import ConstructionPlane
+from ..DocObjects import ViewportInfo
+from ..DocObjects import ViewInfo
+from ..Geometry import Sphere
+from ..DocObjects import CoordinateSystem
+from ..Geometry import Line
+from ..Geometry import Point2d
 class RhinoViewport:
     @overload
     def __init__(self): ...
@@ -1775,6 +1836,9 @@ class StereoContext(Enum):
     BothEyes = 3
 
 
+from ..Geometry import Plane
+from ..DocObjects import TextHorizontalAlignment
+from ..DocObjects import TextVerticalAlignment
 class Text3d:
     @overload
     def __init__(self, text: str): ...
@@ -1868,6 +1932,8 @@ class ViewCapture:
     def Width(self, value: int) -> None: ...
 
 
+from ..Geometry import Point2d
+from ..Geometry import Point3d
 class ViewCaptureSettings:
     @overload
     def __init__(self): ...
@@ -2072,6 +2138,7 @@ class ViewportType(Enum):
     DetailViewport = 2
 
 
+from ..DocObjects import RhinoObject
 class VisualAnalysisMode:
     def AdjustAnalysisMeshes(doc: RhinoDoc, analysisModeId: Guid) -> bool: ...
     def EnableUserInterface(self, on: bool) -> None: ...

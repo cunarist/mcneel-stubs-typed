@@ -19,6 +19,7 @@ class ByteArrayField(Field):
     def ValueAsObject(self) -> Object: ...
 
 
+from ...Display import Color4f
 class Color4fField(Field):
     @property
     def SystemColorValue(self) -> Color: ...
@@ -80,6 +81,13 @@ class Field:
     def ValueAsObject(self) -> Object: ...
 
 
+from ...Geometry import Transform
+from ...Display import Color4f
+from ...Geometry import Vector2d
+from ...Geometry import Vector3d
+from ...Geometry import Point2d
+from ...Geometry import Point3d
+from ...Geometry import Point4d
 class FieldDictionary:
     @overload
     def Add(self, key: str, value: Vector3d) -> Vector3dField: ...
@@ -370,6 +378,7 @@ class NullField(Field):
     def ValueAsObject(self) -> Object: ...
 
 
+from ...Geometry import Point2d
 class Point2dField(Field):
     @property
     def Value(self) -> Point2d: ...
@@ -378,6 +387,7 @@ class Point2dField(Field):
     def ValueAsObject(self) -> Object: ...
 
 
+from ...Geometry import Point3d
 class Point3dField(Field):
     @property
     def Value(self) -> Point3d: ...
@@ -386,6 +396,7 @@ class Point3dField(Field):
     def ValueAsObject(self) -> Object: ...
 
 
+from ...Geometry import Point4d
 class Point4dField(Field):
     @property
     def Value(self) -> Point4d: ...
@@ -402,6 +413,7 @@ class StringField(Field):
     def ValueAsObject(self) -> Object: ...
 
 
+from ...Geometry import Transform
 class TransformField(Field):
     @property
     def Value(self) -> Transform: ...
@@ -410,6 +422,7 @@ class TransformField(Field):
     def ValueAsObject(self) -> Object: ...
 
 
+from ...Geometry import Vector2d
 class Vector2dField(Field):
     @property
     def Value(self) -> Vector2d: ...
@@ -418,6 +431,7 @@ class Vector2dField(Field):
     def ValueAsObject(self) -> Object: ...
 
 
+from ...Geometry import Vector3d
 class Vector3dField(Field):
     @property
     def Value(self) -> Vector3d: ...

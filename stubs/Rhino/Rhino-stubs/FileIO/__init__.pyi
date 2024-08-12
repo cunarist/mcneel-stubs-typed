@@ -110,6 +110,24 @@ class BinaryArchiveReader:
     def ReadErrorOccured(self, value: bool) -> None: ...
 
 
+from ..Collections import ArchivableDictionary
+from ..DocObjects import ObjRef
+from ..Geometry import Interval
+from ..Geometry import Point2d
+from ..Geometry import Point3d
+from ..Geometry import Point4d
+from ..Geometry import Vector2d
+from ..Geometry import Vector3d
+from ..Geometry import BoundingBox
+from ..Geometry import Ray3d
+from ..Geometry import Transform
+from ..Geometry import Plane
+from ..Geometry import Line
+from ..Geometry import Point3f
+from ..Geometry import Vector3f
+from ..Geometry import MeshingParameters
+from ..Geometry import GeometryBase
+from ..Render import RenderSettings
 class BinaryArchiveWriter:
     @overload
     def BeginWrite3dmChunk(self, typecode: UInt32, value: Int64) -> bool: ...
@@ -209,6 +227,7 @@ class DracoColorFormat(Enum):
     RGBA = 1
 
 
+from ..Geometry import Mesh
 class DracoCompression:
     @overload
     def Compress(mesh: Mesh) -> DracoCompression: ...
@@ -250,6 +269,7 @@ class DracoCompressionOptions:
     def TextureCoordintateQuantizationBits(self, value: int) -> None: ...
 
 
+from ..Geometry import GeometryBase
 class File3dm:
     def __init__(self): ...
     def Dispose(self) -> None: ...
@@ -373,6 +393,7 @@ class File3dm:
 
 
 
+from ..DocObjects import DimensionStyle
 class File3dmDimStyleTable:
     def FindIndex(self, index: int) -> DimensionStyle: ...
     def FindName(self, name: str) -> DimensionStyle: ...
@@ -381,6 +402,7 @@ class File3dmDimStyleTable:
     def ComponentType(self) -> ModelComponentType: ...
 
 
+from ..DocObjects import Group
 class File3dmGroupTable:
     def FindIndex(self, groupIndex: int) -> Group: ...
     def FindName(self, name: str) -> Group: ...
@@ -390,6 +412,7 @@ class File3dmGroupTable:
     def GroupMembers(self, groupIndex: int) -> Set[File3dmObject]: ...
 
 
+from ..DocObjects import HatchPattern
 class File3dmHatchPatternTable:
     def FindIndex(self, index: int) -> HatchPattern: ...
     def FindName(self, name: str) -> HatchPattern: ...
@@ -398,6 +421,10 @@ class File3dmHatchPatternTable:
     def ComponentType(self) -> ModelComponentType: ...
 
 
+from ..Geometry import Point3d
+from ..Geometry import GeometryBase
+from ..DocObjects import ObjectAttributes
+from ..Geometry import InstanceDefinitionGeometry
 class File3dmInstanceDefinitionTable:
     @overload
     def Add(self, name: str, description: str, basePoint: Point3d, geometry: Iterable[GeometryBase]) -> int: ...
@@ -414,6 +441,7 @@ class File3dmInstanceDefinitionTable:
     def ComponentType(self) -> ModelComponentType: ...
 
 
+from ..DocObjects import Layer
 class File3dmLayerTable:
     def AddDefaultLayer(self, name: str, color: Color) -> int: ...
     @overload
@@ -427,6 +455,7 @@ class File3dmLayerTable:
     def ComponentType(self) -> ModelComponentType: ...
 
 
+from ..DocObjects import Linetype
 class File3dmLinetypeTable:
     def FindIndex(self, index: int) -> Linetype: ...
     def FindName(self, name: str) -> Linetype: ...
@@ -435,12 +464,16 @@ class File3dmLinetypeTable:
     def ComponentType(self) -> ModelComponentType: ...
 
 
+from ..DocObjects import Material
 class File3dmMaterialTable:
     def FindIndex(self, index: int) -> Material: ...
     @property
     def ComponentType(self) -> ModelComponentType: ...
 
 
+from ..DocObjects import ConstructionPlane
+from ..Geometry import Plane
+from ..DocObjects import Set[ConstructionPlane]
 class File3dmNamedConstructionPlanes:
     @overload
     def Add(self, cplane: ConstructionPlane) -> None: ...
@@ -482,6 +515,7 @@ class File3dmNotes:
     def WindowRectangle(self, value: Rectangle) -> None: ...
 
 
+from ..Geometry import ComponentStatus
 from ..DocObjects import ModelComponent
 class File3dmObject(ModelComponent):
     @overload
@@ -502,6 +536,34 @@ class File3dmObject(ModelComponent):
     def TryReadUserData(self, userDataId: Guid, readFromAttributes: bool, dataReader: Func3) -> bool: ...
 
 
+from ..DocObjects import Layer
+from ..DocObjects import Group
+from ..Geometry import Point3d
+from ..DocObjects import ObjectAttributes
+from ..Geometry import Point3f
+from ..Geometry import PointCloud
+from ..Geometry import Plane
+from ..Geometry import LinearDimension
+from ..Geometry import AngularDimension
+from ..Geometry import OrdinateDimension
+from ..Geometry import RadialDimension
+from ..Geometry import Line
+from ..Geometry import Arc
+from ..Geometry import Circle
+from ..Geometry import Ellipse
+from ..Geometry import Sphere
+from ..Geometry import Curve
+from ..Geometry import TextDot
+from ..Geometry import InstanceReferenceGeometry
+from ..Geometry import Transform
+from ..Display import Text3d
+from ..Geometry import TextJustification
+from ..Geometry import Surface
+from ..Geometry import Extrusion
+from ..Geometry import Mesh
+from ..Geometry import Brep
+from ..Geometry import Hatch
+from ..Geometry import SubD
 class File3dmObjectTable:
     def Add(self, item: File3dmObject) -> None: ...
     @overload
@@ -681,6 +743,7 @@ class File3dmPlugInDataTable:
     def TryRead(self, pluginData: File3dmPlugInData, dataReader: Func3) -> bool: ...
 
 
+from ..Geometry import Point3d
 class File3dmSettings:
     @property
     def ModelAbsoluteTolerance(self) -> float: ...
@@ -760,6 +823,8 @@ class File3dmTypeCodes:
     pass
 
 
+from ..DocObjects import ViewInfo
+from ..DocObjects import Set[ViewInfo]
 class File3dmViewTable:
     def Add(self, item: ViewInfo) -> None: ...
     def Clear(self) -> None: ...
@@ -778,6 +843,7 @@ class File3dmViewTable:
     def IndexOf(self, item: ViewInfo) -> int: ...
 
 
+from ..DocObjects import ObjectType
 class File3dmWriteOptions:
     def __init__(self): ...
     def EnableAnalysisMeshes(self, objectType: ObjectType, enable: bool) -> None: ...
@@ -809,6 +875,7 @@ class FileFindPreference(Enum):
     MostRecent = 5
 
 
+from ..Geometry import Set[Mesh]
 class FileObj:
     def Read(filename: str, doc: RhinoDoc, options: FileObjReadOptions) -> bool: ...
     @overload
@@ -856,6 +923,7 @@ class FileObjReadOptions:
     def UseObjObjects(self, value: bool) -> None: ...
 
 
+from ..Geometry import MeshingParameters
 class FileObjWriteOptions:
     def __init__(self, writeOptions: FileWriteOptions): ...
     @property
@@ -985,6 +1053,10 @@ class FileObjWriteOptions:
     def WrapLongLines(self, value: bool) -> None: ...
 
 
+from ..Display import ViewCaptureSettings
+from ..DocObjects import Font
+from ..DocObjects import TextHorizontalAlignment
+from ..DocObjects import TextVerticalAlignment
 class FilePdf:
     def add_PreWrite(value: EventHandler) -> None: ...
     @overload
@@ -1017,6 +1089,7 @@ class FilePly:
     def Write(filename: str, doc: RhinoDoc, options: FilePlyWriteOptions) -> WriteFileResult: ...
 
 
+from ..Geometry import MeshingParameters
 class FilePlyWriteOptions:
     def __init__(self, writeOptions: FileWriteOptions): ...
     @property
@@ -1113,6 +1186,7 @@ class FileSlc:
     def Write(filename: str, doc: RhinoDoc, options: FileSlcWriteOptions) -> bool: ...
 
 
+from ..Geometry import Point3d
 class FileSlcWriteOptions:
     def __init__(self): ...
     @property
@@ -1165,6 +1239,7 @@ class FileType:
     def Extension(self) -> str: ...
 
 
+from ..Geometry import Transform
 class FileWriteOptions:
     def __init__(self): ...
     def Dispose(self) -> None: ...
@@ -1235,6 +1310,9 @@ class ImageFile:
     def SupportsAlphaChannel(filename: str) -> bool: ...
 
 
+from ..DocObjects import ModelComponentType
+from ..DocObjects import ModelComponent
+from ..DocObjects import Set[ModelComponent]
 class ManifestTable:
     def ActiveObjectCount(self, type: ModelComponentType) -> int: ...
     def Clear(self) -> None: ...
@@ -1275,6 +1353,7 @@ class ManifestTable:
     def GetModelComponentTypeFromGenericType() -> ModelComponentType: ...
 
 
+from ..DocObjects import ModelComponentType
 class NameHash:
     @overload
     def __init__(self, name: str): ...

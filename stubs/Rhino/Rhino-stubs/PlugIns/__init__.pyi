@@ -19,6 +19,9 @@ class DescriptionType(Enum):
     Icon = 8
 
 
+from ..Geometry import Point3d
+from ..UI import MouseButton
+from ..Geometry import Ray3d
 class DigitizerPlugIn(PlugIn):
     def SendPoint(self, point: Point3d, mousebuttons: MouseButton, shiftKey: bool, controlKey: bool) -> None: ...
     def SendRay(self, ray: Ray3d, mousebuttons: MouseButton, shiftKey: bool, controlKey: bool) -> None: ...
@@ -253,6 +256,7 @@ class LicenseType(Enum):
     CloudZoo = 4
 
 
+from ..Runtime import Mode
 class LicenseUtils:
     @overload
     def AskUserForLicense(productType: int, standAlone: bool, parentWindow: Object, textMask: str, validateProductKeyDelegate: ValidateProductKeyDelegate, onLeaseChangedDelegate: OnLeaseChangedDelegate, product_path: str, product_title: str, pluginId: Guid, licenseId: Guid, capabilities: LicenseCapabilities) -> bool: ...
@@ -457,6 +461,7 @@ class PlugInType(Enum):
     Any = 127
 
 
+from ..Render import RenderWindow
 class PreviewNotification:
     def NotifyIntermediateUpdate(self, rw: RenderWindow) -> None: ...
 
@@ -494,6 +499,7 @@ class RenderFeature(Enum):
     LightMaterials = 23
 
 
+from ..DocObjects import Material
 class RenderPlugIn(PlugIn):
     def CurrentRendererSupportsFeature(feature: RenderFeature) -> bool: ...
     def EnableAssignMaterialButton(self) -> bool: ...
@@ -511,6 +517,7 @@ class RenderPlugIn(PlugIn):
     def SunCustomSections(self, sections: List) -> None: ...
 
 
+from ..Render import RenderWindow
 class SaveFileHandler:
     def __init__(self, object: Object, method: IntPtr): ...
     def BeginInvoke(self, fileName: str, includeAlpha: bool, renderWindow: RenderWindow, callback: AsyncCallback, object: Object) -> IAsyncResult: ...

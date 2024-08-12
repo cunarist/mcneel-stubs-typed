@@ -1761,6 +1761,7 @@ class GH_String:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ..Data import GH_Path
 class GH_StructurePath:
     @overload
     def __init__(self): ...
@@ -1964,6 +1965,7 @@ class GH_Time:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from .Transforms import ITransform
 class GH_Transform:
     @overload
     def __init__(self): ...

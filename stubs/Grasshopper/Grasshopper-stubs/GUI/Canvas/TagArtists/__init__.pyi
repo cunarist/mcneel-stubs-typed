@@ -9,6 +9,7 @@ class GH_TagArtist:
     def Paint(self, canvas: GH_Canvas, channel: GH_CanvasChannel) -> None: ...
 
 
+from ....Kernel import IGH_Param
 class GH_TagArtist_WirePainter(GH_TagArtist):
     def __init__(self, source: IGH_Param, target: IGH_Param, colour: Color, width: int): ...
     @property

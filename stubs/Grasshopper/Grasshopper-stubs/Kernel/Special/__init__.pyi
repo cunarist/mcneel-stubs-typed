@@ -17,6 +17,12 @@ class GH_BarData:
     def __init__(self, min: float, max: float): ...
 
 
+from ..Data import GH_Path
+from ..Types import GH_Number
+from ..Data import IGH_Structure
+from ..Data import GH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_BarGraph:
     def __init__(self): ...
     def AppendAdditionalMenuItems(self, menu: ToolStripDropDown) -> None: ...
@@ -51,12 +57,22 @@ class GH_BarGraph:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ...GUI.Canvas import GH_Canvas
+from ...GUI import GH_CanvasMouseEvent
+from ...GUI import GH_TooltipDisplayEventArgs
+from ...GUI.Canvas import GH_CanvasChannel
 class GH_BarGraphAttributes:
     def __init__(self, owner: GH_BarGraph): ...
     @property
     def PathName(self) -> str: ...
 
 
+from ..Data import GH_Path
+from ..Types import GH_Boolean
+from ..Data import IGH_Structure
+from ..Data import GH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_BooleanSwitch_Obsolete:
     def __init__(self): ...
     def AppendAdditionalMenuItems(self, menu: ToolStripDropDown) -> None: ...
@@ -81,6 +97,10 @@ class GH_BooleanSwitch_Obsolete:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ...GUI.Canvas import GH_Canvas
+from ...GUI import GH_CanvasMouseEvent
+from ...GUI import GH_TooltipDisplayEventArgs
+from ...GUI.Canvas import GH_CanvasChannel
 class GH_BooleanSwitchAttributesObsolete:
     def __init__(self, owner: GH_BooleanSwitch_Obsolete): ...
     def ExpireLayout(self) -> None: ...
@@ -91,6 +111,12 @@ class GH_BooleanSwitchAttributesObsolete:
     def RespondToMouseDoubleClick(self, sender: GH_Canvas, e: GH_CanvasMouseEvent) -> GH_ObjectResponse: ...
 
 
+from ..Data import GH_Path
+from ..Types import GH_Boolean
+from ..Data import IGH_Structure
+from ..Data import GH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_BooleanToggle:
     def __init__(self): ...
     def AppendAdditionalMenuItems(self, menu: ToolStripDropDown) -> None: ...
@@ -116,6 +142,10 @@ class GH_BooleanToggle:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ...GUI import GH_TooltipDisplayEventArgs
+from ...GUI.Canvas import GH_Canvas
+from ...GUI import GH_CanvasMouseEvent
+from ...GUI.Canvas import GH_CanvasChannel
 class GH_BooleanToggleAttributes:
     def __init__(self, owner: GH_BooleanToggle): ...
     @property
@@ -136,6 +166,12 @@ class GH_BooleanTogglePublishProxy:
     def Render(self, G: Graphics) -> None: ...
 
 
+from ..Data import GH_Path
+from ..Types import IGH_Goo
+from ..Data import IGH_Structure
+from ..Data import GH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_ButtonObject:
     def __init__(self): ...
     def AppendAdditionalMenuItems(self, menu: ToolStripDropDown) -> None: ...
@@ -168,6 +204,10 @@ class GH_ButtonObject:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ...GUI import GH_TooltipDisplayEventArgs
+from ...GUI.Canvas import GH_Canvas
+from ...GUI import GH_CanvasMouseEvent
+from ...GUI.Canvas import GH_CanvasChannel
 class GH_ButtonObjectAttributes:
     def __init__(self, owner: GH_ButtonObject): ...
     @property
@@ -189,6 +229,8 @@ class GH_ButtonPublishProxy:
     def Render(self, G: Graphics) -> None: ...
 
 
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_Cluster(GH_Component):
     def __init__(self): ...
     def AddedToDocument(self, document: GH_Document) -> None: ...
@@ -267,6 +309,8 @@ class GH_Cluster(GH_Component):
     def WriteGhClusterFile(self, path: str) -> bool: ...
 
 
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_Cluster_OBSOLETE(GH_Component):
     def __init__(self): ...
     def AppendAdditionalMenuItems(self, menu: ToolStripDropDown) -> None: ...
@@ -319,6 +363,10 @@ class GH_Cluster_OBSOLETE(GH_Component):
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ...GUI import GH_TooltipDisplayEventArgs
+from ...GUI.Canvas import GH_Canvas
+from ...GUI import GH_CanvasMouseEvent
+from ...GUI.Canvas import GH_CanvasChannel
 from ..Attributes import GH_ComponentAttributes
 class GH_ClusterAttributes(GH_ComponentAttributes):
     def __init__(self, owner: GH_Cluster): ...
@@ -326,6 +374,10 @@ class GH_ClusterAttributes(GH_ComponentAttributes):
     def SetupTooltip(self, point: PointF, e: GH_TooltipDisplayEventArgs) -> None: ...
 
 
+from ...GUI import GH_TooltipDisplayEventArgs
+from ...GUI.Canvas import GH_Canvas
+from ...GUI import GH_CanvasMouseEvent
+from ...GUI.Canvas import GH_CanvasChannel
 from ..Attributes import GH_ComponentAttributes
 class GH_ClusterAttributes_OBSOLETE(GH_ComponentAttributes):
     def __init__(self, owner: GH_Cluster_OBSOLETE): ...
@@ -352,6 +404,12 @@ class GH_ClusterFileType(Enum):
     Unknown = 4
 
 
+from ..Data import GH_Path
+from ..Types import IGH_Goo
+from ..Data import IGH_Structure
+from ..Data import GH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_ClusterHook:
     def __init__(self, tag: IGH_InstanceDescription): ...
     def AppendMenuItems(self, menu: ToolStripDropDown) -> bool: ...
@@ -387,6 +445,12 @@ class GH_ClusterHook:
 
 
 
+from ..Data import GH_Structure
+from ..Data import GH_Path
+from ..Types import IGH_Goo
+from ..Data import IGH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_ClusterInputHook(GH_ClusterHook):
     @overload
     def __init__(self): ...
@@ -403,6 +467,10 @@ class GH_ClusterInputHook(GH_ClusterHook):
     def SetPlaceholderData(self, data: GH_Structure) -> None: ...
 
 
+from ...GUI import GH_TooltipDisplayEventArgs
+from ...GUI.Canvas import GH_Canvas
+from ...GUI import GH_CanvasMouseEvent
+from ...GUI.Canvas import GH_CanvasChannel
 class GH_ClusterInputHookAttributes:
     def __init__(self, owner: GH_ClusterInputHook): ...
     @property
@@ -414,6 +482,12 @@ class GH_ClusterInputHookAttributes:
     def SetupTooltip(self, canvasPoint: PointF, e: GH_TooltipDisplayEventArgs) -> None: ...
 
 
+from ..Data import GH_Path
+from ..Types import IGH_Goo
+from ..Data import IGH_Structure
+from ..Data import GH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_ClusterOutputHook(GH_ClusterHook):
     @overload
     def __init__(self): ...
@@ -428,6 +502,10 @@ class GH_ClusterOutputHook(GH_ClusterHook):
     def ObjID() -> Guid: ...
 
 
+from ...GUI import GH_TooltipDisplayEventArgs
+from ...GUI.Canvas import GH_Canvas
+from ...GUI import GH_CanvasMouseEvent
+from ...GUI.Canvas import GH_CanvasChannel
 class GH_ClusterOutputHookAttributes:
     def __init__(self, owner: GH_ClusterOutputHook): ...
     @property
@@ -462,6 +540,10 @@ class GH_ClusterReferenceAction(GH_ObjectUndoAction):
     def __init__(self, cluster: GH_Cluster): ...
 
 
+from ...GUI.Canvas import GH_Canvas
+from ...GUI import GH_CanvasMouseEvent
+from ...GUI import GH_TooltipDisplayEventArgs
+from ...GUI.Canvas import GH_CanvasChannel
 class GH_ColourPickerAttributes:
     def __init__(self, owner: GH_ColourPickerObject): ...
     @property
@@ -477,6 +559,12 @@ class GH_ColourPickerAttributes:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ..Data import GH_Path
+from ..Types import GH_Colour
+from ..Data import IGH_Structure
+from ..Data import GH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_ColourPickerObject:
     def __init__(self): ...
     def CreateAttributes(self) -> None: ...
@@ -492,6 +580,12 @@ class GH_ColourPickerObject:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ..Data import GH_Path
+from ..Types import GH_Colour
+from ..Data import IGH_Structure
+from ..Data import GH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_ColourSwatch:
     def __init__(self): ...
     def CreateAttributes(self) -> None: ...
@@ -516,6 +610,10 @@ class GH_ColourSwatch:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ...GUI.Canvas import GH_Canvas
+from ...GUI import GH_CanvasMouseEvent
+from ...GUI import GH_TooltipDisplayEventArgs
+from ...GUI.Canvas import GH_CanvasChannel
 class GH_ColourSwatchAttributes:
     def __init__(self, owner: GH_ColourSwatch): ...
     @property
@@ -533,6 +631,12 @@ class GH_ColourSwatchPublishProxy:
     def Render(self, G: Graphics) -> None: ...
 
 
+from ..Data import GH_Path
+from ..Types import GH_Colour
+from ..Data import IGH_Structure
+from ..Data import GH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_ColourWheel:
     def __init__(self): ...
     def AppendMenuItems(self, menu: ToolStripDropDown) -> bool: ...
@@ -551,6 +655,10 @@ class GH_ColourWheel:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ...GUI.Canvas import GH_Canvas
+from ...GUI import GH_CanvasMouseEvent
+from ...GUI import GH_TooltipDisplayEventArgs
+from ...GUI.Canvas import GH_CanvasChannel
 class GH_ColourWheelAttributes:
     def __init__(self, owner: GH_ColourWheel): ...
     @property
@@ -654,6 +762,12 @@ class GH_ColourWheelStyle(Enum):
     Tetrad = 41
 
 
+from ..Data import GH_Path
+from ..Types import IGH_Goo
+from ..Data import IGH_Structure
+from ..Data import GH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_ConstantObject:
     def __init__(self): ...
     def CreateAttributes(self) -> None: ...
@@ -665,6 +779,10 @@ class GH_ConstantObject:
     def Kind(self) -> GH_ParamKind: ...
 
 
+from ...GUI import GH_TooltipDisplayEventArgs
+from ...GUI.Canvas import GH_Canvas
+from ...GUI import GH_CanvasMouseEvent
+from ...GUI.Canvas import GH_CanvasChannel
 from ..Attributes import GH_FloatingParamAttributes
 class GH_ConstantObjectAttributes(GH_FloatingParamAttributes):
     def __init__(self, owner: GH_ConstantObject): ...
@@ -672,6 +790,12 @@ class GH_ConstantObjectAttributes(GH_FloatingParamAttributes):
     def HasOutputGrip(self) -> bool: ...
 
 
+from ..Data import GH_Path
+from ..Types import IGH_Goo
+from ..Data import IGH_Structure
+from ..Data import GH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_DataRecorder:
     def __init__(self): ...
     def AppendAdditionalMenuItems(self, menu: ToolStripDropDown) -> None: ...
@@ -703,6 +827,10 @@ class GH_DataRecorder:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ...GUI import GH_TooltipDisplayEventArgs
+from ...GUI.Canvas import GH_Canvas
+from ...GUI import GH_CanvasMouseEvent
+from ...GUI.Canvas import GH_CanvasChannel
 class GH_DataRecorderAttributes:
     def __init__(self, owner: GH_DataRecorder): ...
     def RespondToMouseDown(self, sender: GH_Canvas, e: GH_CanvasMouseEvent) -> GH_ObjectResponse: ...
@@ -710,6 +838,12 @@ class GH_DataRecorderAttributes:
     def SetupTooltip(self, canvasPoint: PointF, e: GH_TooltipDisplayEventArgs) -> None: ...
 
 
+from ..Data import GH_Path
+from ..Types import GH_Number
+from ..Data import IGH_Structure
+from ..Data import GH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_DialKnob:
     def __init__(self): ...
     def Angle(self) -> float: ...
@@ -755,6 +889,10 @@ class GH_DialKnob:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ...GUI.Canvas import GH_Canvas
+from ...GUI import GH_CanvasMouseEvent
+from ...GUI import GH_TooltipDisplayEventArgs
+from ...GUI.Canvas import GH_CanvasChannel
 class GH_DialKnobAttributes:
     def __init__(self, owner: GH_DialKnob): ...
     @property
@@ -774,6 +912,12 @@ class GH_DialKnobAttributes:
     def SetupTooltip(self, point: PointF, e: GH_TooltipDisplayEventArgs) -> None: ...
 
 
+from ..Data import GH_Path
+from ..Types import GH_Number
+from ..Data import IGH_Structure
+from ..Data import GH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_DigitScroller:
     def __init__(self): ...
     def AppendAdditionalMenuItems(self, menu: ToolStripDropDown) -> None: ...
@@ -803,6 +947,10 @@ class GH_DigitScroller:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ...GUI.Canvas import GH_Canvas
+from ...GUI import GH_CanvasMouseEvent
+from ...GUI import GH_TooltipDisplayEventArgs
+from ...GUI.Canvas import GH_CanvasChannel
 class GH_DigitScrollerAttributes:
     def __init__(self, nOwner: GH_DigitScroller): ...
     def ExpireLayout(self) -> None: ...
@@ -818,6 +966,12 @@ class GH_DigitScrollerAttributes:
     def RespondToMouseUp(self, sender: GH_Canvas, e: GH_CanvasMouseEvent) -> GH_ObjectResponse: ...
 
 
+from ..Data import GH_Path
+from ..Types import IGH_GeometricGoo
+from ..Data import IGH_Structure
+from ..Data import GH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_GeometryCache:
     def __init__(self): ...
     def AppendMenuItems(self, menu: ToolStripDropDown) -> bool: ...
@@ -847,6 +1001,10 @@ class GH_GeometryCache:
     def WriteGeometryCache(self) -> None: ...
 
 
+from ...GUI.Canvas import GH_Canvas
+from ...GUI import GH_CanvasMouseEvent
+from ...GUI import GH_TooltipDisplayEventArgs
+from ...GUI.Canvas import GH_CanvasChannel
 class GH_GeometryCacheAttributes:
     def __init__(self, owner: GH_GeometryCache): ...
     def ExpireLayout(self) -> None: ...
@@ -855,6 +1013,12 @@ class GH_GeometryCacheAttributes:
     def SetupTooltip(self, canvasPoint: PointF, e: GH_TooltipDisplayEventArgs) -> None: ...
 
 
+from ..Data import GH_Path
+from ..Types import IGH_GeometricGoo
+from ..Data import IGH_Structure
+from ..Data import GH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_GeometryPipeline:
     def __init__(self): ...
     def AddedToDocument(self, document: GH_Document) -> None: ...
@@ -917,6 +1081,10 @@ class GH_GeometryPipeline:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ...GUI import GH_TooltipDisplayEventArgs
+from ...GUI.Canvas import GH_Canvas
+from ...GUI import GH_CanvasMouseEvent
+from ...GUI.Canvas import GH_CanvasChannel
 class GH_GeometryPipelineAttributes:
     def __init__(self, owner: GH_GeometryPipeline): ...
     def ExpireLayout(self) -> None: ...
@@ -926,6 +1094,9 @@ class GH_GeometryPipelineAttributes:
     def SetupTooltip(self, point: PointF, e: GH_TooltipDisplayEventArgs) -> None: ...
 
 
+from ...GUI.Gradient import GH_Gradient
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_GradientControl(GH_Component):
     def __init__(self): ...
     def AppendMenuItems(self, menu: ToolStripDropDown) -> bool: ...
@@ -952,6 +1123,10 @@ class GH_GradientControl(GH_Component):
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ...GUI.Canvas import GH_Canvas
+from ...GUI import GH_CanvasMouseEvent
+from ...GUI import GH_TooltipDisplayEventArgs
+from ...GUI.Canvas import GH_CanvasChannel
 class GH_GradientControlAttributes:
     def __init__(self, gradient: GH_GradientControl): ...
     def AppendToAttributeTree(self, attributes: List) -> None: ...
@@ -964,6 +1139,13 @@ class GH_GradientControlAttributes:
     def RespondToMouseUp(self, sender: GH_Canvas, e: GH_CanvasMouseEvent) -> GH_ObjectResponse: ...
 
 
+from ..Graphs import GH_GraphContainer
+from ..Data import GH_Path
+from ..Types import IGH_Goo
+from ..Data import IGH_Structure
+from ..Data import GH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_GraphMapper:
     def __init__(self): ...
     def AppendAdditionalMenuItems(self, menu: ToolStripDropDown) -> None: ...
@@ -994,6 +1176,10 @@ class GH_GraphMapper:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ...GUI.Canvas import GH_Canvas
+from ...GUI import GH_CanvasMouseEvent
+from ...GUI import GH_TooltipDisplayEventArgs
+from ...GUI.Canvas import GH_CanvasChannel
 class GH_GraphMapperAttributes:
     def __init__(self, owner: GH_GraphMapper): ...
     @property
@@ -1008,6 +1194,8 @@ class GH_GraphMapperAttributes:
     def DrawDomainTags(self, Value: bool) -> None: ...
 
 
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_Group(GH_DocumentObject):
     def __init__(self): ...
     def AddObject(self, id: Guid) -> None: ...
@@ -1043,6 +1231,10 @@ class GH_Group(GH_DocumentObject):
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ...GUI import GH_TooltipDisplayEventArgs
+from ...GUI.Canvas import GH_Canvas
+from ...GUI.Canvas import GH_CanvasChannel
+from ...GUI import GH_CanvasMouseEvent
 class GH_GroupAttributes:
     def __init__(self, owner: GH_Group): ...
     def AppendToAttributeTree(self, attributes: List) -> None: ...
@@ -1116,6 +1308,13 @@ class GH_GroupBorder(Enum):
     Rectangles = 3
 
 
+from ..Types import UVInterval
+from ..Data import GH_Path
+from ..Types import IGH_Goo
+from ..Data import IGH_Structure
+from ..Data import GH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_ImageSampler:
     @overload
     def __init__(self): ...
@@ -1176,6 +1375,10 @@ class GH_ImageSampler:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ...GUI.Canvas import GH_Canvas
+from ...GUI import GH_CanvasMouseEvent
+from ...GUI import GH_TooltipDisplayEventArgs
+from ...GUI.Canvas import GH_CanvasChannel
 class GH_ImageSamplerAttributes:
     def __init__(self, owner: GH_ImageSampler): ...
     @property
@@ -1183,6 +1386,12 @@ class GH_ImageSamplerAttributes:
     def RespondToMouseDoubleClick(self, sender: GH_Canvas, e: GH_CanvasMouseEvent) -> GH_ObjectResponse: ...
 
 
+from ..Data import GH_Path
+from ..Types import IGH_Goo
+from ..Data import IGH_Structure
+from ..Data import GH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_ItemPicker:
     def __init__(self): ...
     @overload
@@ -1222,6 +1431,10 @@ class GH_ItemPicker:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ...GUI.Canvas import GH_Canvas
+from ...GUI import GH_CanvasMouseEvent
+from ...GUI import GH_TooltipDisplayEventArgs
+from ...GUI.Canvas import GH_CanvasChannel
 class GH_ItemPickerAttributes:
     def __init__(self, owner: GH_ItemPicker): ...
     def RespondToMouseDown(self, sender: GH_Canvas, e: GH_CanvasMouseEvent) -> GH_ObjectResponse: ...
@@ -1230,6 +1443,8 @@ class GH_ItemPickerAttributes:
     def SetupTooltip(self, point: PointF, e: GH_TooltipDisplayEventArgs) -> None: ...
 
 
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_JumpObject(GH_DocumentObject):
     def __init__(self): ...
     def AppendMenuItems(self, menu: ToolStripDropDown) -> bool: ...
@@ -1248,6 +1463,10 @@ class GH_JumpObject(GH_DocumentObject):
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ...GUI import GH_TooltipDisplayEventArgs
+from ...GUI.Canvas import GH_Canvas
+from ...GUI import GH_CanvasMouseEvent
+from ...GUI.Canvas import GH_CanvasChannel
 class GH_JumpObjectAttributes:
     def __init__(self, owner: GH_JumpObject): ...
     @property
@@ -1263,6 +1482,8 @@ class GH_JumpObjectAttributes:
     def SetupTooltip(self, point: PointF, e: GH_TooltipDisplayEventArgs) -> None: ...
 
 
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_Legend(GH_Component):
     def __init__(self): ...
     def CreateAttributes(self) -> None: ...
@@ -1283,6 +1504,10 @@ class GH_Legend(GH_Component):
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ...GUI.Canvas import GH_Canvas
+from ...GUI import GH_CanvasMouseEvent
+from ...GUI import GH_TooltipDisplayEventArgs
+from ...GUI.Canvas import GH_CanvasChannel
 class GH_LegendAttributes:
     def __init__(self, component: GH_Legend): ...
     def AppendToAttributeTree(self, atts: List) -> None: ...
@@ -1323,6 +1548,8 @@ class GH_LegendType(Enum):
     SmoothHorizontal = 102
 
 
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_Markup(GH_DocumentObject):
     def __init__(self): ...
     def AppendMenuItems(self, menu: ToolStripDropDown) -> bool: ...
@@ -1339,6 +1566,10 @@ class GH_Markup(GH_DocumentObject):
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ...GUI.Canvas import GH_Canvas
+from ...GUI import GH_CanvasMouseEvent
+from ...GUI import GH_TooltipDisplayEventArgs
+from ...GUI.Canvas import GH_CanvasChannel
 class GH_MarkupAttributes:
     def __init__(self, owner: GH_Markup): ...
     @overload
@@ -1424,6 +1655,12 @@ class GH_MDSliderMode(Enum):
     _3d = 1
 
 
+from ..Data import GH_Path
+from ..Types import GH_Point
+from ..Data import IGH_Structure
+from ..Data import GH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_MultiDimensionalSlider:
     def __init__(self): ...
     def CreateAttributes(self) -> None: ...
@@ -1466,6 +1703,10 @@ class GH_MultiDimensionalSlider:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ...GUI.Canvas import GH_Canvas
+from ...GUI import GH_CanvasMouseEvent
+from ...GUI import GH_TooltipDisplayEventArgs
+from ...GUI.Canvas import GH_CanvasChannel
 class GH_MultiDimensionalSliderAttributes:
     def __init__(self, owner: GH_MultiDimensionalSlider): ...
     def ExpireLayout(self) -> None: ...
@@ -1479,6 +1720,13 @@ class GH_MultiDimensionalSliderAttributes:
     def RespondToMouseUp(self, sender: GH_Canvas, e: GH_CanvasMouseEvent) -> GH_ObjectResponse: ...
 
 
+from ...GUI.Base import GH_SliderAccuracy
+from ..Data import GH_Path
+from ..Types import GH_Number
+from ..Data import IGH_Structure
+from ..Data import GH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_NumberSlider:
     def __init__(self): ...
     def AppendAdditionalMenuItems(self, menu: ToolStripDropDown) -> None: ...
@@ -1533,6 +1781,10 @@ class GH_NumberSlider:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ...GUI.Canvas import GH_Canvas
+from ...GUI import GH_CanvasMouseEvent
+from ...GUI import GH_TooltipDisplayEventArgs
+from ...GUI.Canvas import GH_CanvasChannel
 class GH_NumberSliderAttributes:
     def __init__(self, nOwner: GH_NumberSlider): ...
     @property
@@ -1555,6 +1807,12 @@ class GH_NumberSliderPublishProxy:
     def Render(self, G: Graphics) -> None: ...
 
 
+from ..Data import GH_Path
+from ..Types import GH_String
+from ..Data import IGH_Structure
+from ..Data import GH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_Panel:
     def __init__(self): ...
     def AddedToDocument(self, document: GH_Document) -> None: ...
@@ -1593,6 +1851,10 @@ class GH_Panel:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ...GUI.Canvas import GH_Canvas
+from ...GUI import GH_CanvasMouseEvent
+from ...GUI import GH_TooltipDisplayEventArgs
+from ...GUI.Canvas import GH_CanvasChannel
 class GH_PanelAttributes:
     def __init__(self, owner: GH_Panel): ...
     def ExpireLayout(self) -> None: ...
@@ -1709,6 +1971,12 @@ class GH_PanelPublishProxy:
     def Render(self, G: Graphics) -> None: ...
 
 
+from ..Data import GH_Path
+from ..Types import GH_StructurePath
+from ..Data import IGH_Structure
+from ..Data import GH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_ParamViewer:
     def __init__(self): ...
     @overload
@@ -1742,6 +2010,10 @@ class GH_ParamViewer:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ...GUI.Canvas import GH_Canvas
+from ...GUI import GH_CanvasMouseEvent
+from ...GUI import GH_TooltipDisplayEventArgs
+from ...GUI.Canvas import GH_CanvasChannel
 class GH_ParamViewerAttributes:
     def __init__(self, owner: GH_ParamViewer): ...
     def AdjustLayout(self) -> None: ...
@@ -1760,6 +2032,12 @@ class GH_ParamViewerAttributes:
     def RespondToMouseUp(self, sender: GH_Canvas, e: GH_CanvasMouseEvent) -> GH_ObjectResponse: ...
 
 
+from ..Data import GH_Path
+from ..Types import IGH_Goo
+from ..Data import IGH_Structure
+from ..Data import GH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_PathMapper:
     def __init__(self): ...
     def AppendMenuItems(self, menu: ToolStripDropDown) -> bool: ...
@@ -1785,12 +2063,22 @@ class GH_PathMapper:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ...GUI.Canvas import GH_Canvas
+from ...GUI import GH_CanvasMouseEvent
+from ...GUI import GH_TooltipDisplayEventArgs
+from ...GUI.Canvas import GH_CanvasChannel
 class GH_PathMapperAttributes:
     def __init__(self, owner: GH_PathMapper): ...
     def ExpireLayout(self) -> None: ...
     def RespondToMouseDoubleClick(self, sender: GH_Canvas, e: GH_CanvasMouseEvent) -> GH_ObjectResponse: ...
 
 
+from ..Data import GH_Path
+from ..Types import GH_String
+from ..Data import IGH_Structure
+from ..Data import GH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_PieChart:
     def __init__(self): ...
     def CreateAttributes(self) -> None: ...
@@ -1804,6 +2092,10 @@ class GH_PieChart:
     def Kind(self) -> GH_ParamKind: ...
 
 
+from ...GUI.Canvas import GH_Canvas
+from ...GUI import GH_CanvasMouseEvent
+from ...GUI import GH_TooltipDisplayEventArgs
+from ...GUI.Canvas import GH_CanvasChannel
 class GH_PieChartAttributes:
     def __init__(self, owner: GH_PieChart): ...
     def ExpireLayout(self) -> None: ...
@@ -1847,6 +2139,12 @@ class GH_PolylineReductionSetManager:
     def ReductionExists(self, index: int) -> bool: ...
 
 
+from ..Data import GH_Path
+from ..Types import GH_Number
+from ..Data import IGH_Structure
+from ..Data import GH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_QuickGraph:
     def __init__(self): ...
     def AppendAdditionalMenuItems(self, menu: ToolStripDropDown) -> None: ...
@@ -1873,6 +2171,10 @@ class GH_QuickGraph:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ...GUI.Canvas import GH_Canvas
+from ...GUI import GH_CanvasMouseEvent
+from ...GUI import GH_TooltipDisplayEventArgs
+from ...GUI.Canvas import GH_CanvasChannel
 class GH_QuickGraphAttributes:
     def __init__(self, owner: GH_QuickGraph): ...
     @property
@@ -1928,6 +2230,12 @@ class GH_QuickGraphTrack:
     def RenderTags(self, graphics: Graphics, frame: GH_QuickGraphFrame) -> None: ...
 
 
+from ..Data import GH_Path
+from ..Types import IGH_Goo
+from ..Data import IGH_Structure
+from ..Data import GH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_Relay:
     def __init__(self): ...
     def AppendMenuItems(self, menu: ToolStripDropDown) -> bool: ...
@@ -1947,6 +2255,10 @@ class GH_Relay:
     def DisplayName(self, AutoPropertyValue: str) -> None: ...
 
 
+from ...GUI.Canvas import GH_Canvas
+from ...GUI import GH_CanvasMouseEvent
+from ...GUI import GH_TooltipDisplayEventArgs
+from ...GUI.Canvas import GH_CanvasChannel
 class GH_RelayAttributes:
     def __init__(self, owner: GH_Relay): ...
     @property
@@ -1973,6 +2285,8 @@ class GH_SamplingFilter(Enum):
     val = 22
 
 
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_Scribble(GH_DocumentObject):
     def __init__(self): ...
     def CreateAttributes(self) -> None: ...
@@ -2006,6 +2320,10 @@ class GH_Scribble(GH_DocumentObject):
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ...GUI.Canvas import GH_Canvas
+from ...GUI import GH_CanvasMouseEvent
+from ...GUI import GH_TooltipDisplayEventArgs
+from ...GUI.Canvas import GH_CanvasChannel
 class GH_ScribbleAttributes:
     def __init__(self, owner: GH_Scribble): ...
     def ExpireLayout(self) -> None: ...
@@ -2073,6 +2391,12 @@ class GH_SliderAnimator:
     def StoreSettingsAsDefault(self) -> None: ...
 
 
+from ..Data import GH_Path
+from ..Types import IGH_Goo
+from ..Data import IGH_Structure
+from ..Data import GH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_SuireSimplifyNode:
     def __init__(self): ...
     def AppendMenuItems(self, menu: ToolStripDropDown) -> bool: ...
@@ -2083,6 +2407,10 @@ class GH_SuireSimplifyNode:
     def Exposure(self) -> GH_Exposure: ...
 
 
+from ...GUI import GH_TooltipDisplayEventArgs
+from ...GUI.Canvas import GH_Canvas
+from ...GUI.Canvas import GH_CanvasChannel
+from ...GUI import GH_CanvasMouseEvent
 class GH_SuireStyleNodeAttributes:
     def __init__(self, owner: GH_SuireSimplifyNode): ...
     @property
@@ -2101,6 +2429,8 @@ class GH_Synchronisation(Enum):
     OutOfDate = 4
 
 
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_TextBalloon(GH_DocumentObject):
     def __init__(self): ...
     def CreateAttributes(self) -> None: ...
@@ -2124,6 +2454,10 @@ class GH_TextBalloon(GH_DocumentObject):
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ...GUI.Canvas import GH_Canvas
+from ...GUI import GH_CanvasMouseEvent
+from ...GUI import GH_TooltipDisplayEventArgs
+from ...GUI.Canvas import GH_CanvasChannel
 class GH_TextBalloonAttributes:
     def __init__(self, owner: GH_TextBalloon): ...
     def ExpireLayout(self) -> None: ...
@@ -2144,6 +2478,8 @@ class GH_TextBalloonAttributes:
     def Pivot(self, Value: PointF) -> None: ...
 
 
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_Timer(GH_ActiveObject):
     def __init__(self): ...
     def AddTarget(self, target_object_id: Guid) -> None: ...
@@ -2207,6 +2543,10 @@ class GH_Timer(GH_ActiveObject):
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ...GUI import GH_TooltipDisplayEventArgs
+from ...GUI.Canvas import GH_Canvas
+from ...GUI import GH_CanvasMouseEvent
+from ...GUI.Canvas import GH_CanvasChannel
 class GH_TimerAttributes:
     def __init__(self, owner: GH_Timer): ...
     @property
@@ -2222,6 +2562,9 @@ class GH_TimerAttributes:
     def TimerWire(anchor: PointF, box: RectangleF) -> GraphicsPath: ...
 
 
+from ...GUI.Canvas import GH_Canvas
+from ...GUI import GH_CanvasMouseEvent
+from ...GUI import GH_TooltipDisplayEventArgs
 from ...GUI.Canvas.Interaction import GH_AbstractInteraction
 class GH_TimerTargetInteraction(GH_AbstractInteraction):
     def __init__(self, timer: GH_Timer, canvas: GH_Canvas, e: GH_CanvasMouseEvent): ...
@@ -2231,6 +2574,12 @@ class GH_TimerTargetInteraction(GH_AbstractInteraction):
     def RespondToMouseUp(self, sender: GH_Canvas, e: GH_CanvasMouseEvent) -> GH_ObjectResponse: ...
 
 
+from ..Data import GH_Path
+from ..Types import IGH_Goo
+from ..Data import IGH_Structure
+from ..Data import GH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_ValueList:
     def __init__(self): ...
     def AppendAdditionalMenuItems(self, menu: ToolStripDropDown) -> None: ...
@@ -2280,6 +2629,10 @@ class GH_ValueList:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ...GUI.Canvas import GH_Canvas
+from ...GUI import GH_CanvasMouseEvent
+from ...GUI import GH_TooltipDisplayEventArgs
+from ...GUI.Canvas import GH_CanvasChannel
 class GH_ValueListAttributes:
     def __init__(self, owner: GH_ValueList): ...
     @property
@@ -2335,6 +2688,8 @@ class GH_ValueListMode(Enum):
     Cycle = 3
 
 
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_ValueTimeline(GH_Component):
     def __init__(self): ...
     def CanInsertParameter(self, side: GH_ParameterSide, index: int) -> bool: ...
@@ -2348,6 +2703,12 @@ class GH_ValueTimeline(GH_Component):
     def VariableParameterMaintenance(self) -> None: ...
 
 
+from ..Data import GH_Path
+from ..Types import GH_Number
+from ..Data import IGH_Structure
+from ..Data import GH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_ValueTracker:
     def __init__(self): ...
     def AppendAdditionalMenuItems(self, menu: ToolStripDropDown) -> None: ...
@@ -2387,6 +2748,10 @@ class GH_ValueTracker:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ...GUI.Canvas import GH_Canvas
+from ...GUI import GH_CanvasMouseEvent
+from ...GUI import GH_TooltipDisplayEventArgs
+from ...GUI.Canvas import GH_CanvasChannel
 class GH_ValueTrackerAttributes:
     def __init__(self, owner: GH_ValueTracker): ...
     def ExpireLayout(self) -> None: ...

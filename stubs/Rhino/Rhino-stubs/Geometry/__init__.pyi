@@ -9,6 +9,24 @@ from .Morphs import *
 __all__ = ['Collections', 'Intersect', 'MeshRefinements', 'Morphs']
 
 
+from ..DocObjects import DimensionStyle
+from ..DocObjects import AngleDisplayFormat
+from ..DocObjects import ZeroSuppression
+from ..DocObjects import ViewportInfo
+from ..DocObjects import ArrowFit
+from ..DocObjects import TextFit
+from ..DocObjects import TextOrientation
+from ..DocObjects import TextLocation
+from ..DocObjects import LeaderContentAngleStyle
+from ..DocObjects import CenterMarkStyle
+from ..DocObjects import ArrowType
+from ..DocObjects import ToleranceDisplayFormat
+from ..DocObjects import LengthDisplay
+from ..DocObjects import Field
+from ..DocObjects import MaskType
+from ..DocObjects import MaskFrame
+from ..DocObjects import Font
+from ..FileIO import SerializationOptions
 class AngularDimension(Dimension):
     @overload
     def __init__(self): ...
@@ -64,6 +82,14 @@ class AngularDimension(Dimension):
     def DimlinePoint(self, value: Point2d) -> None: ...
 
 
+from ..DocObjects import Field
+from ..DocObjects import DimensionStyle
+from ..DocObjects import MaskType
+from ..DocObjects import MaskFrame
+from ..Display import RhinoViewport
+from ..DocObjects import Font
+from ..DocObjects import LengthDisplay
+from ..FileIO import SerializationOptions
 class AnnotationBase(GeometryBase):
     def ClearPropertyOverrides(self) -> bool: ...
     def FirstCharProperties(rtf_str: str, bold: bool, italic: bool, underline: bool, facename: str) -> Tuple[bool, bool, bool, bool, str]: ...
@@ -318,6 +344,7 @@ class Arc:
     def Trim(self, domain: Interval) -> bool: ...
 
 
+from ..FileIO import SerializationOptions
 class ArcCurve(Curve):
     @overload
     def __init__(self): ...
@@ -415,6 +442,7 @@ class AreaMassProperties:
     def WorldCoordinatesPrincipalMomentsOfInertia(self) -> Tuple[bool, float, Vector3d, float, Vector3d, float, Vector3d]: ...
 
 
+from ..DocObjects import ArrowType
 class Arrowhead:
     @overload
     def __init__(self): ...
@@ -647,6 +675,9 @@ class Box:
     def Union(self, point: Point3d) -> None: ...
 
 
+from ..Collections import CurveList
+from ..ApplicationSettings import CurvatureAnalysisSettingsState
+from ..FileIO import SerializationOptions
 class Brep(GeometryBase):
     def __init__(self): ...
     def AddEdgeCurve(self, curve: Curve) -> int: ...
@@ -912,6 +943,7 @@ class Brep(GeometryBase):
     def UnjoinEdges(self, edgesToUnjoin: Iterable[int]) -> Set[Brep]: ...
 
 
+from ..FileIO import SerializationOptions
 class BrepEdge(CurveProxy):
     def AdjacentFaces(self) -> Set[int]: ...
     def ConcavityAt(self, t: float, tolerance: float) -> Concavity: ...
@@ -946,6 +978,7 @@ class BrepEdge(CurveProxy):
     def TrimIndices(self) -> Set[int]: ...
 
 
+from ..FileIO import SerializationOptions
 class BrepFace(SurfaceProxy):
     def AdjacentEdges(self) -> Set[int]: ...
     def AdjacentFaces(self) -> Set[int]: ...
@@ -1009,6 +1042,7 @@ class BrepFace(SurfaceProxy):
     def UnderlyingSurface(self) -> Surface: ...
 
 
+from ..FileIO import SerializationOptions
 class BrepLoop(GeometryBase):
     @property
     def Brep(self) -> Brep: ...
@@ -1033,6 +1067,7 @@ class BrepLoopType(Enum):
     PointOnSurface = 5
 
 
+from ..FileIO import SerializationOptions
 from ..Runtime import CommonObject
 class BrepRegion(CommonObject):
     def BoundaryBrep(self) -> Brep: ...
@@ -1047,6 +1082,7 @@ class BrepRegion(CommonObject):
     def GetFaceSides(self) -> Set[BrepRegionFaceSide]: ...
 
 
+from ..FileIO import SerializationOptions
 from ..Runtime import CommonObject
 class BrepRegionFaceSide(CommonObject):
     @property
@@ -1066,6 +1102,7 @@ class BrepSolidOrientation(Enum):
     Inward = -1
 
 
+from ..FileIO import SerializationOptions
 class BrepTrim(CurveProxy):
     @property
     def Brep(self) -> Brep: ...
@@ -1114,6 +1151,7 @@ class BrepTrimType(Enum):
     Slit = 7
 
 
+from ..FileIO import SerializationOptions
 class BrepVertex(Point):
     def EdgeIndices(self) -> Set[int]: ...
     @property
@@ -1126,6 +1164,23 @@ class BrepVertex(Point):
     def VertexIndex(self) -> int: ...
 
 
+from ..DocObjects import DimensionStyle
+from ..DocObjects import ViewportInfo
+from ..DocObjects import ArrowFit
+from ..DocObjects import TextFit
+from ..DocObjects import TextOrientation
+from ..DocObjects import TextLocation
+from ..DocObjects import LeaderContentAngleStyle
+from ..DocObjects import CenterMarkStyle
+from ..DocObjects import ArrowType
+from ..DocObjects import ZeroSuppression
+from ..DocObjects import ToleranceDisplayFormat
+from ..DocObjects import LengthDisplay
+from ..DocObjects import Field
+from ..DocObjects import MaskType
+from ..DocObjects import MaskFrame
+from ..DocObjects import Font
+from ..FileIO import SerializationOptions
 class Centermark(Dimension):
     def __init__(self): ...
     def Create(dimStyle: DimensionStyle, plane: Plane, centerpoint: Point3d, radius: float) -> Centermark: ...
@@ -1201,6 +1256,7 @@ class Circle:
     def TryFitCircleTTT(c1: Curve, c2: Curve, c3: Curve, t1: float, t2: float, t3: float) -> Circle: ...
 
 
+from ..FileIO import SerializationOptions
 class ClippingPlaneSurface(PlaneSurface):
     def AddClipViewportId(self, viewportId: Guid) -> bool: ...
     @property
@@ -1414,6 +1470,7 @@ class ConvexCornerOption(Enum):
     AtMeshCorner = 2
 
 
+from ..FileIO import SerializationOptions
 class Curve(GeometryBase):
     def ChangeClosedCurveSeam(self, t: float) -> bool: ...
     def ChangeDimension(self, desiredDimension: int) -> bool: ...
@@ -1835,6 +1892,7 @@ class CurveOrientation(Enum):
     Clockwise = -1
 
 
+from ..FileIO import SerializationOptions
 class CurveProxy(Curve):
     @property
     def ProxyCurveIsReversed(self) -> bool: ...
@@ -1907,6 +1965,7 @@ class Density(Enum):
     MaximumDensity = 6
 
 
+from ..FileIO import SerializationOptions
 class DetailView(GeometryBase):
     @property
     def IsParallelProjection(self) -> bool: ...
@@ -1935,6 +1994,23 @@ class DevelopableSrf:
     def UntwistRulings(rail0: NurbsCurve, rail1: NurbsCurve, rulings: Iterable[Point2d]) -> Tuple[bool, Iterable[Point2d]]: ...
 
 
+from ..DocObjects import ViewportInfo
+from ..DocObjects import DimensionStyle
+from ..DocObjects import ArrowFit
+from ..DocObjects import TextFit
+from ..DocObjects import TextOrientation
+from ..DocObjects import TextLocation
+from ..DocObjects import LeaderContentAngleStyle
+from ..DocObjects import CenterMarkStyle
+from ..DocObjects import ArrowType
+from ..DocObjects import ZeroSuppression
+from ..DocObjects import ToleranceDisplayFormat
+from ..DocObjects import LengthDisplay
+from ..DocObjects import Field
+from ..DocObjects import MaskType
+from ..DocObjects import MaskFrame
+from ..DocObjects import Font
+from ..FileIO import SerializationOptions
 class Dimension(AnnotationBase):
     @property
     def AlternateBelowLine(self) -> bool: ...
@@ -2206,6 +2282,7 @@ class ExtrudeCornerType(Enum):
     Chamfer = 4
 
 
+from ..FileIO import SerializationOptions
 class Extrusion(Surface):
     def __init__(self): ...
     def AddInnerProfile(self, innerProfile: Curve) -> bool: ...
@@ -2276,6 +2353,7 @@ class ForceText(Enum):
     HintLeft = 5
 
 
+from ..FileIO import SerializationOptions
 from ..Runtime import CommonObject
 class GeometryBase(CommonObject):
     def ComponentIndex(self) -> ComponentIndex: ...
@@ -2316,6 +2394,9 @@ class GeometryBase(CommonObject):
     def Translate(self, x: float, y: float, z: float) -> bool: ...
 
 
+from ..DocObjects import HatchPattern
+from ..Display import ColorGradient
+from ..FileIO import SerializationOptions
 class Hatch(GeometryBase):
     @overload
     def Create(curves: Iterable[Curve], hatchPatternIndex: int, rotationRadians: float, scale: float, tolerance: float) -> Set[Hatch]: ...
@@ -2432,6 +2513,8 @@ class HiddenLineDrawingObjectCurve:
     def SourceObjectComponentIndex(self) -> ComponentIndex: ...
 
 
+from ..DocObjects import ViewportInfo
+from ..Display import RhinoViewport
 class HiddenLineDrawingParameters:
     def __init__(self): ...
     def AddClippingPlane(self, plane: Plane) -> None: ...
@@ -2495,6 +2578,7 @@ class HiddenLineDrawingSegment:
     def SegmentVisibility(self) -> Visibility: ...
 
 
+from ..FileIO import SerializationOptions
 from ..DocObjects import ModelComponent
 class InstanceDefinitionGeometry(ModelComponent):
     def __init__(self): ...
@@ -2515,6 +2599,7 @@ class InstanceDefinitionGeometry(ModelComponent):
     def UrlDescription(self, value: str) -> None: ...
 
 
+from ..FileIO import SerializationOptions
 class InstanceReferenceGeometry(GeometryBase):
     def __init__(self, instanceDefinitionId: Guid, transform: Transform): ...
     @property
@@ -2529,6 +2614,7 @@ class InteriorCreaseOption(Enum):
     AtMeshDoubleEdge = 2
 
 
+from ..Collections import RhinoList`1
 class Interpolator:
     @overload
     def __init__(self): ...
@@ -2651,6 +2737,18 @@ class KnotStyle(Enum):
     NonUniform = 5
 
 
+from ..DocObjects import DimensionStyle
+from ..DocObjects import TextHorizontalAlignment
+from ..DocObjects import TextVerticalAlignment
+from ..DocObjects import ArrowType
+from ..DocObjects import LeaderCurveStyle
+from ..DocObjects import LeaderContentAngleStyle
+from ..DocObjects import Field
+from ..DocObjects import MaskType
+from ..DocObjects import MaskFrame
+from ..DocObjects import Font
+from ..DocObjects import LengthDisplay
+from ..FileIO import SerializationOptions
 class Leader(AnnotationBase):
     def __init__(self): ...
     def Create(text: str, plane: Plane, dimstyle: DimensionStyle, points: Set[Point3d]) -> Leader: ...
@@ -2759,6 +2857,8 @@ class LengthMassProperties:
     def WorldCoordinatesPrincipalMomentsOfInertia(self) -> Tuple[bool, float, Vector3d, float, Vector3d, float, Vector3d]: ...
 
 
+from ..Render import Sun
+from ..FileIO import SerializationOptions
 class Light(GeometryBase):
     def __init__(self): ...
     @overload
@@ -2986,6 +3086,23 @@ class Line:
     def TryGetPlane(self) -> Tuple[bool, Plane]: ...
 
 
+from ..DocObjects import DimensionStyle
+from ..DocObjects import ViewportInfo
+from ..DocObjects import ArrowFit
+from ..DocObjects import TextFit
+from ..DocObjects import TextOrientation
+from ..DocObjects import TextLocation
+from ..DocObjects import LeaderContentAngleStyle
+from ..DocObjects import CenterMarkStyle
+from ..DocObjects import ArrowType
+from ..DocObjects import ZeroSuppression
+from ..DocObjects import ToleranceDisplayFormat
+from ..DocObjects import LengthDisplay
+from ..DocObjects import Field
+from ..DocObjects import MaskType
+from ..DocObjects import MaskFrame
+from ..DocObjects import Font
+from ..FileIO import SerializationOptions
 class LinearDimension(Dimension):
     @overload
     def __init__(self): ...
@@ -3026,6 +3143,7 @@ class LinearDimension(Dimension):
     def SetLocations(self, extensionLine1End: Point2d, extensionLine2End: Point2d, pointOnDimensionLine: Point2d) -> None: ...
 
 
+from ..FileIO import SerializationOptions
 class LineCurve(Curve):
     @overload
     def __init__(self): ...
@@ -3107,6 +3225,13 @@ class MeasuredDirection(Enum):
     Yaxis = 2
 
 
+from ..Render import TextureMapping
+from ..FileIO import TextLog
+from .MeshRefinements import LoopFormula
+from .MeshRefinements import RefinementSettings
+from ..Display import RhinoViewport
+from ..DocObjects import ViewportInfo
+from ..FileIO import SerializationOptions
 class Mesh(GeometryBase):
     def __init__(self): ...
     @overload
@@ -3434,6 +3559,8 @@ class MeshCheckParameters:
     def CheckForUnusedVertices(self, value: bool) -> None: ...
 
 
+from ..Render import RenderTexture
+from ..Render import TextureMapping
 class MeshDisplacementInfo:
     def __init__(self, texture: RenderTexture, mapping: TextureMapping): ...
     @property
@@ -3824,6 +3951,7 @@ class MeshUnwrapper:
     def Unwrap(self, method: MeshUnwrapMethod) -> bool: ...
 
 
+from ..FileIO import SerializationOptions
 class MorphControl(GeometryBase):
     def __init__(self, originCurve: NurbsCurve, targetCurve: NurbsCurve): ...
     @property
@@ -3845,6 +3973,7 @@ class MorphControl(GeometryBase):
     def SpaceMorphTolerance(self, value: float) -> None: ...
 
 
+from ..FileIO import SerializationOptions
 class NurbsCurve(Curve):
     @overload
     def __init__(self, other: NurbsCurve): ...
@@ -3921,6 +4050,7 @@ class NurbsCurveEndConditionType(Enum):
     Curvature = 3
 
 
+from ..FileIO import SerializationOptions
 class NurbsSurface(Surface):
     def __init__(self, other: NurbsSurface): ...
     def ConvertSpanToBezier(self, spanIndex0: int, spanIndex1: int) -> BezierSurface: ...
@@ -3977,6 +4107,23 @@ class NurbsSurfaceType(Enum):
     Unprocessed = 4
 
 
+from ..DocObjects import DimensionStyle
+from ..DocObjects import ViewportInfo
+from ..DocObjects import ArrowFit
+from ..DocObjects import TextFit
+from ..DocObjects import TextOrientation
+from ..DocObjects import TextLocation
+from ..DocObjects import LeaderContentAngleStyle
+from ..DocObjects import CenterMarkStyle
+from ..DocObjects import ArrowType
+from ..DocObjects import ZeroSuppression
+from ..DocObjects import ToleranceDisplayFormat
+from ..DocObjects import LengthDisplay
+from ..DocObjects import Field
+from ..DocObjects import MaskType
+from ..DocObjects import MaskFrame
+from ..DocObjects import Font
+from ..FileIO import SerializationOptions
 class OrdinateDimension(Dimension):
     def __init__(self): ...
     def AdjustFromPoints(self, plane: Plane, direction: MeasuredDirection, basepoint: Point3d, defpoint: Point3d, leaderpoint: Point3d, kinkoffset1: float, kinkoffset2: float) -> bool: ...
@@ -4162,6 +4309,7 @@ class PlaneFitResult(Enum):
     Failure = -1
 
 
+from ..FileIO import SerializationOptions
 class PlaneSurface(Surface):
     def __init__(self, plane: Plane, xExtents: Interval, yExtents: Interval): ...
     @overload
@@ -4170,6 +4318,7 @@ class PlaneSurface(Surface):
     def CreateThroughBox(lineInPlane: Line, vectorInPlane: Vector3d, box: BoundingBox) -> PlaneSurface: ...
 
 
+from ..FileIO import SerializationOptions
 class Point(GeometryBase):
     def __init__(self, location: Point3d): ...
     @property
@@ -4415,6 +4564,7 @@ class Point3d:
     def TryParse(input: str) -> Tuple[bool, Point3d]: ...
 
 
+from ..FileIO import SerializationOptions
 class Point3dGrid(GeometryBase):
     @overload
     def __init__(self): ...
@@ -4526,6 +4676,7 @@ class Point4d:
     def Transform(self, xform: Transform) -> None: ...
 
 
+from ..FileIO import SerializationOptions
 class PointCloud(GeometryBase):
     @overload
     def __init__(self): ...
@@ -4661,6 +4812,7 @@ class PointFaceRelation(Enum):
     Boundary = 2
 
 
+from ..FileIO import SerializationOptions
 class PolyCurve(Curve):
     def __init__(self): ...
     @overload
@@ -4689,6 +4841,7 @@ class PolyCurve(Curve):
     def SegmentIndexes(self, subdomain: Interval) -> Tuple[int, int, int]: ...
 
 
+from ..Collections import Point3dList
 from ..Collections import Point3dList
 class Polyline(Point3dList):
     @overload
@@ -4731,6 +4884,7 @@ class Polyline(Point3dList):
     def Trim(self, domain: Interval) -> Polyline: ...
 
 
+from ..FileIO import SerializationOptions
 class PolylineCurve(Curve):
     @overload
     def __init__(self): ...
@@ -4891,6 +5045,25 @@ class Quaternion:
     def Unitize(self) -> bool: ...
 
 
+from ..DocObjects import DimensionStyle
+from ..DocObjects import TextHorizontalAlignment
+from ..DocObjects import ArrowType
+from ..DocObjects import LeaderCurveStyle
+from ..DocObjects import TextOrientation
+from ..DocObjects import TextLocation
+from ..DocObjects import LeaderContentAngleStyle
+from ..DocObjects import ViewportInfo
+from ..DocObjects import ArrowFit
+from ..DocObjects import TextFit
+from ..DocObjects import CenterMarkStyle
+from ..DocObjects import ZeroSuppression
+from ..DocObjects import ToleranceDisplayFormat
+from ..DocObjects import LengthDisplay
+from ..DocObjects import Field
+from ..DocObjects import MaskType
+from ..DocObjects import MaskFrame
+from ..DocObjects import Font
+from ..FileIO import SerializationOptions
 class RadialDimension(Dimension):
     def __init__(self): ...
     def AdjustFromPoints(self, plane: Plane, centerpoint: Point3d, radiuspoint: Point3d, dimlinepoint: Point3d, rotationInPlane: float) -> bool: ...
@@ -5084,6 +5257,7 @@ class RegionContainment(Enum):
     BInsideA = 3
 
 
+from ..FileIO import SerializationOptions
 class RevSurface(Surface):
     @overload
     def Create(revoluteCurve: Curve, axisOfRevolution: Line) -> RevSurface: ...
@@ -5215,6 +5389,7 @@ class SideFill(Enum):
     OtherSurface = 3
 
 
+from ..DocObjects import ViewportInfo
 class Silhouette:
     @overload
     def Compute(geometry: GeometryBase, silhouetteType: SilhouetteType, perspectiveCameraLocation: Point3d, tolerance: float, angleToleranceRadians: float) -> Set[Silhouette]: ...
@@ -5420,6 +5595,7 @@ class SquishParameters:
     def SetSpringConstants(self, boundaryBias: float, deformationBias: float) -> None: ...
 
 
+from ..FileIO import SerializationOptions
 class SubD(GeometryBase):
     def __init__(self): ...
     def ClearEvaluationCache(self) -> None: ...
@@ -5716,6 +5892,7 @@ class SubDVertexTag(Enum):
     Dart = 4
 
 
+from ..FileIO import SerializationOptions
 class SumSurface(Surface):
     @overload
     def Create(curveA: Curve, curveB: Curve) -> SumSurface: ...
@@ -5723,6 +5900,7 @@ class SumSurface(Surface):
     def Create(curve: Curve, extrusionDirection: Vector3d) -> SumSurface: ...
 
 
+from ..FileIO import SerializationOptions
 class Surface(GeometryBase):
     def ClosestPoint(self, testPoint: Point3d) -> Tuple[bool, float, float]: ...
     def ClosestSide(self, u: float, v: float) -> IsoStatus: ...
@@ -5879,6 +6057,7 @@ class SurfaceCurvature:
     def OsculatingCircle(self, direction: int) -> Circle: ...
 
 
+from ..FileIO import SerializationOptions
 class SurfaceProxy(Surface):
     pass
 
@@ -6003,6 +6182,7 @@ class SweepTwoRail:
     def SweepTolerance(self, value: float) -> None: ...
 
 
+from ..FileIO import SerializationOptions
 class TextDot(GeometryBase):
     def __init__(self, text: str, location: Point3d): ...
     @property
@@ -6027,6 +6207,16 @@ class TextDot(GeometryBase):
     def Text(self, value: str) -> None: ...
 
 
+from ..DocObjects import DimensionStyle
+from ..DocObjects import TextHorizontalAlignment
+from ..DocObjects import TextVerticalAlignment
+from ..DocObjects import TextOrientation
+from ..DocObjects import Field
+from ..DocObjects import MaskType
+from ..DocObjects import MaskFrame
+from ..DocObjects import Font
+from ..DocObjects import LengthDisplay
+from ..FileIO import SerializationOptions
 class TextEntity(AnnotationBase):
     def __init__(self): ...
     def Create(text: str, plane: Plane, style: DimensionStyle, wrapped: bool, rectWidth: float, rotationRadians: float) -> TextEntity: ...

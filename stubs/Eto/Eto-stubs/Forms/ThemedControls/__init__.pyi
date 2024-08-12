@@ -3,6 +3,7 @@ from enum import Enum
 
 
 
+from ...Drawing import Image
 class ThemedAboutDialogHandler:
     def __init__(self): ...
     @property
@@ -56,10 +57,20 @@ class ThemedAboutDialogHandler:
     def ShowDialog(self, parent: Window) -> DialogResult: ...
 
 
+from ...Drawing import Image
 class ThemedButtonSegmentedItemHandler:
     def __init__(self): ...
 
 
+from ...Drawing import Padding
+from ...Drawing import Size
+from .. import IStyleProvider
+from ...Drawing import Rectangle
+from ...Drawing import SizeF
+from ...Drawing import Color
+from ...Drawing import PointF
+from ...Drawing import RectangleF
+from ...Drawing import Image
 class ThemedCollectionEditor(Panel):
     def __init__(self): ...
     @property
@@ -76,6 +87,12 @@ class ThemedCollectionEditor(Panel):
     def ExtraContent(self, value: Control) -> None: ...
 
 
+from ...Drawing import Color
+from ...Drawing import Size
+from ...Drawing import SizeF
+from ...Drawing import Rectangle
+from ...Drawing import PointF
+from ...Drawing import Image
 class ThemedCollectionEditorHandler:
     def __init__(self): ...
     @property
@@ -88,6 +105,12 @@ class ThemedCollectionEditorHandler:
     def ElementType(self, value: Type) -> None: ...
 
 
+from ...Drawing import Color
+from ...Drawing import Size
+from ...Drawing import SizeF
+from ...Drawing import Rectangle
+from ...Drawing import PointF
+from ...Drawing import Image
 class ThemedColorPickerHandler:
     def __init__(self): ...
     def AttachEvent(self, id: str) -> None: ...
@@ -103,6 +126,14 @@ class ThemedColorPickerHandler:
     def Color(self, value: Color) -> None: ...
 
 
+from ...Drawing import Padding
+from ...Drawing import Font
+from ...Drawing import Size
+from ...Drawing import Color
+from ...Drawing import SizeF
+from ...Drawing import Rectangle
+from ...Drawing import PointF
+from ...Drawing import Image
 class ThemedDocumentControlHandler:
     def __init__(self): ...
     def AttachEvent(self, id: str) -> None: ...
@@ -133,6 +164,13 @@ class ThemedDocumentControlHandler:
     def TabPadding(self, value: Padding) -> None: ...
 
 
+from ...Drawing import Image
+from ...Drawing import Size
+from ...Drawing import Padding
+from ...Drawing import Color
+from ...Drawing import SizeF
+from ...Drawing import Rectangle
+from ...Drawing import PointF
 class ThemedDocumentPageHandler:
     def __init__(self): ...
     @property
@@ -167,6 +205,13 @@ class ThemedDocumentPageHandler:
     def Text(self, value: str) -> None: ...
 
 
+from ...Drawing import Padding
+from ...Drawing import Size
+from ...Drawing import Color
+from ...Drawing import SizeF
+from ...Drawing import Rectangle
+from ...Drawing import PointF
+from ...Drawing import Image
 class ThemedExpanderHandler:
     def __init__(self): ...
     def AttachEvent(self, id: str) -> None: ...
@@ -204,6 +249,13 @@ class ThemedExpanderHandler:
     def Padding(self, value: Padding) -> None: ...
 
 
+from .. import FileAction
+from ...Drawing import Color
+from ...Drawing import Size
+from ...Drawing import SizeF
+from ...Drawing import Rectangle
+from ...Drawing import PointF
+from ...Drawing import Image
 class ThemedFilePickerHandler:
     def __init__(self): ...
     def AttachEvent(self, id: str) -> None: ...
@@ -228,6 +280,13 @@ class ThemedFilePickerHandler:
     def Title(self, value: str) -> None: ...
 
 
+from ...Drawing import Font
+from ...Drawing import Color
+from ...Drawing import Size
+from ...Drawing import SizeF
+from ...Drawing import Rectangle
+from ...Drawing import PointF
+from ...Drawing import Image
 class ThemedFontPickerHandler:
     def __init__(self): ...
     def AttachEvent(self, id: str) -> None: ...
@@ -237,6 +296,7 @@ class ThemedFontPickerHandler:
     def Value(self, value: Font) -> None: ...
 
 
+from ...Drawing import Image
 class ThemedMenuSegmentedItemHandler:
     def __init__(self): ...
     @property
@@ -261,6 +321,15 @@ class ThemedMenuSegmentedItemHandler:
     def Text(self, value: str) -> None: ...
 
 
+from ...Drawing import Padding
+from ...Drawing import Size
+from .. import IStyleProvider
+from ...Drawing import Rectangle
+from ...Drawing import SizeF
+from ...Drawing import Color
+from ...Drawing import PointF
+from ...Drawing import RectangleF
+from ...Drawing import Image
 class ThemedPropertyGrid(Panel):
     def __init__(self): ...
     def add_PropertyValueChanged(self, value: EventHandler) -> None: ...
@@ -293,6 +362,12 @@ class ThemedPropertyGrid(Panel):
     def UseValueTypeDefaults(self, value: bool) -> None: ...
 
 
+from ...Drawing import Color
+from ...Drawing import Size
+from ...Drawing import SizeF
+from ...Drawing import Rectangle
+from ...Drawing import PointF
+from ...Drawing import Image
 class ThemedPropertyGridHandler:
     def __init__(self): ...
     def AttachEvent(self, id: str) -> None: ...
@@ -315,6 +390,12 @@ class ThemedPropertyGridHandler:
     def ShowDescription(self, value: bool) -> None: ...
 
 
+from ...Drawing import SizeF
+from ...Drawing import Color
+from ...Drawing import Size
+from ...Drawing import Rectangle
+from ...Drawing import PointF
+from ...Drawing import Image
 class ThemedSegmentedButtonHandler:
     def __init__(self): ...
     def AttachEvent(self, id: str) -> None: ...
@@ -352,6 +433,13 @@ class ThemedSpinnerDirection(Enum):
     CounterClockwise = -1
 
 
+from ...Drawing import Color
+from ...Drawing import PenLineCap
+from ...Drawing import Size
+from ...Drawing import SizeF
+from ...Drawing import Rectangle
+from ...Drawing import PointF
+from ...Drawing import Image
 class ThemedSpinnerHandler:
     def __init__(self): ...
     @property
@@ -411,6 +499,12 @@ class ThemedSpinnerMode(Enum):
     Circle = 1
 
 
+from ...Drawing import Size
+from ...Drawing import Color
+from ...Drawing import SizeF
+from ...Drawing import Rectangle
+from ...Drawing import PointF
+from ...Drawing import Image
 class ThemedSplitterHandler:
     def __init__(self): ...
     @property
@@ -453,6 +547,13 @@ class ThemedSplitterHandler:
     def SplitterWidth(self, value: int) -> None: ...
 
 
+from ...Drawing import Font
+from ...Drawing import Color
+from ...Drawing import Size
+from ...Drawing import SizeF
+from ...Drawing import Rectangle
+from ...Drawing import PointF
+from ...Drawing import Image
 class ThemedStepperHandler:
     def __init__(self): ...
     def AttachEvent(self, id: str) -> None: ...
@@ -482,6 +583,13 @@ class ThemedStepperHandler:
     def ValidDirection(self, value: StepperValidDirections) -> None: ...
 
 
+from ...Drawing import Font
+from ...Drawing import Color
+from ...Drawing import Size
+from ...Drawing import SizeF
+from ...Drawing import Rectangle
+from ...Drawing import PointF
+from ...Drawing import Image
 class ThemedTextStepperHandler:
     def __init__(self): ...
     def AttachEvent(self, id: str) -> None: ...

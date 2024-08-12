@@ -3,6 +3,8 @@ from enum import Enum
 
 
 
+from ..Kernel import GH_Document
+from ..Kernel import IGH_ActiveObject
 class Commands:
     @property
     def BakeDocument() -> GH_Document: ...
@@ -83,6 +85,7 @@ class GH_ResourceGate:
     def WhiteIcon() -> Bitmap: ...
 
 
+from ..Kernel import GH_Document
 class GH_RhinoScriptInterface:
     def __init__(self): ...
     def AssignDataToParameter(self, parameterID: str, data: Object) -> bool: ...

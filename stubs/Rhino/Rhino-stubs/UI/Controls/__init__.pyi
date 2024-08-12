@@ -91,6 +91,7 @@ class Factory(FactoryBase):
     def __init__(self): ...
 
 
+from ...PlugIns import PlugIn
 class FactoryBase:
     def Get(self, id: Guid) -> IntPtr: ...
     @overload

@@ -98,6 +98,8 @@ class CanvasPrePaintWiresEventHandler:
     def Invoke(self, sender: GH_Canvas) -> None: ...
 
 
+from ...Kernel import GH_Document
+from ...Kernel import GH_DocModifiedEventArgs
 class Document_ModifiedChangedEventHandler:
     def __init__(self, TargetObject: Object, TargetMethod: IntPtr): ...
     def BeginInvoke(self, sender: GH_Document, e: GH_DocModifiedEventArgs, DelegateCallback: AsyncCallback, DelegateAsyncState: Object) -> IAsyncResult: ...
@@ -105,6 +107,8 @@ class Document_ModifiedChangedEventHandler:
     def Invoke(self, sender: GH_Document, e: GH_DocModifiedEventArgs) -> None: ...
 
 
+from ...Kernel import GH_Document
+from ...Kernel import GH_DocObjectEventArgs
 class Document_ObjectsAddedEventHandler:
     def __init__(self, TargetObject: Object, TargetMethod: IntPtr): ...
     def BeginInvoke(self, sender: GH_Document, e: GH_DocObjectEventArgs, DelegateCallback: AsyncCallback, DelegateAsyncState: Object) -> IAsyncResult: ...
@@ -112,6 +116,8 @@ class Document_ObjectsAddedEventHandler:
     def Invoke(self, sender: GH_Document, e: GH_DocObjectEventArgs) -> None: ...
 
 
+from ...Kernel import GH_Document
+from ...Kernel import GH_DocObjectEventArgs
 class Document_ObjectsDeletedEventHandler:
     def __init__(self, TargetObject: Object, TargetMethod: IntPtr): ...
     def BeginInvoke(self, sender: GH_Document, e: GH_DocObjectEventArgs, DelegateCallback: AsyncCallback, DelegateAsyncState: Object) -> IAsyncResult: ...
@@ -119,6 +125,8 @@ class Document_ObjectsDeletedEventHandler:
     def Invoke(self, sender: GH_Document, e: GH_DocObjectEventArgs) -> None: ...
 
 
+from ...Kernel import GH_Document
+from ...Kernel import GH_DocSettingsEventArgs
 class Document_SettingsChangedEventHandler:
     def __init__(self, TargetObject: Object, TargetMethod: IntPtr): ...
     def BeginInvoke(self, sender: GH_Document, e: GH_DocSettingsEventArgs, DelegateCallback: AsyncCallback, DelegateAsyncState: Object) -> IAsyncResult: ...
@@ -140,6 +148,8 @@ class DocumentObjectMouseDownEventHandler:
     def Invoke(self, sender: Object, e: GH_CanvasObjectMouseDownEventArgs) -> None: ...
 
 
+from ...Kernel import GH_Document
+from ...Kernel import GH_DocObjectEventArgs
 class DocumentObjectsDeletedEventHandler:
     def __init__(self, TargetObject: Object, TargetMethod: IntPtr): ...
     def BeginInvoke(self, sender: GH_Document, e: GH_DocObjectEventArgs, DelegateCallback: AsyncCallback, DelegateAsyncState: Object) -> IAsyncResult: ...
@@ -179,6 +189,12 @@ class GH_BorderTopology(Enum):
     All = -1
 
 
+from .TagArtists import IGH_TagArtist
+from .Interaction import IGH_MouseInteraction
+from ..Widgets import IGH_Widget
+from ...Kernel import IGH_DocumentObject
+from ...Kernel import GH_Document
+from ...Kernel import GH_AutoSaveTrigger
 class GH_Canvas:
     def __init__(self): ...
     def add_CanvasPaintBackground(self, obj: CanvasPaintBackgroundEventHandler) -> None: ...
@@ -383,6 +399,7 @@ class GH_CanvasChannel(Enum):
     Last = 30
 
 
+from ...Kernel import GH_Document
 class GH_CanvasDocumentChangedEventArgs:
     def __init__(self, newDoc: GH_Document, oldDoc: GH_Document): ...
     @property
@@ -391,6 +408,8 @@ class GH_CanvasDocumentChangedEventArgs:
     def OldDocument(self) -> GH_Document: ...
 
 
+from ...Kernel import IGH_DocumentObject
+from ...Kernel import IGH_Param
 class GH_CanvasDropTargetValidator(GH_CanvasValidator):
     def __init__(self): ...
     def AddedToCanvas(self, canvas: GH_Canvas) -> None: ...
@@ -436,6 +455,8 @@ class GH_CanvasNavigation(Enum):
     ZoomOut = 6
 
 
+from ...Kernel import IGH_DocumentObject
+from ...Kernel import IGH_Param
 class GH_CanvasValidator:
     def AddedToCanvas(self, canvas: GH_Canvas) -> None: ...
     def AppliesToDocument(self, id: Guid) -> bool: ...
@@ -459,10 +480,13 @@ class GH_CanvasViewportChangedEventArgs:
     def Viewport(self) -> GH_Viewport: ...
 
 
+from ..Widgets import IGH_Widget
 class GH_CanvasWidgetListEventArgs:
     def AddWidget(self, widget: IGH_Widget) -> None: ...
 
 
+from ...Kernel import IGH_DocumentObject
+from ...Kernel import IGH_Param
 class GH_CanvasWireValidator(GH_CanvasValidator):
     def __init__(self): ...
     def AddedToCanvas(self, canvas: GH_Canvas) -> None: ...
@@ -624,6 +648,8 @@ class GH_Capsule:
     def SetJaggedEdges(self, left: bool, right: bool) -> None: ...
 
 
+from ...Kernel import IGH_Attributes
+from ...Kernel import IGH_ActiveObject
 class GH_CapsuleRenderEngine:
     @overload
     def CreateHighlightBar(rec: Rectangle, radius: int, size: int) -> GraphicsPath: ...
@@ -878,6 +904,8 @@ class GH_Orientation(Enum):
     vertical_far = 12
 
 
+from ...Kernel.Data import IGH_Structure
+from ...Kernel import GH_Document
 class GH_Painter:
     def __init__(self, owner: GH_Canvas): ...
     def ConnectionPath(pointA: PointF, pointB: PointF, directionA: GH_WireDirection, directionB: GH_WireDirection) -> GraphicsPath: ...
@@ -948,6 +976,7 @@ class GH_PopupSearchDialog:
     def SetNoResultsMessage(self) -> None: ...
 
 
+from ...Kernel import IGH_Attributes
 class GH_ResizeBorder(GH_Border):
     @overload
     def __init__(self, borders: GH_Border): ...
@@ -972,11 +1001,13 @@ class GH_ResizeBorder(GH_Border):
     def Solve(self, nCursor: PointF) -> Tuple[RectangleF, PointF]: ...
 
 
+from ...Kernel import IGH_ActiveObject
 class GH_Skin:
     def LoadSkin() -> None: ...
     def SaveSkin() -> None: ...
 
 
+from ...Kernel import IGH_Attributes
 class GH_Viewport:
     @overload
     def __init__(self): ...
@@ -1083,6 +1114,8 @@ class GH_WireType(Enum):
     dynamicAlternative1 = 8
 
 
+from ...Kernel import IGH_Param
+from ...Kernel import IGH_DocumentObject
 class IGH_CanvasValidator:
     def AddedToCanvas(self, canvas: GH_Canvas) -> None: ...
     def AppliesToDocument(self, id: Guid) -> bool: ...

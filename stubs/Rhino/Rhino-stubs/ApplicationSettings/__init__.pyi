@@ -443,6 +443,7 @@ class CursorTooltipSettingsState:
     def TooltipsEnabled(self, value: bool) -> None: ...
 
 
+from ..Geometry import Interval
 class CurvatureAnalysisSettings:
     def CalculateCurvatureAutoRange(meshes: Iterable[Mesh], settings: CurvatureAnalysisSettingsState) -> Tuple[bool, CurvatureAnalysisSettingsState]: ...
     @property
@@ -471,6 +472,7 @@ class CurvatureAnalysisSettings:
     def UpdateFromState(state: CurvatureAnalysisSettingsState) -> None: ...
 
 
+from ..Geometry import Interval
 class CurvatureAnalysisSettingsState:
     @property
     def GaussRange(self) -> Interval: ...
@@ -501,6 +503,8 @@ class CurvatureStyle(Enum):
     MaxRadius = 3
 
 
+from ..Geometry import Interval
+from ..Geometry import Vector3d
 class DraftAngleAnalysisSettings:
     @property
     def AngleRange() -> Interval: ...
@@ -520,6 +524,8 @@ class DraftAngleAnalysisSettings:
     def UpdateFromState(state: DraftAngleAnalysisSettingsState) -> None: ...
 
 
+from ..Geometry import Interval
+from ..Geometry import Vector3d
 class DraftAngleAnalysisSettingsState:
     @property
     def AngleRange(self) -> Interval: ...
@@ -1116,6 +1122,7 @@ class PointDisplayMode(Enum):
     CplanePoint = 1
 
 
+from ..DocObjects import ObjectType
 class SelectionFilterSettings:
     @property
     def Enabled() -> bool: ...
@@ -1139,6 +1146,7 @@ class SelectionFilterSettings:
     def UpdateFromState(state: SelectionFilterSettingsState) -> None: ...
 
 
+from ..DocObjects import ObjectType
 class SelectionFilterSettingsState:
     @property
     def Enabled(self) -> bool: ...

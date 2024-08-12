@@ -17,6 +17,7 @@ class BitmapTable:
     def Item(self, index: int) -> BitmapEntry: ...
 
 
+from ...Geometry import AnnotationBase
 class DimStyleTable:
     @overload
     def Add(self, name: str) -> int: ...
@@ -98,6 +99,7 @@ class FontTable:
     def GetEnumerator(self) -> IEnumerator: ...
 
 
+from ...FileIO import NameHash
 class GroupTable:
     @overload
     def Add(self) -> int: ...
@@ -155,6 +157,7 @@ class GroupTableEventType(Enum):
     Sorted = 4
 
 
+from ...FileIO import NameHash
 class HatchPatternTable:
     def Add(self, pattern: HatchPattern) -> int: ...
     @overload
@@ -182,6 +185,9 @@ class HatchPatternTable:
     def CurrentHatchPatternIndex(self, value: int) -> None: ...
 
 
+from ...Geometry import Point3d
+from ...Geometry import GeometryBase
+from ...FileIO import FileReference
 class InstanceDefinitionTable:
     @overload
     def Add(self, name: str, description: str, basePoint: Point3d, geometry: Iterable[GeometryBase]) -> int: ...
@@ -261,6 +267,7 @@ class InstanceDefinitionTableEventType(Enum):
     Sorted = 4
 
 
+from ...FileIO import NameHash
 class LayerTable:
     @overload
     def Add(self) -> int: ...
@@ -361,6 +368,8 @@ class LayerTableEventType(Enum):
     Current = 5
 
 
+from ...FileIO import NameHash
+from ...Geometry import Light
 class LightTable:
     @overload
     def Add(self, light: Light) -> int: ...
@@ -528,6 +537,7 @@ class ModifyType(Enum):
     NotSaved = 2
 
 
+from ...Geometry import Plane
 class NamedConstructionPlaneTable:
     def Add(self, name: str, plane: Plane) -> int: ...
     @overload
@@ -565,6 +575,7 @@ class NamedLayerStateTable:
     def Save(self, name: str, viewportId: Guid) -> int: ...
 
 
+from ...Geometry import Transform
 class NamedPositionTable:
     @overload
     def Append(self, name: str, objects: Iterable[RhinoObject]) -> bool: ...
@@ -618,6 +629,8 @@ class NamedPositionTable:
     def Update(self, name: str) -> bool: ...
 
 
+from ...Display import RhinoViewport
+from ...Display import RhinoView
 class NamedViewTable:
     @overload
     def Add(self, view: ViewInfo) -> int: ...
@@ -645,6 +658,48 @@ class NamedViewTable:
     def RestoreWithAspectRatio(self, index: int, viewport: RhinoViewport) -> bool: ...
 
 
+from ...Geometry import Transform
+from ...Input.Custom import PickContext
+from ...Geometry import Surface
+from ...Geometry import Extrusion
+from ...Geometry import Mesh
+from ...Geometry import Brep
+from ...Geometry import Plane
+from ...Geometry import Hatch
+from ...Geometry import MorphControl
+from ...Render import RenderMaterial
+from ...Render import TextureMapping
+from ...Geometry import GeometryBase
+from ...Geometry import Point3d
+from ...Geometry import Point
+from ...Geometry import TextEntity
+from ...Geometry import Leader
+from ...Geometry import TextDot
+from ...Geometry import Line
+from ...Geometry import Circle
+from ...Geometry import Arc
+from ...Geometry import Polyline
+from ...Geometry import Curve
+from ...Geometry import SubD
+from ...Geometry import PointCloud
+from ...Display import RhinoViewport
+from ...Geometry import Point2d
+from ..Custom import CustomMeshObject
+from ..Custom import CustomBrepObject
+from ..Custom import CustomPointObject
+from ..Custom import CustomCurveObject
+from ...Geometry import Point3f
+from ...Geometry import RadialDimension
+from ...Geometry import Rectangle3d
+from ...Geometry import Box
+from ...Geometry import Ellipse
+from ...Geometry import Sphere
+from ...Geometry import LinearDimension
+from ...Geometry import AngularDimension
+from ...Geometry import OrdinateDimension
+from ...Geometry import Centermark
+from ...Display import Text3d
+from ...Geometry import TextJustification
 class ObjectTable:
     @overload
     def Add(self, geometry: GeometryBase) -> Guid: ...
@@ -1235,6 +1290,8 @@ class StringTable:
     def SetString(self, section: str, entry: str, value: str) -> str: ...
 
 
+from ...Display import RhinoView
+from ...Display import DefinedViewportProjection
 class ViewTable:
     def Add(self, title: str, projection: DefinedViewportProjection, position: Rectangle, floating: bool) -> RhinoView: ...
     @overload

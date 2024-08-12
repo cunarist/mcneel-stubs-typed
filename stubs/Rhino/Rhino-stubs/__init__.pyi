@@ -137,6 +137,7 @@ class KeyboardHookEvent:
     def Invoke(self, key: int) -> None: ...
 
 
+from .Input import StringParserSettings
 class LengthValue:
     def ChangeLength(self, newLength: float) -> LengthValue: ...
     def ChangeUnitSystem(self, newUnits: UnitSystem) -> LengthValue: ...
@@ -166,6 +167,7 @@ class LengthValue:
     def Length(self, units: UnitSystem) -> float: ...
 
 
+from .Geometry import Point3d
 class PersistentSettings:
     def AddChild(self, key: str) -> PersistentSettings: ...
     def ClearChangedFlag(self) -> None: ...
@@ -521,6 +523,8 @@ class RenderMaterialAssignmentChangedEventArgs:
     def OldRenderMaterial(self) -> Guid: ...
 
 
+from .DocObjects import RhinoObject
+from .ApplicationSettings import Installation
 class RhinoApp:
     def add_AppSettingsChanged(value: EventHandler) -> None: ...
     def add_Closing(value: EventHandler) -> None: ...
@@ -726,6 +730,20 @@ class RhinoApp:
     def WriteLine(format: str, arg0: Object, arg1: Object, arg2: Object) -> None: ...
 
 
+from .DocObjects import ViewportInfo
+from .Render import RenderContentCollection
+from .Display import DisplayPipelineAttributes
+from .Geometry import BoundingBox
+from .FileIO import FileReadOptions
+from .FileIO import FileWriteOptions
+from .Geometry import Plane
+from .Geometry import Point3d
+from .Geometry import SubDComponentLocation
+from .DocObjects import EarthAnchorPoint
+from .Render import RenderSettings
+from .DocObjects import AnimationProperties
+from .Geometry import MeshingParameterStyle
+from .Geometry import MeshingParameters
 class RhinoDoc:
     def add_ActiveDocumentChanged(value: EventHandler) -> None: ...
     def add_AddRhinoObject(value: EventHandler) -> None: ...
@@ -1084,6 +1102,7 @@ class RhinoFileWatcherChangeReason(Enum):
     Renamed = 5
 
 
+from .Geometry import Vector3d
 class RhinoMath:
     @overload
     def Clamp(value: float, bound1: float, bound2: float) -> float: ...
@@ -1138,6 +1157,7 @@ class ScaleStringFormat(Enum):
     Unset = 255
 
 
+from .Input import StringParserSettings
 class ScaleValue:
     def __init__(self): ...
     @overload

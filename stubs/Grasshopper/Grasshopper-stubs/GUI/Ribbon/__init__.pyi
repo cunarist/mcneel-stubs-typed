@@ -3,6 +3,7 @@ from enum import Enum
 
 
 
+from ...Kernel import GH_Exposure
 class GH_Layout:
     @overload
     def __init__(self): ...
@@ -44,6 +45,7 @@ class GH_Layout:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ...Kernel import GH_Exposure
 class GH_LayoutItem:
     @overload
     def __init__(self): ...
@@ -204,6 +206,7 @@ class GH_RibbonDropdown:
     def SetOwner(self, owner: GH_RibbonPanel) -> None: ...
 
 
+from ...Kernel import IGH_ObjectProxy
 class GH_RibbonItem(GH_RibbonContentBase):
     def __init__(self, item_proxy: IGH_ObjectProxy): ...
     def CompareTo(self, other: GH_RibbonItem) -> int: ...
@@ -267,6 +270,7 @@ class GH_RibbonPainter:
     def TabPaneBrush(rec: Rectangle, bg: Color) -> Brush: ...
 
 
+from ...Kernel import GH_Exposure
 class GH_RibbonPanel(GH_RibbonContentBase):
     @overload
     def __init__(self): ...

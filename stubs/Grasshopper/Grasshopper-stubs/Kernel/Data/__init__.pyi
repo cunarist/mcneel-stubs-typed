@@ -94,6 +94,7 @@ class GH_GraphicBranch:
     def SolveLeafAngles(self, angle: Single, spread: Single, angle_per_item: Single, args: GH_GraphicTreeDisplayArgs) -> None: ...
 
 
+from ...GUI.Canvas import GH_Viewport
 class GH_GraphicTreeDisplayArgs:
     def __init__(self): ...
     def AdjustMaxPathLength(self, potential_new_length: int) -> None: ...
@@ -189,6 +190,8 @@ class GH_IndexRuleSet:
     def Rule(self, index: int) -> IGH_IndexRule: ...
 
 
+from ..Expressions import GH_ExpressionParser
+from .. import DataTree
 class GH_Lexer:
     @overload
     def __init__(self): ...

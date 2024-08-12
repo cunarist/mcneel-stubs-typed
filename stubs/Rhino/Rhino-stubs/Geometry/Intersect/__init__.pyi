@@ -27,6 +27,7 @@ class CurveIntersections:
     def GetEnumerator(self) -> IEnumerator: ...
 
 
+from ...FileIO import TextLog
 class Intersection:
     def ArcArc(arcA: Arc, arcB: Arc) -> Tuple[ArcArcIntersection, Point3d, Point3d]: ...
     def BrepBrep(brepA: Brep, brepB: Brep, tolerance: float) -> Tuple[bool, Set[Curve], Set[Point3d]]: ...
@@ -100,6 +101,7 @@ class Intersection:
     def SurfaceSurface(surfaceA: Surface, surfaceB: Surface, tolerance: float) -> Tuple[bool, Set[Curve], Set[Point3d]]: ...
 
 
+from ...FileIO import TextLog
 class IntersectionEvent:
     def __init__(self): ...
     @overload
@@ -149,6 +151,7 @@ class LineSphereIntersection(Enum):
     Multiple = 2
 
 
+from ...DocObjects import RhinoObject
 class MeshClash:
     @overload
     def FindDetail(objA: RhinoObject, objB: RhinoObject, distance: float) -> Set[Mesh]: ...

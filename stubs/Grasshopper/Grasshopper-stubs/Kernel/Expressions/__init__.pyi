@@ -52,6 +52,8 @@ class GH_CodeStringSegment:
     def ToString(self) -> str: ...
 
 
+from ..Types import Complex
+from ..Types import IGH_Goo
 class GH_ExpressionParser:
     @overload
     def __init__(self): ...
@@ -292,6 +294,7 @@ class GH_SyntaxException:
     def __init__(self, nMessage: str): ...
 
 
+from ..Types import Complex
 class GH_Variant:
     @overload
     def __init__(self): ...

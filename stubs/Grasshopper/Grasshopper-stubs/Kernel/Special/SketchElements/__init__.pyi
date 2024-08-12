@@ -11,6 +11,7 @@ class GH_SketchCloud:
     def __init__(self): ...
 
 
+from .. import GH_PickBox
 class GH_SketchElement:
     @property
     def BoundingBox(self) -> RectangleF: ...
@@ -72,6 +73,7 @@ class GH_SketchLine:
     def __init__(self): ...
 
 
+from .. import GH_PickBox
 class IGH_SketchElement:
     @property
     def BoundingBox(self) -> RectangleF: ...

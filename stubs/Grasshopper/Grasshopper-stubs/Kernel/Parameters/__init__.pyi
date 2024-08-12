@@ -15,12 +15,19 @@ class GH_ExpressionUndoAction(GH_ObjectUndoAction):
     def ExpiresSolution(self) -> bool: ...
 
 
+from ..Types import IGH_GeometricGoo
 class GH_GeometryProxy:
     def __init__(self, nValue: IGH_GeometricGoo): ...
     @property
     def IsParsable(self) -> bool: ...
 
 
+from ..Data import GH_Path
+from ..Types import GH_Guid
+from ..Data import IGH_Structure
+from ..Data import GH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_ProxyParameter:
     def __init__(self, nUUID: Guid): ...
     def CreateAttributes(self) -> None: ...
@@ -36,6 +43,10 @@ class GH_ProxyParameter:
     def ProxyGuid(self) -> Guid: ...
 
 
+from ...GUI import GH_TooltipDisplayEventArgs
+from ...GUI.Canvas import GH_Canvas
+from ...GUI.Canvas import GH_CanvasChannel
+from ...GUI import GH_CanvasMouseEvent
 class GH_ProxyParameterAttributes:
     def __init__(self, owner: GH_ProxyParameter): ...
     @property
@@ -46,6 +57,12 @@ class GH_ProxyParameterAttributes:
     def OutputGrip(self) -> PointF: ...
 
 
+from ..Data import GH_Path
+from ..Types import IGH_Goo
+from ..Data import IGH_Structure
+from ..Data import GH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_Receiver:
     def __init__(self): ...
     def AppendMenuItems(self, menu: ToolStripDropDown) -> bool: ...
@@ -70,6 +87,10 @@ class GH_Receiver:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ...GUI import GH_TooltipDisplayEventArgs
+from ...GUI.Canvas import GH_Canvas
+from ...GUI import GH_CanvasMouseEvent
+from ...GUI.Canvas import GH_CanvasChannel
 from ..Attributes import GH_FloatingParamAttributes
 class GH_ReceiverAttributes(GH_FloatingParamAttributes):
     def __init__(self, owner: GH_Receiver): ...
@@ -96,6 +117,12 @@ class IGH_TypeHint:
     def TypeName(self) -> str: ...
 
 
+from ..Types import GH_Arc
+from ..Data import GH_Structure
+from ..Data import GH_Path
+from ..Data import IGH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class Param_Arc:
     def __init__(self): ...
     @overload
@@ -120,6 +147,12 @@ class Param_Arc:
     def Hidden(self, Value: bool) -> None: ...
 
 
+from ..Types import GH_Boolean
+from ..Data import GH_Structure
+from ..Data import GH_Path
+from ..Data import IGH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class Param_Boolean:
     def __init__(self): ...
     def AppendAdditionalMenuItems(self, menu: ToolStripDropDown) -> None: ...
@@ -138,6 +171,12 @@ class Param_Boolean:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ..Types import GH_Box
+from ..Data import GH_Structure
+from ..Data import GH_Path
+from ..Data import IGH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class Param_Box:
     def __init__(self): ...
     @overload
@@ -162,6 +201,12 @@ class Param_Box:
     def Hidden(self, Value: bool) -> None: ...
 
 
+from ..Types import GH_Brep
+from ..Data import GH_Structure
+from ..Data import GH_Path
+from ..Data import IGH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class Param_Brep:
     def __init__(self): ...
     @overload
@@ -186,6 +231,12 @@ class Param_Brep:
     def Hidden(self, Value: bool) -> None: ...
 
 
+from ..Types import GH_Circle
+from ..Data import GH_Structure
+from ..Data import GH_Path
+from ..Data import IGH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class Param_Circle:
     def __init__(self): ...
     @overload
@@ -210,6 +261,12 @@ class Param_Circle:
     def Hidden(self, Value: bool) -> None: ...
 
 
+from ..Types import GH_Colour
+from ..Data import GH_Structure
+from ..Data import GH_Path
+from ..Data import IGH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class Param_Colour:
     def __init__(self): ...
     @property
@@ -220,6 +277,12 @@ class Param_Colour:
     def TypeName(self) -> str: ...
 
 
+from ..Types import GH_ComplexNumber
+from ..Data import GH_Structure
+from ..Data import GH_Path
+from ..Data import IGH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class Param_Complex:
     def __init__(self): ...
     @property
@@ -228,6 +291,12 @@ class Param_Complex:
     def Exposure(self) -> GH_Exposure: ...
 
 
+from ..Types import GH_Culture
+from ..Data import GH_Structure
+from ..Data import GH_Path
+from ..Data import IGH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class Param_Culture:
     def __init__(self): ...
     def AppendAdditionalMenuItems(self, menu: ToolStripDropDown) -> None: ...
@@ -239,6 +308,12 @@ class Param_Culture:
     def TypeName(self) -> str: ...
 
 
+from ..Types import GH_Curve
+from ..Data import GH_Structure
+from ..Data import GH_Path
+from ..Data import IGH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class Param_Curve:
     def __init__(self): ...
     def AppendAdditionalMenuItems(self, menu: ToolStripDropDown) -> None: ...
@@ -271,6 +346,12 @@ class Param_Curve:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ..Data import GH_Path
+from ..Types import GH_Field
+from ..Data import IGH_Structure
+from ..Data import GH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class Param_Field:
     def __init__(self): ...
     def DrawViewportMeshes(self, args: IGH_PreviewArgs) -> None: ...
@@ -289,6 +370,12 @@ class Param_Field:
     def Hidden(self, Value: bool) -> None: ...
 
 
+from ..Types import GH_String
+from ..Data import GH_Structure
+from ..Data import GH_Path
+from ..Data import IGH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class Param_FilePath:
     def __init__(self): ...
     def AppendAdditionalMenuItems(self, menu: ToolStripDropDown) -> None: ...
@@ -312,6 +399,12 @@ class Param_FilePath:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ..Data import GH_Structure
+from ..Types import IGH_Goo
+from ..Data import GH_Path
+from ..Data import IGH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class Param_GenericObject:
     def __init__(self): ...
     def AppendAdditionalMenuItems(self, menu: ToolStripDropDown) -> None: ...
@@ -352,6 +445,12 @@ class Param_GenericObject:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ..Types import IGH_GeometricGoo
+from ..Data import GH_Structure
+from ..Data import GH_Path
+from ..Data import IGH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class Param_Geometry:
     def __init__(self): ...
     @overload
@@ -380,6 +479,12 @@ class Param_Geometry:
     def Hidden(self, Value: bool) -> None: ...
 
 
+from ..Data import GH_Path
+from ..Types import GH_GeometryGroup
+from ..Data import IGH_Structure
+from ..Data import GH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class Param_Group:
     def __init__(self): ...
     @overload
@@ -406,6 +511,12 @@ class Param_Group:
     def Hidden(self, Value: bool) -> None: ...
 
 
+from ..Types import GH_Guid
+from ..Data import GH_Structure
+from ..Data import GH_Path
+from ..Data import IGH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class Param_Guid:
     def __init__(self): ...
     @property
@@ -414,6 +525,12 @@ class Param_Guid:
     def Exposure(self) -> GH_Exposure: ...
 
 
+from ..Types import GH_Integer
+from ..Data import GH_Structure
+from ..Data import GH_Path
+from ..Data import IGH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class Param_Integer:
     def __init__(self): ...
     def AddNamedValue(self, name: str, value: int) -> None: ...
@@ -427,6 +544,12 @@ class Param_Integer:
     def HasNamedValues(self) -> bool: ...
 
 
+from ..Types import GH_Interval
+from ..Data import GH_Structure
+from ..Data import GH_Path
+from ..Data import IGH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class Param_Interval:
     def __init__(self): ...
     @property
@@ -435,6 +558,12 @@ class Param_Interval:
     def Exposure(self) -> GH_Exposure: ...
 
 
+from ..Types import GH_Interval2D
+from ..Data import GH_Structure
+from ..Data import GH_Path
+from ..Data import IGH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class Param_Interval2D:
     def __init__(self): ...
     @property
@@ -445,6 +574,12 @@ class Param_Interval2D:
     def TypeName(self) -> str: ...
 
 
+from ..Data import GH_Path
+from ..Types import GH_Interval2D
+from ..Data import IGH_Structure
+from ..Data import GH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class Param_Interval2D_OBSOLETE:
     def __init__(self): ...
     @property
@@ -453,6 +588,12 @@ class Param_Interval2D_OBSOLETE:
     def Exposure(self) -> GH_Exposure: ...
 
 
+from ..Types import GH_LonLatCoordinate
+from ..Data import GH_Structure
+from ..Data import GH_Path
+from ..Data import IGH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class Param_LatLonLocation:
     def __init__(self): ...
     @property
@@ -463,6 +604,12 @@ class Param_LatLonLocation:
     def TypeName(self) -> str: ...
 
 
+from ..Types import GH_Line
+from ..Data import GH_Structure
+from ..Data import GH_Path
+from ..Data import IGH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class Param_Line:
     def __init__(self): ...
     @overload
@@ -490,6 +637,12 @@ class Param_Line:
     def Hidden(self, Value: bool) -> None: ...
 
 
+from ..Types import GH_Matrix
+from ..Data import GH_Structure
+from ..Data import GH_Path
+from ..Data import IGH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class Param_Matrix:
     def __init__(self): ...
     @property
@@ -498,6 +651,12 @@ class Param_Matrix:
     def Exposure(self) -> GH_Exposure: ...
 
 
+from ..Types import GH_Mesh
+from ..Data import GH_Structure
+from ..Data import GH_Path
+from ..Data import IGH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class Param_Mesh:
     def __init__(self): ...
     @overload
@@ -522,6 +681,12 @@ class Param_Mesh:
     def Hidden(self, Value: bool) -> None: ...
 
 
+from ..Types import GH_MeshFace
+from ..Data import GH_Structure
+from ..Data import GH_Path
+from ..Data import IGH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class Param_MeshFace:
     def __init__(self): ...
     @property
@@ -532,6 +697,12 @@ class Param_MeshFace:
     def TypeName(self) -> str: ...
 
 
+from ..Types import GH_MeshingParameters
+from ..Data import GH_Structure
+from ..Data import GH_Path
+from ..Data import IGH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class Param_MeshParameters:
     def __init__(self): ...
     @property
@@ -540,6 +711,12 @@ class Param_MeshParameters:
     def Exposure(self) -> GH_Exposure: ...
 
 
+from ..Types import GH_Number
+from ..Data import GH_Structure
+from ..Data import GH_Path
+from ..Data import IGH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class Param_Number:
     def __init__(self): ...
     def AppendAdditionalMenuItems(self, menu: ToolStripDropDown) -> None: ...
@@ -561,6 +738,12 @@ class Param_Number:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ..Types import GH_Material
+from ..Data import GH_Structure
+from ..Data import GH_Path
+from ..Data import IGH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class Param_OGLShader:
     def __init__(self): ...
     @property
@@ -571,6 +754,12 @@ class Param_OGLShader:
     def TypeName(self) -> str: ...
 
 
+from ..Types import GH_Plane
+from ..Data import GH_Structure
+from ..Data import GH_Path
+from ..Data import IGH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class Param_Plane:
     def __init__(self): ...
     @overload
@@ -597,6 +786,12 @@ class Param_Plane:
     def Hidden(self, Value: bool) -> None: ...
 
 
+from ..Types import GH_Point
+from ..Data import GH_Structure
+from ..Data import GH_Path
+from ..Data import IGH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class Param_Point:
     def __init__(self): ...
     def AppendAdditionalMenuItems(self, menu: ToolStripDropDown) -> None: ...
@@ -639,6 +834,12 @@ class Param_Point:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ..Types import GH_Rectangle
+from ..Data import GH_Structure
+from ..Data import GH_Path
+from ..Data import IGH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class Param_Rectangle:
     def __init__(self): ...
     @overload
@@ -664,6 +865,12 @@ class Param_Rectangle:
     def Hidden(self, Value: bool) -> None: ...
 
 
+from ..Types import IGH_Goo
+from ..Data import GH_Structure
+from ..Data import GH_Path
+from ..Data import IGH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class Param_ScriptVariable(Param_GenericObject):
     def __init__(self): ...
     def AppendAdditionalMenuItems(self, menu: ToolStripDropDown) -> None: ...
@@ -693,6 +900,12 @@ class Param_ScriptVariable(Param_GenericObject):
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ..Types import GH_String
+from ..Data import GH_Structure
+from ..Data import GH_Path
+from ..Data import IGH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class Param_String:
     def __init__(self): ...
     @property
@@ -701,6 +914,12 @@ class Param_String:
     def Exposure(self) -> GH_Exposure: ...
 
 
+from ..Types import GH_StructurePath
+from ..Data import GH_Structure
+from ..Data import GH_Path
+from ..Data import IGH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class Param_StructurePath:
     def __init__(self): ...
     @property
@@ -709,6 +928,12 @@ class Param_StructurePath:
     def Exposure(self) -> GH_Exposure: ...
 
 
+from ..Types import GH_SubD
+from ..Data import GH_Structure
+from ..Data import GH_Path
+from ..Data import IGH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class Param_SubD:
     def __init__(self): ...
     @overload
@@ -733,6 +958,12 @@ class Param_SubD:
     def Hidden(self, Value: bool) -> None: ...
 
 
+from ..Types import GH_Surface
+from ..Data import GH_Structure
+from ..Data import GH_Path
+from ..Data import IGH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class Param_Surface:
     def __init__(self): ...
     def AppendAdditionalMenuItems(self, menu: ToolStripDropDown) -> None: ...
@@ -765,6 +996,12 @@ class Param_Surface:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ..Types import GH_Time
+from ..Data import GH_Structure
+from ..Data import GH_Path
+from ..Data import IGH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class Param_Time:
     def __init__(self): ...
     @property
@@ -773,6 +1010,12 @@ class Param_Time:
     def Exposure(self) -> GH_Exposure: ...
 
 
+from ..Types import GH_Transform
+from ..Data import GH_Structure
+from ..Data import GH_Path
+from ..Data import IGH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class Param_Transform:
     def __init__(self): ...
     @property
@@ -781,6 +1024,12 @@ class Param_Transform:
     def Exposure(self) -> GH_Exposure: ...
 
 
+from ..Types import GH_Vector
+from ..Data import GH_Structure
+from ..Data import GH_Path
+from ..Data import IGH_Structure
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class Param_Vector:
     def __init__(self): ...
     def AppendAdditionalMenuItems(self, menu: ToolStripDropDown) -> None: ...

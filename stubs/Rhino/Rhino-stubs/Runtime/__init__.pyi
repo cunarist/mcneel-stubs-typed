@@ -77,6 +77,7 @@ class AssemblyResolver:
     def CurrentDomainReflectionOnlyAssemblyResolve() -> ResolveEventHandler: ...
 
 
+from ..FileIO import SerializationOptions
 class CommonObject:
     def Dispose(self) -> None: ...
     def EnsurePrivateCopy(self) -> None: ...
@@ -134,6 +135,10 @@ class FillProc:
     def Invoke(self, topl: int, bottoml: int, topr: int, bottomr: int) -> None: ...
 
 
+from ..Geometry import GeometryBase
+from ..Geometry import BezierCurve
+from ..PlugIns import PlugIn
+from ..Commands import Command
 class HostUtils:
     def add_OnExceptionReport(value: ExceptionReportDelegate) -> None: ...
     def add_OnSendLogMessageToCloud(value: SendLogMessageToCloudDelegate) -> None: ...
@@ -268,6 +273,23 @@ class InstanceAttributeField:
     def Prompt(self) -> str: ...
 
 
+from ..DocObjects import Font
+from ..Geometry import GeometryBase
+from ..Display import ViewCaptureSettings
+from ..DocObjects import ViewportInfo
+from ..Display import RhinoViewport
+from ..Display import DisplayPipeline
+from ..Input.Custom import GetPoint
+from ..DocObjects import RhinoObject
+from ..FileIO import FileWriteOptions
+from ..FileIO import FileReadOptions
+from ..Geometry import Arc
+from ..Geometry import Brep
+from ..Geometry import Surface
+from ..Geometry import Mesh
+from ..Geometry import Curve
+from ..Geometry import Transform
+from ..PlugIns import PlugIn
 class Interop:
     def CreateFromNativePointer(pGeometry: IntPtr) -> GeometryBase: ...
     def FileReadOptionsConstPointer(options: FileReadOptions) -> IntPtr: ...
@@ -374,6 +396,12 @@ class Mode(Enum):
     InvalidMode = 100
 
 
+from ..Geometry import Point3d
+from ..Geometry import Vector3d
+from ..DocObjects import ViewportInfo
+from ..Geometry import GeometryBase
+from ..Geometry import Set[GeometryBase]
+from ..DocObjects import Set[RhinoObject]
 class NamedParametersEventArgs:
     def __init__(self): ...
     def Dispose(self) -> None: ...
@@ -456,6 +484,7 @@ class PythonCompiledCode:
     def Execute(self, scope: PythonScript) -> None: ...
 
 
+from ..Commands import Command
 class PythonScript:
     def AddRuntimeAssembly(assembly: Assembly) -> None: ...
     def Compile(self, script: str) -> PythonCompiledCode: ...
@@ -526,6 +555,8 @@ class Skin:
     def Settings(self) -> PersistentSettings: ...
 
 
+from ..DocObjects import TextObject
+from ..DocObjects import InstanceDefinition
 class TextFields:
     @overload
     def Area(id: str) -> float: ...
@@ -598,6 +629,7 @@ class TextFields:
     def Volume(id: str, unitSystem: str, allowOpenObjects: str) -> float: ...
 
 
+from ..Geometry import Arc
 class VectorArcProc:
     def __init__(self, object: Object, method: IntPtr): ...
     def BeginInvoke(self, argb: int, thickness: Single, dashed: int, arc: Arc, callback: AsyncCallback, object: Object) -> Tuple[IAsyncResult, Arc]: ...
@@ -673,6 +705,12 @@ class ViewCaptureWriter:
     def Draw(self, constPtrPrintInfo: IntPtr, doc: RhinoDoc) -> None: ...
 
 
+from ..PlugIns import LicenseCapabilities
+from ..PlugIns import ValidateProductKeyDelegate
+from ..PlugIns import OnLeaseChangedDelegate
+from ..PlugIns import VerifyLicenseKeyDelegate
+from ..PlugIns import VerifyPreviousVersionLicenseDelegate
+from ..PlugIns import LicenseData
 class ZooClientParameters:
     def __init__(self, productGuid: Guid, licenseGuid: Guid, productTitle: str, productBuildType: int, capabilities: LicenseCapabilities, licenseEntryTextMask: str, productPath: str, parentWindow: Object, selectedLicenseType: LicenseTypes, validateProductKey: ValidateProductKeyDelegate, onLeaseChangedDelegate: OnLeaseChangedDelegate, verifyLicenseKeyDelegate: VerifyLicenseKeyDelegate, verifyPreviousVersionLicenseKeyDelegate: VerifyPreviousVersionLicenseDelegate): ...
     @property

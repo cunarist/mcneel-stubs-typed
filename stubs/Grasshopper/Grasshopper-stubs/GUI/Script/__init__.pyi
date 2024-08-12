@@ -102,6 +102,7 @@ class GH_PreviewSnippetButton(GH_ScriptEditorButton):
     def RespondToMouseDown(self, window: GH_ScriptEditor, e: MouseEventArgs) -> None: ...
 
 
+from ...Kernel import IGH_DocumentObject
 class GH_ScriptEditor:
     @overload
     def __init__(self, language: GH_ScriptLanguage): ...

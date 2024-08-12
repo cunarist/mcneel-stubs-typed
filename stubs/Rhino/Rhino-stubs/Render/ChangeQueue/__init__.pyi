@@ -14,6 +14,7 @@ class BakingFunctions(Enum):
     All = 4294967295
 
 
+from ...DocObjects import ViewInfo
 class ChangeQueue:
     def AreViewsEqual(self, aView: ViewInfo, bView: ViewInfo) -> bool: ...
     def ConvertCameraBasedLightToWorld(changequeue: ChangeQueue, light: Light, vp: ViewInfo) -> None: ...

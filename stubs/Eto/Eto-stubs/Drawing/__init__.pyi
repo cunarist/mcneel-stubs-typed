@@ -1030,6 +1030,7 @@ class FontStyle(Enum):
     Italic = 2
 
 
+from ..Forms import Range
 class FontTypeface(Widget):
     @overload
     def __init__(self, fileName: str): ...

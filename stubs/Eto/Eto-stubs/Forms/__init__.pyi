@@ -6,6 +6,7 @@ from .ThemedControls import *
 __all__ = ['ThemedControls']
 
 
+from ..Drawing import Image
 class AboutDialog(CommonDialog):
     @overload
     def __init__(self): ...
@@ -267,6 +268,14 @@ class BorderType(Enum):
     None_ = 2
 
 
+from ..Drawing import Image
+from ..Drawing import Size
+from ..Drawing import Color
+from ..Drawing import Font
+from ..Drawing import Rectangle
+from ..Drawing import SizeF
+from ..Drawing import PointF
+from ..Drawing import RectangleF
 class Button(TextControl):
     @overload
     def __init__(self): ...
@@ -317,6 +326,7 @@ class ButtonImagePosition(Enum):
     Overlay = 4
 
 
+from ..Drawing import Image
 class ButtonMenuItem(MenuItem):
     @overload
     def __init__(self): ...
@@ -336,6 +346,7 @@ class ButtonMenuItem(MenuItem):
     def Trim(self, value: bool) -> None: ...
 
 
+from ..Drawing import Image
 class ButtonSegmentedItem(SegmentedItem):
     @overload
     def __init__(self): ...
@@ -343,6 +354,7 @@ class ButtonSegmentedItem(SegmentedItem):
     def __init__(self, command: Command): ...
 
 
+from ..Drawing import Image
 class ButtonToolItem(ToolItem):
     @overload
     def __init__(self): ...
@@ -352,6 +364,13 @@ class ButtonToolItem(ToolItem):
     def __init__(self, command: Command): ...
 
 
+from ..Drawing import Rectangle
+from ..Drawing import Size
+from ..Drawing import SizeF
+from ..Drawing import Color
+from ..Drawing import PointF
+from ..Drawing import RectangleF
+from ..Drawing import Image
 class Calendar(Control):
     def __init__(self): ...
     def add_SelectedDateChanged(self, value: EventHandler) -> None: ...
@@ -426,6 +445,8 @@ class CellEventArgs:
     def Handled(self, value: bool) -> None: ...
 
 
+from ..Drawing import Graphics
+from ..Drawing import RectangleF
 class CellPaintEventArgs(PaintEventArgs):
     def __init__(self, graphics: Graphics, clipRectangle: RectangleF, cellState: CellStates, item: Object): ...
     @property
@@ -444,6 +465,14 @@ class CellStates(Enum):
     Editing = 2
 
 
+from ..Drawing import Color
+from ..Drawing import Font
+from ..Drawing import Rectangle
+from ..Drawing import Size
+from ..Drawing import SizeF
+from ..Drawing import PointF
+from ..Drawing import RectangleF
+from ..Drawing import Image
 class CheckBox(TextControl):
     def __init__(self): ...
     def add_CheckedChanged(self, value: EventHandler) -> None: ...
@@ -469,6 +498,14 @@ class CheckBoxCell:
     def __init__(self, column: int): ...
 
 
+from ..Drawing import Color
+from ..Drawing import Size
+from ..Drawing import Padding
+from ..Drawing import Rectangle
+from ..Drawing import SizeF
+from ..Drawing import PointF
+from ..Drawing import RectangleF
+from ..Drawing import Image
 class CheckBoxList(Panel):
     def __init__(self): ...
     def add_SelectedKeysChanged(self, value: EventHandler) -> None: ...
@@ -523,6 +560,7 @@ class CheckBoxList(Panel):
     def TextColor(self, value: Color) -> None: ...
 
 
+from ..Drawing import Image
 class CheckCommand(Command):
     @overload
     def __init__(self): ...
@@ -552,6 +590,7 @@ class CheckMenuItem(MenuItem):
     def Checked(self, value: bool) -> None: ...
 
 
+from ..Drawing import Image
 class CheckToolItem(ToolItem):
     @overload
     def __init__(self): ...
@@ -566,6 +605,7 @@ class CheckToolItem(ToolItem):
     def Checked(self, value: bool) -> None: ...
 
 
+from ..Drawing import Image
 class Clipboard(Widget):
     def __init__(self): ...
     def Clear(self) -> None: ...
@@ -611,6 +651,13 @@ class Clipboard(Widget):
     def SetString(self, value: str, type: str) -> None: ...
 
 
+from ..Drawing import Rectangle
+from ..Drawing import Size
+from ..Drawing import SizeF
+from ..Drawing import Color
+from ..Drawing import PointF
+from ..Drawing import RectangleF
+from ..Drawing import Image
 class CollectionEditor(Control):
     def __init__(self): ...
     @property
@@ -623,6 +670,7 @@ class CollectionEditor(Control):
     def ElementType(self, value: Type) -> None: ...
 
 
+from ..Drawing import Color
 class ColorDialog(CommonDialog):
     def __init__(self): ...
     def add_ColorChanged(self, value: EventHandler) -> None: ...
@@ -639,6 +687,13 @@ class ColorDialog(CommonDialog):
     def Color(self, value: Color) -> None: ...
 
 
+from ..Drawing import Color
+from ..Drawing import Rectangle
+from ..Drawing import Size
+from ..Drawing import SizeF
+from ..Drawing import PointF
+from ..Drawing import RectangleF
+from ..Drawing import Image
 class ColorPicker(Control):
     def __init__(self): ...
     def add_ValueChanged(self, value: EventHandler) -> None: ...
@@ -659,6 +714,14 @@ class ColorPicker(Control):
 
 
 
+from ..Drawing import Color
+from ..Drawing import Font
+from ..Drawing import Rectangle
+from ..Drawing import Size
+from ..Drawing import SizeF
+from ..Drawing import PointF
+from ..Drawing import RectangleF
+from ..Drawing import Image
 class ComboBox(DropDown):
     def __init__(self): ...
     def add_TextChanged(self, value: EventHandler) -> None: ...
@@ -698,6 +761,7 @@ class ComboBoxCell:
     def DataStore(self, value: Iterable[Object]) -> None: ...
 
 
+from ..Drawing import Image
 class Command:
     @overload
     def __init__(self): ...
@@ -770,6 +834,14 @@ class Command:
     def ToolTip(self, value: str) -> None: ...
 
 
+from ..Drawing import Font
+from ..Drawing import Rectangle
+from ..Drawing import Size
+from ..Drawing import SizeF
+from ..Drawing import Color
+from ..Drawing import PointF
+from ..Drawing import RectangleF
+from ..Drawing import Image
 class CommonControl(Control):
     @property
     def Font(self) -> Font: ...
@@ -784,6 +856,13 @@ class CommonDialog(Widget):
     def ShowDialog(self, parent: Control) -> DialogResult: ...
 
 
+from ..Drawing import Size
+from ..Drawing import Rectangle
+from ..Drawing import SizeF
+from ..Drawing import Color
+from ..Drawing import PointF
+from ..Drawing import RectangleF
+from ..Drawing import Image
 class Container(Control):
     @overload
     def FindChild(self, id: str) -> Control: ...
@@ -814,6 +893,7 @@ class Container(Control):
     def StyleProvider(self, value: IStyleProvider) -> None: ...
 
 
+from ..Drawing import PointF
 class ContextMenu(Menu):
     @overload
     def __init__(self): ...
@@ -843,6 +923,13 @@ class ContextMenu(Menu):
     def Show(self, relativeTo: Control, location: Nullable) -> None: ...
 
 
+from ..Drawing import Rectangle
+from ..Drawing import Size
+from ..Drawing import SizeF
+from ..Drawing import Color
+from ..Drawing import PointF
+from ..Drawing import RectangleF
+from ..Drawing import Image
 class Control(BindableWidget):
     def __init__(self, handler: IHandler): ...
     def add_DragDrop(self, value: EventHandler) -> None: ...
@@ -999,6 +1086,9 @@ class Control(BindableWidget):
     def SuspendLayout(self) -> None: ...
 
 
+from ..Drawing import Bitmap
+from ..Drawing import PointF
+from ..Drawing import Icon
 class Cursor(Widget):
     @overload
     def __init__(self, type: CursorType): ...
@@ -1117,6 +1207,7 @@ class DataFormats:
     def Text() -> str: ...
 
 
+from ..Drawing import Image
 class DataObject(Widget):
     @overload
     def __init__(self): ...
@@ -1172,6 +1263,14 @@ class DataStoreExtensions:
 
 
 
+from ..Drawing import Color
+from ..Drawing import Font
+from ..Drawing import Rectangle
+from ..Drawing import Size
+from ..Drawing import SizeF
+from ..Drawing import PointF
+from ..Drawing import RectangleF
+from ..Drawing import Image
 class DateTimePicker(CommonControl):
     def __init__(self): ...
     def add_ValueChanged(self, value: EventHandler) -> None: ...
@@ -1214,6 +1313,16 @@ class DateTimePickerMode(Enum):
 
 
 
+from ..Drawing import Point
+from ..Drawing import Rectangle
+from ..Drawing import Icon
+from ..Drawing import Padding
+from ..Drawing import Size
+from ..Drawing import SizeF
+from ..Drawing import Color
+from ..Drawing import PointF
+from ..Drawing import RectangleF
+from ..Drawing import Image
 class Dialog(Window):
     def __init__(self): ...
     @property
@@ -1271,6 +1380,13 @@ class DockPosition(Enum):
     Bottom = 3
 
 
+from ..Drawing import Size
+from ..Drawing import Rectangle
+from ..Drawing import SizeF
+from ..Drawing import Color
+from ..Drawing import PointF
+from ..Drawing import RectangleF
+from ..Drawing import Image
 class DocumentControl(Container):
     def __init__(self): ...
     def add_PageClosed(self, value: EventHandler) -> None: ...
@@ -1301,6 +1417,14 @@ class DocumentControl(Container):
     def SelectedPage(self, value: DocumentPage) -> None: ...
 
 
+from ..Drawing import Image
+from ..Drawing import Padding
+from ..Drawing import Size
+from ..Drawing import Rectangle
+from ..Drawing import SizeF
+from ..Drawing import Color
+from ..Drawing import PointF
+from ..Drawing import RectangleF
 class DocumentPage(Panel):
     @overload
     def __init__(self): ...
@@ -1346,6 +1470,7 @@ class DragEffects(Enum):
     All = 7
 
 
+from ..Drawing import PointF
 class DragEventArgs:
     def __init__(self, source: Control, data: DataObject, allowedEffects: DragEffects, location: PointF, modifiers: Keys, buttons: MouseButtons, controlObject: Object): ...
     @property
@@ -1371,6 +1496,14 @@ class DragEventArgs:
     def SetDropDescription(self, format: str, inner: str) -> None: ...
 
 
+from ..Drawing import Rectangle
+from ..Drawing import Padding
+from ..Drawing import Size
+from ..Drawing import SizeF
+from ..Drawing import Color
+from ..Drawing import PointF
+from ..Drawing import RectangleF
+from ..Drawing import Image
 class Drawable(Panel):
     @overload
     def __init__(self): ...
@@ -1394,6 +1527,14 @@ class DrawableCell(Cell):
     def remove_Paint(self, value: EventHandler) -> None: ...
 
 
+from ..Drawing import Color
+from ..Drawing import Font
+from ..Drawing import Rectangle
+from ..Drawing import Size
+from ..Drawing import SizeF
+from ..Drawing import PointF
+from ..Drawing import RectangleF
+from ..Drawing import Image
 class DropDown(ListControl):
     def __init__(self): ...
     def add_DropDownClosed(self, value: EventHandler) -> None: ...
@@ -1412,6 +1553,7 @@ class DropDown(ListControl):
     def ShowBorder(self, value: bool) -> None: ...
 
 
+from ..Drawing import Font
 class DropDownFormatEventArgs:
     def __init__(self, item: Object, row: int, font: Font): ...
     @property
@@ -1477,6 +1619,14 @@ class DynamicItem:
     def YScale(self, value: Nullable) -> None: ...
 
 
+from ..Drawing import Padding
+from ..Drawing import Size
+from ..Drawing import Rectangle
+from ..Drawing import SizeF
+from ..Drawing import Color
+from ..Drawing import PointF
+from ..Drawing import RectangleF
+from ..Drawing import Image
 class DynamicLayout(Panel):
     @overload
     def __init__(self): ...
@@ -1618,6 +1768,14 @@ class DynamicTable(DynamicItem):
 
 
 
+from ..Drawing import Padding
+from ..Drawing import Size
+from ..Drawing import Rectangle
+from ..Drawing import SizeF
+from ..Drawing import Color
+from ..Drawing import PointF
+from ..Drawing import RectangleF
+from ..Drawing import Image
 class Expander(Panel):
     def __init__(self): ...
     def add_ExpandedChanged(self, value: EventHandler) -> None: ...
@@ -1681,6 +1839,13 @@ class FileFilter:
     def ToString(self) -> str: ...
 
 
+from ..Drawing import Rectangle
+from ..Drawing import Size
+from ..Drawing import SizeF
+from ..Drawing import Color
+from ..Drawing import PointF
+from ..Drawing import RectangleF
+from ..Drawing import Image
 class FilePicker(Control):
     def __init__(self): ...
     def add_FilePathChanged(self, value: EventHandler) -> None: ...
@@ -1771,10 +1936,21 @@ class FixedMaskedTextProvider:
 
 
 
+from ..Drawing import Point
+from ..Drawing import Rectangle
+from ..Drawing import Icon
+from ..Drawing import Padding
+from ..Drawing import Size
+from ..Drawing import SizeF
+from ..Drawing import Color
+from ..Drawing import PointF
+from ..Drawing import RectangleF
+from ..Drawing import Image
 class FloatingForm(Form):
     def __init__(self): ...
 
 
+from ..Drawing import Font
 class FontDialog(CommonDialog):
     def __init__(self): ...
     def add_FontChanged(self, value: EventHandler) -> None: ...
@@ -1785,6 +1961,14 @@ class FontDialog(CommonDialog):
     def Font(self, value: Font) -> None: ...
 
 
+from ..Drawing import Font
+from ..Drawing import Rectangle
+from ..Drawing import Size
+from ..Drawing import SizeF
+from ..Drawing import Color
+from ..Drawing import PointF
+from ..Drawing import RectangleF
+from ..Drawing import Image
 class FontPicker(Control):
     @overload
     def __init__(self): ...
@@ -1800,6 +1984,16 @@ class FontPicker(Control):
     def Value(self, value: Font) -> None: ...
 
 
+from ..Drawing import Point
+from ..Drawing import Rectangle
+from ..Drawing import Icon
+from ..Drawing import Padding
+from ..Drawing import Size
+from ..Drawing import SizeF
+from ..Drawing import Color
+from ..Drawing import PointF
+from ..Drawing import RectangleF
+from ..Drawing import Image
 class Form(Window):
     @overload
     def __init__(self): ...
@@ -1820,6 +2014,13 @@ class Form(Window):
     def Show(self) -> None: ...
 
 
+from ..Drawing import Rectangle
+from ..Drawing import Size
+from ..Drawing import SizeF
+from ..Drawing import Color
+from ..Drawing import PointF
+from ..Drawing import RectangleF
+from ..Drawing import Image
 class Grid(Control):
     def add_CellClick(self, value: EventHandler) -> None: ...
     def add_CellDoubleClick(self, value: EventHandler) -> None: ...
@@ -1913,6 +2114,8 @@ class GridCell:
     def Type(self) -> GridCellType: ...
 
 
+from ..Drawing import Font
+from ..Drawing import Color
 class GridCellFormatEventArgs:
     @property
     def BackgroundColor(self) -> Color: ...
@@ -1934,6 +2137,7 @@ class GridCellFormatEventArgs:
     def ForegroundColor(self, value: Color) -> None: ...
 
 
+from ..Drawing import PointF
 class GridCellMouseEventArgs(MouseEventArgs):
     def __init__(self, gridColumn: GridColumn, row: int, column: int, item: Object, buttons: MouseButtons, modifiers: Keys, location: PointF, delta: Nullable, pressure: Single): ...
     @property
@@ -2048,6 +2252,13 @@ class GridLines(Enum):
     Both = 3
 
 
+from ..Drawing import PointF
+from ..Drawing import Rectangle
+from ..Drawing import Size
+from ..Drawing import SizeF
+from ..Drawing import Color
+from ..Drawing import RectangleF
+from ..Drawing import Image
 class GridView(Grid):
     def __init__(self): ...
     @property
@@ -2124,6 +2335,15 @@ class GridViewDragInfo:
     def Position(self, value: GridDragPosition) -> None: ...
 
 
+from ..Drawing import Font
+from ..Drawing import Color
+from ..Drawing import Padding
+from ..Drawing import Size
+from ..Drawing import Rectangle
+from ..Drawing import SizeF
+from ..Drawing import PointF
+from ..Drawing import RectangleF
+from ..Drawing import Image
 class GroupBox(Panel):
     def __init__(self): ...
     @property
@@ -2475,6 +2695,7 @@ class IContextMenuHost:
     def ContextMenu(self, value: ContextMenu) -> None: ...
 
 
+from ..Drawing import Image
 class IDataObject:
     def Clear(self) -> None: ...
     def Contains(self, type: str) -> bool: ...
@@ -2519,6 +2740,7 @@ class IHandler:
     def Push(self, item: INavigationItem) -> None: ...
 
 
+from ..Drawing import ImageInterpolation
 class IHandler:
     @property
     def ImageInterpolation(self) -> ImageInterpolation: ...
@@ -2538,6 +2760,8 @@ class IHandler:
     def TrySetObject(self, value: Object, type: str) -> bool: ...
 
 
+from ..Drawing import Image
+from ..Drawing import Size
 class IHandler:
     @property
     def Image(self) -> Image: ...
@@ -2553,6 +2777,7 @@ class IHandler:
     def MinimumSize(self, value: Size) -> None: ...
 
 
+from ..Drawing import Color
 class IHandler:
     @property
     def AllowAlpha(self) -> bool: ...
@@ -2616,6 +2841,7 @@ class IHandler:
     pass
 
 
+from ..Drawing import ImageInterpolation
 class IHandler:
     @property
     def AutoSelectMode(self) -> AutoSelectMode: ...
@@ -2643,6 +2869,7 @@ class IHandler:
     pass
 
 
+from ..Drawing import Font
 class IHandler:
     @property
     def Font(self) -> Font: ...
@@ -2661,6 +2888,7 @@ class IHandler:
     def ElementType(self, value: Type) -> None: ...
 
 
+from ..Drawing import Font
 class IHandler:
     @property
     def Value(self) -> Font: ...
@@ -2790,6 +3018,7 @@ class IHandler:
     def Width(self, value: int) -> None: ...
 
 
+from ..Drawing import PointF
 class IHandler:
     @property
     def DataStore(self) -> Iterable[Object]: ...
@@ -2802,6 +3031,8 @@ class IHandler:
     def DataStore(self, value: Iterable[Object]) -> None: ...
 
 
+from ..Drawing import Font
+from ..Drawing import Color
 class IHandler:
     @property
     def Font(self) -> Font: ...
@@ -2817,6 +3048,8 @@ class IHandler:
     def TextColor(self, value: Color) -> None: ...
 
 
+from ..Drawing import Point
+from ..Drawing import Icon
 class IHandler:
     def BringToFront(self) -> None: ...
     def Close(self) -> None: ...
@@ -2890,6 +3123,7 @@ class IHandler:
     def SetOwner(self, owner: Window) -> None: ...
 
 
+from ..Drawing import Image
 class IHandler:
     @property
     def Image(self) -> Image: ...
@@ -2934,6 +3168,7 @@ class IHandler:
     def ThreeState(self, value: bool) -> None: ...
 
 
+from ..Drawing import Size
 class IHandler:
     @property
     def ClientSize(self) -> Size: ...
@@ -2943,6 +3178,7 @@ class IHandler:
     def ClientSize(self, value: Size) -> None: ...
 
 
+from ..Drawing import Color
 class IHandler:
     @property
     def DisabledTextColor(self) -> Color: ...
@@ -2950,6 +3186,7 @@ class IHandler:
     def DisabledTextColor(self, value: Color) -> None: ...
 
 
+from ..Drawing import Rectangle
 class IHandler:
     @overload
     def Create(self) -> None: ...
@@ -2965,6 +3202,7 @@ class IHandler:
     def Update(self, region: Rectangle) -> None: ...
 
 
+from ..Drawing import Image
 class IHandler:
     @property
     def Closable(self) -> bool: ...
@@ -2999,6 +3237,7 @@ class IHandler:
     def SelectedIndex(self, value: int) -> None: ...
 
 
+from ..Drawing import Color
 class IHandler:
     @property
     def MaxDate(self) -> DateTime: ...
@@ -3026,6 +3265,12 @@ class IHandler:
     def Value(self, value: Nullable) -> None: ...
 
 
+from ..Drawing import Color
+from ..Drawing import Size
+from ..Drawing import Rectangle
+from ..Drawing import PointF
+from ..Drawing import Image
+from ..Drawing import SizeF
 class IHandler:
     def DoDragDrop(self, data: DataObject, allowedEffects: DragEffects, image: Image, cursorOffset: PointF) -> None: ...
     def Focus(self) -> None: ...
@@ -3110,6 +3355,7 @@ class IHandler:
     def Text(self, value: str) -> None: ...
 
 
+from ..Drawing import Color
 class IHandler:
     @property
     def AllowAlpha(self) -> bool: ...
@@ -3123,6 +3369,7 @@ class IHandler:
     def Color(self, value: Color) -> None: ...
 
 
+from ..Drawing import Color
 class IHandler:
     @property
     def DataStore(self) -> Iterable[Object]: ...
@@ -3202,6 +3449,8 @@ class IHandler:
     def Stop(self) -> None: ...
 
 
+from ..Drawing import Padding
+from ..Drawing import Size
 class IHandler:
     @property
     def Content(self) -> Control: ...
@@ -3233,6 +3482,7 @@ class IHandler:
     def MultiSelect(self, value: bool) -> None: ...
 
 
+from ..Drawing import Image
 class IHandler:
     @property
     def ContentImage(self) -> Image: ...
@@ -3255,6 +3505,7 @@ class IHandler:
     def Show(self, indicator: TrayIndicator) -> None: ...
 
 
+from ..Drawing import PointF
 class IHandler:
     @property
     def Buttons(self) -> MouseButtons: ...
@@ -3345,6 +3596,7 @@ class IHandler:
     def Checked(self, value: bool) -> None: ...
 
 
+from ..Drawing import Image
 class IHandler:
     @property
     def Image(self) -> Image: ...
@@ -3394,6 +3646,7 @@ class IHandler:
     def SkipLiterals(self, value: bool) -> None: ...
 
 
+from ..Drawing import Color
 class IHandler:
     @property
     def CultureInfo(self) -> CultureInfo: ...
@@ -3520,6 +3773,7 @@ class IHandler:
     def Stop(self) -> None: ...
 
 
+from ..Drawing import Image
 class IHandler:
     @property
     def Image(self) -> Image: ...
@@ -3539,6 +3793,7 @@ class IHandler:
     def Visible(self, value: bool) -> None: ...
 
 
+from ..Drawing import Image
 class IHandler:
     def CreateFromCommand(self, command: Command) -> None: ...
     @property
@@ -3639,6 +3894,7 @@ class IHandler:
     def Title(self, value: str) -> None: ...
 
 
+from ..Drawing import Image
 class IHandler:
     @property
     def Enabled(self) -> bool: ...
@@ -3706,6 +3962,7 @@ class IHandler:
     pass
 
 
+from ..Drawing import RectangleF
 class IHandler:
     @property
     def BitsPerPixel(self) -> int: ...
@@ -3761,6 +4018,7 @@ class IHandler:
     def SetProgress(self, state: TaskbarProgressState, progress: Single) -> None: ...
 
 
+from ..Drawing import Font
 class IHandler:
     @property
     def Font(self) -> Font: ...
@@ -3768,6 +4026,8 @@ class IHandler:
     def Font(self, value: Font) -> None: ...
 
 
+from ..Drawing import Size
+from ..Drawing import Padding
 class IHandler:
     def CreateControl(self, columns: int, rows: int) -> None: ...
     @property
@@ -3873,6 +4133,7 @@ class IHandler:
     def Wrap(self, value: bool) -> None: ...
 
 
+from ..Drawing import Image
 class IHandler:
     @property
     def Image(self) -> Image: ...
@@ -3945,6 +4206,7 @@ class IHandler:
     def SplitterWidth(self, value: int) -> None: ...
 
 
+from ..Drawing import Color
 class IHandler:
     @property
     def Text(self) -> str: ...
@@ -3964,6 +4226,8 @@ class IHandler:
     pass
 
 
+from ..Drawing import Point
+from ..Drawing import Size
 class IHandler:
     @property
     def Border(self) -> BorderType: ...
@@ -4021,6 +4285,10 @@ class IHandler:
     def Value(self, value: int) -> None: ...
 
 
+from ..Drawing import Font
+from ..Drawing import Color
+from ..Drawing import FontFamily
+from ..Drawing import FontTypeface
 class IHandler:
     @property
     def Buffer(self) -> ITextBuffer: ...
@@ -4142,6 +4410,7 @@ class IHandler:
     def TabPosition(self, value: DockPosition) -> None: ...
 
 
+from ..Drawing import PointF
 class IHandler:
     @property
     def DataStore(self) -> ITreeGridStore: ...
@@ -4216,6 +4485,8 @@ class IHandler:
     def Checked(self, value: bool) -> None: ...
 
 
+from ..Drawing import Image
+from ..Drawing import PointF
 class IHandler:
     @overload
     def Create(self, type: CursorType) -> None: ...
@@ -4236,6 +4507,8 @@ class IHandler:
     def Text(self) -> str: ...
 
 
+from ..Drawing import PointF
+from ..Drawing import Color
 class IHandler:
     @property
     def DataStore(self) -> ITreeStore: ...
@@ -4258,6 +4531,7 @@ class IHandler:
     def TextColor(self, value: Color) -> None: ...
 
 
+from ..Drawing import Image
 class IHandler:
     @property
     def Copyright(self) -> str: ...
@@ -4334,6 +4608,7 @@ class IListItem:
     def Text(self, value: str) -> None: ...
 
 
+from ..Drawing import Image
 class ImageListItem(ListItem):
     def __init__(self): ...
     @property
@@ -4342,6 +4617,7 @@ class ImageListItem(ListItem):
     def Image(self, value: Image) -> None: ...
 
 
+from ..Drawing import ImageInterpolation
 class ImageTextCell(Cell):
     @overload
     def __init__(self): ...
@@ -4375,6 +4651,13 @@ class ImageTextCell(Cell):
     def VerticalAlignment(self, value: VerticalAlignment) -> None: ...
 
 
+from ..Drawing import Image
+from ..Drawing import Rectangle
+from ..Drawing import Size
+from ..Drawing import SizeF
+from ..Drawing import Color
+from ..Drawing import PointF
+from ..Drawing import RectangleF
 class ImageView(Control):
     def __init__(self): ...
     @property
@@ -4383,6 +4666,7 @@ class ImageView(Control):
     def Image(self, value: Image) -> None: ...
 
 
+from ..Drawing import ImageInterpolation
 class ImageViewCell:
     @overload
     def __init__(self): ...
@@ -4484,6 +4768,9 @@ class ISubmenuHandler:
     def RemoveMenu(self, item: MenuItem) -> None: ...
 
 
+from ..Drawing import Font
+from ..Drawing import Color
+from ..Drawing import FontFamily
 class ITextBuffer:
     def Clear(self) -> None: ...
     def Delete(self, range: Range) -> None: ...
@@ -4527,6 +4814,7 @@ class IValueConverter:
     def ConvertBack(self, value: Object, targetType: Type, parameter: Object, culture: CultureInfo) -> Object: ...
 
 
+from ..Drawing import PointF
 class IWindowHandler:
     def FromPoint(self, point: PointF) -> Window: ...
 
@@ -4709,6 +4997,14 @@ class KeysExtensions:
     def ToShortcutString(key: Keys, separator: str) -> str: ...
 
 
+from ..Drawing import Color
+from ..Drawing import Font
+from ..Drawing import Rectangle
+from ..Drawing import Size
+from ..Drawing import SizeF
+from ..Drawing import PointF
+from ..Drawing import RectangleF
+from ..Drawing import Image
 class Label(TextControl):
     def __init__(self): ...
     @property
@@ -4733,12 +5029,27 @@ class Label(TextControl):
     def Wrap(self, value: WrapMode) -> None: ...
 
 
+from ..Drawing import Size
+from ..Drawing import Rectangle
+from ..Drawing import SizeF
+from ..Drawing import Color
+from ..Drawing import PointF
+from ..Drawing import RectangleF
+from ..Drawing import Image
 class Layout(Container):
     def BeginInit(self) -> None: ...
     def EndInit(self) -> None: ...
     def Update(self) -> None: ...
 
 
+from ..Drawing import Color
+from ..Drawing import Font
+from ..Drawing import Rectangle
+from ..Drawing import Size
+from ..Drawing import SizeF
+from ..Drawing import PointF
+from ..Drawing import RectangleF
+from ..Drawing import Image
 class LinkButton(TextControl):
     def __init__(self): ...
     def add_Click(self, value: EventHandler) -> None: ...
@@ -4757,6 +5068,14 @@ class LinkButton(TextControl):
     def DisabledTextColor(self, value: Color) -> None: ...
 
 
+from ..Drawing import Color
+from ..Drawing import Font
+from ..Drawing import Rectangle
+from ..Drawing import Size
+from ..Drawing import SizeF
+from ..Drawing import PointF
+from ..Drawing import RectangleF
+from ..Drawing import Image
 class ListBox(ListControl):
     def __init__(self): ...
     def add_Activated(self, value: EventHandler) -> None: ...
@@ -4775,6 +5094,14 @@ class ListBox(ListControl):
     def ItemImageBinding(self, value: IIndirectBinding) -> None: ...
 
 
+from ..Drawing import Color
+from ..Drawing import Font
+from ..Drawing import Rectangle
+from ..Drawing import Size
+from ..Drawing import SizeF
+from ..Drawing import PointF
+from ..Drawing import RectangleF
+from ..Drawing import Image
 class ListControl(CommonControl):
     def add_SelectedIndexChanged(self, value: EventHandler) -> None: ...
     def add_SelectedKeyChanged(self, value: EventHandler) -> None: ...
@@ -4869,6 +5196,14 @@ class LocalizeEventArgs:
     def LocalizedText(self, value: str) -> None: ...
 
 
+from ..Drawing import Color
+from ..Drawing import Font
+from ..Drawing import Rectangle
+from ..Drawing import Size
+from ..Drawing import SizeF
+from ..Drawing import PointF
+from ..Drawing import RectangleF
+from ..Drawing import Image
 class MaskedTextBox(TextBox):
     @overload
     def __init__(self): ...
@@ -4906,6 +5241,14 @@ class MaskedTextBox(TextBox):
 
 
 
+from ..Drawing import Color
+from ..Drawing import Font
+from ..Drawing import Rectangle
+from ..Drawing import Size
+from ..Drawing import SizeF
+from ..Drawing import PointF
+from ..Drawing import RectangleF
+from ..Drawing import Image
 class MaskedTextStepper(TextStepper):
     @overload
     def __init__(self): ...
@@ -5050,6 +5393,7 @@ class MenuItemCollection:
     def Trim(self) -> None: ...
 
 
+from ..Drawing import Image
 class MenuSegmentedItem(SegmentedItem):
     @overload
     def __init__(self): ...
@@ -5106,6 +5450,7 @@ class MessageBoxType(Enum):
     Question = 3
 
 
+from ..Drawing import PointF
 class Mouse:
     @property
     def Buttons() -> MouseButtons: ...
@@ -5126,6 +5471,7 @@ class MouseButtons(Enum):
     Middle = 4
 
 
+from ..Drawing import PointF
 class MouseEventArgs:
     def __init__(self, buttons: MouseButtons, modifiers: Keys, location: PointF, delta: Nullable, pressure: Single): ...
     @property
@@ -5144,6 +5490,13 @@ class MouseEventArgs:
     def Handled(self, value: bool) -> None: ...
 
 
+from ..Drawing import Size
+from ..Drawing import Rectangle
+from ..Drawing import SizeF
+from ..Drawing import Color
+from ..Drawing import PointF
+from ..Drawing import RectangleF
+from ..Drawing import Image
 class Navigation(Container):
     @overload
     def __init__(self): ...
@@ -5182,6 +5535,8 @@ class NavigationItemEventArgs:
     def Item(self) -> INavigationItem: ...
 
 
+from ..Drawing import Icon
+from ..Drawing import Image
 class Notification(Widget):
     def __init__(self): ...
     def add_Activated(self, value: EventHandler) -> None: ...
@@ -5261,6 +5616,14 @@ class NumericMaskedTextProvider(VariableMaskedTextProvider):
 
 
 
+from ..Drawing import Color
+from ..Drawing import Font
+from ..Drawing import Rectangle
+from ..Drawing import Size
+from ..Drawing import SizeF
+from ..Drawing import PointF
+from ..Drawing import RectangleF
+from ..Drawing import Image
 class NumericStepper(CommonControl):
     def __init__(self): ...
     def add_ValueChanged(self, value: EventHandler) -> None: ...
@@ -5347,6 +5710,8 @@ class PageSettings(Widget):
     def PrintableArea(self) -> RectangleF: ...
 
 
+from ..Drawing import Graphics
+from ..Drawing import RectangleF
 class PaintEventArgs:
     def __init__(self, graphics: Graphics, clipRectangle: RectangleF): ...
     @property
@@ -5355,6 +5720,14 @@ class PaintEventArgs:
     def Graphics(self) -> Graphics: ...
 
 
+from ..Drawing import Padding
+from ..Drawing import Size
+from ..Drawing import Rectangle
+from ..Drawing import SizeF
+from ..Drawing import Color
+from ..Drawing import PointF
+from ..Drawing import RectangleF
+from ..Drawing import Image
 class Panel(Container):
     def __init__(self): ...
     @property
@@ -5379,6 +5752,14 @@ class Panel(Container):
     def Padding(self, value: Padding) -> None: ...
 
 
+from ..Drawing import Color
+from ..Drawing import Font
+from ..Drawing import Rectangle
+from ..Drawing import Size
+from ..Drawing import SizeF
+from ..Drawing import PointF
+from ..Drawing import RectangleF
+from ..Drawing import Image
 class PasswordBox(TextControl):
     def __init__(self): ...
     @property
@@ -5395,6 +5776,14 @@ class PasswordBox(TextControl):
     def ReadOnly(self, value: bool) -> None: ...
 
 
+from ..Drawing import Point
+from ..Drawing import Size
+from ..Drawing import Rectangle
+from ..Drawing import SizeF
+from ..Drawing import Color
+from ..Drawing import PointF
+from ..Drawing import RectangleF
+from ..Drawing import Image
 class PixelLayout(Layout):
     def __init__(self): ...
     @overload
@@ -5460,6 +5849,8 @@ class PrintDocument(Widget):
     def PrintSettings(self, value: PrintSettings) -> None: ...
 
 
+from ..Drawing import Graphics
+from ..Drawing import SizeF
 class PrintPageEventArgs:
     def __init__(self, graphics: Graphics, pageSize: SizeF, currentPage: int): ...
     @property
@@ -5523,6 +5914,13 @@ class PrintSettings(Widget):
     def SelectedPageRange(self, value: Range) -> None: ...
 
 
+from ..Drawing import Rectangle
+from ..Drawing import Size
+from ..Drawing import SizeF
+from ..Drawing import Color
+from ..Drawing import PointF
+from ..Drawing import RectangleF
+from ..Drawing import Image
 class ProgressBar(Control):
     def __init__(self): ...
     @property
@@ -5669,6 +6067,13 @@ class PropertyCellTypeString:
     def OnPaint(self, args: CellPaintEventArgs) -> None: ...
 
 
+from ..Drawing import Rectangle
+from ..Drawing import Size
+from ..Drawing import SizeF
+from ..Drawing import Color
+from ..Drawing import PointF
+from ..Drawing import RectangleF
+from ..Drawing import Image
 class PropertyGrid(Control):
     def __init__(self): ...
     def add_PropertyValueChanged(self, value: EventHandler) -> None: ...
@@ -5707,6 +6112,14 @@ class PropertyValueChangedEventArgs:
     def PropertyName(self) -> str: ...
 
 
+from ..Drawing import Color
+from ..Drawing import Font
+from ..Drawing import Rectangle
+from ..Drawing import Size
+from ..Drawing import SizeF
+from ..Drawing import PointF
+from ..Drawing import RectangleF
+from ..Drawing import Image
 class RadioButton(TextControl):
     @overload
     def __init__(self): ...
@@ -5730,6 +6143,14 @@ class RadioButton(TextControl):
     def CommandParameter(self, value: Object) -> None: ...
 
 
+from ..Drawing import Color
+from ..Drawing import Size
+from ..Drawing import Padding
+from ..Drawing import Rectangle
+from ..Drawing import SizeF
+from ..Drawing import PointF
+from ..Drawing import RectangleF
+from ..Drawing import Image
 class RadioButtonList(Panel):
     def __init__(self): ...
     def add_SelectedIndexChanged(self, value: EventHandler) -> None: ...
@@ -5800,6 +6221,7 @@ class RadioButtonList(Panel):
     def TextColor(self, value: Color) -> None: ...
 
 
+from ..Drawing import Image
 class RadioCommand(CheckCommand):
     @overload
     def __init__(self): ...
@@ -5829,6 +6251,7 @@ class RadioMenuItem(MenuItem):
     def Checked(self, value: bool) -> None: ...
 
 
+from ..Drawing import Image
 class RadioToolItem(ToolItem):
     @overload
     def __init__(self): ...
@@ -5871,6 +6294,16 @@ class RelayCommand:
 
 
 
+from ..Drawing import Font
+from ..Drawing import Color
+from ..Drawing import FontFamily
+from ..Drawing import FontTypeface
+from ..Drawing import Rectangle
+from ..Drawing import Size
+from ..Drawing import SizeF
+from ..Drawing import PointF
+from ..Drawing import RectangleF
+from ..Drawing import Image
 class RichTextArea(TextArea):
     def __init__(self): ...
     @property
@@ -5926,6 +6359,8 @@ class SaveFileDialog(FileDialog):
     def __init__(self): ...
 
 
+from ..Drawing import RectangleF
+from ..Drawing import PointF
 class Screen(Widget):
     @overload
     def __init__(self): ...
@@ -5960,6 +6395,15 @@ class Screen(Widget):
     def GetImage(self, rect: RectangleF) -> Image: ...
 
 
+from ..Drawing import Point
+from ..Drawing import Size
+from ..Drawing import Padding
+from ..Drawing import Rectangle
+from ..Drawing import SizeF
+from ..Drawing import Color
+from ..Drawing import PointF
+from ..Drawing import RectangleF
+from ..Drawing import Image
 class Scrollable(Panel):
     def __init__(self): ...
     def add_Scroll(self, value: EventHandler) -> None: ...
@@ -6001,16 +6445,32 @@ class Scrollable(Panel):
     def UpdateScrollSizes(self) -> None: ...
 
 
+from ..Drawing import Point
 class ScrollEventArgs:
     def __init__(self, scrollPosition: Point): ...
     @property
     def ScrollPosition(self) -> Point: ...
 
 
+from ..Drawing import Color
+from ..Drawing import Font
+from ..Drawing import Rectangle
+from ..Drawing import Size
+from ..Drawing import SizeF
+from ..Drawing import PointF
+from ..Drawing import RectangleF
+from ..Drawing import Image
 class SearchBox(TextBox):
     def __init__(self): ...
 
 
+from ..Drawing import Rectangle
+from ..Drawing import Size
+from ..Drawing import SizeF
+from ..Drawing import Color
+from ..Drawing import PointF
+from ..Drawing import RectangleF
+from ..Drawing import Image
 class SegmentedButton(Control):
     def __init__(self): ...
     def add_ItemClick(self, value: EventHandler) -> None: ...
@@ -6049,6 +6509,7 @@ class SegmentedButton(Control):
     def SelectionMode(self, value: SegmentedSelectionMode) -> None: ...
 
 
+from ..Drawing import Image
 class SegmentedItem(BindableWidget):
     def add_Click(self, value: EventHandler) -> None: ...
     def add_SelectedChanged(self, value: EventHandler) -> None: ...
@@ -6136,6 +6597,7 @@ class SeparatorMenuItem(MenuItem):
     def __init__(self): ...
 
 
+from ..Drawing import Image
 class SeparatorToolItem(ToolItem):
     def __init__(self): ...
     @property
@@ -6158,6 +6620,13 @@ class ShowPromptMode(Enum):
 
 
 
+from ..Drawing import Rectangle
+from ..Drawing import Size
+from ..Drawing import SizeF
+from ..Drawing import Color
+from ..Drawing import PointF
+from ..Drawing import RectangleF
+from ..Drawing import Image
 class Slider(Control):
     def __init__(self): ...
     def add_ValueChanged(self, value: EventHandler) -> None: ...
@@ -6190,6 +6659,13 @@ class Slider(Control):
     def Value(self, value: int) -> None: ...
 
 
+from ..Drawing import Rectangle
+from ..Drawing import Size
+from ..Drawing import SizeF
+from ..Drawing import Color
+from ..Drawing import PointF
+from ..Drawing import RectangleF
+from ..Drawing import Image
 class Spinner(Control):
     def __init__(self): ...
     @property
@@ -6198,6 +6674,13 @@ class Spinner(Control):
     def Enabled(self, value: bool) -> None: ...
 
 
+from ..Drawing import Size
+from ..Drawing import Rectangle
+from ..Drawing import SizeF
+from ..Drawing import Color
+from ..Drawing import PointF
+from ..Drawing import RectangleF
+from ..Drawing import Image
 class Splitter(Container):
     def __init__(self): ...
     def add_PositionChangeCompleted(self, value: EventHandler) -> None: ...
@@ -6264,6 +6747,14 @@ class SplitterPositionChangingEventArgs:
     def NewPosition(self) -> int: ...
 
 
+from ..Drawing import Padding
+from ..Drawing import Size
+from ..Drawing import Rectangle
+from ..Drawing import SizeF
+from ..Drawing import Color
+from ..Drawing import PointF
+from ..Drawing import RectangleF
+from ..Drawing import Image
 class StackLayout(Panel):
     @overload
     def __init__(self): ...
@@ -6299,6 +6790,7 @@ class StackLayout(Panel):
     def SuspendLayout(self) -> None: ...
 
 
+from ..Drawing import Image
 class StackLayoutItem:
     @overload
     def __init__(self): ...
@@ -6332,6 +6824,13 @@ class StackLayoutItem:
     def VerticalAlignment(self, value: Nullable) -> None: ...
 
 
+from ..Drawing import Rectangle
+from ..Drawing import Size
+from ..Drawing import SizeF
+from ..Drawing import Color
+from ..Drawing import PointF
+from ..Drawing import RectangleF
+from ..Drawing import Image
 class Stepper(Control):
     def __init__(self): ...
     def add_Step(self, value: EventHandler) -> None: ...
@@ -6364,6 +6863,7 @@ class SubmenuExtensions:
     def GetChildren(submenu: ISubmenu) -> Iterable[MenuItem]: ...
 
 
+from ..Drawing import Image
 class SubMenuItem(ButtonMenuItem):
     @overload
     def __init__(self): ...
@@ -6377,6 +6877,13 @@ class SubMenuItem(ButtonMenuItem):
     def remove_Opening(self, value: EventHandler) -> None: ...
 
 
+from ..Drawing import Size
+from ..Drawing import Rectangle
+from ..Drawing import SizeF
+from ..Drawing import Color
+from ..Drawing import PointF
+from ..Drawing import RectangleF
+from ..Drawing import Image
 class TabControl(Container):
     def __init__(self): ...
     def add_SelectedIndexChanged(self, value: EventHandler) -> None: ...
@@ -6403,6 +6910,7 @@ class TabControl(Container):
     def TabPosition(self, value: DockPosition) -> None: ...
 
 
+from ..Drawing import Image
 class TableCell:
     @overload
     def __init__(self): ...
@@ -6428,6 +6936,15 @@ class TableCell:
     def ScaleWidth(self, value: bool) -> None: ...
 
 
+from ..Drawing import Size
+from ..Drawing import Point
+from ..Drawing import Padding
+from ..Drawing import Rectangle
+from ..Drawing import SizeF
+from ..Drawing import Color
+from ..Drawing import PointF
+from ..Drawing import RectangleF
+from ..Drawing import Image
 class TableLayout(Layout):
     @overload
     def __init__(self): ...
@@ -6484,6 +7001,7 @@ class TableLayout(Layout):
     def SetRowScale(self, row: int, scale: bool) -> None: ...
 
 
+from ..Drawing import Image
 class TableRow:
     @overload
     def __init__(self): ...
@@ -6517,6 +7035,14 @@ class TableRow:
     def ScaleHeight(self, value: bool) -> None: ...
 
 
+from ..Drawing import Image
+from ..Drawing import Padding
+from ..Drawing import Size
+from ..Drawing import Rectangle
+from ..Drawing import SizeF
+from ..Drawing import Color
+from ..Drawing import PointF
+from ..Drawing import RectangleF
 class TabPage(Panel):
     @overload
     def __init__(self): ...
@@ -6552,6 +7078,14 @@ class TextAlignment(Enum):
     Right = 2
 
 
+from ..Drawing import Color
+from ..Drawing import Font
+from ..Drawing import Rectangle
+from ..Drawing import Size
+from ..Drawing import SizeF
+from ..Drawing import PointF
+from ..Drawing import RectangleF
+from ..Drawing import Image
 class TextArea(TextControl):
     def __init__(self): ...
     def add_CaretIndexChanged(self, value: EventHandler) -> None: ...
@@ -6610,6 +7144,14 @@ class TextArea(TextControl):
     def Wrap(self, value: bool) -> None: ...
 
 
+from ..Drawing import Color
+from ..Drawing import Font
+from ..Drawing import Rectangle
+from ..Drawing import Size
+from ..Drawing import SizeF
+from ..Drawing import PointF
+from ..Drawing import RectangleF
+from ..Drawing import Image
 class TextBox(TextControl):
     def __init__(self): ...
     def add_TextChanging(self, value: EventHandler) -> None: ...
@@ -6698,6 +7240,14 @@ class TextChangingEventArgs:
     def Text(self) -> str: ...
 
 
+from ..Drawing import Color
+from ..Drawing import Font
+from ..Drawing import Rectangle
+from ..Drawing import Size
+from ..Drawing import SizeF
+from ..Drawing import PointF
+from ..Drawing import RectangleF
+from ..Drawing import Image
 class TextControl(CommonControl):
     def add_TextChanged(self, value: EventHandler) -> None: ...
     @property
@@ -6728,6 +7278,14 @@ class TextReplacements(Enum):
     All = 15
 
 
+from ..Drawing import Color
+from ..Drawing import Font
+from ..Drawing import Rectangle
+from ..Drawing import Size
+from ..Drawing import SizeF
+from ..Drawing import PointF
+from ..Drawing import RectangleF
+from ..Drawing import Image
 class TextStepper(TextBox):
     def __init__(self): ...
     def add_Step(self, value: EventHandler) -> None: ...
@@ -6746,6 +7304,14 @@ class TextStepper(TextBox):
 
 
 
+from ..Drawing import Image
+from ..Drawing import Size
+from ..Drawing import Color
+from ..Drawing import Font
+from ..Drawing import Rectangle
+from ..Drawing import SizeF
+from ..Drawing import PointF
+from ..Drawing import RectangleF
 class ToggleButton(Button):
     def __init__(self): ...
     def add_CheckedChanged(self, value: EventHandler) -> None: ...
@@ -6785,6 +7351,7 @@ class ToolBarTextAlign(Enum):
     Underneath = 1
 
 
+from ..Drawing import Image
 class ToolItem(Tool):
     def add_Click(self, value: EventHandler) -> None: ...
     @property
@@ -6839,6 +7406,8 @@ class ToolItemCollection:
     def AddSeparator(self, order: int, type: SeparatorToolItemType) -> None: ...
 
 
+from ..Drawing import Icon
+from ..Drawing import Image
 class TrayIndicator(Widget):
     def __init__(self): ...
     def add_Activated(self, value: EventHandler) -> None: ...
@@ -6911,6 +7480,13 @@ class TreeGridItemCollection:
     def __init__(self, items: Iterable[ITreeGridItem]): ...
 
 
+from ..Drawing import PointF
+from ..Drawing import Rectangle
+from ..Drawing import Size
+from ..Drawing import SizeF
+from ..Drawing import Color
+from ..Drawing import RectangleF
+from ..Drawing import Image
 class TreeGridView(Grid):
     def __init__(self): ...
     def add_Activated(self, value: EventHandler) -> None: ...
@@ -6987,6 +7563,7 @@ class TreeGridViewItemEventArgs:
     def Item(self) -> ITreeGridItem: ...
 
 
+from ..Drawing import Image
 class TreeItem(ImageListItem):
     @overload
     def __init__(self): ...
@@ -7098,6 +7675,13 @@ class VerticalAlignment(Enum):
     Stretch = 3
 
 
+from ..Drawing import Rectangle
+from ..Drawing import Size
+from ..Drawing import SizeF
+from ..Drawing import Color
+from ..Drawing import PointF
+from ..Drawing import RectangleF
+from ..Drawing import Image
 class WebView(Control):
     def __init__(self): ...
     def add_DocumentLoaded(self, value: EventHandler) -> None: ...
@@ -7171,6 +7755,16 @@ class WidgetExtensions:
     def With(widget: T, action: Action) -> T: ...
 
 
+from ..Drawing import PointF
+from ..Drawing import Point
+from ..Drawing import Rectangle
+from ..Drawing import Icon
+from ..Drawing import Padding
+from ..Drawing import Size
+from ..Drawing import SizeF
+from ..Drawing import Color
+from ..Drawing import RectangleF
+from ..Drawing import Image
 class Window(Panel):
     def add_Closed(self, value: EventHandler) -> None: ...
     def add_Closing(self, value: EventHandler) -> None: ...

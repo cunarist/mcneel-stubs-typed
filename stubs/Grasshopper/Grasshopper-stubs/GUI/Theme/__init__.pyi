@@ -95,6 +95,7 @@ class GH_PageSettings:
     def ShadowSize(self, AutoPropertyValue: int) -> None: ...
 
 
+from ..Canvas import GH_PaletteStyle
 class GH_PaletteSettings:
     @property
     def ErrorSelected(self) -> GH_PaletteStyle: ...

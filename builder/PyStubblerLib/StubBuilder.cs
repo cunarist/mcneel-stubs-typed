@@ -197,6 +197,53 @@ namespace PyStubblerLib
                     continue;
                 }
 
+                // get the list of constructors and methods
+                ConstructorInfo[] constructors = stubType.GetConstructors();
+                MethodInfo[] methods = stubType.GetMethods();
+
+                // import parameter types
+                HashSet<Tuple<string, string>> paramImports = new HashSet<Tuple<string, string>>();
+                foreach (var constructor in constructors)
+                {
+                    var parameters = constructor.GetParameters();
+                    for (int i = 0; i < parameters.Length; i++)
+                    {
+                        var param = parameters[i];
+                        var paramType = param.ParameterType;
+                        var relativeNamespace = FindRelativeNamespace(
+                            stubType.Namespace, paramType.Namespace
+                        );
+                        if (relativeNamespace == null)
+                            continue;
+                        paramImports.Add(Tuple.Create(relativeNamespace, paramType.Name));
+                    }
+                }
+                foreach (var method in methods)
+                {
+                    var parameters = method.GetParameters();
+                    for (int i = 0; i < parameters.Length; i++)
+                    {
+                        var param = parameters[i];
+                        var paramType = param.ParameterType;
+                        var relativeNamespace = FindRelativeNamespace(
+                            stubType.Namespace, paramType.Namespace
+                        );
+                        if (relativeNamespace == null)
+                            continue;
+                        paramImports.Add(
+                            Tuple.Create(relativeNamespace, ToPythonType(paramType.Name))
+                        );
+                    }
+                }
+                foreach (var paramImport in paramImports)
+                {
+                    var relativeNamespace = paramImport.Item1;
+                    var paramType = paramImport.Item2;
+                    if (relativeNamespace != "" && relativeNamespace != ".")
+                        sb.AppendLine($"from {relativeNamespace} import {paramType}");
+                }
+
+                // write class definition
                 if (stubType.BaseType != null &&
                   stubType.BaseType.FullName.StartsWith(ns[0]) &&
                   stubType.BaseType.FullName.IndexOf('+') < 0 &&
@@ -214,8 +261,6 @@ namespace PyStubblerLib
 
                 string classStartString = sb.ToString();
 
-                // constructors
-                ConstructorInfo[] constructors = stubType.GetConstructors();
                 // sort for consistent output
                 Array.Sort(constructors, MethodCompare);
                 foreach (var constructor in constructors)
@@ -235,8 +280,6 @@ namespace PyStubblerLib
                     sb.AppendLine("): ...");
                 }
 
-                // methods
-                MethodInfo[] methods = stubType.GetMethods();
                 // sort for consistent output
                 Array.Sort(methods, MethodCompare);
                 Dictionary<string, int> methodNames = new Dictionary<string, int>();
@@ -442,6 +485,9 @@ namespace PyStubblerLib
                     break;
                 }
             }
+
+            if (commonLength == 0)
+                return null;
 
             // Create the relative path
             var relativePathParts = new List<string>();

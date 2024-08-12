@@ -42,6 +42,7 @@ class GH_FontFamilySettingsFrontEnd:
     def RepresentsStandardFamily(self) -> None: ...
 
 
+from ..Canvas import GH_PaletteStyle
 class GH_GenericCapsulePaletteSettings:
     def __init__(self): ...
     @property

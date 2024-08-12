@@ -58,6 +58,7 @@ class ColourChangedEventHandler:
     def Invoke(self, sender: Object, e: EventArgs) -> None: ...
 
 
+from .Base import GH_ColourPickerEventArgs
 class ColourChangedEventHandler:
     def __init__(self, TargetObject: Object, TargetMethod: IntPtr): ...
     def BeginInvoke(self, sender: Object, e: GH_ColourPickerEventArgs, DelegateCallback: AsyncCallback, DelegateAsyncState: Object) -> IAsyncResult: ...
@@ -250,6 +251,7 @@ class GH_ArrowControl:
     def __init__(self): ...
 
 
+from ..Kernel import GH_AssemblyInfo
 class GH_AssemblyInfoDialog:
     def __init__(self): ...
     @property
@@ -332,6 +334,7 @@ class GH_AutoSaveSettingsUI:
     def SettingsUI(self) -> Control: ...
 
 
+from ..Kernel import GH_AssemblyInfo
 class GH_Banner:
     def __init__(self): ...
     def AddAllAssemblyInfo(self) -> None: ...
@@ -351,6 +354,7 @@ class GH_BezierSolver:
     def TangentAt(P0: PointF, P1: PointF, P2: PointF, P3: PointF, t: Single) -> Tuple[SizeF, PointF, PointF, PointF, PointF]: ...
 
 
+from .Canvas import GH_Viewport
 class GH_CanvasMouseEvent:
     @overload
     def __init__(self): ...
@@ -380,6 +384,8 @@ class GH_CanvasMouseEvent:
     def WinFormsEventArgs(self) -> MouseEventArgs: ...
 
 
+from .Canvas import GH_Canvas
+from ..Kernel import GH_RelevantObjectData
 class GH_CanvasObjectMouseDownEventArgs:
     def __init__(self, sender: GH_Canvas, object: GH_RelevantObjectData): ...
     @property
@@ -487,6 +493,8 @@ class GH_ClusterPasswordWindow:
     def __init__(self): ...
 
 
+from ..Kernel.Special import GH_Cluster_OBSOLETE
+from ..Kernel.Special import GH_Cluster
 class GH_ClusterPropertiesEditor:
     def __init__(self): ...
     @overload
@@ -552,6 +560,7 @@ class GH_CompassWidgetSettingsUI:
     def SettingsUI(self) -> Control: ...
 
 
+from ..Kernel import IGH_ObjectProxy
 class GH_ComponentAggregateForm:
     def __init__(self): ...
     @property
@@ -560,6 +569,7 @@ class GH_ComponentAggregateForm:
     def PushProxy(self, proxy: IGH_ObjectProxy) -> None: ...
 
 
+from ..Kernel import IGH_ObjectProxy
 class GH_ComponentGuidConflictDialog:
     def __init__(self): ...
     @property
@@ -660,6 +670,7 @@ class GH_ControlKnobValueEditor:
     def SetupValues(self, limit: bool, lower: Decimal, upper: Decimal, value: Decimal, decimals: int) -> None: ...
 
 
+from ..Kernel import GH_Document
 class GH_CreateStateDialog:
     def __init__(self): ...
     def AddAllDocumentObjects(self, def: GH_Document) -> None: ...
@@ -764,6 +775,7 @@ class GH_DeveloperSettings:
     def __init__(self): ...
 
 
+from .Base import GH_DigitAlign
 class GH_DigitScroller(GH_TextInputBaseControl):
     def __init__(self): ...
     def add_ValueChanged(self, obj: ValueChangedEventHandler) -> None: ...
@@ -830,6 +842,7 @@ class GH_DisplaySettingsCategory(GH_SettingsCategory):
     def Description(self) -> str: ...
 
 
+from ..Kernel import GH_RuntimeMessage
 class GH_DocumentEditor:
     def __init__(self): ...
     def add_AggregateShortcutMenuItems(obj: AggregateShortcutMenuItemsEventHandler) -> None: ...
@@ -867,6 +880,7 @@ class GH_DocumentEditor:
     def ToggleForm(self) -> None: ...
 
 
+from ..Kernel import GH_Document
 class GH_DocumentMdiItem(GH_DoubleBufferedPanel):
     def __init__(self): ...
     @property
@@ -910,6 +924,7 @@ class GH_DocumentPreviewSettingsUI:
     def SettingsUI(self) -> Control: ...
 
 
+from ..Kernel import GH_DocumentProperties
 class GH_DocumentPropertiesEditor:
     def __init__(self): ...
     def SetDocumentProperties(self, Props: GH_DocumentProperties) -> None: ...
@@ -1012,6 +1027,7 @@ class GH_ExternalFilePanel(GH_DoubleBufferedPanel):
     def File(self, Value: str) -> None: ...
 
 
+from .Canvas import GH_Canvas
 class GH_FadeAnimation:
     @overload
     def __init__(self): ...
@@ -1069,6 +1085,7 @@ class GH_FilesSettingsCategory(GH_SettingsCategory):
     def Description(self) -> str: ...
 
 
+from .Canvas import GH_Canvas
 class GH_FindObjectDialog:
     def __init__(self): ...
     @property
@@ -1287,6 +1304,7 @@ class GH_GDI_Util:
     def SimplifyBoxes(boxes: Iterable[Rectangle]) -> Set[Rectangle]: ...
 
 
+from ..Kernel.Data import GH_Path
 class GH_GeometricFont:
     def Draw0(graphics: Graphics, colour: Color, position: PointF) -> None: ...
     def Draw1(graphics: Graphics, colour: Color, position: PointF) -> None: ...
@@ -1352,6 +1370,8 @@ class GH_GHALoadSettingsUI:
     def SettingsUI(self) -> Control: ...
 
 
+from ..Kernel.Data import GH_Structure
+from ..Kernel.Types import IGH_Goo
 class GH_GooProxyList(GH_DoubleBufferedPanel):
     def __init__(self): ...
     def add_DataChanged(self, obj: DataChangedEventHandler) -> None: ...
@@ -1364,6 +1384,7 @@ class GH_GooProxyList(GH_DoubleBufferedPanel):
     def SetData(self, data: GH_Structure, baseType: IGH_Goo) -> None: ...
 
 
+from .Gradient import GH_Gradient
 class GH_GradientEditor:
     def __init__(self): ...
     @property
@@ -1372,6 +1393,7 @@ class GH_GradientEditor:
     def Gradient(self, Value: GH_Gradient) -> None: ...
 
 
+from .Gradient import GH_Gradient
 class GH_GradientMenuItem:
     def __init__(self): ...
     @property
@@ -1388,6 +1410,7 @@ class GH_GradientMenuItem:
     def Index(self, Value: int) -> None: ...
 
 
+from ..Kernel.Graphs import GH_GraphContainer
 class GH_GraphEditor:
     def __init__(self): ...
     @property
@@ -1395,6 +1418,8 @@ class GH_GraphEditor:
     def SetGraph(self, G: GH_GraphContainer) -> None: ...
 
 
+from ..Kernel import IGH_DocumentObject
+from ..Kernel import IGH_ObjectProxy
 class GH_GraphicsUtil:
     @overload
     def AppendArc(p0: Point3d, p1: Point3d, dir: Vector3d, path: GraphicsPath) -> None: ...
@@ -1609,6 +1634,7 @@ class GH_IconVariations:
     def CreateIconVariationTexts() -> List: ...
 
 
+from ..Kernel.Special import GH_ImageSampler
 class GH_ImageSamplerSettingsDialog:
     def __init__(self): ...
     def ApplySettings(self) -> None: ...
@@ -1664,6 +1690,7 @@ class GH_Interpolation(Enum):
     EaseInAndOut = 5
 
 
+from ..Kernel.Types import UVInterval
 class GH_Interval2DPicker:
     def __init__(self): ...
     def add_IntervalChanged(self, obj: IntervalChangedEventHandler) -> None: ...
@@ -1788,6 +1815,8 @@ class GH_MarkovWidgetSettingsUI:
     def SettingsUI(self) -> Control: ...
 
 
+from ..Kernel.Special import GH_MarkupProperties
+from ..Kernel.Special import GH_MarkupAttributes
 class GH_MarkupAttributesDialog:
     def __init__(self): ...
     def add_AttributesAccepted(self, obj: AttributesAcceptedEventHandler) -> None: ...
@@ -1857,6 +1886,7 @@ class GH_MaterialPreviewControl:
     def SelectOnClick(self, Value: bool) -> None: ...
 
 
+from ..Kernel.Special import GH_MultiDimensionalSlider
 class GH_MDSliderDialog:
     def __init__(self): ...
     def LoadSettings(self, owner: GH_MultiDimensionalSlider) -> None: ...
@@ -2065,11 +2095,13 @@ class GH_MRUSettingsUI:
     def SettingsUI(self) -> Control: ...
 
 
+from ..Kernel import GH_Document
 class GH_MultiDocSave:
     def __init__(self): ...
     def AddDocument(self, doc: GH_Document) -> None: ...
 
 
+from ..Kernel.Data import IGH_Structure
 class GH_MultilineGooEditor:
     def __init__(self): ...
     @property
@@ -2084,6 +2116,7 @@ class GH_MultilineGooEditor:
     def SetDataTree(self, data: IGH_Structure) -> None: ...
 
 
+from ..Kernel import GH_Document
 class GH_MultiSaveDocumentEntry:
     def __init__(self): ...
     def add_DocumentSaved(self, obj: DocumentSavedEventHandler) -> None: ...
@@ -2096,6 +2129,9 @@ class GH_MultiSaveDocumentEntry:
     def Document(self, Value: GH_Document) -> None: ...
 
 
+from .Canvas import GH_NamedView
+from ..Kernel import GH_Document
+from .Canvas import GH_Canvas
 class GH_NamedViewMenuItem(GH_DoubleBufferedPanel):
     def __init__(self): ...
     @property
@@ -2118,6 +2154,7 @@ class GH_NamedViewMenuItem(GH_DoubleBufferedPanel):
     def View(self, Value: GH_NamedView) -> None: ...
 
 
+from ..Kernel import GH_IconDisplayMode
 class GH_NickNameTextBox:
     def __init__(self): ...
     def add_IconModeChanged(self, obj: IconModeChangedEventHandler) -> None: ...
@@ -2163,6 +2200,7 @@ class GH_NumberPresets:
     def PresetValue(self, index: int) -> Decimal: ...
 
 
+from ..Kernel.Special import GH_NumberSlider
 class GH_NumberSliderPopup:
     def __init__(self): ...
     def Setup(self, owner: GH_NumberSlider) -> None: ...
@@ -2315,6 +2353,7 @@ class GH_PanelEditor:
     def __init__(self): ...
 
 
+from ..Kernel.Special import GH_PanelProperties
 class GH_PanelEditorControl:
     def __init__(self): ...
     @property
@@ -2328,6 +2367,7 @@ class GH_PanelEditorControl:
     def PanelProperties(self, Value: GH_PanelProperties) -> None: ...
 
 
+from .Canvas import GH_Canvas
 class GH_ParamViewerForm:
     def __init__(self): ...
     @property
@@ -2364,6 +2404,8 @@ class GH_PasswordBox:
     def Password(self, Value: str) -> None: ...
 
 
+from ..Kernel.Data import GH_Structure
+from ..Kernel.Types import IGH_Goo
 class GH_PersistentDataEditor:
     def __init__(self): ...
     def GetData(self) -> GH_Structure: ...
@@ -2382,6 +2424,7 @@ class GH_PingMessageWindow:
     def Message(self, Value: str) -> None: ...
 
 
+from ..Kernel.Types import GH_Point
 class GH_PointCurveParamEditor:
     def __init__(self): ...
     def LoadPoint(self, pt: GH_Point) -> None: ...
@@ -2503,6 +2546,8 @@ class GH_QuickImageEditor:
     def ViewportName(self, AutoPropertyValue: str) -> None: ...
 
 
+from ..Kernel import IGH_DocumentObject
+from ..Kernel.Special import GH_NumberSlider
 class GH_RemoteSliderControl:
     def __init__(self): ...
     def IsTarget(self, iObject: IGH_DocumentObject) -> bool: ...
@@ -2510,6 +2555,8 @@ class GH_RemoteSliderControl:
     def UnregisterTarget(self) -> None: ...
 
 
+from ..Kernel import IGH_DocumentObject
+from ..Kernel.Special import GH_BooleanSwitch_Obsolete
 class GH_RemoteSwitchControl:
     def __init__(self): ...
     def IsTarget(self, iObject: IGH_DocumentObject) -> bool: ...
@@ -2527,6 +2574,7 @@ class GH_RhAttributesEditor:
     def SetDefaultAttributes(self) -> None: ...
 
 
+from .Ribbon import GH_Layout
 class GH_RibbonLayoutEditor(GH_DoubleBufferedPanel):
     def __init__(self): ...
     def add_UndoRedoChanged(self, obj: UndoRedoChangedEventHandler) -> None: ...
@@ -2591,6 +2639,7 @@ class GH_RotationalFrame:
 
 
 
+from ..Kernel import GH_MemoryBitmap
 class GH_SamplingSphere:
     def __init__(self, size: int): ...
     @property
@@ -2644,6 +2693,7 @@ class GH_SettingsGUI:
     def __init__(self): ...
 
 
+from ..Kernel import GH_SettingsServer
 class GH_SettingsServerBrowser:
     def __init__(self): ...
     @property
@@ -2652,6 +2702,10 @@ class GH_SettingsServerBrowser:
     def Server(self, Value: GH_SettingsServer) -> None: ...
 
 
+from .Base import GH_SliderRailDisplay
+from .Base import GH_SliderGripDisplay
+from .Base import GH_SliderTickDisplay
+from .Base import GH_SliderAccuracy
 class GH_Slider(GH_TextInputBaseControl):
     def __init__(self): ...
     def add_ValueChanged(self, obj: ValueChangedEventHandler) -> None: ...
@@ -2810,6 +2864,7 @@ class GH_Slider_Obsolete:
     def ValueF(self, Value: Single) -> None: ...
 
 
+from ..Kernel.Special import GH_SliderAnimator
 class GH_SliderAnimationSetup:
     def __init__(self): ...
     def CreatePreview(self) -> None: ...
@@ -2954,6 +3009,7 @@ class GH_StandardIcons:
     def UserObjectIcon_24x24() -> Bitmap: ...
 
 
+from ..Kernel import IGH_DocumentObject
 class GH_StateObjectFrontEnd:
     def __init__(self): ...
     @property
@@ -3151,11 +3207,13 @@ class GH_TrackerFrame:
     def __init__(self, position: Point): ...
 
 
+from ..Kernel.Undo import GH_UndoServer
 class GH_UndoRecordBrowser:
     def __init__(self): ...
     def LoadUndoRecords(self, server: GH_UndoServer) -> None: ...
 
 
+from .Canvas import GH_Canvas
 class GH_UndoServerBrowser:
     def __init__(self): ...
     @property
@@ -3168,6 +3226,7 @@ class GH_UnrecognizedObjectsForm:
     def __init__(self): ...
 
 
+from ..Kernel import GH_Document
 class GH_UpgradeComponentControl(GH_DoubleBufferedPanel):
     def __init__(self): ...
     @property
@@ -3222,6 +3281,10 @@ class GH_ValueListEditor:
     def RetrieveValues(self) -> List: ...
 
 
+from ..Kernel import IGH_Param
+from ..Kernel import GH_VarParamSide
+from ..Kernel import IGH_VarParamComponent
+from ..Kernel import IGH_ParamNameConstructor
 class GH_VariableParameterManager:
     def __init__(self): ...
     @overload
@@ -3350,6 +3413,7 @@ class GH_YakDownloadFormEto:
     def __init__(self, items: Iterable[MissingObjectItem]): ...
 
 
+from ..Kernel import GH_IconDisplayMode
 class IconModeChangedEventHandler:
     def __init__(self, TargetObject: Object, TargetMethod: IntPtr): ...
     def BeginInvoke(self, sender: Object, new_mode: GH_IconDisplayMode, DelegateCallback: AsyncCallback, DelegateAsyncState: Object) -> IAsyncResult: ...
@@ -3423,6 +3487,7 @@ class IGH_Tooltip:
 
 
 
+from ..Kernel.Types import UVInterval
 class IntervalChangedEventHandler:
     def __init__(self, TargetObject: Object, TargetMethod: IntPtr): ...
     def BeginInvoke(self, sender: GH_Interval2DPicker, int: UVInterval, DelegateCallback: AsyncCallback, DelegateAsyncState: Object) -> IAsyncResult: ...
@@ -3607,6 +3672,7 @@ class ValidPasswordEnteredEventHandler:
     def Invoke(self, sender: Object, e: EventArgs) -> None: ...
 
 
+from .Base import GH_DigitScrollerEventArgs
 class ValueChangedEventHandler:
     def __init__(self, TargetObject: Object, TargetMethod: IntPtr): ...
     def BeginInvoke(self, sender: Object, e: GH_DigitScrollerEventArgs, DelegateCallback: AsyncCallback, DelegateAsyncState: Object) -> IAsyncResult: ...
@@ -3621,6 +3687,7 @@ class ValueChangedEventHandler:
     def Invoke(self, sender: GH_NumericTextBox, e: GH_ValueChangedEventArgs) -> None: ...
 
 
+from .Base import GH_SliderEventArgs
 class ValueChangedEventHandler:
     def __init__(self, TargetObject: Object, TargetMethod: IntPtr): ...
     def BeginInvoke(self, sender: Object, e: GH_SliderEventArgs, DelegateCallback: AsyncCallback, DelegateAsyncState: Object) -> IAsyncResult: ...

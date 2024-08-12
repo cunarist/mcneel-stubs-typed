@@ -3,6 +3,23 @@ from enum import Enum
 
 
 
+from ..DocObjects.Custom import UserData
+from ..Geometry import Point3f
+from ..Geometry import Point3d
+from ..Geometry import Vector3d
+from ..Geometry import Plane
+from ..Geometry import Interval
+from ..Geometry import Point2d
+from ..Geometry import Point4d
+from ..Geometry import Vector2d
+from ..Geometry import BoundingBox
+from ..Geometry import Ray3d
+from ..Geometry import Transform
+from ..Geometry import Line
+from ..Geometry import Vector3f
+from ..Geometry import MeshingParameters
+from ..Geometry import GeometryBase
+from ..DocObjects import ObjRef
 class ArchivableDictionary:
     @overload
     def __init__(self): ...
@@ -212,6 +229,13 @@ class ArchivableDictionary:
     def TryGetVector3d(self, key: str) -> Tuple[bool, Vector3d]: ...
 
 
+from ..Geometry import Line
+from ..Geometry import Circle
+from ..Geometry import Arc
+from ..Geometry import Ellipse
+from ..Geometry import Transform
+from ..Geometry import Curve
+from ..Geometry import Set[Curve]
 class CurveList:
     @overload
     def __init__(self): ...
@@ -244,6 +268,10 @@ class CurveList:
 
 
 
+from ..Geometry import Point3d[]
+from ..Geometry import Point3d
+from ..Geometry import Transform
+from ..Geometry import Set[Point3d]
 class Point3dList:
     @overload
     def __init__(self): ...
@@ -279,6 +307,7 @@ class Point3dList:
     def Transform(self, xform: Transform) -> None: ...
 
 
+from ..Geometry import PointCloud
 class RhinoList:
     def Point2dKNeighbors(hayPoints: Iterable[Point2d], needlePoints: Iterable[Point2d], amount: int) -> Iterable[Set[int]]: ...
     def Point2fKNeighbors(hayPoints: Iterable[Point2f], needlePoints: Iterable[Point2f], amount: int) -> Iterable[Set[int]]: ...
@@ -289,6 +318,10 @@ class RhinoList:
 
 
 
+from ..Geometry import Transform
+from ..DocObjects import RhinoObject
+from ..DocObjects import ObjRef
+from ..Input.Custom import GetObject
 class TransformObjectList:
     def __init__(self): ...
     @overload

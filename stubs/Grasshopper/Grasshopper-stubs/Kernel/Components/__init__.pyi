@@ -20,6 +20,8 @@ class GH_CleanComponentUpgrader:
     def Upgrade(self, target: IGH_DocumentObject, document: GH_Document) -> IGH_DocumentObject: ...
 
 
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_CleanTreeComponent(GH_Component):
     def __init__(self): ...
     def CanInsertParameter(self, side: GH_ParameterSide, index: int) -> bool: ...
@@ -33,6 +35,8 @@ class GH_CleanTreeComponent(GH_Component):
     def VariableParameterMaintenance(self) -> None: ...
 
 
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_CleanTreeComponent_OBSOLETE(GH_Component):
     def __init__(self): ...
     @property
@@ -41,6 +45,8 @@ class GH_CleanTreeComponent_OBSOLETE(GH_Component):
     def Exposure(self) -> GH_Exposure: ...
 
 
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_CleanTreeComponent_OSBOLETE_AS_WELL(GH_Component):
     def __init__(self): ...
     @property
@@ -49,6 +55,8 @@ class GH_CleanTreeComponent_OSBOLETE_AS_WELL(GH_Component):
     def Exposure(self) -> GH_Exposure: ...
 
 
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_CurvatureGraphComponent(GH_Component):
     def __init__(self): ...
     def ClearData(self) -> None: ...
@@ -59,6 +67,8 @@ class GH_CurvatureGraphComponent(GH_Component):
     def Exposure(self) -> GH_Exposure: ...
 
 
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_CustomPreviewComponent(GH_Component):
     def __init__(self): ...
     def AppendRenderGeometry(self, args: GH_RenderArgs) -> None: ...
@@ -94,6 +104,10 @@ class GH_CustomPreviewItem:
     def PushToRhinoDocument(self, doc: RhinoDoc, att: ObjectAttributes) -> Guid: ...
 
 
+from ...GUI.Canvas import GH_Canvas
+from ...GUI import GH_CanvasMouseEvent
+from ...GUI import GH_TooltipDisplayEventArgs
+from ...GUI.Canvas import GH_CanvasChannel
 from ..Attributes import GH_ComponentAttributes
 class GH_DataDamAttributes(GH_ComponentAttributes):
     def __init__(self, owner: GH_DataDamComponent): ...
@@ -102,6 +116,8 @@ class GH_DataDamAttributes(GH_ComponentAttributes):
     def SetupTooltip(self, canvasPoint: PointF, e: GH_TooltipDisplayEventArgs) -> None: ...
 
 
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_DataDamComponent(GH_Component):
     def __init__(self): ...
     def AppendMenuItems(self, menu: ToolStripDropDown) -> bool: ...
@@ -132,6 +148,8 @@ class GH_DataDamComponent(GH_Component):
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_DocExampleComponent(GH_Component):
     def __init__(self): ...
     @property
@@ -140,6 +158,8 @@ class GH_DocExampleComponent(GH_Component):
     def Exposure(self) -> GH_Exposure: ...
 
 
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_ExplodeTreeComponent(GH_Component):
     def __init__(self): ...
     def CanInsertParameter(self, side: GH_ParameterSide, index: int) -> bool: ...
@@ -153,6 +173,9 @@ class GH_ExplodeTreeComponent(GH_Component):
     def VariableParameterMaintenance(self) -> None: ...
 
 
+from ...GUI import GH_VariableParameterManager
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_ExplodeTreeComponent_OBSOLETE(GH_Component):
     def __init__(self): ...
     def ConstructVariable(self, e: GH_VarParamEventArgs) -> IGH_Param: ...
@@ -180,6 +203,8 @@ class GH_FlattenComponentUpgrader:
     def Upgrade(self, target: IGH_DocumentObject, document: GH_Document) -> IGH_DocumentObject: ...
 
 
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_FlattenTreeComponent(GH_Component):
     def __init__(self): ...
     @property
@@ -188,6 +213,8 @@ class GH_FlattenTreeComponent(GH_Component):
     def Exposure(self) -> GH_Exposure: ...
 
 
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_FlattenTreeComponent_OBSOLETE(GH_Component):
     def __init__(self): ...
     @property
@@ -196,6 +223,8 @@ class GH_FlattenTreeComponent_OBSOLETE(GH_Component):
     def Exposure(self) -> GH_Exposure: ...
 
 
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_FlipDataMatrixComponent(GH_Component):
     def __init__(self): ...
     @property
@@ -204,6 +233,8 @@ class GH_FlipDataMatrixComponent(GH_Component):
     def Exposure(self) -> GH_Exposure: ...
 
 
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_GraftTreeComponent(GH_Component):
     def __init__(self): ...
     @property
@@ -214,6 +245,8 @@ class GH_GraftTreeComponent(GH_Component):
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_GraftTreeComponent_OBSOLETE(GH_Component):
     def __init__(self): ...
     @property
@@ -242,6 +275,8 @@ class GH_GrasshopperLibraryInfo(GH_AssemblyInfo):
     def Version(self) -> str: ...
 
 
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_GroupGeometryComponent(GH_Component):
     def __init__(self): ...
     @property
@@ -250,6 +285,8 @@ class GH_GroupGeometryComponent(GH_Component):
     def Exposure(self) -> GH_Exposure: ...
 
 
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_IsNullDataComponent_OBSOLETE(GH_Component):
     def __init__(self): ...
     @property
@@ -258,6 +295,8 @@ class GH_IsNullDataComponent_OBSOLETE(GH_Component):
     def Exposure(self) -> GH_Exposure: ...
 
 
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_MatchTreeComponent(GH_Component):
     def __init__(self): ...
     @property
@@ -266,6 +305,8 @@ class GH_MatchTreeComponent(GH_Component):
     def Exposure(self) -> GH_Exposure: ...
 
 
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_MergeGroupComponent(GH_Component):
     def __init__(self): ...
     @property
@@ -274,6 +315,8 @@ class GH_MergeGroupComponent(GH_Component):
     def Exposure(self) -> GH_Exposure: ...
 
 
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_MetaBallComponent(GH_Component):
     def __init__(self): ...
     @property
@@ -283,6 +326,8 @@ class GH_MetaBallComponent(GH_Component):
     def SolveMetaBall(component: GH_Component, DA: IGH_DataAccess, context: GH_Context, plane: Plane, threshold: float) -> None: ...
 
 
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_MetaBallComponentThreshold(GH_Component):
     def __init__(self): ...
     @property
@@ -291,6 +336,8 @@ class GH_MetaBallComponentThreshold(GH_Component):
     def Exposure(self) -> GH_Exposure: ...
 
 
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_MetaBallComponentThresholdEx(GH_Component):
     def __init__(self): ...
     @property
@@ -299,6 +346,8 @@ class GH_MetaBallComponentThresholdEx(GH_Component):
     def Exposure(self) -> GH_Exposure: ...
 
 
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_PathCompareComponent(GH_Component):
     def __init__(self): ...
     @property
@@ -307,6 +356,8 @@ class GH_PathCompareComponent(GH_Component):
     def Exposure(self) -> GH_Exposure: ...
 
 
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_PointListComponent(GH_Component):
     def __init__(self): ...
     @overload
@@ -322,6 +373,8 @@ class GH_PointListComponent(GH_Component):
     def IsPreviewCapable(self) -> bool: ...
 
 
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_PruneTreeComponent(GH_Component):
     def __init__(self): ...
     @property
@@ -330,6 +383,8 @@ class GH_PruneTreeComponent(GH_Component):
     def Exposure(self) -> GH_Exposure: ...
 
 
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_ReadFileComponent(GH_Component):
     @overload
     def __init__(self): ...
@@ -355,12 +410,18 @@ class GH_ReadFileComponent(GH_Component):
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ...GUI.Canvas import GH_Canvas
+from ...GUI import GH_CanvasMouseEvent
+from ...GUI import GH_TooltipDisplayEventArgs
+from ...GUI.Canvas import GH_CanvasChannel
 from ..Attributes import GH_ComponentAttributes
 class GH_ReadFileComponentAttributes(GH_ComponentAttributes):
     def __init__(self, owner: GH_ReadFileComponent): ...
     def RespondToMouseDoubleClick(self, sender: GH_Canvas, e: GH_CanvasMouseEvent) -> GH_ObjectResponse: ...
 
 
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_ReplacePathComponent(GH_Component):
     def __init__(self): ...
     @property
@@ -369,6 +430,8 @@ class GH_ReplacePathComponent(GH_Component):
     def Exposure(self) -> GH_Exposure: ...
 
 
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_ShiftDataPathComponent(GH_Component):
     def __init__(self): ...
     @property
@@ -388,6 +451,8 @@ class GH_SimplifyComponentUpgrader:
     def Upgrade(self, target: IGH_DocumentObject, document: GH_Document) -> IGH_DocumentObject: ...
 
 
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_SimplifyTreeComponent(GH_Component):
     def __init__(self): ...
     def AddedToDocument(self, document: GH_Document) -> None: ...
@@ -399,6 +464,8 @@ class GH_SimplifyTreeComponent(GH_Component):
     def RemovedFromDocument(self, document: GH_Document) -> None: ...
 
 
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_SimplifyTreeComponent_OBSOLETE(GH_Component):
     def __init__(self): ...
     @property
@@ -407,6 +474,8 @@ class GH_SimplifyTreeComponent_OBSOLETE(GH_Component):
     def Exposure(self) -> GH_Exposure: ...
 
 
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_SmoothNumbersComponent(GH_Component):
     def __init__(self): ...
     @property
@@ -417,6 +486,8 @@ class GH_SmoothNumbersComponent(GH_Component):
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_SplitGroupComponent(GH_Component):
     def __init__(self): ...
     @property
@@ -425,6 +496,8 @@ class GH_SplitGroupComponent(GH_Component):
     def Exposure(self) -> GH_Exposure: ...
 
 
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_StreamFilterComponent(GH_Component):
     def __init__(self): ...
     def CanInsertParameter(self, side: GH_ParameterSide, index: int) -> bool: ...
@@ -438,6 +511,9 @@ class GH_StreamFilterComponent(GH_Component):
     def VariableParameterMaintenance(self) -> None: ...
 
 
+from ...GUI import GH_VariableParameterManager
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_StreamFilterComponent_OBSOLETE(GH_Component):
     def __init__(self): ...
     def ConstructVariable(self, e: GH_VarParamEventArgs) -> IGH_Param: ...
@@ -454,6 +530,8 @@ class GH_StreamFilterComponent_OBSOLETE(GH_Component):
     def ParametersModified(self, side: GH_VarParamSide) -> None: ...
 
 
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_StreamGateComponent(GH_Component):
     def __init__(self): ...
     def CanInsertParameter(self, side: GH_ParameterSide, index: int) -> bool: ...
@@ -467,6 +545,9 @@ class GH_StreamGateComponent(GH_Component):
     def VariableParameterMaintenance(self) -> None: ...
 
 
+from ...GUI import GH_VariableParameterManager
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_StreamGateComponent_OBSOLETE(GH_Component):
     def __init__(self): ...
     def ConstructVariable(self, e: GH_VarParamEventArgs) -> IGH_Param: ...
@@ -483,6 +564,8 @@ class GH_StreamGateComponent_OBSOLETE(GH_Component):
     def ParametersModified(self, side: GH_VarParamSide) -> None: ...
 
 
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_TextTag3DComponent(GH_Component):
     def __init__(self): ...
     @overload
@@ -501,6 +584,8 @@ class GH_TextTag3DComponent(GH_Component):
     def IsPreviewCapable(self) -> bool: ...
 
 
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_TextTag3DComponent_OBSOLETE(GH_Component):
     def __init__(self): ...
     @overload
@@ -517,6 +602,8 @@ class GH_TextTag3DComponent_OBSOLETE(GH_Component):
     def IsPreviewCapable(self) -> bool: ...
 
 
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_TextTag3DComponent_OBSOLETE_AS_WELL(GH_Component):
     def __init__(self): ...
     @overload
@@ -546,6 +633,8 @@ class GH_TextTag3DUpgrader:
     def Upgrade(self, target: IGH_DocumentObject, document: GH_Document) -> IGH_DocumentObject: ...
 
 
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_TextTagComponent(GH_Component):
     def __init__(self): ...
     @overload
@@ -570,6 +659,8 @@ class GH_TextTagComponent(GH_Component):
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_TextTagComponent_OBSOLETE(GH_Component):
     def __init__(self): ...
     @overload
@@ -592,6 +683,8 @@ class GH_TextTagComponent_OBSOLETE(GH_Component):
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_TreeSplitComponent(GH_Component):
     def __init__(self): ...
     @property
@@ -600,6 +693,8 @@ class GH_TreeSplitComponent(GH_Component):
     def Exposure(self) -> GH_Exposure: ...
 
 
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_TrimTreeComponent(GH_Component):
     def __init__(self): ...
     @property
@@ -608,6 +703,8 @@ class GH_TrimTreeComponent(GH_Component):
     def Exposure(self) -> GH_Exposure: ...
 
 
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_UnflattenTreeComponent(GH_Component):
     def __init__(self): ...
     @property
@@ -616,6 +713,8 @@ class GH_UnflattenTreeComponent(GH_Component):
     def Exposure(self) -> GH_Exposure: ...
 
 
+from ..Undo import IGH_UndoAction
+from ..Undo import GH_UndoRecord
 class GH_UngroupGeometryComponent(GH_Component):
     def __init__(self): ...
     @property

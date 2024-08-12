@@ -3,6 +3,11 @@ from enum import Enum
 
 
 
+from ...GUI.Canvas import GH_Canvas
+from ...GUI import GH_CanvasMouseEvent
+from ...GUI import GH_TooltipDisplayEventArgs
+from ...GUI.Canvas import GH_PaletteStyle
+from ...GUI.Canvas import GH_CanvasChannel
 class GH_ComponentAttributes:
     def __init__(self, component: IGH_Component): ...
     def AppendToAttributeTree(self, attributes: List) -> None: ...
@@ -27,12 +32,20 @@ class GH_ComponentAttributes:
     def SetupTooltip(self, canvasPoint: PointF, e: GH_TooltipDisplayEventArgs) -> None: ...
 
 
+from ...GUI import GH_TooltipDisplayEventArgs
+from ...GUI.Canvas import GH_Canvas
+from ...GUI import GH_CanvasMouseEvent
+from ...GUI.Canvas import GH_CanvasChannel
 class GH_FloatingParamAttributes:
     def __init__(self, param: IGH_Param): ...
     def RespondToMouseDoubleClick(self, sender: GH_Canvas, e: GH_CanvasMouseEvent) -> GH_ObjectResponse: ...
     def SetupTooltip(self, point: PointF, e: GH_TooltipDisplayEventArgs) -> None: ...
 
 
+from ...GUI import GH_TooltipDisplayEventArgs
+from ...GUI.Canvas import GH_Canvas
+from ...GUI.Canvas import GH_CanvasChannel
+from ...GUI import GH_CanvasMouseEvent
 class GH_LinkedParamAttributes:
     def __init__(self, param: IGH_Param, parent: IGH_Attributes): ...
     @property

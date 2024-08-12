@@ -3,6 +3,7 @@ from enum import Enum
 
 
 
+from ...Geometry import Point2d
 class WorldMapDayNight:
     def __init__(self): ...
     def Dispose(self) -> None: ...
