@@ -1,8 +1,8 @@
 from typing import Tuple, Set, Iterable, List, overload
 from enum import Enum
 
-from .Interaction import *
-from .TagArtists import *
+import Interaction
+import TagArtists
 
 __all__ = ['Interaction', 'TagArtists']
 

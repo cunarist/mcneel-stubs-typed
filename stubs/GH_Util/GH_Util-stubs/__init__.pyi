@@ -1,7 +1,7 @@
 from typing import Tuple, Set, Iterable, List, overload
 from enum import Enum
 
-from .MetaBall import *
+import MetaBall
 
 __all__ = ['MetaBall']
 

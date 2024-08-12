@@ -1,8 +1,8 @@
 from typing import Tuple, Set, Iterable, List, overload
 from enum import Enum
 
-from .Controls import *
-from .Gumball import *
+import Controls
+import Gumball
 
 __all__ = ['Controls', 'Gumball']
 
@@ -305,7 +305,6 @@ class NamedColorList:
 
 
 from ..DocObjects import RhinoObject
-from ..DocObjects import Set[RhinoObject]
 from ..DocObjects import ObjectType
 class ObjectPropertiesPage:
     @overload

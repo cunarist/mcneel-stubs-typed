@@ -1,7 +1,7 @@
 from typing import Tuple, Set, Iterable, List, overload
 from enum import Enum
 
-from .ThemedControls import *
+import ThemedControls
 
 __all__ = ['ThemedControls']
 

@@ -1,11 +1,11 @@
 from typing import Tuple, Set, Iterable, List, overload
 from enum import Enum
 
-from .Documentation import *
-from .Getters import *
-from .GUI import *
-from .Kernel import *
-from .Plugin import *
+import Documentation
+import Getters
+import GUI
+import Kernel
+import Plugin
 
 __all__ = ['Documentation', 'Getters', 'GUI', 'Kernel', 'Plugin']
 

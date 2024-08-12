@@ -545,7 +545,6 @@ from ...Geometry import Point3d
 from ...Display import RhinoViewport
 from ...Geometry import Plane
 from ...UI import CursorStyle
-from ...Geometry import Set[Point3d]
 from ...Geometry import Line
 from ...Geometry import Arc
 from ...Geometry import Circle
@@ -787,7 +786,6 @@ from ...Geometry import Point3d
 from ...Geometry import Transform
 from ...Geometry import Plane
 from ...UI import CursorStyle
-from ...Geometry import Set[Point3d]
 from ...Geometry import Line
 from ...Geometry import Arc
 from ...Geometry import Circle
@@ -932,7 +930,6 @@ from ...Geometry import Line
 from ...Geometry import Transform
 from ...Geometry import BoundingBox
 from ...Geometry import Point3d
-from ...Geometry import Set[Point3d]
 from ...Geometry import PointCloud
 from ...Geometry import BezierCurve
 from ...Geometry import NurbsCurve

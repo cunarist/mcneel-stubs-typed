@@ -235,7 +235,6 @@ from ..Geometry import Arc
 from ..Geometry import Ellipse
 from ..Geometry import Transform
 from ..Geometry import Curve
-from ..Geometry import Set[Curve]
 class CurveList:
     @overload
     def __init__(self): ...
@@ -268,10 +267,8 @@ class CurveList:
 
 
 
-from ..Geometry import Point3d[]
 from ..Geometry import Point3d
 from ..Geometry import Transform
-from ..Geometry import Set[Point3d]
 class Point3dList:
     @overload
     def __init__(self): ...

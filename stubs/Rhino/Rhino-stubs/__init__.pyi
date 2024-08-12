@@ -1,19 +1,19 @@
 from typing import Tuple, Set, Iterable, List, overload
 from enum import Enum
 
-from .ApplicationSettings import *
-from .Collections import *
-from .Commands import *
-from .Display import *
-from .DocObjects import *
-from .FileIO import *
-from .Geometry import *
-from .Input import *
-from .NodeInCode import *
-from .PlugIns import *
-from .Render import *
-from .Runtime import *
-from .UI import *
+import ApplicationSettings
+import Collections
+import Commands
+import Display
+import DocObjects
+import FileIO
+import Geometry
+import Input
+import NodeInCode
+import PlugIns
+import Render
+import Runtime
+import UI
 
 __all__ = ['ApplicationSettings', 'Collections', 'Commands', 'Display', 'DocObjects', 'FileIO', 'Geometry', 'Input', 'NodeInCode', 'PlugIns', 'Render', 'Runtime', 'UI']
 

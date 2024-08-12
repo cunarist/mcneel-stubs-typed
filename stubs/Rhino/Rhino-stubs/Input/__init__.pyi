@@ -1,7 +1,7 @@
 from typing import Tuple, Set, Iterable, List, overload
 from enum import Enum
 
-from .Custom import *
+import Custom
 
 __all__ = ['Custom']
 
@@ -61,13 +61,10 @@ from ..DocObjects import MeshObject
 from ..DocObjects import ObjectType
 from ..DocObjects import ObjRef
 from .Custom import GetObjectGeometryFilter
-from ..DocObjects import Set[ObjRef]
 from ..Geometry import Plane
-from ..Geometry import Set[Point3d]
 from ..Display import RhinoView
 from ..Geometry import Box
 from ..Geometry import MeshingParameters
-from ..DocObjects import Set[GripObject]
 from ..DocObjects import GripObject
 from ..Geometry import NurbsCurve
 from ..Geometry import Line

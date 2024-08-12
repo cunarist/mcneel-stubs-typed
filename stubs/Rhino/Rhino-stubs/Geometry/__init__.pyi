@@ -1,10 +1,10 @@
 from typing import Tuple, Set, Iterable, List, overload
 from enum import Enum
 
-from .Collections import *
-from .Intersect import *
-from .MeshRefinements import *
-from .Morphs import *
+import Collections
+import Intersect
+import MeshRefinements
+import Morphs
 
 __all__ = ['Collections', 'Intersect', 'MeshRefinements', 'Morphs']
 
@@ -2614,7 +2614,7 @@ class InteriorCreaseOption(Enum):
     AtMeshDoubleEdge = 2
 
 
-from ..Collections import RhinoList`1
+from ..Collections import RhinoList
 class Interpolator:
     @overload
     def __init__(self): ...

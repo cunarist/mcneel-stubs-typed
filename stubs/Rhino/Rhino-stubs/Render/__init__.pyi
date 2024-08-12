@@ -1,13 +1,13 @@
 from typing import Tuple, Set, Iterable, List, overload
 from enum import Enum
 
-from .ChangeQueue import *
-from .ChildSlotNames import *
-from .DataSources import *
-from .Fields import *
-from .ParameterNames import *
-from .PostEffects import *
-from .UI import *
+import ChangeQueue
+import ChildSlotNames
+import DataSources
+import Fields
+import ParameterNames
+import PostEffects
+import UI
 
 __all__ = ['ChangeQueue', 'ChildSlotNames', 'DataSources', 'Fields', 'ParameterNames', 'PostEffects', 'UI']
 
@@ -72,7 +72,6 @@ class BasicMaterialParameterNames:
 
 
 from ..Geometry import Point3d
-from ..Geometry import Set[Point3d]
 from ..FileIO import SerializationOptions
 from ..Runtime import CommonObject
 class CachedTextureCoordinates(CommonObject):
@@ -2176,7 +2175,6 @@ class RenderTextureTable:
 
 from ..DocObjects import ViewInfo
 from ..DocObjects import ViewportInfo
-from ..Display import Set[Color4f]
 class RenderWindow:
     def add_Cloned(value: EventHandler) -> None: ...
     def AddChannel(self, channel: StandardChannels) -> bool: ...

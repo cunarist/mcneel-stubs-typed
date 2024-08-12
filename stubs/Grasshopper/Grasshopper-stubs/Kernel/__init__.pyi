@@ -1,18 +1,18 @@
 from typing import Tuple, Set, Iterable, List, overload
 from enum import Enum
 
-from .Attributes import *
-from .Components import *
-from .Data import *
-from .Expressions import *
-from .Geometry import *
-from .Graphs import *
-from .Parameters import *
-from .Sorting import *
-from .Special import *
-from .Types import *
-from .Undo import *
-from .Utility import *
+import Attributes
+import Components
+import Data
+import Expressions
+import Geometry
+import Graphs
+import Parameters
+import Sorting
+import Special
+import Types
+import Undo
+import Utility
 
 __all__ = ['Attributes', 'Components', 'Data', 'Expressions', 'Geometry', 'Graphs', 'Parameters', 'Sorting', 'Special', 'Types', 'Undo', 'Utility']
 
@@ -3114,7 +3114,6 @@ class GH_UndoOperation(Enum):
 
 from .Undo import GH_UndoRecord
 from .Undo import IGH_UndoAction
-from .Undo import Set[IGH_UndoAction]
 class GH_UndoUtil:
     @overload
     def CreateAddObjectEvent(self, name: str, objs: Iterable[IGH_DocumentObject]) -> GH_UndoRecord: ...

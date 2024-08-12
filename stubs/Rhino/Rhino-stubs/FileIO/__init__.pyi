@@ -473,7 +473,6 @@ class File3dmMaterialTable:
 
 from ..DocObjects import ConstructionPlane
 from ..Geometry import Plane
-from ..DocObjects import Set[ConstructionPlane]
 class File3dmNamedConstructionPlanes:
     @overload
     def Add(self, cplane: ConstructionPlane) -> None: ...
@@ -533,7 +532,7 @@ class File3dmObject(ModelComponent):
     def GetHashCode(self) -> int: ...
     @Name.setter
     def Name(self, value: str) -> None: ...
-    def TryReadUserData(self, userDataId: Guid, readFromAttributes: bool, dataReader: Func3) -> bool: ...
+    def TryReadUserData(self, userDataId: Guid, readFromAttributes: bool, dataReader: Func) -> bool: ...
 
 
 from ..DocObjects import Layer
@@ -740,7 +739,7 @@ class File3dmPlugInDataTable:
     @property
     def Item(self, index: int) -> File3dmPlugInData: ...
     def GetEnumerator(self) -> IEnumerator: ...
-    def TryRead(self, pluginData: File3dmPlugInData, dataReader: Func3) -> bool: ...
+    def TryRead(self, pluginData: File3dmPlugInData, dataReader: Func) -> bool: ...
 
 
 from ..Geometry import Point3d
@@ -824,7 +823,6 @@ class File3dmTypeCodes:
 
 
 from ..DocObjects import ViewInfo
-from ..DocObjects import Set[ViewInfo]
 class File3dmViewTable:
     def Add(self, item: ViewInfo) -> None: ...
     def Clear(self) -> None: ...
@@ -875,7 +873,6 @@ class FileFindPreference(Enum):
     MostRecent = 5
 
 
-from ..Geometry import Set[Mesh]
 class FileObj:
     def Read(filename: str, doc: RhinoDoc, options: FileObjReadOptions) -> bool: ...
     @overload
@@ -1312,7 +1309,6 @@ class ImageFile:
 
 from ..DocObjects import ModelComponentType
 from ..DocObjects import ModelComponent
-from ..DocObjects import Set[ModelComponent]
 class ManifestTable:
     def ActiveObjectCount(self, type: ModelComponentType) -> int: ...
     def Clear(self) -> None: ...

@@ -77,7 +77,7 @@ class GH_Point3dWrapperDelegate:
     def Invoke(self, sender: GH_Point3d_Wrapper, point: Point3d) -> None: ...
 
 
-from ..Types import GH_PointRefData&
+from ..Types import GH_PointRefData
 class GH_PointRefUV_Wrapper:
     def __init__(self, ref: GH_PointRefData, wrapperdelegate: GH_PointRefUVWrapperDelegate): ...
     @property

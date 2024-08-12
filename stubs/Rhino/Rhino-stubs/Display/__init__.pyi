@@ -751,7 +751,6 @@ from ..Geometry import Point3d
 from ..Geometry import PointCloud
 from ..Geometry import Vector3d
 from ..Geometry import Line
-from ..Geometry import Set[Line]
 from ..Geometry import TextDot
 from ..Geometry import Hatch
 from ..Geometry import Mesh

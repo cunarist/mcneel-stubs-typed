@@ -1,9 +1,9 @@
 from typing import Tuple, Set, Iterable, List, overload
 from enum import Enum
 
-from .Custom import *
-from .SnapShots import *
-from .Tables import *
+import Custom
+import SnapShots
+import Tables
 
 __all__ = ['Custom', 'SnapShots', 'Tables']
 
@@ -47,7 +47,6 @@ class AngularDimensionObject(DimensionObject):
     def AngularDimensionGeometry(self) -> AngularDimension: ...
 
 
-from ..Geometry import Set[Point3d]
 class AnimationProperties:
     @overload
     def __init__(self): ...
@@ -1464,7 +1463,6 @@ class InstanceDefinitionUpdateType(Enum):
     Linked = 3
 
 
-from ..Geometry import Set[Transform]
 from ..Geometry import ComponentIndex
 from .Custom import CustomObjectGrips
 from ..Display import VisualAnalysisMode
@@ -2808,7 +2806,6 @@ class RhinoModifyObjectAttributesEventArgs:
 
 
 from ..Geometry import MeshingParameters
-from ..Geometry import Set[Mesh]
 from ..Geometry import Transform
 from ..Geometry import BoundingBox
 from ..Geometry import Plane

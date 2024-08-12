@@ -1,10 +1,10 @@
 from typing import Tuple, Set, Iterable, List, overload
 from enum import Enum
 
-from .InProcess import *
-from .InteropWrappers import *
-from .Notifications import *
-from .RhinoAccounts import *
+import InProcess
+import InteropWrappers
+import Notifications
+import RhinoAccounts
 
 __all__ = ['InProcess', 'InteropWrappers', 'Notifications', 'RhinoAccounts']
 
@@ -400,8 +400,6 @@ from ..Geometry import Point3d
 from ..Geometry import Vector3d
 from ..DocObjects import ViewportInfo
 from ..Geometry import GeometryBase
-from ..Geometry import Set[GeometryBase]
-from ..DocObjects import Set[RhinoObject]
 class NamedParametersEventArgs:
     def __init__(self): ...
     def Dispose(self) -> None: ...

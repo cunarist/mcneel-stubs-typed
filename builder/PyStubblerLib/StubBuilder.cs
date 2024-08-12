@@ -152,10 +152,10 @@ namespace PyStubblerLib
             sb.AppendLine("from enum import Enum");
             sb.Append("\n");
             if( allChildNamespaces.Length>0 )
-            {
+            {                
                 for(int i=0; i<allChildNamespaces.Length; i++)
                 {
-                    sb.AppendLine($"from .{allChildNamespaces[i]} import *");
+                    sb.AppendLine($"import {allChildNamespaces[i]}");
                 }
                 sb.Append("\n");
                 sb.Append("__all__ = [");
@@ -215,7 +215,9 @@ namespace PyStubblerLib
                         );
                         if (relativeNamespace == null)
                             continue;
-                        paramImports.Add(Tuple.Create(relativeNamespace, paramType.Name));
+                        paramImports.Add(
+                            Tuple.Create(relativeNamespace, ToPythonType(paramType.Name))
+                        );
                     }
                 }
                 foreach (var method in methods)
@@ -239,6 +241,8 @@ namespace PyStubblerLib
                 {
                     var relativeNamespace = paramImport.Item1;
                     var paramType = paramImport.Item2;
+                    if (paramType.EndsWith("]"))
+                        continue;
                     if (relativeNamespace != "" && relativeNamespace != ".")
                         sb.AppendLine($"from {relativeNamespace} import {paramType}");
                 }
@@ -514,7 +518,7 @@ namespace PyStubblerLib
             if (rc.EndsWith("&"))
                 rc = rc.Substring(0, rc.Length - 1);
 
-            if (rc.EndsWith("`1") || rc.EndsWith("`2"))
+            if (rc.Length > 2 && rc[rc.Length - 2] == '`')
                 rc = rc.Substring(0, rc.Length - 2);
 
             if (rc.EndsWith("[]"))
@@ -534,8 +538,6 @@ namespace PyStubblerLib
                 return "bool";
             if (rc.Equals("Int32"))
                 return "int";
-
-            rc = rc.Replace("`", "");
 
             return rc;
         }
