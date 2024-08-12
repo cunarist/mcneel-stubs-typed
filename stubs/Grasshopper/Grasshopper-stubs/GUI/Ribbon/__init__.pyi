@@ -1,4 +1,5 @@
 from typing import Tuple, Set, Iterable, List, overload
+from enum import Enum
 
 
 
@@ -224,7 +225,7 @@ class GH_RibbonItem(GH_RibbonContentBase):
     def Proxy(self, Value: IGH_ObjectProxy) -> None: ...
 
 
-class GH_RibbonMouseEvent:
+class GH_RibbonMouseEvent(Enum):
     Unset = 0
     Ignored = 1
     Handled = 2
@@ -350,7 +351,7 @@ class GH_RibbonTab(GH_RibbonContentBase):
     def Grip(self, AutoPropertyValue: Rectangle) -> None: ...
 
 
-class GH_TabDisplay:
+class GH_TabDisplay(Enum):
     None_ = 0
     FullName = 1
     ShortName = 2

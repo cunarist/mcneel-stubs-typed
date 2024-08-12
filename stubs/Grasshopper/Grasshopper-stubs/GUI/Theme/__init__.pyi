@@ -1,4 +1,5 @@
 from typing import Tuple, Set, Iterable, List, overload
+from enum import Enum
 
 
 
@@ -21,7 +22,7 @@ class GH_BackgroundSettings:
     def Style(self, AutoPropertyValue: GH_BackgroundStyle) -> None: ...
 
 
-class GH_BackgroundStyle:
+class GH_BackgroundStyle(Enum):
     Solid = 0
     Hatch = 1
     GradientLeftRight = 10

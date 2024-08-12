@@ -1,4 +1,5 @@
 from typing import Tuple, Set, Iterable, List, overload
+from enum import Enum
 
 from Collections import *
 from Intersect import *
@@ -205,7 +206,7 @@ class AnnotationBase(GeometryBase):
     def WrapText(self) -> None: ...
 
 
-class AnnotationType:
+class AnnotationType(Enum):
     Unset = 0
     Aligned = 1
     Angular = 2
@@ -425,7 +426,7 @@ class Arrowhead:
     def BlockId(self) -> Guid: ...
 
 
-class Attenuation:
+class Attenuation(Enum):
     Constant = 0
     Linear = 1
     InverseSquared = 2
@@ -494,13 +495,13 @@ class BezierSurface:
     def Transpose(self) -> BezierSurface: ...
 
 
-class BlendContinuity:
+class BlendContinuity(Enum):
     Position = 0
     Tangency = 1
     Curvature = 2
 
 
-class BlendType:
+class BlendType(Enum):
     Chamfer = 0
     Fillet = 1
     Blend = 2
@@ -1023,7 +1024,7 @@ class BrepLoop(GeometryBase):
     def To3dCurve(self) -> Curve: ...
 
 
-class BrepLoopType:
+class BrepLoopType(Enum):
     Unknown = 0
     Outer = 1
     Inner = 2
@@ -1056,7 +1057,7 @@ class BrepRegionFaceSide(CommonObject):
     def SurfaceNormalPointsIntoRegion(self) -> bool: ...
 
 
-class BrepSolidOrientation:
+class BrepSolidOrientation(Enum):
     None_ = 0
     Outward = 1
     Unknown = 2
@@ -1100,7 +1101,7 @@ class BrepTrim(CurveProxy):
     def SetTrimCurve(self, curve2dIndex: int, subDomain: Interval) -> bool: ...
 
 
-class BrepTrimType:
+class BrepTrimType(Enum):
     Unknown = 0
     Boundary = 1
     Mated = 2
@@ -1219,7 +1220,7 @@ class ComponentIndex:
     def IsUnset(self) -> bool: ...
 
 
-class ComponentIndexType:
+class ComponentIndexType(Enum):
     InvalidType = 0
     BrepVertex = 1
     BrepEdge = 2
@@ -1298,13 +1299,13 @@ class ComponentStatus:
     def WithStates(self, additionalStatus: ComponentStatus) -> ComponentStatus: ...
 
 
-class ConcaveCornerOption:
+class ConcaveCornerOption(Enum):
     Unset = 0
     None_ = 1
     AtMeshCorner = 2
 
 
-class Concavity:
+class Concavity(Enum):
     Tangent = 0
     Convex = 1
     Concave = 2
@@ -1343,7 +1344,7 @@ class Cone:
     def ToRevSurface(self) -> RevSurface: ...
 
 
-class ConicSectionType:
+class ConicSectionType(Enum):
     Unknown = 0
     Circle = 1
     Ellipse = 2
@@ -1351,7 +1352,7 @@ class ConicSectionType:
     Parabola = 4
 
 
-class Continuity:
+class Continuity(Enum):
     None_ = 0
     C0_continuous = 1
     C1_continuous = 2
@@ -1405,7 +1406,7 @@ class ControlPoint:
     def Z(self, value: float) -> None: ...
 
 
-class ConvexCornerOption:
+class ConvexCornerOption(Enum):
     Unset = 0
     None_ = 1
     AtMeshCorner = 2
@@ -1784,26 +1785,26 @@ class CurveBooleanRegions:
     def SegmentDetails(self, regionIndex: int, boundaryIndex: int, segmmentIndex: int) -> Tuple[int, Interval, bool]: ...
 
 
-class CurveEnd:
+class CurveEnd(Enum):
     None_ = 0
     Start = 1
     End = 2
     Both = 3
 
 
-class CurveEvaluationSide:
+class CurveEvaluationSide(Enum):
     Default = 0
     Above = 1
     Below = -1
 
 
-class CurveExtensionStyle:
+class CurveExtensionStyle(Enum):
     Line = 0
     Arc = 1
     Smooth = 2
 
 
-class CurveKnotStyle:
+class CurveKnotStyle(Enum):
     Uniform = 0
     Chord = 1
     ChordSquareRoot = 2
@@ -1812,7 +1813,7 @@ class CurveKnotStyle:
     ChordSquareRootPeriodic = 5
 
 
-class CurveOffsetCornerStyle:
+class CurveOffsetCornerStyle(Enum):
     None_ = 0
     Sharp = 1
     Round = 2
@@ -1820,13 +1821,13 @@ class CurveOffsetCornerStyle:
     Chamfer = 4
 
 
-class CurveOffsetEndStyle:
+class CurveOffsetEndStyle(Enum):
     None_ = 0
     Flat = 1
     Round = 2
 
 
-class CurveOrientation:
+class CurveOrientation(Enum):
     Undefined = 0
     CounterClockwise = 1
     Clockwise = -1
@@ -1837,7 +1838,7 @@ class CurveProxy(Curve):
     def ProxyCurveIsReversed(self) -> bool: ...
 
 
-class CurveSimplifyOptions:
+class CurveSimplifyOptions(Enum):
     None_ = 0
     SplitAtFullyMultipleKnots = 1
     RebuildLines = 2
@@ -1889,7 +1890,7 @@ class Cylinder:
     def ToRevSurface(self) -> RevSurface: ...
 
 
-class Density:
+class Density(Enum):
     UnsetDensity = 0
     MinimumDensity = 0
     ExtraCoarseDensity = 1
@@ -2143,7 +2144,7 @@ class Dimension(AnnotationBase):
     def UpdateDimensionText(self, style: DimensionStyle, units: UnitSystem) -> None: ...
 
 
-class DistancingMode:
+class DistancingMode(Enum):
     Undefined = 0
     Linear = 1
     LinearFromEnd = 2
@@ -2151,7 +2152,7 @@ class DistancingMode:
     RatioFromEnd = 4
 
 
-class EdgeAdjacency:
+class EdgeAdjacency(Enum):
     None_ = 0
     Naked = 1
     Interior = 2
@@ -2188,14 +2189,14 @@ class Ellipse:
     def ToNurbsCurve(self) -> NurbsCurve: ...
 
 
-class ExtraordinaryVertexProcessOption:
+class ExtraordinaryVertexProcessOption(Enum):
     None_ = 0
     LocalG1 = 1
     LocalG2 = 2
     LocalG1x = 3
 
 
-class ExtrudeCornerType:
+class ExtrudeCornerType(Enum):
     None_ = 0
     Sharp = 1
     Round = 2
@@ -2258,13 +2259,13 @@ class Extrusion(Surface):
     def WallSurface(self, ci: ComponentIndex) -> Surface: ...
 
 
-class ForceArrow:
+class ForceArrow(Enum):
     Auto = 0
     Inside = 1
     Outside = 2
 
 
-class ForceText:
+class ForceText(Enum):
     Auto = 0
     Inside = 1
     Right = 2
@@ -2518,7 +2519,7 @@ class InstanceReferenceGeometry(GeometryBase):
     def Xform(self) -> Transform: ...
 
 
-class InteriorCreaseOption:
+class InteriorCreaseOption(Enum):
     Unset = 0
     None_ = 1
     AtMeshDoubleEdge = 2
@@ -2627,7 +2628,7 @@ class InvalidDimensionStyleIdException:
     def __init__(self, msg: str): ...
 
 
-class IsoStatus:
+class IsoStatus(Enum):
     None_ = 0
     X = 1
     Y = 2
@@ -2637,7 +2638,7 @@ class IsoStatus:
     North = 6
 
 
-class KnotStyle:
+class KnotStyle(Enum):
     Unknown = 0
     Uniform = 1
     QuasiUniform = 2
@@ -2871,7 +2872,7 @@ class Light(GeometryBase):
     def SetAttenuation(self, a0: float, a1: float, a2: float) -> None: ...
 
 
-class LightStyle:
+class LightStyle(Enum):
     None_ = 0
     CameraDirectional = 4
     CameraPoint = 5
@@ -3040,7 +3041,7 @@ class LineCurve(Curve):
     def Line(self, value: Line) -> None: ...
 
 
-class LoftType:
+class LoftType(Enum):
     Normal = 0
     Loose = 1
     Tight = 2
@@ -3096,7 +3097,7 @@ class Matrix:
     def Zero(self) -> None: ...
 
 
-class MeasuredDirection:
+class MeasuredDirection(Enum):
     Unset = 0
     Xaxis = 1
     Yaxis = 2
@@ -3533,12 +3534,12 @@ class MeshExtruder:
     def UVN(self, value: bool) -> None: ...
 
 
-class MeshExtruderFaceDirectionMode:
+class MeshExtruderFaceDirectionMode(Enum):
     Keep = 0
     OrientClosedFrontOut = 1
 
 
-class MeshExtruderParameterMode:
+class MeshExtruderParameterMode(Enum):
     CoverWalls = 0
     KeepAndStretch = 1
 
@@ -3694,7 +3695,7 @@ class MeshingParameters:
     def SubDDisplayParameters(self) -> SubDDisplayParameters: ...
 
 
-class MeshingParameterStyle:
+class MeshingParameterStyle(Enum):
     None_ = 0
     Fast = 1
     Quality = 2
@@ -3702,7 +3703,7 @@ class MeshingParameterStyle:
     PerObject = 10
 
 
-class MeshingParameterTextureRange:
+class MeshingParameterTextureRange(Enum):
     Unset = 0
     UnpackedUnscaledNormalized = 1
     PackedScaledNormalized = 2
@@ -3747,7 +3748,7 @@ class MeshPart:
     def VertexCount(self) -> int: ...
 
 
-class MeshPipeCapStyle:
+class MeshPipeCapStyle(Enum):
     None_ = 0
     Flat = 1
     Box = 2
@@ -3788,7 +3789,7 @@ class MeshThicknessMeasurement:
     def VertexIndex(self) -> int: ...
 
 
-class MeshType:
+class MeshType(Enum):
     Default = 0
     Render = 1
     Analysis = 2
@@ -3804,7 +3805,7 @@ class MeshUnsafeLock:
     def VertexPoint3fArray(self) -> Tuple[Point3f, int]: ...
 
 
-class MeshUnwrapMethod:
+class MeshUnwrapMethod(Enum):
     LSCM = 0
 
 
@@ -3909,7 +3910,7 @@ class NurbsCurve(Curve):
     def UVNDirectionsAt(self, t: float) -> Tuple[bool, Vector3d, Vector3d, Vector3d]: ...
 
 
-class NurbsCurveEndConditionType:
+class NurbsCurveEndConditionType(Enum):
     Nothing = 0
     Position = 1
     Tangency = 2
@@ -3964,7 +3965,7 @@ class NurbsSurface(Surface):
     def UVNDirectionsAt(self, u: float, v: float) -> Tuple[bool, Vector3d, Vector3d, Vector3d]: ...
 
 
-class NurbsSurfaceType:
+class NurbsSurfaceType(Enum):
     Unset = 0
     Large = 1
     Medium = 2
@@ -4046,7 +4047,7 @@ class ParticleSystem:
     def Update(self) -> None: ...
 
 
-class PipeCapMode:
+class PipeCapMode(Enum):
     None_ = 0
     Flat = 1
     Round = 2
@@ -4151,7 +4152,7 @@ class Plane:
     def ValueAt(self, p: Point3d) -> float: ...
 
 
-class PlaneFitResult:
+class PlaneFitResult(Enum):
     Success = 0
     Inconclusive = 1
     Failure = -1
@@ -4643,14 +4644,14 @@ class PointCloudUnsafeLock:
     def ValueArray(self) -> Tuple[Double, int]: ...
 
 
-class PointContainment:
+class PointContainment(Enum):
     Unset = 0
     Inside = 1
     Outside = 2
     Coincident = 3
 
 
-class PointFaceRelation:
+class PointFaceRelation(Enum):
     Exterior = 0
     Interior = 1
     Boundary = 2
@@ -4742,7 +4743,7 @@ class PolylineCurve(Curve):
     def ToPolyline(self) -> Polyline: ...
 
 
-class PreserveEnd:
+class PreserveEnd(Enum):
     None_ = 0
     Position = 1
     Tangency = 2
@@ -4785,7 +4786,7 @@ class QuadRemeshParameters:
     def TargetQuadCount(self, value: int) -> None: ...
 
 
-class QuadRemeshSymmetryAxis:
+class QuadRemeshSymmetryAxis(Enum):
     None_ = 0
     X = 1
     Y = 2
@@ -4947,7 +4948,7 @@ class RadialDimension(Dimension):
     def TextOrientation(self, value: TextOrientation) -> None: ...
 
 
-class RailType:
+class RailType(Enum):
     DistanceFromEdge = 0
     RollingBall = 1
     DistanceBetweenRails = 2
@@ -5071,7 +5072,7 @@ class ReduceMeshParameters:
     def ProgressReporter(self, value: IProgress) -> None: ...
 
 
-class RegionContainment:
+class RegionContainment(Enum):
     Disjoint = 0
     MutualIntersection = 1
     AInsideB = 2
@@ -5176,7 +5177,7 @@ class RTreeEventArgs:
     def Tag(self, value: Object) -> None: ...
 
 
-class ShrinkDisableSide:
+class ShrinkDisableSide(Enum):
     ShrinkAllSides = 0
     DoNotShrinkWestSide = 1
     DoNotShrinkSouthSide = 2
@@ -5202,7 +5203,7 @@ class ShutLiningCurveInfo:
     def Radius(self) -> float: ...
 
 
-class SideFill:
+class SideFill(Enum):
     SideUnset = 0
     SideSurface = 1
     SideVoid = 2
@@ -5234,7 +5235,7 @@ class Silhouette:
     def SilhouetteType(self) -> SilhouetteType: ...
 
 
-class SilhouetteType:
+class SilhouetteType(Enum):
     None_ = 0
     Projecting = 1
     TangentProjects = 2
@@ -5249,7 +5250,7 @@ class SilhouetteType:
     DraftCurve = 32768
 
 
-class SmoothingCoordinateSystem:
+class SmoothingCoordinateSystem(Enum):
     World = 0
     CPlane = 1
     Object = 2
@@ -5336,7 +5337,7 @@ class Sphere:
     def Translate(self, delta: Vector3d) -> bool: ...
 
 
-class SquishDeformation:
+class SquishDeformation(Enum):
     Free = 0
     StretchMostly = 1
     StretchOnly = 2
@@ -5367,7 +5368,7 @@ class Squisher:
     def SquishTextDot(self, textDot: TextDot) -> TextDot: ...
 
 
-class SquishFlatteningAlgorithm:
+class SquishFlatteningAlgorithm(Enum):
     Geometric = 0
     PhysicalStress = 1
 
@@ -5455,13 +5456,13 @@ class SubD(GeometryBase):
     def UpdateAllTagsAndSectorCoefficients(self) -> UInt32: ...
 
 
-class SubDAutomaticMeshToSubDContext:
+class SubDAutomaticMeshToSubDContext(Enum):
     Unset = 0
     Rhino5BoxModeTSpline = 1
     FBXMeshWithDivisionLevels = 2
 
 
-class SubDChainType:
+class SubDChainType(Enum):
     Unset = 0
     MixedTag = 1
     EqualEdgeTag = 2
@@ -5489,7 +5490,7 @@ class SubDComponent:
     def ParentSubD(self) -> SubD: ...
 
 
-class SubDComponentLocation:
+class SubDComponentLocation(Enum):
     Unset = 0
     ControlNet = 1
     Surface = 2
@@ -5586,14 +5587,14 @@ class SubDEdge(SubDComponent):
     def ToNurbsCurve(self, clampEnds: bool) -> NurbsCurve: ...
 
 
-class SubDEdgeTag:
+class SubDEdgeTag(Enum):
     Unset = 0
     Smooth = 1
     Crease = 2
     SmoothX = 4
 
 
-class SubDEndCapStyle:
+class SubDEndCapStyle(Enum):
     Unset = 0
     None_ = 1
     Triangles = 2
@@ -5618,7 +5619,7 @@ class SubDFace(SubDComponent):
     def VertexAt(self, index: int) -> SubDVertex: ...
 
 
-class SubDFriendlyKnotType:
+class SubDFriendlyKnotType(Enum):
     Unset = 0
     UnclampedUniform = 1
     ClampedUniform = 2
@@ -5626,20 +5627,20 @@ class SubDFriendlyKnotType:
     Unfriendly = 127
 
 
-class SubDFromSurfaceMethods:
+class SubDFromSurfaceMethods(Enum):
     Unset = 0
     SubDFriendlyFit = 1
     FromNurbsControlNet = 2
 
 
-class SubDHashType:
+class SubDHashType(Enum):
     Unset = 0
     TopologyAndEdgeCreases = 1
     Geometry = 2
     Topology = 3
 
 
-class SubDPatchStyle:
+class SubDPatchStyle(Enum):
     Unset = 0
     Automatic = 1
     SingleFace = 2
@@ -5694,7 +5695,7 @@ class SubDVertex(SubDComponent):
     def SurfacePoint(self) -> Point3d: ...
 
 
-class SubDVertexFacetType:
+class SubDVertexFacetType(Enum):
     Unset = 0
     Tri = 3
     Quad = 4
@@ -5702,7 +5703,7 @@ class SubDVertexFacetType:
     Mixed = 255
 
 
-class SubDVertexTag:
+class SubDVertexTag(Enum):
     Unset = 0
     Smooth = 1
     Crease = 2
@@ -5877,17 +5878,17 @@ class SurfaceProxy(Surface):
     pass
 
 
-class SweepBlend:
+class SweepBlend(Enum):
     Local = 0
     Global = 1
 
 
-class SweepFrame:
+class SweepFrame(Enum):
     Freeform = 0
     Roadlike = 1
 
 
-class SweepMiter:
+class SweepMiter(Enum):
     None_ = 0
     Trimmed = 1
     Untrimmed = 2
@@ -5955,7 +5956,7 @@ class SweepOneRail:
     def SetToRoadlikeTop(self) -> None: ...
 
 
-class SweepRebuild:
+class SweepRebuild(Enum):
     None_ = 0
     Rebuild = 1
     Refit = 2
@@ -6051,7 +6052,7 @@ class TextEntity(AnnotationBase):
     def Transform(self, transform: Transform, style: DimensionStyle) -> bool: ...
 
 
-class TextJustification:
+class TextJustification(Enum):
     None_ = 0
     Left = 1
     Center = 2
@@ -6070,7 +6071,7 @@ class TextJustification:
     TopRight = 262148
 
 
-class TextRunType:
+class TextRunType(Enum):
     None_ = 0
     Text = 1
     Newline = 2
@@ -6081,7 +6082,7 @@ class TextRunType:
     Header = 7
 
 
-class TextureCoordinateOption:
+class TextureCoordinateOption(Enum):
     Unset = 0
     None_ = 1
     Automatic = 2
@@ -6292,13 +6293,13 @@ class Transform:
     def TryGetInverse(self) -> Tuple[bool, Transform]: ...
 
 
-class TransformRigidType:
+class TransformRigidType(Enum):
     NotRigid = 0
     Rigid = 1
     RigidReversing = -1
 
 
-class TransformSimilarityType:
+class TransformSimilarityType(Enum):
     NotSimilarity = 0
     OrientationPreserving = 1
     OrientationReversing = -1
@@ -6729,14 +6730,14 @@ class Vector3f:
     def Unitize(self) -> bool: ...
 
 
-class Visibility:
+class Visibility(Enum):
     Unset = 0
     Visible = 1
     Hidden = 2
     Duplicate = 3
 
 
-class Visibility:
+class Visibility(Enum):
     Unset = 0
     Visible = 1
     Hidden = 2

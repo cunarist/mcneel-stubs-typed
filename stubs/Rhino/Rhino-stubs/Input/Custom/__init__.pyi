@@ -1,4 +1,5 @@
 from typing import Tuple, Set, Iterable, List, overload
+from enum import Enum
 
 
 
@@ -17,19 +18,19 @@ class CommandLineOption:
     def IsValidOptionValueName(optionValue: str) -> bool: ...
 
 
-class ConeConstraint:
+class ConeConstraint(Enum):
     None_ = 0
     Vertical = 1
     AroundCurve = 2
 
 
-class CylinderConstraint:
+class CylinderConstraint(Enum):
     None_ = 0
     Vertical = 1
     AroundCurve = 2
 
 
-class GeometryAttributeFilter:
+class GeometryAttributeFilter(Enum):
     WireCurve = 1
     EdgeCurve = 2
     ClosedCurve = 4
@@ -332,7 +333,7 @@ class GetEllipsoid:
     def MarkFoci(self, value: bool) -> None: ...
 
 
-class GetFileNameMode:
+class GetFileNameMode(Enum):
     Open = 0
     OpenTemplate = 1
     OpenImage = 2
@@ -400,7 +401,7 @@ class GetLine:
     def SetFirstPoint(self, point: Point3d) -> None: ...
 
 
-class GetLineMode:
+class GetLineMode(Enum):
     TwoPoint = 0
     SurfaceNormal = 1
     Angled = 2
@@ -778,20 +779,20 @@ class GetTruncatedCone:
     def SecondRadius(self, value: float) -> None: ...
 
 
-class MeshHitFlag:
+class MeshHitFlag(Enum):
     Vertex = 0
     Edge = 1
     Face = 2
     Invalid = -1
 
 
-class MeshPickStyle:
+class MeshPickStyle(Enum):
     WireframePicking = 0
     ShadedModePicking = 1
     VertexOnlyPicking = 2
 
 
-class MeshSphereStyle:
+class MeshSphereStyle(Enum):
     UV = 0
     Triangle = 1
     Quad = 2
@@ -906,12 +907,12 @@ class PickContext:
     def UpdateClippingPlanes(self) -> None: ...
 
 
-class PickMode:
+class PickMode(Enum):
     Wireframe = 1
     Shaded = 2
 
 
-class PickStyle:
+class PickStyle(Enum):
     None_ = 0
     PointPick = 1
     WindowPick = 2

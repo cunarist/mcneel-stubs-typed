@@ -1,4 +1,5 @@
 from typing import Tuple, Set, Iterable, List, overload
+from enum import Enum
 
 from Drawing import *
 from Forms import *
@@ -71,7 +72,7 @@ class EtoMemberIdentifier(AttachableMemberIdentifier):
     def __init__(self, declaringType: Type, memberName: str): ...
 
 
-class EtoSpecialFolder:
+class EtoSpecialFolder(Enum):
     ApplicationSettings = 0
     ApplicationResources = 1
     Documents = 2
@@ -97,7 +98,7 @@ class ExportInitializerAttribute(PlatformExtensionAttribute):
 
 
 
-class FileAction:
+class FileAction(Enum):
     OpenFile = 0
     SaveFile = 1
     SelectFolder = 2
@@ -284,7 +285,7 @@ class PlatformExtensionAttribute:
     def Supports(self, platform: Platform) -> bool: ...
 
 
-class PlatformFeatures:
+class PlatformFeatures(Enum):
     None_ = 0
     CustomCellSupportsControlView = 1
     DrawableWithTransparentContent = 2

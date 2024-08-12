@@ -1,4 +1,5 @@
 from typing import Tuple, Set, Iterable, List, overload
+from enum import Enum
 
 
 
@@ -319,7 +320,7 @@ class AppearanceSettingsState:
     def WorldCoordIconZAxisColor(self, value: Color) -> None: ...
 
 
-class ClipboardState:
+class ClipboardState(Enum):
     KeepData = 0
     DeleteData = 1
     PromptWhenBig = 2
@@ -340,14 +341,14 @@ class CommandAliasList:
     def ToDictionary() -> Dictionary: ...
 
 
-class CommandPromptPosition:
+class CommandPromptPosition(Enum):
     Top = 0
     Bottom = 1
     Floating = 2
     Hidden = 3
 
 
-class CursorMode:
+class CursorMode(Enum):
     None_ = 0
     BlackOnWhite = 1
     WhiteOnBlack = 2
@@ -493,7 +494,7 @@ class CurvatureAnalysisSettingsState:
     def Style(self, value: CurvatureStyle) -> None: ...
 
 
-class CurvatureStyle:
+class CurvatureStyle(Enum):
     Gaussian = 0
     Mean = 1
     MinRadius = 2
@@ -793,7 +794,7 @@ class HistorySettings:
     def UpdateEnabled(value: bool) -> None: ...
 
 
-class Installation:
+class Installation(Enum):
     Undefined = 0
     Commercial = 1
     Educational = 2
@@ -807,13 +808,13 @@ class Installation:
     EvaluationTimed = 10
 
 
-class LicenseNode:
+class LicenseNode(Enum):
     Standalone = 0
     Network = 1
     NetworkCheckedOut = 2
 
 
-class MiddleMouseMode:
+class MiddleMouseMode(Enum):
     PopupMenu = 0
     PopupToolbar = 1
     RunMacro = 2
@@ -1028,7 +1029,7 @@ class ModelAidSettingsState:
     def UseHorizontalDialog(self, value: bool) -> None: ...
 
 
-class MouseSelectMode:
+class MouseSelectMode(Enum):
     Crossing = 0
     Window = 1
     Combo = 2
@@ -1060,7 +1061,7 @@ class OpenGLSettingsState:
     def AntialiasLevel(self, value: AntialiasLevel) -> None: ...
 
 
-class OsnapModes:
+class OsnapModes(Enum):
     None_ = 0
     Near = 2
     Focus = 8
@@ -1083,7 +1084,7 @@ class PackageManagerSettings:
     def Sources(value: str) -> None: ...
 
 
-class PaintColor:
+class PaintColor(Enum):
     NormalStart = 0
     NormalEnd = 1
     NormalBorder = 2
@@ -1110,7 +1111,7 @@ class PaintColor:
     InactiveTabBackground = 23
 
 
-class PointDisplayMode:
+class PointDisplayMode(Enum):
     WorldPoint = 0
     CplanePoint = 1
 
@@ -1157,7 +1158,7 @@ class SelectionFilterSettingsState:
     def SubObjectSelect(self, value: bool) -> None: ...
 
 
-class ShortcutKey:
+class ShortcutKey(Enum):
     F1 = 0
     F2 = 1
     F3 = 2
@@ -1544,7 +1545,7 @@ class ViewSettingsState:
     def ZoomScale(self, value: float) -> None: ...
 
 
-class WidgetColor:
+class WidgetColor(Enum):
     UAxisColor = 0
     VAxisColor = 1
     WAxisColor = 2

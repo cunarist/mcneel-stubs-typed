@@ -1,8 +1,9 @@
 from typing import Tuple, Set, Iterable, List, overload
+from enum import Enum
 
 
 
-class GH_Interpolation:
+class GH_Interpolation(Enum):
     linear = 1
     cubic = 2
 

@@ -1,4 +1,5 @@
 from typing import Tuple, Set, Iterable, List, overload
+from enum import Enum
 
 
 
@@ -194,7 +195,7 @@ class RcpLayoutEventArgs:
     def Layout(self) -> RcpLayout: ...
 
 
-class RcpLayoutKind:
+class RcpLayoutKind(Enum):
     None_ = 0
     Generic = 1
     ItemAdded = 2

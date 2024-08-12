@@ -1,4 +1,5 @@
 from typing import Tuple, Set, Iterable, List, overload
+from enum import Enum
 
 from MetaBall import *
 
@@ -36,7 +37,7 @@ class BezierF:
     def TangentAt(self, t: Single) -> SizeF: ...
 
 
-class BezierShape:
+class BezierShape(Enum):
     Unknown = 0
     Arch = 1
     SingleInflection = 2

@@ -1,4 +1,5 @@
 from typing import Tuple, Set, Iterable, List, overload
+from enum import Enum
 
 
 
@@ -6,7 +7,7 @@ class CustomRenderSaveFileTypes:
     def RegisterFileType(self, extensions: Iterable[str], description: str, saveFileHandler: SaveFileHandler) -> None: ...
 
 
-class DescriptionType:
+class DescriptionType(Enum):
     Organization = 0
     Address = 1
     Country = 2
@@ -52,14 +53,14 @@ class FileTypeList:
     def AddFileType(self, description: str, extension1: str, extension2: str, showOptionsButtonInFileDialog: bool) -> int: ...
 
 
-class LicenseBuildType:
+class LicenseBuildType(Enum):
     Unspecified = 0
     Release = 100
     Evaluation = 200
     Beta = 300
 
 
-class LicenseCapabilities:
+class LicenseCapabilities(Enum):
     NoCapabilities = 0
     CanBePurchased = 1
     CanBeSpecified = 2
@@ -244,7 +245,7 @@ class LicenseStatus:
     def SerialNumber(self, value: str) -> None: ...
 
 
-class LicenseType:
+class LicenseType(Enum):
     Standalone = 0
     Network = 1
     NetworkLoanedOut = 2
@@ -281,13 +282,13 @@ class LicenseUtils:
     def ShowRhinoExpiredMessage(mode: Mode, result: int) -> Tuple[bool, int]: ...
 
 
-class LoadPlugInResult:
+class LoadPlugInResult(Enum):
     Success = 0
     SuccessAlreadyLoaded = 1
     ErrorUnknown = 2
 
 
-class LoadReturnCode:
+class LoadReturnCode(Enum):
     ErrorShowDialog = 0
     Success = 1
     ErrorNoDialog = -1
@@ -435,7 +436,7 @@ class PlugInInfo:
     def IsLoadProtected(self) -> Tuple[bool, bool]: ...
 
 
-class PlugInLoadTime:
+class PlugInLoadTime(Enum):
     Disabled = 0
     AtStartup = 1
     WhenNeeded = 2
@@ -444,7 +445,7 @@ class PlugInLoadTime:
     WhenNeededOrTabbedDockBar = 18
 
 
-class PlugInType:
+class PlugInType(Enum):
     None_ = 0
     Render = 1
     FileImport = 2
@@ -460,14 +461,14 @@ class PreviewNotification:
     def NotifyIntermediateUpdate(self, rw: RenderWindow) -> None: ...
 
 
-class PreviewRenderTypes:
+class PreviewRenderTypes(Enum):
     None_ = 0
     ThreeSeparateImages = 1
     SingleImage = 2
     Progressive = 3
 
 
-class RenderFeature:
+class RenderFeature(Enum):
     Materials = 0
     Environments = 1
     Textures = 2
@@ -531,7 +532,7 @@ class ValidateProductKeyDelegate:
     def Invoke(self, productKey: str) -> Tuple[ValidateResult, LicenseData]: ...
 
 
-class ValidateResult:
+class ValidateResult(Enum):
     ErrorShowMessage = 0
     Success = 1
     ErrorHideMessage = -1
@@ -551,7 +552,7 @@ class VerifyPreviousVersionLicenseDelegate:
     def Invoke(self, license: str, previousVersionLicense: str) -> Tuple[bool, str]: ...
 
 
-class WriteFileResult:
+class WriteFileResult(Enum):
     Failure = 0
     Success = 1
     Cancel = -1

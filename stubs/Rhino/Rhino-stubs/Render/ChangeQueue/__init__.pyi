@@ -1,8 +1,9 @@
 from typing import Tuple, Set, Iterable, List, overload
+from enum import Enum
 
 
 
-class BakingFunctions:
+class BakingFunctions(Enum):
     None_ = 0
     Decals = 1
     ProceduralTextures = 2
@@ -76,7 +77,7 @@ class Environment:
     pass
 
 
-class Event:
+class Event(Enum):
     Added = 0
     Deleted = 1
     Undeleted = 2
@@ -84,7 +85,7 @@ class Event:
     Sorted = 4
 
 
-class FrameBufferFillMode:
+class FrameBufferFillMode(Enum):
     None_ = 0
     DefaultColor = 1
     SolidColor = 2

@@ -1,4 +1,5 @@
 from typing import Tuple, Set, Iterable, List, overload
+from enum import Enum
 
 
 
@@ -154,7 +155,7 @@ class GH_ScriptEditorButton:
     def Bounds(self, AutoPropertyValue: Rectangle) -> None: ...
 
 
-class GH_ScriptLanguage:
+class GH_ScriptLanguage(Enum):
     None_ = 0
     VB = 1
     CS = 2

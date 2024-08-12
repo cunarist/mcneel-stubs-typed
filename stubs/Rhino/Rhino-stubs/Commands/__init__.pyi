@@ -1,4 +1,5 @@
 from typing import Tuple, Set, Iterable, List, overload
+from enum import Enum
 
 
 
@@ -86,7 +87,7 @@ class MostRecentCommandDescription:
     def Macro(self, value: str) -> None: ...
 
 
-class Result:
+class Result(Enum):
     Success = 0
     Cancel = 1
     Nothing = 2
@@ -103,7 +104,7 @@ class RunCommandDelegate:
     def Invoke(self, doc: RhinoDoc, mode: RunMode, data: Object) -> Result: ...
 
 
-class RunMode:
+class RunMode(Enum):
     Interactive = 0
     Scripted = 1
 
@@ -123,7 +124,7 @@ class SelCommand(Command):
     def TestLights(self, value: bool) -> None: ...
 
 
-class Style:
+class Style(Enum):
     None_ = 0
     Hidden = 1
     ScriptRunner = 2

@@ -1,8 +1,9 @@
 from typing import Tuple, Set, Iterable, List, overload
+from enum import Enum
 
 
 
-class IconSize:
+class IconSize(Enum):
     Large = 0
     Small = 1
 
@@ -12,7 +13,7 @@ class IHandler:
     def GetStaticIcon(self, type: StaticIconType, size: IconSize) -> Icon: ...
 
 
-class StaticIconType:
+class StaticIconType(Enum):
     OpenDirectory = 0
     CloseDirectory = 1
 

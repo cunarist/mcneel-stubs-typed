@@ -1,4 +1,5 @@
 from typing import Tuple, Set, Iterable, List, overload
+from enum import Enum
 
 
 
@@ -123,13 +124,13 @@ class GH_Grip:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
-class GH_GripSide:
+class GH_GripSide(Enum):
     Both = 0
     Left = 1
     Right = 2
 
 
-class GH_GripType:
+class GH_GripType(Enum):
     Continuous = 0
     Discontinuous = 1
 

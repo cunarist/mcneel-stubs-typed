@@ -1,4 +1,5 @@
 from typing import Tuple, Set, Iterable, List, overload
+from enum import Enum
 
 
 
@@ -346,7 +347,7 @@ class ThemedSegmentedButtonHandler:
 
 
 
-class ThemedSpinnerDirection:
+class ThemedSpinnerDirection(Enum):
     Clockwise = 1
     CounterClockwise = -1
 
@@ -405,7 +406,7 @@ class ThemedSpinnerHandler:
     def Speed(self, value: float) -> None: ...
 
 
-class ThemedSpinnerMode:
+class ThemedSpinnerMode(Enum):
     Line = 0
     Circle = 1
 

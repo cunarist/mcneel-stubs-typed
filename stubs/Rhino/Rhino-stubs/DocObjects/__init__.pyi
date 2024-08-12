@@ -1,4 +1,5 @@
 from typing import Tuple, Set, Iterable, List, overload
+from enum import Enum
 
 from Custom import *
 from SnapShots import *
@@ -7,20 +8,20 @@ from Tables import *
 __all__ = ['Custom', 'SnapShots', 'Tables']
 
 
-class ActiveSpace:
+class ActiveSpace(Enum):
     None_ = 0
     ModelSpace = 1
     PageSpace = 2
 
 
-class AngleDisplayFormat:
+class AngleDisplayFormat(Enum):
     DecimalDegrees = 0
     DegMinSec = 1
     Radians = 2
     Grads = 3
 
 
-class AngleDisplayMode:
+class AngleDisplayMode(Enum):
     Degrees = 0
     DMS = 1
     Grads = 2
@@ -194,13 +195,13 @@ class AnnotationObjectBase(RhinoObject):
     def HasMeasurableTextFields(self) -> bool: ...
 
 
-class ArrowFit:
+class ArrowFit(Enum):
     Auto = 0
     ArrowsInside = 1
     ArrowsOutside = 2
 
 
-class ArrowType:
+class ArrowType(Enum):
     None_ = 0
     UserBlock = 1
     SolidTriangle = 2
@@ -213,7 +214,7 @@ class ArrowType:
     LongerTriangle = 9
 
 
-class BasepointZero:
+class BasepointZero(Enum):
     GroundLevel = 0
     MeanSeaLevel = 1
     CenterOfEarth = 2
@@ -229,7 +230,7 @@ class BitmapEntry(ModelComponent):
     def Save(self, fileName: str) -> bool: ...
 
 
-class BRDFs:
+class BRDFs(Enum):
     GGX = 0
     Ward = 1
 
@@ -240,7 +241,7 @@ class BrepObject(RhinoObject):
     def BrepGeometry(self) -> Brep: ...
 
 
-class CaptureTypes:
+class CaptureTypes(Enum):
     Path = 0
     Turntable = 1
     Flythrough = 2
@@ -254,7 +255,7 @@ class CentermarkObject(DimensionObject):
     def CentermarkGeometry(self) -> Centermark: ...
 
 
-class CenterMarkStyle:
+class CenterMarkStyle(Enum):
     None_ = 0
     Mark = 1
     MarkAndLines = 2
@@ -331,7 +332,7 @@ class ConstructionPlane:
     def ThinLineColor(self, value: Color) -> None: ...
 
 
-class CoordinateSystem:
+class CoordinateSystem(Enum):
     World = 0
     Camera = 1
     Clip = 2
@@ -773,14 +774,14 @@ class DimensionStyle(ModelComponent):
     def SetFieldOverride(self, field: Field) -> None: ...
 
 
-class DisplayMode:
+class DisplayMode(Enum):
     Default = 0
     Wireframe = 1
     Shaded = 2
     RenderPreview = 3
 
 
-class DistanceDisplayMode:
+class DistanceDisplayMode(Enum):
     Decimal = 0
     Feet = 1
     FeetAndInches = 2
@@ -849,7 +850,7 @@ class ExtrusionObject(RhinoObject):
     def ExtrusionGeometry(self) -> Extrusion: ...
 
 
-class Field:
+class Field(Enum):
     Unset = 0
     Name = 1
     Index = 2
@@ -1022,7 +1023,7 @@ class Font:
     def InstalledFontsAsQuartets() -> Set(FontQuartet): ...
 
 
-class FontOrigin:
+class FontOrigin(Enum):
     Unset = 0
     Unknown = 1
     WindowsFont = 2
@@ -1044,7 +1045,7 @@ class FontQuartet:
     def ToString(self) -> str: ...
 
 
-class FontStretch:
+class FontStretch(Enum):
     Unset = 0
     Ultracondensed = 1
     Extracondensed = 2
@@ -1057,20 +1058,20 @@ class FontStretch:
     Ultraexpanded = 9
 
 
-class FontStyle:
+class FontStyle(Enum):
     Unset = 0
     Upright = 1
     Italic = 2
     Oblique = 3
 
 
-class FontType:
+class FontType(Enum):
     Unset = 0
     ManagedFont = 1
     InstalledFont = 2
 
 
-class FontWeight:
+class FontWeight(Enum):
     Unset = 0
     Thin = 1
     Ultralight = 2
@@ -1155,7 +1156,7 @@ class HatchPattern(ModelComponent):
     def Index(self, value: int) -> None: ...
 
 
-class HatchPatternFillType:
+class HatchPatternFillType(Enum):
     Solid = 0
     Lines = 1
     Gradient = 2
@@ -1249,7 +1250,7 @@ class InstanceDefinition(InstanceDefinitionGeometry):
     def UsesDefinition(self, otherIdefIndex: int) -> int: ...
 
 
-class InstanceDefinitionArchiveFileStatus:
+class InstanceDefinitionArchiveFileStatus(Enum):
     LinkedFileIsUpToDate = 0
     LinkedFileIsNewer = 1
     LinkedFileIsOlder = 2
@@ -1259,13 +1260,13 @@ class InstanceDefinitionArchiveFileStatus:
     LinkedFileNotFound = -1
 
 
-class InstanceDefinitionLayerStyle:
+class InstanceDefinitionLayerStyle(Enum):
     None_ = 0
     Active = 1
     Reference = 2
 
 
-class InstanceDefinitionUpdateType:
+class InstanceDefinitionUpdateType(Enum):
     Static = 0
     Embedded = 1
     LinkedAndEmbedded = 2
@@ -1420,13 +1421,13 @@ class Layer(ModelComponent):
     def UnsetPerViewportPersistentVisibility(self, viewportId: Guid) -> None: ...
 
 
-class LeaderContentAngleStyle:
+class LeaderContentAngleStyle(Enum):
     Horizontal = 0
     Aligned = 1
     Rotated = 2
 
 
-class LeaderCurveStyle:
+class LeaderCurveStyle(Enum):
     None_ = 0
     Polyline = 1
     Spline = 2
@@ -1437,7 +1438,7 @@ class LeaderObject(AnnotationObjectBase):
     def LeaderGeometry(self) -> Leader: ...
 
 
-class LengthDisplay:
+class LengthDisplay(Enum):
     ModelUnits = 0
     InchesFractional = 1
     FeetAndInches = 2
@@ -1450,7 +1451,7 @@ class LengthDisplay:
     Miles = 9
 
 
-class LengthDisplayFormat:
+class LengthDisplayFormat(Enum):
     Decimal = 0
     Fractional = 1
     FeetInches = 2
@@ -1504,12 +1505,12 @@ class Linetype(ModelComponent):
     def SetSegments(self, segments: Iterable[float]) -> bool: ...
 
 
-class MaskFrame:
+class MaskFrame(Enum):
     NoFrame = 0
     RectFrame = 1
 
 
-class MaskType:
+class MaskType(Enum):
     BackgroundColor = 0
     MaskColor = 1
 
@@ -1798,7 +1799,7 @@ class ModelComponent(CommonObject):
     def ToString(self) -> str: ...
 
 
-class ModelComponentType:
+class ModelComponentType(Enum):
     Unset = 0
     Image = 1
     TextureMapping = 2
@@ -1980,14 +1981,14 @@ class ObjectAttributes(CommonObject):
     def Transform(self, xform: Transform) -> bool: ...
 
 
-class ObjectColorSource:
+class ObjectColorSource(Enum):
     ColorFromLayer = 0
     ColorFromObject = 1
     ColorFromMaterial = 2
     ColorFromParent = 3
 
 
-class ObjectDecoration:
+class ObjectDecoration(Enum):
     None_ = 0
     StartArrowhead = 8
     EndArrowhead = 16
@@ -2070,39 +2071,39 @@ class ObjectEnumeratorSettings:
     def VisibleFilter(self, value: bool) -> None: ...
 
 
-class ObjectLinetypeSource:
+class ObjectLinetypeSource(Enum):
     LinetypeFromLayer = 0
     LinetypeFromObject = 1
     LinetypeFromParent = 3
 
 
-class ObjectMaterialSource:
+class ObjectMaterialSource(Enum):
     MaterialFromLayer = 0
     MaterialFromObject = 1
     MaterialFromParent = 3
 
 
-class ObjectMode:
+class ObjectMode(Enum):
     Normal = 0
     Hidden = 1
     Locked = 2
     InstanceDefinitionObject = 3
 
 
-class ObjectPlotColorSource:
+class ObjectPlotColorSource(Enum):
     PlotColorFromLayer = 0
     PlotColorFromObject = 1
     PlotColorFromDisplay = 2
     PlotColorFromParent = 3
 
 
-class ObjectPlotWeightSource:
+class ObjectPlotWeightSource(Enum):
     PlotWeightFromLayer = 0
     PlotWeightFromObject = 1
     PlotWeightFromParent = 3
 
 
-class ObjectType:
+class ObjectType(Enum):
     None_ = 0
     Point = 1
     PointSet = 2
@@ -2610,7 +2611,7 @@ class RhinoTransformObjectsEventArgs:
     def Transform(self) -> Transform: ...
 
 
-class ScaleFormat:
+class ScaleFormat(Enum):
     None_ = 0
     PageLengthToOne = 1
     OneToModelLength = 2
@@ -2619,14 +2620,14 @@ class ScaleFormat:
     ModelLengthInchToOneFootInch = 5
 
 
-class SelectionMethod:
+class SelectionMethod(Enum):
     Other = 0
     MousePick = 1
     WindowBox = 2
     CrossingBox = 3
 
 
-class StackDisplayFormat:
+class StackDisplayFormat(Enum):
     None_ = 0
     StackHorizontal = 1
     StackDiagonal = 2
@@ -2642,7 +2643,7 @@ class SurfaceObject(RhinoObject):
     def SurfaceGeometry(self) -> Surface: ...
 
 
-class TextDisplayAlignment:
+class TextDisplayAlignment(Enum):
     Normal = 0
     Horizontal = 1
     AboveLine = 2
@@ -2653,7 +2654,7 @@ class TextDotObject(RhinoObject):
     pass
 
 
-class TextFit:
+class TextFit(Enum):
     Auto = 0
     TextInside = 1
     TextRight = 2
@@ -2662,14 +2663,14 @@ class TextFit:
     TextHintLeft = 5
 
 
-class TextHorizontalAlignment:
+class TextHorizontalAlignment(Enum):
     Left = 0
     Center = 1
     Right = 2
     Auto = 3
 
 
-class TextLocation:
+class TextLocation(Enum):
     AboveDimLine = 0
     InDimLine = 1
     BelowDimLine = 2
@@ -2681,7 +2682,7 @@ class TextObject(AnnotationObjectBase):
     def GetTextCorners(self, viewport: RhinoViewport) -> Set(Point3d): ...
 
 
-class TextOrientation:
+class TextOrientation(Enum):
     InPlane = 0
     InView = 1
 
@@ -2737,14 +2738,14 @@ class Texture(CommonObject):
     def SetRGBBlendValues(self, color: Color, a0: float, a1: float, a2: float, a3: float) -> None: ...
 
 
-class TextureCombineMode:
+class TextureCombineMode(Enum):
     None_ = 0
     Modulate = 1
     Decal = 2
     Blend = 3
 
 
-class TextureType:
+class TextureType(Enum):
     None_ = 0
     Diffuse = 1
     Bitmap = 1
@@ -2775,12 +2776,12 @@ class TextureType:
     Emap = 86
 
 
-class TextureUvwWrapping:
+class TextureUvwWrapping(Enum):
     Repeat = 0
     Clamp = 1
 
 
-class TextVerticalAlignment:
+class TextVerticalAlignment(Enum):
     Top = 0
     MiddleOfTop = 1
     BottomOfTop = 2
@@ -2790,7 +2791,7 @@ class TextVerticalAlignment:
     BottomOfBoundingBox = 6
 
 
-class ToleranceDisplayFormat:
+class ToleranceDisplayFormat(Enum):
     None_ = 0
     Symmetrical = 1
     Deviation = 2
@@ -2839,7 +2840,7 @@ class ViewInfo:
     def Name(self, value: str) -> None: ...
 
 
-class ViewInfoFocalBlurModes:
+class ViewInfoFocalBlurModes(Enum):
     None_ = 0
     Automatic = 1
     Manual = 2
@@ -3056,7 +3057,7 @@ class Worksession:
     def ModelPathFromSerialNumber(self, modelSerialNumber: UInt32) -> str: ...
 
 
-class ZeroSuppression:
+class ZeroSuppression(Enum):
     None_ = 0
     SuppressLeading = 1
     SuppressTrailing = 2

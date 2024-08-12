@@ -1,14 +1,15 @@
 from typing import Tuple, Set, Iterable, List, overload
+from enum import Enum
 
 
 
-class AnalysisStyle:
+class AnalysisStyle(Enum):
     Wireframe = 1
     Texture = 2
     FalseColor = 4
 
 
-class AnchorLocation:
+class AnchorLocation(Enum):
     LowerLeft = 0
     UpperLeft = 1
     LowerRight = 2
@@ -16,14 +17,14 @@ class AnchorLocation:
     Center = 4
 
 
-class BackgroundStyle:
+class BackgroundStyle(Enum):
     SolidColor = 0
     WallpaperImage = 1
     Gradient = 2
     Environment = 3
 
 
-class BlendMode:
+class BlendMode(Enum):
     Zero = 0
     One = 1
     SourceColor = 768
@@ -37,7 +38,7 @@ class BlendMode:
     SourceAlphaSaturate = 776
 
 
-class BoundingBoxDisplayMode:
+class BoundingBoxDisplayMode(Enum):
     None_ = 0
     OnAlways = 1
     OnDuringDynamicDisplay = 2
@@ -277,7 +278,7 @@ class ColorLCH:
     def L(self, value: float) -> None: ...
 
 
-class ColorMode:
+class ColorMode(Enum):
     DisplayColor = 0
     PrintColor = 1
     BlackAndWhite = 2
@@ -390,7 +391,7 @@ class ColorXYZ:
     def Z(self, value: float) -> None: ...
 
 
-class ContextsForDraw:
+class ContextsForDraw(Enum):
     Unset = 0
     FilePreview = 1
     ViewCapture = 2
@@ -400,7 +401,7 @@ class ContextsForDraw:
     RenderOverlays = 6
 
 
-class CullFaceMode:
+class CullFaceMode(Enum):
     DrawFrontAndBack = 0
     DrawFrontFaces = 1
     DrawBackFaces = 2
@@ -480,7 +481,7 @@ class CustomDisplay:
     def Enabled(self, value: bool) -> None: ...
 
 
-class DefinedViewportProjection:
+class DefinedViewportProjection(Enum):
     None_ = 0
     Top = 1
     Bottom = 2
@@ -492,7 +493,7 @@ class DefinedViewportProjection:
     TwoPointPerspective = 8
 
 
-class DepthMode:
+class DepthMode(Enum):
     Neutral = 0
     AlwaysInFront = 1
     AlwaysInBack = 2
@@ -1278,7 +1279,7 @@ class DisplayPipelineAttributes:
     def SetFill(self, gradientTopLeft: Color, gradientBottomLeft: Color, gradientTopRight: Color, gradientBottomRight: Color) -> None: ...
 
 
-class DisplayTechnology:
+class DisplayTechnology(Enum):
     None_ = 0
     OpenGL = 1
     Metal = 2
@@ -1307,7 +1308,7 @@ class DrawForegroundEventArgs(DrawEventArgs):
     def WorldAxesDrawn(self, value: bool) -> None: ...
 
 
-class DrawFrameStages:
+class DrawFrameStages(Enum):
     InitializeFrameBuffer = 1
     SetupFrustum = 2
     ObjectCulling = 4
@@ -1340,13 +1341,13 @@ class DrawObjectEventArgs(DrawEventArgs):
     def DrawObject(self, value: bool) -> None: ...
 
 
-class EdgeContinuityMode:
+class EdgeContinuityMode(Enum):
     Distance = 0
     Tangency = 1
     Curvature = 2
 
 
-class FrameBufferFillMode:
+class FrameBufferFillMode(Enum):
     DefaultColor = 1
     SolidColor = 2
     Gradient2Color = 3
@@ -1356,7 +1357,7 @@ class FrameBufferFillMode:
     Transparent = 7
 
 
-class GradientType:
+class GradientType(Enum):
     None_ = 0
     Linear = 1
     Radial = 2
@@ -1405,7 +1406,7 @@ class PageViewSpaceChangeEventArgs:
     def PageView(self) -> RhinoPageView: ...
 
 
-class PointStyle:
+class PointStyle(Enum):
     Square = 0
     Simple = 0
     ControlPoint = 1
@@ -1750,7 +1751,7 @@ class RhinoViewport:
     def ZoomWindow(self, rect: Rectangle) -> bool: ...
 
 
-class ShaderLanguage:
+class ShaderLanguage(Enum):
     GLSL_ES100 = 1
     GLSL_ES300 = 2
     GLSL_ES310 = 3
@@ -1767,7 +1768,7 @@ class ShaderLanguage:
     Metal = 14
 
 
-class StereoContext:
+class StereoContext(Enum):
     None_ = 0
     LeftEye = 1
     RightEye = 2
@@ -1816,7 +1817,7 @@ class Text3d:
     def VerticalAlignment(self, value: TextVerticalAlignment) -> None: ...
 
 
-class ViewAreaMapping:
+class ViewAreaMapping(Enum):
     View = 0
     Extents = 1
     Window = 2
@@ -2065,7 +2066,7 @@ class ViewEventArgs:
     def View(self) -> RhinoView: ...
 
 
-class ViewportType:
+class ViewportType(Enum):
     StandardModelingViewport = 0
     PageViewMainViewport = 1
     DetailViewport = 2
@@ -2106,7 +2107,7 @@ class VisualAnalysisMode:
     def Register(customAnalysisModeType: Type) -> VisualAnalysisMode: ...
 
 
-class ZBiasMode:
+class ZBiasMode(Enum):
     Neutral = 0
     TowardsCamera = 1
     AwayFromCamera = 2

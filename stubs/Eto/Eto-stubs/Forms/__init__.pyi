@@ -1,4 +1,5 @@
 from typing import Tuple, Set, Iterable, List, overload
+from enum import Enum
 
 from ThemedControls import *
 
@@ -133,7 +134,7 @@ class Application(Widget):
     def UIThreadCheckMode(self, value: UIThreadCheckMode) -> None: ...
 
 
-class AutoSelectMode:
+class AutoSelectMode(Enum):
     OnFocus = 0
     Never = 1
     Always = 2
@@ -255,12 +256,12 @@ class BindingExtensions:
     def WhenLostFocus(binding: BindableBinding) -> BindableBinding: ...
 
 
-class BindingUpdateMode:
+class BindingUpdateMode(Enum):
     Source = 0
     Destination = 1
 
 
-class BorderType:
+class BorderType(Enum):
     Bezel = 0
     Line = 1
     None_ = 2
@@ -308,7 +309,7 @@ class Button(TextControl):
     def Width(self, value: int) -> None: ...
 
 
-class ButtonImagePosition:
+class ButtonImagePosition(Enum):
     Left = 0
     Right = 1
     Above = 2
@@ -379,7 +380,7 @@ class Calendar(Control):
     def SelectedRange(self, value: Range) -> None: ...
 
 
-class CalendarMode:
+class CalendarMode(Enum):
     Single = 0
     Range = 1
 
@@ -437,7 +438,7 @@ class CellPaintEventArgs(PaintEventArgs):
     def Item(self) -> Object: ...
 
 
-class CellStates:
+class CellStates(Enum):
     None_ = 0
     Selected = 1
     Editing = 2
@@ -1056,7 +1057,7 @@ class Cursors:
     def VerticalSplit() -> Cursor: ...
 
 
-class CursorType:
+class CursorType(Enum):
     Default = 0
     Arrow = 1
     Crosshair = 2
@@ -1203,7 +1204,7 @@ class DateTimePicker(CommonControl):
     def Value(self, value: Nullable) -> None: ...
 
 
-class DateTimePickerMode:
+class DateTimePickerMode(Enum):
     Date = 1
     Time = 2
     DateTime = 3
@@ -1243,14 +1244,14 @@ class Dialog(Window):
 
 
 
-class DialogDisplayMode:
+class DialogDisplayMode(Enum):
     Default = 0
     Attached = 1
     Separate = 2
     Navigation = 4
 
 
-class DialogResult:
+class DialogResult(Enum):
     None_ = 0
     Ok = 1
     Cancel = 2
@@ -1263,7 +1264,7 @@ class DialogResult:
 
 
 
-class DockPosition:
+class DockPosition(Enum):
     Top = 0
     Left = 1
     Right = 2
@@ -1337,7 +1338,7 @@ class DocumentPageReorderEventArgs(DocumentPageEventArgs):
     def OldIndex(self) -> int: ...
 
 
-class DragEffects:
+class DragEffects(Enum):
     None_ = 0
     Copy = 1
     Move = 2
@@ -1427,7 +1428,7 @@ class DropDownFormatEventArgs:
 
 
 
-class DualBindingMode:
+class DualBindingMode(Enum):
     OneWay = 0
     TwoWay = 1
     OneWayToSource = 2
@@ -1945,7 +1946,7 @@ class GridCellMouseEventArgs(MouseEventArgs):
     def Row(self) -> int: ...
 
 
-class GridCellType:
+class GridCellType(Enum):
     None_ = 0
     Data = 1
     ColumnHeader = 2
@@ -2017,7 +2018,7 @@ class GridColumnEventArgs:
     def Column(self) -> GridColumn: ...
 
 
-class GridDragPosition:
+class GridDragPosition(Enum):
     Over = 0
     Before = 1
     After = 2
@@ -2040,7 +2041,7 @@ class GridItem:
     def SetValue(self, column: int, value: Object) -> None: ...
 
 
-class GridLines:
+class GridLines(Enum):
     None_ = 0
     Horizontal = 1
     Vertical = 2
@@ -2139,7 +2140,7 @@ class GroupBox(Panel):
     def TextColor(self, value: Color) -> None: ...
 
 
-class HorizontalAlignment:
+class HorizontalAlignment(Enum):
     Left = 0
     Center = 1
     Right = 2
@@ -4440,7 +4441,7 @@ class INavigationItem:
 
 
 
-class InsertKeyMode:
+class InsertKeyMode(Enum):
     Insert = 0
     Overwrite = 1
     Toggle = 2
@@ -4568,12 +4569,12 @@ class KeyEventArgs:
     def Handled(self, value: bool) -> None: ...
 
 
-class KeyEventType:
+class KeyEventType(Enum):
     KeyDown = 0
     KeyUp = 1
 
 
-class Keys:
+class Keys(Enum):
     None_ = 0
     A = 1
     B = 2
@@ -4983,7 +4984,7 @@ class MenuBar(Menu):
     def Trim(self, value: bool) -> None: ...
 
 
-class MenuBarSystemItems:
+class MenuBarSystemItems(Enum):
     None_ = 0
     Common = 1
     Quit = 4
@@ -5083,14 +5084,14 @@ class MessageBox:
     def Show(parent: Control, text: str, caption: str, buttons: MessageBoxButtons, type: MessageBoxType, defaultButton: MessageBoxDefaultButton) -> DialogResult: ...
 
 
-class MessageBoxButtons:
+class MessageBoxButtons(Enum):
     OK = 0
     OKCancel = 1
     YesNo = 2
     YesNoCancel = 3
 
 
-class MessageBoxDefaultButton:
+class MessageBoxDefaultButton(Enum):
     Default = 0
     OK = 1
     Yes = 1
@@ -5098,7 +5099,7 @@ class MessageBoxDefaultButton:
     Cancel = 3
 
 
-class MessageBoxType:
+class MessageBoxType(Enum):
     Information = 0
     Warning = 1
     Error = 2
@@ -5118,7 +5119,7 @@ class Mouse:
     def SetCursor(cursor: Cursor) -> None: ...
 
 
-class MouseButtons:
+class MouseButtons(Enum):
     None_ = 0
     Primary = 1
     Alternate = 2
@@ -5330,12 +5331,12 @@ class OpenWithDialog(CommonDialog):
     def __init__(self, filepath: str): ...
 
 
-class Orientation:
+class Orientation(Enum):
     Horizontal = 0
     Vertical = 1
 
 
-class PageOrientation:
+class PageOrientation(Enum):
     Portrait = 0
     Landscape = 1
 
@@ -5481,7 +5482,7 @@ class PrintPreviewDialog(CommonDialog):
     def ShowDialog(self, parent: Window) -> DialogResult: ...
 
 
-class PrintSelection:
+class PrintSelection(Enum):
     AllPages = 0
     Selection = 1
     SelectedPages = 2
@@ -5916,7 +5917,7 @@ class RichTextArea(TextArea):
     def SelectionUnderline(self, value: bool) -> None: ...
 
 
-class RichTextAreaFormat:
+class RichTextAreaFormat(Enum):
     Rtf = 0
     PlainText = 1
 
@@ -6111,7 +6112,7 @@ class SegmentedItemCollection:
     def AddRange(self, items: Iterable[SegmentedItem]) -> None: ...
 
 
-class SegmentedSelectionMode:
+class SegmentedSelectionMode(Enum):
     None_ = 0
     Single = 1
     Multiple = 2
@@ -6143,13 +6144,13 @@ class SeparatorToolItem(ToolItem):
     def Type(self, value: SeparatorToolItemType) -> None: ...
 
 
-class SeparatorToolItemType:
+class SeparatorToolItemType(Enum):
     Divider = 0
     Space = 1
     FlexibleSpace = 2
 
 
-class ShowPromptMode:
+class ShowPromptMode(Enum):
     Always = 0
     OnFocus = 1
     Never = 2
@@ -6251,7 +6252,7 @@ class Splitter(Container):
     def SplitterWidth(self, value: int) -> None: ...
 
 
-class SplitterFixedPanel:
+class SplitterFixedPanel(Enum):
     Panel1 = 0
     Panel2 = 1
     None_ = 2
@@ -6341,7 +6342,7 @@ class Stepper(Control):
     def ValidDirection(self, value: StepperValidDirections) -> None: ...
 
 
-class StepperDirection:
+class StepperDirection(Enum):
     Up = 0
     Down = 1
 
@@ -6352,7 +6353,7 @@ class StepperEventArgs:
     def Direction(self) -> StepperDirection: ...
 
 
-class StepperValidDirections:
+class StepperValidDirections(Enum):
     None_ = 0
     Up = 1
     Down = 2
@@ -6537,7 +6538,7 @@ class Taskbar:
     def SetProgress(state: TaskbarProgressState, progress: Single) -> None: ...
 
 
-class TaskbarProgressState:
+class TaskbarProgressState(Enum):
     None_ = 0
     Progress = 1
     Indeterminate = 2
@@ -6545,7 +6546,7 @@ class TaskbarProgressState:
     Paused = 4
 
 
-class TextAlignment:
+class TextAlignment(Enum):
     Left = 0
     Center = 1
     Right = 2
@@ -6718,7 +6719,7 @@ class TextInputEventArgs:
     def Text(self) -> str: ...
 
 
-class TextReplacements:
+class TextReplacements(Enum):
     None_ = 0
     Text = 1
     Quote = 2
@@ -6774,12 +6775,12 @@ class ToolBar(Tool):
     def TextAlign(self, value: ToolBarTextAlign) -> None: ...
 
 
-class ToolBarDock:
+class ToolBarDock(Enum):
     Top = 0
     Bottom = 1
 
 
-class ToolBarTextAlign:
+class ToolBarTextAlign(Enum):
     Right = 0
     Underneath = 1
 
@@ -7046,7 +7047,7 @@ class UIThreadAccessException:
     def __init__(self, message: str, inner: Exception): ...
 
 
-class UIThreadCheckMode:
+class UIThreadCheckMode(Enum):
     None_ = 0
     Warning = 1
     Error = 2
@@ -7090,7 +7091,7 @@ class VariableMaskedTextProvider:
     def Text(self, value: str) -> None: ...
 
 
-class VerticalAlignment:
+class VerticalAlignment(Enum):
     Top = 0
     Center = 1
     Bottom = 2
@@ -7265,19 +7266,19 @@ class Window(Panel):
     def WindowStyle(self, value: WindowStyle) -> None: ...
 
 
-class WindowState:
+class WindowState(Enum):
     Normal = 0
     Maximized = 1
     Minimized = 2
 
 
-class WindowStyle:
+class WindowStyle(Enum):
     Default = 0
     None_ = 1
     Utility = 2
 
 
-class WrapMode:
+class WrapMode(Enum):
     None_ = 0
     Word = 1
     Character = 2

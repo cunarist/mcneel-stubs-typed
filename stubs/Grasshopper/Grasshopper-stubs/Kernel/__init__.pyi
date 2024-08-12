@@ -1,4 +1,5 @@
 from typing import Tuple, Set, Iterable, List, overload
+from enum import Enum
 
 from Attributes import *
 from Components import *
@@ -199,7 +200,7 @@ class GH_Alias:
     def StringToAlias(text: str) -> Set(str): ...
 
 
-class GH_Arrange:
+class GH_Arrange(Enum):
     MoveToFront = 0
     MoveForwards = 1
     MoveToBack = 2
@@ -371,7 +372,7 @@ class GH_AutoSaveSettings:
     def SaveOnWireEvent(Value: bool) -> None: ...
 
 
-class GH_AutoSaveTrigger:
+class GH_AutoSaveTrigger(Enum):
     undefined = 0
     doc_unload = 1
     object_added = 2
@@ -394,7 +395,7 @@ class GH_BakeUtility:
     def InvalidCount(self) -> int: ...
 
 
-class GH_BitmapChannel:
+class GH_BitmapChannel(Enum):
     A = 1
     R = 2
     G = 4
@@ -408,7 +409,7 @@ class GH_CaseInsensitiveStringComparer:
     def Compare(self, x: str, y: str) -> int: ...
 
 
-class GH_ClipboardType:
+class GH_ClipboardType(Enum):
     System = 0
     Local = 1
     Global = 2
@@ -701,7 +702,7 @@ class GH_ConnectivityNode:
     def NodeOut(self) -> ReadOnlyCollection: ...
 
 
-class GH_Conversion:
+class GH_Conversion(Enum):
     Primary = 0
     Secondary = 1
     Both = 2
@@ -921,13 +922,13 @@ class GH_CustomEventServer:
     def Enabled(self, Value: bool) -> None: ...
 
 
-class GH_DataComparison:
+class GH_DataComparison(Enum):
     ShortestList = 0
     LongestList = 1
     CrossReference = 2
 
 
-class GH_DataMapping:
+class GH_DataMapping(Enum):
     None_ = 0
     Flatten = 1
     Graft = 2
@@ -1363,7 +1364,7 @@ class GH_DocumentAssociations:
     def GetRhinoAssociations(self, grasshopperFile: str) -> List: ...
 
 
-class GH_DocumentContext:
+class GH_DocumentContext(Enum):
     Unknown = 0
     None_ = 1
     Open = 2
@@ -1582,7 +1583,7 @@ class GH_DocumentProperties:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
-class GH_DocumentRank:
+class GH_DocumentRank(Enum):
     Unset = 0
     TopLevel = 1
     Subsidiary = 2
@@ -1634,7 +1635,7 @@ class GH_DocumentServer:
     def SafeRemoveDocument(self, document: GH_Document) -> bool: ...
 
 
-class GH_DocumentSettings:
+class GH_DocumentSettings(Enum):
     Preview = 0
     Properties = 1
 
@@ -1667,7 +1668,7 @@ class GH_DocUndoEventArgs:
     def Record(self) -> GH_UndoRecord: ...
 
 
-class GH_Exposure:
+class GH_Exposure(Enum):
     primary = 2
     secondary = 4
     tertiary = 8
@@ -1697,7 +1698,7 @@ class GH_ExternalFile:
     def IsIdenticalTo(self, other: GH_ExternalFile) -> bool: ...
 
 
-class GH_ExternalFileType:
+class GH_ExternalFileType(Enum):
     Unknown = 0
     Assembly = 1
     UserObject = 2
@@ -1746,7 +1747,7 @@ class GH_FileWatcher:
     def SetCustomUIThread(self, target: Form) -> None: ...
 
 
-class GH_FileWatcherEvents:
+class GH_FileWatcherEvents(Enum):
     None_ = 0
     Changed = 1
     Renamed = 2
@@ -1755,7 +1756,7 @@ class GH_FileWatcherEvents:
     All = 15
 
 
-class GH_Filter:
+class GH_Filter(Enum):
     DontCare = 0
     Include = 1
     Exclude = 2
@@ -1951,7 +1952,7 @@ class GH_Format:
     def TreatAsCollection(obj: Object) -> bool: ...
 
 
-class GH_GetterResult:
+class GH_GetterResult(Enum):
     accept = 0
     success = 1
     cancel = 2
@@ -2002,7 +2003,7 @@ class GH_GraphProxy:
     def Type(self) -> Type: ...
 
 
-class GH_GuidConflictSolution:
+class GH_GuidConflictSolution(Enum):
     Unset = 0
     Replace = 1
     ReplaceAll = 2
@@ -2023,7 +2024,7 @@ class GH_GuidTable:
     def Objects(self, id: Guid) -> List: ...
 
 
-class GH_IconDisplayMode:
+class GH_IconDisplayMode(Enum):
     application = 0
     icon = 1
     name = 2
@@ -2090,7 +2091,7 @@ class GH_InstanceDescription:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
-class GH_LibraryLicense:
+class GH_LibraryLicense(Enum):
     unset = 0
     expired = 1
     alpha = 2
@@ -2109,7 +2110,7 @@ class GH_LineParser:
     def ParseLine(self, line: str, action: GH_LineParserAction) -> Tuple[Object, GH_LineParserAction]: ...
 
 
-class GH_LineParserAction:
+class GH_LineParserAction(Enum):
     Include = 0
     Ignore = 1
     Abort = 2
@@ -2127,7 +2128,7 @@ class GH_LoadingAttribute:
     def __init__(self, demand: GH_LoadingDemand): ...
 
 
-class GH_LoadingDemand:
+class GH_LoadingDemand(Enum):
     Default = 0
     ForceCOFF = 1
     ForceDirect = 2
@@ -2149,12 +2150,12 @@ class GH_LoadingException:
     def Type(self) -> str: ...
 
 
-class GH_LoadingInstruction:
+class GH_LoadingInstruction(Enum):
     Proceed = 0
     Abort = 1
 
 
-class GH_LoadingMechanism:
+class GH_LoadingMechanism(Enum):
     COFF = 1
     Direct = 2
     Unknown = -1
@@ -2231,7 +2232,7 @@ class GH_MarkovPattern:
     def Simplify(self) -> None: ...
 
 
-class GH_MatchLevel:
+class GH_MatchLevel(Enum):
     None_ = 0
     Exact = 1
     Start = 2
@@ -2243,7 +2244,7 @@ class GH_MatchLevel:
     All = 63
 
 
-class GH_MatchWeight:
+class GH_MatchWeight(Enum):
     Fuzzy = 10
     Contains = 10
     WordExact = 100
@@ -2345,7 +2346,7 @@ class GH_ObjectChangedEventArgs:
     def Type(self) -> GH_ObjectEventType: ...
 
 
-class GH_ObjectEventType:
+class GH_ObjectEventType(Enum):
     Unset = 0
     NickName = 1
     NickNameAccepted = 2
@@ -2363,7 +2364,7 @@ class GH_ObjectEventType:
     Custom = 2147483647
 
 
-class GH_ObjectSpecies:
+class GH_ObjectSpecies(Enum):
     none = 0
     doc_object = 1
     parameter = 16
@@ -2377,7 +2378,7 @@ class GH_ObjectSpecies:
     any = 4294967295
 
 
-class GH_ObjectType:
+class GH_ObjectType(Enum):
     None_ = 0
     CompiledObject = 1
     UserObject = 2
@@ -2385,13 +2386,13 @@ class GH_ObjectType:
 
 
 
-class GH_ParamAccess:
+class GH_ParamAccess(Enum):
     item = 0
     list = 1
     tree = 2
 
 
-class GH_ParamData:
+class GH_ParamData(Enum):
     unknown = 0
     void = 1
     local = 2
@@ -2412,12 +2413,12 @@ class GH_ParameterContext:
     def SolveIndex(self, AutoPropertyValue: int) -> None: ...
 
 
-class GH_ParameterSide:
+class GH_ParameterSide(Enum):
     Input = 0
     Output = 1
 
 
-class GH_ParamHashFields:
+class GH_ParamHashFields(Enum):
     None_ = 0
     Input = 1
     Output = 2
@@ -2436,7 +2437,7 @@ class GH_ParamHashFields:
     All = 16974335
 
 
-class GH_ParamKind:
+class GH_ParamKind(Enum):
     unknown = 0
     floating = 1
     input = 2
@@ -2456,7 +2457,7 @@ class GH_ParamServerEventArgs:
     def Server(self) -> GH_ComponentParamServer: ...
 
 
-class GH_ParamWireDisplay:
+class GH_ParamWireDisplay(Enum):
     default = 0
     faint = 1
     hidden = 2
@@ -2466,7 +2467,7 @@ class GH_ParamWireDisplay:
 
 
 
-class GH_PickBox:
+class GH_PickBox(Enum):
     Window = 0
     Crossing = 1
 
@@ -2479,7 +2480,7 @@ class GH_PingDocumentEventArgs:
     def Document(self, Value: GH_Document) -> None: ...
 
 
-class GH_PluginFolderType:
+class GH_PluginFolderType(Enum):
     Core = 0
     Default = 1
     RhiFolder = 2
@@ -2526,12 +2527,12 @@ class GH_PreviewExpiredEventArgs:
     def ForceRedraw(self) -> bool: ...
 
 
-class GH_PreviewFilter:
+class GH_PreviewFilter(Enum):
     None_ = 0
     Selected = 1
 
 
-class GH_PreviewMesh:
+class GH_PreviewMesh(Enum):
     None_ = 0
     LowQuality = 1
     HighQuality = 2
@@ -2551,7 +2552,7 @@ class GH_PreviewMeshArgs:
     def Viewport(self) -> RhinoViewport: ...
 
 
-class GH_PreviewMode:
+class GH_PreviewMode(Enum):
     Disabled = 0
     Wireframe = 1
     Shaded = 2
@@ -2595,7 +2596,7 @@ class GH_PreviewWireArgs:
     def Viewport(self) -> RhinoViewport: ...
 
 
-class GH_PrincipalState:
+class GH_PrincipalState(Enum):
     CannotBePrincipal = 0
     IsPrincipal = 1
     IsNotPrincipal = 2
@@ -2625,14 +2626,14 @@ class GH_ProcessForm:
     def FormatBytes(B: Int64) -> str: ...
 
 
-class GH_ProcessStep:
+class GH_ProcessStep(Enum):
     PreProcess = 0
     Process = 1
     PostProcess = 2
     Aborted = 3
 
 
-class GH_ProfilerMode:
+class GH_ProfilerMode(Enum):
     None_ = 0
     Processor = 1
     Memory = 2
@@ -2663,7 +2664,7 @@ class GH_RelevantObjectData:
     def TopLevelObject(self) -> IGH_DocumentObject: ...
 
 
-class GH_RelevantObjectFilter:
+class GH_RelevantObjectFilter(Enum):
     None_ = 0
     Groups = 1
     InputGrips = 2
@@ -2726,7 +2727,7 @@ class GH_RuntimeMessage:
     def Type(self) -> GH_RuntimeMessageLevel: ...
 
 
-class GH_RuntimeMessageLevel:
+class GH_RuntimeMessageLevel(Enum):
     Blank = 0
     Warning = 10
     Error = 20
@@ -2778,12 +2779,12 @@ class GH_SearchHit:
     def Weight(self) -> int: ...
 
 
-class GH_SelectionState:
+class GH_SelectionState(Enum):
     Changed = 0
     Unchanged = 1
 
 
-class GH_SelectionTopology:
+class GH_SelectionTopology(Enum):
     None_ = 0
     Convex = 1
     Concave = 2
@@ -2851,7 +2852,7 @@ class GH_SettingsServer:
     def WritePersistentSettings(self) -> None: ...
 
 
-class GH_SettingsType:
+class GH_SettingsType(Enum):
     _null = 0
     _boolean = 1
     _byte = 2
@@ -2883,13 +2884,13 @@ class GH_SolutionExpiredEventArgs:
     def Recompute(self) -> bool: ...
 
 
-class GH_SolutionMode:
+class GH_SolutionMode(Enum):
     Default = 0
     CommandLine = 1
     Silent = 2
 
 
-class GH_SolutionPhase:
+class GH_SolutionPhase(Enum):
     Blank = 0
     Collecting = 1
     Collected = 2
@@ -2969,7 +2970,7 @@ class GH_StateTag:
     def StateDescription(self, Value: str) -> None: ...
 
 
-class GH_StateTagLayoutDirection:
+class GH_StateTagLayoutDirection(Enum):
     Left = 0
     Right = 1
 
@@ -3021,7 +3022,7 @@ class GH_StringPattern:
 
 
 
-class GH_TimeKind:
+class GH_TimeKind(Enum):
     Unset = 0
     Mixed = 1
     PureTime = 2
@@ -3033,7 +3034,7 @@ class GH_TypeLib:
     pass
 
 
-class GH_UndoOperation:
+class GH_UndoOperation(Enum):
     ClearUndoStack = 0
     ClearRedoStack = 1
     RecordAdded = 2
@@ -3196,7 +3197,7 @@ class GH_VarParamEventArgs:
     def Side(self) -> GH_VarParamSide: ...
 
 
-class GH_VarParamSide:
+class GH_VarParamSide(Enum):
     Input = 0
     Output = 1
 

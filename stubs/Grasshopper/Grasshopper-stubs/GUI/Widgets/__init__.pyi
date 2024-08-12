@@ -1,4 +1,5 @@
 from typing import Tuple, Set, Iterable, List, overload
+from enum import Enum
 
 
 
@@ -134,7 +135,7 @@ class GH_MarkovWidget(GH_Widget):
     def SetupTooltip(self, canvasPoint: PointF, e: GH_TooltipDisplayEventArgs) -> None: ...
 
 
-class GH_MarkovWidgetDock:
+class GH_MarkovWidgetDock(Enum):
     TopLeft = 0
     BottomLeft = 1
     TopRight = 2

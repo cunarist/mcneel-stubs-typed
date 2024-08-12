@@ -1,4 +1,5 @@
 from typing import Tuple, Set, Iterable, List, overload
+from enum import Enum
 
 
 
@@ -102,7 +103,7 @@ class PostEffectChannel:
     def GPU(self) -> ChannelGPU: ...
 
 
-class PostEffectExecuteContexts:
+class PostEffectExecuteContexts(Enum):
     ProductionRendering = 0
     RealtimeRendering = 1
     ViewportDisplay = 2
@@ -110,13 +111,13 @@ class PostEffectExecuteContexts:
     ConvertingToHDR = 4
 
 
-class PostEffectExecuteWhileRenderingOptions:
+class PostEffectExecuteWhileRenderingOptions(Enum):
     None_ = 0
     Always = 1
     UseDelay = 2
 
 
-class PostEffectHistograms:
+class PostEffectHistograms(Enum):
     None_ = 0
     BeforeEarlyEffects = 1
     BeforeToneMapping = 2
@@ -169,7 +170,7 @@ class PostEffectState:
     def TryGetValue(self, name: str) -> Tuple[bool, T]: ...
 
 
-class PostEffectStyles:
+class PostEffectStyles(Enum):
     ExecuteForProductionRendering = 1
     ExecuteForRealtimeRendering = 2
     ExecuteForViewportDisplay = 4
@@ -183,7 +184,7 @@ class PostEffectThreadEngine:
     def RunPostEffect(self, job: PostEffectJob, pipeline: PostEffectPipeline, plugin: PostEffect, rect: Rectangle, channels: Set(Guid)) -> bool: ...
 
 
-class PostEffectType:
+class PostEffectType(Enum):
     Early = 0
     ToneMapping = 1
     Late = 2

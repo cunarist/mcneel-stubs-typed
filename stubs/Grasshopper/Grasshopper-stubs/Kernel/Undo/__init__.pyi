@@ -1,4 +1,5 @@
 from typing import Tuple, Set, Iterable, List, overload
+from enum import Enum
 
 from Actions import *
 
@@ -104,7 +105,7 @@ class GH_UndoServer:
     def MaxRecords(self, Value: int) -> None: ...
 
 
-class GH_UndoState:
+class GH_UndoState(Enum):
     undo = 0
     redo = 1
 

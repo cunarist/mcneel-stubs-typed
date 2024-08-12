@@ -1,4 +1,5 @@
 from typing import Tuple, Set, Iterable, List, overload
+from enum import Enum
 
 from Serialization import *
 from Types import *
@@ -7,7 +8,7 @@ from UserInterface import *
 __all__ = ['Serialization', 'Types', 'UserInterface']
 
 
-class Branch:
+class Branch(Enum):
     Unset = 0
     Developer = 1
     Trunk = 2

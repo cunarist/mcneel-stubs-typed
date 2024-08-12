@@ -1,4 +1,5 @@
 from typing import Tuple, Set, Iterable, List, overload
+from enum import Enum
 
 
 
@@ -934,7 +935,7 @@ class GH_Message:
     def Type(self) -> GH_Message_Type: ...
 
 
-class GH_Message_Type:
+class GH_Message_Type(Enum):
     info = 0
     warning = 1
     error = 2

@@ -1,4 +1,5 @@
 from typing import Tuple, Set, Iterable, List, overload
+from enum import Enum
 
 from Controls import *
 from Gumball import *
@@ -6,7 +7,7 @@ from Gumball import *
 __all__ = ['Controls', 'Gumball']
 
 
-class CursorStyle:
+class CursorStyle(Enum):
     Default = 0
     Wait = 1
     CrossHair = 2
@@ -63,7 +64,7 @@ class Dialogs:
     def ShowTextDialog(message: str, title: str) -> None: ...
 
 
-class DistanceDisplayMode:
+class DistanceDisplayMode(Enum):
     Decimal = 0
     Fractional = 1
     FeetInches = 2
@@ -90,7 +91,7 @@ class DrawingUtilities:
     def LoadIconWithScaleDown(iconName: str, sizeDesired: int, assembly: Assembly) -> Icon: ...
 
 
-class FloatPanelMode:
+class FloatPanelMode(Enum):
     Show = 0
     Hide = 1
     Toggle = 2
@@ -236,13 +237,13 @@ class LocalizeStringPair:
     def ToString(self) -> str: ...
 
 
-class ModifierKey:
+class ModifierKey(Enum):
     None_ = 0
     Control = 1
     Shift = 2
 
 
-class MouseButton:
+class MouseButton(Enum):
     None_ = 0
     Left = 1
     Right = 2
@@ -420,7 +421,7 @@ class OpenFileDialog:
     def ShowOpenDialog(self) -> bool: ...
 
 
-class OptionPageButtons:
+class OptionPageButtons(Enum):
     None_ = 0
     DefaultButton = 1
     ApplyButton = 2
@@ -555,12 +556,12 @@ class Panels:
     def remove_Show(value: EventHandler) -> None: ...
 
 
-class PanelType:
+class PanelType(Enum):
     PerDoc = 0
     System = 1
 
 
-class PropertyPageType:
+class PropertyPageType(Enum):
     Material = 0
     Light = 1
     Custom = 2
@@ -579,7 +580,7 @@ class PropertyPageType:
     PageCount = 15
 
 
-class RhinoGetPlotWidthArgs:
+class RhinoGetPlotWidthArgs(Enum):
     NoArgs = 0
     ByLayer = 1
     ByParent = 2
@@ -598,7 +599,7 @@ class RhinoPageInterop:
     def StackedDialogPageFromUnmanagedPointer(pointer: IntPtr) -> StackedDialogPage: ...
 
 
-class RhinoPlotWidthType:
+class RhinoPlotWidthType(Enum):
     ByLayer = 0
     ByParent = 1
     Hairline = 2
@@ -608,7 +609,7 @@ class RhinoPlotWidthType:
     Width = 6
 
 
-class RhinoPlotWidthValue:
+class RhinoPlotWidthValue(Enum):
     Default = 0
     Varies = -20
     ByParent = -15
@@ -676,7 +677,7 @@ class SaveFileDialog:
     def ShowSaveDialog(self) -> bool: ...
 
 
-class ShowMessageButton:
+class ShowMessageButton(Enum):
     OK = 0
     OKCancel = 1
     AbortRetryIgnore = 2
@@ -685,13 +686,13 @@ class ShowMessageButton:
     RetryCancel = 5
 
 
-class ShowMessageDefaultButton:
+class ShowMessageDefaultButton(Enum):
     Button1 = 0
     Button2 = 256
     Button3 = 512
 
 
-class ShowMessageIcon:
+class ShowMessageIcon(Enum):
     None_ = 0
     Error = 16
     Hand = 16
@@ -703,13 +704,13 @@ class ShowMessageIcon:
     Asterisk = 64
 
 
-class ShowMessageMode:
+class ShowMessageMode(Enum):
     ApplicationModal = 0
     SystemModal = 4096
     TaskModal = 8192
 
 
-class ShowMessageOptions:
+class ShowMessageOptions(Enum):
     None_ = 0
     SetForeground = 65536
     DefaultDesktopOnly = 131072
@@ -719,7 +720,7 @@ class ShowMessageOptions:
     ServiceNotification = 2097152
 
 
-class ShowMessageResult:
+class ShowMessageResult(Enum):
     None_ = 0
     OK = 1
     Cancel = 2
@@ -736,14 +737,14 @@ class ShowPanelEventArgs(PanelEventArgs):
     def Show(self) -> bool: ...
 
 
-class ShowPanelReason:
+class ShowPanelReason(Enum):
     Show = 0
     Hide = 1
     HideOnDeactivate = 2
     ShowOnDeactivate = 3
 
 
-class Size:
+class Size(Enum):
     Small = 0
     Normal = 1
     Large = 2
@@ -815,7 +816,7 @@ class StatusBar:
     def UpdateProgressMeter(docSerialNumber: UInt32, position: int, absolute: bool) -> int: ...
 
 
-class Style:
+class Style(Enum):
     Regular = 0
     Bold = 1
     Italic = 2

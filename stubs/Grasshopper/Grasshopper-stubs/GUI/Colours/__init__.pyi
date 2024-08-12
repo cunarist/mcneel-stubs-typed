@@ -1,4 +1,5 @@
 from typing import Tuple, Set, Iterable, List, overload
+from enum import Enum
 
 
 
@@ -19,7 +20,7 @@ class GH_ColourBucket:
     def State(self, Value: GH_ColourBucketState) -> None: ...
 
 
-class GH_ColourBucketState:
+class GH_ColourBucketState(Enum):
     Blank = 0
     Selected = 1
     Active = 2

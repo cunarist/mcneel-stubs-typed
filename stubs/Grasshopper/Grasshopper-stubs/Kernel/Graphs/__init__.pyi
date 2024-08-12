@@ -1,4 +1,5 @@
 from typing import Tuple, Set, Iterable, List, overload
+from enum import Enum
 
 
 
@@ -167,7 +168,7 @@ class GH_GraphContainer:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
-class GH_GraphDrawInstruction:
+class GH_GraphDrawInstruction(Enum):
     none = 0
     skip = 1
 
@@ -218,7 +219,7 @@ class GH_GraphProxyObject:
 
 
 
-class GH_GripConstraint:
+class GH_GripConstraint(Enum):
     none = 0
     horizontal = 1
     vertical = 2

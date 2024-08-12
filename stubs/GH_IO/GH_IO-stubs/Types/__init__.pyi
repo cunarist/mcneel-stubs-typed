@@ -1,4 +1,5 @@
 from typing import Tuple, Set, Iterable, List, overload
+from enum import Enum
 
 
 
@@ -264,7 +265,7 @@ class GH_Point4D:
     def ToString(self) -> str: ...
 
 
-class GH_Types:
+class GH_Types(Enum):
     unset = 0
     gh_bool = 1
     gh_byte = 2

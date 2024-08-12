@@ -1,4 +1,5 @@
 from typing import Tuple, Set, Iterable, List, overload
+from enum import Enum
 
 from ChangeQueue import *
 from ChildSlotNames import *
@@ -23,13 +24,13 @@ class AddCustomUISectionsEventArgs:
     def ExpandableContentUI(self) -> ExpandableContentUI: ...
 
 
-class AssignToBlockChoices:
+class AssignToBlockChoices(Enum):
     Always = 0
     Never = 1
     Ask = 2
 
 
-class AssignToSubFaceChoices:
+class AssignToSubFaceChoices(Enum):
     Keep = 0
     Remove = 1
     Ask = 2
@@ -48,13 +49,13 @@ class AsyncRenderContext:
     def StopRendering(self) -> None: ...
 
 
-class Axis:
+class Axis(Enum):
     kU = 0
     kV = 1
     kW = 2
 
 
-class BackgroundProjections:
+class BackgroundProjections(Enum):
     Planar = 0
     Spherical = 1
     Emap = 2
@@ -88,7 +89,7 @@ class CachedTextureCoordinates(CommonObject):
     def TryGetAt(self, index: int) -> Tuple[bool, float, float, float]: ...
 
 
-class ChangeContexts:
+class ChangeContexts(Enum):
     UI = 0
     Drop = 1
     Program = 2
@@ -123,7 +124,7 @@ class Channel:
     def SetValuesFlipped(self, rectangle: Rectangle, bufferResolution: Size, colorBuffer: PixelBuffer) -> None: ...
 
 
-class Channel:
+class Channel(Enum):
     kRed = 0
     kGrn = 1
     kBlu = 2
@@ -159,7 +160,7 @@ class City:
     def TimeZone(self) -> float: ...
 
 
-class ComponentOrders:
+class ComponentOrders(Enum):
     Irrelevant = 0
     RGBA = 1
     ARGB = 2
@@ -171,7 +172,7 @@ class ComponentOrders:
     BGRA = 6
 
 
-class ContentChooserFlags:
+class ContentChooserFlags(Enum):
     None_ = 0
     HideNewTab = 1
     HideExistingTab = 2
@@ -325,7 +326,7 @@ class ConvertibleExtensions:
     def ToVector3d(variant: IConvertible) -> Vector3d: ...
 
 
-class CrcRenderHashFlags:
+class CrcRenderHashFlags(Enum):
     Normal = 0
     ExcludeLinearWorkflow = 1
     ForSimulation = 1
@@ -369,7 +370,7 @@ class CreatePreviewEventArgs:
     def SkipInitialisation(self) -> None: ...
 
 
-class CreatePreviewReason:
+class CreatePreviewReason(Enum):
     ContentChanged = 0
     ViewChanged = 1
     RefreshDisplay = 2
@@ -566,14 +567,14 @@ class DecalCreateParams:
     def VectorUp(self, value: Vector3d) -> None: ...
 
 
-class DecalMapping:
+class DecalMapping(Enum):
     Planar = 0
     Cylindrical = 1
     Spherical = 2
     UV = 3
 
 
-class DecalProjection:
+class DecalProjection(Enum):
     Forward = 0
     Backward = 1
     Both = 2
@@ -619,21 +620,21 @@ class DrawMiddlegroundEventArgs:
     def Pipeline(self) -> DisplayPipeline: ...
 
 
-class DynamicIconUsage:
+class DynamicIconUsage(Enum):
     TreeControl = 0
     SubnodeControl = 1
     ContentControl = 2
     General = 3
 
 
-class eLocalMappingType:
+class eLocalMappingType(Enum):
     lmt_none = 0
     lmt_2D = 1
     lmt_3D = 2
     lmt_force32bit = 4294967295
 
 
-class EnvironmentMappingModes:
+class EnvironmentMappingModes(Enum):
     Automatic = 0
     Spherical = 1
     Emap = 2
@@ -645,13 +646,13 @@ class EnvironmentMappingModes:
     Hemispherical = 9
 
 
-class ExtraRequirementsSetContexts:
+class ExtraRequirementsSetContexts(Enum):
     UI = 0
     Drop = 1
     Program = 2
 
 
-class FilterContentByUsage:
+class FilterContentByUsage(Enum):
     None_ = 0
     Used = 1
     Unused = 2
@@ -773,7 +774,7 @@ class ImageFile:
     def remove_Saved(value: EventHandler) -> None: ...
 
 
-class ImageFileEvent:
+class ImageFileEvent(Enum):
     Saved = 0
     Loaded = 1
     Deleted = 2
@@ -800,12 +801,12 @@ class InitFramebufferEventArgs:
     def Pipeline(self) -> DisplayPipeline: ...
 
 
-class IRhRdkPreviewSceneServer_eRotationType:
+class IRhRdkPreviewSceneServer_eRotationType(Enum):
     Camera = 0
     Object = 1
 
 
-class it_strategy:
+class it_strategy(Enum):
     ContentDataBase = 0
     ContentSelection = 1
 
@@ -862,7 +863,7 @@ class LightManagerSupportClient:
     def UnGroup(self, lights: LightArray) -> None: ...
 
 
-class LightMangerSupportCustomEvent:
+class LightMangerSupportCustomEvent(Enum):
     light_added = 0
     light_deleted = 1
     light_undeleted = 2
@@ -908,7 +909,7 @@ class LinearWorkflow(DocumentOrFreeFloatingBase):
     def PreProcessTextures(self, value: bool) -> None: ...
 
 
-class LoadMultipleFlags:
+class LoadMultipleFlags(Enum):
     Normal = 0
     Preload = 1
 
@@ -933,7 +934,7 @@ class MappingTag:
     def MeshTransform(self, value: Transform) -> None: ...
 
 
-class MatchDataResult:
+class MatchDataResult(Enum):
     None_ = 0
     Some = 1
     All = 2
@@ -947,13 +948,13 @@ class MetaDataProxy:
     def SetContentInstanceId(self, uuid: Guid) -> None: ...
 
 
-class Methods:
+class Methods(Enum):
     None_ = 0
     FloydSteinberg = 1
     SimpleNoise = 2
 
 
-class Modes:
+class Modes(Enum):
     Automatic = 0
     Custom = 1
 
@@ -1015,7 +1016,7 @@ class PreviewBackground:
     def SetUpPreview(self, sceneServerPointer: IntPtr, guid: Guid) -> None: ...
 
 
-class PreviewBackgroundType:
+class PreviewBackgroundType(Enum):
     None_ = 1
     Checkered = 2
     Scene = 4
@@ -1029,7 +1030,7 @@ class PreviewGeometry:
     def SetUpPreview(self, sceneServerPointer: IntPtr, pRenderContent: IntPtr, bCopy: bool) -> None: ...
 
 
-class PreviewGeometryType:
+class PreviewGeometryType(Enum):
     Sphere = 0
     Cube = 1
     Cone = 2
@@ -1047,7 +1048,7 @@ class PreviewLighting:
     def SetUpPreview(self, sceneServerPointer: IntPtr) -> None: ...
 
 
-class PreviewSceneQuality:
+class PreviewSceneQuality(Enum):
     None_ = 0
     RealtimeQuick = 1
     Low = 1
@@ -1068,7 +1069,7 @@ class PreviewSceneServer:
     def SetSceneScale(self, scale: float) -> None: ...
 
 
-class ProjectionModes:
+class ProjectionModes(Enum):
     MappingChannel = 0
     View = 1
     Wcs = 2
@@ -1077,20 +1078,20 @@ class ProjectionModes:
     Screen = 5
 
 
-class ProxyTypes:
+class ProxyTypes(Enum):
     None_ = 0
     Single = 1
     Multi = 2
     Texture = 3
 
 
-class RdkInitialLocation:
+class RdkInitialLocation(Enum):
     RenderContent = 0
     LastOpenedFolder = 1
     CustomFolder = 2
 
 
-class RdkTextureSize:
+class RdkTextureSize(Enum):
     Size1 = 128
     Size2 = 256
     Size3 = 512
@@ -1484,7 +1485,7 @@ class RenderContentChangedEventArgs(RenderContentEventArgs):
     def OldContent(self) -> RenderContent: ...
 
 
-class RenderContentChangeReason:
+class RenderContentChangeReason(Enum):
     None_ = 0
     Attach = 1
     Detach = 2
@@ -1540,7 +1541,7 @@ class RenderContentFieldChangedEventArgs(RenderContentChangedEventArgs):
     def FieldName(self) -> str: ...
 
 
-class RenderContentKind:
+class RenderContentKind(Enum):
     None_ = 0
     Material = 1
     Environment = 2
@@ -1593,7 +1594,7 @@ class RenderContentSerializer:
     def Write(self, pathToFile: str, renderContent: RenderContent, previewArgs: CreatePreviewEventArgs) -> bool: ...
 
 
-class RenderContentStyles:
+class RenderContentStyles(Enum):
     None_ = 0
     TextureSummary = 1
     QuickPreview = 2
@@ -1661,7 +1662,7 @@ class RenderEnvironmentTable:
     def Remove(self, c: RenderEnvironment) -> bool: ...
 
 
-class RenderingSources:
+class RenderingSources(Enum):
     ActiveViewport = 0
     SpecificViewport = 1
     NamedView = 2
@@ -1758,7 +1759,7 @@ class RenderPanels:
     def RegisterPanel(self, plugin: PlugIn, renderPanelType: RenderPanelType, panelType: Type, renderEngineId: Guid, caption: str, alwaysShow: bool, initialShow: bool) -> None: ...
 
 
-class RenderPanelType:
+class RenderPanelType(Enum):
     RenderWindow = 0
 
 
@@ -1873,7 +1874,7 @@ class RenderPrimitiveList:
     def TryGetSphere(self, index: int) -> Tuple[bool, Sphere]: ...
 
 
-class RenderPrimitiveType:
+class RenderPrimitiveType(Enum):
     None_ = 0
     Mesh = 1
     Sphere = 2
@@ -1889,7 +1890,7 @@ class RenderPropertyChangedEvent:
     def Document(self) -> RhinoDoc: ...
 
 
-class RenderReturnCode:
+class RenderReturnCode(Enum):
     Ok = 0
     EmptyScene = 1
     Cancel = 2
@@ -2023,7 +2024,7 @@ class RenderSourceView:
     def GetViewInfo(self) -> ViewInfo: ...
 
 
-class RenderSuccessCode:
+class RenderSuccessCode(Enum):
     Completed = 0
     Failed = 1
 
@@ -2229,19 +2230,19 @@ class SceneServerData:
     def CppPointer(self) -> IntPtr: ...
 
 
-class SceneServerDataUsage:
+class SceneServerDataUsage(Enum):
     Synchronous = 0
     Asynchronous = 1
 
 
-class ShowContentChooserFlags:
+class ShowContentChooserFlags(Enum):
     None_ = 0
     HideNewTab = 1
     HideExistingTab = 2
     MultipleSelection = 4
 
 
-class ShowContentChooserResults:
+class ShowContentChooserResults(Enum):
     None_ = 0
     New = 1
     Copy = 2
@@ -2363,7 +2364,7 @@ class Skylight(DocumentOrFreeFloatingBase):
     def ShadowIntensity(self, value: float) -> None: ...
 
 
-class StandardChannels:
+class StandardChannels(Enum):
     None_ = 0
     Red = 1
     Green = 2
@@ -2395,7 +2396,7 @@ class StandardChannels:
     WireframeAnnotationsRGBA = 67108864
 
 
-class StandardChildSlots:
+class StandardChildSlots(Enum):
     None_ = 0
     Diffuse = 100
     PbrBaseColor = 100
@@ -2561,7 +2562,7 @@ class TexturedFloat:
 
 
 
-class TextureEnvironmentMappingMode:
+class TextureEnvironmentMappingMode(Enum):
     Automatic = 0
     Spherical = 1
     EnvironmentMap = 2
@@ -2584,7 +2585,7 @@ class TextureEvaluator:
     def WriteToFloatArray2(self, width: int, height: int) -> StdVectorFloat: ...
 
 
-class TextureEvaluatorFlags:
+class TextureEvaluatorFlags(Enum):
     Normal = 0
     DisableFiltering = 1
     DisableLocalMapping = 2
@@ -2592,13 +2593,13 @@ class TextureEvaluatorFlags:
     DisableProjectionChange = 8
 
 
-class TextureGeneration:
+class TextureGeneration(Enum):
     Allow = 1
     Disallow = 2
     Skip = 3
 
 
-class TextureGeneration:
+class TextureGeneration(Enum):
     Allow = 1
     Disallow = 2
 
@@ -2673,7 +2674,7 @@ class TextureMapping(ModelComponent):
     def TryGetMappingSphere(self) -> Tuple[bool, Sphere]: ...
 
 
-class TextureMappingType:
+class TextureMappingType(Enum):
     None_ = 0
     SurfaceParameters = 1
     PlaneMapping = 2
@@ -2686,7 +2687,7 @@ class TextureMappingType:
     OcsMapping = 9
 
 
-class TextureMode:
+class TextureMode(Enum):
     PROJECTION_MODE = 0
     MAPPING_CHANNEL_MODE = 1
     WRAP_TYPE_MODE = 2
@@ -2707,7 +2708,7 @@ class TextureMode:
     PIXELSIZE_AS_3DVECTOR = 17
 
 
-class TextureProjectionMode:
+class TextureProjectionMode(Enum):
     MappingChannel = 0
     View = 1
     Wcs = 2
@@ -2716,11 +2717,11 @@ class TextureProjectionMode:
     Screen = 5
 
 
-class TextureRenderHashFlags:
+class TextureRenderHashFlags(Enum):
     ExcludeLocalMapping = 1
 
 
-class TextureWrapType:
+class TextureWrapType(Enum):
     Clamped = 0
     Repeating = 1
 
@@ -2780,7 +2781,7 @@ class UndoRedo:
     def remove_UndoRedoEndedChanged(value: EventHandler) -> None: ...
 
 
-class Usage:
+class Usage(Enum):
     None_ = 0
     Background = 1
     ReflectionAndRefraction = 2

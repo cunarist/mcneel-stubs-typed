@@ -1,11 +1,12 @@
 from typing import Tuple, Set, Iterable, List, overload
+from enum import Enum
 
 from SketchElements import *
 
 __all__ = ['SketchElements']
 
 
-class Alignment:
+class Alignment(Enum):
     Default = 0
     Left = 1
     Center = 2
@@ -340,7 +341,7 @@ class GH_ClusterDocumentIdAction(GH_ObjectUndoAction):
     def __init__(self, cluster: GH_Cluster): ...
 
 
-class GH_ClusterFileType:
+class GH_ClusterFileType(Enum):
     None_ = 0
     Gh = 1
     Ghx = 2
@@ -445,7 +446,7 @@ class GH_ClusterPropertiesUndoAction(GH_ObjectUndoAction):
     def __init__(self, cluster: GH_Cluster): ...
 
 
-class GH_ClusterProtection:
+class GH_ClusterProtection(Enum):
     Unprotected = 0
     Protected = 1
 
@@ -557,7 +558,7 @@ class GH_ColourWheelAttributes:
     def SetupTooltip(self, point: PointF, e: GH_TooltipDisplayEventArgs) -> None: ...
 
 
-class GH_ColourWheelGrip:
+class GH_ColourWheelGrip(Enum):
     NoGrip = 0
     LowestIndex = 1
     A = 1
@@ -636,7 +637,7 @@ class GH_ColourWheelState:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
-class GH_ColourWheelStyle:
+class GH_ColourWheelStyle(Enum):
     Monochromatic = 10
     Bichromatic = 20
     Complementary = 21
@@ -1100,7 +1101,7 @@ class GH_GroupAttributes:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
-class GH_GroupBorder:
+class GH_GroupBorder(Enum):
     None_ = 0
     Box = 1
     Blob = 2
@@ -1306,7 +1307,7 @@ class GH_LegendData:
     def Type(self, Value: GH_LegendType) -> None: ...
 
 
-class GH_LegendType:
+class GH_LegendType(Enum):
     None_ = 0
     DiscreteVertical = 1
     DiscreteHorizontal = 2
@@ -1386,7 +1387,7 @@ class GH_MarkupCollection:
     def Transform(self, X: Transform) -> None: ...
 
 
-class GH_MarkupDashPattern:
+class GH_MarkupDashPattern(Enum):
     Solid = 0
     Dot = 1
     Dash = 2
@@ -1410,7 +1411,7 @@ class GH_MarkupProperties:
     def SetDefault(self) -> None: ...
 
 
-class GH_MDSliderMode:
+class GH_MDSliderMode(Enum):
     _2d = 0
     _3d = 1
 
@@ -1906,7 +1907,7 @@ class GH_QuickGraphFrame:
     def UnevaluateY(self, normalisedParameter: float) -> Single: ...
 
 
-class GH_QuickGraphSortOrder:
+class GH_QuickGraphSortOrder(Enum):
     None_ = 0
     Ascending = 1
     Descending = 2
@@ -1952,7 +1953,7 @@ class GH_RelayAttributes:
     def SetupTooltip(self, point: PointF, e: GH_TooltipDisplayEventArgs) -> None: ...
 
 
-class GH_SamplingFilter:
+class GH_SamplingFilter(Enum):
     none = 0
     col = 1
     R = 10
@@ -2084,7 +2085,7 @@ class GH_SuireStyleNodeAttributes:
     def HasOutputGrip(self) -> bool: ...
 
 
-class GH_Synchronisation:
+class GH_Synchronisation(Enum):
     Unset = 0
     NotReferenced = 1
     MissingReference = 2
@@ -2318,7 +2319,7 @@ class GH_ValueListItem:
     def Selected(self, AutoPropertyValue: bool) -> None: ...
 
 
-class GH_ValueListMode:
+class GH_ValueListMode(Enum):
     CheckList = 0
     DropDown = 1
     Sequence = 2

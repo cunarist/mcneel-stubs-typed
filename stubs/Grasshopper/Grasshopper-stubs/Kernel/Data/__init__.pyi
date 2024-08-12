@@ -1,4 +1,5 @@
 from typing import Tuple, Set, Iterable, List, overload
+from enum import Enum
 
 
 
@@ -20,14 +21,14 @@ class GH_DirtyCaster:
     def CastToTree(in_: Object) -> DataTree: ...
 
 
-class GH_ExpandMode:
+class GH_ExpandMode(Enum):
     None_ = 0
     SimpleReplace = 1
     SimpleAppend = 2
     Recursive = 3
 
 
-class GH_GraftMode:
+class GH_GraftMode(Enum):
     None_ = 0
     GraftNullItems = 1
     GraftEmptyLists = 2
@@ -352,7 +353,7 @@ class GH_RuleGroup:
     def Notation(self) -> str: ...
 
 
-class GH_RuleKind:
+class GH_RuleKind(Enum):
     None_ = 0
     AnyNumber = 1
     AnyNumbers = 2
@@ -372,7 +373,7 @@ class GH_RuleNumber:
     def Notation(self) -> str: ...
 
 
-class GH_RuleOperator:
+class GH_RuleOperator(Enum):
     Conjunction = 0
     Disjunction = 1
 
@@ -386,7 +387,7 @@ class GH_RuleRange:
     def Notation(self) -> str: ...
 
 
-class GH_RuleResult:
+class GH_RuleResult(Enum):
     NoOpinion = 0
     Include = 1
     Exclude = -1
@@ -401,7 +402,7 @@ class GH_RuleSequence:
     def Notation(self) -> str: ...
 
 
-class GH_SimplificationMode:
+class GH_SimplificationMode(Enum):
     None_ = 0
     CollapseLeadingOverlaps = 1
     CollapseAllOverlaps = 2

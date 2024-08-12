@@ -1,4 +1,5 @@
 from typing import Tuple, Set, Iterable, List, overload
+from enum import Enum
 
 from ApplicationSettings import *
 from Collections import *
@@ -17,7 +18,7 @@ from UI import *
 __all__ = ['ApplicationSettings', 'Collections', 'Commands', 'Display', 'DocObjects', 'FileIO', 'Geometry', 'Input', 'NodeInCode', 'PlugIns', 'Render', 'Runtime', 'UI']
 
 
-class AngleUnitSystem:
+class AngleUnitSystem(Enum):
     None_ = 0
     Turns = 1
     Radians = 2
@@ -28,7 +29,7 @@ class AngleUnitSystem:
     Unset = 255
 
 
-class AntialiasLevel:
+class AntialiasLevel(Enum):
     None_ = 0
     Draft = 1
     Good = 2
@@ -484,7 +485,7 @@ class PersistentSettingsSavedEventArgs:
     def SavedByThisRhino(self) -> bool: ...
 
 
-class ReadFileResult:
+class ReadFileResult(Enum):
     Unset = 0
     Completed = 1
     CompletedWithErrors = 2
@@ -498,7 +499,7 @@ class RenderContentTableEventArgs:
     def EventType(self) -> RenderContentTableEventType: ...
 
 
-class RenderContentTableEventType:
+class RenderContentTableEventType(Enum):
     Loaded = 0
     Clearing = 1
     Cleared = 2
@@ -1076,7 +1077,7 @@ class RhinoDocObserverArgs:
     def RuntimeSerialNumber(self) -> UInt32: ...
 
 
-class RhinoFileWatcherChangeReason:
+class RhinoFileWatcherChangeReason(Enum):
     Created = 1
     Deleted = 2
     Changed = 4
@@ -1120,7 +1121,7 @@ class RhinoWindow:
     def Invoke(self, method: Delegate) -> None: ...
 
 
-class RuntimeEnvironment:
+class RuntimeEnvironment(Enum):
     Unset = 0
     None_ = 1
     Windows = 2
@@ -1129,7 +1130,7 @@ class RuntimeEnvironment:
     Linux = 5
 
 
-class ScaleStringFormat:
+class ScaleStringFormat(Enum):
     None_ = 0
     RatioFormat = 1
     EquationFormat = 2
@@ -1154,7 +1155,7 @@ class ScaleValue:
     def RightLengthValue(self) -> LengthValue: ...
 
 
-class StringFormat:
+class StringFormat(Enum):
     ExactDecimal = 0
     ExactProperFraction = 1
     ExactImproperFraction = 2
@@ -1185,7 +1186,7 @@ class TextureMappingEventArgs:
     def OldMapping(self) -> TextureMapping: ...
 
 
-class TextureMappingEventType:
+class TextureMappingEventType(Enum):
     Added = 0
     Deleted = 1
     Undeleted = 2
@@ -1201,7 +1202,7 @@ class UnitsChangedWithScalingEventArgs:
     def Scale(self) -> float: ...
 
 
-class UnitSystem:
+class UnitSystem(Enum):
     None_ = 0
     Microns = 1
     Millimeters = 2

@@ -1,8 +1,9 @@
 from typing import Tuple, Set, Iterable, List, overload
+from enum import Enum
 
 
 
-class AssignBys:
+class AssignBys(Enum):
     Unset = 0
     Layer = 1
     Parent = 2
@@ -40,7 +41,7 @@ class MetaData:
     def CppPointer(self) -> IntPtr: ...
 
 
-class Modes:
+class Modes(Enum):
     Unset = 0
     Grid = 1
     List = 2
@@ -87,12 +88,12 @@ class RhinoSettings:
     def ViewSupportsShading(self, view: RhinoView) -> bool: ...
 
 
-class Shapes:
+class Shapes(Enum):
     Square = 0
     Wide = 1
 
 
-class Sizes:
+class Sizes(Enum):
     Unset = 0
     Tiny = 1
     Small = 2

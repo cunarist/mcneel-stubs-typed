@@ -1,8 +1,9 @@
 from typing import Tuple, Set, Iterable, List, overload
+from enum import Enum
 
 
 
-class GH_Audience:
+class GH_Audience(Enum):
     Beginner = 0
     Intermediate = 1
     Expert = 2
@@ -133,7 +134,7 @@ class GH_RuntimeFile:
     def ParseFile(path: str) -> GH_RuntimeFile: ...
 
 
-class GH_Style:
+class GH_Style(Enum):
     None_ = 0
     WeakEmphasis = 1
     StrongEmphasis = 2
@@ -143,7 +144,7 @@ class GH_Style:
     ParagraphHeader = 6
 
 
-class GH_Target:
+class GH_Target(Enum):
     Glossary = 0
     Topic = 1
     External = 2

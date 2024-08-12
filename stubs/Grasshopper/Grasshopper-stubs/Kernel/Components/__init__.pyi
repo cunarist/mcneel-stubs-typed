@@ -1,8 +1,9 @@
 from typing import Tuple, Set, Iterable, List, overload
+from enum import Enum
 
 
 
-class BufferMode:
+class BufferMode(Enum):
     Never = 0
     Always = 1
     Delay = 2

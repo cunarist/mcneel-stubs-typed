@@ -1,4 +1,5 @@
 from typing import Tuple, Set, Iterable, List, overload
+from enum import Enum
 
 from Hints import *
 
@@ -72,7 +73,7 @@ class GH_ReceiverAttributes(GH_FloatingParamAttributes):
     def __init__(self, owner: GH_Receiver): ...
 
 
-class GH_WireAppearance:
+class GH_WireAppearance(Enum):
     never = 0
     selected = 1
     always = 2

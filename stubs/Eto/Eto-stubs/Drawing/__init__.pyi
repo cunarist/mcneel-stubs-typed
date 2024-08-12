@@ -1,4 +1,5 @@
 from typing import Tuple, Set, Iterable, List, overload
+from enum import Enum
 
 
 
@@ -860,7 +861,7 @@ class Colors:
     def YellowGreen() -> Color: ...
 
 
-class ColorStyles:
+class ColorStyles(Enum):
     None_ = 0
     ExcludeAlpha = 1
     AlphaLast = 4
@@ -904,7 +905,7 @@ class DashStyles:
     def Solid() -> DashStyle: ...
 
 
-class FillMode:
+class FillMode(Enum):
     Alternate = 0
     Winding = 1
 
@@ -960,7 +961,7 @@ class Font(Widget):
     def ToString(self) -> str: ...
 
 
-class FontDecoration:
+class FontDecoration(Enum):
     None_ = 0
     Underline = 1
     Strikethrough = 2
@@ -1023,7 +1024,7 @@ class Fonts:
     def Serif(size: Single, style: FontStyle, decoration: FontDecoration) -> Font: ...
 
 
-class FontStyle:
+class FontStyle(Enum):
     None_ = 0
     Bold = 1
     Italic = 2
@@ -1106,26 +1107,26 @@ class FormattedText(Widget):
     def Wrap(self, value: FormattedTextWrapMode) -> None: ...
 
 
-class FormattedTextAlignment:
+class FormattedTextAlignment(Enum):
     Left = 0
     Right = 1
     Center = 2
     Justify = 3
 
 
-class FormattedTextTrimming:
+class FormattedTextTrimming(Enum):
     None_ = 0
     CharacterEllipsis = 1
     WordEllipsis = 2
 
 
-class FormattedTextWrapMode:
+class FormattedTextWrapMode(Enum):
     None_ = 0
     Word = 1
     Character = 2
 
 
-class GradientWrapMode:
+class GradientWrapMode(Enum):
     Pad = 0
     Repeat = 1
     Reflect = 2
@@ -1755,7 +1756,7 @@ class Image(Widget):
     def Width(self) -> int: ...
 
 
-class ImageFormat:
+class ImageFormat(Enum):
     Jpeg = 0
     Bitmap = 1
     Tiff = 2
@@ -1763,7 +1764,7 @@ class ImageFormat:
     Gif = 4
 
 
-class ImageInterpolation:
+class ImageInterpolation(Enum):
     Default = 0
     None_ = 1
     Low = 2
@@ -2067,13 +2068,13 @@ class Pen:
     def Thickness(self, value: Single) -> None: ...
 
 
-class PenLineCap:
+class PenLineCap(Enum):
     Square = 0
     Butt = 1
     Round = 2
 
 
-class PenLineJoin:
+class PenLineJoin(Enum):
     Miter = 0
     Bevel = 1
     Round = 2
@@ -2366,13 +2367,13 @@ class Pens:
     def YellowGreen() -> Pen: ...
 
 
-class PixelFormat:
+class PixelFormat(Enum):
     Format32bppRgb = 0
     Format24bppRgb = 1
     Format32bppRgba = 2
 
 
-class PixelOffsetMode:
+class PixelOffsetMode(Enum):
     None_ = 0
     Half = 1
     Aligned = 2
@@ -3180,7 +3181,7 @@ class SystemColors:
     def WindowBackground() -> Color: ...
 
 
-class SystemFont:
+class SystemFont(Enum):
     Default = 0
     Bold = 1
     Label = 2

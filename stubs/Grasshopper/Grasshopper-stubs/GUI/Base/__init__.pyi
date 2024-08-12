@@ -1,4 +1,5 @@
 from typing import Tuple, Set, Iterable, List, overload
+from enum import Enum
 
 
 
@@ -182,13 +183,13 @@ class GH_ColourPickerEventArgs:
     def Original(self) -> Color: ...
 
 
-class GH_ColourSpace:
+class GH_ColourSpace(Enum):
     None_ = 0
     RGB = 1
     HSV = 2
 
 
-class GH_DigitAlign:
+class GH_DigitAlign(Enum):
     Justify = 0
     Left = 1
     Center = 2
@@ -393,7 +394,7 @@ class GH_DigitScrollerEventArgs:
     def Value(self) -> Decimal: ...
 
 
-class GH_MouseAction:
+class GH_MouseAction(Enum):
     None_ = 0
     SignDown = 1
     DigitDown = 2
@@ -432,7 +433,7 @@ class GH_ScrollBarVerticalBase:
     def OffsetNormalised(self, Value: float) -> None: ...
 
 
-class GH_SliderAccuracy:
+class GH_SliderAccuracy(Enum):
     Float = 0
     Integer = 1
     Even = 2
@@ -642,21 +643,21 @@ class GH_SliderEventArgs:
     def Value(self) -> Decimal: ...
 
 
-class GH_SliderGripDisplay:
+class GH_SliderGripDisplay(Enum):
     None_ = 0
     Numeric = 1
     Shape = 2
     ShapeAndText = 3
 
 
-class GH_SliderRailDisplay:
+class GH_SliderRailDisplay(Enum):
     None_ = 0
     Simple = 1
     Etched = 2
     Filled = 3
 
 
-class GH_SliderTickDisplay:
+class GH_SliderTickDisplay(Enum):
     None_ = 0
     Simple = 1
     Etched = 2

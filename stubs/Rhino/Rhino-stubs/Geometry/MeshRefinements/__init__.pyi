@@ -1,15 +1,16 @@
 from typing import Tuple, Set, Iterable, List, overload
+from enum import Enum
 
 
 
-class CreaseEdges:
+class CreaseEdges(Enum):
     NakedFixed = 0
     NakedSmooth = 1
     CornerFixedOtherCreased = 2
     Auto = 3
 
 
-class LoopFormula:
+class LoopFormula(Enum):
     Loop = 0
     Warren = 1
     WarrenWeimer = 2

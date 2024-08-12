@@ -1,11 +1,12 @@
 from typing import Tuple, Set, Iterable, List, overload
+from enum import Enum
 
 from Custom import *
 
 __all__ = ['Custom']
 
 
-class BitmapFileTypes:
+class BitmapFileTypes(Enum):
     bmp = 1
     jpg = 2
     pcx = 4
@@ -14,7 +15,7 @@ class BitmapFileTypes:
     tga = 32
 
 
-class GetBoxMode:
+class GetBoxMode(Enum):
     All = 0
     Corner = 1
     ThreePoint = 2
@@ -22,7 +23,7 @@ class GetBoxMode:
     Center = 4
 
 
-class GetResult:
+class GetResult(Enum):
     NoResult = 0
     Cancel = 1
     Nothing = 2

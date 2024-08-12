@@ -1,15 +1,16 @@
 from typing import Tuple, Set, Iterable, List, overload
+from enum import Enum
 
 
 
-class ArcArcIntersection:
+class ArcArcIntersection(Enum):
     None_ = 0
     Single = 1
     Multiple = 2
     Overlap = 3
 
 
-class CircleCircleIntersection:
+class CircleCircleIntersection(Enum):
     None_ = 0
     Single = 1
     Multiple = 2
@@ -129,20 +130,20 @@ class IntersectionEvent:
     def SurfacePointParameter(self) -> Tuple[float, float]: ...
 
 
-class LineCircleIntersection:
+class LineCircleIntersection(Enum):
     None_ = 0
     Single = 1
     Multiple = 2
 
 
-class LineCylinderIntersection:
+class LineCylinderIntersection(Enum):
     None_ = 0
     Single = 1
     Multiple = 2
     Overlap = 3
 
 
-class LineSphereIntersection:
+class LineSphereIntersection(Enum):
     None_ = 0
     Single = 1
     Multiple = 2
@@ -188,7 +189,7 @@ class MeshInterference:
     def IndexB(self, value: int) -> None: ...
 
 
-class PlaneCircleIntersection:
+class PlaneCircleIntersection(Enum):
     None_ = 0
     Tangent = 1
     Secant = 2
@@ -196,7 +197,7 @@ class PlaneCircleIntersection:
     Coincident = 4
 
 
-class PlaneSphereIntersection:
+class PlaneSphereIntersection(Enum):
     None_ = 0
     Point = 1
     Circle = 2
@@ -217,7 +218,7 @@ class RayShootEvent:
     def Point(self, value: Point3d) -> None: ...
 
 
-class SphereSphereIntersection:
+class SphereSphereIntersection(Enum):
     None_ = 0
     Point = 1
     Circle = 2

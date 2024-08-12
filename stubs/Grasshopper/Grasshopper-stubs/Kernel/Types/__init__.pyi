@@ -1,4 +1,5 @@
 from typing import Tuple, Set, Iterable, List, overload
+from enum import Enum
 
 from Transforms import *
 
@@ -573,7 +574,7 @@ class GH_CurveProxy:
     def ObjectID(self, Value: str) -> None: ...
 
 
-class GH_DifferentialSolver:
+class GH_DifferentialSolver(Enum):
     None_ = 0
     Euler = 1
     RungeKutta2 = 2
@@ -1605,7 +1606,7 @@ class GH_PointRefData:
     def SetSurfaceParam(self, srf: Surface, u: float, v: float) -> bool: ...
 
 
-class GH_PointRefType:
+class GH_PointRefType(Enum):
     coordinate = 1
     point_object = 2
     curve_ratio = 10
@@ -1621,7 +1622,7 @@ class GH_PointUtil:
     def RemapPointsToPlane(pts: Iterable[GH_Point], plane: Plane, include_nulls: bool) -> List: ...
 
 
-class GH_QuickCastType:
+class GH_QuickCastType(Enum):
     bool = 0
     int = 1
     num = 2
@@ -2172,7 +2173,7 @@ class IGH_QuickCast:
     def QC_Vec(self) -> Vector3d: ...
 
 
-class MaterialType:
+class MaterialType(Enum):
     Shader = 0
     RhinoMaterial = 1
     XmlMaterial = 2

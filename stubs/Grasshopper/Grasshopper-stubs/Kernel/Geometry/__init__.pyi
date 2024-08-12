@@ -1,4 +1,5 @@
 from typing import Tuple, Set, Iterable, List, overload
+from enum import Enum
 
 from ConvexHull import *
 from Delaunay import *
@@ -43,7 +44,7 @@ class Circle2:
     def TangentAt(self, t: float) -> Vec2: ...
 
 
-class Containment:
+class Containment(Enum):
     none = 0
     inside = 1
     coincident = 2
@@ -61,7 +62,7 @@ class GH_CurveOffset:
     def OffsetSamples(self, distance: float) -> List: ...
 
 
-class GH_CurveOffsetCorner:
+class GH_CurveOffsetCorner(Enum):
     Chamfer = 0
     Sharp = 1
     Fillet = 2
@@ -196,13 +197,13 @@ class Line3:
     def Set(self, A: Node3, B: Node3) -> None: ...
 
 
-class LineCircleX:
+class LineCircleX(Enum):
     None_ = 0
     Tangent = 1
     Secant = 2
 
 
-class LineX:
+class LineX(Enum):
     None_ = 0
     Parallel = 1
     Coincident = 2
@@ -619,7 +620,7 @@ class Node3Tree:
     def SolveProximity(self, prox: Node3Proximity) -> None: ...
 
 
-class NodeListSort:
+class NodeListSort(Enum):
     none = 0
     X = 1
     Y = 2
@@ -627,14 +628,14 @@ class NodeListSort:
     Index = 4
 
 
-class NodeListSort:
+class NodeListSort(Enum):
     none = 0
     X = 1
     Y = 2
     Index = 3
 
 
-class Parallax:
+class Parallax(Enum):
     Divergent = 0
     Parallel = 1
     AntiParallel = -1
@@ -711,7 +712,7 @@ class SamplingRegion:
     def Dispose(self) -> None: ...
 
 
-class Side2:
+class Side2(Enum):
     Coincident = 0
     Right = 1
     Left = -1
@@ -814,11 +815,11 @@ class Vec3:
     def Unitize(self) -> None: ...
 
 
-class VorLeafRecursionResult:
+class VorLeafRecursionResult(Enum):
     Continue = 0
     Abort = -1
 
 
-class VorLeafRecursionResult:
+class VorLeafRecursionResult(Enum):
     Continue = 0
     Abort = -1

@@ -1,4 +1,5 @@
 from typing import Tuple, Set, Iterable, List, overload
+from enum import Enum
 
 
 
@@ -31,7 +32,7 @@ class GH_FileEntry:
     def Bounds(self, Value: Rectangle) -> None: ...
 
 
-class GH_FileResolveState:
+class GH_FileResolveState(Enum):
     Unresolved = 0
     Invalid = 1
     Valid = 2

@@ -1,4 +1,5 @@
 from typing import Tuple, Set, Iterable, List, overload
+from enum import Enum
 
 
 
@@ -75,7 +76,7 @@ class IRhinoAccountsManager:
     def UpdateOpenIDConnectTokenAsync(self, currentToken: IOpenIDConnectToken, oauth2Token: IOAuth2Token, secretKey: SecretKey, cancellationToken: CancellationToken) -> Task: ...
 
 
-class ProgressState:
+class ProgressState(Enum):
     AwaitingLogin = 0
     RetrievingTokens = 1
     AwaitingRedirect = 2

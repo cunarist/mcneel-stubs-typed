@@ -1,4 +1,5 @@
 from typing import Tuple, Set, Iterable, List, overload
+from enum import Enum
 
 
 
@@ -169,7 +170,7 @@ class GumballFrame:
     def ScaleMode(self, value: GumballScaleMode) -> None: ...
 
 
-class GumballMode:
+class GumballMode(Enum):
     None_ = 0
     Menu = 1
     TranslateFree = 2
@@ -221,7 +222,7 @@ class GumballPickResult:
     def SetToDefault(self) -> None: ...
 
 
-class GumballScaleMode:
+class GumballScaleMode(Enum):
     Independent = 0
     XY = 1
     YZ = 2

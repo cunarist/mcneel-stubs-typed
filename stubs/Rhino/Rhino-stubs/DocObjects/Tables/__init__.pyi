@@ -1,4 +1,5 @@
 from typing import Tuple, Set, Iterable, List, overload
+from enum import Enum
 
 
 
@@ -72,7 +73,7 @@ class DimStyleTableEventArgs:
     def OldState(self) -> DimensionStyle: ...
 
 
-class DimStyleTableEventType:
+class DimStyleTableEventType(Enum):
     Added = 0
     Deleted = 1
     Undeleted = 2
@@ -146,7 +147,7 @@ class GroupTableEventArgs:
     def OldState(self) -> Group: ...
 
 
-class GroupTableEventType:
+class GroupTableEventType(Enum):
     Added = 0
     Deleted = 1
     Undeleted = 2
@@ -252,7 +253,7 @@ class InstanceDefinitionTableEventArgs:
     def OldState(self) -> InstanceDefinitionGeometry: ...
 
 
-class InstanceDefinitionTableEventType:
+class InstanceDefinitionTableEventType(Enum):
     Added = 0
     Deleted = 1
     Undeleted = 2
@@ -351,7 +352,7 @@ class LayerTableEventArgs:
     def OldState(self) -> Layer: ...
 
 
-class LayerTableEventType:
+class LayerTableEventType(Enum):
     Added = 0
     Deleted = 1
     Undeleted = 2
@@ -405,7 +406,7 @@ class LightTableEventArgs:
     def OldState(self) -> Light: ...
 
 
-class LightTableEventType:
+class LightTableEventType(Enum):
     Added = 0
     Deleted = 1
     Undeleted = 2
@@ -512,7 +513,7 @@ class MaterialTableEventArgs:
     def OldSettings(self) -> Material: ...
 
 
-class MaterialTableEventType:
+class MaterialTableEventType(Enum):
     Added = 0
     Deleted = 1
     Undeleted = 2
@@ -521,7 +522,7 @@ class MaterialTableEventType:
     Current = 5
 
 
-class ModifyType:
+class ModifyType(Enum):
     Modify = 0
     Override = 1
     NotSaved = 2
@@ -1171,7 +1172,7 @@ class ObjectTable:
     def UnselectAll(self, ignorePersistentSelections: bool) -> int: ...
 
 
-class RestoreLayerProperties:
+class RestoreLayerProperties(Enum):
     None_ = 0
     Current = 1
     Visible = 2

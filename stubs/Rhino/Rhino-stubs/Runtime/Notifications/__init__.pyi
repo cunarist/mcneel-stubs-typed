@@ -1,8 +1,9 @@
 from typing import Tuple, Set, Iterable, List, overload
+from enum import Enum
 
 
 
-class ButtonType:
+class ButtonType(Enum):
     CancelOrClose = 0
     Confirm = 1
     Alternate = 2
@@ -86,7 +87,7 @@ class NotificationCenter:
     pass
 
 
-class Severity:
+class Severity(Enum):
     Debug = 0
     Info = 1
     Warning = 2

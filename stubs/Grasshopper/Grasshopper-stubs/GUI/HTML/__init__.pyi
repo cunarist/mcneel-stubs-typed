@@ -1,4 +1,5 @@
 from typing import Tuple, Set, Iterable, List, overload
+from enum import Enum
 
 
 
@@ -154,7 +155,7 @@ class GH_HtmlFormatter:
     def WebPageURI(self, Value: str) -> None: ...
 
 
-class GH_HtmlFormatterPalette:
+class GH_HtmlFormatterPalette(Enum):
     Black = 0
     Gray = 1
     White = 2
@@ -182,7 +183,7 @@ class GH_HtmlHelpPopup:
     def SetLocation(self, pt: Point) -> None: ...
 
 
-class GH_HtmlListType:
+class GH_HtmlListType(Enum):
     None_ = 0
     Unordered = 1
     Ordered = 2
@@ -262,7 +263,7 @@ class GH_HtmlTableRow:
     def Width(self, index: int, Value: int) -> None: ...
 
 
-class GH_HtmlTextProperties:
+class GH_HtmlTextProperties(Enum):
     None_ = 0
     Strong = 1
     Emphasis = 2

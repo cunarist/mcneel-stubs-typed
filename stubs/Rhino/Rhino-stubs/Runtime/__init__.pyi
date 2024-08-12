@@ -1,4 +1,5 @@
 from typing import Tuple, Set, Iterable, List, overload
+from enum import Enum
 
 from InProcess import *
 from InteropWrappers import *
@@ -8,7 +9,7 @@ from RhinoAccounts import *
 __all__ = ['InProcess', 'InteropWrappers', 'Notifications', 'RhinoAccounts']
 
 
-class AdvancedSetting:
+class AdvancedSetting(Enum):
     UseNewDraftAngleAnalysisUi = 0
     UseCompressionWhenSaving = 1
     TestAdvancedString = 2
@@ -233,7 +234,7 @@ class HostUtils:
     def UnhandledThreadException(sender: Object, e: ThreadExceptionEventArgs) -> None: ...
 
 
-class ImportOptionsSections:
+class ImportOptionsSections(Enum):
     AdvancedDisplay = 0
     Alias = 1
     Appearance = 2
@@ -350,7 +351,7 @@ class LicenseStateChangedEventArgs:
     def CallingRhinoCommonAllowed(self) -> bool: ...
 
 
-class LicenseTypes:
+class LicenseTypes(Enum):
     Undefined = 0
     Standalone = 1
     ZooAutoDetect = 2
@@ -358,7 +359,7 @@ class LicenseTypes:
     CloudZoo = 4
 
 
-class LogMessageType:
+class LogMessageType(Enum):
     unknown = 0
     information = 1
     warning = 2
@@ -366,7 +367,7 @@ class LogMessageType:
     assert_ = 4
 
 
-class Mode:
+class Mode(Enum):
     NormalMode = 0
     ViewerMode = 1
     BetaMode = 2
@@ -444,7 +445,7 @@ class Pen:
     def Width(self) -> Single: ...
 
 
-class PointType:
+class PointType(Enum):
     Move = 0
     Line = 1
     CubicBezier = 2

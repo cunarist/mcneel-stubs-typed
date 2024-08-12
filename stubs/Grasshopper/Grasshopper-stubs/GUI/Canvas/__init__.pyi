@@ -1,4 +1,5 @@
 from typing import Tuple, Set, Iterable, List, overload
+from enum import Enum
 
 from Interaction import *
 from TagArtists import *
@@ -165,7 +166,7 @@ class GH_Border:
     def Topology(self) -> GH_BorderTopology: ...
 
 
-class GH_BorderTopology:
+class GH_BorderTopology(Enum):
     TopRight = 0
     TopLeft = 1
     BottomLeft = 2
@@ -373,7 +374,7 @@ class GH_Canvas:
     def UpdateDocumentPreview(self) -> None: ...
 
 
-class GH_CanvasChannel:
+class GH_CanvasChannel(Enum):
     First = 0
     Groups = 0
     Wires = 10
@@ -419,13 +420,13 @@ class GH_CanvasDropTargetValidator(GH_CanvasValidator):
     def DropText(self, AutoPropertyValue: str) -> None: ...
 
 
-class GH_CanvasMode:
+class GH_CanvasMode(Enum):
     Control = 0
     Thumbnail = 1
     Export = 2
 
 
-class GH_CanvasNavigation:
+class GH_CanvasNavigation(Enum):
     None_ = 0
     PanLeft = 1
     PanRight = 2
@@ -664,7 +665,7 @@ class GH_CapsuleRenderEngine:
     def RenderText(self, G: Graphics, colour: Color) -> None: ...
 
 
-class GH_DisplayMatrix:
+class GH_DisplayMatrix(Enum):
     CanvasToControl = 0
     ControlToCanvas = 1
 
@@ -708,7 +709,7 @@ class GH_DocDiagramPainter:
     def UnmapY(self, y: int) -> int: ...
 
 
-class GH_DragDropFileAction:
+class GH_DragDropFileAction(Enum):
     None_ = 0
     Open = 1
     Examine = 2
@@ -844,7 +845,7 @@ class GH_NamedViewEditor:
     def remove_NamedViewChanged(self, obj: NamedViewChangedEventHandler) -> None: ...
 
 
-class GH_NamedViewType:
+class GH_NamedViewType(Enum):
     target = 0
     center = 1
 
@@ -861,14 +862,14 @@ class GH_NavigationPaneDialog:
     def Pane(self, Value: GH_DocDiagramPainter) -> None: ...
 
 
-class GH_ObjectResponse:
+class GH_ObjectResponse(Enum):
     Ignore = 0
     Capture = 1
     Release = 2
     Handled = 3
 
 
-class GH_Orientation:
+class GH_Orientation(Enum):
     horizontal_center = 0
     horizontal_near = 1
     horizontal_far = 2
@@ -894,7 +895,7 @@ class GH_Painter:
     def GenerateWirePen_Fill(self, a: PointF, b: PointF, asel: bool, bsel: bool, empty: bool) -> Brush: ...
 
 
-class GH_Palette:
+class GH_Palette(Enum):
     Normal = 0
     Hidden = 1
     Locked = 2
@@ -1065,12 +1066,12 @@ class GH_Viewport:
     def XFormMatrix(self, projection: GH_DisplayMatrix) -> Matrix: ...
 
 
-class GH_WireDirection:
+class GH_WireDirection(Enum):
     left = 0
     right = 1
 
 
-class GH_WireType:
+class GH_WireType(Enum):
     dynamic = 0
     wireless = 1
     generic = 2

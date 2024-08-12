@@ -1,4 +1,5 @@
 from typing import Tuple, Set, Iterable, List, overload
+from enum import Enum
 
 from Alignment import *
 from Base import *
@@ -178,7 +179,7 @@ class GH_AnimatedProcessPanel(GH_DoubleBufferedPanel):
     def VoronoiPaintDelegate(control: Control, e: PaintEventArgs) -> None: ...
 
 
-class GH_AnimationPhase:
+class GH_AnimationPhase(Enum):
     Before = 0
     During = 1
     After = 2
@@ -588,7 +589,7 @@ class GH_ComponentMenuSettingsUI:
     def SettingsUI(self) -> Control: ...
 
 
-class GH_Constraint:
+class GH_Constraint(Enum):
     None_ = 0
     Vertical = 1
     Horizontal = 2
@@ -1048,14 +1049,14 @@ class GH_FadeAnimation:
     def TriggerUpdate(self, Value: bool) -> None: ...
 
 
-class GH_FadePhase:
+class GH_FadePhase(Enum):
     Hidden = 0
     Hiding = 1
     Shown = 2
     Showing = 3
 
 
-class GH_FileRecoveryAction:
+class GH_FileRecoveryAction(Enum):
     None_ = 0
     OpenRecoveryFile = 1
     SaveRecoveryFile = 2
@@ -1654,7 +1655,7 @@ class GH_InterfaceSettingsCategory(GH_SettingsCategory):
     def Description(self) -> str: ...
 
 
-class GH_Interpolation:
+class GH_Interpolation(Enum):
     None_ = 0
     NearestNeighbour = 1
     Linear = 2
@@ -1770,7 +1771,7 @@ class GH_LoadProtectDialog:
     def SetAssemblyName(self, name: str) -> None: ...
 
 
-class GH_MarkerType:
+class GH_MarkerType(Enum):
     DocumentObject = 0
     RibbonTab = 1
     RibbonIcon = 2
@@ -2454,7 +2455,7 @@ class GH_ProgressBar:
     def SetStep(self, N: int, sText: str) -> None: ...
 
 
-class GH_PruderyFilter:
+class GH_PruderyFilter(Enum):
     None_ = 0
     Low = 1
     Medium = 2
@@ -2608,20 +2609,20 @@ class GH_ScribblePropertiesDialog:
     def SetUserFont(self, f: Font) -> None: ...
 
 
-class GH_Scroll_Method:
+class GH_Scroll_Method(Enum):
     none = 0
     linear = 1
     exponential = 2
 
 
-class GH_ScrollMouseRelation:
+class GH_ScrollMouseRelation(Enum):
     None_ = 0
     Top = 1
     Bottom = 2
     Both = 3
 
 
-class GH_SeparatorDisplay:
+class GH_SeparatorDisplay(Enum):
     None_ = 0
     Etched = 1
     EtchedFading = 2
@@ -2817,7 +2818,7 @@ class GH_SliderAnimationSetup:
     def RhinoViews(self) -> List: ...
 
 
-class GH_SliderInputMode:
+class GH_SliderInputMode(Enum):
     None_ = 0
     OnKeyDown = 1
     OnDoubleClick = 2
@@ -3016,7 +3017,7 @@ class GH_Toolstrip:
     def ClickThrough(self, Value: bool) -> None: ...
 
 
-class GH_ToolstripItemKeyHandlerResult:
+class GH_ToolstripItemKeyHandlerResult(Enum):
     Ignored = 0
     CloseMenu = 1
     MaintainMenu = 2
@@ -3124,7 +3125,7 @@ class GH_ToolTipForm:
     def TT_Title(self, Value: str) -> None: ...
 
 
-class GH_TooltipPalette:
+class GH_TooltipPalette(Enum):
     White = 0
     Black = 1
     Grey = 2

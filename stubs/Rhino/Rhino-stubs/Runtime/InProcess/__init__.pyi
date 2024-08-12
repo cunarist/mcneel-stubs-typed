@@ -1,4 +1,5 @@
 from typing import Tuple, Set, Iterable, List, overload
+from enum import Enum
 
 
 
@@ -22,7 +23,7 @@ class RhinoCore:
     def Run(self) -> int: ...
 
 
-class WindowStyle:
+class WindowStyle(Enum):
     Normal = 0
     Hidden = 1
     Minimized = 2

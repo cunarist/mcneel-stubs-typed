@@ -149,6 +149,7 @@ namespace PyStubblerLib
 
             string[] allChildNamespaces = GetChildNamespaces(stubTypes[0].Namespace, allNamespaces);
             sb.AppendLine("from typing import Tuple, Set, Iterable, List, overload");
+            sb.AppendLine("from enum import Enum");
             sb.Append("\n");
             if( allChildNamespaces.Length>0 )
             {
@@ -179,7 +180,7 @@ namespace PyStubblerLib
                     continue; //skip generics for now
                 if (stubType.IsEnum)
                 {
-                    sb.AppendLine($"class {stubType.Name}:");
+                    sb.AppendLine($"class {stubType.Name}(Enum):");
                     var names = Enum.GetNames(stubType);
                     var values = Enum.GetValues(stubType);
                     for (int i = 0; i < names.Length; i++)

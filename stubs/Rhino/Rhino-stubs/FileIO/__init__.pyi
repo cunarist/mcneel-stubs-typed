@@ -1,8 +1,9 @@
 from typing import Tuple, Set, Iterable, List, overload
+from enum import Enum
 
 
 
-class AsciiEol:
+class AsciiEol(Enum):
     Crlf = 0
     Lf = 1
     Cr = 2
@@ -23,7 +24,7 @@ class BinaryArchiveFile:
     def Open(self) -> bool: ...
 
 
-class BinaryArchiveMode:
+class BinaryArchiveMode(Enum):
     Unknown = 0
     Read = 1
     Write = 2
@@ -198,12 +199,12 @@ class ContentHash:
     def __ne__(left: ContentHash, right: ContentHash) -> bool: ...
 
 
-class CurveType:
+class CurveType(Enum):
     Polyline = 0
     Nurbs = 1
 
 
-class DracoColorFormat:
+class DracoColorFormat(Enum):
     ARGB = 0
     RGBA = 1
 
@@ -798,7 +799,7 @@ class File3dmWriteOptions:
     def Version(self, value: int) -> None: ...
 
 
-class FileFindPreference:
+class FileFindPreference(Enum):
     None_ = 0
     FullPath = 1
     RelativePath = 2
@@ -1101,7 +1102,7 @@ class FileReference:
     def RelativePath(self) -> str: ...
 
 
-class FileReferenceStatus:
+class FileReferenceStatus(Enum):
     Unknown = 0
     FullPathValid = 1
     FileNotFound = 2
@@ -1222,7 +1223,7 @@ class FileWriteOptions:
     def Xform(self, value: Transform) -> None: ...
 
 
-class GeometryType:
+class GeometryType(Enum):
     Nurbs = 0
     Mesh = 1
 
@@ -1299,13 +1300,13 @@ class NameHash:
     def __ne__(left: NameHash, right: NameHash) -> bool: ...
 
 
-class NGons:
+class NGons(Enum):
     None_ = 0
     Preserve = 1
     Create = 2
 
 
-class ObjectTypeFilter:
+class ObjectTypeFilter(Enum):
     None_ = 0
     Point = 1
     Pointset = 2
@@ -1323,13 +1324,13 @@ class ObjectTypeFilter:
     Any = 4294967295
 
 
-class ObjGroupNames:
+class ObjGroupNames(Enum):
     NoGroups = 0
     LayerAsGroup = 1
     GroupAsGroup = 2
 
 
-class ObjObjectNames:
+class ObjObjectNames(Enum):
     NoObjects = 0
     ObjectAsGroup = 1
     ObjectAsObject = 2
@@ -1354,12 +1355,12 @@ class SHA1OpenNURBS:
     def StringHash(input: str) -> Set(Byte): ...
 
 
-class SubDMeshing:
+class SubDMeshing(Enum):
     Surface = 0
     ControlNet = 1
 
 
-class TableTypeFilter:
+class TableTypeFilter(Enum):
     None_ = 0
     Properties = 1
     Settings = 2
@@ -1405,14 +1406,14 @@ class TextLog:
     def ToString(self) -> str: ...
 
 
-class UseObjGsAs:
+class UseObjGsAs(Enum):
     IgnoreObjGroups = 0
     ObjGroupsAsLayers = 1
     ObjGroupsAsGroups = 2
     ObjGroupsAsObjects = 3
 
 
-class VertexWelding:
+class VertexWelding(Enum):
     Normal = 0
     Welded = 1
     Unwelded = 2

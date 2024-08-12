@@ -1,4 +1,5 @@
 from typing import Tuple, Set, Iterable, List, overload
+from enum import Enum
 
 
 
@@ -57,7 +58,7 @@ class GH_Context:
     def SolveIsoSurfaces(self, threshold: float) -> Tuple[List, GH_2DSparseArray]: ...
 
 
-class GH_Direction:
+class GH_Direction(Enum):
     invalid = 0
     left = 1
     right = 2
@@ -75,7 +76,7 @@ class GH_IsoSurface:
     def Smooth(self) -> None: ...
 
 
-class GH_Mask:
+class GH_Mask(Enum):
     _0000 = 0
     _0001 = 1
     _0010 = 2

@@ -1,8 +1,9 @@
 from typing import Tuple, Set, Iterable, List, overload
+from enum import Enum
 
 
 
-class GH_CharType:
+class GH_CharType(Enum):
     undefined = 0
     whitespace = 1
     dot = 2
@@ -122,7 +123,7 @@ class GH_ExpressionSyntaxWriter:
     def RewriteForGraphicInterface(code: GH_CodeString) -> None: ...
 
 
-class GH_OperatorType:
+class GH_OperatorType(Enum):
     UnaryOnLeft = 0
     UnaryOnRight = 1
     Binary = 2
@@ -134,7 +135,7 @@ class GH_ParserOperator:
     def Equals(self, obj: Object) -> bool: ...
 
 
-class GH_ParserPrecedence:
+class GH_ParserPrecedence(Enum):
     None_ = 0
     Level0 = 1
     Level1 = 2
@@ -155,7 +156,7 @@ class GH_ParserSymbol:
     def ToString(self) -> str: ...
 
 
-class GH_ParserTokenClass:
+class GH_ParserTokenClass(Enum):
     Keyword = 1
     Identifier = 2
     Numeric = 3
@@ -264,7 +265,7 @@ class GH_ScriptVariant:
     def ToString(self) -> str: ...
 
 
-class GH_ScriptVariantType:
+class GH_ScriptVariantType(Enum):
     nothing = 0
     boolean = 1
     integer = 2
@@ -339,7 +340,7 @@ class GH_Variant:
     def ToString(self) -> str: ...
 
 
-class GH_VariantType:
+class GH_VariantType(Enum):
     null = 0
     bool = 1
     int = 2
