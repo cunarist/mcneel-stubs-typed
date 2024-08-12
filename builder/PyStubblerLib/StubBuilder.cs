@@ -437,6 +437,9 @@ namespace PyStubblerLib
                 return "bool";
             if (rc.Equals("Int32"))
                 return "int";
+
+            rc = rc.Replace("`", "");
+
             return rc;
         }
 
