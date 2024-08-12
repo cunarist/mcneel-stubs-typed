@@ -4,7 +4,7 @@ from Serialization import *
 from Types import *
 from UserInterface import *
 
-__all__ = ['Serialization','Types','UserInterface']
+__all__ = ['Serialization', 'Types', 'UserInterface']
 
 
 class Branch:

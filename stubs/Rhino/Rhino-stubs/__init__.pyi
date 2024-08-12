@@ -14,7 +14,7 @@ from Render import *
 from Runtime import *
 from UI import *
 
-__all__ = ['ApplicationSettings','Collections','Commands','Display','DocObjects','FileIO','Geometry','Input','NodeInCode','PlugIns','Render','Runtime','UI']
+__all__ = ['ApplicationSettings', 'Collections', 'Commands', 'Display', 'DocObjects', 'FileIO', 'Geometry', 'Input', 'NodeInCode', 'PlugIns', 'Render', 'Runtime', 'UI']
 
 
 class AngleUnitSystem:

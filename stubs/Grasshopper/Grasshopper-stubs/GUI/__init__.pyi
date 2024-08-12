@@ -19,7 +19,7 @@ from StringDisplay import *
 from Theme import *
 from Widgets import *
 
-__all__ = ['Alignment','Base','Canvas','Colours','Equations','Gradient','HTML','IconEditor','Layout','MRU','RemotePanel','Ribbon','Script','SettingsControls','Stacks','StringDisplay','Theme','Widgets']
+__all__ = ['Alignment', 'Base', 'Canvas', 'Colours', 'Equations', 'Gradient', 'HTML', 'IconEditor', 'Layout', 'MRU', 'RemotePanel', 'Ribbon', 'Script', 'SettingsControls', 'Stacks', 'StringDisplay', 'Theme', 'Widgets']
 
 
 class AggregateShortcutMenuItemsEventHandler:

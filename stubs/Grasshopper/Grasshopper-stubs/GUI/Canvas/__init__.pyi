@@ -3,7 +3,7 @@ from typing import Tuple, Set, Iterable, List, overload
 from Interaction import *
 from TagArtists import *
 
-__all__ = ['Interaction','TagArtists']
+__all__ = ['Interaction', 'TagArtists']
 
 
 class CanvasPaintBackgroundEventHandler:

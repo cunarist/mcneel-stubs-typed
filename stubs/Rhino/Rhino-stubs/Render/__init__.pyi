@@ -8,7 +8,7 @@ from ParameterNames import *
 from PostEffects import *
 from UI import *
 
-__all__ = ['ChangeQueue','ChildSlotNames','DataSources','Fields','ParameterNames','PostEffects','UI']
+__all__ = ['ChangeQueue', 'ChildSlotNames', 'DataSources', 'Fields', 'ParameterNames', 'PostEffects', 'UI']
 
 
 class AddCustomUISections:

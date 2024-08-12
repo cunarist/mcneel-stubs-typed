@@ -3,7 +3,7 @@ from typing import Tuple, Set, Iterable, List, overload
 from DataSource import *
 from ThumbnailUI import *
 
-__all__ = ['DataSource','ThumbnailUI']
+__all__ = ['DataSource', 'ThumbnailUI']
 
 
 class CollapsibleSectionHolderImpl:

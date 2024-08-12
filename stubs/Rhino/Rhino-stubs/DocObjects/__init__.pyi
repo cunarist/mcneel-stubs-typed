@@ -4,7 +4,7 @@ from Custom import *
 from SnapShots import *
 from Tables import *
 
-__all__ = ['Custom','SnapShots','Tables']
+__all__ = ['Custom', 'SnapShots', 'Tables']
 
 
 class ActiveSpace:

@@ -5,7 +5,7 @@ from Intersect import *
 from MeshRefinements import *
 from Morphs import *
 
-__all__ = ['Collections','Intersect','MeshRefinements','Morphs']
+__all__ = ['Collections', 'Intersect', 'MeshRefinements', 'Morphs']
 
 
 class AngularDimension(Dimension):

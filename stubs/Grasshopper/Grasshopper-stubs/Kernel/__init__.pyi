@@ -13,7 +13,7 @@ from Types import *
 from Undo import *
 from Utility import *
 
-__all__ = ['Attributes','Components','Data','Expressions','Geometry','Graphs','Parameters','Sorting','Special','Types','Undo','Utility']
+__all__ = ['Attributes', 'Components', 'Data', 'Expressions', 'Geometry', 'Graphs', 'Parameters', 'Sorting', 'Special', 'Types', 'Undo', 'Utility']
 
 
 class AttributesChangedEventHandler:

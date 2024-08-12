@@ -5,7 +5,7 @@ from Delaunay import *
 from SpatialTrees import *
 from Voronoi import *
 
-__all__ = ['ConvexHull','Delaunay','SpatialTrees','Voronoi']
+__all__ = ['ConvexHull', 'Delaunay', 'SpatialTrees', 'Voronoi']
 
 
 class Circle2:

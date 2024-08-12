@@ -6,7 +6,7 @@ from GUI import *
 from Kernel import *
 from Plugin import *
 
-__all__ = ['Documentation','Getters','GUI','Kernel','Plugin']
+__all__ = ['Documentation', 'Getters', 'GUI', 'Kernel', 'Plugin']
 
 
 class AuthorAddressChangedEventHandler:

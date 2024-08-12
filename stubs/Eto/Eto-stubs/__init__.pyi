@@ -5,7 +5,7 @@ from Forms import *
 from IO import *
 from Threading import *
 
-__all__ = ['Drawing','Forms','IO','Threading']
+__all__ = ['Drawing', 'Forms', 'IO', 'Threading']
 
 
 class AttachableMemberIdentifier:
