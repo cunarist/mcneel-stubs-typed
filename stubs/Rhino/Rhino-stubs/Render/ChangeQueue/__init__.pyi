@@ -1,6 +1,7 @@
 from typing import Tuple, Set, Iterable, List, overload
 
 
+
 class BakingFunctions:
     #None = 0
     Decals = 1

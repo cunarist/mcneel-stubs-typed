@@ -1,5 +1,25 @@
-__all__ = ['Alignment','Base','Canvas','Colours','Equations','Gradient','HTML','IconEditor','Layout','MRU','RemotePanel','Ribbon','Script','SettingsControls','Stacks','StringDisplay','Theme','Widgets']
 from typing import Tuple, Set, Iterable, List, overload
+
+from Alignment import *
+from Base import *
+from Canvas import *
+from Colours import *
+from Equations import *
+from Gradient import *
+from HTML import *
+from IconEditor import *
+from Layout import *
+from MRU import *
+from RemotePanel import *
+from Ribbon import *
+from Script import *
+from SettingsControls import *
+from Stacks import *
+from StringDisplay import *
+from Theme import *
+from Widgets import *
+
+__all__ = ['Alignment','Base','Canvas','Colours','Equations','Gradient','HTML','IconEditor','Layout','MRU','RemotePanel','Ribbon','Script','SettingsControls','Stacks','StringDisplay','Theme','Widgets']
 
 
 class AggregateShortcutMenuItemsEventHandler:

@@ -1,6 +1,7 @@
 from typing import Tuple, Set, Iterable, List, overload
 
 
+
 class AnalysisStyle:
     Wireframe = 1
     Texture = 2

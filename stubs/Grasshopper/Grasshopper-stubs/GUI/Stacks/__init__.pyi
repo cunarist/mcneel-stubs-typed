@@ -1,6 +1,7 @@
 from typing import Tuple, Set, Iterable, List, overload
 
 
+
 class GH_Interpolation:
     linear = 1
     cubic = 2

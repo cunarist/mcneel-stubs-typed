@@ -1,6 +1,7 @@
 from typing import Tuple, Set, Iterable, List, overload
 
 
+
 class CustomRenderSaveFileTypes:
     def RegisterFileType(self, extensions: Iterable[str], description: str, saveFileHandler: SaveFileHandler) -> None: ...
 

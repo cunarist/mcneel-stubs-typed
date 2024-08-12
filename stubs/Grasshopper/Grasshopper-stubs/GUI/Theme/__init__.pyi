@@ -1,6 +1,7 @@
 from typing import Tuple, Set, Iterable, List, overload
 
 
+
 class GH_BackgroundSettings:
     @property
     def Colour1(self) -> Color: ...

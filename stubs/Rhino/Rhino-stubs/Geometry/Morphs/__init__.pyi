@@ -1,6 +1,7 @@
 from typing import Tuple, Set, Iterable, List, overload
 
 
+
 class BendSpaceMorph(SpaceMorph):
     @overload
     def __init__(self, start: Point3d, end: Point3d, point: Point3d, straight: bool, symmetric: bool): ...

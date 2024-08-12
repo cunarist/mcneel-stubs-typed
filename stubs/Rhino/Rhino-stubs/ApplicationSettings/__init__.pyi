@@ -1,6 +1,7 @@
 from typing import Tuple, Set, Iterable, List, overload
 
 
+
 class AppearanceSettings:
     def DefaultPaintColor(whichColor: PaintColor) -> Color: ...
     @property

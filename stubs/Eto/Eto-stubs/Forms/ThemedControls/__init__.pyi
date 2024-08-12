@@ -1,6 +1,7 @@
 from typing import Tuple, Set, Iterable, List, overload
 
 
+
 class ThemedAboutDialogHandler:
     def __init__(self): ...
     @property

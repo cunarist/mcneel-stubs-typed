@@ -1,6 +1,7 @@
 from typing import Tuple, Set, Iterable, List, overload
 
 
+
 class EditModeChangedEventHandler:
     def __init__(self, TargetObject: Object, TargetMethod: IntPtr): ...
     def BeginInvoke(self, sender: Object, e: EventArgs, DelegateCallback: AsyncCallback, DelegateAsyncState: Object) -> IAsyncResult: ...

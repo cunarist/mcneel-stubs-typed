@@ -1,5 +1,12 @@
-__all__ = ['Documentation','Getters','GUI','Kernel','Plugin']
 from typing import Tuple, Set, Iterable, List, overload
+
+from Documentation import *
+from Getters import *
+from GUI import *
+from Kernel import *
+from Plugin import *
+
+__all__ = ['Documentation','Getters','GUI','Kernel','Plugin']
 
 
 class AuthorAddressChangedEventHandler:

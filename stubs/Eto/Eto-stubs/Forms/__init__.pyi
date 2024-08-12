@@ -1,5 +1,8 @@
-__all__ = ['ThemedControls']
 from typing import Tuple, Set, Iterable, List, overload
+
+from ThemedControls import *
+
+__all__ = ['ThemedControls']
 
 
 class AboutDialog(CommonDialog):

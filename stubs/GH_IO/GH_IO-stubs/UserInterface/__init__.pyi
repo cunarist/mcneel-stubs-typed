@@ -1,6 +1,7 @@
 from typing import Tuple, Set, Iterable, List, overload
 
 
+
 class GH_ArchiveMessageViewer:
     def __init__(self): ...
     def SetArchive(self, nArchive: GH_Archive) -> None: ...

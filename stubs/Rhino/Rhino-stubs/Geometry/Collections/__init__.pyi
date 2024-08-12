@@ -1,6 +1,7 @@
 from typing import Tuple, Set, Iterable, List, overload
 
 
+
 class BrepCurveList:
     def Add(self, curve: Curve) -> int: ...
     @property

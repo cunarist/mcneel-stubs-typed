@@ -1,6 +1,7 @@
 from typing import Tuple, Set, Iterable, List, overload
 
 
+
 class GH_ComponentAttributes:
     def __init__(self, component: IGH_Component): ...
     def AppendToAttributeTree(self, attributes: List) -> None: ...

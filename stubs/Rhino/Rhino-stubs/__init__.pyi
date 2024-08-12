@@ -1,5 +1,20 @@
-__all__ = ['ApplicationSettings','Collections','Commands','Display','DocObjects','FileIO','Geometry','Input','NodeInCode','PlugIns','Render','Runtime','UI']
 from typing import Tuple, Set, Iterable, List, overload
+
+from ApplicationSettings import *
+from Collections import *
+from Commands import *
+from Display import *
+from DocObjects import *
+from FileIO import *
+from Geometry import *
+from Input import *
+from NodeInCode import *
+from PlugIns import *
+from Render import *
+from Runtime import *
+from UI import *
+
+__all__ = ['ApplicationSettings','Collections','Commands','Display','DocObjects','FileIO','Geometry','Input','NodeInCode','PlugIns','Render','Runtime','UI']
 
 
 class AngleUnitSystem:

@@ -148,8 +148,15 @@ namespace PyStubblerLib
             var sb = new System.Text.StringBuilder();
 
             string[] allChildNamespaces = GetChildNamespaces(stubTypes[0].Namespace, allNamespaces);
+            sb.AppendLine("from typing import Tuple, Set, Iterable, List, overload");
+            sb.Append("\n");
             if( allChildNamespaces.Length>0 )
             {
+                for(int i=0; i<allChildNamespaces.Length; i++)
+                {
+                    sb.AppendLine($"from {allChildNamespaces[i]} import *");
+                }
+                sb.Append("\n");
                 sb.Append("__all__ = [");
                 for(int i=0; i<allChildNamespaces.Length; i++)
                 {
@@ -159,7 +166,6 @@ namespace PyStubblerLib
                 }
                 sb.AppendLine("]");
             }
-            sb.AppendLine("from typing import Tuple, Set, Iterable, List, overload");
 
             foreach (var stubType in stubTypes)
             {

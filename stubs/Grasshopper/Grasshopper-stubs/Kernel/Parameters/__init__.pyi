@@ -1,5 +1,8 @@
-__all__ = ['Hints']
 from typing import Tuple, Set, Iterable, List, overload
+
+from Hints import *
+
+__all__ = ['Hints']
 
 
 

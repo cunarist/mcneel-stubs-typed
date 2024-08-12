@@ -1,6 +1,7 @@
 from typing import Tuple, Set, Iterable, List, overload
 
 
+
 class SnapShotsClient:
     def __init__(self): ...
     def AnimateDocument(self, doc: RhinoDoc, dPos: float, archive_start: BinaryArchiveReader, archive_stop: BinaryArchiveReader) -> bool: ...

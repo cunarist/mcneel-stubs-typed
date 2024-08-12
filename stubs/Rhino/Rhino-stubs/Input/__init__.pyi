@@ -1,5 +1,8 @@
-__all__ = ['Custom']
 from typing import Tuple, Set, Iterable, List, overload
+
+from Custom import *
+
+__all__ = ['Custom']
 
 
 class BitmapFileTypes:

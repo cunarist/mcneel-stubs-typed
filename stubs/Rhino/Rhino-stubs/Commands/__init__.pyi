@@ -1,6 +1,7 @@
 from typing import Tuple, Set, Iterable, List, overload
 
 
+
 class Command:
     def add_BeginCommand(value: EventHandler) -> None: ...
     def add_EndCommand(value: EventHandler) -> None: ...

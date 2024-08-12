@@ -1,6 +1,7 @@
 from typing import Tuple, Set, Iterable, List, overload
 
 
+
 class ClassIdAttribute:
     def __init__(self, id: str): ...
     @property

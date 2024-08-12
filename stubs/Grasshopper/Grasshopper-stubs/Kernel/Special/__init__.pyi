@@ -1,5 +1,8 @@
-__all__ = ['SketchElements']
 from typing import Tuple, Set, Iterable, List, overload
+
+from SketchElements import *
+
+__all__ = ['SketchElements']
 
 
 class Alignment:

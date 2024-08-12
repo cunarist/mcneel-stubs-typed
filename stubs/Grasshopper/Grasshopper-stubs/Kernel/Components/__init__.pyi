@@ -1,6 +1,7 @@
 from typing import Tuple, Set, Iterable, List, overload
 
 
+
 class BufferMode:
     Never = 0
     Always = 1

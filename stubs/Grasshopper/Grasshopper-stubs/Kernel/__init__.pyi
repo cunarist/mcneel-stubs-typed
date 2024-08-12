@@ -1,5 +1,19 @@
-__all__ = ['Attributes','Components','Data','Expressions','Geometry','Graphs','Parameters','Sorting','Special','Types','Undo','Utility']
 from typing import Tuple, Set, Iterable, List, overload
+
+from Attributes import *
+from Components import *
+from Data import *
+from Expressions import *
+from Geometry import *
+from Graphs import *
+from Parameters import *
+from Sorting import *
+from Special import *
+from Types import *
+from Undo import *
+from Utility import *
+
+__all__ = ['Attributes','Components','Data','Expressions','Geometry','Graphs','Parameters','Sorting','Special','Types','Undo','Utility']
 
 
 class AttributesChangedEventHandler:

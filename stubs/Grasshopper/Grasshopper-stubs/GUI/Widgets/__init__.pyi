@@ -1,6 +1,7 @@
 from typing import Tuple, Set, Iterable, List, overload
 
 
+
 class DockCornerChangedEventHandler:
     def __init__(self, TargetObject: Object, TargetMethod: IntPtr): ...
     def BeginInvoke(self, DelegateCallback: AsyncCallback, DelegateAsyncState: Object) -> IAsyncResult: ...

@@ -1,5 +1,8 @@
-__all__ = ['MetaBall']
 from typing import Tuple, Set, Iterable, List, overload
+
+from MetaBall import *
+
+__all__ = ['MetaBall']
 
 
 class BezierF:

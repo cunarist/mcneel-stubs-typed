@@ -1,6 +1,7 @@
 from typing import Tuple, Set, Iterable, List, overload
 
 
+
 class BitmapTable:
     def AddBitmap(self, bitmapFilename: str, replaceExisting: bool) -> int: ...
     def Delete(self, item: BitmapEntry) -> bool: ...

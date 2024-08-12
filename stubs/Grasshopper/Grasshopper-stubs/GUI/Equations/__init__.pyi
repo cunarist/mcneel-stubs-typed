@@ -1,6 +1,7 @@
 from typing import Tuple, Set, Iterable, List, overload
 
 
+
 class GH_EquationFragment:
     @property
     def Bounds(self) -> RectangleF: ...

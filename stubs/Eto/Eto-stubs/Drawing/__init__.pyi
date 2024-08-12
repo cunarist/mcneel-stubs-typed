@@ -1,6 +1,7 @@
 from typing import Tuple, Set, Iterable, List, overload
 
 
+
 class Bitmap(Image):
     @overload
     def __init__(self, fileName: str): ...

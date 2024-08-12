@@ -1,5 +1,11 @@
-__all__ = ['Drawing','Forms','IO','Threading']
 from typing import Tuple, Set, Iterable, List, overload
+
+from Drawing import *
+from Forms import *
+from IO import *
+from Threading import *
+
+__all__ = ['Drawing','Forms','IO','Threading']
 
 
 class AttachableMemberIdentifier:

@@ -1,6 +1,7 @@
 from typing import Tuple, Set, Iterable, List, overload
 
 
+
 class ComponentFunctionInfo:
     def Evaluate(self, args: IEnumerable, keepTree: bool) -> Tuple[Set(Object), Set(str)]: ...
     @property

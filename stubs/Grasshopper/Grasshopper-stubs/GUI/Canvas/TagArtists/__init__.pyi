@@ -1,6 +1,7 @@
 from typing import Tuple, Set, Iterable, List, overload
 
 
+
 class GH_TagArtist:
     @property
     def ID(self) -> Guid: ...

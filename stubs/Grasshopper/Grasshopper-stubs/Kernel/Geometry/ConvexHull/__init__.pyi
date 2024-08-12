@@ -1,6 +1,7 @@
 from typing import Tuple, Set, Iterable, List, overload
 
 
+
 class Solver:
     def Compute(nodes: Node2List, hull: List) -> bool: ...
     @overload

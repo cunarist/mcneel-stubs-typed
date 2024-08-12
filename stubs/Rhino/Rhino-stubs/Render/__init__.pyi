@@ -1,5 +1,14 @@
-__all__ = ['ChangeQueue','ChildSlotNames','DataSources','Fields','ParameterNames','PostEffects','UI']
 from typing import Tuple, Set, Iterable, List, overload
+
+from ChangeQueue import *
+from ChildSlotNames import *
+from DataSources import *
+from Fields import *
+from ParameterNames import *
+from PostEffects import *
+from UI import *
+
+__all__ = ['ChangeQueue','ChildSlotNames','DataSources','Fields','ParameterNames','PostEffects','UI']
 
 
 class AddCustomUISections:

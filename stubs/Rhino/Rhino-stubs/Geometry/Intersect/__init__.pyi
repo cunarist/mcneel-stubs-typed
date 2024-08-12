@@ -1,6 +1,7 @@
 from typing import Tuple, Set, Iterable, List, overload
 
 
+
 class ArcArcIntersection:
     #None = 0
     Single = 1

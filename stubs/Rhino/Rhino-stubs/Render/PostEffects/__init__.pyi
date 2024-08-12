@@ -1,6 +1,7 @@
 from typing import Tuple, Set, Iterable, List, overload
 
 
+
 class CustomPostEffectAttribute:
     def __init__(self, postEffectType: PostEffectType, name: str, styles: PostEffectStyles, executeWhileRenderingOption: PostEffectExecuteWhileRenderingOptions, canDisplayHelp: bool, executeWhileRenderingDelay: int): ...
     @property

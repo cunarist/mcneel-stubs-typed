@@ -1,5 +1,9 @@
-__all__ = ['Controls','Gumball']
 from typing import Tuple, Set, Iterable, List, overload
+
+from Controls import *
+from Gumball import *
+
+__all__ = ['Controls','Gumball']
 
 
 class CursorStyle:

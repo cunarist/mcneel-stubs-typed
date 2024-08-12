@@ -1,6 +1,7 @@
 from typing import Tuple, Set, Iterable, List, overload
 
 
+
 class GH_AbstractGraph:
     def add_GraphChanged(self, obj: GraphChangedEventHandler) -> None: ...
     def ClearCaches(self) -> None: ...

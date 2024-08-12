@@ -1,5 +1,10 @@
-__all__ = ['Custom','SnapShots','Tables']
 from typing import Tuple, Set, Iterable, List, overload
+
+from Custom import *
+from SnapShots import *
+from Tables import *
+
+__all__ = ['Custom','SnapShots','Tables']
 
 
 class ActiveSpace:
