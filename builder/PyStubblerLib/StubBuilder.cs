@@ -148,7 +148,7 @@ namespace PyStubblerLib
             var sb = new System.Text.StringBuilder();
 
             string[] allChildNamespaces = GetChildNamespaces(stubTypes[0].Namespace, allNamespaces);
-            sb.AppendLine("from typing import Tuple, Set, Iterable, List, overload");
+            sb.AppendLine("from typing import Tuple, Iterable, overload");
             sb.AppendLine("from enum import Enum");
             sb.Append("\n");
             if( allChildNamespaces.Length>0 )
@@ -536,7 +536,7 @@ namespace PyStubblerLib
             if (rc.EndsWith("[]"))
             {
                 string partial = ToPythonType(rc.Substring(0, rc.Length - 2));
-                return $"Set[{partial}]";
+                return $"Iterable[{partial}]";
             }
 
             if (rc.EndsWith("*"))
@@ -576,7 +576,7 @@ namespace PyStubblerLib
                 enumerableType = enumerableType.Substring(0, enumerableType.IndexOf(','));
                 var pieces = enumerableType.Split('.');
                 string rc = ToPythonType(pieces[pieces.Length - 1]);
-                return $"List[{rc}]";
+                return $"Iterable{rc}]";
             }
             return ToPythonType(t.Name);
         }

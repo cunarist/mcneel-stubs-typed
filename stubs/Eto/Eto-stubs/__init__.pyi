@@ -1,4 +1,4 @@
-from typing import Tuple, Set, Iterable, List, overload
+from typing import Tuple, Iterable, overload
 from enum import Enum
 
 import Drawing
