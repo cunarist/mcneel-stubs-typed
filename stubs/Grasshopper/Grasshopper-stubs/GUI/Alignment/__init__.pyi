@@ -3,7 +3,7 @@ from typing import Tuple, Set, Iterable, List, overload
 
 
 class GH_Align:
-    #None = 0
+    None_ = 0
     Left = 1
     Right = 2
     Top = 3
@@ -13,7 +13,7 @@ class GH_Align:
 
 
 class GH_Distribute:
-    #None = 0
+    None_ = 0
     Vertical = 1
     Horizontal = 2
 

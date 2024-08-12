@@ -928,7 +928,7 @@ class GH_DataComparison:
 
 
 class GH_DataMapping:
-    #None = 0
+    None_ = 0
     Flatten = 1
     Graft = 2
 
@@ -1365,7 +1365,7 @@ class GH_DocumentAssociations:
 
 class GH_DocumentContext:
     Unknown = 0
-    #None = 1
+    None_ = 1
     Open = 2
     Close = 3
     Loaded = 4
@@ -1747,7 +1747,7 @@ class GH_FileWatcher:
 
 
 class GH_FileWatcherEvents:
-    #None = 0
+    None_ = 0
     Changed = 1
     Renamed = 2
     Created = 4
@@ -2131,7 +2131,7 @@ class GH_LoadingDemand:
     Default = 0
     ForceCOFF = 1
     ForceDirect = 2
-    #None = -1
+    None_ = -1
 
 
 class GH_LoadingException:
@@ -2232,7 +2232,7 @@ class GH_MarkovPattern:
 
 
 class GH_MatchLevel:
-    #None = 0
+    None_ = 0
     Exact = 1
     Start = 2
     WordExact = 4
@@ -2378,7 +2378,7 @@ class GH_ObjectSpecies:
 
 
 class GH_ObjectType:
-    #None = 0
+    None_ = 0
     CompiledObject = 1
     UserObject = 2
 
@@ -2418,7 +2418,7 @@ class GH_ParameterSide:
 
 
 class GH_ParamHashFields:
-    #None = 0
+    None_ = 0
     Input = 1
     Output = 2
     InputAndOutput = 3
@@ -2527,12 +2527,12 @@ class GH_PreviewExpiredEventArgs:
 
 
 class GH_PreviewFilter:
-    #None = 0
+    None_ = 0
     Selected = 1
 
 
 class GH_PreviewMesh:
-    #None = 0
+    None_ = 0
     LowQuality = 1
     HighQuality = 2
     Document = 3
@@ -2633,7 +2633,7 @@ class GH_ProcessStep:
 
 
 class GH_ProfilerMode:
-    #None = 0
+    None_ = 0
     Processor = 1
     Memory = 2
 
@@ -2664,7 +2664,7 @@ class GH_RelevantObjectData:
 
 
 class GH_RelevantObjectFilter:
-    #None = 0
+    None_ = 0
     Groups = 1
     InputGrips = 2
     OutputGrips = 4
@@ -2784,7 +2784,7 @@ class GH_SelectionState:
 
 
 class GH_SelectionTopology:
-    #None = 0
+    None_ = 0
     Convex = 1
     Concave = 2
 

@@ -134,7 +134,7 @@ class GH_RuntimeFile:
 
 
 class GH_Style:
-    #None = 0
+    None_ = 0
     WeakEmphasis = 1
     StrongEmphasis = 2
     Monospaced = 3

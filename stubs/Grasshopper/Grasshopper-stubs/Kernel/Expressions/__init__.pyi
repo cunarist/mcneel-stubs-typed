@@ -135,7 +135,7 @@ class GH_ParserOperator:
 
 
 class GH_ParserPrecedence:
-    #None = 0
+    None_ = 0
     Level0 = 1
     Level1 = 2
     Level2 = 3

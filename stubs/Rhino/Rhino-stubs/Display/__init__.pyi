@@ -38,7 +38,7 @@ class BlendMode:
 
 
 class BoundingBoxDisplayMode:
-    #None = 0
+    None_ = 0
     OnAlways = 1
     OnDuringDynamicDisplay = 2
 
@@ -481,7 +481,7 @@ class CustomDisplay:
 
 
 class DefinedViewportProjection:
-    #None = 0
+    None_ = 0
     Top = 1
     Bottom = 2
     Left = 3
@@ -1279,7 +1279,7 @@ class DisplayPipelineAttributes:
 
 
 class DisplayTechnology:
-    #None = 0
+    None_ = 0
     OpenGL = 1
     Metal = 2
     DirectX = 3
@@ -1357,7 +1357,7 @@ class FrameBufferFillMode:
 
 
 class GradientType:
-    #None = 0
+    None_ = 0
     Linear = 1
     Radial = 2
     LinearDisabled = 3
@@ -1768,7 +1768,7 @@ class ShaderLanguage:
 
 
 class StereoContext:
-    #None = 0
+    None_ = 0
     LeftEye = 1
     RightEye = 2
     BothEyes = 3

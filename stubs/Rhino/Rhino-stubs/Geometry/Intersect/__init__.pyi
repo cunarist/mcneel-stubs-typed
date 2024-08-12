@@ -3,14 +3,14 @@ from typing import Tuple, Set, Iterable, List, overload
 
 
 class ArcArcIntersection:
-    #None = 0
+    None_ = 0
     Single = 1
     Multiple = 2
     Overlap = 3
 
 
 class CircleCircleIntersection:
-    #None = 0
+    None_ = 0
     Single = 1
     Multiple = 2
     Overlap = 3
@@ -130,20 +130,20 @@ class IntersectionEvent:
 
 
 class LineCircleIntersection:
-    #None = 0
+    None_ = 0
     Single = 1
     Multiple = 2
 
 
 class LineCylinderIntersection:
-    #None = 0
+    None_ = 0
     Single = 1
     Multiple = 2
     Overlap = 3
 
 
 class LineSphereIntersection:
-    #None = 0
+    None_ = 0
     Single = 1
     Multiple = 2
 
@@ -189,7 +189,7 @@ class MeshInterference:
 
 
 class PlaneCircleIntersection:
-    #None = 0
+    None_ = 0
     Tangent = 1
     Secant = 2
     Parallel = 3
@@ -197,7 +197,7 @@ class PlaneCircleIntersection:
 
 
 class PlaneSphereIntersection:
-    #None = 0
+    None_ = 0
     Point = 1
     Circle = 2
 
@@ -218,7 +218,7 @@ class RayShootEvent:
 
 
 class SphereSphereIntersection:
-    #None = 0
+    None_ = 0
     Point = 1
     Circle = 2
     Overlap = 3

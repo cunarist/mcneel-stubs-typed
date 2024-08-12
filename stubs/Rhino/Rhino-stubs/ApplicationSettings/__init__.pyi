@@ -348,7 +348,7 @@ class CommandPromptPosition:
 
 
 class CursorMode:
-    #None = 0
+    None_ = 0
     BlackOnWhite = 1
     WhiteOnBlack = 2
 
@@ -1061,7 +1061,7 @@ class OpenGLSettingsState:
 
 
 class OsnapModes:
-    #None = 0
+    None_ = 0
     Near = 2
     Focus = 8
     Center = 32

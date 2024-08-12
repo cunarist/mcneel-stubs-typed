@@ -574,7 +574,7 @@ class GH_CurveProxy:
 
 
 class GH_DifferentialSolver:
-    #None = 0
+    None_ = 0
     Euler = 1
     RungeKutta2 = 2
     RungeKutta3 = 3

@@ -341,7 +341,7 @@ class GH_ClusterDocumentIdAction(GH_ObjectUndoAction):
 
 
 class GH_ClusterFileType:
-    #None = 0
+    None_ = 0
     Gh = 1
     Ghx = 2
     GhCluster = 3
@@ -1101,7 +1101,7 @@ class GH_GroupAttributes:
 
 
 class GH_GroupBorder:
-    #None = 0
+    None_ = 0
     Box = 1
     Blob = 2
     Rectangles = 3
@@ -1307,7 +1307,7 @@ class GH_LegendData:
 
 
 class GH_LegendType:
-    #None = 0
+    None_ = 0
     DiscreteVertical = 1
     DiscreteHorizontal = 2
     SmoothVertical = 101
@@ -1907,7 +1907,7 @@ class GH_QuickGraphFrame:
 
 
 class GH_QuickGraphSortOrder:
-    #None = 0
+    None_ = 0
     Ascending = 1
     Descending = 2
 

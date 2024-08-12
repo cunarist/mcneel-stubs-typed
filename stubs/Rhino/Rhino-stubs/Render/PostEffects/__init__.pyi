@@ -111,13 +111,13 @@ class PostEffectExecuteContexts:
 
 
 class PostEffectExecuteWhileRenderingOptions:
-    #None = 0
+    None_ = 0
     Always = 1
     UseDelay = 2
 
 
 class PostEffectHistograms:
-    #None = 0
+    None_ = 0
     BeforeEarlyEffects = 1
     BeforeToneMapping = 2
     AfterEarlyEffects = 2

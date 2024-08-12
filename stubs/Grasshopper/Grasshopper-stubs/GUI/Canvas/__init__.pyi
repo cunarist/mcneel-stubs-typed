@@ -174,7 +174,7 @@ class GH_BorderTopology:
     Left = 5
     Bottom = 6
     Right = 7
-    #None = -2
+    None_ = -2
     All = -1
 
 
@@ -426,7 +426,7 @@ class GH_CanvasMode:
 
 
 class GH_CanvasNavigation:
-    #None = 0
+    None_ = 0
     PanLeft = 1
     PanRight = 2
     PanUp = 3
@@ -709,7 +709,7 @@ class GH_DocDiagramPainter:
 
 
 class GH_DragDropFileAction:
-    #None = 0
+    None_ = 0
     Open = 1
     Examine = 2
     Insert = 3

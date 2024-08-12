@@ -861,7 +861,7 @@ class Colors:
 
 
 class ColorStyles:
-    #None = 0
+    None_ = 0
     ExcludeAlpha = 1
     AlphaLast = 4
     ShortHex = 8
@@ -961,7 +961,7 @@ class Font(Widget):
 
 
 class FontDecoration:
-    #None = 0
+    None_ = 0
     Underline = 1
     Strikethrough = 2
 
@@ -1024,7 +1024,7 @@ class Fonts:
 
 
 class FontStyle:
-    #None = 0
+    None_ = 0
     Bold = 1
     Italic = 2
 
@@ -1114,13 +1114,13 @@ class FormattedTextAlignment:
 
 
 class FormattedTextTrimming:
-    #None = 0
+    None_ = 0
     CharacterEllipsis = 1
     WordEllipsis = 2
 
 
 class FormattedTextWrapMode:
-    #None = 0
+    None_ = 0
     Word = 1
     Character = 2
 
@@ -1765,7 +1765,7 @@ class ImageFormat:
 
 class ImageInterpolation:
     Default = 0
-    #None = 1
+    None_ = 1
     Low = 2
     Medium = 3
     High = 4
@@ -2373,7 +2373,7 @@ class PixelFormat:
 
 
 class PixelOffsetMode:
-    #None = 0
+    None_ = 0
     Half = 1
     Aligned = 2
 

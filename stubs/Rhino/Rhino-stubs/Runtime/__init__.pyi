@@ -363,7 +363,7 @@ class LogMessageType:
     information = 1
     warning = 2
     error = 3
-    assert = 4
+    assert_ = 4
 
 
 class Mode:

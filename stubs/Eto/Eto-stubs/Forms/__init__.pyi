@@ -263,7 +263,7 @@ class BindingUpdateMode:
 class BorderType:
     Bezel = 0
     Line = 1
-    #None = 2
+    None_ = 2
 
 
 class Button(TextControl):
@@ -438,7 +438,7 @@ class CellPaintEventArgs(PaintEventArgs):
 
 
 class CellStates:
-    #None = 0
+    None_ = 0
     Selected = 1
     Editing = 2
 
@@ -1251,7 +1251,7 @@ class DialogDisplayMode:
 
 
 class DialogResult:
-    #None = 0
+    None_ = 0
     Ok = 1
     Cancel = 2
     Yes = 3
@@ -1338,7 +1338,7 @@ class DocumentPageReorderEventArgs(DocumentPageEventArgs):
 
 
 class DragEffects:
-    #None = 0
+    None_ = 0
     Copy = 1
     Move = 2
     Link = 4
@@ -1946,7 +1946,7 @@ class GridCellMouseEventArgs(MouseEventArgs):
 
 
 class GridCellType:
-    #None = 0
+    None_ = 0
     Data = 1
     ColumnHeader = 2
 
@@ -2041,7 +2041,7 @@ class GridItem:
 
 
 class GridLines:
-    #None = 0
+    None_ = 0
     Horizontal = 1
     Vertical = 2
     Both = 3
@@ -4574,7 +4574,7 @@ class KeyEventType:
 
 
 class Keys:
-    #None = 0
+    None_ = 0
     A = 1
     B = 2
     C = 3
@@ -4984,7 +4984,7 @@ class MenuBar(Menu):
 
 
 class MenuBarSystemItems:
-    #None = 0
+    None_ = 0
     Common = 1
     Quit = 4
     All = 5
@@ -5119,7 +5119,7 @@ class Mouse:
 
 
 class MouseButtons:
-    #None = 0
+    None_ = 0
     Primary = 1
     Alternate = 2
     Middle = 4
@@ -6112,7 +6112,7 @@ class SegmentedItemCollection:
 
 
 class SegmentedSelectionMode:
-    #None = 0
+    None_ = 0
     Single = 1
     Multiple = 2
 
@@ -6254,7 +6254,7 @@ class Splitter(Container):
 class SplitterFixedPanel:
     Panel1 = 0
     Panel2 = 1
-    #None = 2
+    None_ = 2
 
 
 class SplitterPositionChangingEventArgs:
@@ -6353,7 +6353,7 @@ class StepperEventArgs:
 
 
 class StepperValidDirections:
-    #None = 0
+    None_ = 0
     Up = 1
     Down = 2
     Both = 3
@@ -6538,7 +6538,7 @@ class Taskbar:
 
 
 class TaskbarProgressState:
-    #None = 0
+    None_ = 0
     Progress = 1
     Indeterminate = 2
     Error = 3
@@ -6719,7 +6719,7 @@ class TextInputEventArgs:
 
 
 class TextReplacements:
-    #None = 0
+    None_ = 0
     Text = 1
     Quote = 2
     Dash = 4
@@ -7047,7 +7047,7 @@ class UIThreadAccessException:
 
 
 class UIThreadCheckMode:
-    #None = 0
+    None_ = 0
     Warning = 1
     Error = 2
 
@@ -7273,11 +7273,11 @@ class WindowState:
 
 class WindowStyle:
     Default = 0
-    #None = 1
+    None_ = 1
     Utility = 2
 
 
 class WrapMode:
-    #None = 0
+    None_ = 0
     Word = 1
     Character = 2

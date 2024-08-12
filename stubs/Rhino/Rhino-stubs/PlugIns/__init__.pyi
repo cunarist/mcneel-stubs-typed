@@ -445,7 +445,7 @@ class PlugInLoadTime:
 
 
 class PlugInType:
-    #None = 0
+    None_ = 0
     Render = 1
     FileImport = 2
     FileExport = 4
@@ -461,7 +461,7 @@ class PreviewNotification:
 
 
 class PreviewRenderTypes:
-    #None = 0
+    None_ = 0
     ThreeSeparateImages = 1
     SingleImage = 2
     Progressive = 3

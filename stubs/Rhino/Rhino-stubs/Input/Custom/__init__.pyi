@@ -18,13 +18,13 @@ class CommandLineOption:
 
 
 class ConeConstraint:
-    #None = 0
+    None_ = 0
     Vertical = 1
     AroundCurve = 2
 
 
 class CylinderConstraint:
-    #None = 0
+    None_ = 0
     Vertical = 1
     AroundCurve = 2
 
@@ -912,7 +912,7 @@ class PickMode:
 
 
 class PickStyle:
-    #None = 0
+    None_ = 0
     PointPick = 1
     WindowPick = 2
     CrossingPick = 3

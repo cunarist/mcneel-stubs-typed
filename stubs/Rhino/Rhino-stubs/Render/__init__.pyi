@@ -172,7 +172,7 @@ class ComponentOrders:
 
 
 class ContentChooserFlags:
-    #None = 0
+    None_ = 0
     HideNewTab = 1
     HideExistingTab = 2
     MultipleSelection = 4
@@ -652,7 +652,7 @@ class ExtraRequirementsSetContexts:
 
 
 class FilterContentByUsage:
-    #None = 0
+    None_ = 0
     Used = 1
     Unused = 2
 
@@ -934,7 +934,7 @@ class MappingTag:
 
 
 class MatchDataResult:
-    #None = 0
+    None_ = 0
     Some = 1
     All = 2
 
@@ -948,7 +948,7 @@ class MetaDataProxy:
 
 
 class Methods:
-    #None = 0
+    None_ = 0
     FloydSteinberg = 1
     SimpleNoise = 2
 
@@ -1016,7 +1016,7 @@ class PreviewBackground:
 
 
 class PreviewBackgroundType:
-    #None = 1
+    None_ = 1
     Checkered = 2
     Scene = 4
 
@@ -1048,7 +1048,7 @@ class PreviewLighting:
 
 
 class PreviewSceneQuality:
-    #None = 0
+    None_ = 0
     RealtimeQuick = 1
     Low = 1
     RefineFirstPass = 1
@@ -1078,7 +1078,7 @@ class ProjectionModes:
 
 
 class ProxyTypes:
-    #None = 0
+    None_ = 0
     Single = 1
     Multi = 2
     Texture = 3
@@ -1485,7 +1485,7 @@ class RenderContentChangedEventArgs(RenderContentEventArgs):
 
 
 class RenderContentChangeReason:
-    #None = 0
+    None_ = 0
     Attach = 1
     Detach = 2
     ChangeAttach = 3
@@ -1541,7 +1541,7 @@ class RenderContentFieldChangedEventArgs(RenderContentChangedEventArgs):
 
 
 class RenderContentKind:
-    #None = 0
+    None_ = 0
     Material = 1
     Environment = 2
     Texture = 4
@@ -1594,7 +1594,7 @@ class RenderContentSerializer:
 
 
 class RenderContentStyles:
-    #None = 0
+    None_ = 0
     TextureSummary = 1
     QuickPreview = 2
     PreviewCache = 4
@@ -1874,7 +1874,7 @@ class RenderPrimitiveList:
 
 
 class RenderPrimitiveType:
-    #None = 0
+    None_ = 0
     Mesh = 1
     Sphere = 2
     Plane = 3
@@ -2235,14 +2235,14 @@ class SceneServerDataUsage:
 
 
 class ShowContentChooserFlags:
-    #None = 0
+    None_ = 0
     HideNewTab = 1
     HideExistingTab = 2
     MultipleSelection = 4
 
 
 class ShowContentChooserResults:
-    #None = 0
+    None_ = 0
     New = 1
     Copy = 2
     Instance = 3
@@ -2364,7 +2364,7 @@ class Skylight(DocumentOrFreeFloatingBase):
 
 
 class StandardChannels:
-    #None = 0
+    None_ = 0
     Red = 1
     Green = 2
     Blue = 4
@@ -2396,7 +2396,7 @@ class StandardChannels:
 
 
 class StandardChildSlots:
-    #None = 0
+    None_ = 0
     Diffuse = 100
     PbrBaseColor = 100
     Transparency = 101
@@ -2674,7 +2674,7 @@ class TextureMapping(ModelComponent):
 
 
 class TextureMappingType:
-    #None = 0
+    None_ = 0
     SurfaceParameters = 1
     PlaneMapping = 2
     CylinderMapping = 3
@@ -2781,7 +2781,7 @@ class UndoRedo:
 
 
 class Usage:
-    #None = 0
+    None_ = 0
     Background = 1
     ReflectionAndRefraction = 2
     Skylighting = 4

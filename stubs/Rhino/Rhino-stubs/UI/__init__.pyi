@@ -237,13 +237,13 @@ class LocalizeStringPair:
 
 
 class ModifierKey:
-    #None = 0
+    None_ = 0
     Control = 1
     Shift = 2
 
 
 class MouseButton:
-    #None = 0
+    None_ = 0
     Left = 1
     Right = 2
     Middle = 4
@@ -421,7 +421,7 @@ class OpenFileDialog:
 
 
 class OptionPageButtons:
-    #None = 0
+    None_ = 0
     DefaultButton = 1
     ApplyButton = 2
 
@@ -585,7 +585,7 @@ class RhinoGetPlotWidthArgs:
     ByParent = 2
     HairLine = 4
     Default = 8
-    #None = 32
+    None_ = 32
     All = 268435455
 
 
@@ -603,7 +603,7 @@ class RhinoPlotWidthType:
     ByParent = 1
     Hairline = 2
     Default = 3
-    #None = 4
+    None_ = 4
     Varies = 5
     Width = 6
 
@@ -613,7 +613,7 @@ class RhinoPlotWidthValue:
     Varies = -20
     ByParent = -15
     ByLayer = -10
-    #None = -1
+    None_ = -1
 
 
 class RuiUpdateUi:
@@ -692,7 +692,7 @@ class ShowMessageDefaultButton:
 
 
 class ShowMessageIcon:
-    #None = 0
+    None_ = 0
     Error = 16
     Hand = 16
     Stop = 16
@@ -710,7 +710,7 @@ class ShowMessageMode:
 
 
 class ShowMessageOptions:
-    #None = 0
+    None_ = 0
     SetForeground = 65536
     DefaultDesktopOnly = 131072
     TopMost = 262144
@@ -720,7 +720,7 @@ class ShowMessageOptions:
 
 
 class ShowMessageResult:
-    #None = 0
+    None_ = 0
     OK = 1
     Cancel = 2
     Abort = 3

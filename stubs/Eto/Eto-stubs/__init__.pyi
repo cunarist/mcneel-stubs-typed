@@ -285,7 +285,7 @@ class PlatformExtensionAttribute:
 
 
 class PlatformFeatures:
-    #None = 0
+    None_ = 0
     CustomCellSupportsControlView = 1
     DrawableWithTransparentContent = 2
     TabIndexWithCustomContainers = 4

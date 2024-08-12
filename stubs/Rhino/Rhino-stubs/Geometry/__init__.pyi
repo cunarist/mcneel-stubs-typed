@@ -1057,7 +1057,7 @@ class BrepRegionFaceSide(CommonObject):
 
 
 class BrepSolidOrientation:
-    #None = 0
+    None_ = 0
     Outward = 1
     Unknown = 2
     Inward = -1
@@ -1300,7 +1300,7 @@ class ComponentStatus:
 
 class ConcaveCornerOption:
     Unset = 0
-    #None = 1
+    None_ = 1
     AtMeshCorner = 2
 
 
@@ -1308,7 +1308,7 @@ class Concavity:
     Tangent = 0
     Convex = 1
     Concave = 2
-    #None = -1
+    None_ = -1
 
 
 class Cone:
@@ -1352,7 +1352,7 @@ class ConicSectionType:
 
 
 class Continuity:
-    #None = 0
+    None_ = 0
     C0_continuous = 1
     C1_continuous = 2
     C2_continuous = 3
@@ -1407,7 +1407,7 @@ class ControlPoint:
 
 class ConvexCornerOption:
     Unset = 0
-    #None = 1
+    None_ = 1
     AtMeshCorner = 2
 
 
@@ -1785,7 +1785,7 @@ class CurveBooleanRegions:
 
 
 class CurveEnd:
-    #None = 0
+    None_ = 0
     Start = 1
     End = 2
     Both = 3
@@ -1813,7 +1813,7 @@ class CurveKnotStyle:
 
 
 class CurveOffsetCornerStyle:
-    #None = 0
+    None_ = 0
     Sharp = 1
     Round = 2
     Smooth = 3
@@ -1821,7 +1821,7 @@ class CurveOffsetCornerStyle:
 
 
 class CurveOffsetEndStyle:
-    #None = 0
+    None_ = 0
     Flat = 1
     Round = 2
 
@@ -1838,7 +1838,7 @@ class CurveProxy(Curve):
 
 
 class CurveSimplifyOptions:
-    #None = 0
+    None_ = 0
     SplitAtFullyMultipleKnots = 1
     RebuildLines = 2
     RebuildArcs = 4
@@ -2152,7 +2152,7 @@ class DistancingMode:
 
 
 class EdgeAdjacency:
-    #None = 0
+    None_ = 0
     Naked = 1
     Interior = 2
     NonManifold = 3
@@ -2189,14 +2189,14 @@ class Ellipse:
 
 
 class ExtraordinaryVertexProcessOption:
-    #None = 0
+    None_ = 0
     LocalG1 = 1
     LocalG2 = 2
     LocalG1x = 3
 
 
 class ExtrudeCornerType:
-    #None = 0
+    None_ = 0
     Sharp = 1
     Round = 2
     Smooth = 3
@@ -2520,7 +2520,7 @@ class InstanceReferenceGeometry(GeometryBase):
 
 class InteriorCreaseOption:
     Unset = 0
-    #None = 1
+    None_ = 1
     AtMeshDoubleEdge = 2
 
 
@@ -2628,7 +2628,7 @@ class InvalidDimensionStyleIdException:
 
 
 class IsoStatus:
-    #None = 0
+    None_ = 0
     X = 1
     Y = 2
     West = 3
@@ -2872,7 +2872,7 @@ class Light(GeometryBase):
 
 
 class LightStyle:
-    #None = 0
+    None_ = 0
     CameraDirectional = 4
     CameraPoint = 5
     CameraSpot = 6
@@ -3695,7 +3695,7 @@ class MeshingParameters:
 
 
 class MeshingParameterStyle:
-    #None = 0
+    None_ = 0
     Fast = 1
     Quality = 2
     Custom = 9
@@ -3748,7 +3748,7 @@ class MeshPart:
 
 
 class MeshPipeCapStyle:
-    #None = 0
+    None_ = 0
     Flat = 1
     Box = 2
     Dome = 3
@@ -4047,7 +4047,7 @@ class ParticleSystem:
 
 
 class PipeCapMode:
-    #None = 0
+    None_ = 0
     Flat = 1
     Round = 2
 
@@ -4743,7 +4743,7 @@ class PolylineCurve(Curve):
 
 
 class PreserveEnd:
-    #None = 0
+    None_ = 0
     Position = 1
     Tangency = 2
     Curvature = 3
@@ -4786,7 +4786,7 @@ class QuadRemeshParameters:
 
 
 class QuadRemeshSymmetryAxis:
-    #None = 0
+    None_ = 0
     X = 1
     Y = 2
     Z = 4
@@ -5235,7 +5235,7 @@ class Silhouette:
 
 
 class SilhouetteType:
-    #None = 0
+    None_ = 0
     Projecting = 1
     TangentProjects = 2
     Tangent = 4
@@ -5595,7 +5595,7 @@ class SubDEdgeTag:
 
 class SubDEndCapStyle:
     Unset = 0
-    #None = 1
+    None_ = 1
     Triangles = 2
     Quads = 3
     Ngon = 4
@@ -5888,7 +5888,7 @@ class SweepFrame:
 
 
 class SweepMiter:
-    #None = 0
+    None_ = 0
     Trimmed = 1
     Untrimmed = 2
 
@@ -5956,7 +5956,7 @@ class SweepOneRail:
 
 
 class SweepRebuild:
-    #None = 0
+    None_ = 0
     Rebuild = 1
     Refit = 2
 
@@ -6052,7 +6052,7 @@ class TextEntity(AnnotationBase):
 
 
 class TextJustification:
-    #None = 0
+    None_ = 0
     Left = 1
     Center = 2
     Right = 4
@@ -6071,7 +6071,7 @@ class TextJustification:
 
 
 class TextRunType:
-    #None = 0
+    None_ = 0
     Text = 1
     Newline = 2
     Paragraph = 3
@@ -6083,7 +6083,7 @@ class TextRunType:
 
 class TextureCoordinateOption:
     Unset = 0
-    #None = 1
+    None_ = 1
     Automatic = 2
     Packed = 3
     CopyMapping = 4

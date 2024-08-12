@@ -21,14 +21,14 @@ class GH_DirtyCaster:
 
 
 class GH_ExpandMode:
-    #None = 0
+    None_ = 0
     SimpleReplace = 1
     SimpleAppend = 2
     Recursive = 3
 
 
 class GH_GraftMode:
-    #None = 0
+    None_ = 0
     GraftNullItems = 1
     GraftEmptyLists = 2
     GraftAll = 3
@@ -353,7 +353,7 @@ class GH_RuleGroup:
 
 
 class GH_RuleKind:
-    #None = 0
+    None_ = 0
     AnyNumber = 1
     AnyNumbers = 2
     Number = 3
@@ -402,7 +402,7 @@ class GH_RuleSequence:
 
 
 class GH_SimplificationMode:
-    #None = 0
+    None_ = 0
     CollapseLeadingOverlaps = 1
     CollapseAllOverlaps = 2
 

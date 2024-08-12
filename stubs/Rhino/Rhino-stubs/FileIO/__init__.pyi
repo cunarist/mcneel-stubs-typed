@@ -799,7 +799,7 @@ class File3dmWriteOptions:
 
 
 class FileFindPreference:
-    #None = 0
+    None_ = 0
     FullPath = 1
     RelativePath = 2
     BasePath = 3
@@ -1300,13 +1300,13 @@ class NameHash:
 
 
 class NGons:
-    #None = 0
+    None_ = 0
     Preserve = 1
     Create = 2
 
 
 class ObjectTypeFilter:
-    #None = 0
+    None_ = 0
     Point = 1
     Pointset = 2
     Curve = 4
@@ -1360,7 +1360,7 @@ class SubDMeshing:
 
 
 class TableTypeFilter:
-    #None = 0
+    None_ = 0
     Properties = 1
     Settings = 2
     Bitmap = 4

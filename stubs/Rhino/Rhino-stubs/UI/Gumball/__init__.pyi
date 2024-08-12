@@ -170,7 +170,7 @@ class GumballFrame:
 
 
 class GumballMode:
-    #None = 0
+    None_ = 0
     Menu = 1
     TranslateFree = 2
     TranslateX = 3

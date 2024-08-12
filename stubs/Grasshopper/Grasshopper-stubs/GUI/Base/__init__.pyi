@@ -183,7 +183,7 @@ class GH_ColourPickerEventArgs:
 
 
 class GH_ColourSpace:
-    #None = 0
+    None_ = 0
     RGB = 1
     HSV = 2
 
@@ -394,7 +394,7 @@ class GH_DigitScrollerEventArgs:
 
 
 class GH_MouseAction:
-    #None = 0
+    None_ = 0
     SignDown = 1
     DigitDown = 2
     DigitDrag = 3
@@ -643,21 +643,21 @@ class GH_SliderEventArgs:
 
 
 class GH_SliderGripDisplay:
-    #None = 0
+    None_ = 0
     Numeric = 1
     Shape = 2
     ShapeAndText = 3
 
 
 class GH_SliderRailDisplay:
-    #None = 0
+    None_ = 0
     Simple = 1
     Etched = 2
     Filled = 3
 
 
 class GH_SliderTickDisplay:
-    #None = 0
+    None_ = 0
     Simple = 1
     Etched = 2
 

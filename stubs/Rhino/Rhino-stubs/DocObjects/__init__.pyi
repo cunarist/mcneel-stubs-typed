@@ -8,7 +8,7 @@ __all__ = ['Custom', 'SnapShots', 'Tables']
 
 
 class ActiveSpace:
-    #None = 0
+    None_ = 0
     ModelSpace = 1
     PageSpace = 2
 
@@ -201,7 +201,7 @@ class ArrowFit:
 
 
 class ArrowType:
-    #None = 0
+    None_ = 0
     UserBlock = 1
     SolidTriangle = 2
     Dot = 3
@@ -246,7 +246,7 @@ class CaptureTypes:
     Flythrough = 2
     DaySunStudy = 3
     SeasonalSunStudy = 4
-    #None = 5
+    None_ = 5
 
 
 class CentermarkObject(DimensionObject):
@@ -255,7 +255,7 @@ class CentermarkObject(DimensionObject):
 
 
 class CenterMarkStyle:
-    #None = 0
+    None_ = 0
     Mark = 1
     MarkAndLines = 2
 
@@ -1260,7 +1260,7 @@ class InstanceDefinitionArchiveFileStatus:
 
 
 class InstanceDefinitionLayerStyle:
-    #None = 0
+    None_ = 0
     Active = 1
     Reference = 2
 
@@ -1427,7 +1427,7 @@ class LeaderContentAngleStyle:
 
 
 class LeaderCurveStyle:
-    #None = 0
+    None_ = 0
     Polyline = 1
     Spline = 2
 
@@ -1988,7 +1988,7 @@ class ObjectColorSource:
 
 
 class ObjectDecoration:
-    #None = 0
+    None_ = 0
     StartArrowhead = 8
     EndArrowhead = 16
     BothArrowhead = 24
@@ -2103,7 +2103,7 @@ class ObjectPlotWeightSource:
 
 
 class ObjectType:
-    #None = 0
+    None_ = 0
     Point = 1
     PointSet = 2
     Curve = 4
@@ -2611,7 +2611,7 @@ class RhinoTransformObjectsEventArgs:
 
 
 class ScaleFormat:
-    #None = 0
+    None_ = 0
     PageLengthToOne = 1
     OneToModelLength = 2
     OneInchToModelLengthFeet = 3
@@ -2627,7 +2627,7 @@ class SelectionMethod:
 
 
 class StackDisplayFormat:
-    #None = 0
+    None_ = 0
     StackHorizontal = 1
     StackDiagonal = 2
 
@@ -2738,14 +2738,14 @@ class Texture(CommonObject):
 
 
 class TextureCombineMode:
-    #None = 0
+    None_ = 0
     Modulate = 1
     Decal = 2
     Blend = 3
 
 
 class TextureType:
-    #None = 0
+    None_ = 0
     Diffuse = 1
     Bitmap = 1
     PBR_BaseColor = 1
@@ -2791,7 +2791,7 @@ class TextVerticalAlignment:
 
 
 class ToleranceDisplayFormat:
-    #None = 0
+    None_ = 0
     Symmetrical = 1
     Deviation = 2
     Limits = 3
@@ -2840,7 +2840,7 @@ class ViewInfo:
 
 
 class ViewInfoFocalBlurModes:
-    #None = 0
+    None_ = 0
     Automatic = 1
     Manual = 2
 
@@ -3057,7 +3057,7 @@ class Worksession:
 
 
 class ZeroSuppression:
-    #None = 0
+    None_ = 0
     SuppressLeading = 1
     SuppressTrailing = 2
     SuppressLeadingAndTrailing = 3

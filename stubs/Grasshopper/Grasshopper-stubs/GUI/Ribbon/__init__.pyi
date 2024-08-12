@@ -351,7 +351,7 @@ class GH_RibbonTab(GH_RibbonContentBase):
 
 
 class GH_TabDisplay:
-    #None = 0
+    None_ = 0
     FullName = 1
     ShortName = 2
     Symbol = 3

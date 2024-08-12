@@ -3,7 +3,7 @@ from typing import Tuple, Set, Iterable, List, overload
 
 
 class BakingFunctions:
-    #None = 0
+    None_ = 0
     Decals = 1
     ProceduralTextures = 2
     CustomObjectMappings = 4
@@ -85,7 +85,7 @@ class Event:
 
 
 class FrameBufferFillMode:
-    #None = 0
+    None_ = 0
     DefaultColor = 1
     SolidColor = 2
     Gradient2Color = 3

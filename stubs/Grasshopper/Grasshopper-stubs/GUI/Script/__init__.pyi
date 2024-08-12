@@ -155,7 +155,7 @@ class GH_ScriptEditorButton:
 
 
 class GH_ScriptLanguage:
-    #None = 0
+    None_ = 0
     VB = 1
     CS = 2
 

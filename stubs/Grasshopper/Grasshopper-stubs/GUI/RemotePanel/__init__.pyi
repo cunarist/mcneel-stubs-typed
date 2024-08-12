@@ -195,7 +195,7 @@ class RcpLayoutEventArgs:
 
 
 class RcpLayoutKind:
-    #None = 0
+    None_ = 0
     Generic = 1
     ItemAdded = 2
     ItemRemoved = 3

@@ -197,13 +197,13 @@ class Line3:
 
 
 class LineCircleX:
-    #None = 0
+    None_ = 0
     Tangent = 1
     Secant = 2
 
 
 class LineX:
-    #None = 0
+    None_ = 0
     Parallel = 1
     Coincident = 2
     Point = 3

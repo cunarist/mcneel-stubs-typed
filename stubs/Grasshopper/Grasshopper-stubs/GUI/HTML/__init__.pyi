@@ -183,7 +183,7 @@ class GH_HtmlHelpPopup:
 
 
 class GH_HtmlListType:
-    #None = 0
+    None_ = 0
     Unordered = 1
     Ordered = 2
 
@@ -263,7 +263,7 @@ class GH_HtmlTableRow:
 
 
 class GH_HtmlTextProperties:
-    #None = 0
+    None_ = 0
     Strong = 1
     Emphasis = 2
     SuperScript = 4

@@ -1172,7 +1172,7 @@ class ObjectTable:
 
 
 class RestoreLayerProperties:
-    #None = 0
+    None_ = 0
     Current = 1
     Visible = 2
     Locked = 4

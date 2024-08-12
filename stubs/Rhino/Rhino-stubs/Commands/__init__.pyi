@@ -124,7 +124,7 @@ class SelCommand(Command):
 
 
 class Style:
-    #None = 0
+    None_ = 0
     Hidden = 1
     ScriptRunner = 2
     Transparent = 4
