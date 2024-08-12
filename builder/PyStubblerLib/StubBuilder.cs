@@ -398,6 +398,10 @@ namespace PyStubblerLib
         {
             if (s == "from")
                 return "from_";
+            if (s == "class")
+                return "class_";
+            if (s == "in")
+                return "in_";
             return s;
         }
 
