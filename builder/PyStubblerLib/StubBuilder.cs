@@ -408,6 +408,8 @@ namespace PyStubblerLib
                 return "class_";
             else if (s == "in")
                 return "in_";
+            else if (s == "or")
+                return "or_";
             return s;
         }
 
