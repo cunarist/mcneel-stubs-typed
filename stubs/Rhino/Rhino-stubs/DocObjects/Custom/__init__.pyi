@@ -1,4 +1,4 @@
-from typing import Tuple, Iterable, overload
+from typing import Tuple, Iterable, Iterator, overload
 from enum import Enum
 
 
@@ -1344,6 +1344,7 @@ class UserData:
 
 
 class UserDataList:
+    def __iter__(self) -> Iterator[UserData]: ...
     def Add(self, userdata: UserData) -> bool: ...
     def Contains(self, userdataId: Guid) -> bool: ...
     def Equals(self, obj: Object) -> bool: ...

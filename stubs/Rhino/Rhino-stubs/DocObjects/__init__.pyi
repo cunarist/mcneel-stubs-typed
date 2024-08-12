@@ -1,4 +1,4 @@
-from typing import Tuple, Iterable, overload
+from typing import Tuple, Iterable, Iterator, overload
 from enum import Enum
 
 import Custom
@@ -5684,6 +5684,7 @@ class MaterialRefCreateParams:
 
 
 class MaterialRefs:
+    def __iter__(self) -> Iterator[KeyValuePair]: ...
     @overload
     def Add(self, item: KeyValuePair) -> None: ...
     @overload

@@ -1,4 +1,4 @@
-from typing import Tuple, Iterable, overload
+from typing import Tuple, Iterable, Iterator, overload
 from enum import Enum
 
 
@@ -856,6 +856,7 @@ class GH_CodeBlock:
 
 class GH_CodeBlocks:
     def __init__(self): ...
+    def __iter__(self) -> Iterator[GH_CodeBlock]: ...
     @overload
     def Add(self, item: GH_CodeBlock) -> None: ...
     @overload

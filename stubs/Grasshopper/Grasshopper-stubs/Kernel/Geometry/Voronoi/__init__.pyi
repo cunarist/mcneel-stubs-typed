@@ -1,4 +1,4 @@
-from typing import Tuple, Iterable, overload
+from typing import Tuple, Iterable, Iterator, overload
 from enum import Enum
 
 
@@ -68,6 +68,7 @@ class Cell3Facet:
     def __init__(self, pts: Iterable[Point3d]): ...
     @overload
     def __init__(self, other: Cell3Facet): ...
+    def __iter__(self) -> Iterator[Point3d]: ...
     @overload
     def Add(self, item: Point3d) -> None: ...
     @overload

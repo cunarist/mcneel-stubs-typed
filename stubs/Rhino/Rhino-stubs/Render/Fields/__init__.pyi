@@ -1,4 +1,4 @@
-from typing import Tuple, Iterable, overload
+from typing import Tuple, Iterable, Iterator, overload
 from enum import Enum
 
 
@@ -258,6 +258,7 @@ from ...Geometry import Point2d
 from ...Geometry import Point3d
 from ...Geometry import Point4d
 class FieldDictionary:
+    def __iter__(self) -> Iterator[Any]: ...
     @overload
     def Add(self, key: str, value: Vector3d) -> Vector3dField: ...
     @overload

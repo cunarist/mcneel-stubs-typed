@@ -1,4 +1,4 @@
-from typing import Tuple, Iterable, overload
+from typing import Tuple, Iterable, Iterator, overload
 from enum import Enum
 
 import Alignment
@@ -69279,6 +69279,7 @@ class GH_SourceCodeLine:
 
 class GH_SourceCodeLines:
     def __init__(self): ...
+    def __iter__(self) -> Iterator[GH_SourceCodeLine]: ...
     @overload
     def Add(self, item: GH_SourceCodeLine) -> None: ...
     @overload

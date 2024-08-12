@@ -1,4 +1,4 @@
-from typing import Tuple, Iterable, overload
+from typing import Tuple, Iterable, Iterator, overload
 from enum import Enum
 
 
@@ -680,7 +680,7 @@ class IGH_Structure:
 
 
 class IGH_StructureEnumerator:
-    pass
+    def __iter__(self) -> Iterator[IGH_Goo]: ...
 
 
 class PathLengthComparer:

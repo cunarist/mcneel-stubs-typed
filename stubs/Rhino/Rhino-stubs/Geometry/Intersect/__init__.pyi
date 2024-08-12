@@ -1,4 +1,4 @@
-from typing import Tuple, Iterable, overload
+from typing import Tuple, Iterable, Iterator, overload
 from enum import Enum
 
 
@@ -18,6 +18,7 @@ class CircleCircleIntersection(Enum):
 
 
 class CurveIntersections:
+    def __iter__(self) -> Iterator[IntersectionEvent]: ...
     def CopyTo(self, array: Iterable[IntersectionEvent], arrayIndex: int) -> None: ...
     def Dispose(self) -> None: ...
     def Equals(self, obj: Object) -> bool: ...

@@ -2,6 +2,8 @@
 using System.Reflection;
 using System.Collections.Generic;
 using System.IO;
+using System.Collections;
+using System.Linq;
 
 namespace PyStubblerLib
 {
@@ -148,7 +150,7 @@ namespace PyStubblerLib
             var sb = new System.Text.StringBuilder();
 
             string[] allChildNamespaces = GetChildNamespaces(stubTypes[0].Namespace, allNamespaces);
-            sb.AppendLine("from typing import Tuple, Iterable, overload");
+            sb.AppendLine("from typing import Tuple, Iterable, Iterator, overload");
             sb.AppendLine("from enum import Enum");
             sb.Append("\n");
             if( allChildNamespaces.Length>0 )
@@ -298,6 +300,29 @@ namespace PyStubblerLib
                     else
                         count = 1;
                     methodNames[method.Name] = count;
+                }
+
+                if (typeof(IEnumerable).IsAssignableFrom(stubType))
+                {
+                    Type ienumerableType = stubType.GetInterfaces()
+                        .Where(t => t.IsGenericType && t.GetGenericTypeDefinition() == typeof(IEnumerable<>))
+                        .FirstOrDefault();
+
+                    string pythonType;
+
+                    if (ienumerableType != null)
+                    {
+                        // If the type implements IEnumerable<T>, extract the generic argument
+                        Type elementType = ienumerableType.GetGenericArguments()[0];
+                        pythonType = ToPythonType(elementType);
+                    }
+                    else
+                    {
+                        // If the type doesn't implement IEnumerable, fallback
+                        pythonType = "Any";
+                    }
+
+                    sb.AppendLine($"    def __iter__(self) -> Iterator[{pythonType}]: ...");
                 }
 
                 foreach (var method in methods)
