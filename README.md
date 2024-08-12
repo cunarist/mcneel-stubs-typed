@@ -1,4 +1,4 @@
-> This is a fork of the original `mcneel/pythonstubs` repository, intended for use by Edit Collective.
+> This is a fork of the original `mcneel/pythonstubs` repository, intended for use by Edit Collective. Modifications are currently focused on improving type hint support.
 
 # McNeel python stubs
 
