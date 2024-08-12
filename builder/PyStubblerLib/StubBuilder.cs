@@ -574,7 +574,7 @@ namespace PyStubblerLib
                 enumerableType = enumerableType.Substring(0, enumerableType.IndexOf(','));
                 var pieces = enumerableType.Split('.');
                 string rc = ToPythonType(pieces[pieces.Length - 1]);
-                return $"Iterable{rc}]";
+                return $"Iterable[{rc}]";
             }
             return ToPythonType(t.Name);
         }
