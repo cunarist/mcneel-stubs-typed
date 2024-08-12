@@ -394,6 +394,8 @@ namespace PyStubblerLib
                     {
                         if (methodNames[method.Name] > 1)
                             sb.AppendLine("    @overload");
+                        if (method.IsStatic)
+                            sb.AppendLine("    @staticmethod");
                         sb.Append($"    def {method.Name}(");
                     }
 
