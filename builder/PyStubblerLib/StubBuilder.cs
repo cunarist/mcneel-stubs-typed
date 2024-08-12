@@ -306,8 +306,6 @@ namespace PyStubblerLib
                     if (method.GetCustomAttribute(typeof(System.ObsoleteAttribute)) != null)
                         continue;
                         
-                    if (method.DeclaringType != stubType)
-                        continue;
                     var parameters = method.GetParameters();
                     int outParamCount = 0;
                     int refParamCount = 0;
