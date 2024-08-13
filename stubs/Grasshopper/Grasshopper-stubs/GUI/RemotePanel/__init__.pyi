@@ -22,6 +22,7 @@ class EditModeChangedEventHandler:
     def ToString(self) -> str: ...
 
 
+from ..Canvas import GH_ObjectResponse
 class IRcpItem:
     @property
     def Bounds(self) -> Rectangle: ...
@@ -59,6 +60,7 @@ class LayoutChangedEventHandler:
     def ToString(self) -> str: ...
 
 
+from ..Canvas import GH_ObjectResponse
 class RcpDeadItem(RcpItem):
     def __init__(self, id: Guid): ...
     def Equals(self, obj: Object) -> bool: ...
@@ -84,6 +86,7 @@ class RcpDeadItem(RcpItem):
 
 
 
+from ..Canvas import GH_ObjectResponse
 class RcpGroup(RcpItem):
     def __init__(self): ...
     @overload
@@ -164,6 +167,7 @@ class RcpIndex:
     def ToString(self) -> str: ...
 
 
+from ..Canvas import GH_ObjectResponse
 class RcpItem:
     def Equals(self, obj: Object) -> bool: ...
     @property
@@ -188,6 +192,7 @@ class RcpItem:
     def ToString(self) -> str: ...
 
 
+from ..Canvas import GH_ObjectResponse
 class RcpLabelItem(RcpItem):
     def __init__(self, text: str): ...
     def Equals(self, obj: Object) -> bool: ...
@@ -831,6 +836,7 @@ class RcpLayoutKind(Enum):
     GroupMoved = 8
 
 
+from ..Canvas import GH_ObjectResponse
 class RcpPlaceHolder(RcpItem):
     def __init__(self, bounds: Rectangle): ...
     def Equals(self, obj: Object) -> bool: ...
@@ -854,6 +860,7 @@ class RcpPlaceHolder(RcpItem):
     def ToString(self) -> str: ...
 
 
+from ..Canvas import GH_ObjectResponse
 class RcpSeparatorItem(RcpItem):
     def __init__(self): ...
     def Equals(self, obj: Object) -> bool: ...

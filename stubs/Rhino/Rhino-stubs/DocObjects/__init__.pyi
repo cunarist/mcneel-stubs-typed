@@ -27,6 +27,9 @@ class AngleDisplayMode(Enum):
     Grads = 2
 
 
+from ..Geometry import AngularDimension
+from ..Geometry import AnnotationBase
+from ..Geometry import GeometryBase
 from ..Geometry import ComponentIndex
 from .Custom import CustomObjectGrips
 from ..Display import VisualAnalysisMode
@@ -35,12 +38,15 @@ from ..Geometry import MeshType
 from ..Geometry import MeshingParameters
 from ..UI.Gumball import GumballFrame
 from ..Display import DisplayPipelineAttributes
+from ..Render import RenderPrimitiveList
 from ..Geometry import BoundingBox
 from ..Geometry import Transform
 from ..Render import TextureMapping
 from ..Render import RenderMaterial
 from ..Display import RhinoViewport
 from ..Geometry import ComponentStatus
+from .Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class AngularDimensionObject(DimensionObject):
     def ClearId(self) -> None: ...
@@ -421,6 +427,8 @@ class AnimationProperties:
     def ToString(self) -> str: ...
 
 
+from ..Geometry import AnnotationBase
+from ..Geometry import GeometryBase
 from ..Geometry import ComponentIndex
 from .Custom import CustomObjectGrips
 from ..Display import VisualAnalysisMode
@@ -429,12 +437,15 @@ from ..Geometry import MeshType
 from ..Geometry import MeshingParameters
 from ..UI.Gumball import GumballFrame
 from ..Display import DisplayPipelineAttributes
+from ..Render import RenderPrimitiveList
 from ..Geometry import BoundingBox
 from ..Geometry import Transform
 from ..Render import TextureMapping
 from ..Render import RenderMaterial
 from ..Display import RhinoViewport
 from ..Geometry import ComponentStatus
+from .Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class AnnotationObjectBase(RhinoObject):
     def ClearId(self) -> None: ...
@@ -679,6 +690,8 @@ class BasepointZero(Enum):
 
 
 from ..Geometry import ComponentStatus
+from .Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class BitmapEntry(ModelComponent):
     def ClearId(self) -> None: ...
@@ -763,6 +776,8 @@ class BRDFs(Enum):
     Ward = 1
 
 
+from ..Geometry import Brep
+from ..Geometry import GeometryBase
 from ..Geometry import ComponentIndex
 from .Custom import CustomObjectGrips
 from ..Display import VisualAnalysisMode
@@ -771,12 +786,15 @@ from ..Geometry import MeshType
 from ..Geometry import MeshingParameters
 from ..UI.Gumball import GumballFrame
 from ..Display import DisplayPipelineAttributes
+from ..Render import RenderPrimitiveList
 from ..Geometry import BoundingBox
 from ..Geometry import Transform
 from ..Render import TextureMapping
 from ..Render import RenderMaterial
 from ..Display import RhinoViewport
 from ..Geometry import ComponentStatus
+from .Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class BrepObject(RhinoObject):
     def ClearId(self) -> None: ...
@@ -1001,6 +1019,9 @@ class CaptureTypes(Enum):
     None_ = 5
 
 
+from ..Geometry import Centermark
+from ..Geometry import AnnotationBase
+from ..Geometry import GeometryBase
 from ..Geometry import ComponentIndex
 from .Custom import CustomObjectGrips
 from ..Display import VisualAnalysisMode
@@ -1009,12 +1030,15 @@ from ..Geometry import MeshType
 from ..Geometry import MeshingParameters
 from ..UI.Gumball import GumballFrame
 from ..Display import DisplayPipelineAttributes
+from ..Render import RenderPrimitiveList
 from ..Geometry import BoundingBox
 from ..Geometry import Transform
 from ..Render import TextureMapping
 from ..Render import RenderMaterial
 from ..Display import RhinoViewport
 from ..Geometry import ComponentStatus
+from .Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class CentermarkObject(DimensionObject):
     def ClearId(self) -> None: ...
@@ -1243,7 +1267,9 @@ class CenterMarkStyle(Enum):
     MarkAndLines = 2
 
 
+from ..Geometry import ClippingPlaneSurface
 from ..Display import RhinoViewport
+from ..Geometry import GeometryBase
 from ..Geometry import ComponentIndex
 from .Custom import CustomObjectGrips
 from ..Display import VisualAnalysisMode
@@ -1252,11 +1278,14 @@ from ..Geometry import MeshType
 from ..Geometry import MeshingParameters
 from ..UI.Gumball import GumballFrame
 from ..Display import DisplayPipelineAttributes
+from ..Render import RenderPrimitiveList
 from ..Geometry import BoundingBox
 from ..Geometry import Transform
 from ..Render import TextureMapping
 from ..Render import RenderMaterial
 from ..Geometry import ComponentStatus
+from .Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class ClippingPlaneObject(RhinoObject):
     def AddClipViewport(self, viewport: RhinoViewport, commit: bool) -> bool: ...
@@ -1549,6 +1578,8 @@ class CoordinateSystem(Enum):
     Screen = 3
 
 
+from ..Geometry import Curve
+from ..Geometry import GeometryBase
 from ..Geometry import ComponentIndex
 from .Custom import CustomObjectGrips
 from ..Display import VisualAnalysisMode
@@ -1557,12 +1588,15 @@ from ..Geometry import MeshType
 from ..Geometry import MeshingParameters
 from ..UI.Gumball import GumballFrame
 from ..Display import DisplayPipelineAttributes
+from ..Render import RenderPrimitiveList
 from ..Geometry import BoundingBox
 from ..Geometry import Transform
 from ..Render import TextureMapping
 from ..Render import RenderMaterial
 from ..Display import RhinoViewport
 from ..Geometry import ComponentStatus
+from .Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class CurveObject(RhinoObject):
     def ClearId(self) -> None: ...
@@ -1803,6 +1837,10 @@ class Defaults:
     def ToString(self) -> str: ...
 
 
+from ..Geometry import DetailView
+from ..Display import RhinoViewport
+from ..Geometry import Transform
+from ..Geometry import GeometryBase
 from ..Geometry import ComponentIndex
 from .Custom import CustomObjectGrips
 from ..Display import VisualAnalysisMode
@@ -1811,12 +1849,13 @@ from ..Geometry import MeshType
 from ..Geometry import MeshingParameters
 from ..UI.Gumball import GumballFrame
 from ..Display import DisplayPipelineAttributes
+from ..Render import RenderPrimitiveList
 from ..Geometry import BoundingBox
-from ..Geometry import Transform
 from ..Render import TextureMapping
 from ..Render import RenderMaterial
-from ..Display import RhinoViewport
 from ..Geometry import ComponentStatus
+from .Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class DetailViewObject(RhinoObject):
     def ClearId(self) -> None: ...
@@ -2045,6 +2084,8 @@ class DetailViewObject(RhinoObject):
     def UnselectAllSubObjects(self) -> int: ...
 
 
+from ..Geometry import AnnotationBase
+from ..Geometry import GeometryBase
 from ..Geometry import ComponentIndex
 from .Custom import CustomObjectGrips
 from ..Display import VisualAnalysisMode
@@ -2053,12 +2094,15 @@ from ..Geometry import MeshType
 from ..Geometry import MeshingParameters
 from ..UI.Gumball import GumballFrame
 from ..Display import DisplayPipelineAttributes
+from ..Render import RenderPrimitiveList
 from ..Geometry import BoundingBox
 from ..Geometry import Transform
 from ..Render import TextureMapping
 from ..Render import RenderMaterial
 from ..Display import RhinoViewport
 from ..Geometry import ComponentStatus
+from .Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class DimensionObject(AnnotationObjectBase):
     def ClearId(self) -> None: ...
@@ -2280,6 +2324,8 @@ class DimensionObject(AnnotationObjectBase):
 
 
 from ..Geometry import ComponentStatus
+from .Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class DimensionStyle(ModelComponent):
     def __init__(self): ...
@@ -2748,6 +2794,8 @@ class DistanceDisplayMode(Enum):
 
 from ..Geometry import Point3d
 from ..Geometry import Vector3d
+from ..Geometry import Plane
+from ..Geometry import Transform
 class EarthAnchorPoint:
     def __init__(self): ...
     def Dispose(self) -> None: ...
@@ -2809,6 +2857,8 @@ class EarthAnchorPoint:
     def ToString(self) -> str: ...
 
 
+from ..Geometry import Extrusion
+from ..Geometry import GeometryBase
 from ..Geometry import ComponentIndex
 from .Custom import CustomObjectGrips
 from ..Display import VisualAnalysisMode
@@ -2817,12 +2867,15 @@ from ..Geometry import MeshType
 from ..Geometry import MeshingParameters
 from ..UI.Gumball import GumballFrame
 from ..Display import DisplayPipelineAttributes
+from ..Render import RenderPrimitiveList
 from ..Geometry import BoundingBox
 from ..Geometry import Transform
 from ..Render import TextureMapping
 from ..Render import RenderMaterial
 from ..Display import RhinoViewport
 from ..Geometry import ComponentStatus
+from .Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class ExtrusionObject(RhinoObject):
     def ClearId(self) -> None: ...
@@ -3287,6 +3340,7 @@ class FontWeight(Enum):
 from ..Geometry import Point3d
 from ..Geometry import Transform
 from ..Geometry import Vector3d
+from ..Geometry import GeometryBase
 from ..Geometry import ComponentIndex
 from .Custom import CustomObjectGrips
 from ..Display import VisualAnalysisMode
@@ -3295,11 +3349,14 @@ from ..Geometry import MeshType
 from ..Geometry import MeshingParameters
 from ..UI.Gumball import GumballFrame
 from ..Display import DisplayPipelineAttributes
+from ..Render import RenderPrimitiveList
 from ..Geometry import BoundingBox
 from ..Render import TextureMapping
 from ..Render import RenderMaterial
 from ..Display import RhinoViewport
 from ..Geometry import ComponentStatus
+from .Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class GripObject(RhinoObject):
     def ClearId(self) -> None: ...
@@ -3539,6 +3596,8 @@ class GripObject(RhinoObject):
 
 
 from ..Geometry import ComponentStatus
+from .Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class Group(ModelComponent):
     def ClearId(self) -> None: ...
@@ -3618,6 +3677,8 @@ class Group(ModelComponent):
     def ToString(self) -> str: ...
 
 
+from ..Geometry import Hatch
+from ..Geometry import GeometryBase
 from ..Geometry import ComponentIndex
 from .Custom import CustomObjectGrips
 from ..Display import VisualAnalysisMode
@@ -3626,12 +3687,15 @@ from ..Geometry import MeshType
 from ..Geometry import MeshingParameters
 from ..UI.Gumball import GumballFrame
 from ..Display import DisplayPipelineAttributes
+from ..Render import RenderPrimitiveList
 from ..Geometry import BoundingBox
 from ..Geometry import Transform
 from ..Render import TextureMapping
 from ..Render import RenderMaterial
 from ..Display import RhinoViewport
 from ..Geometry import ComponentStatus
+from .Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class HatchObject(RhinoObject):
     def ClearId(self) -> None: ...
@@ -3847,6 +3911,8 @@ class HatchObject(RhinoObject):
 
 
 from ..Geometry import ComponentStatus
+from .Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class HatchPattern(ModelComponent):
     def __init__(self): ...
@@ -3992,6 +4058,8 @@ class HistoryRecord:
 
 from ..Display import DefinedViewportProjection
 from ..Geometry import ComponentStatus
+from .Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 from ..Geometry import InstanceDefinitionGeometry
 class InstanceDefinition(InstanceDefinitionGeometry):
@@ -4147,6 +4215,9 @@ class InstanceDefinitionUpdateType(Enum):
     Linked = 3
 
 
+from ..Geometry import Transform
+from ..Geometry import Point3d
+from ..Geometry import GeometryBase
 from ..Geometry import ComponentIndex
 from .Custom import CustomObjectGrips
 from ..Display import VisualAnalysisMode
@@ -4155,12 +4226,14 @@ from ..Geometry import MeshType
 from ..Geometry import MeshingParameters
 from ..UI.Gumball import GumballFrame
 from ..Display import DisplayPipelineAttributes
+from ..Render import RenderPrimitiveList
 from ..Geometry import BoundingBox
-from ..Geometry import Transform
 from ..Render import TextureMapping
 from ..Render import RenderMaterial
 from ..Display import RhinoViewport
 from ..Geometry import ComponentStatus
+from .Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class InstanceObject(RhinoObject):
     def ClearId(self) -> None: ...
@@ -4383,6 +4456,8 @@ class InstanceObject(RhinoObject):
 
 from ..Geometry import ComponentStatus
 from ..Render import RenderMaterial
+from .Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class Layer(ModelComponent):
     def __init__(self): ...
@@ -4592,6 +4667,9 @@ class LeaderCurveStyle(Enum):
     Spline = 2
 
 
+from ..Geometry import Leader
+from ..Geometry import AnnotationBase
+from ..Geometry import GeometryBase
 from ..Geometry import ComponentIndex
 from .Custom import CustomObjectGrips
 from ..Display import VisualAnalysisMode
@@ -4600,12 +4678,15 @@ from ..Geometry import MeshType
 from ..Geometry import MeshingParameters
 from ..UI.Gumball import GumballFrame
 from ..Display import DisplayPipelineAttributes
+from ..Render import RenderPrimitiveList
 from ..Geometry import BoundingBox
 from ..Geometry import Transform
 from ..Render import TextureMapping
 from ..Render import RenderMaterial
 from ..Display import RhinoViewport
 from ..Geometry import ComponentStatus
+from .Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class LeaderObject(AnnotationObjectBase):
     def ClearId(self) -> None: ...
@@ -4846,6 +4927,8 @@ class LengthDisplayFormat(Enum):
     FeetDecimalInches = 3
 
 
+from ..Geometry import Light
+from ..Geometry import GeometryBase
 from ..Geometry import ComponentIndex
 from .Custom import CustomObjectGrips
 from ..Display import VisualAnalysisMode
@@ -4854,12 +4937,15 @@ from ..Geometry import MeshType
 from ..Geometry import MeshingParameters
 from ..UI.Gumball import GumballFrame
 from ..Display import DisplayPipelineAttributes
+from ..Render import RenderPrimitiveList
 from ..Geometry import BoundingBox
 from ..Geometry import Transform
 from ..Render import TextureMapping
 from ..Render import RenderMaterial
 from ..Display import RhinoViewport
 from ..Geometry import ComponentStatus
+from .Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class LightObject(RhinoObject):
     def ClearId(self) -> None: ...
@@ -5075,6 +5161,9 @@ class LightObject(RhinoObject):
     def UnselectAllSubObjects(self) -> int: ...
 
 
+from ..Geometry import LinearDimension
+from ..Geometry import AnnotationBase
+from ..Geometry import GeometryBase
 from ..Geometry import ComponentIndex
 from .Custom import CustomObjectGrips
 from ..Display import VisualAnalysisMode
@@ -5083,12 +5172,15 @@ from ..Geometry import MeshType
 from ..Geometry import MeshingParameters
 from ..UI.Gumball import GumballFrame
 from ..Display import DisplayPipelineAttributes
+from ..Render import RenderPrimitiveList
 from ..Geometry import BoundingBox
 from ..Geometry import Transform
 from ..Render import TextureMapping
 from ..Render import RenderMaterial
 from ..Display import RhinoViewport
 from ..Geometry import ComponentStatus
+from .Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class LinearDimensionObject(DimensionObject):
     def ClearId(self) -> None: ...
@@ -5312,6 +5404,8 @@ class LinearDimensionObject(DimensionObject):
 
 
 from ..Geometry import ComponentStatus
+from .Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class Linetype(ModelComponent):
     def __init__(self): ...
@@ -5423,7 +5517,10 @@ class MaskType(Enum):
     MaskColor = 1
 
 
+from ..Render import RenderMaterial
 from ..Geometry import ComponentStatus
+from .Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class Material(ModelComponent):
     @overload
@@ -5718,8 +5815,10 @@ class MaterialRefs:
     def TryGetValue(self, key: Guid) -> Tuple[bool, MaterialRef]: ...
 
 
+from ..Geometry import Mesh
 from ..FileIO import TextLog
 from ..Geometry import MeshCheckParameters
+from ..Geometry import GeometryBase
 from ..Geometry import ComponentIndex
 from .Custom import CustomObjectGrips
 from ..Display import VisualAnalysisMode
@@ -5727,12 +5826,15 @@ from ..Geometry import MeshType
 from ..Geometry import MeshingParameters
 from ..UI.Gumball import GumballFrame
 from ..Display import DisplayPipelineAttributes
+from ..Render import RenderPrimitiveList
 from ..Geometry import BoundingBox
 from ..Geometry import Transform
 from ..Render import TextureMapping
 from ..Render import RenderMaterial
 from ..Display import RhinoViewport
 from ..Geometry import ComponentStatus
+from .Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class MeshObject(RhinoObject):
     @staticmethod
@@ -5953,6 +6055,8 @@ class MeshObject(RhinoObject):
 
 
 from ..Geometry import ComponentStatus
+from .Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 from ..Runtime import CommonObject
 class ModelComponent(CommonObject):
@@ -6054,6 +6158,7 @@ class ModelComponentType(Enum):
     Mixed = 254
 
 
+from ..Geometry import GeometryBase
 from ..Geometry import ComponentIndex
 from .Custom import CustomObjectGrips
 from ..Display import VisualAnalysisMode
@@ -6062,12 +6167,15 @@ from ..Geometry import MeshType
 from ..Geometry import MeshingParameters
 from ..UI.Gumball import GumballFrame
 from ..Display import DisplayPipelineAttributes
+from ..Render import RenderPrimitiveList
 from ..Geometry import BoundingBox
 from ..Geometry import Transform
 from ..Render import TextureMapping
 from ..Render import RenderMaterial
 from ..Display import RhinoViewport
 from ..Geometry import ComponentStatus
+from .Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class MorphControlObject(RhinoObject):
     def ClearId(self) -> None: ...
@@ -6280,6 +6388,7 @@ class MorphControlObject(RhinoObject):
     def UnselectAllSubObjects(self) -> int: ...
 
 
+from ..Geometry import GeometryBase
 from ..Geometry import ComponentIndex
 from .Custom import CustomObjectGrips
 from ..Display import VisualAnalysisMode
@@ -6288,12 +6397,15 @@ from ..Geometry import MeshType
 from ..Geometry import MeshingParameters
 from ..UI.Gumball import GumballFrame
 from ..Display import DisplayPipelineAttributes
+from ..Render import RenderPrimitiveList
 from ..Geometry import BoundingBox
 from ..Geometry import Transform
 from ..Render import TextureMapping
 from ..Render import RenderMaterial
 from ..Display import RhinoViewport
 from ..Geometry import ComponentStatus
+from .Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class NamedViewWidgetObject(RhinoObject):
     def ClearId(self) -> None: ...
@@ -6512,6 +6624,9 @@ from ..Geometry import Transform
 from ..Display import DisplayModeDescription
 from ..Geometry import MeshingParameters
 from ..Render import RenderMaterial
+from ..Render import Decals
+from .Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 from ..Runtime import CommonObject
 class ObjectAttributes(CommonObject):
@@ -6850,6 +6965,25 @@ class ObjectType(Enum):
 
 from ..Geometry import ComponentIndex
 from ..Input.Custom import PickContext
+from ..Geometry import GeometryBase
+from ..Geometry import ClippingPlaneSurface
+from ..Geometry import Curve
+from ..Geometry import BrepEdge
+from ..Geometry import BrepFace
+from ..Geometry import BrepTrim
+from ..Geometry import Brep
+from ..Geometry import Surface
+from ..Geometry import TextDot
+from ..Geometry import Mesh
+from ..Geometry import SubD
+from ..Geometry import SubDFace
+from ..Geometry import Point
+from ..Geometry import PointCloud
+from ..Geometry import TextEntity
+from ..Geometry import Light
+from ..Geometry import Hatch
+from ..Geometry import Point3d
+from ..Display import RhinoView
 class ObjRef:
     @overload
     def __init__(self, other: ObjRef): ...
@@ -6904,6 +7038,9 @@ class ObjRef:
     def Trim(self) -> BrepTrim: ...
 
 
+from ..Geometry import OrdinateDimension
+from ..Geometry import AnnotationBase
+from ..Geometry import GeometryBase
 from ..Geometry import ComponentIndex
 from .Custom import CustomObjectGrips
 from ..Display import VisualAnalysisMode
@@ -6912,12 +7049,15 @@ from ..Geometry import MeshType
 from ..Geometry import MeshingParameters
 from ..UI.Gumball import GumballFrame
 from ..Display import DisplayPipelineAttributes
+from ..Render import RenderPrimitiveList
 from ..Geometry import BoundingBox
 from ..Geometry import Transform
 from ..Render import TextureMapping
 from ..Render import RenderMaterial
 from ..Display import RhinoViewport
 from ..Geometry import ComponentStatus
+from .Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class OrdinateDimensionObject(DimensionObject):
     def ClearId(self) -> None: ...
@@ -7242,6 +7382,8 @@ class PhysicallyBasedMaterial:
     def ToString(self) -> str: ...
 
 
+from ..Geometry import PointCloud
+from ..Geometry import GeometryBase
 from ..Geometry import ComponentIndex
 from .Custom import CustomObjectGrips
 from ..Display import VisualAnalysisMode
@@ -7250,12 +7392,15 @@ from ..Geometry import MeshType
 from ..Geometry import MeshingParameters
 from ..UI.Gumball import GumballFrame
 from ..Display import DisplayPipelineAttributes
+from ..Render import RenderPrimitiveList
 from ..Geometry import BoundingBox
 from ..Geometry import Transform
 from ..Render import TextureMapping
 from ..Render import RenderMaterial
 from ..Display import RhinoViewport
 from ..Geometry import ComponentStatus
+from .Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class PointCloudObject(RhinoObject):
     def ClearId(self) -> None: ...
@@ -7471,6 +7616,8 @@ class PointCloudObject(RhinoObject):
     def UnselectAllSubObjects(self) -> int: ...
 
 
+from ..Geometry import Point
+from ..Geometry import GeometryBase
 from ..Geometry import ComponentIndex
 from .Custom import CustomObjectGrips
 from ..Display import VisualAnalysisMode
@@ -7479,12 +7626,15 @@ from ..Geometry import MeshType
 from ..Geometry import MeshingParameters
 from ..UI.Gumball import GumballFrame
 from ..Display import DisplayPipelineAttributes
+from ..Render import RenderPrimitiveList
 from ..Geometry import BoundingBox
 from ..Geometry import Transform
 from ..Render import TextureMapping
 from ..Render import RenderMaterial
 from ..Display import RhinoViewport
 from ..Geometry import ComponentStatus
+from .Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class PointObject(RhinoObject):
     def ClearId(self) -> None: ...
@@ -7702,18 +7852,22 @@ class PointObject(RhinoObject):
 
 from ..Geometry import MeshType
 from ..Geometry import MeshingParameters
+from ..Geometry import GeometryBase
 from ..Geometry import ComponentIndex
 from .Custom import CustomObjectGrips
 from ..Display import VisualAnalysisMode
 from ..FileIO import TextLog
 from ..UI.Gumball import GumballFrame
 from ..Display import DisplayPipelineAttributes
+from ..Render import RenderPrimitiveList
 from ..Geometry import BoundingBox
 from ..Geometry import Transform
 from ..Render import TextureMapping
 from ..Render import RenderMaterial
 from ..Display import RhinoViewport
 from ..Geometry import ComponentStatus
+from .Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class ProxyObject(RhinoObject):
     def ClearId(self) -> None: ...
@@ -7926,6 +8080,9 @@ class ProxyObject(RhinoObject):
     def UnselectAllSubObjects(self) -> int: ...
 
 
+from ..Geometry import RadialDimension
+from ..Geometry import AnnotationBase
+from ..Geometry import GeometryBase
 from ..Geometry import ComponentIndex
 from .Custom import CustomObjectGrips
 from ..Display import VisualAnalysisMode
@@ -7934,12 +8091,15 @@ from ..Geometry import MeshType
 from ..Geometry import MeshingParameters
 from ..UI.Gumball import GumballFrame
 from ..Display import DisplayPipelineAttributes
+from ..Render import RenderPrimitiveList
 from ..Geometry import BoundingBox
 from ..Geometry import Transform
 from ..Render import TextureMapping
 from ..Render import RenderMaterial
 from ..Display import RhinoViewport
 from ..Geometry import ComponentStatus
+from .Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class RadialDimensionObject(DimensionObject):
     def ClearId(self) -> None: ...
@@ -8283,9 +8443,11 @@ class RhinoModifyObjectAttributesEventArgs:
 
 
 from ..Geometry import MeshingParameters
+from ..Commands import Result
 from ..Geometry import Transform
 from ..Geometry import BoundingBox
 from ..Geometry import Plane
+from ..Geometry import GeometryBase
 from ..Geometry import ComponentIndex
 from .Custom import CustomObjectGrips
 from ..Display import VisualAnalysisMode
@@ -8293,10 +8455,13 @@ from ..FileIO import TextLog
 from ..Geometry import MeshType
 from ..UI.Gumball import GumballFrame
 from ..Display import DisplayPipelineAttributes
+from ..Render import RenderPrimitiveList
 from ..Render import TextureMapping
 from ..Render import RenderMaterial
 from ..Display import RhinoViewport
 from ..Geometry import ComponentStatus
+from .Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class RhinoObject(ModelComponent):
     def ClearId(self) -> None: ...
@@ -8580,6 +8745,7 @@ class RhinoReplaceObjectEventArgs:
     def ToString(self) -> str: ...
 
 
+from ..Geometry import Transform
 class RhinoTransformObjectsEventArgs:
     def Equals(self, obj: Object) -> bool: ...
     @property
@@ -8625,6 +8791,7 @@ class StackDisplayFormat(Enum):
     StackDiagonal = 2
 
 
+from ..Geometry import GeometryBase
 from ..Geometry import ComponentIndex
 from .Custom import CustomObjectGrips
 from ..Display import VisualAnalysisMode
@@ -8633,12 +8800,15 @@ from ..Geometry import MeshType
 from ..Geometry import MeshingParameters
 from ..UI.Gumball import GumballFrame
 from ..Display import DisplayPipelineAttributes
+from ..Render import RenderPrimitiveList
 from ..Geometry import BoundingBox
 from ..Geometry import Transform
 from ..Render import TextureMapping
 from ..Render import RenderMaterial
 from ..Display import RhinoViewport
 from ..Geometry import ComponentStatus
+from .Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class SubDObject(RhinoObject):
     def ClearId(self) -> None: ...
@@ -8851,6 +9021,8 @@ class SubDObject(RhinoObject):
     def UnselectAllSubObjects(self) -> int: ...
 
 
+from ..Geometry import Surface
+from ..Geometry import GeometryBase
 from ..Geometry import ComponentIndex
 from .Custom import CustomObjectGrips
 from ..Display import VisualAnalysisMode
@@ -8859,12 +9031,15 @@ from ..Geometry import MeshType
 from ..Geometry import MeshingParameters
 from ..UI.Gumball import GumballFrame
 from ..Display import DisplayPipelineAttributes
+from ..Render import RenderPrimitiveList
 from ..Geometry import BoundingBox
 from ..Geometry import Transform
 from ..Render import TextureMapping
 from ..Render import RenderMaterial
 from ..Display import RhinoViewport
 from ..Geometry import ComponentStatus
+from .Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class SurfaceObject(RhinoObject):
     def ClearId(self) -> None: ...
@@ -9087,6 +9262,7 @@ class TextDisplayAlignment(Enum):
     InLine = 3
 
 
+from ..Geometry import GeometryBase
 from ..Geometry import ComponentIndex
 from .Custom import CustomObjectGrips
 from ..Display import VisualAnalysisMode
@@ -9095,12 +9271,15 @@ from ..Geometry import MeshType
 from ..Geometry import MeshingParameters
 from ..UI.Gumball import GumballFrame
 from ..Display import DisplayPipelineAttributes
+from ..Render import RenderPrimitiveList
 from ..Geometry import BoundingBox
 from ..Geometry import Transform
 from ..Render import TextureMapping
 from ..Render import RenderMaterial
 from ..Display import RhinoViewport
 from ..Geometry import ComponentStatus
+from .Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class TextDotObject(RhinoObject):
     def ClearId(self) -> None: ...
@@ -9335,7 +9514,10 @@ class TextLocation(Enum):
     BelowDimLine = 2
 
 
+from ..Geometry import TextEntity
 from ..Display import RhinoViewport
+from ..Geometry import AnnotationBase
+from ..Geometry import GeometryBase
 from ..Geometry import ComponentIndex
 from .Custom import CustomObjectGrips
 from ..Display import VisualAnalysisMode
@@ -9344,11 +9526,14 @@ from ..Geometry import MeshType
 from ..Geometry import MeshingParameters
 from ..UI.Gumball import GumballFrame
 from ..Display import DisplayPipelineAttributes
+from ..Render import RenderPrimitiveList
 from ..Geometry import BoundingBox
 from ..Geometry import Transform
 from ..Render import TextureMapping
 from ..Render import RenderMaterial
 from ..Geometry import ComponentStatus
+from .Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class TextObject(AnnotationObjectBase):
     def ClearId(self) -> None: ...
@@ -9577,6 +9762,8 @@ class TextOrientation(Enum):
 
 from ..FileIO import FileReference
 from ..Geometry import Transform
+from .Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 from ..Runtime import CommonObject
 class Texture(CommonObject):
@@ -9769,7 +9956,11 @@ from ..Geometry import Vector3d
 from ..Geometry import Point3d
 from ..Geometry import BoundingBox
 from ..Geometry import Sphere
+from ..Geometry import Plane
 from ..Geometry import Transform
+from ..Geometry import Line
+from .Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 from ..Runtime import CommonObject
 class ViewportInfo(CommonObject):

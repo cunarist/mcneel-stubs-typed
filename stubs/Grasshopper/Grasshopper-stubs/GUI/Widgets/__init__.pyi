@@ -23,6 +23,7 @@ class DockCornerChangedEventHandler:
 
 
 from ..Canvas import GH_Canvas
+from ..Canvas import GH_ObjectResponse
 class GH_AlignWidget(GH_Widget):
     def __init__(self): ...
     @staticmethod
@@ -70,6 +71,7 @@ class GH_AlignWidget(GH_Widget):
 
 from ..Canvas import GH_Viewport
 from ..Canvas import GH_Canvas
+from ..Canvas import GH_ObjectResponse
 class GH_CanvasWidget_FixedObject(GH_Widget):
     def AppendToMenu(self, menu: ToolStripDropDownMenu) -> None: ...
     def CanvasLocation(self, vp: GH_Viewport) -> PointF: ...
@@ -117,6 +119,7 @@ class GH_CanvasWidget_FixedObject(GH_Widget):
 
 
 from ..Canvas import GH_Canvas
+from ..Canvas import GH_ObjectResponse
 from ..Canvas import GH_Viewport
 class GH_CompassWidget(GH_CanvasWidget_FixedObject):
     def __init__(self): ...
@@ -188,6 +191,7 @@ class GH_CompassWidget(GH_CanvasWidget_FixedObject):
 
 
 from ..Canvas import GH_Canvas
+from ..Canvas import GH_ObjectResponse
 class GH_MarkovWidget(GH_Widget):
     def __init__(self): ...
     @staticmethod
@@ -257,6 +261,7 @@ class GH_MarkovWidgetDock(Enum):
 
 
 from ..Canvas import GH_Canvas
+from ..Canvas import GH_ObjectResponse
 class GH_MessageWidget(GH_Widget):
     def __init__(self): ...
     @staticmethod
@@ -307,6 +312,7 @@ class GH_MessageWidget(GH_Widget):
 
 
 from ..Canvas import GH_Canvas
+from ..Canvas import GH_ObjectResponse
 class GH_ProfilerWidget(GH_Widget):
     def __init__(self): ...
     @staticmethod
@@ -369,6 +375,7 @@ class GH_ProfilerWidget(GH_Widget):
 
 
 from ..Canvas import GH_Canvas
+from ..Canvas import GH_ObjectResponse
 class GH_Widget:
     def AppendToMenu(self, menu: ToolStripDropDownMenu) -> None: ...
     def Contains(self, pt_control: Point, pt_canvas: PointF) -> bool: ...

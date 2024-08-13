@@ -87,6 +87,8 @@ class AssemblyResolver:
     def ToString(self) -> str: ...
 
 
+from ..DocObjects.Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class CommonObject:
     def Dispose(self) -> None: ...
@@ -428,8 +430,8 @@ class InstanceAttributeField:
 
 
 from ..DocObjects import Font
-from ..Geometry import GeometryBase
 from ..Display import ViewCaptureSettings
+from ..Geometry import GeometryBase
 from ..DocObjects import ViewportInfo
 from ..Display import RhinoViewport
 from ..Display import DisplayPipeline
@@ -522,6 +524,7 @@ class IPlatformServiceLocator:
     def GetService(self) -> T: ...
 
 
+from ..PlugIns import LicenseStatus
 class IZooClientUtilities:
     def AskUserForLicense(self, verify: Object, parameters: ZooClientParameters) -> bool: ...
     def CheckInLicense(self, verify: Object, productId: Guid) -> bool: ...
@@ -1184,6 +1187,7 @@ from ..PlugIns import OnLeaseChangedDelegate
 from ..PlugIns import VerifyLicenseKeyDelegate
 from ..PlugIns import VerifyPreviousVersionLicenseDelegate
 from ..PlugIns import LicenseData
+from ..PlugIns import ValidateResult
 class ZooClientParameters:
     def __init__(self, productGuid: Guid, licenseGuid: Guid, productTitle: str, productBuildType: int, capabilities: LicenseCapabilities, licenseEntryTextMask: str, productPath: str, parentWindow: Object, selectedLicenseType: LicenseTypes, validateProductKey: ValidateProductKeyDelegate, onLeaseChangedDelegate: OnLeaseChangedDelegate, verifyLicenseKeyDelegate: VerifyLicenseKeyDelegate, verifyPreviousVersionLicenseKeyDelegate: VerifyPreviousVersionLicenseDelegate): ...
     def Equals(self, obj: Object) -> bool: ...

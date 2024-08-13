@@ -23,6 +23,7 @@ class AddCustomUISections:
     def ToString(self) -> str: ...
 
 
+from ..UI.Controls import ExpandableContentUI
 class AddCustomUISectionsEventArgs:
     def Equals(self, obj: Object) -> bool: ...
     @property
@@ -90,6 +91,8 @@ class BasicMaterialParameterNames:
 
 
 from ..Geometry import Point3d
+from ..DocObjects.Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 from ..Runtime import CommonObject
 class CachedTextureCoordinates(CommonObject):
@@ -180,6 +183,7 @@ class Channel(Enum):
     kLum = 4
 
 
+from ..Display import DisplayTechnology
 class ChannelGPU:
     def Clone(self) -> ChannelGPU: ...
     def Close(self) -> None: ...
@@ -395,6 +399,9 @@ class ContentUuids:
     def ToString(self) -> str: ...
 
 
+from ..Display import Color4f
+from ..Geometry import Vector2d
+from ..Geometry import Vector3d
 class ConvertibleExtensions:
     def Equals(self, obj: Object) -> bool: ...
     def GetHashCode(self) -> int: ...
@@ -418,6 +425,8 @@ class CrcRenderHashFlags(Enum):
     ExcludeDocumentEffects = 13
 
 
+from ..PlugIns import PreviewNotification
+from ..DocObjects import ViewportInfo
 class CreatePreviewEventArgs:
     def Equals(self, obj: Object) -> bool: ...
     @property
@@ -528,6 +537,7 @@ class CustomRenderContentAttribute:
 
 from ..DocObjects import ViewportInfo
 from ..DocObjects import RhinoObject
+from ..Geometry import BoundingBox
 from ..Display import DisplayPipelineAttributes
 class CustomRenderMeshProvider2(CustomRenderMeshProvider):
     @overload
@@ -1048,6 +1058,7 @@ class LightManagerSupport:
 
 
 from ..Geometry import Light
+from ..DocObjects import RhinoObject
 class LightManagerSupportClient:
     def __init__(self, doc_uuid: UInt32): ...
     def DeleteLight(self, light: Light) -> None: ...
@@ -1567,7 +1578,9 @@ class RenderChannels(DocumentOrFreeFloatingBase):
 
 
 from ..PlugIns import PlugIn
+from .Fields import FieldDictionary
 from .Fields import Field
+from .UI import UserInterfaceSection
 from ..UI.Controls import ICollapsibleSection
 from .DataSources import ContentFactory
 class RenderContent:
@@ -2020,7 +2033,9 @@ class RenderEndEventArgs:
     def ToString(self) -> str: ...
 
 
+from .Fields import FieldDictionary
 from .Fields import Field
+from .UI import UserInterfaceSection
 from ..UI.Controls import ICollapsibleSection
 from .DataSources import ContentFactory
 class RenderEnvironment(RenderContent):
@@ -2224,7 +2239,10 @@ class RenderingSources(Enum):
 from ..DocObjects import Material
 from ..DocObjects import ObjRef
 from ..DocObjects import TextureType
+from ..DocObjects import PhysicallyBasedMaterial
+from .Fields import FieldDictionary
 from .Fields import Field
+from .UI import UserInterfaceSection
 from ..UI.Controls import ICollapsibleSection
 from .DataSources import ContentFactory
 class RenderMaterial(RenderContent):
@@ -2492,8 +2510,10 @@ class RenderPanelType(Enum):
     RenderWindow = 0
 
 
+from ..Commands import Result
 from ..Display import RhinoView
 from ..DocObjects import ViewportInfo
+from ..PlugIns import PlugIn
 class RenderPipeline:
     def CloseWindow(self) -> bool: ...
     def CommandResult(self) -> Result: ...
@@ -2640,11 +2660,15 @@ class RenderPlugInList:
     def TrueForAll(self, match: Predicate) -> bool: ...
 
 
+from ..DocObjects import RhinoObject
+from ..Geometry import Mesh
 from ..Geometry import Sphere
 from ..Geometry import Box
 from ..Geometry import PlaneSurface
 from ..Geometry import Cone
 from ..Geometry import Plane
+from ..Geometry import Transform
+from ..Geometry import BoundingBox
 class RenderPrimitive:
     def Dispose(self) -> None: ...
     def Equals(self, obj: Object) -> bool: ...
@@ -2675,6 +2699,7 @@ from ..Geometry import Cone
 from ..Geometry import Plane
 from ..Geometry import PlaneSurface
 from ..Geometry import Box
+from ..DocObjects import RhinoObject
 class RenderPrimitiveList:
     @overload
     def Add(self, mesh: Mesh, material: RenderMaterial) -> None: ...
@@ -2757,6 +2782,8 @@ class RenderReturnCode(Enum):
 
 
 from ..Display import BackgroundStyle
+from ..DocObjects.Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 from ..Runtime import CommonObject
 class RenderSettings(CommonObject):
@@ -2893,6 +2920,7 @@ class RenderSettings(CommonObject):
     def ToString(self) -> str: ...
 
 
+from ..DocObjects import ViewInfo
 class RenderSourceView:
     def __init__(self, doc: RhinoDoc): ...
     def Dispose(self) -> None: ...
@@ -2921,10 +2949,13 @@ class RenderTabs:
     def ToString(self) -> str: ...
 
 
+from ..Geometry import Transform
 from ..DocObjects import RhinoObject
 from ..Geometry import Vector3d
 from ..Geometry import Point3d
+from .Fields import FieldDictionary
 from .Fields import Field
+from .UI import UserInterfaceSection
 from ..UI.Controls import ICollapsibleSection
 from .DataSources import ContentFactory
 class RenderTexture(RenderContent):
@@ -3296,6 +3327,7 @@ class SafeFrame(DocumentOrFreeFloatingBase):
     def ToString(self) -> str: ...
 
 
+from ..Geometry import Mesh
 class SceneObject:
     def Equals(self, obj: Object) -> bool: ...
     @property
@@ -3364,6 +3396,7 @@ class SimulatedEnvironment:
 
 
 from ..DocObjects import Texture
+from ..Geometry import Transform
 from ..Geometry import Vector2d
 from ..Display import Color4f
 class SimulatedTexture:
@@ -3535,6 +3568,8 @@ class StandardChildSlots(Enum):
     PbrAlpha = 123
 
 
+from ..Geometry import Vector3d
+from ..Geometry import Light
 class Sun(DocumentOrFreeFloatingBase):
     def __init__(self): ...
     @staticmethod
@@ -3772,6 +3807,10 @@ class TextureEnvironmentMappingMode(Enum):
 from ..Geometry import Point3d
 from ..Geometry import Vector3d
 from ..Display import Color4f
+from ..Runtime.InteropWrappers import SimpleArrayByte
+from ..Runtime.InteropWrappers import SimpleArrayFloat
+from ..Runtime.InteropWrappers import StdVectorByte
+from ..Runtime.InteropWrappers import StdVectorFloat
 class TextureEvaluator:
     def Dispose(self) -> None: ...
     def Equals(self, obj: Object) -> bool: ...
@@ -3828,6 +3867,7 @@ class TextureGraphInfo:
 
 
 from ..Geometry import Transform
+from ..DocObjects import ModelComponentType
 from ..Geometry import Point3d
 from ..Geometry import Vector3d
 from ..Geometry import Plane
@@ -3836,6 +3876,8 @@ from ..Geometry import Sphere
 from ..Geometry import Cylinder
 from ..Geometry import Mesh
 from ..Geometry import ComponentStatus
+from ..DocObjects.Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 from ..DocObjects import ModelComponent
 class TextureMapping(ModelComponent):
@@ -4037,9 +4079,12 @@ class TimeZone:
 
 
 from ..Display import Color4f
+from ..Geometry import Transform
 from ..DocObjects import RhinoObject
 from ..Geometry import Vector3d
+from .Fields import FieldDictionary
 from .Fields import Field
+from .UI import UserInterfaceSection
 from ..UI.Controls import ICollapsibleSection
 from .DataSources import ContentFactory
 class TwoColorRenderTexture(RenderTexture):

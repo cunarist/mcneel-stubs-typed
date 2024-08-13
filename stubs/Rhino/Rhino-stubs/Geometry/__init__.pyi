@@ -26,6 +26,9 @@ from ..DocObjects import Field
 from ..DocObjects import MaskType
 from ..DocObjects import MaskFrame
 from ..DocObjects import Font
+from ..DocObjects import ObjectType
+from ..DocObjects.Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class AngularDimension(Dimension):
     @overload
@@ -485,6 +488,9 @@ from ..DocObjects import MaskFrame
 from ..Display import RhinoViewport
 from ..DocObjects import Font
 from ..DocObjects import LengthDisplay
+from ..DocObjects import ObjectType
+from ..DocObjects.Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class AnnotationBase(GeometryBase):
     def ClearPropertyOverrides(self) -> bool: ...
@@ -797,6 +803,9 @@ class Arc:
     def Trim(self, domain: Interval) -> bool: ...
 
 
+from ..DocObjects import ObjectType
+from ..DocObjects.Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class ArcCurve(Curve):
     @overload
@@ -1501,6 +1510,16 @@ class Box:
 
 from ..Collections import CurveList
 from ..ApplicationSettings import CurvatureAnalysisSettingsState
+from .Collections import BrepVertexList
+from .Collections import BrepSurfaceList
+from .Collections import BrepEdgeList
+from .Collections import BrepTrimList
+from .Collections import BrepLoopList
+from .Collections import BrepFaceList
+from .Collections import BrepCurveList
+from ..DocObjects import ObjectType
+from ..DocObjects.Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class Brep(GeometryBase):
     def __init__(self): ...
@@ -1905,6 +1924,9 @@ class Brep(GeometryBase):
     def UnjoinEdges(self, edgesToUnjoin: Iterable[int]) -> Iterable[Brep]: ...
 
 
+from ..DocObjects import ObjectType
+from ..DocObjects.Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class BrepEdge(CurveProxy):
     def AdjacentFaces(self) -> Iterable[int]: ...
@@ -2270,6 +2292,10 @@ class BrepEdge(CurveProxy):
     def TryGetPolyline(self) -> Tuple[bool, Polyline, Iterable[float]]: ...
 
 
+from .Collections import BrepLoopList
+from ..DocObjects import ObjectType
+from ..DocObjects.Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class BrepFace(SurfaceProxy):
     def AdjacentEdges(self) -> Iterable[int]: ...
@@ -2511,6 +2537,10 @@ class BrepFace(SurfaceProxy):
     def VariableOffset(self, uMinvMin: float, uMinvMax: float, uMaxvMin: float, uMaxvMax: float, interiorParameters: Iterable[Point2d], interiorDistances: Iterable[float], tolerance: float) -> Surface: ...
 
 
+from .Collections import BrepTrimList
+from ..DocObjects import ObjectType
+from ..DocObjects.Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class BrepLoop(GeometryBase):
     def ComponentIndex(self) -> ComponentIndex: ...
@@ -2589,6 +2619,8 @@ class BrepLoopType(Enum):
     PointOnSurface = 5
 
 
+from ..DocObjects.Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 from ..Runtime import CommonObject
 class BrepRegion(CommonObject):
@@ -2625,6 +2657,8 @@ class BrepRegion(CommonObject):
     def ToString(self) -> str: ...
 
 
+from ..DocObjects.Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 from ..Runtime import CommonObject
 class BrepRegionFaceSide(CommonObject):
@@ -2666,6 +2700,9 @@ class BrepSolidOrientation(Enum):
     Inward = -1
 
 
+from ..DocObjects import ObjectType
+from ..DocObjects.Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class BrepTrim(CurveProxy):
     def ChangeClosedCurveSeam(self, t: float) -> bool: ...
@@ -3045,6 +3082,9 @@ class BrepTrimType(Enum):
     Slit = 7
 
 
+from ..DocObjects import ObjectType
+from ..DocObjects.Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class BrepVertex(Point):
     def ComponentIndex(self) -> ComponentIndex: ...
@@ -3131,6 +3171,9 @@ from ..DocObjects import Field
 from ..DocObjects import MaskType
 from ..DocObjects import MaskFrame
 from ..DocObjects import Font
+from ..DocObjects import ObjectType
+from ..DocObjects.Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class Centermark(Dimension):
     def __init__(self): ...
@@ -3609,6 +3652,9 @@ class Circle:
     def TryFitCircleTTT(c1: Curve, c2: Curve, c3: Curve, t1: float, t2: float, t3: float) -> Circle: ...
 
 
+from ..DocObjects import ObjectType
+from ..DocObjects.Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class ClippingPlaneSurface(PlaneSurface):
     def AddClipViewportId(self, viewportId: Guid) -> bool: ...
@@ -4014,6 +4060,9 @@ class ConvexCornerOption(Enum):
     AtMeshCorner = 2
 
 
+from ..DocObjects import ObjectType
+from ..DocObjects.Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class Curve(GeometryBase):
     def ChangeClosedCurveSeam(self, t: float) -> bool: ...
@@ -4541,6 +4590,9 @@ class CurveOrientation(Enum):
     Clockwise = -1
 
 
+from ..DocObjects import ObjectType
+from ..DocObjects.Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class CurveProxy(Curve):
     def ChangeClosedCurveSeam(self, t: float) -> bool: ...
@@ -4946,6 +4998,9 @@ class Density(Enum):
     MaximumDensity = 6
 
 
+from ..DocObjects import ObjectType
+from ..DocObjects.Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class DetailView(GeometryBase):
     def ComponentIndex(self) -> ComponentIndex: ...
@@ -5052,6 +5107,9 @@ from ..DocObjects import Field
 from ..DocObjects import MaskType
 from ..DocObjects import MaskFrame
 from ..DocObjects import Font
+from ..DocObjects import ObjectType
+from ..DocObjects.Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class Dimension(AnnotationBase):
     def ClearPropertyOverrides(self) -> bool: ...
@@ -5514,6 +5572,9 @@ class ExtrudeCornerType(Enum):
     Chamfer = 4
 
 
+from ..DocObjects import ObjectType
+from ..DocObjects.Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class Extrusion(Surface):
     def __init__(self): ...
@@ -5765,6 +5826,9 @@ class ForceText(Enum):
     HintLeft = 5
 
 
+from ..DocObjects import ObjectType
+from ..DocObjects.Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 from ..Runtime import CommonObject
 class GeometryBase(CommonObject):
@@ -5829,6 +5893,9 @@ class GeometryBase(CommonObject):
 
 from ..DocObjects import HatchPattern
 from ..Display import ColorGradient
+from ..DocObjects import ObjectType
+from ..DocObjects.Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class Hatch(GeometryBase):
     def ComponentIndex(self) -> ComponentIndex: ...
@@ -5954,6 +6021,7 @@ class HermiteSurface:
     def VTangentAt(self, uIndex: int, vIndex: int) -> Vector3d: ...
 
 
+from ..DocObjects import ViewportInfo
 class HiddenLineDrawing:
     def BoundingBox(self, includeHidden: bool) -> BoundingBox: ...
     @overload
@@ -6098,6 +6166,9 @@ class HiddenLineDrawingSegment:
     def ToString(self) -> str: ...
 
 
+from ..DocObjects import ModelComponentType
+from ..DocObjects.Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 from ..DocObjects import ModelComponent
 class InstanceDefinitionGeometry(ModelComponent):
@@ -6187,6 +6258,9 @@ class InstanceDefinitionGeometry(ModelComponent):
     def ToString(self) -> str: ...
 
 
+from ..DocObjects import ObjectType
+from ..DocObjects.Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class InstanceReferenceGeometry(GeometryBase):
     def __init__(self, instanceDefinitionId: Guid, transform: Transform): ...
@@ -6526,6 +6600,9 @@ from ..DocObjects import MaskType
 from ..DocObjects import MaskFrame
 from ..DocObjects import Font
 from ..DocObjects import LengthDisplay
+from ..DocObjects import ObjectType
+from ..DocObjects.Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class Leader(AnnotationBase):
     def __init__(self): ...
@@ -6832,6 +6909,10 @@ class LengthMassProperties:
 
 
 from ..Render import Sun
+from ..DocObjects import CoordinateSystem
+from ..DocObjects import ObjectType
+from ..DocObjects.Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class Light(GeometryBase):
     def __init__(self): ...
@@ -7135,6 +7216,9 @@ from ..DocObjects import Field
 from ..DocObjects import MaskType
 from ..DocObjects import MaskFrame
 from ..DocObjects import Font
+from ..DocObjects import ObjectType
+from ..DocObjects.Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class LinearDimension(Dimension):
     @overload
@@ -7572,6 +7656,9 @@ class LinearDimension(Dimension):
     def WrapText(self) -> None: ...
 
 
+from ..DocObjects import ObjectType
+from ..DocObjects.Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class LineCurve(Curve):
     @overload
@@ -7989,8 +8076,22 @@ from ..Render import TextureMapping
 from ..FileIO import TextLog
 from .MeshRefinements import LoopFormula
 from .MeshRefinements import RefinementSettings
+from .Collections import MeshVertexList
+from .Collections import MeshTopologyVertexList
+from .Collections import MeshTopologyEdgeList
+from .Collections import MeshVertexNormalList
+from .Collections import MeshFaceList
+from .Collections import MeshNgonList
+from .Collections import MeshFaceNormalList
+from .Collections import MeshVertexColorList
+from .Collections import MeshTextureCoordinateList
+from .Collections import MeshVertexStatusList
+from ..Render import CachedTextureCoordinates
 from ..Display import RhinoViewport
 from ..DocObjects import ViewportInfo
+from ..DocObjects import ObjectType
+from ..DocObjects.Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class Mesh(GeometryBase):
     def __init__(self): ...
@@ -8850,6 +8951,9 @@ class MeshUnwrapper:
     def Unwrap(self, method: MeshUnwrapMethod) -> bool: ...
 
 
+from ..DocObjects import ObjectType
+from ..DocObjects.Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class MorphControl(GeometryBase):
     def __init__(self, originCurve: NurbsCurve, targetCurve: NurbsCurve): ...
@@ -8925,6 +9029,12 @@ class MorphControl(GeometryBase):
     def Translate(self, x: float, y: float, z: float) -> bool: ...
 
 
+from .Collections import NurbsCurveKnotList
+from .Collections import NurbsCurvePointList
+from ..Collections import Point3dList
+from ..DocObjects import ObjectType
+from ..DocObjects.Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class NurbsCurve(Curve):
     @overload
@@ -9348,6 +9458,11 @@ class NurbsCurveEndConditionType(Enum):
     Curvature = 3
 
 
+from .Collections import NurbsSurfaceKnotList
+from .Collections import NurbsSurfacePointList
+from ..DocObjects import ObjectType
+from ..DocObjects.Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class NurbsSurface(Surface):
     def __init__(self, other: NurbsSurface): ...
@@ -9617,6 +9732,9 @@ from ..DocObjects import Field
 from ..DocObjects import MaskType
 from ..DocObjects import MaskFrame
 from ..DocObjects import Font
+from ..DocObjects import ObjectType
+from ..DocObjects.Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class OrdinateDimension(Dimension):
     def __init__(self): ...
@@ -10210,6 +10328,9 @@ class PlaneFitResult(Enum):
     Failure = -1
 
 
+from ..DocObjects import ObjectType
+from ..DocObjects.Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class PlaneSurface(Surface):
     def __init__(self, plane: Plane, xExtents: Interval, yExtents: Interval): ...
@@ -10398,6 +10519,9 @@ class PlaneSurface(Surface):
     def VariableOffset(self, uMinvMin: float, uMinvMax: float, uMaxvMin: float, uMaxvMax: float, interiorParameters: Iterable[Point2d], interiorDistances: Iterable[float], tolerance: float) -> Surface: ...
 
 
+from ..DocObjects import ObjectType
+from ..DocObjects.Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class Point(GeometryBase):
     def __init__(self, location: Point3d): ...
@@ -10722,6 +10846,9 @@ class Point3d:
     def TryParse(input: str) -> Tuple[bool, Point3d]: ...
 
 
+from ..DocObjects import ObjectType
+from ..DocObjects.Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class Point3dGrid(GeometryBase):
     @overload
@@ -10893,6 +11020,9 @@ class Point4d:
     def Transform(self, xform: Transform) -> None: ...
 
 
+from ..DocObjects import ObjectType
+from ..DocObjects.Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class PointCloud(GeometryBase):
     @overload
@@ -11091,6 +11221,9 @@ class PointFaceRelation(Enum):
     Boundary = 2
 
 
+from ..DocObjects import ObjectType
+from ..DocObjects.Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class PolyCurve(Curve):
     def __init__(self): ...
@@ -11447,7 +11580,11 @@ class PolyCurve(Curve):
     def TryGetPolyline(self) -> Tuple[bool, Polyline, Iterable[float]]: ...
 
 
+from ..Collections import XAccess
+from ..Collections import YAccess
+from ..Collections import ZAccess
 from ..Collections import Point3dList
+from ..Collections import RhinoList
 from ..Collections import Point3dList
 class Polyline(Point3dList):
     @overload
@@ -11620,6 +11757,9 @@ class Polyline(Point3dList):
     def TrueForAll(self, match: Predicate) -> bool: ...
 
 
+from ..DocObjects import ObjectType
+from ..DocObjects.Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class PolylineCurve(Curve):
     @overload
@@ -12137,6 +12277,9 @@ from ..DocObjects import Field
 from ..DocObjects import MaskType
 from ..DocObjects import MaskFrame
 from ..DocObjects import Font
+from ..DocObjects import ObjectType
+from ..DocObjects.Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class RadialDimension(Dimension):
     def __init__(self): ...
@@ -12726,6 +12869,9 @@ class RegionContainment(Enum):
     BInsideA = 3
 
 
+from ..DocObjects import ObjectType
+from ..DocObjects.Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class RevSurface(Surface):
     def ClosestPoint(self, testPoint: Point3d) -> Tuple[bool, float, float]: ...
@@ -13303,6 +13449,12 @@ class SquishParameters:
     def ToString(self) -> str: ...
 
 
+from .Collections import SubDFaceList
+from .Collections import SubDVertexList
+from .Collections import SubDEdgeList
+from ..DocObjects import ObjectType
+from ..DocObjects.Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class SubD(GeometryBase):
     def __init__(self): ...
@@ -13750,6 +13902,9 @@ class SubDVertexTag(Enum):
     Dart = 4
 
 
+from ..DocObjects import ObjectType
+from ..DocObjects.Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class SumSurface(Surface):
     def ClosestPoint(self, testPoint: Point3d) -> Tuple[bool, float, float]: ...
@@ -13937,6 +14092,9 @@ class SumSurface(Surface):
     def VariableOffset(self, uMinvMin: float, uMinvMax: float, uMaxvMin: float, uMaxvMax: float, interiorParameters: Iterable[Point2d], interiorDistances: Iterable[float], tolerance: float) -> Surface: ...
 
 
+from ..DocObjects import ObjectType
+from ..DocObjects.Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class Surface(GeometryBase):
     def ClosestPoint(self, testPoint: Point3d) -> Tuple[bool, float, float]: ...
@@ -14159,6 +14317,9 @@ class SurfaceCurvature:
     def ToString(self) -> str: ...
 
 
+from ..DocObjects import ObjectType
+from ..DocObjects.Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class SurfaceProxy(Surface):
     def ClosestPoint(self, testPoint: Point3d) -> Tuple[bool, float, float]: ...
@@ -14468,6 +14629,9 @@ class SweepTwoRail:
     def ToString(self) -> str: ...
 
 
+from ..DocObjects import ObjectType
+from ..DocObjects.Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class TextDot(GeometryBase):
     def __init__(self, text: str, location: Point3d): ...
@@ -14555,6 +14719,9 @@ from ..DocObjects import MaskType
 from ..DocObjects import MaskFrame
 from ..DocObjects import Font
 from ..DocObjects import LengthDisplay
+from ..DocObjects import ObjectType
+from ..DocObjects.Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..FileIO import SerializationOptions
 class TextEntity(AnnotationBase):
     def __init__(self): ...

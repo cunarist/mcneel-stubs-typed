@@ -45,6 +45,7 @@ class GH_BracketMismatchException:
     def ToString(self) -> str: ...
 
 
+from .. import DataTree
 class GH_DirtyCaster:
     @staticmethod
     def CastToList(in_: Object) -> List: ...

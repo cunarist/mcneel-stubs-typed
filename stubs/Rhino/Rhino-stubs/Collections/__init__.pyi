@@ -379,6 +379,7 @@ class CurveList:
 
 
 
+from ..Geometry import BoundingBox
 from ..Geometry import Point3d
 from ..Geometry import Transform
 class Point3dList:
@@ -543,6 +544,7 @@ class RhinoList:
 
 
 
+from ..Geometry import BoundingBox
 from ..Geometry import Transform
 from ..DocObjects import RhinoObject
 from ..DocObjects import ObjRef

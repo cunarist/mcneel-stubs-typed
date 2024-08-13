@@ -8,6 +8,7 @@ class IconSize(Enum):
     Small = 1
 
 
+from ..Drawing import Icon
 class IHandler:
     def GetFileIcon(self, fileName: str, size: IconSize) -> Icon: ...
     def GetStaticIcon(self, type: StaticIconType, size: IconSize) -> Icon: ...
@@ -18,6 +19,7 @@ class StaticIconType(Enum):
     CloseDirectory = 1
 
 
+from ..Drawing import Icon
 class SystemIcons:
     def Equals(self, obj: Object) -> bool: ...
     @staticmethod

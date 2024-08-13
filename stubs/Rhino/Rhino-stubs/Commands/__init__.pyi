@@ -3,6 +3,7 @@ from enum import Enum
 
 
 
+from ..PlugIns import PlugIn
 class Command:
     @staticmethod
     def add_BeginCommand(value: EventHandler) -> None: ...
@@ -162,6 +163,7 @@ class RunMode(Enum):
     Scripted = 1
 
 
+from ..PlugIns import PlugIn
 class SelCommand(Command):
     def Equals(self, obj: Object) -> bool: ...
     @property
@@ -200,6 +202,7 @@ class Style(Enum):
     NotUndoable = 16
 
 
+from ..PlugIns import PlugIn
 class TransformCommand(Command):
     def Equals(self, obj: Object) -> bool: ...
     @property

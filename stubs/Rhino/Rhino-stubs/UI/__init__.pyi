@@ -357,6 +357,7 @@ class MouseCallback:
     def ToString(self) -> str: ...
 
 
+from ..Display import RhinoView
 class MouseCallbackEventArgs:
     def Equals(self, obj: Object) -> bool: ...
     @property
@@ -380,6 +381,7 @@ class MouseCallbackEventArgs:
     def ToString(self) -> str: ...
 
 
+from ..Geometry import Point2d
 class MouseCursor:
     def Equals(self, obj: Object) -> bool: ...
     @property
@@ -501,8 +503,9 @@ class NamedColorList:
     def TrueForAll(self, match: Predicate) -> bool: ...
 
 
-from ..DocObjects import RhinoObject
 from ..DocObjects import ObjectType
+from ..DocObjects import RhinoObject
+from ..Commands import Result
 class ObjectPropertiesPage:
     @overload
     def AnySelectedObject(self) -> bool: ...
@@ -562,6 +565,8 @@ class ObjectPropertiesPageCollection:
 
 
 from ..DocObjects import ObjectType
+from ..Display import RhinoView
+from ..Display import RhinoViewport
 class ObjectPropertiesPageEventArgs:
     def __init__(self, page: ObjectPropertiesPage): ...
     def Equals(self, obj: Object) -> bool: ...
@@ -662,6 +667,7 @@ class OptionPageButtons(Enum):
 
 
 from ..Commands import RunMode
+from ..Commands import Result
 class OptionsDialogPage(StackedDialogPage):
     def AddChildPage(self, pageToAdd: StackedDialogPage) -> None: ...
     def Equals(self, obj: Object) -> bool: ...

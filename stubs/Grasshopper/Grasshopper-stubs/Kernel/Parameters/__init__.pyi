@@ -8,6 +8,7 @@ __all__ = ['Hints']
 
 
 
+from ..Undo import GH_UndoState
 from ..Undo import GH_ObjectUndoAction
 class GH_ExpressionUndoAction(GH_ObjectUndoAction):
     def __init__(self, obj: IGH_DocumentObject, expression: str): ...
@@ -28,6 +29,7 @@ class GH_ExpressionUndoAction(GH_ObjectUndoAction):
 
 
 from ..Types import IGH_GeometricGoo
+from ..Types import IGH_Goo
 class GH_GeometryProxy:
     def __init__(self, nValue: IGH_GeometricGoo): ...
     def Construct(self) -> None: ...
@@ -295,6 +297,7 @@ from ...GUI import GH_TooltipDisplayEventArgs
 from ...GUI.Canvas import GH_Canvas
 from ...GUI.Canvas import GH_CanvasChannel
 from ...GUI import GH_CanvasMouseEvent
+from ...GUI.Canvas import GH_ObjectResponse
 class GH_ProxyParameterAttributes:
     def __init__(self, owner: GH_ProxyParameter): ...
     def AppendToAttributeTree(self, attributes: List) -> None: ...
@@ -613,6 +616,7 @@ class GH_Receiver:
 from ...GUI import GH_TooltipDisplayEventArgs
 from ...GUI.Canvas import GH_Canvas
 from ...GUI import GH_CanvasMouseEvent
+from ...GUI.Canvas import GH_ObjectResponse
 from ...GUI.Canvas import GH_CanvasChannel
 from ..Attributes import GH_FloatingParamAttributes
 class GH_ReceiverAttributes(GH_FloatingParamAttributes):

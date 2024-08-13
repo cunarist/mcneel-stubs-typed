@@ -4851,6 +4851,7 @@ class GH_CanvasMouseEvent:
 
 from .Canvas import GH_Canvas
 from ..Kernel import GH_RelevantObjectData
+from ..Kernel import GH_Document
 class GH_CanvasObjectMouseDownEventArgs:
     def __init__(self, sender: GH_Canvas, object: GH_RelevantObjectData): ...
     def Equals(self, obj: Object) -> bool: ...
@@ -9276,6 +9277,7 @@ class GH_ComponentAggregateForm:
 
 
 from ..Kernel import IGH_ObjectProxy
+from ..Kernel import GH_GuidConflictSolution
 class GH_ComponentGuidConflictDialog:
     def __init__(self): ...
     def Activate(self) -> None: ...
@@ -15284,6 +15286,7 @@ class GH_DeveloperSettings:
 
 
 from .Base import GH_DigitAlign
+from .Base import GH_DigitScrollerBase
 class GH_DigitScroller(GH_TextInputBaseControl):
     def __init__(self): ...
     @overload
@@ -45267,6 +45270,7 @@ class GH_MultiDocSave:
 
 
 from ..Kernel.Data import IGH_Structure
+from ..Kernel.Data import GH_Structure
 class GH_MultilineGooEditor:
     def __init__(self): ...
     @overload
@@ -66334,6 +66338,7 @@ class GH_SettingsServerBrowser:
 from .Base import GH_SliderRailDisplay
 from .Base import GH_SliderGripDisplay
 from .Base import GH_SliderTickDisplay
+from .Base import GH_SliderBase
 from .Base import GH_SliderAccuracy
 class GH_Slider(GH_TextInputBaseControl):
     def __init__(self): ...
@@ -78036,6 +78041,8 @@ class GH_UserObjectDeleteConfirmationDialog:
     def ValidateChildren(self, validationConstraints: ValidationConstraints) -> bool: ...
 
 
+from ..Kernel import GH_Exposure
+from ..Kernel import GH_InstanceDescription
 class GH_UserObjectProperties:
     def __init__(self): ...
     def Activate(self) -> None: ...

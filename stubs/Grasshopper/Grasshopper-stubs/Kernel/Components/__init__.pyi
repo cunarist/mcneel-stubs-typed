@@ -971,6 +971,7 @@ class GH_CustomPreviewItem:
 
 from ...GUI.Canvas import GH_Canvas
 from ...GUI import GH_CanvasMouseEvent
+from ...GUI.Canvas import GH_ObjectResponse
 from ...GUI import GH_TooltipDisplayEventArgs
 from ...GUI.Canvas import GH_CanvasChannel
 from ..Attributes import GH_ComponentAttributes
@@ -4833,6 +4834,7 @@ class GH_ReadFileComponent(GH_Component):
 
 from ...GUI.Canvas import GH_Canvas
 from ...GUI import GH_CanvasMouseEvent
+from ...GUI.Canvas import GH_ObjectResponse
 from ...GUI import GH_TooltipDisplayEventArgs
 from ...GUI.Canvas import GH_CanvasChannel
 from ..Attributes import GH_ComponentAttributes

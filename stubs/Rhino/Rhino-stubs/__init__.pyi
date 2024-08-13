@@ -36,6 +36,7 @@ class AntialiasLevel(Enum):
     High = 3
 
 
+from .FileIO import FileReference
 class BitmapExtensions:
     @staticmethod
     def BitmapAsTextureFileReference(bitmap: Bitmap, crc: UInt32) -> FileReference: ...
@@ -727,8 +728,12 @@ class RenderMaterialAssignmentChangedEventArgs:
     def ToString(self) -> str: ...
 
 
+from .UI import ToolbarFileCollection
+from .DocObjects import Font
 from .DocObjects import RhinoObject
+from .ApplicationSettings import LicenseNode
 from .ApplicationSettings import Installation
+from .Commands import Result
 class RhinoApp:
     @staticmethod
     def add_AppSettingsChanged(value: EventHandler) -> None: ...
@@ -1013,9 +1018,23 @@ class RhinoApp:
     def WriteLine(format: str, arg0: Object, arg1: Object, arg2: Object) -> None: ...
 
 
+from .DocObjects.Tables import NamedConstructionPlaneTable
+from .DocObjects.Tables import NamedViewTable
+from .DocObjects.Tables import StringTable
+from .DocObjects.Tables import RuntimeDocumentDataTable
+from .DocObjects.Tables import NamedPositionTable
+from .DocObjects.Tables import SnapshotTable
+from .DocObjects.Tables import NamedLayerStateTable
+from .Render import RenderMaterialTable
+from .Render import RenderEnvironmentTable
+from .Render import RenderTextureTable
+from .Render import ICurrentEnvironment
+from .Render.PostEffects import IPostEffects
 from .DocObjects import ViewportInfo
+from .Render import GroundPlane
 from .Render import RenderContentCollection
 from .Display import DisplayPipelineAttributes
+from .Render import RenderPrimitiveList
 from .Geometry import BoundingBox
 from .FileIO import FileReadOptions
 from .FileIO import FileWriteOptions
@@ -1027,6 +1046,21 @@ from .Render import RenderSettings
 from .DocObjects import AnimationProperties
 from .Geometry import MeshingParameterStyle
 from .Geometry import MeshingParameters
+from .DocObjects import Worksession
+from .DocObjects.Tables import ViewTable
+from .DocObjects.Tables import ObjectTable
+from .FileIO import ManifestTable
+from .DocObjects import ObjectAttributes
+from .DocObjects.Tables import BitmapTable
+from .DocObjects.Tables import MaterialTable
+from .DocObjects.Tables import LinetypeTable
+from .DocObjects.Tables import LayerTable
+from .DocObjects.Tables import GroupTable
+from .DocObjects.Tables import FontTable
+from .DocObjects.Tables import DimStyleTable
+from .DocObjects.Tables import LightTable
+from .DocObjects.Tables import HatchPatternTable
+from .DocObjects.Tables import InstanceDefinitionTable
 class RhinoDoc:
     @staticmethod
     def add_ActiveDocumentChanged(value: EventHandler) -> None: ...
@@ -1596,6 +1630,7 @@ class Symbols:
     def ToString(self) -> str: ...
 
 
+from .Render import TextureMapping
 class TextureMappingEventArgs:
     def Equals(self, obj: Object) -> bool: ...
     @property

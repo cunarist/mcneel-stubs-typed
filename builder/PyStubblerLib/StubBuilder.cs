@@ -153,7 +153,7 @@ namespace PyStubblerLib
             sb.AppendLine("from typing import Tuple, Iterable, Iterator, overload");
             sb.AppendLine("from enum import Enum");
             sb.Append("\n");
-            if( allChildNamespaces.Length>0 )
+            if( allChildNamespaces.Length > 0 )
             {                
                 for(int i=0; i<allChildNamespaces.Length; i++)
                 {
@@ -203,7 +203,7 @@ namespace PyStubblerLib
                 ConstructorInfo[] constructors = stubType.GetConstructors();
                 MethodInfo[] methods = stubType.GetMethods();
 
-                // import parameter types
+                // import parameter and return types
                 HashSet<Tuple<string, string>> paramImports = new HashSet<Tuple<string, string>>();
                 foreach (var constructor in constructors)
                 {
@@ -215,8 +215,6 @@ namespace PyStubblerLib
                         var relativeNamespace = FindRelativeNamespace(
                             stubType.Namespace, paramType.Namespace
                         );
-                        if (relativeNamespace == null)
-                            continue;
                         paramImports.Add(
                             Tuple.Create(relativeNamespace, ToPythonType(paramType.Name))
                         );
@@ -232,10 +230,18 @@ namespace PyStubblerLib
                         var relativeNamespace = FindRelativeNamespace(
                             stubType.Namespace, paramType.Namespace
                         );
-                        if (relativeNamespace == null)
-                            continue;
                         paramImports.Add(
                             Tuple.Create(relativeNamespace, ToPythonType(paramType.Name))
+                        );
+                    }
+                    if (method.ReturnType != typeof(void))
+                    {
+                        var returnType = method.ReturnType;
+                        var relativeNamespace = FindRelativeNamespace(
+                            stubType.Namespace, returnType.Namespace
+                        );
+                        paramImports.Add(
+                            Tuple.Create(relativeNamespace, ToPythonType(returnType.Name))
                         );
                     }
                 }
@@ -245,7 +251,7 @@ namespace PyStubblerLib
                     var paramType = paramImport.Item2;
                     if (paramType.EndsWith("]"))
                         continue;
-                    if (relativeNamespace != "" && relativeNamespace != ".")
+                    if (relativeNamespace != null && relativeNamespace != "" && relativeNamespace != ".")
                         sb.AppendLine($"from {relativeNamespace} import {paramType}");
                 }
 

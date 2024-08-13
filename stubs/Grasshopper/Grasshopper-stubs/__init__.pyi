@@ -316,6 +316,7 @@ class CanvasZuiZoomLevelChangedEventHandler:
     def ToString(self) -> str: ...
 
 
+from .Kernel import IGH_Author
 from .GUI import GH_PruderyFilter
 from .Kernel import GH_LoadingDemand
 class CentralSettings:
@@ -835,6 +836,7 @@ class FormattingChangedEventHandler:
     def ToString(self) -> str: ...
 
 
+from .Kernel import GH_SettingsServer
 class Global_Proc:
     def Equals(self, obj: Object) -> bool: ...
     @property
@@ -852,6 +854,16 @@ class Global_Proc:
     def UiAdjust(value: Single) -> Single: ...
 
 
+from .GUI.RemotePanel import RemoteControlPanel
+from .GUI import GH_DocumentEditor
+from .GUI import GH_CursorServer
+from .Kernel import GH_ComponentServer
+from .Kernel import GH_MarkovChain
+from .Kernel import GH_DocumentServer
+from .Kernel import GH_DocumentAssociations
+from .GUI.MRU import GH_MRU_Server
+from .GUI.Canvas import GH_Canvas
+from .Kernel import GH_SettingsServer
 class Instances:
     @staticmethod
     def add_CanvasCreated(obj: CanvasCreatedEventHandler) -> None: ...

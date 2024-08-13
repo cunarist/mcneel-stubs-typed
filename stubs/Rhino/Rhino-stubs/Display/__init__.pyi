@@ -499,6 +499,7 @@ class CullFaceMode(Enum):
     DrawBackFaces = 2
 
 
+from ..DocObjects import RhinoObject
 class CullObjectEventArgs(DrawEventArgs):
     def Equals(self, obj: Object) -> bool: ...
     @property
@@ -520,6 +521,7 @@ class CullObjectEventArgs(DrawEventArgs):
     def ToString(self) -> str: ...
 
 
+from ..Geometry import BoundingBox
 from ..Geometry import Point3d
 from ..Geometry import Line
 from ..Geometry import Vector3d
@@ -630,6 +632,7 @@ class DisplayBitmap:
     def ToString(self) -> str: ...
 
 
+from ..Geometry import BoundingBox
 from ..Geometry import Vector3d
 class DisplayBitmapDrawList:
     def __init__(self): ...
@@ -1575,6 +1578,7 @@ class DrawFrameStages(Enum):
     All = 4294836223
 
 
+from ..DocObjects import RhinoObject
 class DrawObjectEventArgs(DrawEventArgs):
     def Equals(self, obj: Object) -> bool: ...
     @property
@@ -1692,7 +1696,9 @@ class PointStyle(Enum):
     ArrowTip = 15
 
 
+from ..DocObjects import DetailViewObject
 from ..Geometry import Point2d
+from ..Render import RealtimeDisplayMode
 class RhinoPageView(RhinoView):
     @staticmethod
     def add_PageViewSpaceChange(value: EventHandler) -> None: ...
@@ -1807,6 +1813,7 @@ class RhinoPageView(RhinoView):
     def ToString(self) -> str: ...
 
 
+from ..Render import RealtimeDisplayMode
 from ..Geometry import Point2d
 class RhinoView:
     @staticmethod
@@ -1916,6 +1923,7 @@ from ..Geometry import Vector3d
 from ..DocObjects import ConstructionPlane
 from ..DocObjects import ViewportInfo
 from ..DocObjects import ViewInfo
+from ..Geometry import Transform
 from ..Geometry import Sphere
 from ..DocObjects import CoordinateSystem
 from ..Geometry import Line
@@ -2144,6 +2152,7 @@ class StereoContext(Enum):
 
 
 from ..Geometry import Plane
+from ..Geometry import BoundingBox
 from ..DocObjects import TextHorizontalAlignment
 from ..DocObjects import TextVerticalAlignment
 class Text3d:
@@ -2517,6 +2526,7 @@ class ZBiasMode(Enum):
     AwayFromCamera = 2
 
 
+from ..Geometry import Point3d
 class ZBufferCapture:
     def __init__(self, viewport: RhinoViewport): ...
     def Dispose(self) -> None: ...

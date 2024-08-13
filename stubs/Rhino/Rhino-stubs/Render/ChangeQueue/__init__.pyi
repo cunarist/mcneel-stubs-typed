@@ -14,7 +14,10 @@ class BakingFunctions(Enum):
     All = 4294967295
 
 
+from ...Geometry import Light
 from ...DocObjects import ViewInfo
+from ...Geometry import BoundingBox
+from ...Display import DisplayPipelineAttributes
 class ChangeQueue:
     def AreViewsEqual(self, aView: ViewInfo, bView: ViewInfo) -> bool: ...
     @staticmethod
@@ -50,6 +53,8 @@ class ChangeQueue:
     def ToString(self) -> str: ...
 
 
+from ...Geometry import Plane
+from ...DocObjects import ObjectAttributes
 class ClippingPlane:
     def Equals(self, obj: Object) -> bool: ...
     @property
@@ -80,6 +85,7 @@ class DisplayRenderSettings:
     def ToString(self) -> str: ...
 
 
+from ...Geometry import Transform
 class DynamicObjectTransform:
     def Equals(self, obj: Object) -> bool: ...
     @property
@@ -118,6 +124,7 @@ class FrameBufferFillMode(Enum):
     Force32Bit = 4294967295
 
 
+from ...Geometry import Vector2d
 class GroundPlane:
     def Equals(self, obj: Object) -> bool: ...
     @property
@@ -143,6 +150,7 @@ class GroundPlane:
     def ToString(self) -> str: ...
 
 
+from ...Geometry import Light
 class Light:
     def Equals(self, obj: Object) -> bool: ...
     @property
@@ -160,6 +168,7 @@ class Light:
     def ToString(self) -> str: ...
 
 
+from ...Geometry import Transform
 class MappingChannel:
     def Equals(self, obj: Object) -> bool: ...
     @property
@@ -197,6 +206,8 @@ class Material:
     def ToString(self) -> str: ...
 
 
+from ...DocObjects import ObjectAttributes
+from ...DocObjects import RhinoObject
 class Mesh:
     def Equals(self, obj: Object) -> bool: ...
     @property
@@ -214,6 +225,7 @@ class Mesh:
     def ToString(self) -> str: ...
 
 
+from ...Geometry import Transform
 class MeshInstance:
     def Equals(self, obj: Object) -> bool: ...
     @property

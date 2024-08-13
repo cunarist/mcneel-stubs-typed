@@ -134,6 +134,7 @@ class EncodedStringWriter:
     def WriteLineAsync(self, buffer: Iterable[Char], index: int, count: int) -> Task: ...
 
 
+from ..Types import GH_Version
 class GH_Archive:
     def __init__(self): ...
     @overload
@@ -192,6 +193,7 @@ class GH_Archive:
     def WriteToFile(self, fileName: str, overwrite: bool, rememberPath: bool) -> bool: ...
 
 
+from ..Types import GH_Item
 from ..Types import GH_Point2D
 from ..Types import GH_Point3D
 from ..Types import GH_Point4D
@@ -658,6 +660,7 @@ class GH_IChunk:
     def Name(self) -> str: ...
 
 
+from ..Types import GH_Item
 from ..Types import GH_Point2D
 from ..Types import GH_Point3D
 from ..Types import GH_Point4D
@@ -1066,6 +1069,7 @@ class GH_IXmlSupport:
     def Write(self, writer: XmlWriter) -> None: ...
 
 
+from ..Types import GH_Item
 from ..Types import GH_Point2D
 from ..Types import GH_Point3D
 from ..Types import GH_Point4D

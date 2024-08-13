@@ -272,6 +272,7 @@ class GH_BarGraph:
 
 from ...GUI.Canvas import GH_Canvas
 from ...GUI import GH_CanvasMouseEvent
+from ...GUI.Canvas import GH_ObjectResponse
 from ...GUI import GH_TooltipDisplayEventArgs
 from ...GUI.Canvas import GH_CanvasChannel
 class GH_BarGraphAttributes:
@@ -589,6 +590,7 @@ class GH_BooleanSwitch_Obsolete:
 
 from ...GUI.Canvas import GH_Canvas
 from ...GUI import GH_CanvasMouseEvent
+from ...GUI.Canvas import GH_ObjectResponse
 from ...GUI import GH_TooltipDisplayEventArgs
 from ...GUI.Canvas import GH_CanvasChannel
 class GH_BooleanSwitchAttributesObsolete:
@@ -663,6 +665,7 @@ class GH_BooleanSwitchAttributesObsolete:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ...GUI.RemotePanel import IRcpItem
 from ..Data import GH_Path
 from ..Types import GH_Boolean
 from ..Data import IGH_Structure
@@ -908,6 +911,7 @@ class GH_BooleanToggle:
 from ...GUI import GH_TooltipDisplayEventArgs
 from ...GUI.Canvas import GH_Canvas
 from ...GUI import GH_CanvasMouseEvent
+from ...GUI.Canvas import GH_ObjectResponse
 from ...GUI.Canvas import GH_CanvasChannel
 class GH_BooleanToggleAttributes:
     def __init__(self, owner: GH_BooleanToggle): ...
@@ -981,6 +985,7 @@ class GH_BooleanToggleAttributes:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ...GUI.Canvas import GH_ObjectResponse
 class GH_BooleanTogglePublishProxy:
     def __init__(self, owner: GH_BooleanToggle): ...
     def Equals(self, obj: Object) -> bool: ...
@@ -1006,6 +1011,7 @@ class GH_BooleanTogglePublishProxy:
     def ToString(self) -> str: ...
 
 
+from ...GUI.RemotePanel import IRcpItem
 from ..Data import GH_Path
 from ..Types import IGH_Goo
 from ..Data import IGH_Structure
@@ -1258,6 +1264,7 @@ class GH_ButtonObject:
 from ...GUI import GH_TooltipDisplayEventArgs
 from ...GUI.Canvas import GH_Canvas
 from ...GUI import GH_CanvasMouseEvent
+from ...GUI.Canvas import GH_ObjectResponse
 from ...GUI.Canvas import GH_CanvasChannel
 class GH_ButtonObjectAttributes:
     def __init__(self, owner: GH_ButtonObject): ...
@@ -1331,6 +1338,7 @@ class GH_ButtonObjectAttributes:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ...GUI.Canvas import GH_ObjectResponse
 class GH_ButtonPublishProxy:
     def __init__(self, owner: GH_ButtonObject): ...
     def Equals(self, obj: Object) -> bool: ...
@@ -1799,6 +1807,7 @@ class GH_Cluster_OBSOLETE(GH_Component):
 from ...GUI import GH_TooltipDisplayEventArgs
 from ...GUI.Canvas import GH_Canvas
 from ...GUI import GH_CanvasMouseEvent
+from ...GUI.Canvas import GH_ObjectResponse
 from ...GUI.Canvas import GH_CanvasChannel
 from ..Attributes import GH_ComponentAttributes
 class GH_ClusterAttributes(GH_ComponentAttributes):
@@ -1878,6 +1887,7 @@ class GH_ClusterAttributes(GH_ComponentAttributes):
 from ...GUI import GH_TooltipDisplayEventArgs
 from ...GUI.Canvas import GH_Canvas
 from ...GUI import GH_CanvasMouseEvent
+from ...GUI.Canvas import GH_ObjectResponse
 from ...GUI.Canvas import GH_CanvasChannel
 from ..Attributes import GH_ComponentAttributes
 class GH_ClusterAttributes_OBSOLETE(GH_ComponentAttributes):
@@ -1954,6 +1964,7 @@ class GH_ClusterAttributes_OBSOLETE(GH_ComponentAttributes):
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ..Undo import GH_UndoState
 from ..Undo import GH_ObjectUndoAction
 class GH_ClusterDocumentIdAction(GH_ObjectUndoAction):
     def __init__(self, cluster: GH_Cluster): ...
@@ -2487,6 +2498,7 @@ class GH_ClusterInputHook(GH_ClusterHook):
 from ...GUI import GH_TooltipDisplayEventArgs
 from ...GUI.Canvas import GH_Canvas
 from ...GUI import GH_CanvasMouseEvent
+from ...GUI.Canvas import GH_ObjectResponse
 from ...GUI.Canvas import GH_CanvasChannel
 class GH_ClusterInputHookAttributes:
     def __init__(self, owner: GH_ClusterInputHook): ...
@@ -2819,6 +2831,7 @@ class GH_ClusterOutputHook(GH_ClusterHook):
 from ...GUI import GH_TooltipDisplayEventArgs
 from ...GUI.Canvas import GH_Canvas
 from ...GUI import GH_CanvasMouseEvent
+from ...GUI.Canvas import GH_ObjectResponse
 from ...GUI.Canvas import GH_CanvasChannel
 class GH_ClusterOutputHookAttributes:
     def __init__(self, owner: GH_ClusterOutputHook): ...
@@ -2896,6 +2909,7 @@ class GH_ClusterOutputHookAttributes:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ..Undo import GH_UndoState
 from ..Undo import GH_ObjectUndoAction
 class GH_ClusterPasswordUndoAction(GH_ObjectUndoAction):
     def __init__(self, cluster: GH_Cluster): ...
@@ -2915,6 +2929,7 @@ class GH_ClusterPasswordUndoAction(GH_ObjectUndoAction):
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ..Undo import GH_UndoState
 from ..Undo import GH_ObjectUndoAction
 class GH_ClusterPreviewDocumentAction(GH_ObjectUndoAction):
     def __init__(self, cluster: GH_Cluster): ...
@@ -2934,6 +2949,7 @@ class GH_ClusterPreviewDocumentAction(GH_ObjectUndoAction):
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ..Undo import GH_UndoState
 from ..Undo import GH_ObjectUndoAction
 class GH_ClusterPropertiesUndoAction(GH_ObjectUndoAction):
     def __init__(self, cluster: GH_Cluster): ...
@@ -2958,6 +2974,7 @@ class GH_ClusterProtection(Enum):
     Protected = 1
 
 
+from ..Undo import GH_UndoState
 from ..Undo import GH_ObjectUndoAction
 class GH_ClusterReferenceAction(GH_ObjectUndoAction):
     def __init__(self, cluster: GH_Cluster): ...
@@ -2979,6 +2996,7 @@ class GH_ClusterReferenceAction(GH_ObjectUndoAction):
 
 from ...GUI.Canvas import GH_Canvas
 from ...GUI import GH_CanvasMouseEvent
+from ...GUI.Canvas import GH_ObjectResponse
 from ...GUI import GH_TooltipDisplayEventArgs
 from ...GUI.Canvas import GH_CanvasChannel
 class GH_ColourPickerAttributes:
@@ -3292,6 +3310,7 @@ class GH_ColourPickerObject:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from ...GUI.RemotePanel import IRcpItem
 from ..Data import GH_Path
 from ..Types import GH_Colour
 from ..Data import IGH_Structure
@@ -3536,6 +3555,7 @@ class GH_ColourSwatch:
 
 from ...GUI.Canvas import GH_Canvas
 from ...GUI import GH_CanvasMouseEvent
+from ...GUI.Canvas import GH_ObjectResponse
 from ...GUI import GH_TooltipDisplayEventArgs
 from ...GUI.Canvas import GH_CanvasChannel
 class GH_ColourSwatchAttributes:
@@ -3610,6 +3630,7 @@ class GH_ColourSwatchAttributes:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ...GUI.Canvas import GH_ObjectResponse
 class GH_ColourSwatchPublishProxy:
     def __init__(self, owner: GH_ColourSwatch): ...
     def Equals(self, obj: Object) -> bool: ...
@@ -3878,6 +3899,7 @@ class GH_ColourWheel:
 
 from ...GUI.Canvas import GH_Canvas
 from ...GUI import GH_CanvasMouseEvent
+from ...GUI.Canvas import GH_ObjectResponse
 from ...GUI import GH_TooltipDisplayEventArgs
 from ...GUI.Canvas import GH_CanvasChannel
 class GH_ColourWheelAttributes:
@@ -4283,6 +4305,7 @@ class GH_ConstantObject:
 from ...GUI import GH_TooltipDisplayEventArgs
 from ...GUI.Canvas import GH_Canvas
 from ...GUI import GH_CanvasMouseEvent
+from ...GUI.Canvas import GH_ObjectResponse
 from ...GUI.Canvas import GH_CanvasChannel
 from ..Attributes import GH_FloatingParamAttributes
 class GH_ConstantObjectAttributes(GH_FloatingParamAttributes):
@@ -4614,6 +4637,7 @@ class GH_DataRecorder:
 from ...GUI import GH_TooltipDisplayEventArgs
 from ...GUI.Canvas import GH_Canvas
 from ...GUI import GH_CanvasMouseEvent
+from ...GUI.Canvas import GH_ObjectResponse
 from ...GUI.Canvas import GH_CanvasChannel
 class GH_DataRecorderAttributes:
     def __init__(self, owner: GH_DataRecorder): ...
@@ -4957,6 +4981,7 @@ class GH_DialKnob:
 
 from ...GUI.Canvas import GH_Canvas
 from ...GUI import GH_CanvasMouseEvent
+from ...GUI.Canvas import GH_ObjectResponse
 from ...GUI import GH_TooltipDisplayEventArgs
 from ...GUI.Canvas import GH_CanvasChannel
 class GH_DialKnobAttributes:
@@ -5031,6 +5056,7 @@ class GH_DialKnobAttributes:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ...GUI.Base import GH_DigitScrollerBase
 from ..Data import GH_Path
 from ..Types import GH_Number
 from ..Data import IGH_Structure
@@ -5275,6 +5301,7 @@ class GH_DigitScroller:
 
 from ...GUI.Canvas import GH_Canvas
 from ...GUI import GH_CanvasMouseEvent
+from ...GUI.Canvas import GH_ObjectResponse
 from ...GUI import GH_TooltipDisplayEventArgs
 from ...GUI.Canvas import GH_CanvasChannel
 class GH_DigitScrollerAttributes:
@@ -5600,6 +5627,7 @@ class GH_GeometryCache:
 
 from ...GUI.Canvas import GH_Canvas
 from ...GUI import GH_CanvasMouseEvent
+from ...GUI.Canvas import GH_ObjectResponse
 from ...GUI import GH_TooltipDisplayEventArgs
 from ...GUI.Canvas import GH_CanvasChannel
 class GH_GeometryCacheAttributes:
@@ -5951,6 +5979,7 @@ class GH_GeometryPipeline:
 from ...GUI import GH_TooltipDisplayEventArgs
 from ...GUI.Canvas import GH_Canvas
 from ...GUI import GH_CanvasMouseEvent
+from ...GUI.Canvas import GH_ObjectResponse
 from ...GUI.Canvas import GH_CanvasChannel
 class GH_GeometryPipelineAttributes:
     def __init__(self, owner: GH_GeometryPipeline): ...
@@ -6225,6 +6254,7 @@ class GH_GradientControl(GH_Component):
 
 from ...GUI.Canvas import GH_Canvas
 from ...GUI import GH_CanvasMouseEvent
+from ...GUI.Canvas import GH_ObjectResponse
 from ...GUI import GH_TooltipDisplayEventArgs
 from ...GUI.Canvas import GH_CanvasChannel
 class GH_GradientControlAttributes:
@@ -6301,6 +6331,7 @@ class GH_GradientControlAttributes:
 
 
 from ..Graphs import GH_GraphContainer
+from ..Graphs import IGH_Graph
 from ..Data import GH_Path
 from ..Types import IGH_Goo
 from ..Data import IGH_Structure
@@ -6546,6 +6577,7 @@ class GH_GraphMapper:
 
 from ...GUI.Canvas import GH_Canvas
 from ...GUI import GH_CanvasMouseEvent
+from ...GUI.Canvas import GH_ObjectResponse
 from ...GUI import GH_TooltipDisplayEventArgs
 from ...GUI.Canvas import GH_CanvasChannel
 class GH_GraphMapperAttributes:
@@ -6769,6 +6801,7 @@ from ...GUI import GH_TooltipDisplayEventArgs
 from ...GUI.Canvas import GH_Canvas
 from ...GUI.Canvas import GH_CanvasChannel
 from ...GUI import GH_CanvasMouseEvent
+from ...GUI.Canvas import GH_ObjectResponse
 class GH_GroupAttributes:
     def __init__(self, owner: GH_Group): ...
     def AppendToAttributeTree(self, attributes: List) -> None: ...
@@ -7124,6 +7157,7 @@ class GH_ImageSampler:
 
 from ...GUI.Canvas import GH_Canvas
 from ...GUI import GH_CanvasMouseEvent
+from ...GUI.Canvas import GH_ObjectResponse
 from ...GUI import GH_TooltipDisplayEventArgs
 from ...GUI.Canvas import GH_CanvasChannel
 class GH_ImageSamplerAttributes:
@@ -7199,8 +7233,8 @@ class GH_ImageSamplerAttributes:
 
 
 from ..Data import GH_Path
-from ..Types import IGH_Goo
 from ..Data import IGH_Structure
+from ..Types import IGH_Goo
 from ..Data import GH_Structure
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
@@ -7463,6 +7497,7 @@ class GH_ItemPicker:
 
 from ...GUI.Canvas import GH_Canvas
 from ...GUI import GH_CanvasMouseEvent
+from ...GUI.Canvas import GH_ObjectResponse
 from ...GUI import GH_TooltipDisplayEventArgs
 from ...GUI.Canvas import GH_CanvasChannel
 class GH_ItemPickerAttributes:
@@ -7664,6 +7699,7 @@ class GH_JumpObject(GH_DocumentObject):
 from ...GUI import GH_TooltipDisplayEventArgs
 from ...GUI.Canvas import GH_Canvas
 from ...GUI import GH_CanvasMouseEvent
+from ...GUI.Canvas import GH_ObjectResponse
 from ...GUI.Canvas import GH_CanvasChannel
 class GH_JumpObjectAttributes:
     def __init__(self, owner: GH_JumpObject): ...
@@ -7928,6 +7964,7 @@ class GH_Legend(GH_Component):
 
 from ...GUI.Canvas import GH_Canvas
 from ...GUI import GH_CanvasMouseEvent
+from ...GUI.Canvas import GH_ObjectResponse
 from ...GUI import GH_TooltipDisplayEventArgs
 from ...GUI.Canvas import GH_CanvasChannel
 class GH_LegendAttributes:
@@ -8164,6 +8201,7 @@ class GH_Markup(GH_DocumentObject):
 
 from ...GUI.Canvas import GH_Canvas
 from ...GUI import GH_CanvasMouseEvent
+from ...GUI.Canvas import GH_ObjectResponse
 from ...GUI import GH_TooltipDisplayEventArgs
 from ...GUI.Canvas import GH_CanvasChannel
 class GH_MarkupAttributes:
@@ -8578,6 +8616,7 @@ class GH_MultiDimensionalSlider:
 
 from ...GUI.Canvas import GH_Canvas
 from ...GUI import GH_CanvasMouseEvent
+from ...GUI.Canvas import GH_ObjectResponse
 from ...GUI import GH_TooltipDisplayEventArgs
 from ...GUI.Canvas import GH_CanvasChannel
 class GH_MultiDimensionalSliderAttributes:
@@ -8652,7 +8691,9 @@ class GH_MultiDimensionalSliderAttributes:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ...GUI.Base import GH_SliderBase
 from ...GUI.Base import GH_SliderAccuracy
+from ...GUI.RemotePanel import IRcpItem
 from ..Data import GH_Path
 from ..Types import GH_Number
 from ..Data import IGH_Structure
@@ -8925,6 +8966,7 @@ class GH_NumberSlider:
 
 from ...GUI.Canvas import GH_Canvas
 from ...GUI import GH_CanvasMouseEvent
+from ...GUI.Canvas import GH_ObjectResponse
 from ...GUI import GH_TooltipDisplayEventArgs
 from ...GUI.Canvas import GH_CanvasChannel
 class GH_NumberSliderAttributes:
@@ -8999,6 +9041,7 @@ class GH_NumberSliderAttributes:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ...GUI.Canvas import GH_ObjectResponse
 class GH_NumberSliderPublishProxy:
     def __init__(self, owner: GH_NumberSlider): ...
     def Equals(self, obj: Object) -> bool: ...
@@ -9024,6 +9067,7 @@ class GH_NumberSliderPublishProxy:
     def ToString(self) -> str: ...
 
 
+from ...GUI.RemotePanel import IRcpItem
 from ..Data import GH_Path
 from ..Types import GH_String
 from ..Data import IGH_Structure
@@ -9282,6 +9326,7 @@ class GH_Panel:
 
 from ...GUI.Canvas import GH_Canvas
 from ...GUI import GH_CanvasMouseEvent
+from ...GUI.Canvas import GH_ObjectResponse
 from ...GUI import GH_TooltipDisplayEventArgs
 from ...GUI.Canvas import GH_CanvasChannel
 class GH_PanelAttributes:
@@ -9455,6 +9500,7 @@ class GH_PanelProperties:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ...GUI.Canvas import GH_ObjectResponse
 class GH_PanelPublishProxy:
     def __init__(self, owner: GH_Panel): ...
     def Equals(self, obj: Object) -> bool: ...
@@ -9480,6 +9526,8 @@ class GH_PanelPublishProxy:
     def ToString(self) -> str: ...
 
 
+from ..Data import GH_GraphicBranch
+from ..Data import GH_GraphicTreeDisplayArgs
 from ..Data import GH_Path
 from ..Types import GH_StructurePath
 from ..Data import IGH_Structure
@@ -9730,6 +9778,7 @@ class GH_ParamViewer:
 
 from ...GUI.Canvas import GH_Canvas
 from ...GUI import GH_CanvasMouseEvent
+from ...GUI.Canvas import GH_ObjectResponse
 from ...GUI import GH_TooltipDisplayEventArgs
 from ...GUI.Canvas import GH_CanvasChannel
 class GH_ParamViewerAttributes:
@@ -10057,6 +10106,7 @@ class GH_PathMapper:
 
 from ...GUI.Canvas import GH_Canvas
 from ...GUI import GH_CanvasMouseEvent
+from ...GUI.Canvas import GH_ObjectResponse
 from ...GUI import GH_TooltipDisplayEventArgs
 from ...GUI.Canvas import GH_CanvasChannel
 class GH_PathMapperAttributes:
@@ -10370,6 +10420,7 @@ class GH_PieChart:
 
 from ...GUI.Canvas import GH_Canvas
 from ...GUI import GH_CanvasMouseEvent
+from ...GUI.Canvas import GH_ObjectResponse
 from ...GUI import GH_TooltipDisplayEventArgs
 from ...GUI.Canvas import GH_CanvasChannel
 class GH_PieChartAttributes:
@@ -10730,6 +10781,7 @@ class GH_QuickGraph:
 
 from ...GUI.Canvas import GH_Canvas
 from ...GUI import GH_CanvasMouseEvent
+from ...GUI.Canvas import GH_ObjectResponse
 from ...GUI import GH_TooltipDisplayEventArgs
 from ...GUI.Canvas import GH_CanvasChannel
 class GH_QuickGraphAttributes:
@@ -11110,6 +11162,7 @@ class GH_Relay:
 
 from ...GUI.Canvas import GH_Canvas
 from ...GUI import GH_CanvasMouseEvent
+from ...GUI.Canvas import GH_ObjectResponse
 from ...GUI import GH_TooltipDisplayEventArgs
 from ...GUI.Canvas import GH_CanvasChannel
 class GH_RelayAttributes:
@@ -11338,6 +11391,7 @@ class GH_Scribble(GH_DocumentObject):
 
 from ...GUI.Canvas import GH_Canvas
 from ...GUI import GH_CanvasMouseEvent
+from ...GUI.Canvas import GH_ObjectResponse
 from ...GUI import GH_TooltipDisplayEventArgs
 from ...GUI.Canvas import GH_CanvasChannel
 class GH_ScribbleAttributes:
@@ -11699,6 +11753,7 @@ from ...GUI import GH_TooltipDisplayEventArgs
 from ...GUI.Canvas import GH_Canvas
 from ...GUI.Canvas import GH_CanvasChannel
 from ...GUI import GH_CanvasMouseEvent
+from ...GUI.Canvas import GH_ObjectResponse
 class GH_SuireStyleNodeAttributes:
     def __init__(self, owner: GH_SuireSimplifyNode): ...
     def AppendToAttributeTree(self, attributes: List) -> None: ...
@@ -11911,6 +11966,7 @@ class GH_TextBalloon(GH_DocumentObject):
 
 from ...GUI.Canvas import GH_Canvas
 from ...GUI import GH_CanvasMouseEvent
+from ...GUI.Canvas import GH_ObjectResponse
 from ...GUI import GH_TooltipDisplayEventArgs
 from ...GUI.Canvas import GH_CanvasChannel
 class GH_TextBalloonAttributes:
@@ -12182,6 +12238,7 @@ class GH_Timer(GH_ActiveObject):
 from ...GUI import GH_TooltipDisplayEventArgs
 from ...GUI.Canvas import GH_Canvas
 from ...GUI import GH_CanvasMouseEvent
+from ...GUI.Canvas import GH_ObjectResponse
 from ...GUI.Canvas import GH_CanvasChannel
 class GH_TimerAttributes:
     def __init__(self, owner: GH_Timer): ...
@@ -12261,6 +12318,7 @@ class GH_TimerAttributes:
 
 from ...GUI.Canvas import GH_Canvas
 from ...GUI import GH_CanvasMouseEvent
+from ...GUI.Canvas import GH_ObjectResponse
 from ...GUI import GH_TooltipDisplayEventArgs
 from ...GUI.Canvas.Interaction import GH_AbstractInteraction
 class GH_TimerTargetInteraction(GH_AbstractInteraction):
@@ -12566,6 +12624,7 @@ class GH_ValueList:
 
 from ...GUI.Canvas import GH_Canvas
 from ...GUI import GH_CanvasMouseEvent
+from ...GUI.Canvas import GH_ObjectResponse
 from ...GUI import GH_TooltipDisplayEventArgs
 from ...GUI.Canvas import GH_CanvasChannel
 class GH_ValueListAttributes:
@@ -12640,6 +12699,7 @@ class GH_ValueListAttributes:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from ..Types import IGH_Goo
 class GH_ValueListItem:
     @overload
     def __init__(self): ...
@@ -13136,6 +13196,7 @@ class GH_ValueTracker:
 
 from ...GUI.Canvas import GH_Canvas
 from ...GUI import GH_CanvasMouseEvent
+from ...GUI.Canvas import GH_ObjectResponse
 from ...GUI import GH_TooltipDisplayEventArgs
 from ...GUI.Canvas import GH_CanvasChannel
 class GH_ValueTrackerAttributes:

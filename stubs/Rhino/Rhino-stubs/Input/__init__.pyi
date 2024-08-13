@@ -56,7 +56,9 @@ class GetResult(Enum):
     User1 = 4294967295
 
 
+from ..UI import LocalizeStringPair
 from ..Geometry import Point3d
+from ..Commands import Result
 from ..DocObjects import MeshObject
 from ..DocObjects import ObjectType
 from ..DocObjects import ObjRef

@@ -66,6 +66,24 @@ class BinaryArchiveMode(Enum):
     Write3dm = 6
 
 
+from ..Collections import ArchivableDictionary
+from ..DocObjects import ObjRef
+from ..Geometry import Interval
+from ..Geometry import Point2d
+from ..Geometry import Point3d
+from ..Geometry import Point4d
+from ..Geometry import Vector2d
+from ..Geometry import Vector3d
+from ..Geometry import BoundingBox
+from ..Geometry import Ray3d
+from ..Geometry import Transform
+from ..Geometry import Plane
+from ..Geometry import Line
+from ..Geometry import Point3f
+from ..Geometry import Vector3f
+from ..Geometry import MeshingParameters
+from ..Geometry import GeometryBase
+from ..Render import RenderSettings
 class BinaryArchiveReader:
     def AtEnd(self) -> bool: ...
     @overload
@@ -272,6 +290,7 @@ class DracoColorFormat(Enum):
 
 
 from ..Geometry import Mesh
+from ..Geometry import GeometryBase
 class DracoCompression:
     @overload
     @staticmethod
@@ -467,6 +486,7 @@ class File3dm:
 
 
 
+from ..DocObjects import ModelComponentType
 from ..DocObjects import DimensionStyle
 class File3dmDimStyleTable:
     def __iter__(self) -> Iterator[DimensionStyle]: ...
@@ -492,6 +512,7 @@ class File3dmDimStyleTable:
     def ToString(self) -> str: ...
 
 
+from ..DocObjects import ModelComponentType
 from ..DocObjects import Group
 class File3dmGroupTable:
     def __iter__(self) -> Iterator[Group]: ...
@@ -518,6 +539,7 @@ class File3dmGroupTable:
     def ToString(self) -> str: ...
 
 
+from ..DocObjects import ModelComponentType
 from ..DocObjects import HatchPattern
 class File3dmHatchPatternTable:
     def __iter__(self) -> Iterator[HatchPattern]: ...
@@ -543,10 +565,11 @@ class File3dmHatchPatternTable:
     def ToString(self) -> str: ...
 
 
+from ..DocObjects import ModelComponentType
+from ..Geometry import InstanceDefinitionGeometry
 from ..Geometry import Point3d
 from ..Geometry import GeometryBase
 from ..DocObjects import ObjectAttributes
-from ..Geometry import InstanceDefinitionGeometry
 class File3dmInstanceDefinitionTable:
     def __iter__(self) -> Iterator[InstanceDefinitionGeometry]: ...
     @overload
@@ -580,6 +603,7 @@ class File3dmInstanceDefinitionTable:
     def ToString(self) -> str: ...
 
 
+from ..DocObjects import ModelComponentType
 from ..DocObjects import Layer
 class File3dmLayerTable:
     def __iter__(self) -> Iterator[Layer]: ...
@@ -610,6 +634,7 @@ class File3dmLayerTable:
     def ToString(self) -> str: ...
 
 
+from ..DocObjects import ModelComponentType
 from ..DocObjects import Linetype
 class File3dmLinetypeTable:
     def __iter__(self) -> Iterator[Linetype]: ...
@@ -635,6 +660,7 @@ class File3dmLinetypeTable:
     def ToString(self) -> str: ...
 
 
+from ..DocObjects import ModelComponentType
 from ..DocObjects import Material
 class File3dmMaterialTable:
     def __iter__(self) -> Iterator[Material]: ...
@@ -710,7 +736,12 @@ class File3dmNotes:
     def ToString(self) -> str: ...
 
 
+from ..Geometry import GeometryBase
+from ..DocObjects import ObjectAttributes
+from ..DocObjects import ModelComponentType
 from ..Geometry import ComponentStatus
+from ..DocObjects.Custom import UserDataList
+from ..Collections import ArchivableDictionary
 from ..DocObjects import ModelComponent
 class File3dmObject(ModelComponent):
     def ClearId(self) -> None: ...
@@ -793,8 +824,10 @@ class File3dmObject(ModelComponent):
     def TryReadUserData(self, userDataId: Guid, readFromAttributes: bool, dataReader: Func) -> bool: ...
 
 
+from ..DocObjects import ModelComponentType
 from ..DocObjects import Layer
 from ..DocObjects import Group
+from ..Geometry import BoundingBox
 from ..Geometry import Point3d
 from ..DocObjects import ObjectAttributes
 from ..Geometry import Point3f
@@ -1172,6 +1205,7 @@ class FileFindPreference(Enum):
     MostRecent = 5
 
 
+from ..PlugIns import WriteFileResult
 class FileObj:
     def Equals(self, obj: Object) -> bool: ...
     def GetHashCode(self) -> int: ...
@@ -1190,6 +1224,7 @@ class FileObj:
     def Write(filename: str, meshes: Iterable[Mesh], options: FileObjWriteOptions) -> WriteFileResult: ...
 
 
+from ..Geometry import Transform
 class FileObjReadOptions:
     def __init__(self, readOptions: FileReadOptions): ...
     def Equals(self, obj: Object) -> bool: ...
@@ -1232,6 +1267,7 @@ class FileObjReadOptions:
 
 
 from ..Geometry import MeshingParameters
+from ..Geometry import Transform
 class FileObjWriteOptions:
     def __init__(self, writeOptions: FileWriteOptions): ...
     def Equals(self, obj: Object) -> bool: ...
@@ -1408,6 +1444,7 @@ class FilePdfEventArgs:
     def ToString(self) -> str: ...
 
 
+from ..PlugIns import WriteFileResult
 class FilePly:
     def Equals(self, obj: Object) -> bool: ...
     def GetHashCode(self) -> int: ...
@@ -1683,8 +1720,8 @@ class ImageFile:
     def ToString(self) -> str: ...
 
 
-from ..DocObjects import ModelComponentType
 from ..DocObjects import ModelComponent
+from ..DocObjects import ModelComponentType
 class ManifestTable:
     def __iter__(self) -> Iterator[ModelComponent]: ...
     def ActiveObjectCount(self, type: ModelComponentType) -> int: ...

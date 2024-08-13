@@ -494,6 +494,7 @@ class GH_SyntaxException:
 
 
 from ..Types import Complex
+from ..Types import IGH_Goo
 class GH_Variant:
     @overload
     def __init__(self): ...

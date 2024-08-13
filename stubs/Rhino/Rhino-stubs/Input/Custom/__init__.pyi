@@ -71,6 +71,7 @@ class GeometryAttributeFilter(Enum):
 
 
 from ...Geometry import Arc
+from ...Commands import Result
 class GetArc:
     def __init__(self): ...
     def Dispose(self) -> None: ...
@@ -103,6 +104,9 @@ class GetArc:
 
 from ...Geometry import Point3d
 from ...UI import LocalizeStringPair
+from ...Commands import Result
+from ...Geometry import Vector3d
+from ...Display import RhinoView
 class GetBaseClass:
     def AcceptColor(self, enable: bool) -> None: ...
     def AcceptCustomMessage(self, enable: bool) -> None: ...
@@ -200,8 +204,11 @@ class GetBaseClass:
 
 
 from .. import RhinoDoc
+from ...Commands import Result
 from ...Geometry import Point3d
 from ...UI import LocalizeStringPair
+from ...Geometry import Vector3d
+from ...Display import RhinoView
 class GetCancel(GetBaseClass):
     def __init__(self): ...
     def AcceptColor(self, enable: bool) -> None: ...
@@ -320,6 +327,7 @@ class GetCancel(GetBaseClass):
 
 
 from ...Geometry import Circle
+from ...Commands import Result
 class GetCircle:
     def __init__(self): ...
     def Dispose(self) -> None: ...
@@ -355,6 +363,7 @@ class GetCircle:
 
 
 from ...Geometry import Cone
+from ...Commands import Result
 class GetCone:
     def __init__(self): ...
     def Dispose(self) -> None: ...
@@ -402,6 +411,7 @@ class GetCone:
 
 
 from ...Geometry import Cylinder
+from ...Commands import Result
 class GetCylinder:
     def __init__(self): ...
     def Dispose(self) -> None: ...
@@ -440,7 +450,9 @@ class GetCylinder:
     def ToString(self) -> str: ...
 
 
+from ...Geometry import Point3d
 from ...Geometry import NurbsSurface
+from ...Commands import Result
 from ...Geometry import Mesh
 class GetEllipsoid:
     def __init__(self): ...
@@ -487,6 +499,9 @@ class GetFileNameMode(Enum):
 
 from ...Geometry import Point3d
 from ...UI import LocalizeStringPair
+from ...Commands import Result
+from ...Geometry import Vector3d
+from ...Display import RhinoView
 class GetInteger(GetBaseClass):
     def __init__(self): ...
     def AcceptColor(self, enable: bool) -> None: ...
@@ -589,6 +604,7 @@ class GetInteger(GetBaseClass):
 
 
 from ...Geometry import Line
+from ...Commands import Result
 from ...Geometry import Point3d
 class GetLine:
     def __init__(self): ...
@@ -649,6 +665,9 @@ class GetLineMode(Enum):
 
 from ...Geometry import Point3d
 from ...UI import LocalizeStringPair
+from ...Commands import Result
+from ...Geometry import Vector3d
+from ...Display import RhinoView
 class GetNumber(GetBaseClass):
     def __init__(self): ...
     def AcceptColor(self, enable: bool) -> None: ...
@@ -755,6 +774,9 @@ from ...Geometry import ComponentIndex
 from ...DocObjects import ObjRef
 from ...Geometry import Point3d
 from ...UI import LocalizeStringPair
+from ...Commands import Result
+from ...Geometry import Vector3d
+from ...Display import RhinoView
 class GetObject(GetBaseClass):
     def __init__(self): ...
     def AcceptColor(self, enable: bool) -> None: ...
@@ -949,6 +971,9 @@ class GetObjectGeometryFilter:
 
 from ...Geometry import Point3d
 from ...UI import LocalizeStringPair
+from ...Commands import Result
+from ...Geometry import Vector3d
+from ...Display import RhinoView
 class GetOption(GetBaseClass):
     def __init__(self): ...
     def AcceptColor(self, enable: bool) -> None: ...
@@ -1058,7 +1083,13 @@ from ...Geometry import Curve
 from ...Geometry import Surface
 from ...Geometry import Brep
 from ...Geometry import Mesh
+from ...ApplicationSettings import OsnapModes
+from ...DocObjects import ObjRef
+from ...Geometry import BrepFace
 from ...UI import LocalizeStringPair
+from ...Commands import Result
+from ...Geometry import Vector3d
+from ...Display import RhinoView
 class GetPoint(GetBaseClass):
     def __init__(self): ...
     def AcceptColor(self, enable: bool) -> None: ...
@@ -1241,6 +1272,10 @@ class GetPoint(GetBaseClass):
     def View(self) -> RhinoView: ...
 
 
+from ...Geometry import Point3d
+from ...Display import RhinoViewport
+from ...Display import DisplayPipeline
+from .. import RhinoDoc
 from ...Display import DrawEventArgs
 class GetPointDrawEventArgs(DrawEventArgs):
     def Equals(self, obj: Object) -> bool: ...
@@ -1259,6 +1294,8 @@ class GetPointDrawEventArgs(DrawEventArgs):
     def ToString(self) -> str: ...
 
 
+from ...Display import RhinoViewport
+from ...Geometry import Point3d
 class GetPointMouseEventArgs:
     def Equals(self, obj: Object) -> bool: ...
     @property
@@ -1285,6 +1322,7 @@ class GetPointMouseEventArgs:
 
 
 from ...Geometry import Polyline
+from ...Commands import Result
 from ...Geometry import Point3d
 class GetPolyline:
     def __init__(self): ...
@@ -1322,6 +1360,7 @@ class GetPolyline:
 
 
 from ...Geometry import Sphere
+from ...Commands import Result
 class GetSphere:
     def __init__(self): ...
     def Dispose(self) -> None: ...
@@ -1343,6 +1382,9 @@ class GetSphere:
 
 from ...Geometry import Point3d
 from ...UI import LocalizeStringPair
+from ...Commands import Result
+from ...Geometry import Vector3d
+from ...Display import RhinoView
 class GetString(GetBaseClass):
     def __init__(self): ...
     def AcceptColor(self, enable: bool) -> None: ...
@@ -1441,6 +1483,7 @@ class GetString(GetBaseClass):
 
 
 from ...Geometry import Torus
+from ...Commands import Result
 class GetTorus:
     def __init__(self): ...
     def Dispose(self) -> None: ...
@@ -1507,7 +1550,13 @@ from ...Geometry import Curve
 from ...Geometry import Surface
 from ...Geometry import Brep
 from ...Geometry import Mesh
+from ...ApplicationSettings import OsnapModes
+from ...DocObjects import ObjRef
+from ...Geometry import BrepFace
 from ...UI import LocalizeStringPair
+from ...Commands import Result
+from ...Geometry import Vector3d
+from ...Display import RhinoView
 class GetTransform(GetPoint):
     def AcceptColor(self, enable: bool) -> None: ...
     def AcceptCustomMessage(self, enable: bool) -> None: ...
@@ -1703,6 +1752,7 @@ class GetTransform(GetPoint):
 
 
 from ...Geometry import Brep
+from ...Commands import Result
 from ...Geometry import Mesh
 class GetTruncatedCone:
     def __init__(self): ...

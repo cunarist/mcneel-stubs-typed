@@ -3,6 +3,7 @@ from enum import Enum
 
 
 
+from .. import RhinoDoc
 class BitmapTable:
     def __iter__(self) -> Iterator[BitmapEntry]: ...
     def AddBitmap(self, bitmapFilename: str, replaceExisting: bool) -> int: ...
@@ -30,6 +31,7 @@ class BitmapTable:
 
 
 from ...Geometry import AnnotationBase
+from .. import RhinoDoc
 class DimStyleTable:
     def __iter__(self) -> Iterator[DimensionStyle]: ...
     @overload
@@ -84,6 +86,7 @@ class DimStyleTable:
     def ToString(self) -> str: ...
 
 
+from .. import RhinoDoc
 class DimStyleTableEventArgs:
     def Equals(self, obj: Object) -> bool: ...
     @property
@@ -110,6 +113,7 @@ class DimStyleTableEventType(Enum):
     Current = 5
 
 
+from .. import RhinoDoc
 class FontTable:
     def __iter__(self) -> Iterator[Font]: ...
     def Equals(self, obj: Object) -> bool: ...
@@ -132,6 +136,7 @@ class FontTable:
 
 
 from ...FileIO import NameHash
+from .. import RhinoDoc
 class GroupTable:
     def __iter__(self) -> Iterator[Group]: ...
     @overload
@@ -180,6 +185,7 @@ class GroupTable:
     def Unlock(self, groupIndex: int) -> int: ...
 
 
+from .. import RhinoDoc
 class GroupTableEventArgs:
     def Equals(self, obj: Object) -> bool: ...
     @property
@@ -206,6 +212,7 @@ class GroupTableEventType(Enum):
 
 
 from ...FileIO import NameHash
+from .. import RhinoDoc
 class HatchPatternTable:
     def __iter__(self) -> Iterator[HatchPattern]: ...
     def Add(self, pattern: HatchPattern) -> int: ...
@@ -245,6 +252,7 @@ class HatchPatternTable:
     def ToString(self) -> str: ...
 
 
+from .. import RhinoDoc
 from ...Geometry import Point3d
 from ...Geometry import GeometryBase
 from ...FileIO import FileReference
@@ -315,6 +323,8 @@ class InstanceDefinitionTable:
     def UpdateLinkedInstanceDefinition(self, idefIndex: int, filename: str, updateNestedLinks: bool, quiet: bool) -> bool: ...
 
 
+from .. import RhinoDoc
+from ...Geometry import InstanceDefinitionGeometry
 class InstanceDefinitionTableEventArgs:
     def Equals(self, obj: Object) -> bool: ...
     @property
@@ -340,6 +350,7 @@ class InstanceDefinitionTableEventType(Enum):
     Sorted = 4
 
 
+from .. import RhinoDoc
 from ...FileIO import NameHash
 class LayerTable:
     def __iter__(self) -> Iterator[Layer]: ...
@@ -428,6 +439,7 @@ class LayerTable:
     def UndoModify(self, layerIndex: int, undoRecordSerialNumber: UInt32) -> bool: ...
 
 
+from .. import RhinoDoc
 class LayerTableEventArgs:
     def Equals(self, obj: Object) -> bool: ...
     @property
@@ -454,6 +466,9 @@ class LayerTableEventType(Enum):
     Current = 5
 
 
+from .. import RhinoDoc
+from ...Render import Sun
+from ...Render import Skylight
 from ...FileIO import NameHash
 from ...Geometry import Light
 class LightTable:
@@ -497,6 +512,8 @@ class LightTable:
     def ToString(self) -> str: ...
 
 
+from .. import RhinoDoc
+from ...Geometry import Light
 class LightTableEventArgs:
     def Equals(self, obj: Object) -> bool: ...
     @property
@@ -522,6 +539,7 @@ class LightTableEventType(Enum):
     Sorted = 4
 
 
+from .. import RhinoDoc
 class LinetypeTable:
     def __iter__(self) -> Iterator[Linetype]: ...
     @overload
@@ -589,6 +607,7 @@ class LinetypeTable:
     def UndoModify(self, index: int) -> bool: ...
 
 
+from .. import RhinoDoc
 class MaterialTable:
     def __iter__(self) -> Iterator[Material]: ...
     @overload
@@ -633,6 +652,7 @@ class MaterialTable:
     def ToString(self) -> str: ...
 
 
+from .. import RhinoDoc
 class MaterialTableEventArgs:
     def Equals(self, obj: Object) -> bool: ...
     @property
@@ -663,6 +683,7 @@ class ModifyType(Enum):
     NotSaved = 2
 
 
+from .. import RhinoDoc
 from ...Geometry import Plane
 class NamedConstructionPlaneTable:
     def __iter__(self) -> Iterator[ConstructionPlane]: ...
@@ -685,6 +706,7 @@ class NamedConstructionPlaneTable:
     def ToString(self) -> str: ...
 
 
+from .. import RhinoDoc
 class NamedLayerStateTable:
     def Delete(self, name: str) -> bool: ...
     def Equals(self, obj: Object) -> bool: ...
@@ -710,6 +732,7 @@ class NamedLayerStateTable:
     def ToString(self) -> str: ...
 
 
+from .. import RhinoDoc
 from ...Geometry import Transform
 class NamedPositionTable:
     @overload
@@ -768,6 +791,7 @@ class NamedPositionTable:
     def Update(self, name: str) -> bool: ...
 
 
+from .. import RhinoDoc
 from ...Display import RhinoViewport
 from ...Display import RhinoView
 class NamedViewTable:
@@ -802,6 +826,7 @@ class NamedViewTable:
     def ToString(self) -> str: ...
 
 
+from ...Geometry import BoundingBox
 from ...Geometry import Transform
 from ...Input.Custom import PickContext
 from ...Geometry import Surface
@@ -826,6 +851,7 @@ from ...Geometry import Polyline
 from ...Geometry import Curve
 from ...Geometry import SubD
 from ...Geometry import PointCloud
+from .. import RhinoDoc
 from ...Display import RhinoViewport
 from ...Geometry import Point2d
 from ..Custom import CustomMeshObject
@@ -833,6 +859,7 @@ from ..Custom import CustomBrepObject
 from ..Custom import CustomPointObject
 from ..Custom import CustomCurveObject
 from ...Geometry import Point3f
+from ...Collections import RhinoList
 from ...Geometry import RadialDimension
 from ...Geometry import Rectangle3d
 from ...Geometry import Box
@@ -1401,6 +1428,7 @@ class RestoreLayerProperties(Enum):
 
 
 
+from .. import RhinoDoc
 class RuntimeDocumentDataTable:
     def __iter__(self) -> Iterator[KeyValuePair]: ...
     def Add(self, key: Object, value: Object) -> None: ...
@@ -1436,6 +1464,7 @@ class RuntimeDocumentDataTable:
     def TryGetValue(self, key: Object) -> Tuple[bool, Object]: ...
 
 
+from .. import RhinoDoc
 class SnapshotTable:
     def Equals(self, obj: Object) -> bool: ...
     @property
@@ -1447,6 +1476,7 @@ class SnapshotTable:
     def ToString(self) -> str: ...
 
 
+from .. import RhinoDoc
 class StringTable:
     @overload
     def Delete(self, key: str) -> None: ...
@@ -1479,8 +1509,10 @@ class StringTable:
     def ToString(self) -> str: ...
 
 
+from .. import RhinoDoc
 from ...Display import RhinoView
 from ...Display import DefinedViewportProjection
+from ...Display import RhinoPageView
 class ViewTable:
     def __iter__(self) -> Iterator[RhinoView]: ...
     def Add(self, title: str, projection: DefinedViewportProjection, position: Rectangle, floating: bool) -> RhinoView: ...

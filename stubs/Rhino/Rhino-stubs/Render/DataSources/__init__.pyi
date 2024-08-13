@@ -90,6 +90,7 @@ class RdkSelectionNavigator:
 
 
 from ...Display import RhinoView
+from ...DocObjects import ViewInfo
 class RhinoSettings:
     def __init__(self, pRhinoSettings: IntPtr): ...
     def ActiveView(self) -> RhinoView: ...

@@ -5,6 +5,7 @@ from enum import Enum
 
 from ...GUI.Canvas import GH_Canvas
 from ...GUI import GH_CanvasMouseEvent
+from ...GUI.Canvas import GH_ObjectResponse
 from ...GUI import GH_TooltipDisplayEventArgs
 from ...GUI.Canvas import GH_PaletteStyle
 from ...GUI.Canvas import GH_CanvasChannel
@@ -95,6 +96,7 @@ class GH_ComponentAttributes:
 from ...GUI import GH_TooltipDisplayEventArgs
 from ...GUI.Canvas import GH_Canvas
 from ...GUI import GH_CanvasMouseEvent
+from ...GUI.Canvas import GH_ObjectResponse
 from ...GUI.Canvas import GH_CanvasChannel
 class GH_FloatingParamAttributes:
     def __init__(self, param: IGH_Param): ...
@@ -172,6 +174,7 @@ from ...GUI import GH_TooltipDisplayEventArgs
 from ...GUI.Canvas import GH_Canvas
 from ...GUI.Canvas import GH_CanvasChannel
 from ...GUI import GH_CanvasMouseEvent
+from ...GUI.Canvas import GH_ObjectResponse
 class GH_LinkedParamAttributes:
     def __init__(self, param: IGH_Param, parent: IGH_Attributes): ...
     def AppendToAttributeTree(self, attributes: List) -> None: ...

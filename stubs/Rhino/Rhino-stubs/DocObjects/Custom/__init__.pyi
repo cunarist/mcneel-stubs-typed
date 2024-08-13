@@ -17,6 +17,9 @@ class ClassIdAttribute:
     def ToString(self) -> str: ...
 
 
+from ...Geometry import Brep
+from .. import RhinoDoc
+from ...Geometry import GeometryBase
 from ...Geometry import ComponentIndex
 from ...Display import VisualAnalysisMode
 from ...FileIO import TextLog
@@ -24,12 +27,14 @@ from ...Geometry import MeshType
 from ...Geometry import MeshingParameters
 from ...UI.Gumball import GumballFrame
 from ...Display import DisplayPipelineAttributes
+from ...Render import RenderPrimitiveList
 from ...Geometry import BoundingBox
 from ...Geometry import Transform
 from ...Render import TextureMapping
 from ...Render import RenderMaterial
 from ...Display import RhinoViewport
 from ...Geometry import ComponentStatus
+from ...Collections import ArchivableDictionary
 from ...FileIO import SerializationOptions
 class CustomBrepObject(BrepObject):
     def ClearId(self) -> None: ...
@@ -245,6 +250,9 @@ class CustomBrepObject(BrepObject):
     def UnselectAllSubObjects(self) -> int: ...
 
 
+from ...Geometry import Curve
+from .. import RhinoDoc
+from ...Geometry import GeometryBase
 from ...Geometry import ComponentIndex
 from ...Display import VisualAnalysisMode
 from ...FileIO import TextLog
@@ -252,12 +260,14 @@ from ...Geometry import MeshType
 from ...Geometry import MeshingParameters
 from ...UI.Gumball import GumballFrame
 from ...Display import DisplayPipelineAttributes
+from ...Render import RenderPrimitiveList
 from ...Geometry import BoundingBox
 from ...Geometry import Transform
 from ...Render import TextureMapping
 from ...Render import RenderMaterial
 from ...Display import RhinoViewport
 from ...Geometry import ComponentStatus
+from ...Collections import ArchivableDictionary
 from ...FileIO import SerializationOptions
 class CustomCurveObject(CurveObject):
     def ClearId(self) -> None: ...
@@ -479,6 +489,8 @@ class CustomCurveObject(CurveObject):
 from ...Geometry import Point3d
 from ...Geometry import Transform
 from ...Geometry import Vector3d
+from .. import RhinoDoc
+from ...Geometry import GeometryBase
 from ...Geometry import ComponentIndex
 from ...Display import VisualAnalysisMode
 from ...FileIO import TextLog
@@ -486,11 +498,13 @@ from ...Geometry import MeshType
 from ...Geometry import MeshingParameters
 from ...UI.Gumball import GumballFrame
 from ...Display import DisplayPipelineAttributes
+from ...Render import RenderPrimitiveList
 from ...Geometry import BoundingBox
 from ...Render import TextureMapping
 from ...Render import RenderMaterial
 from ...Display import RhinoViewport
 from ...Geometry import ComponentStatus
+from ...Collections import ArchivableDictionary
 from ...FileIO import SerializationOptions
 class CustomGripObject(GripObject):
     def __init__(self): ...
@@ -742,6 +756,9 @@ class CustomGripObject(GripObject):
     def UnselectAllSubObjects(self) -> int: ...
 
 
+from ...Geometry import Mesh
+from .. import RhinoDoc
+from ...Geometry import GeometryBase
 from ...Geometry import ComponentIndex
 from ...Display import VisualAnalysisMode
 from ...FileIO import TextLog
@@ -749,12 +766,14 @@ from ...Geometry import MeshType
 from ...Geometry import MeshingParameters
 from ...UI.Gumball import GumballFrame
 from ...Display import DisplayPipelineAttributes
+from ...Render import RenderPrimitiveList
 from ...Geometry import BoundingBox
 from ...Geometry import Transform
 from ...Render import TextureMapping
 from ...Render import RenderMaterial
 from ...Display import RhinoViewport
 from ...Geometry import ComponentStatus
+from ...Collections import ArchivableDictionary
 from ...FileIO import SerializationOptions
 class CustomMeshObject(MeshObject):
     def ClearId(self) -> None: ...
@@ -998,6 +1017,9 @@ class CustomObjectGrips:
     def ToString(self) -> str: ...
 
 
+from ...Geometry import Point
+from .. import RhinoDoc
+from ...Geometry import GeometryBase
 from ...Geometry import ComponentIndex
 from ...Display import VisualAnalysisMode
 from ...FileIO import TextLog
@@ -1005,12 +1027,14 @@ from ...Geometry import MeshType
 from ...Geometry import MeshingParameters
 from ...UI.Gumball import GumballFrame
 from ...Display import DisplayPipelineAttributes
+from ...Render import RenderPrimitiveList
 from ...Geometry import BoundingBox
 from ...Geometry import Transform
 from ...Render import TextureMapping
 from ...Render import RenderMaterial
 from ...Display import RhinoViewport
 from ...Geometry import ComponentStatus
+from ...Collections import ArchivableDictionary
 from ...FileIO import SerializationOptions
 class CustomPointObject(PointObject):
     def ClearId(self) -> None: ...
@@ -1231,6 +1255,9 @@ class CustomPointObject(PointObject):
 
 from ...Geometry import Line
 from ...Geometry import Point3d
+from ...Display import RhinoViewport
+from ...Display import DisplayPipeline
+from .. import RhinoDoc
 from ...Display import DrawEventArgs
 class GripsDrawEventArgs(DrawEventArgs):
     @overload
@@ -1307,6 +1334,7 @@ class TurnOnGripsEventHandler:
     def ToString(self) -> str: ...
 
 
+from ...Geometry import Transform
 class UnknownUserData(UserData):
     def __init__(self, pointerNativeUserData: IntPtr): ...
     def Dispose(self) -> None: ...
@@ -1323,6 +1351,7 @@ class UnknownUserData(UserData):
 
 
 from ...Runtime import CommonObject
+from ...Geometry import Transform
 class UserData:
     @staticmethod
     def Copy(source: CommonObject, destination: CommonObject) -> None: ...
@@ -1374,6 +1403,8 @@ class UserDataListEnumerator:
     def ToString(self) -> str: ...
 
 
+from ...Collections import ArchivableDictionary
+from ...Geometry import Transform
 class UserDictionary(UserData):
     def __init__(self): ...
     def Dispose(self) -> None: ...
