@@ -1,35 +1,31 @@
 > This is a fork of the original `mcneel/pythonstubs` repository, intended for use by Edit Collective. Modifications are currently focused on improving type hint support.
 
-# McNeel python stubs
+# McNeel Python Stubs
 
 [![PyPI](https://img.shields.io/pypi/v/Rhino-stubs.svg)](https://pypi.org/project/Rhino-stubs)
 
-Python stubs for .NET assemblies that ship with Rhino. Specifically
-- RhinoCommon (https://pypi.org/project/Rhino-stubs/)
-- Eto (https://pypi.org/project/Eto-stubs/)
-- Grasshopper (https://pypi.org/project/Grasshopper-stubs/)
-- GH_IO (https://pypi.org/project/GH-IO-stubs/)
-- GH_Util (https://pypi.org/project/GH-Util-stubs/)
+Python stubs for .NET assemblies that ship with Rhino. Specifically:
+- RhinoCommon ([Rhino-stubs on PyPI](https://pypi.org/project/Rhino-stubs/))
+- Eto ([Eto-stubs on PyPI](https://pypi.org/project/Eto-stubs/))
+- Grasshopper ([Grasshopper-stubs on PyPI](https://pypi.org/project/Grasshopper-stubs/))
+- GH_IO ([GH-IO-stubs on PyPI](https://pypi.org/project/GH-IO-stubs/))
+- GH_Util ([GH-Util-stubs on PyPI](https://pypi.org/project/GH-Util-stubs/))
 
-See the following posts for details about the purpose of these packages:
+For more details about the purpose of these packages, see the following posts:
 
-- [Autocomplete while editing python scripts outside of Rhino](https://discourse.mcneel.com/t/autocomplete-while-editing-python-scripts-outside-of-rhino/79329) on Rhino forums
-- [Autocomplete and Type Hints with Python Scripts for Rhino/Grasshopper](
-https://stevebaer.wordpress.com/2019/02/25/autocomplete-and-type-hints-with-python-scripts-for-rhino-grasshopper) on Steve Baer's Notes
-
+- [Autocomplete while editing Python scripts outside of Rhino](https://discourse.mcneel.com/t/autocomplete-while-editing-python-scripts-outside-of-rhino/79329) on the Rhino forums
+- [Autocomplete and Type Hints with Python Scripts for Rhino/Grasshopper](https://stevebaer.wordpress.com/2019/02/25/autocomplete-and-type-hints-with-python-scripts-for-rhino-grasshopper) on Steve Baer's Notes
 
 ## Using with [VSCode](https://code.visualstudio.com/)
 
-- Open your project in VSCode
-- Open a terminal
-- Depending on the python package manager that you are using, install the stub python packages into your project environment. Examples below use the `pipenv` package manager.
+1. Open your project in VSCode.
+2. Open a terminal.
+3. Depending on the Python package manager you are using, install the stub packages into your project environment. While using `pip` is possible, we recommend using the `poetry` or `pipenv` package manager.
 
-    `$ pipenv install Rhino-stubs `
+    ```sh
+    pip install Rhino-stubs
+    ```
 
-    `$ pipenv install Grasshopper-stubs `
+4. Now you can import `Rhino` or `Grasshopper` and use the autocomplete feature as well as type prediction.
 
-- Now you can import `Rhino` or `Grasshopper` and use the autocomplete
-
-    ![](static/rhino-stub-vscode.gif)
-
-    ![](static/gh-stub-vscode.gif)
+    ![Stub preview](static/rhino-stub-vscode.gif)
