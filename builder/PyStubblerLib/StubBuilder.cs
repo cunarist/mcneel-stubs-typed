@@ -203,8 +203,8 @@ namespace PyStubblerLib
                 ConstructorInfo[] constructors = stubType.GetConstructors();
                 MethodInfo[] methods = stubType.GetMethods();
 
-                // import parameter and return types
-                HashSet<Tuple<string, string>> paramImports = new HashSet<Tuple<string, string>>();
+                // analyze classes to import
+                HashSet<Tuple<string, string>> reqImports = new HashSet<Tuple<string, string>>();
                 foreach (var constructor in constructors)
                 {
                     var parameters = constructor.GetParameters();
@@ -215,7 +215,7 @@ namespace PyStubblerLib
                         var relativeNamespace = FindRelativeNamespace(
                             stubType.Namespace, paramType.Namespace
                         );
-                        paramImports.Add(
+                        reqImports.Add(
                             Tuple.Create(relativeNamespace, ToPythonType(paramType.Name))
                         );
                     }
@@ -230,7 +230,7 @@ namespace PyStubblerLib
                         var relativeNamespace = FindRelativeNamespace(
                             stubType.Namespace, paramType.Namespace
                         );
-                        paramImports.Add(
+                        reqImports.Add(
                             Tuple.Create(relativeNamespace, ToPythonType(paramType.Name))
                         );
                     }
@@ -240,12 +240,14 @@ namespace PyStubblerLib
                         var relativeNamespace = FindRelativeNamespace(
                             stubType.Namespace, returnType.Namespace
                         );
-                        paramImports.Add(
+                        reqImports.Add(
                             Tuple.Create(relativeNamespace, ToPythonType(returnType.Name))
                         );
                     }
                 }
-                foreach (var paramImport in paramImports)
+
+                // import parameter and return types
+                foreach (var paramImport in reqImports)
                 {
                     var relativeNamespace = paramImport.Item1;
                     var paramType = paramImport.Item2;
@@ -308,6 +310,7 @@ namespace PyStubblerLib
                     methodNames[method.Name] = count;
                 }
 
+                // make class iterable with `for i in instance` if it implements `IEnumerable`
                 if (typeof(IEnumerable).IsAssignableFrom(stubType))
                 {
                     Type ienumerableType = stubType.GetInterfaces()
@@ -331,6 +334,32 @@ namespace PyStubblerLib
                     sb.AppendLine($"    def __iter__(self) -> Iterator[{pythonType}]: ...");
                 }
 
+                // make class subscriptable with `instance[i]` if it is indexable
+                Type listType = stubType.GetInterfaces()
+                    .Where(t => t.IsGenericType && 
+                                (t.GetGenericTypeDefinition() == typeof(IList<>) || 
+                                t.GetGenericTypeDefinition() == typeof(IReadOnlyList<>)))
+                    .FirstOrDefault();
+
+                if (listType != null)
+                {
+                    // Extract the generic argument (element type)
+                    Type elementType = listType.GetGenericArguments()[0];
+                    string pythonType = ToPythonType(elementType);
+
+                    // Generate __getitem__
+                    sb.AppendLine($"    def __getitem__(self, index: int) -> {pythonType}: ...");
+
+                    // Check if the type supports mutation (i.e., implements IList<T>)
+                    if (stubType.GetInterfaces().Any(t => 
+                        t.IsGenericType && t.GetGenericTypeDefinition() == typeof(IList<>)))
+                    {
+                        // Generate __setitem__
+                        sb.AppendLine($"    def __setitem__(self, index: int, value: {pythonType}): ...");
+                    }
+                }
+
+                // write method definitions
                 foreach (var method in methods)
                 {
                     var swapFirstTwoParams = false;
