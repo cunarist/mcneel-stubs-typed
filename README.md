@@ -5,11 +5,12 @@
 [![PyPI](https://img.shields.io/pypi/v/Rhino-stubs.svg)](https://pypi.org/project/Rhino-stubs)
 
 Python stubs for .NET assemblies that ship with Rhino. Specifically:
-- RhinoCommon ([Rhino-stubs on PyPI](https://pypi.org/project/Rhino-stubs/))
-- Eto ([Eto-stubs on PyPI](https://pypi.org/project/Eto-stubs/))
-- Grasshopper ([Grasshopper-stubs on PyPI](https://pypi.org/project/Grasshopper-stubs/))
-- GH_IO ([GH-IO-stubs on PyPI](https://pypi.org/project/GH-IO-stubs/))
-- GH_Util ([GH-Util-stubs on PyPI](https://pypi.org/project/GH-Util-stubs/))
+
+- [Rhino-stubs](https://pypi.org/project/Rhino-stubs/)
+- [Eto-stubs](https://pypi.org/project/Eto-stubs/)
+- [Grasshopper-stubs](https://pypi.org/project/Grasshopper-stubs/)
+- [GH-IO-stubs](https://pypi.org/project/GH-IO-stubs/)
+- [GH-Util-stubs](https://pypi.org/project/GH-Util-stubs/)
 
 For more details about the purpose of these packages, see the following posts:
 
