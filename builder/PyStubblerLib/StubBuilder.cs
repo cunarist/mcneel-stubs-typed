@@ -610,6 +610,10 @@ namespace PyStubblerLib
             {
                 string partial = ToPythonType(rc.Substring(0, rc.Length - 2));
                 return $"Iterable[{partial}]";
+            } else if (rc.EndsWith("[,]"))
+            {
+                string partial = ToPythonType(rc.Substring(0, rc.Length - 3));
+                return $"Iterable[{partial}]";
             }
 
             if (rc.EndsWith("*"))
