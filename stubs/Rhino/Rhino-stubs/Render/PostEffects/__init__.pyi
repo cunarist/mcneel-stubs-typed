@@ -131,13 +131,13 @@ class PostEffectExecuteContexts(Enum):
 
 
 class PostEffectExecuteWhileRenderingOptions(Enum):
-    None_ = 0
+    # None = 0
     Always = 1
     UseDelay = 2
 
 
 class PostEffectHistograms(Enum):
-    None_ = 0
+    # None = 0
     BeforeEarlyEffects = 1
     BeforeToneMapping = 2
     AfterEarlyEffects = 2

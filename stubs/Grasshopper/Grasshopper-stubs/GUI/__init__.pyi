@@ -10866,7 +10866,7 @@ class GH_ComponentMenuSettingsUI:
 
 
 class GH_Constraint(Enum):
-    None_ = 0
+    # None = 0
     Vertical = 1
     Horizontal = 2
 
@@ -21684,7 +21684,7 @@ class GH_FadePhase(Enum):
 
 
 class GH_FileRecoveryAction(Enum):
-    None_ = 0
+    # None = 0
     OpenRecoveryFile = 1
     SaveRecoveryFile = 2
     DeleteRecoveryFile = 3
@@ -33022,7 +33022,7 @@ class GH_InterfaceSettingsCategory(GH_SettingsCategory):
 
 
 class GH_Interpolation(Enum):
-    None_ = 0
+    # None = 0
     NearestNeighbour = 1
     Linear = 2
     EaseIn = 3
@@ -59021,7 +59021,7 @@ class GH_ProgressBar:
 
 
 class GH_PruderyFilter(Enum):
-    None_ = 0
+    # None = 0
     Low = 1
     Medium = 2
     High = 3
@@ -64740,14 +64740,14 @@ class GH_Scroll_Method(Enum):
 
 
 class GH_ScrollMouseRelation(Enum):
-    None_ = 0
+    # None = 0
     Top = 1
     Bottom = 2
     Both = 3
 
 
 class GH_SeparatorDisplay(Enum):
-    None_ = 0
+    # None = 0
     Etched = 1
     EtchedFading = 2
     Dashed = 3
@@ -68406,7 +68406,7 @@ class GH_SliderAnimationSetup:
 
 
 class GH_SliderInputMode(Enum):
-    None_ = 0
+    # None = 0
     OnKeyDown = 1
     OnDoubleClick = 2
     All = 3

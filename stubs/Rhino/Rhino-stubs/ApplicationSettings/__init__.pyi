@@ -384,7 +384,7 @@ class CommandPromptPosition(Enum):
 
 
 class CursorMode(Enum):
-    None_ = 0
+    # None = 0
     BlackOnWhite = 1
     WhiteOnBlack = 2
 
@@ -1211,7 +1211,7 @@ class OpenGLSettingsState:
 
 
 class OsnapModes(Enum):
-    None_ = 0
+    # None = 0
     Near = 2
     Focus = 8
     Center = 32

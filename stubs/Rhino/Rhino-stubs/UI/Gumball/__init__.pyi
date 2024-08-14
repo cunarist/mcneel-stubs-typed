@@ -190,7 +190,7 @@ class GumballFrame:
 
 
 class GumballMode(Enum):
-    None_ = 0
+    # None = 0
     Menu = 1
     TranslateFree = 2
     TranslateX = 3

@@ -384,7 +384,7 @@ class PlatformExtensionAttribute:
 
 
 class PlatformFeatures(Enum):
-    None_ = 0
+    # None = 0
     CustomCellSupportsControlView = 1
     DrawableWithTransparentContent = 2
     TabIndexWithCustomContainers = 4

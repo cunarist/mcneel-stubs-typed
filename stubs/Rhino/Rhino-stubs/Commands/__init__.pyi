@@ -194,7 +194,7 @@ class SelCommand(Command):
 
 
 class Style(Enum):
-    None_ = 0
+    # None = 0
     Hidden = 1
     ScriptRunner = 2
     Transparent = 4

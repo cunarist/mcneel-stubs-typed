@@ -188,7 +188,7 @@ class GH_RuntimeFile:
 
 
 class GH_Style(Enum):
-    None_ = 0
+    # None = 0
     WeakEmphasis = 1
     StrongEmphasis = 2
     Monospaced = 3

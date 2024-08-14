@@ -39,7 +39,7 @@ class BlendMode(Enum):
 
 
 class BoundingBoxDisplayMode(Enum):
-    None_ = 0
+    # None = 0
     OnAlways = 1
     OnDuringDynamicDisplay = 2
 
@@ -597,7 +597,7 @@ class CustomDisplay:
 
 
 class DefinedViewportProjection(Enum):
-    None_ = 0
+    # None = 0
     Top = 1
     Bottom = 2
     Left = 3
@@ -1512,7 +1512,7 @@ class DisplayPipelineAttributes:
 
 
 class DisplayTechnology(Enum):
-    None_ = 0
+    # None = 0
     OpenGL = 1
     Metal = 2
     DirectX = 3
@@ -1615,7 +1615,7 @@ class FrameBufferFillMode(Enum):
 
 
 class GradientType(Enum):
-    None_ = 0
+    # None = 0
     Linear = 1
     Radial = 2
     LinearDisabled = 3
@@ -2145,7 +2145,7 @@ class ShaderLanguage(Enum):
 
 
 class StereoContext(Enum):
-    None_ = 0
+    # None = 0
     LeftEye = 1
     RightEye = 2
     BothEyes = 3

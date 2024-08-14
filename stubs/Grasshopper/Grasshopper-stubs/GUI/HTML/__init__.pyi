@@ -987,7 +987,7 @@ class GH_HtmlHelpPopup:
 
 
 class GH_HtmlListType(Enum):
-    None_ = 0
+    # None = 0
     Unordered = 1
     Ordered = 2
 
@@ -1079,7 +1079,7 @@ class GH_HtmlTableRow:
 
 
 class GH_HtmlTextProperties(Enum):
-    None_ = 0
+    # None = 0
     Strong = 1
     Emphasis = 2
     SuperScript = 4

@@ -673,7 +673,7 @@ class PlugInLoadTime(Enum):
 
 
 class PlugInType(Enum):
-    None_ = 0
+    # None = 0
     Render = 1
     FileImport = 2
     FileExport = 4
@@ -694,7 +694,7 @@ class PreviewNotification:
 
 
 class PreviewRenderTypes(Enum):
-    None_ = 0
+    # None = 0
     ThreeSeparateImages = 1
     SingleImage = 2
     Progressive = 3

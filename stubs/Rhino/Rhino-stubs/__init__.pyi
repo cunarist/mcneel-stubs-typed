@@ -19,7 +19,7 @@ __all__ = ['ApplicationSettings', 'Collections', 'Commands', 'Display', 'DocObje
 
 
 class AngleUnitSystem(Enum):
-    None_ = 0
+    # None = 0
     Turns = 1
     Radians = 2
     Degrees = 3
@@ -30,7 +30,7 @@ class AngleUnitSystem(Enum):
 
 
 class AntialiasLevel(Enum):
-    None_ = 0
+    # None = 0
     Draft = 1
     Good = 2
     High = 3
@@ -1568,7 +1568,7 @@ class RhinoWindow:
 
 class RuntimeEnvironment(Enum):
     Unset = 0
-    None_ = 1
+    # None = 1
     Windows = 2
     Apple = 3
     Android = 4
@@ -1576,7 +1576,7 @@ class RuntimeEnvironment(Enum):
 
 
 class ScaleStringFormat(Enum):
-    None_ = 0
+    # None = 0
     RatioFormat = 1
     EquationFormat = 2
     FractionFormat = 3
@@ -1669,7 +1669,7 @@ class UnitsChangedWithScalingEventArgs:
 
 
 class UnitSystem(Enum):
-    None_ = 0
+    # None = 0
     Microns = 1
     Millimeters = 2
     Centimeters = 3

@@ -1867,7 +1867,7 @@ class GH_ScriptEditorButton:
 
 
 class GH_ScriptLanguage(Enum):
-    None_ = 0
+    # None = 0
     VB = 1
     CS = 2
 

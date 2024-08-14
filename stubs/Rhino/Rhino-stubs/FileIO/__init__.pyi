@@ -1217,7 +1217,7 @@ class File3dmWriteOptions:
 
 
 class FileFindPreference(Enum):
-    None_ = 0
+    # None = 0
     FullPath = 1
     RelativePath = 2
     BasePath = 3
@@ -1819,13 +1819,13 @@ class NameHash:
 
 
 class NGons(Enum):
-    None_ = 0
+    # None = 0
     Preserve = 1
     Create = 2
 
 
 class ObjectTypeFilter(Enum):
-    None_ = 0
+    # None = 0
     Point = 1
     Pointset = 2
     Curve = 4
@@ -1911,7 +1911,7 @@ class SubDMeshing(Enum):
 
 
 class TableTypeFilter(Enum):
-    None_ = 0
+    # None = 0
     Properties = 1
     Settings = 2
     Bitmap = 4

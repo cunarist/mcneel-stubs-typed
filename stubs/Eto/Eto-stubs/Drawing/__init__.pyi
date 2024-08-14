@@ -938,7 +938,7 @@ class Colors:
 
 
 class ColorStyles(Enum):
-    None_ = 0
+    # None = 0
     ExcludeAlpha = 1
     AlphaLast = 4
     ShortHex = 8
@@ -1071,7 +1071,7 @@ class Font(Widget):
 
 
 class FontDecoration(Enum):
-    None_ = 0
+    # None = 0
     Underline = 1
     Strikethrough = 2
 
@@ -1178,7 +1178,7 @@ class Fonts:
 
 
 class FontStyle(Enum):
-    None_ = 0
+    # None = 0
     Bold = 1
     Italic = 2
 
@@ -1320,13 +1320,13 @@ class FormattedTextAlignment(Enum):
 
 
 class FormattedTextTrimming(Enum):
-    None_ = 0
+    # None = 0
     CharacterEllipsis = 1
     WordEllipsis = 2
 
 
 class FormattedTextWrapMode(Enum):
-    None_ = 0
+    # None = 0
     Word = 1
     Character = 2
 
@@ -2086,7 +2086,7 @@ class ImageFormat(Enum):
 
 class ImageInterpolation(Enum):
     Default = 0
-    None_ = 1
+    # None = 1
     Low = 2
     Medium = 3
     High = 4
@@ -2810,7 +2810,7 @@ class PixelFormat(Enum):
 
 
 class PixelOffsetMode(Enum):
-    None_ = 0
+    # None = 0
     Half = 1
     Aligned = 2
 

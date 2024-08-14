@@ -433,7 +433,7 @@ class GH_BorderTopology(Enum):
     Left = 5
     Bottom = 6
     Right = 7
-    None_ = -2
+    # None = -2
     All = -1
 
 
@@ -1180,7 +1180,7 @@ class GH_CanvasMode(Enum):
 
 
 class GH_CanvasNavigation(Enum):
-    None_ = 0
+    # None = 0
     PanLeft = 1
     PanRight = 2
     PanUp = 3
@@ -1538,7 +1538,7 @@ class GH_DocDiagramPainter:
 
 
 class GH_DragDropFileAction(Enum):
-    None_ = 0
+    # None = 0
     Open = 1
     Examine = 2
     Insert = 3

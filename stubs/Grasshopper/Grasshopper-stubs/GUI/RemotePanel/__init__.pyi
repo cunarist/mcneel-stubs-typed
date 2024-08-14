@@ -825,7 +825,7 @@ class RcpLayoutEventArgs:
 
 
 class RcpLayoutKind(Enum):
-    None_ = 0
+    # None = 0
     Generic = 1
     ItemAdded = 2
     ItemRemoved = 3

@@ -25,13 +25,13 @@ class CommandLineOption:
 
 
 class ConeConstraint(Enum):
-    None_ = 0
+    # None = 0
     Vertical = 1
     AroundCurve = 2
 
 
 class CylinderConstraint(Enum):
-    None_ = 0
+    # None = 0
     Vertical = 1
     AroundCurve = 2
 
@@ -1957,7 +1957,7 @@ class PickMode(Enum):
 
 
 class PickStyle(Enum):
-    None_ = 0
+    # None = 0
     PointPick = 1
     WindowPick = 2
     CrossingPick = 3

@@ -220,7 +220,7 @@ class GH_ColourPickerEventArgs:
 
 
 class GH_ColourSpace(Enum):
-    None_ = 0
+    # None = 0
     RGB = 1
     HSV = 2
 
@@ -454,7 +454,7 @@ class GH_DigitScrollerEventArgs:
 
 
 class GH_MouseAction(Enum):
-    None_ = 0
+    # None = 0
     SignDown = 1
     DigitDown = 2
     DigitDrag = 3
@@ -727,21 +727,21 @@ class GH_SliderEventArgs:
 
 
 class GH_SliderGripDisplay(Enum):
-    None_ = 0
+    # None = 0
     Numeric = 1
     Shape = 2
     ShapeAndText = 3
 
 
 class GH_SliderRailDisplay(Enum):
-    None_ = 0
+    # None = 0
     Simple = 1
     Etched = 2
     Filled = 3
 
 
 class GH_SliderTickDisplay(Enum):
-    None_ = 0
+    # None = 0
     Simple = 1
     Etched = 2
 

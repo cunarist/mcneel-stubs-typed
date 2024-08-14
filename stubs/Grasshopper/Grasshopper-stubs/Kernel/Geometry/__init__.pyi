@@ -256,13 +256,13 @@ class Line3:
 
 
 class LineCircleX(Enum):
-    None_ = 0
+    # None = 0
     Tangent = 1
     Secant = 2
 
 
 class LineX(Enum):
-    None_ = 0
+    # None = 0
     Parallel = 1
     Coincident = 2
     Point = 3

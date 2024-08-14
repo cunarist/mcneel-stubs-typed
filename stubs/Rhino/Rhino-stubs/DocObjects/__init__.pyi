@@ -9,7 +9,7 @@ __all__ = ['Custom', 'SnapShots', 'Tables']
 
 
 class ActiveSpace(Enum):
-    None_ = 0
+    # None = 0
     ModelSpace = 1
     PageSpace = 2
 
@@ -671,7 +671,7 @@ class ArrowFit(Enum):
 
 
 class ArrowType(Enum):
-    None_ = 0
+    # None = 0
     UserBlock = 1
     SolidTriangle = 2
     Dot = 3
@@ -1016,7 +1016,7 @@ class CaptureTypes(Enum):
     Flythrough = 2
     DaySunStudy = 3
     SeasonalSunStudy = 4
-    None_ = 5
+    # None = 5
 
 
 from ..Geometry import Centermark
@@ -1262,7 +1262,7 @@ class CentermarkObject(DimensionObject):
 
 
 class CenterMarkStyle(Enum):
-    None_ = 0
+    # None = 0
     Mark = 1
     MarkAndLines = 2
 
@@ -4203,7 +4203,7 @@ class InstanceDefinitionArchiveFileStatus(Enum):
 
 
 class InstanceDefinitionLayerStyle(Enum):
-    None_ = 0
+    # None = 0
     Active = 1
     Reference = 2
 
@@ -4662,7 +4662,7 @@ class LeaderContentAngleStyle(Enum):
 
 
 class LeaderCurveStyle(Enum):
-    None_ = 0
+    # None = 0
     Polyline = 1
     Spline = 2
 
@@ -6811,7 +6811,7 @@ class ObjectColorSource(Enum):
 
 
 class ObjectDecoration(Enum):
-    None_ = 0
+    # None = 0
     StartArrowhead = 8
     EndArrowhead = 16
     BothArrowhead = 24
@@ -6931,7 +6931,7 @@ class ObjectPlotWeightSource(Enum):
 
 
 class ObjectType(Enum):
-    None_ = 0
+    # None = 0
     Point = 1
     PointSet = 2
     Curve = 4
@@ -8770,7 +8770,7 @@ class RhinoTransformObjectsEventArgs:
 
 
 class ScaleFormat(Enum):
-    None_ = 0
+    # None = 0
     PageLengthToOne = 1
     OneToModelLength = 2
     OneInchToModelLengthFeet = 3
@@ -8786,7 +8786,7 @@ class SelectionMethod(Enum):
 
 
 class StackDisplayFormat(Enum):
-    None_ = 0
+    # None = 0
     StackHorizontal = 1
     StackDiagonal = 2
 
@@ -9839,14 +9839,14 @@ class Texture(CommonObject):
 
 
 class TextureCombineMode(Enum):
-    None_ = 0
+    # None = 0
     Modulate = 1
     Decal = 2
     Blend = 3
 
 
 class TextureType(Enum):
-    None_ = 0
+    # None = 0
     Diffuse = 1
     Bitmap = 1
     PBR_BaseColor = 1
@@ -9892,7 +9892,7 @@ class TextVerticalAlignment(Enum):
 
 
 class ToleranceDisplayFormat(Enum):
-    None_ = 0
+    # None = 0
     Symmetrical = 1
     Deviation = 2
     Limits = 3
@@ -9946,7 +9946,7 @@ class ViewInfo:
 
 
 class ViewInfoFocalBlurModes(Enum):
-    None_ = 0
+    # None = 0
     Automatic = 1
     Manual = 2
 
@@ -10203,7 +10203,7 @@ class Worksession:
 
 
 class ZeroSuppression(Enum):
-    None_ = 0
+    # None = 0
     SuppressLeading = 1
     SuppressTrailing = 2
     SuppressLeadingAndTrailing = 3

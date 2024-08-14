@@ -1985,7 +1985,7 @@ class GH_ClusterDocumentIdAction(GH_ObjectUndoAction):
 
 
 class GH_ClusterFileType(Enum):
-    None_ = 0
+    # None = 0
     Gh = 1
     Ghx = 2
     GhCluster = 3
@@ -6873,7 +6873,7 @@ class GH_GroupAttributes:
 
 
 class GH_GroupBorder(Enum):
-    None_ = 0
+    # None = 0
     Box = 1
     Blob = 2
     Rectangles = 3
@@ -8070,7 +8070,7 @@ class GH_LegendData:
 
 
 class GH_LegendType(Enum):
-    None_ = 0
+    # None = 0
     DiscreteVertical = 1
     DiscreteHorizontal = 2
     SmoothVertical = 101
@@ -10902,7 +10902,7 @@ class GH_QuickGraphFrame:
 
 
 class GH_QuickGraphSortOrder(Enum):
-    None_ = 0
+    # None = 0
     Ascending = 1
     Descending = 2
 

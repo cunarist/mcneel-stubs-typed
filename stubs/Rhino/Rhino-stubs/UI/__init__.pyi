@@ -334,13 +334,13 @@ class LocalizeStringPair:
 
 
 class ModifierKey(Enum):
-    None_ = 0
+    # None = 0
     Control = 1
     Shift = 2
 
 
 class MouseButton(Enum):
-    None_ = 0
+    # None = 0
     Left = 1
     Right = 2
     Middle = 4
@@ -663,7 +663,7 @@ class OpenFileDialog:
 
 
 class OptionPageButtons(Enum):
-    None_ = 0
+    # None = 0
     DefaultButton = 1
     ApplyButton = 2
 
@@ -931,7 +931,7 @@ class RhinoGetPlotWidthArgs(Enum):
     ByParent = 2
     HairLine = 4
     Default = 8
-    None_ = 32
+    # None = 32
     All = 268435455
 
 
@@ -960,7 +960,7 @@ class RhinoPlotWidthType(Enum):
     ByParent = 1
     Hairline = 2
     Default = 3
-    None_ = 4
+    # None = 4
     Varies = 5
     Width = 6
 
@@ -970,7 +970,7 @@ class RhinoPlotWidthValue(Enum):
     Varies = -20
     ByParent = -15
     ByLayer = -10
-    None_ = -1
+    # None = -1
 
 
 class RuiUpdateUi:
@@ -1059,7 +1059,7 @@ class ShowMessageDefaultButton(Enum):
 
 
 class ShowMessageIcon(Enum):
-    None_ = 0
+    # None = 0
     Error = 16
     Hand = 16
     Stop = 16
@@ -1077,7 +1077,7 @@ class ShowMessageMode(Enum):
 
 
 class ShowMessageOptions(Enum):
-    None_ = 0
+    # None = 0
     SetForeground = 65536
     DefaultDesktopOnly = 131072
     TopMost = 262144
@@ -1087,7 +1087,7 @@ class ShowMessageOptions(Enum):
 
 
 class ShowMessageResult(Enum):
-    None_ = 0
+    # None = 0
     OK = 1
     Cancel = 2
     Abort = 3

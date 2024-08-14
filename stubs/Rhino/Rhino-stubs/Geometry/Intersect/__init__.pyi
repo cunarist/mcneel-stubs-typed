@@ -4,14 +4,14 @@ from enum import Enum
 
 
 class ArcArcIntersection(Enum):
-    None_ = 0
+    # None = 0
     Single = 1
     Multiple = 2
     Overlap = 3
 
 
 class CircleCircleIntersection(Enum):
-    None_ = 0
+    # None = 0
     Single = 1
     Multiple = 2
     Overlap = 3
@@ -199,20 +199,20 @@ class IntersectionEvent:
 
 
 class LineCircleIntersection(Enum):
-    None_ = 0
+    # None = 0
     Single = 1
     Multiple = 2
 
 
 class LineCylinderIntersection(Enum):
-    None_ = 0
+    # None = 0
     Single = 1
     Multiple = 2
     Overlap = 3
 
 
 class LineSphereIntersection(Enum):
-    None_ = 0
+    # None = 0
     Single = 1
     Multiple = 2
 
@@ -274,7 +274,7 @@ class MeshInterference:
 
 
 class PlaneCircleIntersection(Enum):
-    None_ = 0
+    # None = 0
     Tangent = 1
     Secant = 2
     Parallel = 3
@@ -282,7 +282,7 @@ class PlaneCircleIntersection(Enum):
 
 
 class PlaneSphereIntersection(Enum):
-    None_ = 0
+    # None = 0
     Point = 1
     Circle = 2
 
@@ -307,7 +307,7 @@ class RayShootEvent:
 
 
 class SphereSphereIntersection(Enum):
-    None_ = 0
+    # None = 0
     Point = 1
     Circle = 2
     Overlap = 3

@@ -581,7 +581,7 @@ class LogMessageType(Enum):
     information = 1
     warning = 2
     error = 3
-    assert_ = 4
+    # assert = 4
 
 
 class Mode(Enum):

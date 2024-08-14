@@ -58,14 +58,14 @@ class GH_DirtyCaster:
 
 
 class GH_ExpandMode(Enum):
-    None_ = 0
+    # None = 0
     SimpleReplace = 1
     SimpleAppend = 2
     Recursive = 3
 
 
 class GH_GraftMode(Enum):
-    None_ = 0
+    # None = 0
     GraftNullItems = 1
     GraftEmptyLists = 2
     GraftAll = 3
@@ -452,7 +452,7 @@ class GH_RuleGroup:
 
 
 class GH_RuleKind(Enum):
-    None_ = 0
+    # None = 0
     AnyNumber = 1
     AnyNumbers = 2
     Number = 3
@@ -513,7 +513,7 @@ class GH_RuleSequence:
 
 
 class GH_SimplificationMode(Enum):
-    None_ = 0
+    # None = 0
     CollapseLeadingOverlaps = 1
     CollapseAllOverlaps = 2
 

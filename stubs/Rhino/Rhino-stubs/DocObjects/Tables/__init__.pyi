@@ -1429,7 +1429,7 @@ class ObjectTable:
 
 
 class RestoreLayerProperties(Enum):
-    None_ = 0
+    # None = 0
     Current = 1
     Visible = 2
     Locked = 4

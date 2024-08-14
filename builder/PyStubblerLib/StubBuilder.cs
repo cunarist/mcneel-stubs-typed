@@ -188,10 +188,9 @@ namespace PyStubblerLib
                     for (int i = 0; i < names.Length; i++)
                     {
                         string name = names[i];
-                        if (name.Equals("None", StringComparison.Ordinal))
-                            name = $"{name}_";
-                        else if (name.Equals("assert", StringComparison.Ordinal))
-                            name = $"{name}_";
+                        var keywords = new List<string> {"None", "assert"};
+                        if (keywords.Contains(name))
+                            name = $"# {name}";
 
                         object val = Convert.ChangeType(values.GetValue(i), Type.GetTypeCode(stubType));
                         sb.AppendLine($"    {name} = {val}");

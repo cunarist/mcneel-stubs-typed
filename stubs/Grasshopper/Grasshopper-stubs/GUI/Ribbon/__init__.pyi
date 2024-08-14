@@ -2349,7 +2349,7 @@ class GH_RibbonTab(GH_RibbonContentBase):
 
 
 class GH_TabDisplay(Enum):
-    None_ = 0
+    # None = 0
     FullName = 1
     ShortName = 2
     Symbol = 3

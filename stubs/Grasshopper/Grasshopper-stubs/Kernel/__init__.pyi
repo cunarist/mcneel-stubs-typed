@@ -1721,7 +1721,7 @@ class GH_DataComparison(Enum):
 
 
 class GH_DataMapping(Enum):
-    None_ = 0
+    # None = 0
     Flatten = 1
     Graft = 2
 
@@ -2222,7 +2222,7 @@ class GH_DocumentAssociations:
 
 class GH_DocumentContext(Enum):
     Unknown = 0
-    None_ = 1
+    # None = 1
     Open = 2
     Close = 3
     Loaded = 4
@@ -2735,7 +2735,7 @@ class GH_FileWatcher:
 
 
 class GH_FileWatcherEvents(Enum):
-    None_ = 0
+    # None = 0
     Changed = 1
     Renamed = 2
     Created = 4
@@ -3294,7 +3294,7 @@ class GH_LoadingDemand(Enum):
     Default = 0
     ForceCOFF = 1
     ForceDirect = 2
-    None_ = -1
+    # None = -1
 
 
 class GH_LoadingException:
@@ -3411,7 +3411,7 @@ class GH_MarkovPattern:
 
 
 class GH_MatchLevel(Enum):
-    None_ = 0
+    # None = 0
     Exact = 1
     Start = 2
     WordExact = 4
@@ -3579,7 +3579,7 @@ class GH_ObjectSpecies(Enum):
 
 
 class GH_ObjectType(Enum):
-    None_ = 0
+    # None = 0
     CompiledObject = 1
     UserObject = 2
 
@@ -3623,7 +3623,7 @@ class GH_ParameterSide(Enum):
 
 
 class GH_ParamHashFields(Enum):
-    None_ = 0
+    # None = 0
     Input = 1
     Output = 2
     InputAndOutput = 3
@@ -3752,12 +3752,12 @@ class GH_PreviewExpiredEventArgs:
 
 
 class GH_PreviewFilter(Enum):
-    None_ = 0
+    # None = 0
     Selected = 1
 
 
 class GH_PreviewMesh(Enum):
-    None_ = 0
+    # None = 0
     LowQuality = 1
     HighQuality = 2
     Document = 3
@@ -4652,7 +4652,7 @@ class GH_ProcessStep(Enum):
 
 
 class GH_ProfilerMode(Enum):
-    None_ = 0
+    # None = 0
     Processor = 1
     Memory = 2
 
@@ -4688,7 +4688,7 @@ class GH_RelevantObjectData:
 
 
 class GH_RelevantObjectFilter(Enum):
-    None_ = 0
+    # None = 0
     Groups = 1
     InputGrips = 2
     OutputGrips = 4
@@ -4849,7 +4849,7 @@ class GH_SelectionState(Enum):
 
 
 class GH_SelectionTopology(Enum):
-    None_ = 0
+    # None = 0
     Convex = 1
     Concave = 2
 

@@ -4,7 +4,7 @@ from enum import Enum
 
 
 class BakingFunctions(Enum):
-    None_ = 0
+    # None = 0
     Decals = 1
     ProceduralTextures = 2
     CustomObjectMappings = 4
@@ -113,7 +113,7 @@ class Event(Enum):
 
 
 class FrameBufferFillMode(Enum):
-    None_ = 0
+    # None = 0
     DefaultColor = 1
     SolidColor = 2
     Gradient2Color = 3

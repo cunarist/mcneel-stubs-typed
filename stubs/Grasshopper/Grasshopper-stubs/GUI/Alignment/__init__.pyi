@@ -4,7 +4,7 @@ from enum import Enum
 
 
 class GH_Align(Enum):
-    None_ = 0
+    # None = 0
     Left = 1
     Right = 2
     Top = 3
@@ -14,7 +14,7 @@ class GH_Align(Enum):
 
 
 class GH_Distribute(Enum):
-    None_ = 0
+    # None = 0
     Vertical = 1
     Horizontal = 2
 
