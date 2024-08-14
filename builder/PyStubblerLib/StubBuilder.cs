@@ -464,7 +464,7 @@ namespace PyStubblerLib
                     {
                         if (parameters[i].IsOut)
                             continue;
-                        if ((method.Name.StartsWith("get_") || method.Name.StartsWith("set_")))
+                        if (IsIndexer(method))
                             continue;
 
                         var parameter = parameters[i];
@@ -499,17 +499,15 @@ namespace PyStubblerLib
                         }
 
                         sb.Append($" -> ");
-                        if (
-                            !method.IsStatic
-                            && (method.Name.StartsWith("get_") || method.Name.StartsWith("set_"))
-                            && parameters.Length > 0
-                        ) {
-                            var indexParameter = parameters[0];
-                            var pythonType = ToPythonType(indexParameter.ParameterType);
-                            if (method.Name.StartsWith("get_"))
-                                sb.Append($"Sequence[{pythonType}]");
-                            else
-                                sb.Append($"MutableSequence[{pythonType}]");
+                        if (IsIndexer(method)) {
+                            if (method.Name.StartsWith("get_")){
+                                var itemType = types[0];
+                                sb.Append($"Sequence[{itemType}]");
+                            }
+                            else {
+                                var itemType = ToPythonType(parameters[1].ParameterType);
+                                sb.Append($"MutableSequence[{itemType}]");
+                            }
                         }
                         else if (outParamCount == 0 && refParamCount == 0)
                         {
@@ -537,6 +535,24 @@ namespace PyStubblerLib
 
             }
             File.WriteAllText(path, sb.ToString());
+        }
+
+        private static bool IsIndexer(MethodInfo method) {
+            if (method.IsStatic)
+                return false;
+            
+            var parameters = method.GetParameters();
+            if (method.Name.StartsWith("get_")) {
+                if (parameters.Length == 1 && parameters[0].ParameterType == typeof(int)) {
+                    return true;
+                }
+            } else if (method.Name.StartsWith("set_")){
+                if (parameters.Length == 2 && parameters[0].ParameterType == typeof(int)) {
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         private static string SafePythonName(string s)
