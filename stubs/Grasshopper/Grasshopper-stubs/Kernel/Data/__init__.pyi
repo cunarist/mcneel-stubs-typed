@@ -96,6 +96,9 @@ class GH_GraftMode(Enum):
 class GH_GraphicBranch:
     @overload
     def __init__(self): ...
+    DomainAngleFactor: Single
+    TwigLengthFactor: Single
+    TwigLengthMin: Single
     @overload
     def Distribute_Phylogenetic(self, max_path_length_inverse: float) -> None: ...
     @overload
@@ -194,6 +197,10 @@ from ...GUI.Canvas import GH_Viewport
 class GH_GraphicTreeDisplayArgs:
     @overload
     def __init__(self): ...
+    origin: PointF
+    radius: Single
+    maxPathLength: int
+    vp: GH_Viewport
     @overload
     def AdjustMaxPathLength(self, potential_new_length: int) -> None: ...
     @overload
@@ -818,6 +825,13 @@ class GH_TreeBuilder:
 class GH_TreeFilter:
     @overload
     def __init__(self): ...
+    PathOpen: Char
+    PathClose: Char
+    ItemOpen: Char
+    ItemClose: Char
+    PathSeparator: Char
+    SegmentSeparator: Char
+    StringDelimeter: Char
     @overload
     def Equals(self, obj: Object) -> bool: ...
     @overload
@@ -874,6 +888,26 @@ class GH_TreeIndex:
 class GH_TreeRules:
     @overload
     def __init__(self, pathRules: Iterable[IGH_Rule], indexRule: IGH_Rule): ...
+    OrOperator: Char
+    AndOperator: Char
+    NotOperator: Char
+    RangeSymbol: Char
+    Separator: Char
+    SequenceSymbol: Char
+    SequenceCode: str
+    PathSeparator: Char
+    AnyNumberSymbol: Char
+    AnyNumbersSymbol: Char
+    PathOpenBracket: Char
+    PathCloseBracket: Char
+    ItemOpenBracket: Char
+    ItemCloseBracket: Char
+    RuleOpenBracket: Char
+    RuleCloseBracket: Char
+    PathBrackets: str
+    ItemBrackets: str
+    RuleBrackets: str
+    AllowedChars: str
     @overload
     def Apply(self, path: GH_Path) -> bool: ...
     @overload

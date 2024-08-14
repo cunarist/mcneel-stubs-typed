@@ -143,6 +143,10 @@ class Application(Widget):
     def __init__(self, platformType: str): ...
     @overload
     def __init__(self, platform: Platform): ...
+    TerminatingEvent: str
+    UnhandledExceptionEvent: str
+    NotificationActivatedEvent: str
+    IsActiveChangedEvent: str
     @overload
     def add_Initialized(self, value: EventHandler) -> None: ...
     @overload
@@ -1461,6 +1465,8 @@ from ..Drawing import Image
 class Calendar(Control):
     @overload
     def __init__(self): ...
+    SelectedDateChangedEvent: str
+    SelectedRangeChangedEvent: str
     @overload
     def add_DataContextChanged(self, value: EventHandler) -> None: ...
     @overload
@@ -2984,6 +2990,7 @@ class CheckMenuItem(MenuItem):
     def __init__(self): ...
     @overload
     def __init__(self, command: CheckCommand): ...
+    CheckedChangedEvent: str
     @overload
     def add_CheckedChanged(self, value: EventHandler) -> None: ...
     @overload
@@ -3825,6 +3832,7 @@ from ..Drawing import Image
 class ColorPicker(Control):
     @overload
     def __init__(self): ...
+    ColorChangedEvent: str
     @overload
     def add_DataContextChanged(self, value: EventHandler) -> None: ...
     @overload
@@ -4177,6 +4185,7 @@ from ..Drawing import Image
 class ComboBox(DropDown):
     @overload
     def __init__(self): ...
+    TextChangedEvent: str
     @overload
     def add_DataContextChanged(self, value: EventHandler) -> None: ...
     @overload
@@ -5568,6 +5577,9 @@ class ContextMenu(Menu):
     def __init__(self, items: Iterable[MenuItem]): ...
     @overload
     def __init__(self, items: Iterable[MenuItem]): ...
+    OpeningEvent: str
+    ClosedEvent: str
+    ClosingEvent: str
     @overload
     def add_Closed(self, value: EventHandler) -> None: ...
     @overload
@@ -5683,6 +5695,25 @@ from ..Drawing import Image
 class Control(BindableWidget):
     @overload
     def __init__(self, handler: IHandler): ...
+    SizeChangedEvent: str
+    KeyDownEvent: str
+    KeyUpEvent: str
+    TextInputEvent: str
+    MouseDownEvent: str
+    MouseUpEvent: str
+    MouseMoveEvent: str
+    MouseLeaveEvent: str
+    MouseEnterEvent: str
+    MouseDoubleClickEvent: str
+    MouseWheelEvent: str
+    GotFocusEvent: str
+    LostFocusEvent: str
+    ShownEvent: str
+    DragDropEvent: str
+    DragOverEvent: str
+    DragEnterEvent: str
+    DragLeaveEvent: str
+    EnabledChangedEvent: str
     @overload
     def add_DataContextChanged(self, value: EventHandler) -> None: ...
     @overload
@@ -7401,6 +7432,7 @@ from ..Drawing import Image
 class DocumentControl(Container):
     @overload
     def __init__(self): ...
+    PageReorderedEvent: str
     @overload
     def add_DataContextChanged(self, value: EventHandler) -> None: ...
     @overload
@@ -8770,6 +8802,9 @@ from ..Drawing import Image
 class DropDown(ListControl):
     @overload
     def __init__(self): ...
+    DropDownOpeningEvent: str
+    DropDownClosedEvent: str
+    FormatItemEvent: str
     @overload
     def add_DataContextChanged(self, value: EventHandler) -> None: ...
     @overload
@@ -10062,6 +10097,7 @@ from ..Drawing import Image
 class Expander(Panel):
     @overload
     def __init__(self): ...
+    ExpandedChangedEvent: str
     @overload
     def add_DataContextChanged(self, value: EventHandler) -> None: ...
     @overload
@@ -10584,6 +10620,7 @@ from ..Drawing import Image
 class FilePicker(Control):
     @overload
     def __init__(self): ...
+    FilePathChangedEvent: str
     @overload
     def add_DataContextChanged(self, value: EventHandler) -> None: ...
     @overload
@@ -11589,6 +11626,7 @@ from ..Drawing import Font
 class FontDialog(CommonDialog):
     @overload
     def __init__(self): ...
+    FontChangedEvent: str
     @overload
     def add_FontChanged(self, value: EventHandler) -> None: ...
     @overload
@@ -11663,6 +11701,7 @@ class FontPicker(Control):
     def __init__(self): ...
     @overload
     def __init__(self, font: Font): ...
+    ValueChangedEvent: str
     @overload
     def add_DataContextChanged(self, value: EventHandler) -> None: ...
     @overload
@@ -12551,6 +12590,15 @@ from ..Drawing import RectangleF
 from ..Drawing import Point
 from ..Drawing import Image
 class Grid(Control):
+    CellEditingEvent: str
+    CellEditedEvent: str
+    CellClickEvent: str
+    CellDoubleClickEvent: str
+    SelectionChangedEvent: str
+    ColumnHeaderClickEvent: str
+    CellFormattingEvent: str
+    ColumnOrderChangedEvent: str
+    ColumnWidthChangedEvent: str
     @overload
     def add_CellClick(self, value: EventHandler) -> None: ...
     @overload
@@ -19245,6 +19293,7 @@ from ..Drawing import Image
 class LinkButton(TextControl):
     @overload
     def __init__(self): ...
+    ClickEvent: str
     @overload
     def add_Click(self, value: EventHandler) -> None: ...
     @overload
@@ -21699,6 +21748,7 @@ class MenuBarSystemItems(Enum):
 
 
 class MenuItem(Menu):
+    ValidateEvent: str
     @overload
     def add_Click(self, value: EventHandler) -> None: ...
     @overload
@@ -22196,6 +22246,8 @@ class Navigation(Container):
     def __init__(self, item: INavigationItem): ...
     @overload
     def __init__(self, content: Control, title: str): ...
+    ItemShownEvent: str
+    ItemRemovedEvent: str
     @overload
     def add_DataContextChanged(self, value: EventHandler) -> None: ...
     @overload
@@ -22623,6 +22675,7 @@ from ..Drawing import Image
 class Notification(Widget):
     @overload
     def __init__(self): ...
+    ActivatedEvent: str
     @overload
     def add_Activated(self, value: EventHandler) -> None: ...
     @overload
@@ -24686,6 +24739,9 @@ class PrintDocument(Widget):
     def __init__(self): ...
     @overload
     def __init__(self, control: Control): ...
+    PrintingEvent: str
+    PrintedEvent: str
+    PrintPageEvent: str
     @overload
     def add_Printed(self, value: EventHandler) -> None: ...
     @overload
@@ -25768,6 +25824,7 @@ from ..Drawing import Image
 class PropertyGrid(Control):
     @overload
     def __init__(self): ...
+    PropertyValueChangedEvent: str
     @overload
     def add_DataContextChanged(self, value: EventHandler) -> None: ...
     @overload
@@ -27151,6 +27208,7 @@ class RadioMenuItem(MenuItem):
     def __init__(self, controller: RadioMenuItem): ...
     @overload
     def __init__(self, command: RadioCommand, controller: RadioMenuItem): ...
+    CheckedChangedEvent: str
     @overload
     def add_CheckedChanged(self, value: EventHandler) -> None: ...
     @overload
@@ -28234,6 +28292,7 @@ from ..Drawing import Image
 class Scrollable(Panel):
     @overload
     def __init__(self): ...
+    ScrollEvent: str
     @overload
     def add_DataContextChanged(self, value: EventHandler) -> None: ...
     @overload
@@ -29108,6 +29167,8 @@ from ..Drawing import Image
 class SegmentedButton(Control):
     @overload
     def __init__(self): ...
+    SelectedIndexesChangedEvent: str
+    ItemClickEvent: str
     @overload
     def add_DataContextChanged(self, value: EventHandler) -> None: ...
     @overload
@@ -29483,6 +29544,8 @@ class SegmentedButton(Control):
 
 from ..Drawing import Image
 class SegmentedItem(BindableWidget):
+    ClickEvent: str
+    SelectedChangedEvent: str
     @overload
     def add_Click(self, value: EventHandler) -> None: ...
     @overload
@@ -30773,6 +30836,10 @@ from ..Drawing import Image
 class Splitter(Container):
     @overload
     def __init__(self): ...
+    PositionChangedEvent: str
+    PositionChangingEvent: str
+    PositionChangeStartedEvent: str
+    PositionChangeCompletedEvent: str
     @overload
     def add_DataContextChanged(self, value: EventHandler) -> None: ...
     @overload
@@ -31710,6 +31777,7 @@ from ..Drawing import Image
 class Stepper(Control):
     @overload
     def __init__(self): ...
+    StepEvent: str
     @overload
     def add_DataContextChanged(self, value: EventHandler) -> None: ...
     @overload
@@ -32084,6 +32152,9 @@ class SubMenuItem(ButtonMenuItem):
     def __init__(self): ...
     @overload
     def __init__(self, items: Iterable[MenuItem]): ...
+    OpeningEvent: str
+    ClosedEvent: str
+    ClosingEvent: str
     @overload
     def add_Click(self, value: EventHandler) -> None: ...
     @overload
@@ -33608,6 +33679,8 @@ from ..Drawing import Image
 class TextArea(TextControl):
     @overload
     def __init__(self): ...
+    SelectionChangedEvent: str
+    CaretIndexChangedEvent: str
     @overload
     def add_CaretIndexChanged(self, value: EventHandler) -> None: ...
     @overload
@@ -34045,6 +34118,7 @@ from ..Drawing import Image
 class TextBox(TextControl):
     @overload
     def __init__(self): ...
+    TextChangingEvent: str
     @overload
     def add_DataContextChanged(self, value: EventHandler) -> None: ...
     @overload
@@ -34588,6 +34662,7 @@ from ..Drawing import RectangleF
 from ..Drawing import Point
 from ..Drawing import Image
 class TextControl(CommonControl):
+    TextChangedEvent: str
     @overload
     def add_DataContextChanged(self, value: EventHandler) -> None: ...
     @overload
@@ -34972,6 +35047,7 @@ from ..Drawing import Image
 class TextStepper(TextBox):
     @overload
     def __init__(self): ...
+    StepEvent: str
     @overload
     def add_DataContextChanged(self, value: EventHandler) -> None: ...
     @overload
@@ -35405,6 +35481,7 @@ from ..Drawing import Point
 class ToggleButton(Button):
     @overload
     def __init__(self): ...
+    CheckedChangedEvent: str
     @overload
     def add_CheckedChanged(self, value: EventHandler) -> None: ...
     @overload
@@ -36164,6 +36241,7 @@ from ..Drawing import Image
 class TrayIndicator(Widget):
     @overload
     def __init__(self): ...
+    ActivatedEvent: str
     @overload
     def add_Activated(self, value: EventHandler) -> None: ...
     @overload
@@ -36396,6 +36474,12 @@ from ..Drawing import Image
 class TreeGridView(Grid):
     @overload
     def __init__(self): ...
+    ActivatedEvent: str
+    ExpandingEvent: str
+    ExpandedEvent: str
+    CollapsingEvent: str
+    CollapsedEvent: str
+    SelectedItemChangedEvent: str
     @overload
     def add_Activated(self, value: EventHandler) -> None: ...
     @overload
@@ -37353,6 +37437,11 @@ from ..Drawing import Image
 class WebView(Control):
     @overload
     def __init__(self): ...
+    NavigatedEvent: str
+    DocumentLoadedEvent: str
+    DocumentLoadingEvent: str
+    OpenNewWindowEvent: str
+    DocumentTitleChangedEvent: str
     @overload
     def add_DataContextChanged(self, value: EventHandler) -> None: ...
     @overload
@@ -37844,6 +37933,11 @@ from ..Drawing import Color
 from ..Drawing import RectangleF
 from ..Drawing import Image
 class Window(Panel):
+    ClosedEvent: str
+    ClosingEvent: str
+    LocationChangedEvent: str
+    WindowStateChangedEvent: str
+    LogicalPixelSizeChangedEvent: str
     @overload
     def add_Closed(self, value: EventHandler) -> None: ...
     @overload

@@ -108,6 +108,18 @@ class BackgroundProjections(Enum):
 class BasicMaterialParameterNames:
     @overload
     def __init__(self): ...
+    Ambient: str
+    Emission: str
+    FlamingoLibrary: str
+    DisableLighting: str
+    Diffuse: str
+    Specular: str
+    TransparencyColor: str
+    ReflectivityColor: str
+    Shine: str
+    Transparency: str
+    Reflectivity: str
+    Ior: str
     @overload
     def Equals(self, obj: Object) -> bool: ...
     @overload
@@ -5612,6 +5624,11 @@ from ..Display import Color4f
 class TexturedColor:
     @overload
     def __init__(self, name: str, value: Color4f, on: bool, amount: Single): ...
+    Name: str
+    Value: Color4f
+    On: bool
+    Amount: Single
+    Texture: RenderTexture
     @overload
     def Equals(self, obj: Object) -> bool: ...
     @overload
@@ -5625,6 +5642,11 @@ class TexturedColor:
 class TexturedFloat:
     @overload
     def __init__(self, name: str, value: Single, on: bool, amount: Single): ...
+    Name: str
+    Value: Single
+    On: bool
+    Amount: Single
+    Texture: RenderTexture
     @overload
     def Equals(self, obj: Object) -> bool: ...
     @overload

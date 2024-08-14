@@ -39,6 +39,7 @@ class FileSelectedEventHandler:
 class GH_FileEntry:
     @overload
     def __init__(self, owner: GH_TimeLine, path: str, date: DateTime, name: str): ...
+    EntryHeight: int
     @overload
     def CompareTo(self, other: GH_FileEntry) -> int: ...
     @overload
@@ -167,6 +168,7 @@ class GH_MRU_Server:
 class GH_TimeLine(GH_DoubleBufferedPanel):
     @overload
     def __init__(self): ...
+    ScrollWidth: int
     @overload
     def add_AutoSizeChanged(self, value: EventHandler) -> None: ...
     @overload
@@ -1046,6 +1048,7 @@ class GH_TimeLine(GH_DoubleBufferedPanel):
 class GH_TimeSpan:
     @overload
     def __init__(self, owner: GH_TimeLine): ...
+    TextColumnWidth: int
     @overload
     def ContainsDate(self, d: DateTime) -> bool: ...
     @overload

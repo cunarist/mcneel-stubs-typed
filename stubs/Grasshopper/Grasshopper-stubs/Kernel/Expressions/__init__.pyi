@@ -318,6 +318,11 @@ class GH_OperatorType(Enum):
 class GH_ParserOperator:
     @overload
     def __init__(self, name: str, symbol: Char, precedence: GH_ParserPrecedence, type: GH_OperatorType, description: str): ...
+    m_name: str
+    m_symbol: Char
+    m_description: str
+    m_type: GH_OperatorType
+    m_precedence: GH_ParserPrecedence
     @overload
     def CompareTo(self, other: GH_ParserOperator) -> int: ...
     @overload
@@ -346,6 +351,9 @@ class GH_ParserSymbol:
     def __init__(self): ...
     @overload
     def __init__(self, token: str, class_: GH_ParserTokenClass, level: GH_ParserPrecedence): ...
+    m_token: str
+    m_class: GH_ParserTokenClass
+    m_level: GH_ParserPrecedence
     @overload
     def CompareTo(self, other: GH_ParserSymbol) -> int: ...
     @overload

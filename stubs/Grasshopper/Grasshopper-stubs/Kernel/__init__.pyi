@@ -887,6 +887,8 @@ class GH_Arrange(Enum):
 class GH_AssemblyFolderInfo:
     @overload
     def __init__(self, folder: str, type: GH_PluginFolderType): ...
+    Folder: str
+    Type: GH_PluginFolderType
     @overload
     def Equals(self, obj: Object) -> bool: ...
     @overload
@@ -2001,6 +2003,8 @@ from .Types import GH_SubD
 from .Types import GH_Mesh
 from .Types import GH_MeshFace
 class GH_Convert:
+    PureDateTicks: Int64
+    PureTimeTicks: Int64
     @overload
     @staticmethod
     def BackSolveExpression(exp: str, variable: str, target: float, minimum: float, maximum: float, steps: int) -> Tuple[bool, float, float]: ...
@@ -2793,6 +2797,9 @@ from .Undo import GH_UndoRecord
 class GH_Document:
     @overload
     def __init__(self): ...
+    IgnoredUnknowns: HashSet
+    ScheduleInactive: int
+    ScheduleRecursive: int
     @overload
     def ActiveObjects(self) -> List: ...
     @overload
@@ -7720,6 +7727,194 @@ class GH_TimeKind(Enum):
 
 
 class GH_TypeLib:
+    t_bool: Type
+    t_byte: Type
+    t_int16: Type
+    t_int32: Type
+    t_int64: Type
+    t_uint16: Type
+    t_uint32: Type
+    t_uint64: Type
+    t_time: Type
+    t_single: Type
+    t_double: Type
+    t_decimal: Type
+    t_guid: Type
+    t_char: Type
+    t_string: Type
+    t_color: Type
+    t_size: Type
+    t_sizef: Type
+    t_point: Type
+    t_pointf: Type
+    t_rectangle: Type
+    t_rectanglef: Type
+    t_object: Type
+    id_bool: Guid
+    id_byte: Guid
+    id_int16: Guid
+    id_int32: Guid
+    id_int64: Guid
+    id_uint16: Guid
+    id_uint32: Guid
+    id_uint64: Guid
+    id_time: Guid
+    id_single: Guid
+    id_double: Guid
+    id_decimal: Guid
+    id_guid: Guid
+    id_char: Guid
+    id_string: Guid
+    id_color: Guid
+    id_size: Guid
+    id_sizef: Guid
+    id_point: Guid
+    id_pointf: Guid
+    id_rectangle: Guid
+    id_rectanglef: Guid
+    id_object: Guid
+    t_gh_goo: Type
+    t_gh_objwrapper: Type
+    t_gh_bool: Type
+    t_gh_int: Type
+    t_gh_number: Type
+    t_gh_complex: Type
+    t_gh_complexnumber: Type
+    t_gh_guid: Type
+    t_gh_matrix: Type
+    t_gh_transform: Type
+    t_gh_string: Type
+    t_gh_colour: Type
+    t_gh_time: Type
+    t_gh_path: Type
+    t_gh_structpath: Type
+    t_gh_material: Type
+    t_gh_interval2D: Type
+    t_gh_uvinterval: Type
+    t_gh_interval: Type
+    t_gh_vector: Type
+    t_gh_point: Type
+    t_gh_plane: Type
+    t_gh_arc: Type
+    t_gh_line: Type
+    t_gh_curve: Type
+    t_gh_circle: Type
+    t_gh_rectangle: Type
+    t_gh_box: Type
+    t_gh_brep: Type
+    t_gh_subd: Type
+    t_gh_surface: Type
+    t_gh_mesh: Type
+    t_gh_meshface: Type
+    id_gh_goo: Guid
+    id_gh_objwrapper: Guid
+    id_gh_bool: Guid
+    id_gh_int: Guid
+    id_gh_number: Guid
+    id_gh_complex: Guid
+    id_gh_complexnumber: Guid
+    id_gh_guid: Guid
+    id_gh_matrix: Guid
+    id_gh_transform: Guid
+    id_gh_string: Guid
+    id_gh_colour: Guid
+    id_gh_time: Guid
+    id_gh_path: Guid
+    id_gh_structpath: Guid
+    id_gh_material: Guid
+    id_gh_interval2D: Guid
+    id_gh_uvinterval: Guid
+    id_gh_interval: Guid
+    id_gh_vector: Guid
+    id_gh_point: Guid
+    id_gh_plane: Guid
+    id_gh_arc: Guid
+    id_gh_line: Guid
+    id_gh_curve: Guid
+    id_gh_circle: Guid
+    id_gh_rectangle: Guid
+    id_gh_box: Guid
+    id_gh_brep: Guid
+    id_gh_subd: Guid
+    id_gh_surface: Guid
+    id_gh_mesh: Guid
+    id_gh_meshface: Guid
+    t_rc_plane: Type
+    t_rc_point3d: Type
+    t_rc_point3f: Type
+    t_rc_vector3d: Type
+    t_rc_vector3f: Type
+    t_rc_transform: Type
+    t_rc_interval: Type
+    t_rc_matrix: Type
+    t_rc_line: Type
+    t_rc_rectangle: Type
+    t_rc_arc: Type
+    t_rc_circle: Type
+    t_rc_ellipse: Type
+    t_rc_polyline: Type
+    t_rc_box: Type
+    t_rc_boundingbox: Type
+    t_rc_sphere: Type
+    t_rc_cone: Type
+    t_rc_cylinder: Type
+    t_rc_torus: Type
+    t_rc_curve: Type
+    t_rc_linecurve: Type
+    t_rc_polylinecurve: Type
+    t_rc_arccurve: Type
+    t_rc_nurbscurve: Type
+    t_rc_polycurve: Type
+    t_rc_surface: Type
+    t_rc_sumsurface: Type
+    t_rc_revsurface: Type
+    t_rc_nurbssurface: Type
+    t_rc_planesurface: Type
+    t_rc_brep: Type
+    t_rc_brepface: Type
+    t_rc_brepedge: Type
+    t_rc_subd: Type
+    t_rc_extrusion: Type
+    t_rc_mesh: Type
+    t_rc_meshface: Type
+    id_rc_plane: Guid
+    id_rc_point3d: Guid
+    id_rc_point3f: Guid
+    id_rc_vector3d: Guid
+    id_rc_vector3f: Guid
+    id_rc_transform: Guid
+    id_rc_interval: Guid
+    id_rc_matrix: Guid
+    id_rc_line: Guid
+    id_rc_rectangle: Guid
+    id_rc_arc: Guid
+    id_rc_circle: Guid
+    id_rc_ellipse: Guid
+    id_rc_polyline: Guid
+    id_rc_box: Guid
+    id_rc_boundingbox: Guid
+    id_rc_sphere: Guid
+    id_rc_cone: Guid
+    id_rc_cylinder: Guid
+    id_rc_torus: Guid
+    id_rc_curve: Guid
+    id_rc_linecurve: Guid
+    id_rc_polylinecurve: Guid
+    id_rc_arccurve: Guid
+    id_rc_nurbscurve: Guid
+    id_rc_polycurve: Guid
+    id_rc_surface: Guid
+    id_rc_sumsurface: Guid
+    id_rc_revsurface: Guid
+    id_rc_nurbssurface: Guid
+    id_rc_planesurface: Guid
+    id_rc_brep: Guid
+    id_rc_brepface: Guid
+    id_rc_brepedge: Guid
+    id_rc_subd: Guid
+    id_rc_extrusion: Guid
+    id_rc_mesh: Guid
+    id_rc_meshface: Guid
     @overload
     def Equals(self, obj: Object) -> bool: ...
     @overload

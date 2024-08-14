@@ -26,6 +26,9 @@ class Connectivity:
 class Edge:
     @overload
     def __init__(self, nA: int, nB: int, nN: int): ...
+    A: int
+    B: int
+    N: int
     @overload
     def CompareTo(self, other: Edge) -> int: ...
     @overload
@@ -93,6 +96,9 @@ class Face:
     def __init__(self, other: Face): ...
     @overload
     def __init__(self, nA: int, nB: int, nC: int): ...
+    A: int
+    B: int
+    C: int
     @overload
     def ContainsEdge(self, E0: int, E1: int) -> bool: ...
     @overload
@@ -126,6 +132,12 @@ class FaceEx(Face):
     def __init__(self, other: Face): ...
     @overload
     def __init__(self, nA: int, nB: int, nC: int): ...
+    center: Node2
+    radius: float
+    radius_squared: float
+    A: int
+    B: int
+    C: int
     @overload
     def ComputeBC(self, Nodes: Node2List) -> None: ...
     @overload

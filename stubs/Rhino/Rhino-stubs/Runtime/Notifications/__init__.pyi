@@ -133,6 +133,7 @@ class NotificationButtonClickedArgs:
 
 
 class NotificationCenter:
+    Notifications: TrulyObservableOrderedSet
     @overload
     def Equals(self, obj: Object) -> bool: ...
     @overload

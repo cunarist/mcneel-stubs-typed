@@ -1542,6 +1542,9 @@ class GH_HtmlListType(Enum):
 class GH_HtmlRemark:
     @overload
     def __init__(self): ...
+    m_Text: str
+    m_forecolour: GH_HtmlFormatterPalette
+    m_backcolour: GH_HtmlFormatterPalette
     @overload
     def Equals(self, obj: Object) -> bool: ...
     @overload

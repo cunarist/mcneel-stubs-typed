@@ -18,6 +18,8 @@ class Circle2:
     def __init__(self, origin: Node2, radius: float): ...
     @overload
     def __init__(self, A: Node2, B: Node2, C: Node2): ...
+    O: Node2
+    R: float
     @overload
     @staticmethod
     def Circle3Pt(ax: float, ay: float, bx: float, by: float, cx: float, cy: float, ox: float, oy: float, r2: float) -> Tuple[bool, float, float, float]: ...
@@ -211,6 +213,10 @@ class Line2:
     def __init__(self, nA: Node2, nB: Node2): ...
     @overload
     def __init__(self, nAx: float, nAy: float, nBx: float, nBy: float): ...
+    Ax: float
+    Ay: float
+    Bx: float
+    By: float
     @overload
     def ClosestPoint(self, pt: Node2) -> float: ...
     @overload
@@ -278,6 +284,12 @@ class Line3:
     def __init__(self, nA: Node3, nB: Node3): ...
     @overload
     def __init__(self, nAx: float, nAy: float, nAz: float, nBx: float, nBy: float, nBz: float): ...
+    Ax: float
+    Ay: float
+    Az: float
+    Bx: float
+    By: float
+    Bz: float
     @overload
     def ClosestPoint(self, pt: Node3) -> float: ...
     @overload
@@ -350,6 +362,9 @@ class Node2:
     def __init__(self, other: Node2, dx: float, dy: float): ...
     @overload
     def __init__(self, A: Node2, B: Node2, f: float, n_tag: int): ...
+    x: float
+    y: float
+    tag: int
     @overload
     def CompareTo(self, other: Node2) -> int: ...
     @overload
@@ -661,6 +676,10 @@ class Node3:
     def __init__(self, other: Point3f, nI: int): ...
     @overload
     def __init__(self, nX: float, nY: float, nZ: float, nI: int): ...
+    x: float
+    y: float
+    z: float
+    tag: int
     @overload
     def Coincident(self, other: Node3) -> bool: ...
     @overload
@@ -1014,6 +1033,10 @@ class Plane:
     def __init__(self, nOrigin: Node3, nXAxis: Vec3, nYAxis: Vec3): ...
     @overload
     def __init__(self, nOrigin: Node3, nXAxis: Vec3, nYAxis: Vec3, nZAxis: Vec3): ...
+    origin: Node3
+    x_axis: Vec3
+    y_axis: Vec3
+    z_axis: Vec3
     @overload
     def Equals(self, obj: Object) -> bool: ...
     @overload
@@ -1061,6 +1084,10 @@ class Rectangle2:
     def __init__(self, p0: Node2, p1: Node2): ...
     @overload
     def __init__(self, x0: float, y0: float, x1: float, y1: float): ...
+    x_min: float
+    y_min: float
+    x_max: float
+    y_max: float
     @overload
     def Equals(self, obj: Object) -> bool: ...
     @overload
@@ -1141,6 +1168,8 @@ class Vec2:
     def __init__(self, other: Vector2f): ...
     @overload
     def __init__(self, nX: float, nY: float): ...
+    x: float
+    y: float
     @overload
     def CompareTo(self, other: Vec2) -> int: ...
     @overload
@@ -1204,6 +1233,9 @@ class Vec3:
     def __init__(self, other: Vector3f): ...
     @overload
     def __init__(self, nX: float, nY: float, nZ: float): ...
+    x: float
+    y: float
+    z: float
     @overload
     def CompareTo(self, other: Vec3) -> int: ...
     @overload

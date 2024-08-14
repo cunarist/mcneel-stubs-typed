@@ -2021,6 +2021,18 @@ class RhinoFileWatcherChangeReason(Enum):
 
 from .Geometry import Vector3d
 class RhinoMath:
+    HalfPI: float
+    QuarterPI: float
+    TwoPI: float
+    Tau: float
+    ZeroTolerance: float
+    UnsetValue: float
+    Epsilon: float
+    SqrtEpsilon: float
+    DefaultAngleTolerance: float
+    DefaultDistanceToleranceMillimeters: float
+    UnsetSingle: Single
+    UnsetIntIndex: int
     @overload
     @staticmethod
     def Clamp(value: float, bound1: float, bound2: float) -> float: ...

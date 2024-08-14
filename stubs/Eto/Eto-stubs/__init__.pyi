@@ -556,6 +556,17 @@ class PlatformFeatures(Enum):
 
 
 class Platforms:
+    Direct2D: str
+    Ios: str
+    Gtk: str
+    Gtk2: str
+    Gtk3: str
+    Mac64: str
+    XamMac2: str
+    macOS: str
+    WinForms: str
+    Wpf: str
+    Android: str
     @overload
     def Equals(self, obj: Object) -> bool: ...
     @overload

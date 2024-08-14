@@ -957,6 +957,14 @@ class GH_SincGraph(GH_AbstractGraph):
 class GH_SineEquation:
     @overload
     def __init__(self): ...
+    amplitude: float
+    frequency: float
+    offset: float
+    shift: float
+    X0: float
+    Y0: float
+    X1: float
+    Y1: float
     @overload
     def Equals(self, obj: Object) -> bool: ...
     @overload

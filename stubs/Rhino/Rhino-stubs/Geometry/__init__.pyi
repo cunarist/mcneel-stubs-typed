@@ -9573,6 +9573,9 @@ from ..FileIO import SerializationOptions
 class Light(GeometryBase):
     @overload
     def __init__(self): ...
+    ConstantAttenuationVector: Vector3d
+    LinearAttenuationVector: Vector3d
+    InverseSquaredAttenuationVector: Vector3d
     @overload
     def ComponentIndex(self) -> ComponentIndex: ...
     @overload

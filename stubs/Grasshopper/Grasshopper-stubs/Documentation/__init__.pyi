@@ -224,6 +224,23 @@ class GH_Parser:
 
 
 class GH_RuntimeFile:
+    TagAuthor: str
+    TagContact: str
+    TagTitle: str
+    TagSeeAlso: str
+    TagCategory: str
+    TagKeywords: str
+    TagSynonyms: str
+    TagErranyms: str
+    TagComponent: str
+    TagRhinoCommand: str
+    TagPronunciation: str
+    TagExpert: str
+    TagBeginner: str
+    TagDescription: str
+    TagIntermediate: str
+    TagAutoLink: str
+    TagInclude: str
     @overload
     def ContainsKey(self, key: str) -> bool: ...
     @overload

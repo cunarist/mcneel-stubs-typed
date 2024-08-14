@@ -1554,6 +1554,8 @@ class GH_FontPickButton(GH_ScriptEditorButton):
 class GH_HistoricAssembly:
     @overload
     def __init__(self): ...
+    Path: str
+    Date: DateTime
     @overload
     def CompareTo(self, other: GH_HistoricAssembly) -> int: ...
     @overload
@@ -1608,6 +1610,8 @@ class GH_ScriptEditor:
     def __init__(self, language: GH_ScriptLanguage): ...
     @overload
     def __init__(self, language: GH_ScriptLanguage, owner: IGH_DocumentObject): ...
+    InstanceTable: List
+    CacheLimit: int
     @overload
     def Activate(self) -> None: ...
     @overload

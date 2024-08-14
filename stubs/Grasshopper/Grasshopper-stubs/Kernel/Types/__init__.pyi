@@ -3378,6 +3378,10 @@ class GH_PointRefData:
     def __init__(self): ...
     @overload
     def __init__(self, iOther: GH_PointRefData): ...
+    m_RefID: Guid
+    m_RefIndex: int
+    m_RefParam: Iterable[float]
+    m_RefType: GH_PointRefType
     @overload
     def Equals(self, obj: Object) -> bool: ...
     @overload

@@ -201,6 +201,7 @@ namespace PyStubblerLib
                 // get the list of constructors and methods
                 ConstructorInfo[] constructors = stubType.GetConstructors();
                 MethodInfo[] methods = stubType.GetMethods();
+                FieldInfo[] fields = stubType.GetFields();
 
                 // analyze classes to import
                 HashSet<Tuple<string, string>> reqImports = new HashSet<Tuple<string, string>>();
@@ -243,6 +244,16 @@ namespace PyStubblerLib
                             Tuple.Create(relativeNamespace, ToPythonType(returnType.Name))
                         );
                     }
+                }
+                foreach (var field in fields)
+                {
+                    var fieldType = field.FieldType;
+                    var relativeNamespace = FindRelativeNamespace(
+                        stubType.Namespace, fieldType.Namespace
+                    );
+                    reqImports.Add(
+                        Tuple.Create(relativeNamespace, ToPythonType(fieldType.Name))
+                    );
                 }
 
                 // import parameter and return types
@@ -355,6 +366,12 @@ namespace PyStubblerLib
                         // Generate __setitem__
                         sb.AppendLine($"    def __setitem__(self, index: int, value: {pythonType}): ...");
                     }
+                }
+
+                // write field definitions
+                foreach (var field in fields)
+                {
+                    sb.AppendLine($"    {field.Name}: {ToPythonType(field.FieldType.Name)}");
                 }
 
                 // write method definitions

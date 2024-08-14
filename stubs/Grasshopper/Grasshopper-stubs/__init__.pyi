@@ -1352,6 +1352,7 @@ from .GUI.MRU import GH_MRU_Server
 from .GUI.Canvas import GH_Canvas
 from .Kernel import GH_SettingsServer
 class Instances:
+    LoadOneByOne: bool
     @overload
     @staticmethod
     def add_CanvasCreated(obj: CanvasCreatedEventHandler) -> None: ...

@@ -1470,7 +1470,12 @@ class GH_CustomPreviewComponent(GH_Component):
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from ..Types import GH_Material
 class GH_CustomPreviewItem:
+    Colour: Color
+    Shader: DisplayMaterial
+    Material: GH_Material
+    Geometry: IGH_PreviewData
     @overload
     def Equals(self, obj: Object) -> bool: ...
     @overload

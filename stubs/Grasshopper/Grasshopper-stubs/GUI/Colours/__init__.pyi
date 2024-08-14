@@ -6,6 +6,9 @@ from enum import Enum
 class GH_ColourBucket:
     @overload
     def __init__(self): ...
+    m_Colour: Color
+    m_Bucket: Rectangle
+    m_State: GH_ColourBucketState
     @overload
     def Draw(self, g: Graphics) -> None: ...
     @overload

@@ -16,6 +16,10 @@ class Alignment(Enum):
 class GH_BarData:
     @overload
     def __init__(self, min: float, max: float): ...
+    m_min: float
+    m_max: float
+    m_count: int
+    m_percent: float
     @overload
     def Equals(self, obj: Object) -> bool: ...
     @overload
@@ -883,6 +887,7 @@ from ...GUI.Canvas import GH_CanvasChannel
 class GH_BooleanSwitchAttributesObsolete:
     @overload
     def __init__(self, owner: GH_BooleanSwitch_Obsolete): ...
+    SwitchWidth: int
     @overload
     def AppendToAttributeTree(self, attributes: List) -> None: ...
     @overload
@@ -5362,6 +5367,7 @@ from ...GUI.Canvas import GH_CanvasChannel
 class GH_ColourSwatchAttributes:
     @overload
     def __init__(self, owner: GH_ColourSwatch): ...
+    SwatchWidth: int
     @overload
     def AppendToAttributeTree(self, attributes: List) -> None: ...
     @overload
@@ -6020,6 +6026,12 @@ class GH_ColourWheelState:
     def __init__(self): ...
     @overload
     def __init__(self, other: GH_ColourWheelState): ...
+    ComplementaryAngle: int
+    TriadAngle: int
+    TetradAngle: int
+    RailStartAngle: int
+    MainGripRadius: int
+    RangeGripRadius: int
     @overload
     def BeginGripDrag(self, cursor: PointF) -> bool: ...
     @overload
@@ -11277,9 +11289,11 @@ from ...GUI import GH_CanvasMouseEvent
 from ...GUI.Canvas import GH_ObjectResponse
 from ...GUI import GH_TooltipDisplayEventArgs
 from ...GUI.Canvas import GH_CanvasChannel
+from ...GUI.Base import GH_DigitScrollerBase
 class GH_ItemPickerAttributes:
     @overload
     def __init__(self, owner: GH_ItemPicker): ...
+    m_scroller: GH_DigitScrollerBase
     @overload
     def AppendToAttributeTree(self, attributes: List) -> None: ...
     @overload
@@ -11395,6 +11409,7 @@ from ..Undo import GH_UndoRecord
 class GH_JumpObject(GH_DocumentObject):
     @overload
     def __init__(self): ...
+    JumpId: Guid
     @overload
     def add_AttributesChanged(self, obj: AttributesChangedEventHandler) -> None: ...
     @overload
@@ -15838,6 +15853,8 @@ class GH_PieChartDataSet:
 class GH_PieChartPair:
     @overload
     def __init__(self, n_tag: str, n_valence: int): ...
+    tag: str
+    val: int
     @overload
     def Equals(self, obj: Object) -> bool: ...
     @overload
@@ -16462,6 +16479,7 @@ from ..Undo import GH_UndoRecord
 class GH_Relay:
     @overload
     def __init__(self): ...
+    RelayId: Guid
     @overload
     def add_AttributesChanged(self, obj: AttributesChangedEventHandler) -> None: ...
     @overload
@@ -19036,6 +19054,7 @@ from ...GUI.Canvas import GH_CanvasChannel
 class GH_ValueListAttributes:
     @overload
     def __init__(self, owner: GH_ValueList): ...
+    ItemHeight: int
     @overload
     def AppendToAttributeTree(self, attributes: List) -> None: ...
     @overload
@@ -20009,6 +20028,8 @@ class GH_ValueTrackerAttributes:
 
 
 class VT_DataPoint:
+    m_time: Int64
+    m_data: Iterable[float]
     @overload
     def Equals(self, obj: Object) -> bool: ...
     @overload

@@ -2017,6 +2017,7 @@ class GH_Ribbon:
 
 
 class GH_RibbonContentBase:
+    Region: Rectangle
     @overload
     def Contains(self, pt: Point) -> bool: ...
     @overload
@@ -3315,6 +3316,7 @@ from ...Kernel import IGH_ObjectProxy
 class GH_RibbonItem(GH_RibbonContentBase):
     @overload
     def __init__(self, item_proxy: IGH_ObjectProxy): ...
+    Region: Rectangle
     @overload
     def CompareTo(self, other: GH_RibbonItem) -> int: ...
     @overload
@@ -3491,6 +3493,7 @@ class GH_RibbonPanel(GH_RibbonContentBase):
     def __init__(self): ...
     @overload
     def __init__(self, iName: str): ...
+    Region: Rectangle
     @overload
     def AddItem(self, item: GH_RibbonItem) -> bool: ...
     @overload
@@ -3604,6 +3607,7 @@ class GH_RibbonPanel(GH_RibbonContentBase):
 class GH_RibbonTab(GH_RibbonContentBase):
     @overload
     def __init__(self, owner: GH_Ribbon, name: str): ...
+    Region: Rectangle
     @overload
     def Contains(self, pt: Point) -> bool: ...
     @overload

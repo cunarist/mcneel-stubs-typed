@@ -735,6 +735,9 @@ from ...Kernel import GH_AutoSaveTrigger
 class GH_Canvas:
     @overload
     def __init__(self): ...
+    ThumbnailWidth: int
+    ThumbnailHeight: int
+    ScheduleInactive: int
     @overload
     def add_AutoSizeChanged(self, value: EventHandler) -> None: ...
     @overload
@@ -2094,6 +2097,8 @@ class GH_CanvasWireValidator(GH_CanvasValidator):
 
 
 class GH_Capsule:
+    DefaultHighlight: int
+    DefaultRadius: int
     @overload
     def AddInputGrip(self, P: PointF) -> None: ...
     @overload
@@ -2424,6 +2429,9 @@ class GH_DragDropFileAction(Enum):
 
 
 class GH_FilePanel:
+    PanelPadding: int
+    PanelWidth: int
+    PanelHeight: int
     @overload
     def Dispose(self) -> None: ...
     @overload
@@ -5200,6 +5208,9 @@ class GH_PaletteStyle:
     def __init__(self, fill: Color, edge: Color): ...
     @overload
     def __init__(self, fill: Color, edge: Color, text: Color): ...
+    m_fill: Color
+    m_edge: Color
+    m_text: Color
     @overload
     def CreateBrush(self, rec: RectangleF, zoom: Single) -> Brush: ...
     @overload
@@ -6537,6 +6548,49 @@ class GH_ResizeBorder(GH_Border):
 
 from ...Kernel import IGH_ActiveObject
 class GH_Skin:
+    canvas_mono: bool
+    canvas_mono_color: Color
+    canvas_back: Color
+    canvas_edge: Color
+    canvas_grid: Color
+    canvas_shade: Color
+    canvas_grid_col: int
+    canvas_grid_row: int
+    canvas_shade_size: int
+    wire_default: Color
+    wire_empty: Color
+    wire_selected_a: Color
+    wire_selected_b: Color
+    group_back: Color
+    panel_back: Color
+    zui_fill: Color
+    zui_edge: Color
+    zui_fill_highlight: Color
+    zui_edge_highlight: Color
+    palette_black_standard: GH_PaletteStyle
+    palette_black_selected: GH_PaletteStyle
+    palette_grey_standard: GH_PaletteStyle
+    palette_grey_selected: GH_PaletteStyle
+    palette_white_standard: GH_PaletteStyle
+    palette_white_selected: GH_PaletteStyle
+    palette_blue_standard: GH_PaletteStyle
+    palette_blue_selected: GH_PaletteStyle
+    palette_brown_standard: GH_PaletteStyle
+    palette_brown_selected: GH_PaletteStyle
+    palette_pink_standard: GH_PaletteStyle
+    palette_pink_selected: GH_PaletteStyle
+    palette_trans_standard: GH_PaletteStyle
+    palette_trans_selected: GH_PaletteStyle
+    palette_normal_standard: GH_PaletteStyle
+    palette_normal_selected: GH_PaletteStyle
+    palette_hidden_standard: GH_PaletteStyle
+    palette_hidden_selected: GH_PaletteStyle
+    palette_locked_standard: GH_PaletteStyle
+    palette_locked_selected: GH_PaletteStyle
+    palette_warning_standard: GH_PaletteStyle
+    palette_warning_selected: GH_PaletteStyle
+    palette_error_standard: GH_PaletteStyle
+    palette_error_selected: GH_PaletteStyle
     @overload
     def Equals(self, obj: Object) -> bool: ...
     @overload
@@ -6563,6 +6617,11 @@ class GH_Viewport:
     def __init__(self, viewport: GH_Viewport): ...
     @overload
     def __init__(self, target: Point, zoom: Single): ...
+    ZoomDefault: Single
+    ZoomDefaultLower: Single
+    ZoomDefaultUpper: Single
+    ZoomMinimum: Single
+    ZoomMaximum: Single
     @overload
     def ApplyProjection(self, G: Graphics) -> None: ...
     @overload

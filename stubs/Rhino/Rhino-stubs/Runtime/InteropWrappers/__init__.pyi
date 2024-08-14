@@ -112,6 +112,19 @@ class CurveSegment:
 
 
 class MeshPointDataStruct:
+    m_et: float
+    m_ci_type: UInt32
+    m_ci_index: int
+    m_edge_index: int
+    m_face_index: int
+    m_Triangle: Char
+    m_t0: float
+    m_t1: float
+    m_t2: float
+    m_t3: float
+    m_Px: float
+    m_Py: float
+    m_Pz: float
     @overload
     def Equals(self, obj: Object) -> bool: ...
     @overload

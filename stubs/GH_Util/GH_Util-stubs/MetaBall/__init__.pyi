@@ -43,6 +43,17 @@ class GH_CellInfo:
     def __init__(self, nX: int, nY: int): ...
     @overload
     def __init__(self, nX: int, nY: int, na: float, nb: float, nc: float, nd: float): ...
+    x: int
+    y: int
+    va: float
+    vb: float
+    vc: float
+    vd: float
+    mask: GH_Mask
+    edge_l: float
+    edge_r: float
+    edge_t: float
+    edge_b: float
     @overload
     def DetermineMask(self, threshold: float) -> None: ...
     @overload
@@ -277,6 +288,11 @@ class GH_Particle:
     def __init__(self): ...
     @overload
     def __init__(self, nx: float, ny: float, nz: float, nc: float, nr: float): ...
+    x: float
+    y: float
+    z: float
+    c: float
+    r: float
     @overload
     def Equals(self, obj: Object) -> bool: ...
     @overload
@@ -296,6 +312,8 @@ class GH_Vertex:
     def __init__(self, other: GH_Vertex): ...
     @overload
     def __init__(self, vx: float, vy: float): ...
+    X: float
+    Y: float
     @overload
     def Equals(self, obj: Object) -> bool: ...
     @overload

@@ -148,6 +148,9 @@ from ...GUI.Canvas import GH_CanvasChannel
 class GH_FloatingParamAttributes:
     @overload
     def __init__(self, param: IGH_Param): ...
+    DefaultWidth: int
+    IconHeight: int
+    TextHeight: int
     @overload
     def AppendToAttributeTree(self, attributes: List) -> None: ...
     @overload

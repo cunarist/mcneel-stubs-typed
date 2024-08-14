@@ -8,6 +8,8 @@ class GH_BoundingBox:
     def __init__(self, nMin: GH_Point3D, nMax: GH_Point3D): ...
     @overload
     def __init__(self, Minx: float, Miny: float, Minz: float, Maxx: float, Maxy: float, Maxz: float): ...
+    Min: GH_Point3D
+    Max: GH_Point3D
     @overload
     def Equals(self, obj: Object) -> bool: ...
     @overload
@@ -21,6 +23,8 @@ class GH_BoundingBox:
 class GH_Interval1D:
     @overload
     def __init__(self, na: float, nb: float): ...
+    a: float
+    b: float
     @overload
     def Equals(self, obj: Object) -> bool: ...
     @overload
@@ -36,6 +40,8 @@ class GH_Interval2D:
     def __init__(self, nu: GH_Interval1D, nv: GH_Interval1D): ...
     @overload
     def __init__(self, nu0: float, nu1: float, nv0: float, nv1: float): ...
+    u: GH_Interval1D
+    v: GH_Interval1D
     @overload
     def Equals(self, obj: Object) -> bool: ...
     @overload
@@ -309,6 +315,8 @@ class GH_Line:
     def __init__(self, nA: GH_Point3D, nB: GH_Point3D): ...
     @overload
     def __init__(self, Ax: float, Ay: float, Az: float, Bx: float, By: float, Bz: float): ...
+    A: GH_Point3D
+    B: GH_Point3D
     @overload
     def Equals(self, obj: Object) -> bool: ...
     @overload
@@ -324,6 +332,9 @@ class GH_Plane:
     def __init__(self, nOrigin: GH_Point3D, nXAxis: GH_Point3D, nYAxis: GH_Point3D): ...
     @overload
     def __init__(self, Ox: float, Oy: float, Oz: float, Xx: float, Xy: float, Xz: float, Yx: float, Yy: float, Yz: float): ...
+    Origin: GH_Point3D
+    XAxis: GH_Point3D
+    YAxis: GH_Point3D
     @overload
     def Equals(self, obj: Object) -> bool: ...
     @overload
@@ -337,6 +348,8 @@ class GH_Plane:
 class GH_Point2D:
     @overload
     def __init__(self, nx: float, ny: float): ...
+    x: float
+    y: float
     @overload
     def Equals(self, obj: Object) -> bool: ...
     @overload
@@ -350,6 +363,9 @@ class GH_Point2D:
 class GH_Point3D:
     @overload
     def __init__(self, nx: float, ny: float, nz: float): ...
+    x: float
+    y: float
+    z: float
     @overload
     def Equals(self, obj: Object) -> bool: ...
     @overload
@@ -363,6 +379,10 @@ class GH_Point3D:
 class GH_Point4D:
     @overload
     def __init__(self, nx: float, ny: float, nz: float, nw: float): ...
+    x: float
+    y: float
+    z: float
+    w: float
     @overload
     def Equals(self, obj: Object) -> bool: ...
     @overload
@@ -411,6 +431,9 @@ class GH_Version:
     def __init__(self, other: GH_Version): ...
     @overload
     def __init__(self, v_major: int, v_minor: int, v_revision: int): ...
+    major: int
+    minor: int
+    revision: int
     @overload
     def Equals(self, obj: Object) -> bool: ...
     @overload
