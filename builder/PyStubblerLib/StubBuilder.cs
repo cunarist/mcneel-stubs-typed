@@ -150,7 +150,7 @@ namespace PyStubblerLib
             var sb = new System.Text.StringBuilder();
 
             string[] allChildNamespaces = GetChildNamespaces(stubTypes[0].Namespace, allNamespaces);
-            sb.AppendLine("from typing import Tuple, Iterable, Iterator, overload");
+            sb.AppendLine("from typing import overload, Tuple, Iterable, Iterator, Sequence, MutableSequence");
             sb.AppendLine("from enum import Enum");
             sb.Append("\n");
             if( allChildNamespaces.Length > 0 )
@@ -468,6 +468,8 @@ namespace PyStubblerLib
                     {
                         if (parameters[i].IsOut)
                             continue;
+                        if ((method.Name.StartsWith("get_") || method.Name.StartsWith("set_")))
+                            continue;
 
                         var parameter = parameters[i];
                         if (swapFirstTwoParams && i == 0)
@@ -501,8 +503,22 @@ namespace PyStubblerLib
                         }
 
                         sb.Append($" -> ");
-                        if (outParamCount == 0 && refParamCount == 0)
+                        if (
+                            !method.IsStatic
+                            && (method.Name.StartsWith("get_") || method.Name.StartsWith("set_"))
+                            && parameters.Length > 0
+                        ) {
+                            var indexParameter = parameters[0];
+                            var pythonType = ToPythonType(indexParameter.ParameterType);
+                            if (method.Name.StartsWith("get_"))
+                                sb.Append($"Sequence[{pythonType}]");
+                            else
+                                sb.Append($"MutableSequence[{pythonType}]");
+                        }
+                        else if (outParamCount == 0 && refParamCount == 0)
+                        {
                             sb.Append(types[0]);
+                        }
                         else
                         {
                             sb.Append("Tuple[");

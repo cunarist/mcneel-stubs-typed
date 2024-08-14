@@ -1,3 +1,3 @@
-from typing import Tuple, Iterable, Iterator, overload
+from typing import overload, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
 
