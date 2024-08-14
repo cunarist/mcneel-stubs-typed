@@ -4,6 +4,7 @@ from enum import Enum
 
 
 class Solver:
+    @overload
     @staticmethod
     def Compute(nodes: Node2List, hull: List) -> bool: ...
     @overload
@@ -15,7 +16,11 @@ class Solver:
     @overload
     @staticmethod
     def ComputeHull(GH_pts: Iterable[GH_Point], plane: Plane) -> Tuple[Polyline, Plane]: ...
+    @overload
     def Equals(self, obj: Object) -> bool: ...
+    @overload
     def GetHashCode(self) -> int: ...
+    @overload
     def GetType(self) -> Type: ...
+    @overload
     def ToString(self) -> str: ...

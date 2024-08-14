@@ -10,7 +10,9 @@ class IconSize(Enum):
 
 from ..Drawing import Icon
 class IHandler:
+    @overload
     def GetFileIcon(self, fileName: str, size: IconSize) -> Icon: ...
+    @overload
     def GetStaticIcon(self, type: StaticIconType, size: IconSize) -> Icon: ...
 
 
@@ -21,11 +23,17 @@ class StaticIconType(Enum):
 
 from ..Drawing import Icon
 class SystemIcons:
+    @overload
     def Equals(self, obj: Object) -> bool: ...
+    @overload
     @staticmethod
     def GetFileIcon(fileName: str, size: IconSize) -> Icon: ...
+    @overload
     def GetHashCode(self) -> int: ...
+    @overload
     @staticmethod
     def GetStaticIcon(type: StaticIconType, size: IconSize) -> Icon: ...
+    @overload
     def GetType(self) -> Type: ...
+    @overload
     def ToString(self) -> str: ...

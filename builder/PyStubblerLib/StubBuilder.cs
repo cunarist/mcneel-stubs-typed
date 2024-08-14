@@ -278,8 +278,7 @@ namespace PyStubblerLib
                 Array.Sort(constructors, MethodCompare);
                 foreach (var constructor in constructors)
                 {
-                    if (constructors.Length > 1)
-                        sb.AppendLine("    @overload");
+                    sb.AppendLine("    @overload");
                     sb.Append("    def __init__(self");
                     var parameters = constructor.GetParameters();
                     for (int i = 0; i < parameters.Length; i++)
@@ -377,6 +376,7 @@ namespace PyStubblerLib
                     }
                     int parameterCount = parameters.Length - outParamCount;
 
+                    sb.AppendLine("    @overload");
                     if (method.IsSpecialName && (method.Name.StartsWith("get_") || method.Name.StartsWith("set_")))
                     {
                         string propName = method.Name.Substring("get_".Length);
@@ -389,8 +389,6 @@ namespace PyStubblerLib
                         sb.Append($"    def {propName}(");
                     }
                     else if (method.Name.StartsWith("op_")) {
-                        if (methodNames[method.Name] > 1)
-                            sb.AppendLine("    @overload");
                         var isRight = (
                             parameters.Length > 1
                             && parameters[0].ParameterType != stubType
@@ -451,8 +449,6 @@ namespace PyStubblerLib
                     }
                     else
                     {
-                        if (methodNames[method.Name] > 1)
-                            sb.AppendLine("    @overload");
                         if (method.IsStatic)
                             sb.AppendLine("    @staticmethod");
                         sb.Append($"    def {method.Name}(");

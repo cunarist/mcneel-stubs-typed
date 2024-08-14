@@ -4,9 +4,13 @@ from enum import Enum
 
 
 class GH_GenericLayout:
+    @overload
     def Equals(self, obj: Object) -> bool: ...
+    @overload
     def GetHashCode(self) -> int: ...
+    @overload
     def GetType(self) -> Type: ...
+    @overload
     @staticmethod
     def Horizontal_ByIndex(area: Rectangle, stack: List, expand: bool) -> List: ...
     @overload
@@ -15,7 +19,9 @@ class GH_GenericLayout:
     @overload
     @staticmethod
     def Horizontal_ByPosition(area: Rectangle, stack: List, expand: bool, radical: int) -> List: ...
+    @overload
     def ToString(self) -> str: ...
+    @overload
     @staticmethod
     def Vertical_ByIndex(area: Rectangle, stack: List, expand: bool) -> List: ...
     @overload
