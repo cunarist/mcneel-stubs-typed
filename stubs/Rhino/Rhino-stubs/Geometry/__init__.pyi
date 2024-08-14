@@ -8810,8 +8810,6 @@ class Interpolator:
     @property
     def First(self) -> float: ...
     @overload
-    @property
-    def Item(self) -> Sequence[float]: ...
     @overload
     @property
     def Last(self) -> float: ...
@@ -8878,7 +8876,7 @@ class Interpolator:
     @First.setter
     def First(self, value: float) -> None: ...
     @overload
-    @Item.setter
+    @property
     def Item(self) -> MutableSequence[float]: ...
     @overload
     @Last.setter
@@ -8937,8 +8935,6 @@ class Interval:
     @property
     def IsValid(self) -> bool: ...
     @overload
-    @property
-    def Item(self) -> Sequence[float]: ...
     @overload
     @property
     def Length(self) -> float: ...
@@ -9007,7 +9003,7 @@ class Interval:
     @overload
     def Reverse(self) -> None: ...
     @overload
-    @Item.setter
+    @property
     def Item(self) -> MutableSequence[float]: ...
     @overload
     @T0.setter
@@ -12032,8 +12028,6 @@ class MeshFace:
     @property
     def IsTriangle(self) -> bool: ...
     @overload
-    @property
-    def Item(self) -> Sequence[int]: ...
     @overload
     @property
     def Unset() -> MeshFace: ...
@@ -12070,7 +12064,7 @@ class MeshFace:
     @D.setter
     def D(self, value: int) -> None: ...
     @overload
-    @Item.setter
+    @property
     def Item(self) -> MutableSequence[int]: ...
     @overload
     def Set(self, a: int, b: int, c: int) -> None: ...
@@ -14751,8 +14745,6 @@ class Point2d:
     @property
     def IsValid(self) -> bool: ...
     @overload
-    @property
-    def Item(self) -> Sequence[float]: ...
     @overload
     @property
     def MaximumCoordinate(self) -> float: ...
@@ -14810,7 +14802,7 @@ class Point2d:
     @overload
     def __sub__(point: Point2d, vector: Vector2d) -> Point2d: ...
     @overload
-    @Item.setter
+    @property
     def Item(self) -> MutableSequence[float]: ...
     @overload
     @X.setter
@@ -14853,8 +14845,6 @@ class Point2f:
     @property
     def IsValid(self) -> bool: ...
     @overload
-    @property
-    def Item(self) -> Sequence[Single]: ...
     @overload
     @property
     def Unset() -> Point2f: ...
@@ -14891,7 +14881,7 @@ class Point2f:
     @overload
     def __sub__(a: Point2f, b: Point2f) -> Vector2f: ...
     @overload
-    @Item.setter
+    @property
     def Item(self) -> MutableSequence[Single]: ...
     @overload
     @X.setter
@@ -14956,8 +14946,6 @@ class Point3d:
     @property
     def IsValid(self) -> bool: ...
     @overload
-    @property
-    def Item(self) -> Sequence[float]: ...
     @overload
     @property
     def MaximumCoordinate(self) -> float: ...
@@ -15032,7 +15020,7 @@ class Point3d:
     @overload
     def __neg__(point: Point3d) -> Point3d: ...
     @overload
-    @Item.setter
+    @property
     def Item(self) -> MutableSequence[float]: ...
     @overload
     @X.setter
@@ -16182,8 +16170,6 @@ class Polyline(Point3dList):
     @property
     def IsValid(self) -> bool: ...
     @overload
-    @property
-    def Item(self) -> Sequence[Point3d]: ...
     @overload
     @property
     def Last(self) -> Point3d: ...
@@ -16266,7 +16252,7 @@ class Polyline(Point3dList):
     @First.setter
     def First(self, value: Point3d) -> None: ...
     @overload
-    @Item.setter
+    @property
     def Item(self) -> MutableSequence[Point3d]: ...
     @overload
     @Last.setter
@@ -21525,8 +21511,6 @@ class Vector3d:
     @property
     def IsZero(self) -> bool: ...
     @overload
-    @property
-    def Item(self) -> Sequence[float]: ...
     @overload
     @property
     def Length(self) -> float: ...
@@ -21626,7 +21610,7 @@ class Vector3d:
     @overload
     def Rotate(self, angleRadians: float, rotationAxis: Vector3d) -> bool: ...
     @overload
-    @Item.setter
+    @property
     def Item(self) -> MutableSequence[float]: ...
     @overload
     @X.setter

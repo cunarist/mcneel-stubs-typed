@@ -462,8 +462,6 @@ class GH_Path:
     @property
     def DebuggerDisplay(self) -> str: ...
     @overload
-    @property
-    def Dimension(self) -> Sequence[int]: ...
     @overload
     @property
     def Indices(self) -> Iterable[int]: ...
@@ -503,7 +501,7 @@ class GH_Path:
     @overload
     def Read(self, reader: GH_IReader) -> bool: ...
     @overload
-    @Dimension.setter
+    @property
     def Dimension(self) -> MutableSequence[int]: ...
     @overload
     @Indices.setter

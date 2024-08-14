@@ -379,12 +379,22 @@ namespace PyStubblerLib
                     sb.AppendLine("    @overload");
                     if (method.IsSpecialName && (method.Name.StartsWith("get_") || method.Name.StartsWith("set_")))
                     {
-                        string propName = method.Name.Substring("get_".Length);
+                        string propName;
                         if (method.Name.StartsWith("get_"))
-                            sb.AppendLine("    @property");
+                            propName = method.Name.Substring("get_".Length);
                         else
-                        {
-                            sb.AppendLine($"    @{propName}.setter");
+                            propName = method.Name.Substring("set_".Length);
+
+                        if (IsIndexer(method)) {
+                            if (method.Name.StartsWith("get_"))
+                                if (methodNames.ContainsKey($"set_{propName}"))
+                                    continue;
+                            sb.AppendLine("    @property");
+                        } else {
+                            if (method.Name.StartsWith("get_"))
+                                sb.AppendLine("    @property");
+                            else
+                                sb.AppendLine($"    @{propName}.setter");
                         }
                         sb.Append($"    def {propName}(");
                     }

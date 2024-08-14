@@ -190,8 +190,6 @@ class Cell3Facet:
     @property
     def IsValid(self) -> bool: ...
     @overload
-    @property
-    def Item(self) -> Sequence[Point3d]: ...
     @overload
     @property
     def Last(self) -> Point3d: ...
@@ -283,7 +281,7 @@ class Cell3Facet:
     @First.setter
     def First(self, value: Point3d) -> None: ...
     @overload
-    @Item.setter
+    @property
     def Item(self) -> MutableSequence[Point3d]: ...
     @overload
     @Last.setter

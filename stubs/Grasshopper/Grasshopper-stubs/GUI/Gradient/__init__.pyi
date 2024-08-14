@@ -40,8 +40,6 @@ class GH_Gradient:
     @staticmethod
     def Forest() -> GH_Gradient: ...
     @overload
-    @property
-    def Grip(self) -> Sequence[GH_Grip]: ...
     @overload
     @property
     def GripCount(self) -> int: ...
@@ -106,7 +104,7 @@ class GH_Gradient:
     @overload
     def Render_Grips(self, g: Graphics, dest: RectangleF) -> None: ...
     @overload
-    @Grip.setter
+    @property
     def Grip(self) -> MutableSequence[GH_Grip]: ...
     @overload
     @Linear.setter

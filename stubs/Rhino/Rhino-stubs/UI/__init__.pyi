@@ -601,8 +601,6 @@ class NamedColorList:
     @property
     def Default() -> NamedColorList: ...
     @overload
-    @property
-    def Item(self) -> Sequence[NamedColor]: ...
     @overload
     @property
     def Name(self) -> str: ...
@@ -646,7 +644,7 @@ class NamedColorList:
     @Capacity.setter
     def Capacity(self, value: int) -> None: ...
     @overload
-    @Item.setter
+    @property
     def Item(self) -> MutableSequence[NamedColor]: ...
     @overload
     @Name.setter

@@ -1565,8 +1565,6 @@ class GH_HtmlTable:
     @property
     def Border(self) -> int: ...
     @overload
-    @property
-    def ColumnWidth(self) -> Sequence[int]: ...
     @overload
     @property
     def Content(self, row: int, column: int) -> str: ...
@@ -1574,8 +1572,6 @@ class GH_HtmlTable:
     @property
     def Padding(self) -> int: ...
     @overload
-    @property
-    def Row(self) -> Sequence[GH_HtmlTableRow]: ...
     @overload
     @property
     def Width(self) -> int: ...
@@ -1587,7 +1583,7 @@ class GH_HtmlTable:
     @Border.setter
     def Border(self, Value: int) -> None: ...
     @overload
-    @ColumnWidth.setter
+    @property
     def ColumnWidth(self) -> MutableSequence[int]: ...
     @overload
     @Content.setter
@@ -1596,7 +1592,7 @@ class GH_HtmlTable:
     @Padding.setter
     def Padding(self, Value: int) -> None: ...
     @overload
-    @Row.setter
+    @property
     def Row(self) -> MutableSequence[GH_HtmlTableRow]: ...
     @overload
     @Width.setter
@@ -1621,8 +1617,6 @@ class GH_HtmlTableRow:
     @property
     def Bold(self) -> bool: ...
     @overload
-    @property
-    def Content(self) -> Sequence[str]: ...
     @overload
     @property
     def ForeColor(self) -> Color: ...
@@ -1636,8 +1630,6 @@ class GH_HtmlTableRow:
     @property
     def Size(self) -> int: ...
     @overload
-    @property
-    def Width(self) -> Sequence[int]: ...
     @overload
     def GetHashCode(self) -> int: ...
     @overload
@@ -1649,7 +1641,7 @@ class GH_HtmlTableRow:
     @Bold.setter
     def Bold(self, Value: bool) -> None: ...
     @overload
-    @Content.setter
+    @property
     def Content(self) -> MutableSequence[str]: ...
     @overload
     @ForeColor.setter
@@ -1664,7 +1656,7 @@ class GH_HtmlTableRow:
     @Size.setter
     def Size(self, Value: int) -> None: ...
     @overload
-    @Width.setter
+    @property
     def Width(self) -> MutableSequence[int]: ...
     @overload
     def ToString(self) -> str: ...

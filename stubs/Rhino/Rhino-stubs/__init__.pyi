@@ -329,8 +329,6 @@ class IndexPair:
     @property
     def I(self) -> int: ...
     @overload
-    @property
-    def Item(self) -> Sequence[int]: ...
     @overload
     @property
     def J(self) -> int: ...
@@ -346,7 +344,7 @@ class IndexPair:
     @I.setter
     def I(self, value: int) -> None: ...
     @overload
-    @Item.setter
+    @property
     def Item(self) -> MutableSequence[int]: ...
     @overload
     @J.setter
