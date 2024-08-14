@@ -549,6 +549,8 @@ namespace PyStubblerLib
                 return "in_";
             else if (s == "or")
                 return "or_";
+            else if (s == "def")
+                return "def_";
             return s;
         }
 
