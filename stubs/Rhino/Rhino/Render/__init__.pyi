@@ -1,14 +1,14 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
 
-import ChangeQueue
-import ChildSlotNames
-import CustomRenderMeshes
-import DataSources
-import Fields
-import ParameterNames
-import PostEffects
-import UI
+from . import ChangeQueue
+from . import ChildSlotNames
+from . import CustomRenderMeshes
+from . import DataSources
+from . import Fields
+from . import ParameterNames
+from . import PostEffects
+from . import UI
 
 __all__ = ['ChangeQueue', 'ChildSlotNames', 'CustomRenderMeshes', 'DataSources', 'Fields', 'ParameterNames', 'PostEffects', 'UI']
 

@@ -1,10 +1,10 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
 
-import ConvexHull
-import Delaunay
-import SpatialTrees
-import Voronoi
+from . import ConvexHull
+from . import Delaunay
+from . import SpatialTrees
+from . import Voronoi
 
 __all__ = ['ConvexHull', 'Delaunay', 'SpatialTrees', 'Voronoi']
 

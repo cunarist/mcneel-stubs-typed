@@ -157,7 +157,7 @@ namespace PyStubblerLib
             {                
                 for(int i=0; i<allChildNamespaces.Length; i++)
                 {
-                    sb.AppendLine($"import {allChildNamespaces[i]}");
+                    sb.AppendLine($"from . import {allChildNamespaces[i]}");
                 }
                 sb.Append("\n");
                 sb.Append("__all__ = [");

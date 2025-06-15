@@ -1,19 +1,19 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
 
-import Attributes
-import Components
-import Data
-import Expressions
-import GDL
-import Geometry
-import Graphs
-import Parameters
-import Sorting
-import Special
-import Types
-import Undo
-import Utility
+from . import Attributes
+from . import Components
+from . import Data
+from . import Expressions
+from . import GDL
+from . import Geometry
+from . import Graphs
+from . import Parameters
+from . import Sorting
+from . import Special
+from . import Types
+from . import Undo
+from . import Utility
 
 __all__ = ['Attributes', 'Components', 'Data', 'Expressions', 'GDL', 'Geometry', 'Graphs', 'Parameters', 'Sorting', 'Special', 'Types', 'Undo', 'Utility']
 

@@ -1,10 +1,10 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
 
-import InProcess
-import InteropWrappers
-import Notifications
-import RhinoAccounts
+from . import InProcess
+from . import InteropWrappers
+from . import Notifications
+from . import RhinoAccounts
 
 __all__ = ['InProcess', 'InteropWrappers', 'Notifications', 'RhinoAccounts']
 

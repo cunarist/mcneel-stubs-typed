@@ -1,8 +1,8 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
 
-import DataSource
-import ThumbnailUI
+from . import DataSource
+from . import ThumbnailUI
 
 __all__ = ['DataSource', 'ThumbnailUI']
 

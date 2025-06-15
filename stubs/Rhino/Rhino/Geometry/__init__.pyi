@@ -1,10 +1,10 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
 
-import Collections
-import Intersect
-import MeshRefinements
-import Morphs
+from . import Collections
+from . import Intersect
+from . import MeshRefinements
+from . import Morphs
 
 __all__ = ['Collections', 'Intersect', 'MeshRefinements', 'Morphs']
 

@@ -1,8 +1,8 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
 
-import Controls
-import Gumball
+from . import Controls
+from . import Gumball
 
 __all__ = ['Controls', 'Gumball']
 

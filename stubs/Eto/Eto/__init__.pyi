@@ -1,10 +1,10 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
 
-import Drawing
-import Forms
-import IO
-import Threading
+from . import Drawing
+from . import Forms
+from . import IO
+from . import Threading
 
 __all__ = ['Drawing', 'Forms', 'IO', 'Threading']
 

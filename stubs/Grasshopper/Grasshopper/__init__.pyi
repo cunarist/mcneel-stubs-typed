@@ -1,12 +1,12 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
 
-import Documentation
-import Getters
-import GUI
-import Kernel
-import Plugin
-import Rhinoceros
+from . import Documentation
+from . import Getters
+from . import GUI
+from . import Kernel
+from . import Plugin
+from . import Rhinoceros
 
 __all__ = ['Documentation', 'Getters', 'GUI', 'Kernel', 'Plugin', 'Rhinoceros']
 

@@ -1,7 +1,7 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
 
-import Params
+from . import Params
 
 __all__ = ['Params']
 

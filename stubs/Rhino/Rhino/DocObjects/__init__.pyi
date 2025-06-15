@@ -1,9 +1,9 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
 
-import Custom
-import SnapShots
-import Tables
+from . import Custom
+from . import SnapShots
+from . import Tables
 
 __all__ = ['Custom', 'SnapShots', 'Tables']
 

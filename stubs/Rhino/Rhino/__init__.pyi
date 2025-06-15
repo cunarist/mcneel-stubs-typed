@@ -1,19 +1,19 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
 
-import ApplicationSettings
-import Collections
-import Commands
-import Display
-import DocObjects
-import FileIO
-import Geometry
-import Input
-import NodeInCode
-import PlugIns
-import Render
-import Runtime
-import UI
+from . import ApplicationSettings
+from . import Collections
+from . import Commands
+from . import Display
+from . import DocObjects
+from . import FileIO
+from . import Geometry
+from . import Input
+from . import NodeInCode
+from . import PlugIns
+from . import Render
+from . import Runtime
+from . import UI
 
 __all__ = ['ApplicationSettings', 'Collections', 'Commands', 'Display', 'DocObjects', 'FileIO', 'Geometry', 'Input', 'NodeInCode', 'PlugIns', 'Render', 'Runtime', 'UI']
 

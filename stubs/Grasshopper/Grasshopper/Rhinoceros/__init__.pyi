@@ -1,12 +1,12 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
 
-import Annotations
-import Display
-import Drafting
-import Model
-import Params
-import Render
+from . import Annotations
+from . import Display
+from . import Drafting
+from . import Model
+from . import Params
+from . import Render
 
 __all__ = ['Annotations', 'Display', 'Drafting', 'Model', 'Params', 'Render']
 
