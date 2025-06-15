@@ -716,6 +716,15 @@ namespace PyStubblerLib
                     return $"Iterator[Any]";
                 }
             }
+            if (t.Name.StartsWith("List"))
+            {
+                if (t.IsGenericType) {
+                    string rc = ToPythonType(t.GenericTypeArguments[0]);
+                    return $"MutableSequence[{rc}]";
+                } else {
+                    return $"MutableSequence[Any]";
+                }
+            }
             // TODO: Figure out the right way to get at IEnumerable<T>
             if (t.FullName != null && t.FullName.StartsWith("System.Collections.Generic.IEnumerable`1[["))
             {
