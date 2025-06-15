@@ -664,6 +664,8 @@ namespace PyStubblerLib
 
             if (rc.Equals("Type"))
                 return "type";
+            else if (rc.Equals("Object"))
+                return "object";
             else if (rc.Equals("String"))
                 return "str";
             else if (rc.Equals("Single"))
