@@ -91,7 +91,7 @@ namespace PyStubblerLib
                 var version = assemblyToStub.GetName().Version;
                 contents.AppendLine($"GH_IO-stubs=={version.Major}.{version.Minor}.{version.Build}");
                 contents.AppendLine($"GH_Util-stubs=={version.Major}.{version.Minor}.{version.Build}");
-                contents.AppendLine($"Grasshopper=={version.Major}.{version.Minor}.{version.Build}");
+                contents.AppendLine($"Grasshopper-stubs=={version.Major}.{version.Minor}.{version.Build}");
                 string requirementsPath = Path.Combine(parentDirectory.FullName, "requirements.txt");
                 File.WriteAllText(requirementsPath, contents.ToString());
             }
