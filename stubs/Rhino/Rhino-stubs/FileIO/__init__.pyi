@@ -131,11 +131,11 @@ class BinaryArchiveReader:
     @overload
     def AtEnd(self) -> bool: ...
     @overload
-    def BeginRead3dmChunk(self) -> Tuple[bool, UInt32, Int64]: ...
+    def BeginRead3dmChunk(self) -> Tuple[bool, int, int]: ...
     @overload
-    def BeginRead3dmChunk(self, expectedTypeCode: UInt32) -> Tuple[bool, int, int]: ...
+    def BeginRead3dmChunk(self, expectedTypeCode: int) -> Tuple[bool, int, int]: ...
     @overload
-    def Dump3dmChunk(self, log: TextLog) -> UInt32: ...
+    def Dump3dmChunk(self, log: TextLog) -> int: ...
     @overload
     def EnableCRCCalculation(self, enable: bool) -> bool: ...
     @overload
@@ -147,7 +147,7 @@ class BinaryArchiveReader:
     def Archive3dmVersion(self) -> int: ...
     @overload
     @property
-    def CurrentPosition(self) -> UInt64: ...
+    def CurrentPosition(self) -> int: ...
     @overload
     @property
     def ReadErrorOccured(self) -> bool: ...
@@ -166,13 +166,13 @@ class BinaryArchiveReader:
     @overload
     def ReadBoundingBox(self) -> BoundingBox: ...
     @overload
-    def ReadByte(self) -> Byte: ...
+    def ReadByte(self) -> int: ...
     @overload
-    def ReadByteArray(self) -> Iterable[Byte]: ...
+    def ReadByteArray(self) -> Iterable[int]: ...
     @overload
     def ReadColor(self) -> Color: ...
     @overload
-    def ReadCompressedBuffer(self) -> Iterable[Byte]: ...
+    def ReadCompressedBuffer(self) -> Iterable[int]: ...
     @overload
     def ReadDictionary(self) -> ArchivableDictionary: ...
     @overload
@@ -192,7 +192,7 @@ class BinaryArchiveReader:
     @overload
     def ReadInt(self) -> int: ...
     @overload
-    def ReadInt64(self) -> Int64: ...
+    def ReadInt64(self) -> int: ...
     @overload
     def ReadIntArray(self) -> Iterable[int]: ...
     @overload
@@ -232,9 +232,9 @@ class BinaryArchiveReader:
     @overload
     def ReadSByteArray(self) -> Iterable[SByte]: ...
     @overload
-    def ReadShort(self) -> Int16: ...
+    def ReadShort(self) -> int: ...
     @overload
-    def ReadShortArray(self) -> Iterable[Int16]: ...
+    def ReadShortArray(self) -> Iterable[int]: ...
     @overload
     def ReadSingle(self) -> float: ...
     @overload
@@ -250,9 +250,9 @@ class BinaryArchiveReader:
     @overload
     def ReadTransform(self) -> Transform: ...
     @overload
-    def ReadUInt(self) -> UInt32: ...
+    def ReadUInt(self) -> int: ...
     @overload
-    def ReadUShort(self) -> UInt16: ...
+    def ReadUShort(self) -> int: ...
     @overload
     def ReadUtf8String(self) -> str: ...
     @overload
@@ -262,11 +262,11 @@ class BinaryArchiveReader:
     @overload
     def ReadVector3f(self) -> Vector3f: ...
     @overload
-    def SeekFromCurrentPosition(self, byteOffset: Int64) -> bool: ...
+    def SeekFromCurrentPosition(self, byteOffset: int) -> bool: ...
     @overload
-    def SeekFromCurrentPosition(self, byteOffset: UInt64, forward: bool) -> bool: ...
+    def SeekFromCurrentPosition(self, byteOffset: int, forward: bool) -> bool: ...
     @overload
-    def SeekFromStart(self, byteOffset: UInt64) -> bool: ...
+    def SeekFromStart(self, byteOffset: int) -> bool: ...
     @overload
     @ReadErrorOccured.setter
     def ReadErrorOccured(self, value: bool) -> None: ...
@@ -294,9 +294,9 @@ from ..Geometry import GeometryBase
 from ..Render import RenderSettings
 class BinaryArchiveWriter:
     @overload
-    def BeginWrite3dmChunk(self, typecode: UInt32, value: Int64) -> bool: ...
+    def BeginWrite3dmChunk(self, typecode: int, value: int) -> bool: ...
     @overload
-    def BeginWrite3dmChunk(self, typecode: UInt32, majorVersion: int, minorVersion: int) -> bool: ...
+    def BeginWrite3dmChunk(self, typecode: int, majorVersion: int, minorVersion: int) -> bool: ...
     @overload
     def EnableCRCCalculation(self, enable: bool) -> bool: ...
     @overload
@@ -327,13 +327,13 @@ class BinaryArchiveWriter:
     @overload
     def WriteBoundingBox(self, value: BoundingBox) -> None: ...
     @overload
-    def WriteByte(self, value: Byte) -> None: ...
+    def WriteByte(self, value: int) -> None: ...
     @overload
-    def WriteByteArray(self, value: Iterable[Byte]) -> None: ...
+    def WriteByteArray(self, value: Iterable[int]) -> None: ...
     @overload
     def WriteColor(self, value: Color) -> None: ...
     @overload
-    def WriteCompressedBuffer(self, value: Iterable[Byte]) -> None: ...
+    def WriteCompressedBuffer(self, value: Iterable[int]) -> None: ...
     @overload
     def WriteDictionary(self, dictionary: ArchivableDictionary) -> None: ...
     @overload
@@ -353,7 +353,7 @@ class BinaryArchiveWriter:
     @overload
     def WriteInt(self, value: int) -> None: ...
     @overload
-    def WriteInt64(self, value: Int64) -> None: ...
+    def WriteInt64(self, value: int) -> None: ...
     @overload
     def WriteIntArray(self, value: Iterable[int]) -> None: ...
     @overload
@@ -393,9 +393,9 @@ class BinaryArchiveWriter:
     @overload
     def WriteSByteArray(self, value: Iterable[SByte]) -> None: ...
     @overload
-    def WriteShort(self, value: Int16) -> None: ...
+    def WriteShort(self, value: int) -> None: ...
     @overload
-    def WriteShortArray(self, value: Iterable[Int16]) -> None: ...
+    def WriteShortArray(self, value: Iterable[int]) -> None: ...
     @overload
     def WriteSingle(self, value: float) -> None: ...
     @overload
@@ -411,9 +411,9 @@ class BinaryArchiveWriter:
     @overload
     def WriteTransform(self, value: Transform) -> None: ...
     @overload
-    def WriteUInt(self, value: UInt32) -> None: ...
+    def WriteUInt(self, value: int) -> None: ...
     @overload
-    def WriteUShort(self, value: UInt16) -> None: ...
+    def WriteUShort(self, value: int) -> None: ...
     @overload
     def WriteUtf8String(self, value: str) -> None: ...
     @overload
@@ -450,16 +450,16 @@ class ContentHash:
     def Equals(self, obj: object) -> bool: ...
     @overload
     @property
-    def ByteCount(self) -> UInt64: ...
+    def ByteCount(self) -> int: ...
     @overload
     @property
     def HashTime(self) -> DateTime: ...
     @overload
     @property
-    def Sha1ContentHash(self) -> Iterable[Byte]: ...
+    def Sha1ContentHash(self) -> Iterable[int]: ...
     @overload
     @property
-    def Sha1NameHash(self) -> Iterable[Byte]: ...
+    def Sha1NameHash(self) -> Iterable[int]: ...
     @overload
     def GetHashCode(self) -> int: ...
     @overload
@@ -520,7 +520,7 @@ class DracoCompression:
     def DecompressBase64String(encoded: str) -> GeometryBase: ...
     @overload
     @staticmethod
-    def DecompressByteArray(bytes: Iterable[Byte]) -> GeometryBase: ...
+    def DecompressByteArray(bytes: Iterable[int]) -> GeometryBase: ...
     @overload
     @staticmethod
     def DecompressFile(path: str) -> GeometryBase: ...
@@ -547,7 +547,7 @@ class DracoCompression:
     @overload
     def ToBase64String(self) -> str: ...
     @overload
-    def ToByteArray(self) -> Iterable[Byte]: ...
+    def ToByteArray(self) -> Iterable[int]: ...
     @overload
     def ToString(self) -> str: ...
     @overload
@@ -667,7 +667,7 @@ class File3dm:
     def Equals(self, obj: object) -> bool: ...
     @overload
     @staticmethod
-    def FromByteArray(bytes: Iterable[Byte]) -> File3dm: ...
+    def FromByteArray(bytes: Iterable[int]) -> File3dm: ...
     @overload
     @property
     def AllDimStyles(self) -> File3dmDimStyleTable: ...
@@ -851,9 +851,9 @@ class File3dm:
     @overload
     def SetPreviewImage(self, image: Bitmap) -> None: ...
     @overload
-    def ToByteArray(self) -> Iterable[Byte]: ...
+    def ToByteArray(self) -> Iterable[int]: ...
     @overload
-    def ToByteArray(self, options: File3dmWriteOptions) -> Iterable[Byte]: ...
+    def ToByteArray(self, options: File3dmWriteOptions) -> Iterable[int]: ...
     @overload
     def ToString(self) -> str: ...
     @overload
@@ -1154,7 +1154,7 @@ class File3dmEmbeddedFile(ModelComponent):
     @overload
     def ClearName(self) -> None: ...
     @overload
-    def DataCRC(self, currentRemainder: UInt32) -> UInt32: ...
+    def DataCRC(self, currentRemainder: int) -> int: ...
     @overload
     def Dispose(self) -> None: ...
     @overload
@@ -1202,7 +1202,7 @@ class File3dmEmbeddedFile(ModelComponent):
     def IndexIsLocked(self) -> bool: ...
     @overload
     @property
-    def InstanceDefinitionModelSerialNumber(self) -> UInt32: ...
+    def InstanceDefinitionModelSerialNumber(self) -> int: ...
     @overload
     @property
     def IsComponentStatusLocked(self) -> bool: ...
@@ -1223,7 +1223,7 @@ class File3dmEmbeddedFile(ModelComponent):
     def IsValid(self) -> bool: ...
     @overload
     @property
-    def ModelSerialNumber(self) -> UInt32: ...
+    def ModelSerialNumber(self) -> int: ...
     @overload
     @property
     def Name(self) -> str: ...
@@ -1232,7 +1232,7 @@ class File3dmEmbeddedFile(ModelComponent):
     def NameIsLocked(self) -> bool: ...
     @overload
     @property
-    def ReferenceModelSerialNumber(self) -> UInt32: ...
+    def ReferenceModelSerialNumber(self) -> int: ...
     @overload
     @property
     def UserData(self) -> UserDataList: ...
@@ -1684,7 +1684,7 @@ class File3dmObject(ModelComponent):
     @overload
     def ClearName(self) -> None: ...
     @overload
-    def DataCRC(self, currentRemainder: UInt32) -> UInt32: ...
+    def DataCRC(self, currentRemainder: int) -> int: ...
     @overload
     def Dispose(self) -> None: ...
     @overload
@@ -1737,7 +1737,7 @@ class File3dmObject(ModelComponent):
     def IndexIsLocked(self) -> bool: ...
     @overload
     @property
-    def InstanceDefinitionModelSerialNumber(self) -> UInt32: ...
+    def InstanceDefinitionModelSerialNumber(self) -> int: ...
     @overload
     @property
     def IsComponentStatusLocked(self) -> bool: ...
@@ -1758,7 +1758,7 @@ class File3dmObject(ModelComponent):
     def IsValid(self) -> bool: ...
     @overload
     @property
-    def ModelSerialNumber(self) -> UInt32: ...
+    def ModelSerialNumber(self) -> int: ...
     @overload
     @property
     def Name(self) -> str: ...
@@ -1767,7 +1767,7 @@ class File3dmObject(ModelComponent):
     def NameIsLocked(self) -> bool: ...
     @overload
     @property
-    def ReferenceModelSerialNumber(self) -> UInt32: ...
+    def ReferenceModelSerialNumber(self) -> int: ...
     @overload
     @property
     def UserData(self) -> UserDataList: ...
@@ -2088,7 +2088,7 @@ class File3dmRenderContent(ModelComponent):
     @overload
     def ClearName(self) -> None: ...
     @overload
-    def DataCRC(self, currentRemainder: UInt32) -> UInt32: ...
+    def DataCRC(self, currentRemainder: int) -> int: ...
     @overload
     def DeleteChild(self, child_slot_name: str) -> bool: ...
     @overload
@@ -2155,7 +2155,7 @@ class File3dmRenderContent(ModelComponent):
     def IndexIsLocked(self) -> bool: ...
     @overload
     @property
-    def InstanceDefinitionModelSerialNumber(self) -> UInt32: ...
+    def InstanceDefinitionModelSerialNumber(self) -> int: ...
     @overload
     @property
     def IsChild(self) -> bool: ...
@@ -2185,7 +2185,7 @@ class File3dmRenderContent(ModelComponent):
     def Kind(self) -> str: ...
     @overload
     @property
-    def ModelSerialNumber(self) -> UInt32: ...
+    def ModelSerialNumber(self) -> int: ...
     @overload
     @property
     def Name(self) -> str: ...
@@ -2206,7 +2206,7 @@ class File3dmRenderContent(ModelComponent):
     def Reference(self) -> bool: ...
     @overload
     @property
-    def ReferenceModelSerialNumber(self) -> UInt32: ...
+    def ReferenceModelSerialNumber(self) -> int: ...
     @overload
     @property
     def RenderEngineId(self) -> Guid: ...
@@ -2281,7 +2281,7 @@ class File3dmRenderEnvironment(File3dmRenderContent):
     @overload
     def ClearName(self) -> None: ...
     @overload
-    def DataCRC(self, currentRemainder: UInt32) -> UInt32: ...
+    def DataCRC(self, currentRemainder: int) -> int: ...
     @overload
     def DeleteChild(self, child_slot_name: str) -> bool: ...
     @overload
@@ -2348,7 +2348,7 @@ class File3dmRenderEnvironment(File3dmRenderContent):
     def IndexIsLocked(self) -> bool: ...
     @overload
     @property
-    def InstanceDefinitionModelSerialNumber(self) -> UInt32: ...
+    def InstanceDefinitionModelSerialNumber(self) -> int: ...
     @overload
     @property
     def IsChild(self) -> bool: ...
@@ -2378,7 +2378,7 @@ class File3dmRenderEnvironment(File3dmRenderContent):
     def Kind(self) -> str: ...
     @overload
     @property
-    def ModelSerialNumber(self) -> UInt32: ...
+    def ModelSerialNumber(self) -> int: ...
     @overload
     @property
     def Name(self) -> str: ...
@@ -2399,7 +2399,7 @@ class File3dmRenderEnvironment(File3dmRenderContent):
     def Reference(self) -> bool: ...
     @overload
     @property
-    def ReferenceModelSerialNumber(self) -> UInt32: ...
+    def ReferenceModelSerialNumber(self) -> int: ...
     @overload
     @property
     def RenderEngineId(self) -> Guid: ...
@@ -2494,7 +2494,7 @@ class File3dmRenderMaterial(File3dmRenderContent):
     @overload
     def ClearName(self) -> None: ...
     @overload
-    def DataCRC(self, currentRemainder: UInt32) -> UInt32: ...
+    def DataCRC(self, currentRemainder: int) -> int: ...
     @overload
     def DeleteChild(self, child_slot_name: str) -> bool: ...
     @overload
@@ -2561,7 +2561,7 @@ class File3dmRenderMaterial(File3dmRenderContent):
     def IndexIsLocked(self) -> bool: ...
     @overload
     @property
-    def InstanceDefinitionModelSerialNumber(self) -> UInt32: ...
+    def InstanceDefinitionModelSerialNumber(self) -> int: ...
     @overload
     @property
     def IsChild(self) -> bool: ...
@@ -2591,7 +2591,7 @@ class File3dmRenderMaterial(File3dmRenderContent):
     def Kind(self) -> str: ...
     @overload
     @property
-    def ModelSerialNumber(self) -> UInt32: ...
+    def ModelSerialNumber(self) -> int: ...
     @overload
     @property
     def Name(self) -> str: ...
@@ -2612,7 +2612,7 @@ class File3dmRenderMaterial(File3dmRenderContent):
     def Reference(self) -> bool: ...
     @overload
     @property
-    def ReferenceModelSerialNumber(self) -> UInt32: ...
+    def ReferenceModelSerialNumber(self) -> int: ...
     @overload
     @property
     def RenderEngineId(self) -> Guid: ...
@@ -2707,7 +2707,7 @@ class File3dmRenderTexture(File3dmRenderContent):
     @overload
     def ClearName(self) -> None: ...
     @overload
-    def DataCRC(self, currentRemainder: UInt32) -> UInt32: ...
+    def DataCRC(self, currentRemainder: int) -> int: ...
     @overload
     def DeleteChild(self, child_slot_name: str) -> bool: ...
     @overload
@@ -2777,7 +2777,7 @@ class File3dmRenderTexture(File3dmRenderContent):
     def IndexIsLocked(self) -> bool: ...
     @overload
     @property
-    def InstanceDefinitionModelSerialNumber(self) -> UInt32: ...
+    def InstanceDefinitionModelSerialNumber(self) -> int: ...
     @overload
     @property
     def IsChild(self) -> bool: ...
@@ -2807,7 +2807,7 @@ class File3dmRenderTexture(File3dmRenderContent):
     def Kind(self) -> str: ...
     @overload
     @property
-    def ModelSerialNumber(self) -> UInt32: ...
+    def ModelSerialNumber(self) -> int: ...
     @overload
     @property
     def Name(self) -> str: ...
@@ -2828,7 +2828,7 @@ class File3dmRenderTexture(File3dmRenderContent):
     def Reference(self) -> bool: ...
     @overload
     @property
-    def ReferenceModelSerialNumber(self) -> UInt32: ...
+    def ReferenceModelSerialNumber(self) -> int: ...
     @overload
     @property
     def RenderEngineId(self) -> Guid: ...
@@ -3136,210 +3136,210 @@ class File3dmThickening:
 
 
 class File3dmTypeCodes:
-    TCODE_COMMENTBLOCK: UInt32
-    TCODE_ENDOFFILE: UInt32
-    TCODE_ENDOFFILE_GOO: UInt32
-    TCODE_LEGACY_GEOMETRY: UInt32
-    TCODE_OPENNURBS_OBJECT: UInt32
-    TCODE_GEOMETRY: UInt32
-    TCODE_ANNOTATION: UInt32
-    TCODE_DISPLAY: UInt32
-    TCODE_RENDER: UInt32
-    TCODE_INTERFACE: UInt32
-    TCODE_TOLERANCE: UInt32
-    TCODE_TABLE: UInt32
-    TCODE_TABLEREC: UInt32
-    TCODE_USER: UInt32
-    TCODE_SHORT: UInt32
-    TCODE_CRC: UInt32
-    TCODE_ANONYMOUS_CHUNK: UInt32
-    TCODE_MATERIAL_TABLE: UInt32
-    TCODE_LAYER_TABLE: UInt32
-    TCODE_LIGHT_TABLE: UInt32
-    TCODE_OBJECT_TABLE: UInt32
-    TCODE_PROPERTIES_TABLE: UInt32
-    TCODE_SETTINGS_TABLE: UInt32
-    TCODE_BITMAP_TABLE: UInt32
-    TCODE_USER_TABLE: UInt32
-    TCODE_GROUP_TABLE: UInt32
-    TCODE_FONT_TABLE: UInt32
-    TCODE_DIMSTYLE_TABLE: UInt32
-    TCODE_INSTANCE_DEFINITION_TABLE: UInt32
-    TCODE_HATCHPATTERN_TABLE: UInt32
-    TCODE_LINETYPE_TABLE: UInt32
-    TCODE_OBSOLETE_LAYERSET_TABLE: UInt32
-    TCODE_TEXTURE_MAPPING_TABLE: UInt32
-    TCODE_HISTORYRECORD_TABLE: UInt32
-    TCODE_ENDOFTABLE: UInt32
-    TCODE_PROPERTIES_REVISIONHISTORY: UInt32
-    TCODE_PROPERTIES_NOTES: UInt32
-    TCODE_PROPERTIES_PREVIEWIMAGE: UInt32
-    TCODE_PROPERTIES_APPLICATION: UInt32
-    TCODE_PROPERTIES_COMPRESSED_PREVIEWIMAGE: UInt32
-    TCODE_PROPERTIES_OPENNURBS_VERSION: UInt32
-    TCODE_SETTINGS_PLUGINLIST: UInt32
-    TCODE_SETTINGS_UNITSANDTOLS: UInt32
-    TCODE_SETTINGS_RENDERMESH: UInt32
-    TCODE_SETTINGS_ANALYSISMESH: UInt32
-    TCODE_SETTINGS_ANNOTATION: UInt32
-    TCODE_SETTINGS_NAMED_CPLANE_LIST: UInt32
-    TCODE_SETTINGS_NAMED_VIEW_LIST: UInt32
-    TCODE_SETTINGS_VIEW_LIST: UInt32
-    TCODE_SETTINGS_CURRENT_LAYER_INDEX: UInt32
-    TCODE_SETTINGS_CURRENT_MATERIAL_INDEX: UInt32
-    TCODE_SETTINGS_CURRENT_COLOR: UInt32
-    TCODE_SETTINGS__NEVER__USE__THIS: UInt32
-    TCODE_SETTINGS_CURRENT_WIRE_DENSITY: UInt32
-    TCODE_SETTINGS_RENDER: UInt32
-    TCODE_SETTINGS_GRID_DEFAULTS: UInt32
-    TCODE_SETTINGS_MODEL_URL: UInt32
-    TCODE_SETTINGS_CURRENT_FONT_INDEX: UInt32
-    TCODE_SETTINGS_CURRENT_DIMSTYLE_INDEX: UInt32
-    TCODE_SETTINGS_ATTRIBUTES: UInt32
-    TCODE_VIEW_RECORD: UInt32
-    TCODE_VIEW_CPLANE: UInt32
-    TCODE_VIEW_VIEWPORT: UInt32
-    TCODE_VIEW_SHOWCONGRID: UInt32
-    TCODE_VIEW_SHOWCONAXES: UInt32
-    TCODE_VIEW_SHOWWORLDAXES: UInt32
-    TCODE_VIEW_TRACEIMAGE: UInt32
-    TCODE_VIEW_WALLPAPER: UInt32
-    TCODE_VIEW_WALLPAPER_V3: UInt32
-    TCODE_VIEW_TARGET: UInt32
-    TCODE_VIEW_DISPLAYMODE: UInt32
-    TCODE_VIEW_NAME: UInt32
-    TCODE_VIEW_POSITION: UInt32
-    TCODE_VIEW_ATTRIBUTES: UInt32
-    TCODE_VIEW_VIEWPORT_USERDATA: UInt32
-    TCODE_BITMAP_RECORD: UInt32
-    TCODE_MATERIAL_RECORD: UInt32
-    TCODE_LAYER_RECORD: UInt32
-    TCODE_LIGHT_RECORD: UInt32
-    TCODE_LIGHT_RECORD_ATTRIBUTES: UInt32
-    TCODE_LIGHT_RECORD_ATTRIBUTES_USERDATA: UInt32
-    TCODE_LIGHT_RECORD_END: UInt32
-    TCODE_USER_TABLE_UUID: UInt32
-    TCODE_USER_RECORD: UInt32
-    TCODE_GROUP_RECORD: UInt32
-    TCODE_FONT_RECORD: UInt32
-    TCODE_DIMSTYLE_RECORD: UInt32
-    TCODE_INSTANCE_DEFINITION_RECORD: UInt32
-    TCODE_HATCHPATTERN_RECORD: UInt32
-    TCODE_LINETYPE_RECORD: UInt32
-    TCODE_OBSOLETE_LAYERSET_RECORD: UInt32
-    TCODE_TEXTURE_MAPPING_RECORD: UInt32
-    TCODE_HISTORYRECORD_RECORD: UInt32
-    TCODE_OBJECT_RECORD: UInt32
-    TCODE_OBJECT_RECORD_TYPE: UInt32
-    TCODE_OBJECT_RECORD_ATTRIBUTES: UInt32
-    TCODE_OBJECT_RECORD_ATTRIBUTES_USERDATA: UInt32
-    TCODE_OBJECT_RECORD_HISTORY: UInt32
-    TCODE_OBJECT_RECORD_HISTORY_HEADER: UInt32
-    TCODE_OBJECT_RECORD_HISTORY_DATA: UInt32
-    TCODE_OBJECT_RECORD_END: UInt32
-    TCODE_OPENNURBS_CLASS: UInt32
-    TCODE_OPENNURBS_CLASS_UUID: UInt32
-    TCODE_OPENNURBS_CLASS_DATA: UInt32
-    TCODE_OPENNURBS_CLASS_USERDATA: UInt32
-    TCODE_OPENNURBS_CLASS_USERDATA_HEADER: UInt32
-    TCODE_OPENNURBS_CLASS_END: UInt32
-    TCODE_ANNOTATION_SETTINGS: UInt32
-    TCODE_TEXT_BLOCK: UInt32
-    TCODE_ANNOTATION_LEADER: UInt32
-    TCODE_LINEAR_DIMENSION: UInt32
-    TCODE_ANGULAR_DIMENSION: UInt32
-    TCODE_RADIAL_DIMENSION: UInt32
-    TCODE_RHINOIO_OBJECT_NURBS_CURVE: UInt32
-    TCODE_RHINOIO_OBJECT_NURBS_SURFACE: UInt32
-    TCODE_RHINOIO_OBJECT_BREP: UInt32
-    TCODE_RHINOIO_OBJECT_DATA: UInt32
-    TCODE_RHINOIO_OBJECT_END: UInt32
-    TCODE_LEGACY_ASM: UInt32
-    TCODE_LEGACY_PRT: UInt32
-    TCODE_LEGACY_SHL: UInt32
-    TCODE_LEGACY_FAC: UInt32
-    TCODE_LEGACY_BND: UInt32
-    TCODE_LEGACY_TRM: UInt32
-    TCODE_LEGACY_SRF: UInt32
-    TCODE_LEGACY_CRV: UInt32
-    TCODE_LEGACY_SPL: UInt32
-    TCODE_LEGACY_PNT: UInt32
-    TCODE_STUFF: UInt32
-    TCODE_LEGACY_ASMSTUFF: UInt32
-    TCODE_LEGACY_PRTSTUFF: UInt32
-    TCODE_LEGACY_SHLSTUFF: UInt32
-    TCODE_LEGACY_FACSTUFF: UInt32
-    TCODE_LEGACY_BNDSTUFF: UInt32
-    TCODE_LEGACY_TRMSTUFF: UInt32
-    TCODE_LEGACY_SRFSTUFF: UInt32
-    TCODE_LEGACY_CRVSTUFF: UInt32
-    TCODE_LEGACY_SPLSTUFF: UInt32
-    TCODE_LEGACY_PNTSTUFF: UInt32
-    TCODE_RH_POINT: UInt32
-    TCODE_RH_SPOTLIGHT: UInt32
-    TCODE_OLD_RH_TRIMESH: UInt32
-    TCODE_OLD_MESH_VERTEX_NORMALS: UInt32
-    TCODE_OLD_MESH_UV: UInt32
-    TCODE_OLD_FULLMESH: UInt32
-    TCODE_MESH_OBJECT: UInt32
-    TCODE_COMPRESSED_MESH_GEOMETRY: UInt32
-    TCODE_ANALYSIS_MESH: UInt32
-    TCODE_NAME: UInt32
-    TCODE_VIEW: UInt32
-    TCODE_CPLANE: UInt32
-    TCODE_NAMED_CPLANE: UInt32
-    TCODE_NAMED_VIEW: UInt32
-    TCODE_VIEWPORT: UInt32
-    TCODE_SHOWGRID: UInt32
-    TCODE_SHOWGRIDAXES: UInt32
-    TCODE_SHOWWORLDAXES: UInt32
-    TCODE_VIEWPORT_POSITION: UInt32
-    TCODE_VIEWPORT_TRACEINFO: UInt32
-    TCODE_SNAPSIZE: UInt32
-    TCODE_NEAR_CLIP_PLANE: UInt32
-    TCODE_HIDE_TRACE: UInt32
-    TCODE_NOTES: UInt32
-    TCODE_UNIT_AND_TOLERANCES: UInt32
-    TCODE_MAXIMIZED_VIEWPORT: UInt32
-    TCODE_VIEWPORT_WALLPAPER: UInt32
-    TCODE_SUMMARY: UInt32
-    TCODE_BITMAPPREVIEW: UInt32
-    TCODE_VIEWPORT_DISPLAY_MODE: UInt32
-    TCODE_LAYERTABLE: UInt32
-    TCODE_LAYERREF: UInt32
-    TCODE_XDATA: UInt32
-    TCODE_RGB: UInt32
-    TCODE_TEXTUREMAP: UInt32
-    TCODE_BUMPMAP: UInt32
-    TCODE_TRANSPARENCY: UInt32
-    TCODE_DISP_AM_RESOLUTION: UInt32
-    TCODE_RGBDISPLAY: UInt32
-    TCODE_RENDER_MATERIAL_ID: UInt32
-    TCODE_LAYER: UInt32
-    TCODE_LAYER_OBSELETE_1: UInt32
-    TCODE_LAYER_OBSELETE_2: UInt32
-    TCODE_LAYER_OBSELETE_3: UInt32
-    TCODE_LAYERON: UInt32
-    TCODE_LAYERTHAWED: UInt32
-    TCODE_LAYERLOCKED: UInt32
-    TCODE_LAYERVISIBLE: UInt32
-    TCODE_LAYERPICKABLE: UInt32
-    TCODE_LAYERSNAPABLE: UInt32
-    TCODE_LAYERRENDERABLE: UInt32
-    TCODE_LAYERSTATE: UInt32
-    TCODE_LAYERINDEX: UInt32
-    TCODE_LAYERMATERIALINDEX: UInt32
-    TCODE_RENDERMESHPARAMS: UInt32
-    TCODE_DISP_CPLINES: UInt32
-    TCODE_DISP_MAXLENGTH: UInt32
-    TCODE_CURRENTLAYER: UInt32
-    TCODE_LAYERNAME: UInt32
-    TCODE_LEGACY_TOL_FIT: UInt32
-    TCODE_LEGACY_TOL_ANGLE: UInt32
-    TCODE_DICTIONARY: UInt32
-    TCODE_DICTIONARY_ID: UInt32
-    TCODE_DICTIONARY_ENTRY: UInt32
-    TCODE_DICTIONARY_END: UInt32
+    TCODE_COMMENTBLOCK: int
+    TCODE_ENDOFFILE: int
+    TCODE_ENDOFFILE_GOO: int
+    TCODE_LEGACY_GEOMETRY: int
+    TCODE_OPENNURBS_OBJECT: int
+    TCODE_GEOMETRY: int
+    TCODE_ANNOTATION: int
+    TCODE_DISPLAY: int
+    TCODE_RENDER: int
+    TCODE_INTERFACE: int
+    TCODE_TOLERANCE: int
+    TCODE_TABLE: int
+    TCODE_TABLEREC: int
+    TCODE_USER: int
+    TCODE_SHORT: int
+    TCODE_CRC: int
+    TCODE_ANONYMOUS_CHUNK: int
+    TCODE_MATERIAL_TABLE: int
+    TCODE_LAYER_TABLE: int
+    TCODE_LIGHT_TABLE: int
+    TCODE_OBJECT_TABLE: int
+    TCODE_PROPERTIES_TABLE: int
+    TCODE_SETTINGS_TABLE: int
+    TCODE_BITMAP_TABLE: int
+    TCODE_USER_TABLE: int
+    TCODE_GROUP_TABLE: int
+    TCODE_FONT_TABLE: int
+    TCODE_DIMSTYLE_TABLE: int
+    TCODE_INSTANCE_DEFINITION_TABLE: int
+    TCODE_HATCHPATTERN_TABLE: int
+    TCODE_LINETYPE_TABLE: int
+    TCODE_OBSOLETE_LAYERSET_TABLE: int
+    TCODE_TEXTURE_MAPPING_TABLE: int
+    TCODE_HISTORYRECORD_TABLE: int
+    TCODE_ENDOFTABLE: int
+    TCODE_PROPERTIES_REVISIONHISTORY: int
+    TCODE_PROPERTIES_NOTES: int
+    TCODE_PROPERTIES_PREVIEWIMAGE: int
+    TCODE_PROPERTIES_APPLICATION: int
+    TCODE_PROPERTIES_COMPRESSED_PREVIEWIMAGE: int
+    TCODE_PROPERTIES_OPENNURBS_VERSION: int
+    TCODE_SETTINGS_PLUGINLIST: int
+    TCODE_SETTINGS_UNITSANDTOLS: int
+    TCODE_SETTINGS_RENDERMESH: int
+    TCODE_SETTINGS_ANALYSISMESH: int
+    TCODE_SETTINGS_ANNOTATION: int
+    TCODE_SETTINGS_NAMED_CPLANE_LIST: int
+    TCODE_SETTINGS_NAMED_VIEW_LIST: int
+    TCODE_SETTINGS_VIEW_LIST: int
+    TCODE_SETTINGS_CURRENT_LAYER_INDEX: int
+    TCODE_SETTINGS_CURRENT_MATERIAL_INDEX: int
+    TCODE_SETTINGS_CURRENT_COLOR: int
+    TCODE_SETTINGS__NEVER__USE__THIS: int
+    TCODE_SETTINGS_CURRENT_WIRE_DENSITY: int
+    TCODE_SETTINGS_RENDER: int
+    TCODE_SETTINGS_GRID_DEFAULTS: int
+    TCODE_SETTINGS_MODEL_URL: int
+    TCODE_SETTINGS_CURRENT_FONT_INDEX: int
+    TCODE_SETTINGS_CURRENT_DIMSTYLE_INDEX: int
+    TCODE_SETTINGS_ATTRIBUTES: int
+    TCODE_VIEW_RECORD: int
+    TCODE_VIEW_CPLANE: int
+    TCODE_VIEW_VIEWPORT: int
+    TCODE_VIEW_SHOWCONGRID: int
+    TCODE_VIEW_SHOWCONAXES: int
+    TCODE_VIEW_SHOWWORLDAXES: int
+    TCODE_VIEW_TRACEIMAGE: int
+    TCODE_VIEW_WALLPAPER: int
+    TCODE_VIEW_WALLPAPER_V3: int
+    TCODE_VIEW_TARGET: int
+    TCODE_VIEW_DISPLAYMODE: int
+    TCODE_VIEW_NAME: int
+    TCODE_VIEW_POSITION: int
+    TCODE_VIEW_ATTRIBUTES: int
+    TCODE_VIEW_VIEWPORT_USERDATA: int
+    TCODE_BITMAP_RECORD: int
+    TCODE_MATERIAL_RECORD: int
+    TCODE_LAYER_RECORD: int
+    TCODE_LIGHT_RECORD: int
+    TCODE_LIGHT_RECORD_ATTRIBUTES: int
+    TCODE_LIGHT_RECORD_ATTRIBUTES_USERDATA: int
+    TCODE_LIGHT_RECORD_END: int
+    TCODE_USER_TABLE_UUID: int
+    TCODE_USER_RECORD: int
+    TCODE_GROUP_RECORD: int
+    TCODE_FONT_RECORD: int
+    TCODE_DIMSTYLE_RECORD: int
+    TCODE_INSTANCE_DEFINITION_RECORD: int
+    TCODE_HATCHPATTERN_RECORD: int
+    TCODE_LINETYPE_RECORD: int
+    TCODE_OBSOLETE_LAYERSET_RECORD: int
+    TCODE_TEXTURE_MAPPING_RECORD: int
+    TCODE_HISTORYRECORD_RECORD: int
+    TCODE_OBJECT_RECORD: int
+    TCODE_OBJECT_RECORD_TYPE: int
+    TCODE_OBJECT_RECORD_ATTRIBUTES: int
+    TCODE_OBJECT_RECORD_ATTRIBUTES_USERDATA: int
+    TCODE_OBJECT_RECORD_HISTORY: int
+    TCODE_OBJECT_RECORD_HISTORY_HEADER: int
+    TCODE_OBJECT_RECORD_HISTORY_DATA: int
+    TCODE_OBJECT_RECORD_END: int
+    TCODE_OPENNURBS_CLASS: int
+    TCODE_OPENNURBS_CLASS_UUID: int
+    TCODE_OPENNURBS_CLASS_DATA: int
+    TCODE_OPENNURBS_CLASS_USERDATA: int
+    TCODE_OPENNURBS_CLASS_USERDATA_HEADER: int
+    TCODE_OPENNURBS_CLASS_END: int
+    TCODE_ANNOTATION_SETTINGS: int
+    TCODE_TEXT_BLOCK: int
+    TCODE_ANNOTATION_LEADER: int
+    TCODE_LINEAR_DIMENSION: int
+    TCODE_ANGULAR_DIMENSION: int
+    TCODE_RADIAL_DIMENSION: int
+    TCODE_RHINOIO_OBJECT_NURBS_CURVE: int
+    TCODE_RHINOIO_OBJECT_NURBS_SURFACE: int
+    TCODE_RHINOIO_OBJECT_BREP: int
+    TCODE_RHINOIO_OBJECT_DATA: int
+    TCODE_RHINOIO_OBJECT_END: int
+    TCODE_LEGACY_ASM: int
+    TCODE_LEGACY_PRT: int
+    TCODE_LEGACY_SHL: int
+    TCODE_LEGACY_FAC: int
+    TCODE_LEGACY_BND: int
+    TCODE_LEGACY_TRM: int
+    TCODE_LEGACY_SRF: int
+    TCODE_LEGACY_CRV: int
+    TCODE_LEGACY_SPL: int
+    TCODE_LEGACY_PNT: int
+    TCODE_STUFF: int
+    TCODE_LEGACY_ASMSTUFF: int
+    TCODE_LEGACY_PRTSTUFF: int
+    TCODE_LEGACY_SHLSTUFF: int
+    TCODE_LEGACY_FACSTUFF: int
+    TCODE_LEGACY_BNDSTUFF: int
+    TCODE_LEGACY_TRMSTUFF: int
+    TCODE_LEGACY_SRFSTUFF: int
+    TCODE_LEGACY_CRVSTUFF: int
+    TCODE_LEGACY_SPLSTUFF: int
+    TCODE_LEGACY_PNTSTUFF: int
+    TCODE_RH_POINT: int
+    TCODE_RH_SPOTLIGHT: int
+    TCODE_OLD_RH_TRIMESH: int
+    TCODE_OLD_MESH_VERTEX_NORMALS: int
+    TCODE_OLD_MESH_UV: int
+    TCODE_OLD_FULLMESH: int
+    TCODE_MESH_OBJECT: int
+    TCODE_COMPRESSED_MESH_GEOMETRY: int
+    TCODE_ANALYSIS_MESH: int
+    TCODE_NAME: int
+    TCODE_VIEW: int
+    TCODE_CPLANE: int
+    TCODE_NAMED_CPLANE: int
+    TCODE_NAMED_VIEW: int
+    TCODE_VIEWPORT: int
+    TCODE_SHOWGRID: int
+    TCODE_SHOWGRIDAXES: int
+    TCODE_SHOWWORLDAXES: int
+    TCODE_VIEWPORT_POSITION: int
+    TCODE_VIEWPORT_TRACEINFO: int
+    TCODE_SNAPSIZE: int
+    TCODE_NEAR_CLIP_PLANE: int
+    TCODE_HIDE_TRACE: int
+    TCODE_NOTES: int
+    TCODE_UNIT_AND_TOLERANCES: int
+    TCODE_MAXIMIZED_VIEWPORT: int
+    TCODE_VIEWPORT_WALLPAPER: int
+    TCODE_SUMMARY: int
+    TCODE_BITMAPPREVIEW: int
+    TCODE_VIEWPORT_DISPLAY_MODE: int
+    TCODE_LAYERTABLE: int
+    TCODE_LAYERREF: int
+    TCODE_XDATA: int
+    TCODE_RGB: int
+    TCODE_TEXTUREMAP: int
+    TCODE_BUMPMAP: int
+    TCODE_TRANSPARENCY: int
+    TCODE_DISP_AM_RESOLUTION: int
+    TCODE_RGBDISPLAY: int
+    TCODE_RENDER_MATERIAL_ID: int
+    TCODE_LAYER: int
+    TCODE_LAYER_OBSELETE_1: int
+    TCODE_LAYER_OBSELETE_2: int
+    TCODE_LAYER_OBSELETE_3: int
+    TCODE_LAYERON: int
+    TCODE_LAYERTHAWED: int
+    TCODE_LAYERLOCKED: int
+    TCODE_LAYERVISIBLE: int
+    TCODE_LAYERPICKABLE: int
+    TCODE_LAYERSNAPABLE: int
+    TCODE_LAYERRENDERABLE: int
+    TCODE_LAYERSTATE: int
+    TCODE_LAYERINDEX: int
+    TCODE_LAYERMATERIALINDEX: int
+    TCODE_RENDERMESHPARAMS: int
+    TCODE_DISP_CPLINES: int
+    TCODE_DISP_MAXLENGTH: int
+    TCODE_CURRENTLAYER: int
+    TCODE_LAYERNAME: int
+    TCODE_LEGACY_TOL_FIT: int
+    TCODE_LEGACY_TOL_ANGLE: int
+    TCODE_DICTIONARY: int
+    TCODE_DICTIONARY_ID: int
+    TCODE_DICTIONARY_ENTRY: int
+    TCODE_DICTIONARY_END: int
     @overload
     def Equals(self, obj: object) -> bool: ...
     @overload
@@ -5753,7 +5753,7 @@ class FileReadOptions:
     def InsertMode(self) -> bool: ...
     @overload
     @property
-    def LinkedInstanceDefinitionSerialNumber(self) -> UInt32: ...
+    def LinkedInstanceDefinitionSerialNumber(self) -> int: ...
     @overload
     @property
     def NewMode(self) -> bool: ...
@@ -5774,7 +5774,7 @@ class FileReadOptions:
     def UseScaleGeometry(self) -> bool: ...
     @overload
     @property
-    def WorkSessionReferenceModelSerialNumber(self) -> UInt32: ...
+    def WorkSessionReferenceModelSerialNumber(self) -> int: ...
     @overload
     def GetHashCode(self) -> int: ...
     @overload
@@ -7045,7 +7045,7 @@ class ManifestTable:
     def Count(self) -> int: ...
     @overload
     @property
-    def LongCount(self) -> Int64: ...
+    def LongCount(self) -> int: ...
     @overload
     @property
     def Parent(self) -> object: ...
@@ -7110,13 +7110,13 @@ class NameHash:
     def Equals(self, obj: object) -> bool: ...
     @overload
     @property
-    def MappedCodePoints(self) -> UInt32: ...
+    def MappedCodePoints(self) -> int: ...
     @overload
     @property
     def ParentId(self) -> Guid: ...
     @overload
     @property
-    def Sha1Hash(self) -> Iterable[Byte]: ...
+    def Sha1Hash(self) -> Iterable[int]: ...
     @overload
     def GetHashCode(self) -> int: ...
     @overload
@@ -7265,18 +7265,18 @@ class SHA1OpenNURBS:
     @overload
     def Clear(self) -> None: ...
     @overload
-    def ComputeHash(self, inputStream: Stream) -> Iterable[Byte]: ...
+    def ComputeHash(self, inputStream: Stream) -> Iterable[int]: ...
     @overload
-    def ComputeHash(self, buffer: Iterable[Byte]) -> Iterable[Byte]: ...
+    def ComputeHash(self, buffer: Iterable[int]) -> Iterable[int]: ...
     @overload
-    def ComputeHash(self, buffer: Iterable[Byte], offset: int, count: int) -> Iterable[Byte]: ...
+    def ComputeHash(self, buffer: Iterable[int], offset: int, count: int) -> Iterable[int]: ...
     @overload
     def Dispose(self) -> None: ...
     @overload
     def Equals(self, obj: object) -> bool: ...
     @overload
     @staticmethod
-    def FileSystemPathHash(path: str, ignoreCase: Nullable) -> Iterable[Byte]: ...
+    def FileSystemPathHash(path: str, ignoreCase: Nullable) -> Iterable[int]: ...
     @overload
     @property
     def CanReuseTransform(self) -> bool: ...
@@ -7285,7 +7285,7 @@ class SHA1OpenNURBS:
     def CanTransformMultipleBlocks(self) -> bool: ...
     @overload
     @property
-    def Hash(self) -> Iterable[Byte]: ...
+    def Hash(self) -> Iterable[int]: ...
     @overload
     @property
     def HashSize(self) -> int: ...
@@ -7303,13 +7303,13 @@ class SHA1OpenNURBS:
     def Initialize(self) -> None: ...
     @overload
     @staticmethod
-    def StringHash(input: str) -> Iterable[Byte]: ...
+    def StringHash(input: str) -> Iterable[int]: ...
     @overload
     def ToString(self) -> str: ...
     @overload
-    def TransformBlock(self, inputBuffer: Iterable[Byte], inputOffset: int, inputCount: int, outputBuffer: Iterable[Byte], outputOffset: int) -> int: ...
+    def TransformBlock(self, inputBuffer: Iterable[int], inputOffset: int, inputCount: int, outputBuffer: Iterable[int], outputOffset: int) -> int: ...
     @overload
-    def TransformFinalBlock(self, inputBuffer: Iterable[Byte], inputOffset: int, inputCount: int) -> Iterable[Byte]: ...
+    def TransformFinalBlock(self, inputBuffer: Iterable[int], inputOffset: int, inputCount: int) -> Iterable[int]: ...
 
 
 class SketchUpVersion(Enum):

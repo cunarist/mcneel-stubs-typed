@@ -342,7 +342,7 @@ class ICollapsibleSection2:
 
 class ICollapsibleSection3:
     @overload
-    def UpdateView(self, flags: UInt32) -> None: ...
+    def UpdateView(self, flags: int) -> None: ...
 
 
 class ICollapsibleSectionHolder:

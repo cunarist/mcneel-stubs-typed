@@ -666,15 +666,17 @@ namespace PyStubblerLib
                 return "type";
             else if (rc.Equals("Object"))
                 return "object";
+            else if (rc.Equals("Byte"))
+                return "int";
             else if (rc.Equals("String"))
                 return "str";
-            else if (rc.Equals("Single"))
-                return "float";
-            else if (rc.Equals("Double"))
+            else if (rc.Equals("Single") || rc.Equals("Double"))
                 return "float";
             else if (rc.Equals("Boolean"))
                 return "bool";
-            else if (rc.Equals("Int32"))
+            else if (rc.Equals("Int16") || rc.Equals("Int32") || rc.Equals("Int64"))
+                return "int";
+            else if (rc.Equals("UInt16") || rc.Equals("UInt32") || rc.Equals("UInt64"))
                 return "int";
 
             return rc;

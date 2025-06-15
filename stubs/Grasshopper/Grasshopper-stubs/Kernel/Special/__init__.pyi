@@ -2161,7 +2161,7 @@ class GH_Cluster(GH_Component):
     def DocumentModified(self, modifiedDocument: GH_Document) -> None: ...
     @overload
     @staticmethod
-    def DoKeysMatch(key0: Iterable[Byte], key1: Iterable[Byte]) -> bool: ...
+    def DoKeysMatch(key0: Iterable[int], key1: Iterable[int]) -> bool: ...
     @overload
     def DrawViewportMeshes(self, args: IGH_PreviewArgs) -> None: ...
     @overload
@@ -20056,7 +20056,7 @@ class GH_ValueTrackerAttributes:
 
 
 class VT_DataPoint:
-    m_time: Int64
+    m_time: int
     m_data: Iterable[float]
     @overload
     def Equals(self, obj: object) -> bool: ...
