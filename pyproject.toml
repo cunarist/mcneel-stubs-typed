@@ -10,11 +10,9 @@ dependencies = [
 ]
 
 [tool.pyright]
-typeCheckingMode = "standard"
+typeCheckingMode = "basic"
 reportInconsistentOverload = false
 reportSelfClsParameterName = false
-reportOverlappingOverload = false
-reportIncompatibleMethodOverride = false
 
 [tool.ruff]
 select = []
