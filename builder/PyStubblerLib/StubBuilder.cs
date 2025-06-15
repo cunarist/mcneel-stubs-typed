@@ -664,6 +664,8 @@ namespace PyStubblerLib
 
             if (rc.Equals("String"))
                 return "str";
+            if (rc.Equals("Single"))
+                return "float";
             if (rc.Equals("Double"))
                 return "float";
             if (rc.Equals("Boolean"))
