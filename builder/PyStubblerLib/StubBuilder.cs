@@ -682,7 +682,7 @@ namespace PyStubblerLib
                 return "object";
             else if (rc.Equals("Byte"))
                 return "int";
-            else if (rc.Equals("String"))
+            else if (rc.Equals("String") || rc.Equals("Char"))
                 return "str";
             else if (rc.Equals("Single") || rc.Equals("Double"))
                 return "float";

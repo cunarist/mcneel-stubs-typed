@@ -110,14 +110,13 @@ class CurveSegment:
     def ToString(self) -> str: ...
 
 
-from System import Char
 class MeshPointDataStruct:
     m_et: float
     m_ci_type: int
     m_ci_index: int
     m_edge_index: int
     m_face_index: int
-    m_Triangle: Char
+    m_Triangle: str
     m_t0: float
     m_t1: float
     m_t2: float

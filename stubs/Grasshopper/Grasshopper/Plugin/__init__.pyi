@@ -64,7 +64,6 @@ class Commands:
 
 
 from System import IntPtr
-from System import Char
 class GH_PluginUtil:
     @overload
     @staticmethod
@@ -92,7 +91,7 @@ class GH_PluginUtil:
     def SendKeyCodeToRhino(key: int) -> None: ...
     @overload
     @staticmethod
-    def SendKeyCodeToRhino(key: Char) -> None: ...
+    def SendKeyCodeToRhino(key: str) -> None: ...
     @overload
     @staticmethod
     def SendKeyCodeToRhino(key: str) -> None: ...

@@ -1660,7 +1660,6 @@ from System import Guid
 from .Forms import AutoCompleteStringCollection
 from .Generic import IList
 from .Graphs import IGH_Graph
-from System import Char
 from .Ribbon import GH_Layout
 class GH_ComponentServer:
     @overload
@@ -1674,7 +1673,7 @@ class GH_ComponentServer:
     @overload
     def AddCategoryShortName(self, fullCategoryName: str, categoryAbbreviation: str) -> None: ...
     @overload
-    def AddCategorySymbolName(self, fullCategoryName: str, symbol: Char) -> None: ...
+    def AddCategorySymbolName(self, fullCategoryName: str, symbol: str) -> None: ...
     @overload
     def AddProxy(self, proxy: IGH_ObjectProxy) -> bool: ...
     @overload

@@ -742,17 +742,16 @@ class GH_TreeBuilder:
     def ToString(self) -> str: ...
 
 
-from System import Char
 class GH_TreeFilter:
     @overload
     def __init__(self): ...
-    PathOpen: Char
-    PathClose: Char
-    ItemOpen: Char
-    ItemClose: Char
-    PathSeparator: Char
-    SegmentSeparator: Char
-    StringDelimeter: Char
+    PathOpen: str
+    PathClose: str
+    ItemOpen: str
+    ItemClose: str
+    PathSeparator: str
+    SegmentSeparator: str
+    StringDelimeter: str
     @overload
     def Equals(self, obj: object) -> bool: ...
     @overload
@@ -760,13 +759,13 @@ class GH_TreeFilter:
     def FindItemBrackets(text: str) -> Tuple[bool, int, int]: ...
     @overload
     @staticmethod
-    def FindNextLevelChar(text: str, index: int, char: Char) -> int: ...
+    def FindNextLevelChar(text: str, index: int, char: str) -> int: ...
     @overload
     @staticmethod
     def FindPathBrackets(text: str) -> Tuple[bool, int, int]: ...
     @overload
     @staticmethod
-    def FindPrevLevelChar(text: str, index: int, char: Char) -> int: ...
+    def FindPrevLevelChar(text: str, index: int, char: str) -> int: ...
     @overload
     def GetHashCode(self) -> int: ...
     @overload
@@ -776,7 +775,7 @@ class GH_TreeFilter:
     def ParsePattern(filter: str) -> GH_TreeFilter: ...
     @overload
     @staticmethod
-    def SplitStringWithExpressions(text: str, separator: Char) -> MutableSequence[str]: ...
+    def SplitStringWithExpressions(text: str, separator: str) -> MutableSequence[str]: ...
     @overload
     def ToString(self) -> str: ...
 
@@ -802,26 +801,25 @@ class GH_TreeIndex:
     def ToString(self) -> str: ...
 
 
-from System import Char
 class GH_TreeRules:
     @overload
     def __init__(self, pathRules: Iterable[IGH_Rule], indexRule: IGH_Rule): ...
-    OrOperator: Char
-    AndOperator: Char
-    NotOperator: Char
-    RangeSymbol: Char
-    Separator: Char
-    SequenceSymbol: Char
+    OrOperator: str
+    AndOperator: str
+    NotOperator: str
+    RangeSymbol: str
+    Separator: str
+    SequenceSymbol: str
     SequenceCode: str
-    PathSeparator: Char
-    AnyNumberSymbol: Char
-    AnyNumbersSymbol: Char
-    PathOpenBracket: Char
-    PathCloseBracket: Char
-    ItemOpenBracket: Char
-    ItemCloseBracket: Char
-    RuleOpenBracket: Char
-    RuleCloseBracket: Char
+    PathSeparator: str
+    AnyNumberSymbol: str
+    AnyNumbersSymbol: str
+    PathOpenBracket: str
+    PathCloseBracket: str
+    ItemOpenBracket: str
+    ItemCloseBracket: str
+    RuleOpenBracket: str
+    RuleCloseBracket: str
     PathBrackets: str
     ItemBrackets: str
     RuleBrackets: str
