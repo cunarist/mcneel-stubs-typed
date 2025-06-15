@@ -1,4 +1,4 @@
-from typing import overload, Tuple, Iterable, Iterator, Sequence, MutableSequence
+from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
 
 
@@ -7,7 +7,7 @@ class ComponentFunctionInfo:
     @overload
     def Equals(self, obj: object) -> bool: ...
     @overload
-    def Evaluate(self, args: IEnumerable, keepTree: bool) -> Tuple[Iterable[object], Iterable[str]]: ...
+    def Evaluate(self, args: Iterable[Any], keepTree: bool) -> Tuple[Iterable[object], Iterable[str]]: ...
     @overload
     @property
     def ComponentGuid(self) -> Guid: ...

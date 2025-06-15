@@ -1,4 +1,4 @@
-from typing import overload, Tuple, Iterable, Iterator, Sequence, MutableSequence
+from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
 
 import Controls
@@ -1907,7 +1907,7 @@ class ToolbarFileCollection:
     @property
     def SidebarIsVisible() -> bool: ...
     @overload
-    def GetEnumerator(self) -> IEnumerator: ...
+    def GetEnumerator(self) -> Iterator[ToolbarFile]: ...
     @overload
     def GetHashCode(self) -> int: ...
     @overload

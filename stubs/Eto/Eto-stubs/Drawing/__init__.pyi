@@ -1,4 +1,4 @@
-from typing import overload, Tuple, Iterable, Iterator, Sequence, MutableSequence
+from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
 
 
@@ -3451,7 +3451,7 @@ class Palette:
     @staticmethod
     def GetEgaPalette() -> Palette: ...
     @overload
-    def GetEnumerator(self) -> IEnumerator: ...
+    def GetEnumerator(self) -> Iterator[Color]: ...
     @overload
     def GetHashCode(self) -> int: ...
     @overload

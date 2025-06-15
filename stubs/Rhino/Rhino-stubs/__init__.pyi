@@ -1,4 +1,4 @@
-from typing import overload, Tuple, Iterable, Iterator, Sequence, MutableSequence
+from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
 
 import ApplicationSettings
@@ -333,7 +333,7 @@ class IndexPair:
     @property
     def J(self) -> int: ...
     @overload
-    def GetEnumerator(self) -> IEnumerator: ...
+    def GetEnumerator(self) -> Iterator[int]: ...
     @overload
     def GetHashCode(self) -> int: ...
     @overload

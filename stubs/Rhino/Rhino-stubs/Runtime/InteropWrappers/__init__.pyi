@@ -1,4 +1,4 @@
-from typing import overload, Tuple, Iterable, Iterator, Sequence, MutableSequence
+from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
 
 
@@ -450,7 +450,7 @@ class SimpleArrayGeometryPointer:
     @overload
     def __init__(self, geometry: Iterable[GeometryBase]): ...
     @overload
-    def __init__(self, geometry: IEnumerable): ...
+    def __init__(self, geometry: Iterable[Any]): ...
     @overload
     def ConstPointer(self) -> IntPtr: ...
     @overload

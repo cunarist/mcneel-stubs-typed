@@ -1,4 +1,4 @@
-from typing import overload, Tuple, Iterable, Iterator, Sequence, MutableSequence
+from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
 
 
@@ -2149,7 +2149,7 @@ class UserDataList:
     @property
     def Item(self) -> Sequence[UserData]: ...
     @overload
-    def GetEnumerator(self) -> IEnumerator: ...
+    def GetEnumerator(self) -> Iterator[UserData]: ...
     @overload
     def GetHashCode(self) -> int: ...
     @overload

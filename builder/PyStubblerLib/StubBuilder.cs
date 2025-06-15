@@ -150,7 +150,7 @@ namespace PyStubblerLib
             var sb = new System.Text.StringBuilder();
 
             string[] allChildNamespaces = GetChildNamespaces(stubTypes[0].Namespace, allNamespaces);
-            sb.AppendLine("from typing import overload, Tuple, Iterable, Iterator, Sequence, MutableSequence");
+            sb.AppendLine("from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence");
             sb.AppendLine("from enum import Enum");
             sb.Append("\n");
             if( allChildNamespaces.Length > 0 )
@@ -322,6 +322,7 @@ namespace PyStubblerLib
                 // make class iterable with `for i in instance` if it implements `IEnumerable`
                 if (typeof(IEnumerable).IsAssignableFrom(stubType))
                 {
+
                     Type ienumerableType = stubType.GetInterfaces()
                         .Where(t => t.IsGenericType && t.GetGenericTypeDefinition() == typeof(IEnumerable<>))
                         .FirstOrDefault();
@@ -684,10 +685,23 @@ namespace PyStubblerLib
 
         private static string ToPythonType(Type t)
         {
-            if (t.IsGenericType && t.Name.StartsWith("IEnumerable"))
+            if (t.Name.StartsWith("IEnumerable"))
             {
-                string rc = ToPythonType(t.GenericTypeArguments[0]);
-                return $"Iterable[{rc}]";
+                if (t.IsGenericType) {
+                    string rc = ToPythonType(t.GenericTypeArguments[0]);
+                    return $"Iterable[{rc}]";
+                } else {
+                    return $"Iterable[Any]";
+                }
+            }
+            if (t.Name.StartsWith("IEnumerator"))
+            {
+                if (t.IsGenericType) {
+                    string rc = ToPythonType(t.GenericTypeArguments[0]);
+                    return $"Iterator[{rc}]";
+                } else {
+                    return $"Iterator[Any]";
+                }
             }
             // TODO: Figure out the right way to get at IEnumerable<T>
             if (t.FullName != null && t.FullName.StartsWith("System.Collections.Generic.IEnumerable`1[["))
