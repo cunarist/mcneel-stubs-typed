@@ -47,16 +47,16 @@ class Dialogs:
     def ShowColorDialog(color: Color4f, allowAlpha: bool) -> Tuple[bool, Color4f]: ...
     @overload
     @staticmethod
-    def ShowColorDialog(color: Color, includeButtonColors: bool, dialogTitle: str) -> Tuple[bool, Color]: ...
-    @overload
-    @staticmethod
     def ShowColorDialog(parent: Object, color: Color4f, allowAlpha: bool) -> Tuple[bool, Color4f]: ...
     @overload
     @staticmethod
-    def ShowColorDialog(color: Color, includeButtonColors: bool, dialogTitle: str, namedColorList: NamedColorList) -> Tuple[bool, Color]: ...
+    def ShowColorDialog(color: Color, includeButtonColors: bool, dialogTitle: str) -> Tuple[bool, Color]: ...
     @overload
     @staticmethod
     def ShowColorDialog(parent: Object, color: Color4f, allowAlpha: bool, colorCallback: OnColorChangedEvent) -> Tuple[bool, Color4f]: ...
+    @overload
+    @staticmethod
+    def ShowColorDialog(color: Color, includeButtonColors: bool, dialogTitle: str, namedColorList: NamedColorList) -> Tuple[bool, Color]: ...
     @overload
     @staticmethod
     def ShowColorDialog(parent: Object, color: Color4f, allowAlpha: bool, namedColorList: NamedColorList, colorCallback: OnColorChangedEvent) -> Tuple[bool, Color4f]: ...
@@ -71,7 +71,13 @@ class Dialogs:
     def ShowEditBox(title: str, message: str, defaultText: str, multiline: bool) -> Tuple[bool, str]: ...
     @overload
     @staticmethod
+    def ShowLayerMaterialDialog(doc: RhinoDoc, layerIndices: Iterable[int]) -> bool: ...
+    @overload
+    @staticmethod
     def ShowLineTypes(title: str, message: str, doc: RhinoDoc) -> Object: ...
+    @overload
+    @staticmethod
+    def ShowLineTypes(title: str, message: str, doc: RhinoDoc, selectedLineTypeId: Guid) -> Guid: ...
     @overload
     @staticmethod
     def ShowListBox(title: str, message: str, items: IList) -> Object: ...
@@ -96,6 +102,15 @@ class Dialogs:
     @overload
     @staticmethod
     def ShowNumberBox(title: str, message: str, number: float, minimum: float, maximum: float) -> Tuple[bool, float]: ...
+    @overload
+    @staticmethod
+    def ShowPrintWidths(title: str, message: str) -> float: ...
+    @overload
+    @staticmethod
+    def ShowPrintWidths(title: str, message: str, selectedWidth: float) -> float: ...
+    @overload
+    @staticmethod
+    def ShowPropertyListBox(title: str, message: str, items: List) -> Iterable[str]: ...
     @overload
     @staticmethod
     def ShowPropertyListBox(title: str, message: str, items: IList, values: Iterable[str]) -> Iterable[str]: ...
@@ -125,6 +140,8 @@ class DistanceDisplayMode(Enum):
 
 
 from ..Geometry import Mesh
+from ..Geometry import Curve
+from ..DocObjects import Linetype
 class DrawingUtilities:
     @overload
     @staticmethod
@@ -137,6 +154,12 @@ class DrawingUtilities:
     def BitmapFromSvg(svg: str, width: int, height: int) -> Bitmap: ...
     @overload
     @staticmethod
+    def BitmapFromSvg(svg: str, width: int, height: int, adjustForDarkMode: bool) -> Bitmap: ...
+    @overload
+    @staticmethod
+    def CreateCurvePreviewGeometry(curve: Curve, linetype: Linetype, width: int, height: int) -> List: ...
+    @overload
+    @staticmethod
     def CreateMeshPreviewImage(mesh: Mesh, color: Color, size: Size) -> Bitmap: ...
     @overload
     @staticmethod
@@ -144,6 +167,12 @@ class DrawingUtilities:
     @overload
     @staticmethod
     def CreateMeshPreviewImage(doc: RhinoDoc, meshes: Iterable[Mesh], colors: Iterable[Color], size: Size) -> Bitmap: ...
+    @overload
+    @staticmethod
+    def DarkModeConvertPixel(r: Byte, g: Byte, b: Byte) -> Tuple[Byte, Byte, Byte]: ...
+    @overload
+    @staticmethod
+    def DarkModeConvertPixels(rgbaBytes: Iterable[Byte]) -> Tuple[Iterable[Byte]]: ...
     @overload
     def Equals(self, obj: Object) -> bool: ...
     @overload
@@ -165,6 +194,15 @@ class DrawingUtilities:
     @overload
     @staticmethod
     def LoadIconWithScaleDown(iconName: str, sizeDesired: int, assembly: Assembly) -> Icon: ...
+    @overload
+    @staticmethod
+    def MakeArgb(a: Byte, r: Byte, g: Byte, b: Byte) -> int: ...
+    @overload
+    @staticmethod
+    def PixelsFromSvg(svg: str, width: int, height: int, premultiplyAlpha: bool, backgroundColor: Color) -> Iterable[Byte]: ...
+    @overload
+    @staticmethod
+    def SvgToRhinoDibIntPtr(svg: str, width: int, height: int, adjustForDarkMode: bool, pRhinoDib: IntPtr) -> None: ...
     @overload
     def ToString(self) -> str: ...
 
@@ -272,14 +310,40 @@ class IPanel:
 
 class IPanelsService:
     @overload
+    def CreateDockBar(self, options: Object) -> bool: ...
+    @overload
     def DestroyNativeWindow(self, host: Object, nativeObject: Object, disposeOfNativeObject: bool) -> None: ...
+    @overload
+    def DockBarIdInUse(self, barId: Guid) -> bool: ...
+    @overload
+    def DockBarIsVisible(self, barId: Guid) -> bool: ...
+    @overload
+    def FactoryResetSettings(self) -> None: ...
+    @overload
+    def Float(self, barId: Guid, point: Point) -> bool: ...
+    @overload
+    def ResizeFloating(self, barId: Guid, size: Size) -> bool: ...
     @overload
     def SetF1Hook(self, nativeObject: Object, hook: EventHandler) -> None: ...
     @overload
+    def ShowDockBar(self, barId: Guid, show: bool) -> bool: ...
+    @overload
+    def StartDraggingDockBar(self, barId: Guid, mouseDownPoint: Point, screenStartPoint: Point) -> bool: ...
+    @overload
     def SupportedType(self, type: Type) -> Tuple[bool, str]: ...
+    @overload
+    def ToggleDocking(self, barId: Guid) -> bool: ...
+    @overload
+    def UnhookDeleteAndDestroyDockBar(self, id: Guid) -> bool: ...
 
 
 class IRhinoUiDialogService:
+    @overload
+    def DetectColorScheme(self) -> Tuple[bool, bool]: ...
+    @overload
+    def IconFromResourceId(self, iconAssembly: Assembly, iconResourceId: str) -> Icon: ...
+    @overload
+    def SetToDefaultColorScheme(self, dark: bool) -> bool: ...
     @overload
     def ShowCheckListBox(self, title: str, message: str, items: IList, checkState: Iterable[bool]) -> Iterable[bool]: ...
     @overload
@@ -289,6 +353,8 @@ class IRhinoUiDialogService:
     @overload
     def ShowLineTypes(self, title: str, message: str, doc: RhinoDoc) -> Object: ...
     @overload
+    def ShowLineTypes(self, title: str, message: str, doc: RhinoDoc, selectedLinetypeId: Guid) -> Guid: ...
+    @overload
     def ShowListBox(self, title: str, message: str, items: IList, selectedItem: Object) -> Object: ...
     @overload
     def ShowMultiListBox(self, items: Iterable[str], message: str, title: str, defaults: Iterable[str]) -> Iterable[str]: ...
@@ -296,6 +362,14 @@ class IRhinoUiDialogService:
     def ShowNumberBox(self, title: str, message: str, number: float, minimum: float, maximum: float) -> Tuple[bool, float]: ...
     @overload
     def ShowPopupMenu(self, arrItems: Iterable[str], arrModes: Iterable[int], screenPointX: Nullable, screenPointY: Nullable) -> int: ...
+    @overload
+    def ShowPrintWidths(self, title: str, message: str) -> float: ...
+    @overload
+    def ShowPrintWidths(self, title: str, message: str, selectedWidth: float) -> float: ...
+    @overload
+    def ShowPropertyListBox(self, title: str, message: str, items: List) -> Iterable[str]: ...
+    @overload
+    def ShowPropertyListBox(self, title: str, message: str, items: IList, values: Iterable[str]) -> Iterable[str]: ...
 
 
 class IStackedDialogPageService:
@@ -308,9 +382,81 @@ class IStackedDialogPageService:
     @overload
     def GetNativePageWindow(self, pageObject: Object, isRhinoPanel: bool, applyPanelStyles: bool) -> Tuple[IntPtr, Object, Object]: ...
     @overload
+    def NativeHandle(self, host: Object) -> IntPtr: ...
+    @overload
     def RedrawPageControl(self, pageControl: Object) -> None: ...
     @overload
+    def SetNativeParent(self, hwndParent: IntPtr, host: Object) -> bool: ...
+    @overload
     def TryGetControlMinimumSize(self, controlObject: Object) -> Tuple[bool, SizeF]: ...
+
+
+class KeyboardKey(Enum):
+    # None = 0
+    Tab = 9
+    PageUp = 33
+    PageDown = 34
+    End = 35
+    Home = 36
+    Num0 = 48
+    Num1 = 49
+    Num2 = 50
+    Num3 = 51
+    Num4 = 52
+    Num5 = 53
+    Num6 = 54
+    Num7 = 55
+    Num8 = 56
+    Num9 = 57
+    A = 65
+    B = 66
+    C = 67
+    D = 68
+    E = 69
+    F = 70
+    G = 71
+    H = 72
+    I = 73
+    J = 74
+    K = 75
+    L = 76
+    M = 77
+    N = 78
+    O = 79
+    P = 80
+    Q = 81
+    R = 82
+    S = 83
+    T = 84
+    U = 85
+    V = 86
+    W = 87
+    X = 88
+    Y = 89
+    Z = 90
+    F1 = 112
+    F2 = 113
+    F3 = 114
+    F4 = 115
+    F5 = 116
+    F6 = 117
+    F7 = 118
+    F8 = 119
+    F9 = 120
+    F10 = 121
+    F11 = 122
+    F12 = 123
+    Semicolon = 186
+    Equal = 187
+    Comma = 188
+    Minus = 189
+    Period = 190
+    Slash = 191
+    Grave = 192
+    LeftBracket = 219
+    BackSlash = 220
+    RightBracket = 221
+    Quote = 222
 
 
 class LOC:
@@ -346,6 +492,8 @@ class LOC:
 
 
 from ..DocObjects import DimensionStyle
+from ..Runtime.InteropWrappers import SimpleArrayInt
+from ..Runtime.InteropWrappers import ClassArrayString
 class Localization:
     @overload
     def Equals(self, obj: Object) -> bool: ...
@@ -355,6 +503,9 @@ class Localization:
     @overload
     @staticmethod
     def FormatDistanceAndTolerance(distance: float, units: UnitSystem, dimStyle: DimensionStyle, alternate: bool) -> str: ...
+    @overload
+    @staticmethod
+    def FormatNumber(x: float) -> str: ...
     @overload
     @staticmethod
     def FormatNumber(x: float, units: UnitSystem, mode: DistanceDisplayMode, precision: int, appendUnitSystemName: bool) -> str: ...
@@ -369,6 +520,9 @@ class Localization:
     def RunningAsEnglish() -> bool: ...
     @overload
     def GetHashCode(self) -> int: ...
+    @overload
+    @staticmethod
+    def GetLanguages() -> Tuple[bool, SimpleArrayInt, ClassArrayString]: ...
     @overload
     def GetType(self) -> Type: ...
     @overload
@@ -435,7 +589,10 @@ class LocalizeStringPair:
 class ModifierKey(Enum):
     # None = 0
     Control = 1
+    MacCommand = 1
     Shift = 2
+    Alt = 4
+    MacControl = 8
 
 
 class MouseButton(Enum):
@@ -463,6 +620,7 @@ class MouseCallback:
 
 
 from ..Display import RhinoView
+from .Gumball import GumballMode
 class MouseCallbackEventArgs:
     @overload
     def Equals(self, obj: Object) -> bool: ...
@@ -491,6 +649,8 @@ class MouseCallbackEventArgs:
     def GetHashCode(self) -> int: ...
     @overload
     def GetType(self) -> Type: ...
+    @overload
+    def IsOverGumball(self) -> GumballMode: ...
     @overload
     @Cancel.setter
     def Cancel(self, value: bool) -> None: ...
@@ -941,6 +1101,9 @@ class OptionsDialogPage(StackedDialogPage):
     def NavigationTextIsBold(self) -> bool: ...
     @overload
     @property
+    def OptionsPageType(self) -> PageType: ...
+    @overload
+    @property
     def PageControl(self) -> Object: ...
     @overload
     @property
@@ -992,6 +1155,11 @@ class OptionsDialogPage(StackedDialogPage):
     def ToString(self) -> str: ...
 
 
+class PageType(Enum):
+    Options = 0
+    DocumentProperties = 1
+
+
 class PanelEventArgs:
     @overload
     def __init__(self, panelId: Guid, documentSerialNumber: UInt32): ...
@@ -1029,6 +1197,9 @@ class PanelIds:
     @overload
     @property
     def Environment() -> Guid: ...
+    @overload
+    @property
+    def FileExplorer() -> Guid: ...
     @overload
     @property
     def GroundPlane() -> Guid: ...
@@ -1077,6 +1248,9 @@ class Panels:
     def add_Show(value: EventHandler) -> None: ...
     @overload
     @staticmethod
+    def ChangePanelIcon(panelType: Type, fullPathToResource: str) -> None: ...
+    @overload
+    @staticmethod
     def ChangePanelIcon(panelType: Type, icon: Icon) -> None: ...
     @overload
     @staticmethod
@@ -1086,10 +1260,13 @@ class Panels:
     def ClosePanel(panelId: Guid) -> None: ...
     @overload
     @staticmethod
+    def ClosePanel(panelType: Type, doc: RhinoDoc) -> None: ...
+    @overload
+    @staticmethod
     def ClosePanel(panelId: Guid, doc: RhinoDoc) -> None: ...
     @overload
     @staticmethod
-    def ClosePanel(panelType: Type, doc: RhinoDoc) -> None: ...
+    def DockBarIdInUse(dockBarId: Guid) -> bool: ...
     @overload
     def Equals(self, obj: Object) -> bool: ...
     @overload
@@ -1104,6 +1281,9 @@ class Panels:
     @overload
     @property
     def IconSize() -> Size: ...
+    @overload
+    @property
+    def IconSizeInPixels() -> Size: ...
     @overload
     @property
     def ScaledIconSize() -> Size: ...
@@ -1126,16 +1306,16 @@ class Panels:
     def GetPanel(panelId: Guid, documentSerialNumber: UInt32) -> Object: ...
     @overload
     @staticmethod
-    def GetPanels(doc: RhinoDoc) -> Iterable[T]: ...
-    @overload
-    @staticmethod
     def GetPanels(documentRuntimeSerialNumber: UInt32) -> Iterable[T]: ...
     @overload
     @staticmethod
-    def GetPanels(panelId: Guid, documentRuntimeSerialNumber: UInt32) -> Iterable[Object]: ...
+    def GetPanels(doc: RhinoDoc) -> Iterable[T]: ...
     @overload
     @staticmethod
     def GetPanels(panelId: Guid, doc: RhinoDoc) -> Iterable[Object]: ...
+    @overload
+    @staticmethod
+    def GetPanels(panelId: Guid, documentRuntimeSerialNumber: UInt32) -> Iterable[Object]: ...
     @overload
     def GetType(self) -> Type: ...
     @overload
@@ -1149,10 +1329,10 @@ class Panels:
     def IsPanelVisible(panelType: Type) -> bool: ...
     @overload
     @staticmethod
-    def IsPanelVisible(panelType: Type, isSelectedTab: bool) -> bool: ...
+    def IsPanelVisible(panelId: Guid, isSelectedTab: bool) -> bool: ...
     @overload
     @staticmethod
-    def IsPanelVisible(panelId: Guid, isSelectedTab: bool) -> bool: ...
+    def IsPanelVisible(panelType: Type, isSelectedTab: bool) -> bool: ...
     @overload
     @staticmethod
     def IsShowing(reason: ShowPanelReason) -> bool: ...
@@ -1164,16 +1344,16 @@ class Panels:
     def OnShowPanel(panelId: Guid, documentSerialNumber: UInt32, show: bool) -> None: ...
     @overload
     @staticmethod
-    def OpenPanel(panelId: Guid) -> None: ...
-    @overload
-    @staticmethod
     def OpenPanel(panelType: Type) -> None: ...
     @overload
     @staticmethod
-    def OpenPanel(panelId: Guid, makeSelectedPanel: bool) -> None: ...
+    def OpenPanel(panelId: Guid) -> None: ...
     @overload
     @staticmethod
     def OpenPanel(dockBarId: Guid, panelType: Type) -> Guid: ...
+    @overload
+    @staticmethod
+    def OpenPanel(panelId: Guid, makeSelectedPanel: bool) -> None: ...
     @overload
     @staticmethod
     def OpenPanel(dockBarId: Guid, panelId: Guid) -> Guid: ...
@@ -1182,10 +1362,10 @@ class Panels:
     def OpenPanel(panelType: Type, makeSelectedPanel: bool) -> None: ...
     @overload
     @staticmethod
-    def OpenPanel(dockBarId: Guid, panelType: Type, makeSelectedPanel: bool) -> Guid: ...
+    def OpenPanel(dockBarId: Guid, panelId: Guid, makeSelectedPanel: bool) -> Guid: ...
     @overload
     @staticmethod
-    def OpenPanel(dockBarId: Guid, panelId: Guid, makeSelectedPanel: bool) -> Guid: ...
+    def OpenPanel(dockBarId: Guid, panelType: Type, makeSelectedPanel: bool) -> Guid: ...
     @overload
     @staticmethod
     def OpenPanelAsSibling(panelId: Guid, siblingPanelId: Guid) -> bool: ...
@@ -1207,6 +1387,9 @@ class Panels:
     @overload
     @staticmethod
     def RegisterPanel(plugIn: PlugIn, type: Type, caption: str, icon: Icon, panelType: PanelType) -> None: ...
+    @overload
+    @staticmethod
+    def RegisterPanel(plugIn: PlugIn, type: Type, caption: str, iconAssembly: Assembly, iconResourceId: str, panelType: PanelType) -> None: ...
     @overload
     @staticmethod
     def remove_Closed(value: EventHandler) -> None: ...
@@ -1619,7 +1802,13 @@ class StatusBar:
     def UpdateProgressMeter(position: int, absolute: bool) -> int: ...
     @overload
     @staticmethod
+    def UpdateProgressMeter(label: str, position: int, absolute: bool) -> int: ...
+    @overload
+    @staticmethod
     def UpdateProgressMeter(docSerialNumber: UInt32, position: int, absolute: bool) -> int: ...
+    @overload
+    @staticmethod
+    def UpdateProgressMeter(docSerialNumber: UInt32, label: str, position: int, absolute: bool) -> int: ...
 
 
 class Style(Enum):

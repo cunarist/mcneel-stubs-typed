@@ -8,6 +8,12 @@ class AppearanceSettings:
     @staticmethod
     def DefaultPaintColor(whichColor: PaintColor) -> Color: ...
     @overload
+    @staticmethod
+    def DefaultPaintColor(whichColor: PaintColor, darkMode: bool) -> Color: ...
+    @overload
+    @staticmethod
+    def DefaultWidgetColor(whichColor: WidgetColor) -> Color: ...
+    @overload
     def Equals(self, obj: Object) -> bool: ...
     @overload
     @property
@@ -39,6 +45,12 @@ class AppearanceSettings:
     @overload
     @property
     def DefaultObjectColor() -> Color: ...
+    @overload
+    @property
+    def DirectionArrowIconHeadSize() -> int: ...
+    @overload
+    @property
+    def DirectionArrowIconShaftSize() -> int: ...
     @overload
     @property
     def EchoCommandsToHistoryWindow() -> bool: ...
@@ -107,13 +119,25 @@ class AppearanceSettings:
     def ShowFullPathInTitleBar() -> bool: ...
     @overload
     @property
+    def ShowLayoutDropShadow() -> bool: ...
+    @overload
+    @property
     def ShowOsnapBar() -> bool: ...
+    @overload
+    @property
+    def ShowSelectionFilterBar() -> bool: ...
     @overload
     @property
     def ShowSideBar() -> bool: ...
     @overload
     @property
     def ShowStatusBar() -> bool: ...
+    @overload
+    @property
+    def ShowTitleBar() -> bool: ...
+    @overload
+    @property
+    def ShowViewportTitles() -> bool: ...
     @overload
     @property
     def TrackingColor() -> Color: ...
@@ -123,6 +147,9 @@ class AppearanceSettings:
     @overload
     @property
     def ViewportBackgroundColor() -> Color: ...
+    @overload
+    @property
+    def ViewportTabsVisibleAtStart() -> bool: ...
     @overload
     @property
     def WorldCoordIconXAxisColor() -> Color: ...
@@ -138,6 +165,9 @@ class AppearanceSettings:
     @overload
     @staticmethod
     def GetDefaultState() -> AppearanceSettingsState: ...
+    @overload
+    @staticmethod
+    def GetDefaultState(darkMode: bool) -> AppearanceSettingsState: ...
     @overload
     def GetHashCode(self) -> int: ...
     @overload
@@ -184,6 +214,12 @@ class AppearanceSettings:
     @overload
     @DefaultObjectColor.setter
     def DefaultObjectColor(value: Color) -> None: ...
+    @overload
+    @DirectionArrowIconHeadSize.setter
+    def DirectionArrowIconHeadSize(value: int) -> None: ...
+    @overload
+    @DirectionArrowIconShaftSize.setter
+    def DirectionArrowIconShaftSize(value: int) -> None: ...
     @overload
     @EchoCommandsToHistoryWindow.setter
     def EchoCommandsToHistoryWindow(value: bool) -> None: ...
@@ -251,8 +287,14 @@ class AppearanceSettings:
     @ShowFullPathInTitleBar.setter
     def ShowFullPathInTitleBar(value: bool) -> None: ...
     @overload
+    @ShowLayoutDropShadow.setter
+    def ShowLayoutDropShadow(value: bool) -> None: ...
+    @overload
     @ShowOsnapBar.setter
     def ShowOsnapBar(value: bool) -> None: ...
+    @overload
+    @ShowSelectionFilterBar.setter
+    def ShowSelectionFilterBar(value: bool) -> None: ...
     @overload
     @ShowSideBar.setter
     def ShowSideBar(value: bool) -> None: ...
@@ -260,11 +302,20 @@ class AppearanceSettings:
     @ShowStatusBar.setter
     def ShowStatusBar(value: bool) -> None: ...
     @overload
+    @ShowTitleBar.setter
+    def ShowTitleBar(value: bool) -> None: ...
+    @overload
+    @ShowViewportTitles.setter
+    def ShowViewportTitles(value: bool) -> None: ...
+    @overload
     @TrackingColor.setter
     def TrackingColor(value: Color) -> None: ...
     @overload
     @ViewportBackgroundColor.setter
     def ViewportBackgroundColor(value: Color) -> None: ...
+    @overload
+    @ViewportTabsVisibleAtStart.setter
+    def ViewportTabsVisibleAtStart(value: bool) -> None: ...
     @overload
     @WorldCoordIconXAxisColor.setter
     def WorldCoordIconXAxisColor(value: Color) -> None: ...
@@ -282,6 +333,12 @@ class AppearanceSettings:
     def SetPaintColor(whichColor: PaintColor, c: Color, forceUiUpdate: bool) -> None: ...
     @overload
     @staticmethod
+    def SetToDarkMode() -> bool: ...
+    @overload
+    @staticmethod
+    def SetToLightMode() -> bool: ...
+    @overload
+    @staticmethod
     def SetWidgetColor(whichColor: WidgetColor, c: Color) -> None: ...
     @overload
     @staticmethod
@@ -291,6 +348,12 @@ class AppearanceSettings:
     @overload
     @staticmethod
     def UpdateFromState(state: AppearanceSettingsState) -> None: ...
+    @overload
+    @staticmethod
+    def UsingDefaultDarkModeColors() -> bool: ...
+    @overload
+    @staticmethod
+    def UsingDefaultLightModeColors() -> bool: ...
 
 
 class AppearanceSettingsState:
@@ -299,6 +362,9 @@ class AppearanceSettingsState:
     @overload
     @property
     def CommandPromptBackgroundColor(self) -> Color: ...
+    @overload
+    @property
+    def CommandPromptFontName(self) -> str: ...
     @overload
     @property
     def CommandPromptFontSize(self) -> int: ...
@@ -323,6 +389,12 @@ class AppearanceSettingsState:
     @overload
     @property
     def DefaultObjectColor(self) -> Color: ...
+    @overload
+    @property
+    def DirectionArrowIconHeadSize(self) -> int: ...
+    @overload
+    @property
+    def DirectionArrowIconShaftSize(self) -> int: ...
     @overload
     @property
     def EchoCommandsToHistoryWindow(self) -> bool: ...
@@ -358,6 +430,9 @@ class AppearanceSettingsState:
     def LockedObjectColor(self) -> Color: ...
     @overload
     @property
+    def MenuVisible(self) -> bool: ...
+    @overload
+    @property
     def PageviewPaperColor(self) -> Color: ...
     @overload
     @property
@@ -382,10 +457,25 @@ class AppearanceSettingsState:
     def ShowFullPathInTitleBar(self) -> bool: ...
     @overload
     @property
+    def ShowLayoutDropShadow(self) -> bool: ...
+    @overload
+    @property
+    def ShowStatusBar(self) -> bool: ...
+    @overload
+    @property
+    def ShowTitleBar(self) -> bool: ...
+    @overload
+    @property
+    def ShowViewportTitles(self) -> bool: ...
+    @overload
+    @property
     def TrackingColor(self) -> Color: ...
     @overload
     @property
     def ViewportBackgroundColor(self) -> Color: ...
+    @overload
+    @property
+    def ViewportTabsVisibleAtStart(self) -> bool: ...
     @overload
     @property
     def WorldCoordIconXAxisColor(self) -> Color: ...
@@ -402,6 +492,9 @@ class AppearanceSettingsState:
     @overload
     @CommandPromptBackgroundColor.setter
     def CommandPromptBackgroundColor(self, value: Color) -> None: ...
+    @overload
+    @CommandPromptFontName.setter
+    def CommandPromptFontName(self, value: str) -> None: ...
     @overload
     @CommandPromptFontSize.setter
     def CommandPromptFontSize(self, value: int) -> None: ...
@@ -426,6 +519,12 @@ class AppearanceSettingsState:
     @overload
     @DefaultObjectColor.setter
     def DefaultObjectColor(self, value: Color) -> None: ...
+    @overload
+    @DirectionArrowIconHeadSize.setter
+    def DirectionArrowIconHeadSize(self, value: int) -> None: ...
+    @overload
+    @DirectionArrowIconShaftSize.setter
+    def DirectionArrowIconShaftSize(self, value: int) -> None: ...
     @overload
     @EchoCommandsToHistoryWindow.setter
     def EchoCommandsToHistoryWindow(self, value: bool) -> None: ...
@@ -460,6 +559,9 @@ class AppearanceSettingsState:
     @LockedObjectColor.setter
     def LockedObjectColor(self, value: Color) -> None: ...
     @overload
+    @MenuVisible.setter
+    def MenuVisible(self, value: bool) -> None: ...
+    @overload
     @PageviewPaperColor.setter
     def PageviewPaperColor(self, value: Color) -> None: ...
     @overload
@@ -484,11 +586,26 @@ class AppearanceSettingsState:
     @ShowFullPathInTitleBar.setter
     def ShowFullPathInTitleBar(self, value: bool) -> None: ...
     @overload
+    @ShowLayoutDropShadow.setter
+    def ShowLayoutDropShadow(self, value: bool) -> None: ...
+    @overload
+    @ShowStatusBar.setter
+    def ShowStatusBar(self, value: bool) -> None: ...
+    @overload
+    @ShowTitleBar.setter
+    def ShowTitleBar(self, value: bool) -> None: ...
+    @overload
+    @ShowViewportTitles.setter
+    def ShowViewportTitles(self, value: bool) -> None: ...
+    @overload
     @TrackingColor.setter
     def TrackingColor(self, value: Color) -> None: ...
     @overload
     @ViewportBackgroundColor.setter
     def ViewportBackgroundColor(self, value: Color) -> None: ...
+    @overload
+    @ViewportTabsVisibleAtStart.setter
+    def ViewportTabsVisibleAtStart(self, value: bool) -> None: ...
     @overload
     @WorldCoordIconXAxisColor.setter
     def WorldCoordIconXAxisColor(self, value: Color) -> None: ...
@@ -498,6 +615,220 @@ class AppearanceSettingsState:
     @overload
     @WorldCoordIconZAxisColor.setter
     def WorldCoordIconZAxisColor(self, value: Color) -> None: ...
+    @overload
+    def ToString(self) -> str: ...
+
+
+class ChooseOneObjectSettings:
+    @overload
+    def Equals(self, obj: Object) -> bool: ...
+    @overload
+    @property
+    def AutomaticResize() -> bool: ...
+    @overload
+    @property
+    def DynamicHighlight() -> bool: ...
+    @overload
+    @property
+    def FollowCursor() -> bool: ...
+    @overload
+    @property
+    def HighlightColor() -> Color: ...
+    @overload
+    @property
+    def MaxAutoResizeItems() -> int: ...
+    @overload
+    @property
+    def ShowAllOption() -> bool: ...
+    @overload
+    @property
+    def ShowObjectColor() -> bool: ...
+    @overload
+    @property
+    def ShowObjectLayer() -> bool: ...
+    @overload
+    @property
+    def ShowObjectName() -> bool: ...
+    @overload
+    @property
+    def ShowObjectType() -> bool: ...
+    @overload
+    @property
+    def ShowObjectTypeDetails() -> bool: ...
+    @overload
+    @property
+    def ShowTitlebarAndBorder() -> bool: ...
+    @overload
+    @property
+    def UseCustomColor() -> bool: ...
+    @overload
+    @property
+    def XOffset() -> int: ...
+    @overload
+    @property
+    def YOffset() -> int: ...
+    @overload
+    @staticmethod
+    def GetCurrentState() -> ChooseOneObjectSettingsState: ...
+    @overload
+    @staticmethod
+    def GetDefaultState() -> ChooseOneObjectSettingsState: ...
+    @overload
+    def GetHashCode(self) -> int: ...
+    @overload
+    def GetType(self) -> Type: ...
+    @overload
+    @staticmethod
+    def RestoreDefaults() -> None: ...
+    @overload
+    @AutomaticResize.setter
+    def AutomaticResize(value: bool) -> None: ...
+    @overload
+    @DynamicHighlight.setter
+    def DynamicHighlight(value: bool) -> None: ...
+    @overload
+    @FollowCursor.setter
+    def FollowCursor(value: bool) -> None: ...
+    @overload
+    @HighlightColor.setter
+    def HighlightColor(value: Color) -> None: ...
+    @overload
+    @MaxAutoResizeItems.setter
+    def MaxAutoResizeItems(value: int) -> None: ...
+    @overload
+    @ShowAllOption.setter
+    def ShowAllOption(value: bool) -> None: ...
+    @overload
+    @ShowObjectColor.setter
+    def ShowObjectColor(value: bool) -> None: ...
+    @overload
+    @ShowObjectLayer.setter
+    def ShowObjectLayer(value: bool) -> None: ...
+    @overload
+    @ShowObjectName.setter
+    def ShowObjectName(value: bool) -> None: ...
+    @overload
+    @ShowObjectType.setter
+    def ShowObjectType(value: bool) -> None: ...
+    @overload
+    @ShowObjectTypeDetails.setter
+    def ShowObjectTypeDetails(value: bool) -> None: ...
+    @overload
+    @ShowTitlebarAndBorder.setter
+    def ShowTitlebarAndBorder(value: bool) -> None: ...
+    @overload
+    @UseCustomColor.setter
+    def UseCustomColor(value: bool) -> None: ...
+    @overload
+    @XOffset.setter
+    def XOffset(value: int) -> None: ...
+    @overload
+    @YOffset.setter
+    def YOffset(value: int) -> None: ...
+    @overload
+    def ToString(self) -> str: ...
+    @overload
+    @staticmethod
+    def UpdateFromState(state: ChooseOneObjectSettingsState) -> None: ...
+
+
+class ChooseOneObjectSettingsState:
+    @overload
+    def Equals(self, obj: Object) -> bool: ...
+    @overload
+    @property
+    def AutomaticResize(self) -> bool: ...
+    @overload
+    @property
+    def DynamicHighlight(self) -> bool: ...
+    @overload
+    @property
+    def FollowCursor(self) -> bool: ...
+    @overload
+    @property
+    def HighlightColor(self) -> Color: ...
+    @overload
+    @property
+    def MaxAutoResizeItems(self) -> int: ...
+    @overload
+    @property
+    def ShowAllOption(self) -> bool: ...
+    @overload
+    @property
+    def ShowObjectColor(self) -> bool: ...
+    @overload
+    @property
+    def ShowObjectLayer(self) -> bool: ...
+    @overload
+    @property
+    def ShowObjectName(self) -> bool: ...
+    @overload
+    @property
+    def ShowObjectType(self) -> bool: ...
+    @overload
+    @property
+    def ShowObjectTypeDetails(self) -> bool: ...
+    @overload
+    @property
+    def ShowTitlebarAndBorder(self) -> bool: ...
+    @overload
+    @property
+    def UseCustomColor(self) -> bool: ...
+    @overload
+    @property
+    def XOffset(self) -> int: ...
+    @overload
+    @property
+    def YOffset(self) -> int: ...
+    @overload
+    def GetHashCode(self) -> int: ...
+    @overload
+    def GetType(self) -> Type: ...
+    @overload
+    @AutomaticResize.setter
+    def AutomaticResize(self, value: bool) -> None: ...
+    @overload
+    @DynamicHighlight.setter
+    def DynamicHighlight(self, value: bool) -> None: ...
+    @overload
+    @FollowCursor.setter
+    def FollowCursor(self, value: bool) -> None: ...
+    @overload
+    @HighlightColor.setter
+    def HighlightColor(self, value: Color) -> None: ...
+    @overload
+    @MaxAutoResizeItems.setter
+    def MaxAutoResizeItems(self, value: int) -> None: ...
+    @overload
+    @ShowAllOption.setter
+    def ShowAllOption(self, value: bool) -> None: ...
+    @overload
+    @ShowObjectColor.setter
+    def ShowObjectColor(self, value: bool) -> None: ...
+    @overload
+    @ShowObjectLayer.setter
+    def ShowObjectLayer(self, value: bool) -> None: ...
+    @overload
+    @ShowObjectName.setter
+    def ShowObjectName(self, value: bool) -> None: ...
+    @overload
+    @ShowObjectType.setter
+    def ShowObjectType(self, value: bool) -> None: ...
+    @overload
+    @ShowObjectTypeDetails.setter
+    def ShowObjectTypeDetails(self, value: bool) -> None: ...
+    @overload
+    @ShowTitlebarAndBorder.setter
+    def ShowTitlebarAndBorder(self, value: bool) -> None: ...
+    @overload
+    @UseCustomColor.setter
+    def UseCustomColor(self, value: bool) -> None: ...
+    @overload
+    @XOffset.setter
+    def XOffset(self, value: int) -> None: ...
+    @overload
+    @YOffset.setter
+    def YOffset(self, value: int) -> None: ...
     @overload
     def ToString(self) -> str: ...
 
@@ -582,6 +913,9 @@ class CursorTooltipSettings:
     def DistancePane() -> bool: ...
     @overload
     @property
+    def EnableGumballToolTips() -> bool: ...
+    @overload
+    @property
     def Offset() -> Point: ...
     @overload
     @property
@@ -620,6 +954,9 @@ class CursorTooltipSettings:
     @overload
     @DistancePane.setter
     def DistancePane(value: bool) -> None: ...
+    @overload
+    @EnableGumballToolTips.setter
+    def EnableGumballToolTips(value: bool) -> None: ...
     @overload
     @Offset.setter
     def Offset(value: Point) -> None: ...
@@ -661,6 +998,9 @@ class CursorTooltipSettingsState:
     def DistancePane(self) -> bool: ...
     @overload
     @property
+    def EnableGumballToolTips(self) -> bool: ...
+    @overload
+    @property
     def Offset(self) -> Point: ...
     @overload
     @property
@@ -693,6 +1033,9 @@ class CursorTooltipSettingsState:
     @overload
     @DistancePane.setter
     def DistancePane(self, value: bool) -> None: ...
+    @overload
+    @EnableGumballToolTips.setter
+    def EnableGumballToolTips(self, value: bool) -> None: ...
     @overload
     @Offset.setter
     def Offset(self, value: Point) -> None: ...
@@ -810,6 +1153,136 @@ class CurvatureAnalysisSettingsState:
     @overload
     @Style.setter
     def Style(self, value: CurvatureStyle) -> None: ...
+    @overload
+    def ToString(self) -> str: ...
+
+
+class CurvatureGraphSettings:
+    @overload
+    def Equals(self, obj: Object) -> bool: ...
+    @overload
+    @property
+    def CurveHairColor() -> Color: ...
+    @overload
+    @property
+    def HairDensity() -> int: ...
+    @overload
+    @property
+    def HairScale() -> int: ...
+    @overload
+    @property
+    def SampleDensity() -> int: ...
+    @overload
+    @property
+    def SrfUHair() -> bool: ...
+    @overload
+    @property
+    def SrfVHair() -> bool: ...
+    @overload
+    @property
+    def SurfaceUHairColor() -> Color: ...
+    @overload
+    @property
+    def SurfaceVHairColor() -> Color: ...
+    @overload
+    @staticmethod
+    def GetCurrentState() -> CurvatureGraphSettingsState: ...
+    @overload
+    @staticmethod
+    def GetDefaultState() -> CurvatureGraphSettingsState: ...
+    @overload
+    def GetHashCode(self) -> int: ...
+    @overload
+    def GetType(self) -> Type: ...
+    @overload
+    @staticmethod
+    def RestoreDefaults() -> None: ...
+    @overload
+    @CurveHairColor.setter
+    def CurveHairColor(value: Color) -> None: ...
+    @overload
+    @HairDensity.setter
+    def HairDensity(value: int) -> None: ...
+    @overload
+    @HairScale.setter
+    def HairScale(value: int) -> None: ...
+    @overload
+    @SampleDensity.setter
+    def SampleDensity(value: int) -> None: ...
+    @overload
+    @SrfUHair.setter
+    def SrfUHair(value: bool) -> None: ...
+    @overload
+    @SrfVHair.setter
+    def SrfVHair(value: bool) -> None: ...
+    @overload
+    @SurfaceUHairColor.setter
+    def SurfaceUHairColor(value: Color) -> None: ...
+    @overload
+    @SurfaceVHairColor.setter
+    def SurfaceVHairColor(value: Color) -> None: ...
+    @overload
+    def ToString(self) -> str: ...
+    @overload
+    @staticmethod
+    def UpdateFromState(state: CurvatureGraphSettingsState) -> None: ...
+
+
+class CurvatureGraphSettingsState:
+    @overload
+    def Equals(self, obj: Object) -> bool: ...
+    @overload
+    @property
+    def CurveHairColor(self) -> Color: ...
+    @overload
+    @property
+    def HairDensity(self) -> int: ...
+    @overload
+    @property
+    def HairScale(self) -> int: ...
+    @overload
+    @property
+    def SampleDensity(self) -> int: ...
+    @overload
+    @property
+    def SrfUHair(self) -> bool: ...
+    @overload
+    @property
+    def SrfVHair(self) -> bool: ...
+    @overload
+    @property
+    def SurfaceUHairColor(self) -> Color: ...
+    @overload
+    @property
+    def SurfaceVHairColor(self) -> Color: ...
+    @overload
+    def GetHashCode(self) -> int: ...
+    @overload
+    def GetType(self) -> Type: ...
+    @overload
+    @CurveHairColor.setter
+    def CurveHairColor(self, value: Color) -> None: ...
+    @overload
+    @HairDensity.setter
+    def HairDensity(self, value: int) -> None: ...
+    @overload
+    @HairScale.setter
+    def HairScale(self, value: int) -> None: ...
+    @overload
+    @SampleDensity.setter
+    def SampleDensity(self, value: int) -> None: ...
+    @overload
+    @SrfUHair.setter
+    def SrfUHair(self, value: bool) -> None: ...
+    @overload
+    @SrfVHair.setter
+    def SrfVHair(self, value: bool) -> None: ...
+    @overload
+    @SurfaceUHairColor.setter
+    def SurfaceUHairColor(self, value: Color) -> None: ...
+    @overload
+    @SurfaceVHairColor.setter
+    def SurfaceVHairColor(self, value: Color) -> None: ...
     @overload
     def ToString(self) -> str: ...
 
@@ -962,6 +1435,9 @@ class FileSettings:
     def AutoSaveBeforeCommands() -> Iterable[str]: ...
     @overload
     @staticmethod
+    def DefaultTemplateFolderForLanguageID(languageID: int) -> str: ...
+    @overload
+    @staticmethod
     def DeleteSearchPath(folder: str) -> bool: ...
     @overload
     def Equals(self, obj: Object) -> bool: ...
@@ -1088,6 +1564,9 @@ class FileSettings:
     def SetAutoSaveBeforeCommands(commands: Iterable[str]) -> None: ...
     @overload
     def ToString(self) -> str: ...
+    @overload
+    @staticmethod
+    def UpdateFromState(state: FileSettingsState) -> None: ...
 
 
 class FileSettingsState:
@@ -1121,6 +1600,9 @@ class FileSettingsState:
     @property
     def SaveViewChanges(self) -> bool: ...
     @overload
+    @property
+    def TemplateFileDir(self) -> str: ...
+    @overload
     def GetHashCode(self) -> int: ...
     @overload
     def GetType(self) -> Type: ...
@@ -1151,6 +1633,9 @@ class FileSettingsState:
     @overload
     @SaveViewChanges.setter
     def SaveViewChanges(self, value: bool) -> None: ...
+    @overload
+    @TemplateFileDir.setter
+    def TemplateFileDir(self, value: str) -> None: ...
     @overload
     def ToString(self) -> str: ...
 
@@ -1332,6 +1817,9 @@ class HistorySettings:
     def RecordingEnabled() -> bool: ...
     @overload
     @property
+    def RecordNextCommand() -> bool: ...
+    @overload
+    @property
     def UpdateEnabled() -> bool: ...
     @overload
     def GetHashCode(self) -> int: ...
@@ -1346,6 +1834,9 @@ class HistorySettings:
     @overload
     @RecordingEnabled.setter
     def RecordingEnabled(value: bool) -> None: ...
+    @overload
+    @RecordNextCommand.setter
+    def RecordNextCommand(value: bool) -> None: ...
     @overload
     @UpdateEnabled.setter
     def UpdateEnabled(value: bool) -> None: ...
@@ -1367,6 +1858,39 @@ class Installation(Enum):
     EvaluationTimed = 10
 
 
+from ..UI import ModifierKey
+from ..UI import KeyboardKey
+class KeyboardShortcut:
+    @overload
+    def __init__(self): ...
+    @overload
+    def Equals(self, obj: Object) -> bool: ...
+    @overload
+    @property
+    def Key(self) -> KeyboardKey: ...
+    @overload
+    @property
+    def Macro(self) -> str: ...
+    @overload
+    @property
+    def Modifier(self) -> ModifierKey: ...
+    @overload
+    def GetHashCode(self) -> int: ...
+    @overload
+    def GetType(self) -> Type: ...
+    @overload
+    @Key.setter
+    def Key(self, value: KeyboardKey) -> None: ...
+    @overload
+    @Macro.setter
+    def Macro(self, value: str) -> None: ...
+    @overload
+    @Modifier.setter
+    def Modifier(self, value: ModifierKey) -> None: ...
+    @overload
+    def ToString(self) -> str: ...
+
+
 class LicenseNode(Enum):
     Standalone = 0
     Network = 1
@@ -1385,6 +1909,12 @@ class ModelAidSettings:
     @overload
     @property
     def AltPlusArrow() -> bool: ...
+    @overload
+    @property
+    def AutoAlignCPlane() -> bool: ...
+    @overload
+    @property
+    def AutoCPlaneAlignment() -> int: ...
     @overload
     @property
     def AutoGumballEnabled() -> bool: ...
@@ -1408,6 +1938,12 @@ class ModelAidSettings:
     def GridSnap() -> bool: ...
     @overload
     @property
+    def GumballAutoReset() -> bool: ...
+    @overload
+    @property
+    def GumballExtrudeMergeFaces() -> bool: ...
+    @overload
+    @property
     def HighlightControlPolygon() -> bool: ...
     @overload
     @property
@@ -1420,10 +1956,19 @@ class ModelAidSettings:
     def NudgeMode() -> int: ...
     @overload
     @property
+    def OnlySnapToSelected() -> bool: ...
+    @overload
+    @property
+    def OrientAutoCPlaneToView() -> bool: ...
+    @overload
+    @property
     def Ortho() -> bool: ...
     @overload
     @property
     def OrthoAngle() -> float: ...
+    @overload
+    @property
+    def OrthoUseZ() -> bool: ...
     @overload
     @property
     def Osnap() -> bool: ...
@@ -1453,7 +1998,16 @@ class ModelAidSettings:
     def SnappyGumballEnabled() -> bool: ...
     @overload
     @property
+    def SnapToFiltered() -> bool: ...
+    @overload
+    @property
     def SnapToLocked() -> bool: ...
+    @overload
+    @property
+    def SnapToOccluded() -> bool: ...
+    @overload
+    @property
+    def StickyAutoCPlane() -> bool: ...
     @overload
     @property
     def UniversalConstructionPlaneMode() -> bool: ...
@@ -1473,6 +2027,12 @@ class ModelAidSettings:
     @overload
     @AltPlusArrow.setter
     def AltPlusArrow(value: bool) -> None: ...
+    @overload
+    @AutoAlignCPlane.setter
+    def AutoAlignCPlane(value: bool) -> None: ...
+    @overload
+    @AutoCPlaneAlignment.setter
+    def AutoCPlaneAlignment(value: int) -> None: ...
     @overload
     @AutoGumballEnabled.setter
     def AutoGumballEnabled(value: bool) -> None: ...
@@ -1495,6 +2055,12 @@ class ModelAidSettings:
     @GridSnap.setter
     def GridSnap(value: bool) -> None: ...
     @overload
+    @GumballAutoReset.setter
+    def GumballAutoReset(value: bool) -> None: ...
+    @overload
+    @GumballExtrudeMergeFaces.setter
+    def GumballExtrudeMergeFaces(value: bool) -> None: ...
+    @overload
     @HighlightControlPolygon.setter
     def HighlightControlPolygon(value: bool) -> None: ...
     @overload
@@ -1507,11 +2073,20 @@ class ModelAidSettings:
     @NudgeMode.setter
     def NudgeMode(value: int) -> None: ...
     @overload
+    @OnlySnapToSelected.setter
+    def OnlySnapToSelected(value: bool) -> None: ...
+    @overload
+    @OrientAutoCPlaneToView.setter
+    def OrientAutoCPlaneToView(value: bool) -> None: ...
+    @overload
     @Ortho.setter
     def Ortho(value: bool) -> None: ...
     @overload
     @OrthoAngle.setter
     def OrthoAngle(value: float) -> None: ...
+    @overload
+    @OrthoUseZ.setter
+    def OrthoUseZ(value: bool) -> None: ...
     @overload
     @Osnap.setter
     def Osnap(value: bool) -> None: ...
@@ -1540,8 +2115,17 @@ class ModelAidSettings:
     @SnappyGumballEnabled.setter
     def SnappyGumballEnabled(value: bool) -> None: ...
     @overload
+    @SnapToFiltered.setter
+    def SnapToFiltered(value: bool) -> None: ...
+    @overload
     @SnapToLocked.setter
     def SnapToLocked(value: bool) -> None: ...
+    @overload
+    @SnapToOccluded.setter
+    def SnapToOccluded(value: bool) -> None: ...
+    @overload
+    @StickyAutoCPlane.setter
+    def StickyAutoCPlane(value: bool) -> None: ...
     @overload
     @UniversalConstructionPlaneMode.setter
     def UniversalConstructionPlaneMode(value: bool) -> None: ...
@@ -1561,6 +2145,12 @@ class ModelAidSettingsState:
     @overload
     @property
     def AltPlusArrow(self) -> bool: ...
+    @overload
+    @property
+    def AutoAlignCPlane(self) -> bool: ...
+    @overload
+    @property
+    def AutoCPlaneAlignment(self) -> int: ...
     @overload
     @property
     def ControlPolygonDisplayDensity(self) -> int: ...
@@ -1593,10 +2183,16 @@ class ModelAidSettingsState:
     def NudgeMode(self) -> int: ...
     @overload
     @property
+    def OrientAutoCPlaneToView(self) -> bool: ...
+    @overload
+    @property
     def Ortho(self) -> bool: ...
     @overload
     @property
     def OrthoAngle(self) -> float: ...
+    @overload
+    @property
+    def OrthoUseZ(self) -> bool: ...
     @overload
     @property
     def Osnap(self) -> bool: ...
@@ -1626,6 +2222,9 @@ class ModelAidSettingsState:
     def SnapToLocked(self) -> bool: ...
     @overload
     @property
+    def StickyAutoCPlane(self) -> bool: ...
+    @overload
+    @property
     def UniversalConstructionPlaneMode(self) -> bool: ...
     @overload
     @property
@@ -1637,6 +2236,12 @@ class ModelAidSettingsState:
     @overload
     @AltPlusArrow.setter
     def AltPlusArrow(self, value: bool) -> None: ...
+    @overload
+    @AutoAlignCPlane.setter
+    def AutoAlignCPlane(self, value: bool) -> None: ...
+    @overload
+    @AutoCPlaneAlignment.setter
+    def AutoCPlaneAlignment(self, value: int) -> None: ...
     @overload
     @ControlPolygonDisplayDensity.setter
     def ControlPolygonDisplayDensity(self, value: int) -> None: ...
@@ -1668,11 +2273,17 @@ class ModelAidSettingsState:
     @NudgeMode.setter
     def NudgeMode(self, value: int) -> None: ...
     @overload
+    @OrientAutoCPlaneToView.setter
+    def OrientAutoCPlaneToView(self, value: bool) -> None: ...
+    @overload
     @Ortho.setter
     def Ortho(self, value: bool) -> None: ...
     @overload
     @OrthoAngle.setter
     def OrthoAngle(self, value: float) -> None: ...
+    @overload
+    @OrthoUseZ.setter
+    def OrthoUseZ(self, value: bool) -> None: ...
     @overload
     @Osnap.setter
     def Osnap(self, value: bool) -> None: ...
@@ -1700,6 +2311,9 @@ class ModelAidSettingsState:
     @overload
     @SnapToLocked.setter
     def SnapToLocked(self, value: bool) -> None: ...
+    @overload
+    @StickyAutoCPlane.setter
+    def StickyAutoCPlane(self, value: bool) -> None: ...
     @overload
     @UniversalConstructionPlaneMode.setter
     def UniversalConstructionPlaneMode(self, value: bool) -> None: ...
@@ -2100,33 +2714,355 @@ class ShortcutKey(Enum):
     ShiftCtrlEnd = 163
     AltCtrlHome = 164
     AltCtrlEnd = 165
-    PageUp = 166
-    PageDown = 167
-    ShiftPageUp = 168
-    ShiftPageDown = 169
-    CtrlPageUp = 170
-    CtrlPageDown = 171
-    ShiftCtrlPageUp = 172
-    ShiftCtrlPageDown = 173
-    AltCtrlPageUp = 174
-    AltCtrlPageDown = 175
+    Tab = 166
+    PageUp = 167
+    PageDown = 168
+    ShiftPageUp = 169
+    ShiftPageDown = 170
+    CtrlPageUp = 171
+    CtrlPageDown = 172
+    ShiftCtrlPageUp = 173
+    ShiftCtrlPageDown = 174
+    AltCtrlPageUp = 175
+    AltCtrlPageDown = 176
+    # None = 177
+    AltHome = 178
+    AltEnd = 179
+    AltA = 180
+    AltB = 181
+    AltC = 182
+    AltD = 183
+    AltE = 184
+    AltF = 185
+    AltG = 186
+    AltH = 187
+    AltI = 188
+    AltJ = 189
+    AltK = 190
+    AltL = 191
+    AltM = 192
+    AltN = 193
+    AltO = 194
+    AltP = 195
+    AltQ = 196
+    AltR = 197
+    AltS = 198
+    AltT = 199
+    AltU = 200
+    AltV = 201
+    AltW = 202
+    AltX = 203
+    AltY = 204
+    AltZ = 205
+    Alt0 = 206
+    Alt1 = 207
+    Alt2 = 208
+    Alt3 = 209
+    Alt4 = 210
+    Alt5 = 211
+    Alt6 = 212
+    Alt7 = 213
+    Alt8 = 214
+    Alt9 = 215
+    AltF1 = 216
+    AltF2 = 217
+    AltF3 = 218
+    AltF4 = 219
+    AltF5 = 220
+    AltF6 = 221
+    AltF7 = 222
+    AltF8 = 223
+    AltF9 = 224
+    AltF10 = 225
+    AltF11 = 226
+    AltF12 = 227
+    AltShiftHome = 228
+    AltShiftEnd = 229
+    AltShiftA = 230
+    AltShiftB = 231
+    AltShiftC = 232
+    AltShiftD = 233
+    AltShiftE = 234
+    AltShiftF = 235
+    AltShiftG = 236
+    AltShiftH = 237
+    AltShiftI = 238
+    AltShiftJ = 239
+    AltShiftK = 240
+    AltShiftL = 241
+    AltShiftM = 242
+    AltShiftN = 243
+    AltShiftO = 244
+    AltShiftP = 245
+    AltShiftQ = 246
+    AltShiftR = 247
+    AltShiftS = 248
+    AltShiftT = 249
+    AltShiftU = 250
+    AltShiftV = 251
+    AltShiftW = 252
+    AltShiftX = 253
+    AltShiftY = 254
+    AltShiftZ = 255
+    AltShift0 = 256
+    AltShift1 = 257
+    AltShift2 = 258
+    AltShift3 = 259
+    AltShift4 = 260
+    AltShift5 = 261
+    AltShift6 = 262
+    AltShift7 = 263
+    AltShift8 = 264
+    AltShift9 = 265
+    AltShiftF1 = 266
+    AltShiftF2 = 267
+    AltShiftF3 = 268
+    AltShiftF4 = 269
+    AltShiftF5 = 270
+    AltShiftF6 = 271
+    AltShiftF7 = 272
+    AltShiftF8 = 273
+    AltShiftF9 = 274
+    AltShiftF10 = 275
+    AltShiftF11 = 276
+    AltShiftF12 = 277
+    MacControlHome = 278
+    MacControlEnd = 279
+    MacControlA = 280
+    MacControlB = 281
+    MacControlC = 282
+    MacControlD = 283
+    MacControlE = 284
+    MacControlF = 285
+    MacControlG = 286
+    MacControlH = 287
+    MacControlI = 288
+    MacControlJ = 289
+    MacControlK = 290
+    MacControlL = 291
+    MacControlM = 292
+    MacControlN = 293
+    MacControlO = 294
+    MacControlP = 295
+    MacControlQ = 296
+    MacControlR = 297
+    MacControlS = 298
+    MacControlT = 299
+    MacControlU = 300
+    MacControlV = 301
+    MacControlW = 302
+    MacControlX = 303
+    MacControlY = 304
+    MacControlZ = 305
+    MacControl0 = 306
+    MacControl1 = 307
+    MacControl2 = 308
+    MacControl3 = 309
+    MacControl4 = 310
+    MacControl5 = 311
+    MacControl6 = 312
+    MacControl7 = 313
+    MacControl8 = 314
+    MacControl9 = 315
+    MacControlF1 = 316
+    MacControlF2 = 317
+    MacControlF3 = 318
+    MacControlF4 = 319
+    MacControlF5 = 320
+    MacControlF6 = 321
+    MacControlF7 = 322
+    MacControlF8 = 323
+    MacControlF9 = 324
+    MacControlF10 = 325
+    MacControlF11 = 326
+    MacControlF12 = 327
+    MacControlAltHome = 328
+    MacControlAltEnd = 329
+    MacControlAltA = 330
+    MacControlAltB = 331
+    MacControlAltC = 332
+    MacControlAltD = 333
+    MacControlAltE = 334
+    MacControlAltF = 335
+    MacControlAltG = 336
+    MacControlAltH = 337
+    MacControlAltI = 338
+    MacControlAltJ = 339
+    MacControlAltK = 340
+    MacControlAltL = 341
+    MacControlAltM = 342
+    MacControlAltN = 343
+    MacControlAltO = 344
+    MacControlAltP = 345
+    MacControlAltQ = 346
+    MacControlAltR = 347
+    MacControlAltS = 348
+    MacControlAltT = 349
+    MacControlAltU = 350
+    MacControlAltV = 351
+    MacControlAltW = 352
+    MacControlAltX = 353
+    MacControlAltY = 354
+    MacControlAltZ = 355
+    MacControlAlt0 = 356
+    MacControlAlt1 = 357
+    MacControlAlt2 = 358
+    MacControlAlt3 = 359
+    MacControlAlt4 = 360
+    MacControlAlt5 = 361
+    MacControlAlt6 = 362
+    MacControlAlt7 = 363
+    MacControlAlt8 = 364
+    MacControlAlt9 = 365
+    MacControlAltF1 = 366
+    MacControlAltF2 = 367
+    MacControlAltF3 = 368
+    MacControlAltF4 = 369
+    MacControlAltF5 = 370
+    MacControlAltF6 = 371
+    MacControlAltF7 = 372
+    MacControlAltF8 = 373
+    MacControlAltF9 = 374
+    MacControlAltF10 = 375
+    MacControlAltF11 = 376
+    MacControlAltF12 = 377
+    MacControlOptionHome = 378
+    MacControlOptionEnd = 379
+    MacControlOptionA = 380
+    MacControlOptionB = 381
+    MacControlOptionC = 382
+    MacControlOptionD = 383
+    MacControlOptionE = 384
+    MacControlOptionF = 385
+    MacControlOptionG = 386
+    MacControlOptionH = 387
+    MacControlOptionI = 388
+    MacControlOptionJ = 389
+    MacControlOptionK = 390
+    MacControlOptionL = 391
+    MacControlOptionM = 392
+    MacControlOptionN = 393
+    MacControlOptionO = 394
+    MacControlOptionP = 395
+    MacControlOptionQ = 396
+    MacControlOptionR = 397
+    MacControlOptionS = 398
+    MacControlOptionT = 399
+    MacControlOptionU = 400
+    MacControlOptionV = 401
+    MacControlOptionW = 402
+    MacControlOptionX = 403
+    MacControlOptionY = 404
+    MacControlOptionZ = 405
+    MacControlOption0 = 406
+    MacControlOption1 = 407
+    MacControlOption2 = 408
+    MacControlOption3 = 409
+    MacControlOption4 = 410
+    MacControlOption5 = 411
+    MacControlOption6 = 412
+    MacControlOption7 = 413
+    MacControlOption8 = 414
+    MacControlOption9 = 415
+    MacControlOptionF1 = 416
+    MacControlOptionF2 = 417
+    MacControlOptionF3 = 418
+    MacControlOptionF4 = 419
+    MacControlOptionF5 = 420
+    MacControlOptionF6 = 421
+    MacControlOptionF7 = 422
+    MacControlOptionF8 = 423
+    MacControlOptionF9 = 424
+    MacControlOptionF10 = 425
+    MacControlOptionF11 = 426
+    MacControlOptionF12 = 427
+    MacControlShiftHome = 428
+    MacControlShiftEnd = 429
+    MacControlShiftA = 430
+    MacControlShiftB = 431
+    MacControlShiftC = 432
+    MacControlShiftD = 433
+    MacControlShiftE = 434
+    MacControlShiftF = 435
+    MacControlShiftG = 436
+    MacControlShiftH = 437
+    MacControlShiftI = 438
+    MacControlShiftJ = 439
+    MacControlShiftK = 440
+    MacControlShiftL = 441
+    MacControlShiftM = 442
+    MacControlShiftN = 443
+    MacControlShiftO = 444
+    MacControlShiftP = 445
+    MacControlShiftQ = 446
+    MacControlShiftR = 447
+    MacControlShiftS = 448
+    MacControlShiftT = 449
+    MacControlShiftU = 450
+    MacControlShiftV = 451
+    MacControlShiftW = 452
+    MacControlShiftX = 453
+    MacControlShiftY = 454
+    MacControlShiftZ = 455
+    MacControlShift0 = 456
+    MacControlShift1 = 457
+    MacControlShift2 = 458
+    MacControlShift3 = 459
+    MacControlShift4 = 460
+    MacControlShift5 = 461
+    MacControlShift6 = 462
+    MacControlShift7 = 463
+    MacControlShift8 = 464
+    MacControlShift9 = 465
+    MacControlShiftF1 = 466
+    MacControlShiftF2 = 467
+    MacControlShiftF3 = 468
+    MacControlShiftF4 = 469
+    MacControlShiftF5 = 470
+    MacControlShiftF6 = 471
+    MacControlShiftF7 = 472
+    MacControlShiftF8 = 473
+    MacControlShiftF9 = 474
+    MacControlShiftF10 = 475
+    MacControlShiftF11 = 476
+    MacControlShiftF12 = 477
 
 
+from ..UI import KeyboardKey
+from ..UI import ModifierKey
 class ShortcutKeySettings:
     @overload
     def Equals(self, obj: Object) -> bool: ...
     @overload
+    @staticmethod
+    def GetDefaults() -> Iterable[KeyboardShortcut]: ...
+    @overload
     def GetHashCode(self) -> int: ...
+    @overload
+    @staticmethod
+    def GetLabel(key: ShortcutKey) -> str: ...
     @overload
     @staticmethod
     def GetMacro(key: ShortcutKey) -> str: ...
     @overload
+    @staticmethod
+    def GetShortcuts() -> Iterable[KeyboardShortcut]: ...
+    @overload
     def GetType(self) -> Type: ...
+    @overload
+    @staticmethod
+    def IsAcceptableKeyCombo(key: KeyboardKey, modifier: ModifierKey) -> bool: ...
     @overload
     @staticmethod
     def SetMacro(key: ShortcutKey, macro: str) -> None: ...
     @overload
+    @staticmethod
+    def SetMacro(key: KeyboardKey, modifier: ModifierKey, macro: str) -> None: ...
+    @overload
     def ToString(self) -> str: ...
+    @overload
+    @staticmethod
+    def Update(shortcuts: Iterable[KeyboardShortcut], replaceAll: bool) -> None: ...
 
 
 class SmartTrackSettings:
@@ -2138,6 +3074,9 @@ class SmartTrackSettings:
     @overload
     @property
     def ActivePointColor() -> Color: ...
+    @overload
+    @property
+    def GuideColor() -> Color: ...
     @overload
     @property
     def LineColor() -> Color: ...
@@ -2178,6 +3117,9 @@ class SmartTrackSettings:
     @overload
     @ActivePointColor.setter
     def ActivePointColor(value: Color) -> None: ...
+    @overload
+    @GuideColor.setter
+    def GuideColor(value: Color) -> None: ...
     @overload
     @LineColor.setter
     def LineColor(value: Color) -> None: ...
@@ -2220,6 +3162,9 @@ class SmartTrackSettingsState:
     def ActivePointColor(self) -> Color: ...
     @overload
     @property
+    def GuideColor(self) -> Color: ...
+    @overload
+    @property
     def LineColor(self) -> Color: ...
     @overload
     @property
@@ -2253,6 +3198,9 @@ class SmartTrackSettingsState:
     @ActivePointColor.setter
     def ActivePointColor(self, value: Color) -> None: ...
     @overload
+    @GuideColor.setter
+    def GuideColor(self, value: Color) -> None: ...
+    @overload
     @LineColor.setter
     def LineColor(self, value: Color) -> None: ...
     @overload
@@ -2280,6 +3228,13 @@ class SmartTrackSettingsState:
     def ToString(self) -> str: ...
 
 
+class ViewRotationStyle(Enum):
+    RotateAroundWorldAxes = 0
+    RotateRelativeToView = 1
+    RotateRelativeToViewV2Style = 2
+    RotateAroundCplaneZaxis = 3
+
+
 class ViewSettings:
     @overload
     def Equals(self, obj: Object) -> bool: ...
@@ -2288,13 +3243,25 @@ class ViewSettings:
     def AlwaysPanParallelViews() -> bool: ...
     @overload
     @property
+    def AutoAdjustTargetDepth() -> bool: ...
+    @overload
+    @property
+    def DefinedViewSetClippingPlanes() -> bool: ...
+    @overload
+    @property
     def DefinedViewSetCPlane() -> bool: ...
+    @overload
+    @property
+    def DefinedViewSetDisplayMode() -> bool: ...
     @overload
     @property
     def DefinedViewSetProjection() -> bool: ...
     @overload
     @property
     def LinkedViewports() -> bool: ...
+    @overload
+    @property
+    def PanPlanParallelViewsWithControlShiftRMB() -> bool: ...
     @overload
     @property
     def PanReverseKeyboardAction() -> bool: ...
@@ -2312,7 +3279,22 @@ class ViewSettings:
     def RotateToView() -> bool: ...
     @overload
     @property
+    def RotateViewAroundAutogumball() -> bool: ...
+    @overload
+    @property
+    def RotateViewAroundObjectAtMouseCursor() -> bool: ...
+    @overload
+    @property
     def SingleClickMaximize() -> bool: ...
+    @overload
+    @property
+    def ThreePointPerspectiveLensLength() -> float: ...
+    @overload
+    @property
+    def TwoPointPerspectiveLensLength() -> float: ...
+    @overload
+    @property
+    def ViewRotation() -> ViewRotationStyle: ...
     @overload
     @property
     def ZoomExtentsParallelViewBorder() -> float: ...
@@ -2339,14 +3321,26 @@ class ViewSettings:
     @AlwaysPanParallelViews.setter
     def AlwaysPanParallelViews(value: bool) -> None: ...
     @overload
+    @AutoAdjustTargetDepth.setter
+    def AutoAdjustTargetDepth(value: bool) -> None: ...
+    @overload
+    @DefinedViewSetClippingPlanes.setter
+    def DefinedViewSetClippingPlanes(value: bool) -> None: ...
+    @overload
     @DefinedViewSetCPlane.setter
     def DefinedViewSetCPlane(value: bool) -> None: ...
+    @overload
+    @DefinedViewSetDisplayMode.setter
+    def DefinedViewSetDisplayMode(value: bool) -> None: ...
     @overload
     @DefinedViewSetProjection.setter
     def DefinedViewSetProjection(value: bool) -> None: ...
     @overload
     @LinkedViewports.setter
     def LinkedViewports(value: bool) -> None: ...
+    @overload
+    @PanPlanParallelViewsWithControlShiftRMB.setter
+    def PanPlanParallelViewsWithControlShiftRMB(value: bool) -> None: ...
     @overload
     @PanReverseKeyboardAction.setter
     def PanReverseKeyboardAction(value: bool) -> None: ...
@@ -2363,8 +3357,17 @@ class ViewSettings:
     @RotateToView.setter
     def RotateToView(value: bool) -> None: ...
     @overload
+    @RotateViewAroundAutogumball.setter
+    def RotateViewAroundAutogumball(value: bool) -> None: ...
+    @overload
+    @RotateViewAroundObjectAtMouseCursor.setter
+    def RotateViewAroundObjectAtMouseCursor(value: bool) -> None: ...
+    @overload
     @SingleClickMaximize.setter
     def SingleClickMaximize(value: bool) -> None: ...
+    @overload
+    @ViewRotation.setter
+    def ViewRotation(value: ViewRotationStyle) -> None: ...
     @overload
     @ZoomExtentsParallelViewBorder.setter
     def ZoomExtentsParallelViewBorder(value: float) -> None: ...
@@ -2416,6 +3419,15 @@ class ViewSettingsState:
     def SingleClickMaximize(self) -> bool: ...
     @overload
     @property
+    def ThreePointPerspectiveLensLength(self) -> float: ...
+    @overload
+    @property
+    def TwoPointPerspectiveLensLength(self) -> float: ...
+    @overload
+    @property
+    def ViewRotation(self) -> ViewRotationStyle: ...
+    @overload
+    @property
     def ZoomExtentsParallelViewBorder(self) -> float: ...
     @overload
     @property
@@ -2457,6 +3469,9 @@ class ViewSettingsState:
     @overload
     @SingleClickMaximize.setter
     def SingleClickMaximize(self, value: bool) -> None: ...
+    @overload
+    @ViewRotation.setter
+    def ViewRotation(self, value: ViewRotationStyle) -> None: ...
     @overload
     @ZoomExtentsParallelViewBorder.setter
     def ZoomExtentsParallelViewBorder(self, value: float) -> None: ...

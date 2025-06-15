@@ -17,7 +17,7 @@ def find_stubs(package):
 
 setuptools.setup(
     name="GH_IO-stubs",
-    version="7.37.24107",
+    version="8.20.25157",
     package_data=find_stubs("GH_IO-stubs"),
     packages=['GH_IO-stubs'],
     author="Robert McNeel & Associates",

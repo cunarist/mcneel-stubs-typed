@@ -89,6 +89,9 @@ class ProviderIds:
     def ImageFileInfo() -> Guid: ...
     @overload
     @property
+    def ImageFileInfo_V8() -> Guid: ...
+    @overload
+    @property
     def LinearWorkflow() -> Guid: ...
     @overload
     @property

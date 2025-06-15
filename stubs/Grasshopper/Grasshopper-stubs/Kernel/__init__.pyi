@@ -5,6 +5,7 @@ import Attributes
 import Components
 import Data
 import Expressions
+import GDL
 import Geometry
 import Graphs
 import Parameters
@@ -14,7 +15,7 @@ import Types
 import Undo
 import Utility
 
-__all__ = ['Attributes', 'Components', 'Data', 'Expressions', 'Geometry', 'Graphs', 'Parameters', 'Sorting', 'Special', 'Types', 'Undo', 'Utility']
+__all__ = ['Attributes', 'Components', 'Data', 'Expressions', 'GDL', 'Geometry', 'Graphs', 'Parameters', 'Sorting', 'Special', 'Types', 'Undo', 'Utility']
 
 
 class AttributesChangedEventHandler:
@@ -1596,6 +1597,12 @@ class GH_Component(GH_ActiveObject):
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+class GH_ComponentPaletteStyle(Enum):
+    Alphabetical = 0
+    TabPanel = 1
+    Hue = 2
+
+
 class GH_ComponentParamServer:
     def __iter__(self) -> Iterator[IGH_Param]: ...
     @overload
@@ -1735,8 +1742,8 @@ class GH_ComponentParamServer:
     def WriteParamHashData(writer: BinaryWriter, param: IGH_Param, fields: GH_ParamHashFields) -> None: ...
 
 
-from ..GUI.Ribbon import GH_Layout
 from .Graphs import IGH_Graph
+from ..GUI.Ribbon import GH_Layout
 class GH_ComponentServer:
     @overload
     def __init__(self): ...
@@ -1767,6 +1774,8 @@ class GH_ComponentServer:
     @staticmethod
     def CopyFileToAppropriateFolder(filepath: str, moveOriginalToBin: bool) -> str: ...
     @overload
+    def CreateComponentPalette(self, style: GH_ComponentPaletteStyle) -> Bitmap: ...
+    @overload
     def DestroyLoadingUI(self) -> None: ...
     @overload
     def EmitGraph(self, id: Guid) -> IGH_Graph: ...
@@ -1784,9 +1793,9 @@ class GH_ComponentServer:
     @overload
     def FindAssembly(self, libraryId: Guid) -> GH_AssemblyInfo: ...
     @overload
-    def FindAssemblyByObject(self, object: IGH_DocumentObject) -> GH_AssemblyInfo: ...
-    @overload
     def FindAssemblyByObject(self, objectId: Guid) -> GH_AssemblyInfo: ...
+    @overload
+    def FindAssemblyByObject(self, object: IGH_DocumentObject) -> GH_AssemblyInfo: ...
     @overload
     def FindObjectByName(self, name: str, ignoreWhiteSpace: bool, ignoreCapitalisation: bool) -> IGH_ObjectProxy: ...
     @overload
@@ -1825,6 +1834,9 @@ class GH_ComponentServer:
     @overload
     @property
     def LoadingExceptions(self) -> List: ...
+    @overload
+    @property
+    def NoLoadExtension() -> str: ...
     @overload
     @property
     def ObjectProxies(self) -> Iterable[IGH_ObjectProxy]: ...
@@ -1867,9 +1879,9 @@ class GH_ComponentServer:
     @overload
     def RemoveCachedGraph(self, id: Guid) -> bool: ...
     @overload
-    def RemoveCachedObject(self, id: Guid) -> bool: ...
-    @overload
     def RemoveCachedObject(self, userObjectFilePath: str) -> bool: ...
+    @overload
+    def RemoveCachedObject(self, id: Guid) -> bool: ...
     @overload
     def SaveAliases(self) -> None: ...
     @overload
@@ -1972,36 +1984,51 @@ class GH_Conversion(Enum):
     Both = 2
 
 
-from .Types import UVInterval
-from .Types import Complex
 from .Expressions import GH_Variant
+from .Types import GH_Time
+from .Types import GH_String
+from .Types import GH_Guid
+from .Types import GH_Colour
+from .Types import GH_Interval
+from .Types import GH_Interval2D
+from .Types import GH_Matrix
+from .Types import GH_Point
+from .Types import GH_Vector
+from .Types import GH_Plane
+from .Types import GH_Box
+from .Types import GH_Line
+from .Types import GH_Rectangle
+from .Types import GH_Circle
+from .Types import GH_Arc
+from .Types import GH_Curve
+from .Types import GH_Surface
+from .Types import GH_Brep
+from .Types import GH_Extrusion
+from .Types import GH_SubD
+from .Types import GH_Mesh
+from .Types import GH_MeshFace
+from .Types import GH_PointCloud
+from .Types import GH_InstanceReference
+from .Types import GH_Hatch
+from .Types import GH_TextEntity
+from .Types import GH_TextDot
+from .Types import GH_Leader
+from .Types import GH_LinearDimension
+from .Types import GH_RadialDimension
+from .Types import GH_AngularDimension
+from .Types import GH_OrdinateDimension
+from .Types import GH_Centermark
+from .Types import GH_Dimension
+from .Types import GH_AnnotationBase
+from .Types import GH_Light
+from .Types import Complex
+from .Types import UVInterval
 from .Types import IGH_Goo
 from .Types import IGH_GeometricGoo
 from .Types import GH_Boolean
 from .Types import GH_Integer
 from .Types import GH_Number
 from .Types import GH_ComplexNumber
-from .Types import GH_Time
-from .Types import GH_String
-from .Types import GH_Colour
-from .Types import GH_Guid
-from .Types import GH_Interval
-from .Types import GH_Interval2D
-from .Types import GH_Matrix
-from .Types import GH_Vector
-from .Types import GH_Point
-from .Types import GH_Plane
-from .Types import GH_Box
-from .Types import GH_Rectangle
-from .Types import GH_Circle
-from .Types import GH_Arc
-from .Types import GH_Line
-from .Types import GH_Curve
-from .Types import GH_Surface
-from .Types import GH_Brep
-from .Types import GH_SubD
-from .Types import GH_Mesh
-from .Types import GH_MeshFace
 class GH_Convert:
     PureDateTicks: Int64
     PureTimeTicks: Int64
@@ -2017,6 +2044,9 @@ class GH_Convert:
     @overload
     @staticmethod
     def CommonObjectToByteArray(data: CommonObject) -> Iterable[Byte]: ...
+    @overload
+    @staticmethod
+    def CreateDateAndTime(dateTime: DateTime) -> DateTime: ...
     @overload
     @staticmethod
     def CreatePureDate(date: DateTime) -> DateTime: ...
@@ -2050,10 +2080,16 @@ class GH_Convert:
     @staticmethod
     def GetCurveFromDocument(doc: RhinoDoc, id: Guid) -> Tuple[bool, Curve]: ...
     @overload
+    @staticmethod
+    def GetExtrusionFromDocument(doc: RhinoDoc, id: Guid) -> Tuple[bool, Extrusion]: ...
+    @overload
     def GetHashCode(self) -> int: ...
     @overload
     @staticmethod
     def GetMeshFromDocument(doc: RhinoDoc, id: Guid) -> Tuple[bool, Mesh]: ...
+    @overload
+    @staticmethod
+    def GetPlaneFromDocument(doc: RhinoDoc, id: Guid) -> Tuple[bool, Plane]: ...
     @overload
     @staticmethod
     def GetPointFromDocument(doc: RhinoDoc, id: Guid) -> Tuple[bool, Point3d]: ...
@@ -2095,6 +2131,15 @@ class GH_Convert:
     @overload
     @staticmethod
     def To_GH_ClassPrefixTypeName(old_name: str) -> str: ...
+    @overload
+    @staticmethod
+    def ToAnnotationBase_Primary(data: Object, rc: AnnotationBase) -> Tuple[bool, AnnotationBase]: ...
+    @overload
+    @staticmethod
+    def ToAnnotationBase(data: Object, rc: AnnotationBase, conversion_level: GH_Conversion) -> Tuple[bool, AnnotationBase]: ...
+    @overload
+    @staticmethod
+    def ToAnnotationBase_Secondary(data: Object, rc: AnnotationBase) -> Tuple[bool, AnnotationBase]: ...
     @overload
     @staticmethod
     def ToArc_Primary(data: Object, rc: Arc) -> Tuple[bool, Arc]: ...
@@ -2187,6 +2232,15 @@ class GH_Convert:
     def ToDate_Secondary(data: Object, destination: DateTime) -> Tuple[bool, DateTime]: ...
     @overload
     @staticmethod
+    def ToDimension_Primary(data: Object, rc: Dimension) -> Tuple[bool, Dimension]: ...
+    @overload
+    @staticmethod
+    def ToDimension(data: Object, rc: Dimension, conversion_level: GH_Conversion) -> Tuple[bool, Dimension]: ...
+    @overload
+    @staticmethod
+    def ToDimension_Secondary(data: Object, rc: Dimension) -> Tuple[bool, Dimension]: ...
+    @overload
+    @staticmethod
     def ToDouble_Primary(data: Object, destination: float) -> Tuple[bool, float]: ...
     @overload
     @staticmethod
@@ -2196,10 +2250,31 @@ class GH_Convert:
     def ToDouble_Secondary(data: Object, destination: float) -> Tuple[bool, float]: ...
     @overload
     @staticmethod
+    def ToExtrusion_Primary(data: Object, rc: Extrusion) -> Tuple[bool, Extrusion]: ...
+    @overload
+    @staticmethod
+    def ToExtrusion(data: Object, rc: Extrusion, conversion_level: GH_Conversion) -> Tuple[bool, Extrusion]: ...
+    @overload
+    @staticmethod
+    def ToExtrusion_Secondary(data: Object, rc: Extrusion) -> Tuple[bool, Extrusion]: ...
+    @overload
+    @staticmethod
     def ToGeometricGoo(data: Object) -> IGH_GeometricGoo: ...
     @overload
     @staticmethod
     def ToGeometryBase(data: Object) -> GeometryBase: ...
+    @overload
+    @staticmethod
+    def ToGHAngularDimension_Primary(data: Object, target: GH_AngularDimension) -> Tuple[bool, GH_AngularDimension]: ...
+    @overload
+    @staticmethod
+    def ToGHAngularDimension(data: Object, conversion_level: GH_Conversion, target: GH_AngularDimension) -> Tuple[bool, GH_AngularDimension]: ...
+    @overload
+    @staticmethod
+    def ToGHAngularDimension_Secondary(data: Object, target: GH_AngularDimension) -> Tuple[bool, GH_AngularDimension]: ...
+    @overload
+    @staticmethod
+    def ToGHAnnotationBase(data: Object, conversion_level: GH_Conversion, target: GH_AnnotationBase) -> Tuple[bool, GH_AnnotationBase]: ...
     @overload
     @staticmethod
     def ToGHArc_Primary(data: Object, target: GH_Arc) -> Tuple[bool, GH_Arc]: ...
@@ -2238,6 +2313,15 @@ class GH_Convert:
     def ToGHBrep_Secondary(data: Object, target: GH_Brep) -> Tuple[bool, GH_Brep]: ...
     @overload
     @staticmethod
+    def ToGHCentermark_Primary(data: Object, target: GH_Centermark) -> Tuple[bool, GH_Centermark]: ...
+    @overload
+    @staticmethod
+    def ToGHCentermark(data: Object, conversion_level: GH_Conversion, target: GH_Centermark) -> Tuple[bool, GH_Centermark]: ...
+    @overload
+    @staticmethod
+    def ToGHCentermark_Secondary(data: Object, target: GH_Centermark) -> Tuple[bool, GH_Centermark]: ...
+    @overload
+    @staticmethod
     def ToGHCircle_Primary(data: Object, target: GH_Circle) -> Tuple[bool, GH_Circle]: ...
     @overload
     @staticmethod
@@ -2274,6 +2358,18 @@ class GH_Convert:
     def ToGHCurve_Secondary(data: Object, target: GH_Curve) -> Tuple[bool, GH_Curve]: ...
     @overload
     @staticmethod
+    def ToGHDimension(data: Object, conversion_level: GH_Conversion, target: GH_Dimension) -> Tuple[bool, GH_Dimension]: ...
+    @overload
+    @staticmethod
+    def ToGHExtrusion_Primary(data: Object, target: GH_Extrusion) -> Tuple[bool, GH_Extrusion]: ...
+    @overload
+    @staticmethod
+    def ToGHExtrusion(data: Object, conversion_level: GH_Conversion, target: GH_Extrusion) -> Tuple[bool, GH_Extrusion]: ...
+    @overload
+    @staticmethod
+    def ToGHExtrusion_Secondary(data: Object, target: GH_Extrusion) -> Tuple[bool, GH_Extrusion]: ...
+    @overload
+    @staticmethod
     def ToGHGuid_Primary(data: Object, target: GH_Guid) -> Tuple[bool, GH_Guid]: ...
     @overload
     @staticmethod
@@ -2281,6 +2377,24 @@ class GH_Convert:
     @overload
     @staticmethod
     def ToGHGuid_Secondary(data: Object, target: GH_Guid) -> Tuple[bool, GH_Guid]: ...
+    @overload
+    @staticmethod
+    def ToGHHatch_Primary(data: Object, target: GH_Hatch) -> Tuple[bool, GH_Hatch]: ...
+    @overload
+    @staticmethod
+    def ToGHHatch(data: Object, conversion_level: GH_Conversion, target: GH_Hatch) -> Tuple[bool, GH_Hatch]: ...
+    @overload
+    @staticmethod
+    def ToGHHatch_Secondary(data: Object, target: GH_Hatch) -> Tuple[bool, GH_Hatch]: ...
+    @overload
+    @staticmethod
+    def ToGHInstanceReference_Primary(data: Object, target: GH_InstanceReference) -> Tuple[bool, GH_InstanceReference]: ...
+    @overload
+    @staticmethod
+    def ToGHInstanceReference(data: Object, conversion_level: GH_Conversion, target: GH_InstanceReference) -> Tuple[bool, GH_InstanceReference]: ...
+    @overload
+    @staticmethod
+    def ToGHInstanceReference_Secondary(data: Object, target: GH_InstanceReference) -> Tuple[bool, GH_InstanceReference]: ...
     @overload
     @staticmethod
     def ToGHInteger_Primary(data: Object, target: GH_Integer) -> Tuple[bool, GH_Integer]: ...
@@ -2310,6 +2424,24 @@ class GH_Convert:
     def ToGHInterval2D_Secondary(data: Object, target: GH_Interval2D) -> Tuple[bool, GH_Interval2D]: ...
     @overload
     @staticmethod
+    def ToGHLeader_Primary(data: Object, target: GH_Leader) -> Tuple[bool, GH_Leader]: ...
+    @overload
+    @staticmethod
+    def ToGHLeader(data: Object, conversion_level: GH_Conversion, target: GH_Leader) -> Tuple[bool, GH_Leader]: ...
+    @overload
+    @staticmethod
+    def ToGHLeader_Secondary(data: Object, target: GH_Leader) -> Tuple[bool, GH_Leader]: ...
+    @overload
+    @staticmethod
+    def ToGHLight_Primary(data: Object, target: GH_Light) -> Tuple[bool, GH_Light]: ...
+    @overload
+    @staticmethod
+    def ToGHLight(data: Object, conversion_level: GH_Conversion, target: GH_Light) -> Tuple[bool, GH_Light]: ...
+    @overload
+    @staticmethod
+    def ToGHLight_Secondary(data: Object, target: GH_Light) -> Tuple[bool, GH_Light]: ...
+    @overload
+    @staticmethod
     def ToGHLine_Primary(data: Object, target: GH_Line) -> Tuple[bool, GH_Line]: ...
     @overload
     @staticmethod
@@ -2317,6 +2449,15 @@ class GH_Convert:
     @overload
     @staticmethod
     def ToGHLine_Secondary(data: Object, target: GH_Line) -> Tuple[bool, GH_Line]: ...
+    @overload
+    @staticmethod
+    def ToGHLinearDimension_Primary(data: Object, target: GH_LinearDimension) -> Tuple[bool, GH_LinearDimension]: ...
+    @overload
+    @staticmethod
+    def ToGHLinearDimension(data: Object, conversion_level: GH_Conversion, target: GH_LinearDimension) -> Tuple[bool, GH_LinearDimension]: ...
+    @overload
+    @staticmethod
+    def ToGHLinearDimension_Secondary(data: Object, target: GH_LinearDimension) -> Tuple[bool, GH_LinearDimension]: ...
     @overload
     @staticmethod
     def ToGHMatrix_Primary(data: Object, target: GH_Matrix) -> Tuple[bool, GH_Matrix]: ...
@@ -2355,6 +2496,15 @@ class GH_Convert:
     def ToGHNumber_Secondary(data: Object, target: GH_Number) -> Tuple[bool, GH_Number]: ...
     @overload
     @staticmethod
+    def ToGHOrdinateDimension_Primary(data: Object, target: GH_OrdinateDimension) -> Tuple[bool, GH_OrdinateDimension]: ...
+    @overload
+    @staticmethod
+    def ToGHOrdinateDimension(data: Object, conversion_level: GH_Conversion, target: GH_OrdinateDimension) -> Tuple[bool, GH_OrdinateDimension]: ...
+    @overload
+    @staticmethod
+    def ToGHOrdinateDimension_Secondary(data: Object, target: GH_OrdinateDimension) -> Tuple[bool, GH_OrdinateDimension]: ...
+    @overload
+    @staticmethod
     def ToGHPlane_Primary(data: Object, target: GH_Plane) -> Tuple[bool, GH_Plane]: ...
     @overload
     @staticmethod
@@ -2371,6 +2521,24 @@ class GH_Convert:
     @overload
     @staticmethod
     def ToGHPoint_Secondary(data: Object, target: GH_Point) -> Tuple[bool, GH_Point]: ...
+    @overload
+    @staticmethod
+    def ToGHPointCloud_Primary(data: Object, target: GH_PointCloud) -> Tuple[bool, GH_PointCloud]: ...
+    @overload
+    @staticmethod
+    def ToGHPointCloud(data: Object, conversion_level: GH_Conversion, target: GH_PointCloud) -> Tuple[bool, GH_PointCloud]: ...
+    @overload
+    @staticmethod
+    def ToGHPointCloud_Secondary(data: Object, target: GH_PointCloud) -> Tuple[bool, GH_PointCloud]: ...
+    @overload
+    @staticmethod
+    def ToGHRadialDimension_Primary(data: Object, target: GH_RadialDimension) -> Tuple[bool, GH_RadialDimension]: ...
+    @overload
+    @staticmethod
+    def ToGHRadialDimension(data: Object, conversion_level: GH_Conversion, target: GH_RadialDimension) -> Tuple[bool, GH_RadialDimension]: ...
+    @overload
+    @staticmethod
+    def ToGHRadialDimension_Secondary(data: Object, target: GH_RadialDimension) -> Tuple[bool, GH_RadialDimension]: ...
     @overload
     @staticmethod
     def ToGHRectangle_Primary(data: Object, target: GH_Rectangle) -> Tuple[bool, GH_Rectangle]: ...
@@ -2409,6 +2577,24 @@ class GH_Convert:
     def ToGHSurface_Secondary(data: Object, target: GH_Surface) -> Tuple[bool, GH_Surface]: ...
     @overload
     @staticmethod
+    def ToGHTextDot_Primary(data: Object, target: GH_TextDot) -> Tuple[bool, GH_TextDot]: ...
+    @overload
+    @staticmethod
+    def ToGHTextDot(data: Object, conversion_level: GH_Conversion, target: GH_TextDot) -> Tuple[bool, GH_TextDot]: ...
+    @overload
+    @staticmethod
+    def ToGHTextDot_Secondary(data: Object, target: GH_TextDot) -> Tuple[bool, GH_TextDot]: ...
+    @overload
+    @staticmethod
+    def ToGHTextEntity_Primary(data: Object, target: GH_TextEntity) -> Tuple[bool, GH_TextEntity]: ...
+    @overload
+    @staticmethod
+    def ToGHTextEntity(data: Object, conversion_level: GH_Conversion, target: GH_TextEntity) -> Tuple[bool, GH_TextEntity]: ...
+    @overload
+    @staticmethod
+    def ToGHTextEntity_Secondary(data: Object, target: GH_TextEntity) -> Tuple[bool, GH_TextEntity]: ...
+    @overload
+    @staticmethod
     def ToGHTime_Primary(data: Object, target: GH_Time) -> Tuple[bool, GH_Time]: ...
     @overload
     @staticmethod
@@ -2439,6 +2625,15 @@ class GH_Convert:
     def ToGUID_Secondary(data: Object, destination: Guid) -> Tuple[bool, Guid]: ...
     @overload
     @staticmethod
+    def ToHatch_Primary(data: Object, rc: Hatch) -> Tuple[bool, Hatch]: ...
+    @overload
+    @staticmethod
+    def ToHatch(data: Object, rc: Hatch, conversion_level: GH_Conversion) -> Tuple[bool, Hatch]: ...
+    @overload
+    @staticmethod
+    def ToHatch_Secondary(data: Object, rc: Hatch) -> Tuple[bool, Hatch]: ...
+    @overload
+    @staticmethod
     def ToInt32_Primary(data: Object, destination: int) -> Tuple[bool, int]: ...
     @overload
     @staticmethod
@@ -2455,6 +2650,18 @@ class GH_Convert:
     @overload
     @staticmethod
     def ToInterval_Secondary(data: Object, rc: Interval) -> Tuple[bool, Interval]: ...
+    @overload
+    @staticmethod
+    def ToLeader_Primary(data: Object, rc: Leader) -> Tuple[bool, Leader]: ...
+    @overload
+    @staticmethod
+    def ToLeader(data: Object, rc: Leader, conversion_level: GH_Conversion) -> Tuple[bool, Leader]: ...
+    @overload
+    @staticmethod
+    def ToLeader_Secondary(data: Object, rc: Leader) -> Tuple[bool, Leader]: ...
+    @overload
+    @staticmethod
+    def ToLight_Secondary(data: Object, rc: Light) -> Tuple[bool, Light]: ...
     @overload
     @staticmethod
     def ToLine_Primary(data: Object, rc: Line) -> Tuple[bool, Line]: ...
@@ -2511,6 +2718,15 @@ class GH_Convert:
     def ToPoint3d_Secondary(data: Object, rc: Point3d) -> Tuple[bool, Point3d]: ...
     @overload
     @staticmethod
+    def ToPointCloud_Primary(data: Object, rc: PointCloud) -> Tuple[bool, PointCloud]: ...
+    @overload
+    @staticmethod
+    def ToPointCloud(data: Object, rc: PointCloud, conversion_level: GH_Conversion) -> Tuple[bool, PointCloud]: ...
+    @overload
+    @staticmethod
+    def ToPointCloud_Secondary(data: Object, rc: PointCloud) -> Tuple[bool, PointCloud]: ...
+    @overload
+    @staticmethod
     def ToPointF(in_: Point3d) -> PointF: ...
     @overload
     @staticmethod
@@ -2532,10 +2748,10 @@ class GH_Convert:
     def ToSafeRhinoCommonObject(data: Object) -> Object: ...
     @overload
     @staticmethod
-    def ToSHA_Hash(data: Stream) -> Guid: ...
+    def ToSHA_Hash(data: Iterable[Byte]) -> Guid: ...
     @overload
     @staticmethod
-    def ToSHA_Hash(data: Iterable[Byte]) -> Guid: ...
+    def ToSHA_Hash(data: Stream) -> Guid: ...
     @overload
     @staticmethod
     def ToSize(in_: SizeF) -> Size: ...
@@ -2552,6 +2768,12 @@ class GH_Convert:
     def ToString_Secondary(data: Object, destination: str) -> Tuple[bool, str]: ...
     @overload
     @staticmethod
+    def ToSubD_Primary(data: Object, rc: SubD) -> Tuple[bool, SubD]: ...
+    @overload
+    @staticmethod
+    def ToSubD(data: Object, rc: SubD, conversion_level: GH_Conversion) -> Tuple[bool, SubD]: ...
+    @overload
+    @staticmethod
     def ToSubD_Secondary(data: Object, rc: SubD) -> Tuple[bool, SubD]: ...
     @overload
     @staticmethod
@@ -2562,6 +2784,24 @@ class GH_Convert:
     @overload
     @staticmethod
     def ToSurface_Secondary(data: Object, rc: Surface) -> Tuple[bool, Surface]: ...
+    @overload
+    @staticmethod
+    def ToTextDot_Primary(data: Object, rc: TextDot) -> Tuple[bool, TextDot]: ...
+    @overload
+    @staticmethod
+    def ToTextDot(data: Object, rc: TextDot, conversion_level: GH_Conversion) -> Tuple[bool, TextDot]: ...
+    @overload
+    @staticmethod
+    def ToTextDot_Secondary(data: Object, rc: TextDot) -> Tuple[bool, TextDot]: ...
+    @overload
+    @staticmethod
+    def ToTextEntity_Primary(data: Object, rc: TextEntity) -> Tuple[bool, TextEntity]: ...
+    @overload
+    @staticmethod
+    def ToTextEntity(data: Object, rc: TextEntity, conversion_level: GH_Conversion) -> Tuple[bool, TextEntity]: ...
+    @overload
+    @staticmethod
+    def ToTextEntity_Secondary(data: Object, rc: TextEntity) -> Tuple[bool, TextEntity]: ...
     @overload
     @staticmethod
     def ToUVInterval_Primary(data: Object, rc: UVInterval) -> Tuple[bool, UVInterval]: ...
@@ -2787,13 +3027,13 @@ class GH_DocSettingsEventArgs:
     def ToString(self) -> str: ...
 
 
-from .Undo import GH_UndoServer
 from ..GUI.Alignment import GH_Align
 from ..GUI.Alignment import GH_Distribute
+from .Undo import GH_UndoRecord
 from ..GUI.RemotePanel import RcpLayout
 from .Expressions import GH_Variant
 from .Expressions import GH_ExpressionParser
-from .Undo import GH_UndoRecord
+from .Undo import GH_UndoServer
 class GH_Document:
     @overload
     def __init__(self): ...
@@ -2963,19 +3203,19 @@ class GH_Document:
     @overload
     def FindClusters(self, id: Guid) -> List: ...
     @overload
-    def FindComponent(self, pt: Point) -> IGH_Component: ...
-    @overload
     def FindComponent(self, id: Guid) -> IGH_Component: ...
+    @overload
+    def FindComponent(self, pt: Point) -> IGH_Component: ...
     @overload
     def FindFloatingParameter(self, pt: Point) -> IGH_Param: ...
     @overload
     def FindInputParameter(self, pt: Point) -> IGH_Param: ...
     @overload
-    def FindObject(self, id: Guid, topLevelOnly: bool) -> IGH_DocumentObject: ...
-    @overload
     def FindObject(self, id: Guid, topLevelOnly: bool) -> T: ...
     @overload
     def FindObject(self, pt: PointF, radius: Single) -> IGH_DocumentObject: ...
+    @overload
+    def FindObject(self, id: Guid, topLevelOnly: bool) -> IGH_DocumentObject: ...
     @overload
     def FindObjects(self, keys: List, maxCount: int) -> List: ...
     @overload
@@ -2989,6 +3229,9 @@ class GH_Document:
     @overload
     @property
     def AbortRequested(self) -> bool: ...
+    @overload
+    @property
+    def ActiveDoc(self) -> bool: ...
     @overload
     @property
     def AttributeCount(self) -> int: ...
@@ -3103,6 +3346,9 @@ class GH_Document:
     @overload
     @property
     def RemotePanelLayout(self) -> RcpLayout: ...
+    @overload
+    @property
+    def RhinoDocument(self) -> RhinoDoc: ...
     @overload
     @property
     def RuntimeID(self) -> UInt64: ...
@@ -3237,9 +3483,9 @@ class GH_Document:
     @overload
     def remove_UndoStateChanged(self, obj: UndoStateChangedEventHandler) -> None: ...
     @overload
-    def RemoveObject(self, attribute: IGH_Attributes, update: bool) -> bool: ...
-    @overload
     def RemoveObject(self, docObject: IGH_DocumentObject, update: bool) -> bool: ...
+    @overload
+    def RemoveObject(self, attribute: IGH_Attributes, update: bool) -> bool: ...
     @overload
     def RemoveObjects(self, objectList: Iterable[IGH_DocumentObject], update: bool) -> int: ...
     @overload
@@ -3264,6 +3510,9 @@ class GH_Document:
     def SelectAll(self) -> None: ...
     @overload
     def SelectedObjects(self) -> List: ...
+    @overload
+    @ActiveDoc.setter
+    def ActiveDoc(self, Value: bool) -> None: ...
     @overload
     @Context.setter
     def Context(self, Value: GH_DocumentContext) -> None: ...
@@ -3444,6 +3693,9 @@ class GH_DocumentIO:
     @property
     def IsDocument(self) -> bool: ...
     @overload
+    @property
+    def LocalClipboardContent(self) -> str: ...
+    @overload
     @staticmethod
     def GetDocumentIcon(filePath: str, size: Size) -> Bitmap: ...
     @overload
@@ -3481,6 +3733,9 @@ class GH_DocumentIO:
     @overload
     @Document.setter
     def Document(self, AutoPropertyValue: GH_Document) -> None: ...
+    @overload
+    @LocalClipboardContent.setter
+    def LocalClipboardContent(self, Value: str) -> None: ...
     @overload
     @staticmethod
     def ShowOverwriteDialog(filename: str) -> int: ...
@@ -3753,6 +4008,9 @@ class GH_DocumentProperties:
     def IconImageData(self) -> str: ...
     @overload
     @property
+    def KeepOpen(self) -> bool: ...
+    @overload
+    @property
     def ProjectFileName(self) -> str: ...
     @overload
     @property
@@ -3787,6 +4045,9 @@ class GH_DocumentProperties:
     @IconImageData.setter
     def IconImageData(self, Value: str) -> None: ...
     @overload
+    @KeepOpen.setter
+    def KeepOpen(self, Value: bool) -> None: ...
+    @overload
     @ProjectFileName.setter
     def ProjectFileName(self, Value: str) -> None: ...
     @overload
@@ -3807,36 +4068,6 @@ class GH_DocumentRank(Enum):
     Subsidiary = 2
 
 
-class GH_DocumentRenderMeshProvider:
-    @overload
-    def __init__(self): ...
-    @overload
-    def BoundingBox(self, vp: ViewportInfo, obj: RhinoObject, requestingPlugIn: Guid, preview: bool) -> BoundingBox: ...
-    @overload
-    def BoundingBox(self, vp: ViewportInfo, obj: RhinoObject, doc: RhinoDoc, requestingPlugIn: Guid, attrs: DisplayPipelineAttributes) -> BoundingBox: ...
-    @overload
-    def BoundingBox(self, vp: ViewportInfo, obj: RhinoObject, doc: RhinoDoc, requestingPlugIn: Guid, attrs: DisplayPipelineAttributes) -> BoundingBox: ...
-    @overload
-    def BuildCustomMeshes(self, vp: ViewportInfo, objMeshes: RenderPrimitiveList, requestingPlugIn: Guid, preview: bool) -> bool: ...
-    @overload
-    def BuildCustomMeshes(self, vp: ViewportInfo, doc: RhinoDoc, objMeshes: RenderPrimitiveList, requestingPlugIn: Guid, attrs: DisplayPipelineAttributes) -> bool: ...
-    @overload
-    def Equals(self, obj: Object) -> bool: ...
-    @overload
-    @property
-    def Name(self) -> str: ...
-    @overload
-    def GetHashCode(self) -> int: ...
-    @overload
-    def GetType(self) -> Type: ...
-    @overload
-    def ToString(self) -> str: ...
-    @overload
-    def WillBuildCustomMeshes(self, vp: ViewportInfo, obj: RhinoObject, requestingPlugIn: Guid, preview: bool) -> bool: ...
-    @overload
-    def WillBuildCustomMeshes(self, vp: ViewportInfo, obj: RhinoObject, doc: RhinoDoc, requestingPlugIn: Guid, attrs: DisplayPipelineAttributes) -> bool: ...
-
-
 class GH_DocumentServer:
     @overload
     def __init__(self): ...
@@ -3847,6 +4078,8 @@ class GH_DocumentServer:
     def add_DocumentRemoved(self, obj: DocumentRemovedEventHandler) -> None: ...
     @overload
     def AddDocument(self, document: GH_Document) -> None: ...
+    @overload
+    def AddDocument(self, document: GH_Document) -> Tuple[bool]: ...
     @overload
     def AddDocument(self, filepath: str, makeActive: bool) -> GH_Document: ...
     @overload
@@ -4247,6 +4480,18 @@ from .Types import GH_Time
 from .Types import GH_Interval
 from .Types import GH_Interval2D
 from .Types import GH_Point
+from .Types import GH_Hatch
+from .Types import GH_TextEntity
+from .Types import GH_TextDot
+from .Types import GH_Leader
+from .Types import GH_Dimension
+from .Types import GH_LinearDimension
+from .Types import GH_RadialDimension
+from .Types import GH_AngularDimension
+from .Types import GH_OrdinateDimension
+from .Types import GH_Centermark
+from .Types import GH_InstanceReference
+from .Types import GH_DetailView
 from .Types import GH_Vector
 from .Types import GH_Plane
 from .Types import GH_Line
@@ -4255,10 +4500,12 @@ from .Types import GH_Arc
 from .Types import GH_Curve
 from .Types import GH_Surface
 from .Types import GH_Brep
+from .Types import GH_Extrusion
 from .Types import GH_SubD
 from .Types import GH_Box
 from .Types import GH_Mesh
 from .Types import GH_MeshFace
+from .Types import GH_PointCloud
 from .Types import IGH_GeometricGoo
 class GH_Format:
     @overload
@@ -4266,6 +4513,12 @@ class GH_Format:
     def DefaultCulture() -> IFormatProvider: ...
     @overload
     def Equals(self, obj: Object) -> bool: ...
+    @overload
+    @staticmethod
+    def FormatAngularDimension(data: GH_AngularDimension) -> str: ...
+    @overload
+    @staticmethod
+    def FormatAnnotationValidity(val: AnnotationBase, identifier: str) -> str: ...
     @overload
     @staticmethod
     def FormatArc(data: GH_Arc) -> str: ...
@@ -4277,31 +4530,34 @@ class GH_Format:
     def FormatArcValidity(val: Arc, identifier: str) -> str: ...
     @overload
     @staticmethod
-    def FormatBoolean(data: GH_Boolean) -> str: ...
+    def FormatBoolean(data: bool) -> str: ...
     @overload
     @staticmethod
-    def FormatBoolean(data: bool) -> str: ...
+    def FormatBoolean(data: GH_Boolean) -> str: ...
     @overload
     @staticmethod
     def FormatBoundingBoxValidity(val: BoundingBox, identifier: str) -> str: ...
     @overload
     @staticmethod
-    def FormatBox(data: Box) -> str: ...
+    def FormatBox(data: GH_Box) -> str: ...
     @overload
     @staticmethod
-    def FormatBox(data: GH_Box) -> str: ...
+    def FormatBox(data: Box) -> str: ...
     @overload
     @staticmethod
     def FormatBoxValidity(val: Box, identifier: str) -> str: ...
     @overload
     @staticmethod
-    def FormatBrep(data: GH_Brep) -> str: ...
-    @overload
-    @staticmethod
     def FormatBrep(data: Brep) -> str: ...
     @overload
     @staticmethod
+    def FormatBrep(data: GH_Brep) -> str: ...
+    @overload
+    @staticmethod
     def FormatBrepValidity(val: Brep, identifier: str) -> str: ...
+    @overload
+    @staticmethod
+    def FormatCentermark(data: GH_Centermark) -> str: ...
     @overload
     @staticmethod
     def FormatCircle(data: GH_Circle) -> str: ...
@@ -4313,16 +4569,16 @@ class GH_Format:
     def FormatCircleValidity(val: Circle, identifier: str) -> str: ...
     @overload
     @staticmethod
-    def FormatColour(data: Color) -> str: ...
-    @overload
-    @staticmethod
     def FormatColour(data: GH_Colour) -> str: ...
     @overload
     @staticmethod
-    def FormatComplexNumber(num: Complex) -> str: ...
+    def FormatColour(data: Color) -> str: ...
     @overload
     @staticmethod
     def FormatComplexNumber(data: GH_ComplexNumber) -> str: ...
+    @overload
+    @staticmethod
+    def FormatComplexNumber(num: Complex) -> str: ...
     @overload
     @staticmethod
     def FormatComplexValidity(val: Complex, identifier: str) -> str: ...
@@ -4337,19 +4593,37 @@ class GH_Format:
     def FormatCurveValidity(val: Curve, identifier: str) -> str: ...
     @overload
     @staticmethod
-    def FormatDate(data: DateTime) -> str: ...
-    @overload
-    @staticmethod
     def FormatDate(data: GH_Time) -> str: ...
     @overload
     @staticmethod
-    def FormatDouble(data: GH_Number) -> str: ...
+    def FormatDate(data: DateTime) -> str: ...
+    @overload
+    @staticmethod
+    def FormatDetailView(data: GH_DetailView) -> str: ...
+    @overload
+    @staticmethod
+    def FormatDetailViewValidity(val: DetailView, identifier: str) -> str: ...
+    @overload
+    @staticmethod
+    def FormatDimension(data: GH_Dimension) -> str: ...
     @overload
     @staticmethod
     def FormatDouble(data: float) -> str: ...
     @overload
     @staticmethod
+    def FormatDouble(data: GH_Number) -> str: ...
+    @overload
+    @staticmethod
     def FormatDoubleValidity(val: float, identifier: str) -> str: ...
+    @overload
+    @staticmethod
+    def FormatExtrusion(data: GH_Extrusion) -> str: ...
+    @overload
+    @staticmethod
+    def FormatExtrusion(data: Extrusion) -> str: ...
+    @overload
+    @staticmethod
+    def FormatExtrusionValidity(val: Extrusion, identifier: str) -> str: ...
     @overload
     @staticmethod
     def FormatFilePath(path: str, maxLength: int) -> str: ...
@@ -4361,16 +4635,28 @@ class GH_Format:
     def FormatGeometry(data: IGH_GeometricGoo) -> str: ...
     @overload
     @staticmethod
-    def FormatInteger(data: GH_Integer) -> str: ...
+    def FormatHatch(data: GH_Hatch) -> str: ...
+    @overload
+    @staticmethod
+    def FormatHatchValidity(val: Hatch, identifier: str) -> str: ...
+    @overload
+    @staticmethod
+    def FormatInstanceReference(data: GH_InstanceReference) -> str: ...
+    @overload
+    @staticmethod
+    def FormatInstanceReferenceValidity(val: InstanceReferenceGeometry, identifier: str) -> str: ...
     @overload
     @staticmethod
     def FormatInteger(data: int) -> str: ...
     @overload
     @staticmethod
-    def FormatInterval(data: GH_Interval) -> str: ...
+    def FormatInteger(data: GH_Integer) -> str: ...
     @overload
     @staticmethod
     def FormatInterval(data: Interval) -> str: ...
+    @overload
+    @staticmethod
+    def FormatInterval(data: GH_Interval) -> str: ...
     @overload
     @staticmethod
     def FormatInterval(data: GH_Interval2D) -> str: ...
@@ -4385,19 +4671,28 @@ class GH_Format:
     def FormatKeys(keys: Keys) -> str: ...
     @overload
     @staticmethod
+    def FormatLeader(data: GH_Leader) -> str: ...
+    @overload
+    @staticmethod
+    def FormatLightValidity(val: Light, identifier: str) -> str: ...
+    @overload
+    @staticmethod
     def FormatLine(data: Line) -> str: ...
     @overload
     @staticmethod
     def FormatLine(data: GH_Line) -> str: ...
     @overload
     @staticmethod
+    def FormatLinearDimension(data: GH_LinearDimension) -> str: ...
+    @overload
+    @staticmethod
     def FormatLineValidity(val: Line, identifier: str) -> str: ...
     @overload
     @staticmethod
-    def FormatMatrix(data: GH_Matrix) -> str: ...
+    def FormatMatrix(data: Matrix) -> str: ...
     @overload
     @staticmethod
-    def FormatMatrix(data: Matrix) -> str: ...
+    def FormatMatrix(data: GH_Matrix) -> str: ...
     @overload
     @staticmethod
     def FormatMesh(data: GH_Mesh) -> str: ...
@@ -4413,6 +4708,9 @@ class GH_Format:
     @overload
     @staticmethod
     def FormatMeshValidity(val: Mesh, identifier: str) -> str: ...
+    @overload
+    @staticmethod
+    def FormatOrdinateDimension(data: GH_OrdinateDimension) -> str: ...
     @overload
     @staticmethod
     def FormatPlane(data: GH_Plane) -> str: ...
@@ -4433,7 +4731,19 @@ class GH_Format:
     def FormatPointCloud(data: PointCloud) -> str: ...
     @overload
     @staticmethod
+    def FormatPointCloud(data: GH_PointCloud) -> str: ...
+    @overload
+    @staticmethod
+    def FormatPointCloud(data: PointCloud, prefix: str) -> str: ...
+    @overload
+    @staticmethod
+    def FormatPointCloudValidity(val: PointCloud, identifier: str) -> str: ...
+    @overload
+    @staticmethod
     def FormatPointValidity(val: Point3d, identifier: str) -> str: ...
+    @overload
+    @staticmethod
+    def FormatRadialDimension(data: GH_RadialDimension) -> str: ...
     @overload
     @staticmethod
     def FormatRectangleValidity(val: Rectangle3d, identifier: str) -> str: ...
@@ -4442,22 +4752,37 @@ class GH_Format:
     def FormatSingle(data: Single) -> str: ...
     @overload
     @staticmethod
-    def FormatSubD(data: GH_SubD) -> str: ...
+    def FormatSubD(data: SubD) -> str: ...
     @overload
     @staticmethod
-    def FormatSubD(data: SubD) -> str: ...
+    def FormatSubD(data: GH_SubD) -> str: ...
     @overload
     @staticmethod
     def FormatSubDValidity(val: SubD, identifier: str) -> str: ...
     @overload
     @staticmethod
-    def FormatSurface(data: Brep) -> str: ...
-    @overload
-    @staticmethod
     def FormatSurface(data: GH_Surface) -> str: ...
     @overload
     @staticmethod
+    def FormatSurface(data: Brep) -> str: ...
+    @overload
+    @staticmethod
     def FormatSurfaceValidity(val: Surface, identifier: str) -> str: ...
+    @overload
+    @staticmethod
+    def FormatTextDot(data: GH_TextDot) -> str: ...
+    @overload
+    @staticmethod
+    def FormatTextDotValidity(val: TextDot, identifier: str) -> str: ...
+    @overload
+    @staticmethod
+    def FormatTextEntity(data: GH_TextEntity) -> str: ...
+    @overload
+    @staticmethod
+    def FormatTextEntity(data: TextEntity) -> str: ...
+    @overload
+    @staticmethod
+    def FormatTextEntity(data: TextEntity, prefix: str) -> str: ...
     @overload
     @staticmethod
     def FormatTransformValidity(val: Transform, identifier: str) -> str: ...
@@ -4479,7 +4804,13 @@ class GH_Format:
     def RhinoUnitName() -> str: ...
     @overload
     @staticmethod
+    def RhinoUnitName(unitSystem: UnitSystem) -> str: ...
+    @overload
+    @staticmethod
     def RhinoUnitSymbol() -> str: ...
+    @overload
+    @staticmethod
+    def RhinoUnitSymbol(unitSystem: UnitSystem) -> str: ...
     @overload
     def ToString(self) -> str: ...
     @overload
@@ -5301,6 +5632,40 @@ class GH_ParamWireDisplay(Enum):
     default = 0
     faint = 1
     hidden = 2
+
+
+class GH_PatternMatching:
+    @overload
+    @staticmethod
+    def Contains(value: str, pattern: str, ignoreCase: bool, culture: CultureInfo) -> bool: ...
+    @overload
+    @staticmethod
+    def EndsWith(value: str, pattern: str, ignoreCase: bool, culture: CultureInfo) -> bool: ...
+    @overload
+    def Equals(self, obj: Object) -> bool: ...
+    @overload
+    @staticmethod
+    def Equals(value: str, pattern: str, ignoreCase: bool, culture: CultureInfo) -> bool: ...
+    @overload
+    def GetHashCode(self) -> int: ...
+    @overload
+    def GetType(self) -> Type: ...
+    @overload
+    @staticmethod
+    def IsMatch(mode: MatchingMode, value: str, pattern: str, ignoreCase: bool, culture: CultureInfo) -> bool: ...
+    @overload
+    @staticmethod
+    def MatchRegex(value: str, pattern: str, ignoreCase: bool, culture: CultureInfo) -> bool: ...
+    @overload
+    @staticmethod
+    def MatchWildcards(value: str, pattern: str, ignoreCase: bool, culture: CultureInfo) -> bool: ...
+    @overload
+    @staticmethod
+    def StartsWith(value: str, pattern: str, ignoreCase: bool, culture: CultureInfo) -> bool: ...
+    @overload
+    def ToString(self) -> str: ...
+
+
 
 
 
@@ -6916,14 +7281,24 @@ class GH_RenderArgs:
     def MaterialSelected(self) -> RenderMaterial: ...
     @overload
     @property
+    def ModelTransform(self) -> Transform: ...
+    @overload
+    @property
     def PluginId(self) -> Guid: ...
     @overload
     @property
     def Viewport(self) -> ViewportInfo: ...
     @overload
+    @property
+    def ViewportName(self) -> str: ...
+    @overload
     def GetHashCode(self) -> int: ...
     @overload
     def GetType(self) -> Type: ...
+    @overload
+    def PopModelTransform(self) -> Transform: ...
+    @overload
+    def PushModelTransform(self, transform: Transform) -> None: ...
     @overload
     def ToString(self) -> str: ...
 
@@ -7804,8 +8179,25 @@ class GH_TypeLib:
     t_gh_brep: Type
     t_gh_subd: Type
     t_gh_surface: Type
+    t_gh_extrusion: Type
     t_gh_mesh: Type
     t_gh_meshface: Type
+    t_gh_pointcloud: Type
+    t_gh_hatch: Type
+    t_gh_textdot: Type
+    t_gh_annotationbase: Type
+    t_gh_textentity: Type
+    t_gh_leader: Type
+    t_gh_dimension: Type
+    t_gh_lineardimension: Type
+    t_gh_ordinatedimension: Type
+    t_gh_radialdimension: Type
+    t_gh_angulardimension: Type
+    t_gh_centermark: Type
+    t_gh_instancereference: Type
+    t_gh_detailview: Type
+    t_gh_light: Type
+    t_gh_modelobject: Type
     id_gh_goo: Guid
     id_gh_objwrapper: Guid
     id_gh_bool: Guid
@@ -7837,8 +8229,24 @@ class GH_TypeLib:
     id_gh_brep: Guid
     id_gh_subd: Guid
     id_gh_surface: Guid
+    id_gh_extrusion: Guid
     id_gh_mesh: Guid
     id_gh_meshface: Guid
+    id_gh_pointcloud: Guid
+    id_gh_hatch: Guid
+    id_gh_textentity: Guid
+    id_gh_textdot: Guid
+    id_gh_leader: Guid
+    id_gh_dimension: Guid
+    id_gh_lineardimension: Guid
+    id_gh_ordinatedimension: Guid
+    id_gh_radialdimension: Guid
+    id_gh_angulardimension: Guid
+    id_gh_centermark: Guid
+    id_gh_instancereference: Guid
+    id_gh_detailview: Guid
+    id_gh_light: Guid
+    id_gh_modelobject: Guid
     t_rc_plane: Type
     t_rc_point3d: Type
     t_rc_point3f: Type
@@ -7877,6 +8285,22 @@ class GH_TypeLib:
     t_rc_extrusion: Type
     t_rc_mesh: Type
     t_rc_meshface: Type
+    t_rc_point: Type
+    t_rc_pointcloud: Type
+    t_rc_hatch: Type
+    t_rc_textdot: Type
+    t_rc_annotationbase: Type
+    t_rc_textentity: Type
+    t_rc_leader: Type
+    t_rc_dimension: Type
+    t_rc_lineardimension: Type
+    t_rc_ordinatedimension: Type
+    t_rc_radialdimension: Type
+    t_rc_angulardimension: Type
+    t_rc_centermark: Type
+    t_rc_instancereference: Type
+    t_rc_detailview: Type
+    t_rc_light: Type
     id_rc_plane: Guid
     id_rc_point3d: Guid
     id_rc_point3f: Guid
@@ -7908,13 +8332,28 @@ class GH_TypeLib:
     id_rc_revsurface: Guid
     id_rc_nurbssurface: Guid
     id_rc_planesurface: Guid
+    id_rc_extrusion: Guid
     id_rc_brep: Guid
     id_rc_brepface: Guid
     id_rc_brepedge: Guid
     id_rc_subd: Guid
-    id_rc_extrusion: Guid
     id_rc_mesh: Guid
     id_rc_meshface: Guid
+    id_rc_point: Guid
+    id_rc_pointcloud: Guid
+    id_rc_hatch: Guid
+    id_rc_textentity: Guid
+    id_rc_textdot: Guid
+    id_rc_leader: Guid
+    id_rc_dimension: Guid
+    id_rc_lineardimension: Guid
+    id_rc_ordinatedimension: Guid
+    id_rc_radialdimension: Guid
+    id_rc_angulardimension: Guid
+    id_rc_centermark: Guid
+    id_rc_instancereference: Guid
+    id_rc_light: Guid
+    id_rc_detailview: Guid
     @overload
     def Equals(self, obj: Object) -> bool: ...
     @overload
@@ -8622,6 +9061,12 @@ class IGH_Component:
     def Message(self, Value: str) -> None: ...
 
 
+class IGH_ContextualComponent:
+    @overload
+    @property
+    def Archive(self) -> GH_Archive: ...
+
+
 class IGH_ContextualParameter:
     @overload
     def AssignContextualData(self, data: IEnumerable) -> None: ...
@@ -8642,6 +9087,11 @@ class IGH_ContextualParameter:
     @overload
     @property
     def Prompt(self) -> str: ...
+
+
+class IGH_ContextualParameter2:
+    @overload
+    def ClearContextualData(self) -> None: ...
 
 
 from .Data import GH_Path
@@ -9300,6 +9750,15 @@ from ..GUI.RemotePanel import IRcpItem
 class IRcpAwareObject:
     @overload
     def PublishRcpItem(self) -> IRcpItem: ...
+
+
+class MatchingMode(Enum):
+    Equals = 0
+    Wildcards = 1
+    Regex = 2
+    Contains = 3
+    StartsWith = 4
+    EndsWith = 5
 
 
 class ModifiedChangedEventHandler:

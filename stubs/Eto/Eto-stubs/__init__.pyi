@@ -397,6 +397,9 @@ class OperatingSystemPlatform:
     def IsNetCore(self) -> bool: ...
     @overload
     @property
+    def IsNetFramework(self) -> bool: ...
+    @overload
+    @property
     def IsUnix(self) -> bool: ...
     @overload
     @property
@@ -559,10 +562,7 @@ class Platforms:
     Direct2D: str
     Ios: str
     Gtk: str
-    Gtk2: str
-    Gtk3: str
     Mac64: str
-    XamMac2: str
     macOS: str
     WinForms: str
     Wpf: str

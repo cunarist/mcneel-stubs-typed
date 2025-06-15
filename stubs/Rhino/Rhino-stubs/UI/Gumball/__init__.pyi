@@ -190,14 +190,18 @@ class GumballAppearanceSettings:
     def ToString(self) -> str: ...
 
 
+from ...DocObjects import ActiveSpace
 from ...Geometry import Transform
 from ...Geometry import Point3d
 from ...Geometry import Line
+from ...Geometry import Plane
 from ...Input.Custom import PickContext
 from ...Input.Custom import GetPoint
 class GumballDisplayConduit:
     @overload
     def __init__(self): ...
+    @overload
+    def __init__(self, space: ActiveSpace): ...
     @overload
     def CheckShiftAndControlKeys(self) -> None: ...
     @overload
@@ -246,6 +250,8 @@ class GumballDisplayConduit:
     def SetBaseGumball(self, gumball: GumballObject, appearanceSettings: GumballAppearanceSettings) -> None: ...
     @overload
     def ToString(self) -> str: ...
+    @overload
+    def UpdateGumball(self, frame: Plane) -> bool: ...
     @overload
     def UpdateGumball(self, point: Point3d, worldLine: Line) -> bool: ...
 
@@ -303,6 +309,9 @@ class GumballMode(Enum):
     ExtrudeX = 18
     ExtrudeY = 19
     ExtrudeZ = 20
+    CutX = 21
+    CutY = 22
+    CutZ = 23
 
 
 from ...Geometry import BoundingBox
