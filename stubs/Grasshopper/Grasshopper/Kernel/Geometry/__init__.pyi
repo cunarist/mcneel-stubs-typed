@@ -480,7 +480,6 @@ class Node2Leaf:
     def ToString(self) -> str: ...
 
 
-from System.Collections import IEnumerator
 class Node2List:
     @overload
     def __init__(self): ...

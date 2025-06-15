@@ -4,7 +4,6 @@ from enum import Enum
 
 
 from .Custom import UserData
-from .Generic import IEnumerator
 from .Serialization import SerializationInfo
 from .Serialization import StreamingContext
 from System import Guid
@@ -257,7 +256,6 @@ from System import Action
 from System import Comparison
 from .ObjectModel import ReadOnlyCollection
 from System import Converter
-from .Generic import IEnumerator
 class CurveList:
     @overload
     def __init__(self): ...
@@ -431,7 +429,6 @@ from System import Action
 from System import Comparison
 from .ObjectModel import ReadOnlyCollection
 from System import Converter
-from .Generic import IEnumerator
 class Point3dList:
     @overload
     def __init__(self): ...

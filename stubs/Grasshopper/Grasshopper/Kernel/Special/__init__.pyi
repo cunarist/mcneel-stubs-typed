@@ -11258,7 +11258,6 @@ class GH_MarkupAttributes:
 from Rhino.Geometry import Polyline
 from Rhino.Geometry import Transform
 from Rhino.Geometry import BoundingBox
-from System.Collections import IEnumerator
 class GH_MarkupCollection:
     @overload
     def __init__(self): ...

@@ -7981,7 +7981,6 @@ from System import Action
 from System import Comparison
 from .ObjectModel import ReadOnlyCollection
 from System import Converter
-from .Generic import IEnumerator
 class Interpolator:
     @overload
     def __init__(self): ...
@@ -12765,7 +12764,6 @@ class Particle:
     def Update(self) -> None: ...
 
 
-from .Generic import IEnumerator
 class ParticleSystem:
     @overload
     def __init__(self): ...
@@ -13853,7 +13851,6 @@ class Point4d:
 
 from System import IProgress
 from .Generic import IReadOnlyList
-from .Generic import IEnumerator
 from .Specialized import NameValueCollection
 from .Custom import UserDataList
 from .Serialization import SerializationInfo
@@ -14600,7 +14597,6 @@ from System import Action
 from System import Comparison
 from .ObjectModel import ReadOnlyCollection
 from System import Converter
-from .Generic import IEnumerator
 class Polyline(Point3dList):
     @overload
     def __init__(self): ...

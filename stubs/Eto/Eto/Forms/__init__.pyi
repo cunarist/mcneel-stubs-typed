@@ -488,7 +488,6 @@ class BindingChangingEventArgs:
     def ToString(self) -> str: ...
 
 
-from .Generic import IEnumerator
 class BindingCollection:
     @overload
     def __init__(self): ...
@@ -8739,7 +8738,6 @@ class DynamicLayout(Panel):
 
 from System import Nullable
 from .ObjectModel import Collection
-from .Generic import IEnumerator
 class DynamicRow:
     @overload
     def __init__(self): ...
@@ -11660,7 +11658,6 @@ class GridColumn(Widget):
 
 
 from .Specialized import NotifyCollectionChangedEventHandler
-from .Generic import IEnumerator
 class GridColumnCollection:
     @overload
     def __init__(self): ...
@@ -17812,7 +17809,6 @@ class ListItem:
 from .Generic import IComparer
 from System import Comparison
 from .Specialized import NotifyCollectionChangedEventHandler
-from .Generic import IEnumerator
 class ListItemCollection:
     @overload
     def __init__(self): ...
@@ -18964,7 +18960,6 @@ class MenuItem(Menu):
     def UpdateBindings(self, mode: BindingUpdateMode) -> None: ...
 
 
-from .Generic import IEnumerator
 class MenuItemCollection:
     def __iter__(self) -> Iterator[MenuItem]: ...
     def __getitem__(self, index: int) -> MenuItem: ...
@@ -26031,7 +26026,6 @@ class SegmentedItemClickEventArgs:
 
 
 from .Specialized import NotifyCollectionChangedEventHandler
-from .Generic import IEnumerator
 class SegmentedItemCollection:
     def __iter__(self) -> Iterator[SegmentedItem]: ...
     def __getitem__(self, index: int) -> SegmentedItem: ...
@@ -31674,7 +31668,6 @@ class ToolItem(Tool):
     def UpdateBindings(self, mode: BindingUpdateMode) -> None: ...
 
 
-from .Generic import IEnumerator
 class ToolItemCollection:
     def __iter__(self) -> Iterator[ToolItem]: ...
     def __getitem__(self, index: int) -> ToolItem: ...
@@ -31863,7 +31856,6 @@ class TreeGridItem(GridItem):
 from .Generic import IComparer
 from System import Comparison
 from .Specialized import NotifyCollectionChangedEventHandler
-from .Generic import IEnumerator
 class TreeGridItemCollection:
     @overload
     def __init__(self): ...
@@ -32501,7 +32493,6 @@ class TreeItem(ImageListItem):
 from .Generic import IComparer
 from System import Comparison
 from .Specialized import NotifyCollectionChangedEventHandler
-from .Generic import IEnumerator
 class TreeItemCollection:
     @overload
     def __init__(self): ...

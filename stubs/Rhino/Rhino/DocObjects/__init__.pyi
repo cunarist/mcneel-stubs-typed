@@ -7376,7 +7376,6 @@ class MaterialRefCreateParams:
     def ToString(self) -> str: ...
 
 
-from .Generic import IEnumerator
 from .Generic import KeyValuePair
 from System import Guid
 from .Generic import ICollection

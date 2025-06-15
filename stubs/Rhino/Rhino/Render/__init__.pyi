@@ -134,7 +134,6 @@ class BasicMaterialParameterNames:
 
 
 from System import Guid
-from .Generic import IEnumerator
 from .Custom import UserDataList
 from .Serialization import SerializationInfo
 from .Serialization import StreamingContext
@@ -873,7 +872,6 @@ class DecalProjection(Enum):
     # None = -1
 
 
-from .Generic import IEnumerator
 class Decals:
     def __iter__(self) -> Iterator[Decal]: ...
     @overload
@@ -3109,7 +3107,6 @@ class RenderEnvironment(RenderContent):
 
 
 from System import Guid
-from .Generic import IEnumerator
 class RenderEnvironmentTable:
     def __iter__(self) -> Iterator[RenderEnvironment]: ...
     @overload
@@ -3456,7 +3453,6 @@ class RenderMaterial(RenderContent):
 
 
 from System import Guid
-from .Generic import IEnumerator
 class RenderMaterialTable:
     def __iter__(self) -> Iterator[RenderMaterial]: ...
     @overload
@@ -4354,7 +4350,6 @@ class RenderTexture(RenderContent):
 
 
 from System import Guid
-from .Generic import IEnumerator
 class RenderTextureTable:
     def __iter__(self) -> Iterator[RenderTexture]: ...
     @overload

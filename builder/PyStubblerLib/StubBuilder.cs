@@ -641,7 +641,7 @@ namespace PyStubblerLib
                 return true;
             else if (s.Equals("Exception"))
                 return true;
-            else if (s.StartsWith("IEnumerable"))
+            else if (s.StartsWith("IEnumerable") || s.StartsWith("IEnumerator"))
                 return true;
             else if (s.StartsWith("List"))
                 return true;

@@ -3,7 +3,6 @@ from enum import Enum
 
 
 
-from .Generic import IEnumerator
 class ChunkKeyedCollection:
     @overload
     def __init__(self): ...

@@ -343,7 +343,6 @@ class RcpLabelItem(RcpItem):
 from Grasshopper.Kernel import GH_Document
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
-from System.Collections import IEnumerator
 class RcpLayout:
     @overload
     def __init__(self, document: GH_Document): ...

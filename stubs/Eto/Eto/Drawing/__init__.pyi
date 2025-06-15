@@ -2826,7 +2826,6 @@ class PaddingF:
 
 
 from .Specialized import NotifyCollectionChangedEventHandler
-from .Generic import IEnumerator
 class Palette:
     @overload
     def __init__(self): ...

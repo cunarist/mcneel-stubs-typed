@@ -2,4 +2,4 @@
 
 GH_IO-stubs==8.20.25157
 GH_Util-stubs==8.20.25157
-Grasshopper==8.20.25157
+Grasshopper-stubs==8.20.25157

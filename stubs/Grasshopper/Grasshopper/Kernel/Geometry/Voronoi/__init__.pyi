@@ -109,7 +109,6 @@ from System import Action
 from System import Comparison
 from System.Collections.ObjectModel import ReadOnlyCollection
 from System import Converter
-from System.Collections.Generic import IEnumerator
 class Cell3Facet:
     @overload
     def __init__(self): ...

@@ -1758,7 +1758,6 @@ class ToolbarFile:
     def ToString(self) -> str: ...
 
 
-from .Generic import IEnumerator
 class ToolbarFileCollection:
     def __iter__(self) -> Iterator[ToolbarFile]: ...
     @overload

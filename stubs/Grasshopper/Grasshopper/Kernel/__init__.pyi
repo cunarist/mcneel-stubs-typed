@@ -1509,7 +1509,6 @@ class GH_ComponentPaletteStyle(Enum):
 
 
 from System import Guid
-from .Generic import IEnumerator
 class GH_ComponentParamServer:
     def __iter__(self) -> Iterator[IGH_Param]: ...
     @overload
@@ -3827,7 +3826,6 @@ class GH_DocumentRank(Enum):
     Subsidiary = 2
 
 
-from .Generic import IEnumerator
 class GH_DocumentServer:
     @overload
     def __init__(self): ...

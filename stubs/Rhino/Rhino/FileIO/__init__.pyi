@@ -795,7 +795,6 @@ class File3dmCurvePiping:
     def ToString(self) -> str: ...
 
 
-from .Generic import IEnumerator
 from System import Guid
 class File3dmDimStyleTable:
     def __iter__(self) -> Iterator[DimensionStyle]: ...
@@ -1073,7 +1072,6 @@ class File3dmEmbeddedFile(ModelComponent):
     def ToString(self) -> str: ...
 
 
-from .Generic import IEnumerator
 class File3dmEmbeddedFiles:
     @overload
     def __init__(self, f: File3dm): ...
@@ -1092,7 +1090,6 @@ class File3dmEmbeddedFiles:
     def ToString(self) -> str: ...
 
 
-from .Generic import IEnumerator
 from System import Guid
 class File3dmGroupTable:
     def __iter__(self) -> Iterator[Group]: ...
@@ -1136,7 +1133,6 @@ class File3dmGroupTable:
     def ToString(self) -> str: ...
 
 
-from .Generic import IEnumerator
 from System import Guid
 class File3dmHatchPatternTable:
     def __iter__(self) -> Iterator[HatchPattern]: ...
@@ -1176,7 +1172,6 @@ class File3dmHatchPatternTable:
     def ToString(self) -> str: ...
 
 
-from .Generic import IEnumerator
 from System import Guid
 class File3dmInstanceDefinitionTable:
     def __iter__(self) -> Iterator[InstanceDefinitionGeometry]: ...
@@ -1225,7 +1220,6 @@ class File3dmInstanceDefinitionTable:
 
 
 from System import Guid
-from .Generic import IEnumerator
 class File3dmLayerTable:
     def __iter__(self) -> Iterator[Layer]: ...
     def __getitem__(self, index: int) -> Layer: ...
@@ -1270,7 +1264,6 @@ class File3dmLayerTable:
     def ToString(self) -> str: ...
 
 
-from .Generic import IEnumerator
 from System import Guid
 class File3dmLinetypeTable:
     def __iter__(self) -> Iterator[Linetype]: ...
@@ -1310,7 +1303,6 @@ class File3dmLinetypeTable:
     def ToString(self) -> str: ...
 
 
-from .Generic import IEnumerator
 from System import Guid
 class File3dmMaterialTable:
     def __iter__(self) -> Iterator[Material]: ...
@@ -1369,7 +1361,6 @@ class File3dmMeshModifiers:
     def ToString(self) -> str: ...
 
 
-from .Generic import IEnumerator
 class File3dmNamedConstructionPlanes:
     def __iter__(self) -> Iterator[ConstructionPlane]: ...
     def __getitem__(self, index: int) -> ConstructionPlane: ...
@@ -1546,7 +1537,6 @@ class File3dmObject(ModelComponent):
 
 
 from System import Guid
-from .Generic import IEnumerator
 class File3dmObjectTable:
     def __iter__(self) -> Iterator[File3dmObject]: ...
     def __getitem__(self, index: int) -> File3dmObject: ...
@@ -1752,7 +1742,6 @@ class File3dmPlugInData:
 
 
 from System import Func
-from .Generic import IEnumerator
 class File3dmPlugInDataTable:
     def __iter__(self) -> Iterator[File3dmPlugInData]: ...
     @overload
@@ -2071,7 +2060,6 @@ class File3dmRenderEnvironment(File3dmRenderContent):
     def XML(self, recursive: bool) -> str: ...
 
 
-from .Generic import IEnumerator
 from System import Guid
 class File3dmRenderEnvironments:
     @overload
@@ -2239,7 +2227,6 @@ class File3dmRenderMaterial(File3dmRenderContent):
     def XML(self, recursive: bool) -> str: ...
 
 
-from .Generic import IEnumerator
 from System import Guid
 class File3dmRenderMaterials:
     @overload
@@ -2409,7 +2396,6 @@ class File3dmRenderTexture(File3dmRenderContent):
     def XML(self, recursive: bool) -> str: ...
 
 
-from .Generic import IEnumerator
 from System import Guid
 class File3dmRenderTextures:
     @overload
@@ -2826,7 +2812,6 @@ class File3dmTypeCodes:
     def ToString(self) -> str: ...
 
 
-from .Generic import IEnumerator
 class File3dmViewTable:
     def __iter__(self) -> Iterator[ViewInfo]: ...
     def __getitem__(self, index: int) -> ViewInfo: ...
@@ -5757,7 +5742,6 @@ class ImportFillMode(Enum):
 
 
 from System import Guid
-from .Generic import IEnumerator
 class ManifestTable:
     def __iter__(self) -> Iterator[ModelComponent]: ...
     @overload

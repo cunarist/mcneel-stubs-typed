@@ -291,7 +291,6 @@ class GpuDeviceInfo:
 
 
 
-from .Collections.Generic import IEnumerator
 class IndexPair:
     @overload
     def __init__(self, i: int, j: int): ...

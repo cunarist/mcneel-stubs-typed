@@ -460,7 +460,6 @@ class ModelMeshingParameters(ModelValue):
     def ToString(self) -> str: ...
 
 
-from .Generic import IEnumerator
 class ModelTags:
     @overload
     def __init__(self, source: Iterable[str]): ...
@@ -563,7 +562,6 @@ class ModelUnitSystem(ModelValue):
     def ToString(self) -> str: ...
 
 
-from .Generic import IEnumerator
 from .Generic import KeyValuePair
 class ModelUserText:
     @overload
