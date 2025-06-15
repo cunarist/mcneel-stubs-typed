@@ -1,6 +1,57 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
+from Eto.Drawing import Bitmap
+from Eto.Drawing import Color
+from Eto.Drawing import Font
+from Eto.Drawing import Point
+from Eto.Drawing import PointF
+from Eto.Drawing import Rectangle
+from Eto.Drawing import Size
+from Eto.Drawing import SizeF
+from Eto.Forms import Control
+from Eto.Forms import Window
+from GH_IO.Types import GH_Version
+from Grasshopper.GUI import GH_CursorServer
+from Grasshopper.GUI import GH_DocumentEditor
+from Grasshopper.GUI import GH_PruderyFilter
+from Grasshopper.GUI.Canvas import GH_Canvas
+from Grasshopper.GUI.MRU import GH_MRU_Server
+from Grasshopper.GUI.RemotePanel import RemoteControlPanel
+from Grasshopper.Kernel import GH_ComponentServer
+from Grasshopper.Kernel import GH_Document
+from Grasshopper.Kernel import GH_DocumentAssociations
+from Grasshopper.Kernel import GH_DocumentServer
+from Grasshopper.Kernel import GH_LoadingDemand
+from Grasshopper.Kernel import GH_MarkovChain
+from Grasshopper.Kernel import GH_SettingsServer
+from Grasshopper.Kernel import IGH_Author
+from Grasshopper.Kernel import IGH_Param
+from Grasshopper.Kernel.Data import GH_Path
+from Grasshopper.Kernel.Data import IGH_Structure
+from Grasshopper.Kernel.Parameters import IGH_TypeHint
+from Rhino import RhinoDoc
+from Rhino.Display import PointStyle
+from System import AsyncCallback
+from System import Guid
+from System import IAsyncResult
+from System import IntPtr
+from System.Collections.Generic import IList
+from System.Drawing import Bitmap
+from System.Drawing import Color
+from System.Drawing import Font
+from System.Drawing import Point
+from System.Drawing import PointF
+from System.Drawing import Rectangle
+from System.Drawing import Size
+from System.Drawing import SizeF
+from System.Reflection import MethodInfo
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Windows.Forms import Control
+from System.Windows.Forms import Form
+from System.Windows.Forms import IWin32Window
+
 from . import Documentation
 from . import Getters
 from . import GUI
@@ -11,12 +62,7 @@ from . import Rhinoceros
 __all__ = ['Documentation', 'Getters', 'GUI', 'Kernel', 'Plugin', 'Rhinoceros']
 
 
-from System import IntPtr
-from System import AsyncCallback
-from System import IAsyncResult
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
-from System.Reflection import MethodInfo
+
 class AuthorAddressChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -48,12 +94,6 @@ class AuthorAddressChangedEventHandler:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from System import AsyncCallback
-from System import IAsyncResult
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
-from System.Reflection import MethodInfo
 class AuthorCompanyChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -85,12 +125,6 @@ class AuthorCompanyChangedEventHandler:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from System import AsyncCallback
-from System import IAsyncResult
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
-from System.Reflection import MethodInfo
 class AuthorCopyrightChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -122,12 +156,6 @@ class AuthorCopyrightChangedEventHandler:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from System import AsyncCallback
-from System import IAsyncResult
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
-from System.Reflection import MethodInfo
 class AuthorEMailChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -159,12 +187,6 @@ class AuthorEMailChangedEventHandler:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from System import AsyncCallback
-from System import IAsyncResult
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
-from System.Reflection import MethodInfo
 class AuthorNameChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -196,12 +218,6 @@ class AuthorNameChangedEventHandler:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from System import AsyncCallback
-from System import IAsyncResult
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
-from System.Reflection import MethodInfo
 class AuthorPhoneChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -233,12 +249,6 @@ class AuthorPhoneChangedEventHandler:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from System import AsyncCallback
-from System import IAsyncResult
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
-from System.Reflection import MethodInfo
 class AuthorWebsiteChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -270,13 +280,6 @@ class AuthorWebsiteChangedEventHandler:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from Grasshopper.GUI.Canvas import GH_Canvas
-from System import AsyncCallback
-from System import IAsyncResult
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
-from System.Reflection import MethodInfo
 class CanvasCreatedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -308,13 +311,6 @@ class CanvasCreatedEventHandler:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from Grasshopper.GUI.Canvas import GH_Canvas
-from System import AsyncCallback
-from System import IAsyncResult
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
-from System.Reflection import MethodInfo
 class CanvasDestroyedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -346,12 +342,6 @@ class CanvasDestroyedEventHandler:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from System import AsyncCallback
-from System import IAsyncResult
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
-from System.Reflection import MethodInfo
 class CanvasFancyWiresChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -383,12 +373,6 @@ class CanvasFancyWiresChangedEventHandler:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from System import AsyncCallback
-from System import IAsyncResult
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
-from System.Reflection import MethodInfo
 class CanvasFullNamesChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -420,12 +404,6 @@ class CanvasFullNamesChangedEventHandler:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from System import AsyncCallback
-from System import IAsyncResult
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
-from System.Reflection import MethodInfo
 class CanvasObjectIconsChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -457,12 +435,6 @@ class CanvasObjectIconsChangedEventHandler:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from System import AsyncCallback
-from System import IAsyncResult
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
-from System.Reflection import MethodInfo
 class CanvasObsoleteTagsChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -494,12 +466,6 @@ class CanvasObsoleteTagsChangedEventHandler:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from System import AsyncCallback
-from System import IAsyncResult
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
-from System.Reflection import MethodInfo
 class CanvasRadialMenuChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -531,12 +497,6 @@ class CanvasRadialMenuChangedEventHandler:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from System import AsyncCallback
-from System import IAsyncResult
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
-from System.Reflection import MethodInfo
 class CanvasToolbarChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -568,12 +528,6 @@ class CanvasToolbarChangedEventHandler:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from System import AsyncCallback
-from System import IAsyncResult
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
-from System.Reflection import MethodInfo
 class CanvasZuiZoomLevelChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -605,10 +559,6 @@ class CanvasZuiZoomLevelChangedEventHandler:
     def ToString(self) -> str: ...
 
 
-from Grasshopper.Kernel import IGH_Author
-from Rhino.Display import PointStyle
-from Grasshopper.GUI import GH_PruderyFilter
-from Grasshopper.Kernel import GH_LoadingDemand
 class CentralSettings:
     @overload
     @staticmethod
@@ -1145,12 +1095,6 @@ class CentralSettings:
     def UserOkayWithBakingInvalidObject(objectType: str) -> bool: ...
 
 
-from System import IntPtr
-from System import AsyncCallback
-from System import IAsyncResult
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
-from System.Reflection import MethodInfo
 class ComponentCascadeMenusChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -1182,12 +1126,6 @@ class ComponentCascadeMenusChangedEventHandler:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from System import AsyncCallback
-from System import IAsyncResult
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
-from System.Reflection import MethodInfo
 class CreateSolutionUndoRecordChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -1223,27 +1161,6 @@ class CreateSolutionUndoRecordChangedEventHandler:
 
 
 
-from System.Windows.Forms import Control
-from Eto.Forms import Control
-from System.Windows.Forms import Form
-from Eto.Forms import Window
-from System.Windows.Forms import IWin32Window
-from Eto.Drawing import Rectangle
-from System.Drawing import Rectangle
-from Eto.Drawing import Size
-from System.Drawing import Size
-from Eto.Drawing import SizeF
-from System.Drawing import SizeF
-from Eto.Drawing import Point
-from System.Drawing import Point
-from Eto.Drawing import PointF
-from System.Drawing import PointF
-from System.Drawing import Color
-from Eto.Drawing import Color
-from System.Drawing import Bitmap
-from Eto.Drawing import Bitmap
-from Eto.Drawing import Font
-from System.Drawing import Font
 class EtoExtensions:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -1309,7 +1226,6 @@ class EtoExtensions:
     def ToWin32Window(window: Window) -> IWin32Window: ...
 
 
-from System import IntPtr
 class EtoWin32Window:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -1418,12 +1334,6 @@ class Folders:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from System import AsyncCallback
-from System import IAsyncResult
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
-from System.Reflection import MethodInfo
 class FormattingChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -1455,8 +1365,6 @@ class FormattingChangedEventHandler:
     def ToString(self) -> str: ...
 
 
-from GH_IO.Types import GH_Version
-from Grasshopper.Kernel import GH_SettingsServer
 class Global_Proc:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -1480,21 +1388,6 @@ class Global_Proc:
     def UiAdjust(value: float) -> float: ...
 
 
-from System import Guid
-from Grasshopper.GUI.RemotePanel import RemoteControlPanel
-from Grasshopper.GUI import GH_DocumentEditor
-from Eto.Forms import Window
-from Grasshopper.GUI import GH_CursorServer
-from Grasshopper.Kernel import GH_ComponentServer
-from Grasshopper.Kernel import GH_MarkovChain
-from Grasshopper.Kernel import GH_DocumentServer
-from Grasshopper.Kernel import GH_DocumentAssociations
-from Grasshopper.GUI.MRU import GH_MRU_Server
-from System.Drawing import Bitmap
-from Grasshopper.GUI.Canvas import GH_Canvas
-from Grasshopper.Kernel import GH_Document
-from Rhino import RhinoDoc
-from Grasshopper.Kernel import GH_SettingsServer
 class Instances:
     LoadOneByOne: bool
     @overload
@@ -1642,12 +1535,6 @@ class Instances:
     def UnloadAllObjects() -> None: ...
 
 
-from System import IntPtr
-from System import AsyncCallback
-from System import IAsyncResult
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
-from System.Reflection import MethodInfo
 class LoadMechanismChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -1679,12 +1566,6 @@ class LoadMechanismChangedEventHandler:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from System import AsyncCallback
-from System import IAsyncResult
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
-from System.Reflection import MethodInfo
 class LoadProtectionChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -1716,12 +1597,6 @@ class LoadProtectionChangedEventHandler:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from System import AsyncCallback
-from System import IAsyncResult
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
-from System.Reflection import MethodInfo
 class PanelDefaultFontChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -1753,12 +1628,6 @@ class PanelDefaultFontChangedEventHandler:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from System import AsyncCallback
-from System import IAsyncResult
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
-from System.Reflection import MethodInfo
 class PreviewBumpZBufferChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -1790,12 +1659,6 @@ class PreviewBumpZBufferChangedEventHandler:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from System import AsyncCallback
-from System import IAsyncResult
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
-from System.Reflection import MethodInfo
 class PreviewGumballsChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -1827,12 +1690,6 @@ class PreviewGumballsChangedEventHandler:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from System import AsyncCallback
-from System import IAsyncResult
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
-from System.Reflection import MethodInfo
 class PreviewMeshEdgesChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -1864,12 +1721,6 @@ class PreviewMeshEdgesChangedEventHandler:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from System import AsyncCallback
-from System import IAsyncResult
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
-from System.Reflection import MethodInfo
 class PreviewPlaneRadiusChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -1901,12 +1752,6 @@ class PreviewPlaneRadiusChangedEventHandler:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from System import AsyncCallback
-from System import IAsyncResult
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
-from System.Reflection import MethodInfo
 class PreviewPointStyleChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -1938,12 +1783,6 @@ class PreviewPointStyleChangedEventHandler:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from System import AsyncCallback
-from System import IAsyncResult
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
-from System.Reflection import MethodInfo
 class PruderyLevelChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -1975,12 +1814,6 @@ class PruderyLevelChangedEventHandler:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from System import AsyncCallback
-from System import IAsyncResult
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
-from System.Reflection import MethodInfo
 class RibbonAllIconsChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -2012,12 +1845,6 @@ class RibbonAllIconsChangedEventHandler:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from System import AsyncCallback
-from System import IAsyncResult
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
-from System.Reflection import MethodInfo
 class RibbonDrawTabIconsChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -2049,12 +1876,6 @@ class RibbonDrawTabIconsChangedEventHandler:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from System import AsyncCallback
-from System import IAsyncResult
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
-from System.Reflection import MethodInfo
 class RibbonSeparatorsChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -2086,12 +1907,6 @@ class RibbonSeparatorsChangedEventHandler:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from System import AsyncCallback
-from System import IAsyncResult
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
-from System.Reflection import MethodInfo
 class RibbonVisibleChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -2123,12 +1938,6 @@ class RibbonVisibleChangedEventHandler:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from System import AsyncCallback
-from System import IAsyncResult
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
-from System.Reflection import MethodInfo
 class TemplateFileChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -2160,12 +1969,6 @@ class TemplateFileChangedEventHandler:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from System import AsyncCallback
-from System import IAsyncResult
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
-from System.Reflection import MethodInfo
 class TooltipWiggleRadiusChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -2197,7 +2000,6 @@ class TooltipWiggleRadiusChangedEventHandler:
     def ToString(self) -> str: ...
 
 
-from System import Guid
 class Tracing:
     @overload
     @staticmethod
@@ -2230,12 +2032,6 @@ class Tracing:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from System import AsyncCallback
-from System import IAsyncResult
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
-from System.Reflection import MethodInfo
 class UiScaleChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -2329,7 +2125,6 @@ class Utility:
     def ToString(self) -> str: ...
 
 
-from GH_IO.Types import GH_Version
 class Versioning:
     @overload
     def Equals(self, obj: object) -> bool: ...

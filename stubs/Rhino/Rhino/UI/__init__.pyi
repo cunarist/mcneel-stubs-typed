@@ -1,10 +1,67 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
+from Rhino import RhinoDoc
+from Rhino import UnitSystem
+from Rhino.Commands import Result
+from Rhino.Commands import RunMode
+from Rhino.Display import Color4f
+from Rhino.Display import RhinoView
+from Rhino.Display import RhinoViewport
+from Rhino.DocObjects import DimensionStyle
+from Rhino.DocObjects import Linetype
+from Rhino.DocObjects import ObjectType
+from Rhino.DocObjects import RhinoObject
+from Rhino.Geometry import Curve
+from Rhino.Geometry import Mesh
+from Rhino.Geometry import Point2d
+from Rhino.Geometry import Point3d
+from Rhino.PlugIns import PlugIn
+from Rhino.Render import Sun
+from Rhino.Runtime.InteropWrappers import ClassArrayString
+from Rhino.Runtime.InteropWrappers import SimpleArrayInt
+from Rhino.UI.Gumball import GumballMode
+from System import Action
+from System import AsyncCallback
+from System import Comparison
+from System import Converter
+from System import Enum
+from System import EventHandler
+from System import Guid
+from System import IAsyncResult
+from System import IFormatProvider
+from System import IntPtr
+from System import Predicate
+from System import TypeCode
+from System.Collections import IList
+from System.Collections.Generic import Enumerator
+from System.Collections.Generic import IComparer
+from System.Collections.Generic import IList
+from System.Collections.ObjectModel import ReadOnlyCollection
+from System.Drawing import Bitmap
+from System.Drawing import Color
+from System.Drawing import Font
+from System.Drawing import Icon
+from System.Drawing import Image
+from System.Drawing import Point
+from System.Drawing import Size
+from System.Drawing import SizeF
+from System.Reflection import Assembly
+from System.Reflection import MethodInfo
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Windows.Forms import DialogResult
+from System.Windows.Forms import Form
+from System.Windows.Forms import IWin32Window
+from System.Windows.Forms import MessageBoxButtons
+from System.Windows.Forms import MessageBoxIcon
+from System.Windows.Forms import MouseButtons
+
 from . import Controls
 from . import Gumball
 
 __all__ = ['Controls', 'Gumball']
+
 
 
 class CursorStyle(Enum):
@@ -18,20 +75,6 @@ class CursorStyle(Enum):
     CrosshairCopy = 7
 
 
-from System.Drawing import Point
-from System import EventHandler
-from System.Windows.Forms import Form
-from System.Windows.Forms import DialogResult
-from System.Windows.Forms import MessageBoxButtons
-from System.Windows.Forms import MessageBoxIcon
-from System.Drawing import Color
-from System.Windows.Forms import IWin32Window
-from Rhino.Display import Color4f
-from Rhino.Render import Sun
-from Rhino import RhinoDoc
-from System.Collections import IList
-from System import Guid
-from System.Collections.Generic import IList
 class Dialogs:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -151,17 +194,6 @@ class DistanceDisplayMode(Enum):
     FeetInches = 2
 
 
-from System.Drawing import Color
-from System.Drawing import Bitmap
-from System import IntPtr
-from System.Reflection import Assembly
-from System.Drawing import Icon
-from System.Drawing import Size
-from System.Drawing import Image
-from Rhino.Geometry import Mesh
-from Rhino import RhinoDoc
-from Rhino.Geometry import Curve
-from Rhino.DocObjects import Linetype
 class DrawingUtilities:
     @overload
     @staticmethod
@@ -233,7 +265,6 @@ class FloatPanelMode(Enum):
     Toggle = 2
 
 
-from System.Drawing import Font
 class Fonts:
     @overload
     def __init__(self): ...
@@ -265,7 +296,6 @@ class Fonts:
     def ToString(self) -> str: ...
 
 
-from System.Drawing import Color
 class GetColorEventArgs:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -287,9 +317,6 @@ class GetColorEventArgs:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import IList
-from System import IntPtr
-from Rhino.Display import Color4f
 class IDialogService:
     @overload
     def ObjectToWindowHandle(self, window: object, useMainRhinoWindowWhenNull: bool) -> IntPtr: ...
@@ -306,7 +333,6 @@ class IHelp:
     def HelpUrl(self) -> str: ...
 
 
-from System.Reflection import Assembly
 class ILocalizationService:
     @overload
     def LocalizeCommandName(self, assembly: Assembly, languageId: int, english: str) -> str: ...
@@ -327,10 +353,6 @@ class IPanel:
     def PanelShown(self, documentSerialNumber: int, reason: ShowPanelReason) -> None: ...
 
 
-from System import EventHandler
-from System import Guid
-from System.Drawing import Point
-from System.Drawing import Size
 class IPanelsService:
     @overload
     def CreateDockBar(self, options: object) -> bool: ...
@@ -360,12 +382,6 @@ class IPanelsService:
     def UnhookDeleteAndDestroyDockBar(self, id: Guid) -> bool: ...
 
 
-from System.Collections import IList
-from System.Collections.Generic import IList
-from Rhino import RhinoDoc
-from System import Guid
-from System.Reflection import Assembly
-from System.Drawing import Icon
 class IRhinoUiDialogService:
     @overload
     def DetectColorScheme(self) -> tuple[bool, bool]: ...
@@ -401,10 +417,6 @@ class IRhinoUiDialogService:
     def ShowPropertyListBox(self, title: str, message: str, items: IList, values: Iterable[str]) -> Iterable[str]: ...
 
 
-from System.Drawing import Image
-from System import IntPtr
-from System.Drawing import Icon
-from System.Drawing import SizeF
 class IStackedDialogPageService:
     @overload
     def GetImageHandle(self, image: Image, canBeNull: bool) -> IntPtr: ...
@@ -524,10 +536,6 @@ class LOC:
     def ToString(self) -> str: ...
 
 
-from Rhino import UnitSystem
-from Rhino.DocObjects import DimensionStyle
-from Rhino.Runtime.InteropWrappers import SimpleArrayInt
-from Rhino.Runtime.InteropWrappers import ClassArrayString
 class Localization:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -649,10 +657,6 @@ class MouseCallback:
     def ToString(self) -> str: ...
 
 
-from Rhino.Display import RhinoView
-from System.Windows.Forms import MouseButtons
-from System.Drawing import Point
-from Rhino.UI.Gumball import GumballMode
 class MouseCallbackEventArgs:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -682,7 +686,6 @@ class MouseCallbackEventArgs:
     def ToString(self) -> str: ...
 
 
-from Rhino.Geometry import Point2d
 class MouseCursor:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -700,7 +703,6 @@ class MouseCursor:
     def ToString(self) -> str: ...
 
 
-from System.Drawing import Color
 class NamedColor:
     @overload
     def __init__(self, name: str, color: Color): ...
@@ -718,13 +720,6 @@ class NamedColor:
     def ToString(self) -> str: ...
 
 
-from System.Collections.ObjectModel import ReadOnlyCollection
-from System.Collections.Generic import IComparer
-from System import Predicate
-from System import Action
-from System.Collections.Generic import Enumerator
-from System import Comparison
-from System import Converter
 class NamedColorList:
     @overload
     def __init__(self, name: str): ...
@@ -850,14 +845,6 @@ class NamedColorList:
     def TrueForAll(self, match: Predicate) -> bool: ...
 
 
-from System.Drawing import Size
-from System.Drawing import Icon
-from Rhino.DocObjects import ObjectType
-from System import IntPtr
-from Rhino.DocObjects import RhinoObject
-from System import Action
-from Rhino import RhinoDoc
-from Rhino.Commands import Result
 class ObjectPropertiesPage:
     @overload
     def AnySelectedObject(self) -> bool: ...
@@ -917,7 +904,6 @@ class ObjectPropertiesPage:
     def UpdatePage(self, e: ObjectPropertiesPageEventArgs) -> None: ...
 
 
-from Rhino import RhinoDoc
 class ObjectPropertiesPageCollection:
     @overload
     def Add(self, page: ObjectPropertiesPage) -> None: ...
@@ -935,10 +921,6 @@ class ObjectPropertiesPageCollection:
     def ToString(self) -> str: ...
 
 
-from Rhino.DocObjects import ObjectType
-from Rhino.Display import RhinoView
-from Rhino.Display import RhinoViewport
-from Rhino import RhinoDoc
 class ObjectPropertiesPageEventArgs:
     @overload
     def __init__(self, page: ObjectPropertiesPage): ...
@@ -982,13 +964,6 @@ class ObjectPropertiesPageEventArgs:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from Rhino.Display import Color4f
-from System import AsyncCallback
-from System import IAsyncResult
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
-from System.Reflection import MethodInfo
 class OnColorChangedEvent:
     @overload
     def __init__(self, object: object, method: IntPtr): ...
@@ -1020,7 +995,6 @@ class OnColorChangedEvent:
     def ToString(self) -> str: ...
 
 
-from System.Windows.Forms import DialogResult
 class OpenFileDialog:
     @overload
     def __init__(self): ...
@@ -1068,12 +1042,6 @@ class OptionPageButtons(Enum):
     ApplyButton = 2
 
 
-from Rhino import RhinoDoc
-from Rhino.Commands import RunMode
-from Rhino.Commands import Result
-from System import IntPtr
-from System.Drawing import Image
-from System.Drawing import Color
 class OptionsDialogPage(StackedDialogPage):
     @overload
     def AddChildPage(self, pageToAdd: StackedDialogPage) -> None: ...
@@ -1148,8 +1116,6 @@ class PageType(Enum):
     DocumentProperties = 1
 
 
-from System import Guid
-from Rhino import RhinoDoc
 class PanelEventArgs:
     @overload
     def __init__(self, panelId: Guid, documentSerialNumber: int): ...
@@ -1169,7 +1135,6 @@ class PanelEventArgs:
     def ToString(self) -> str: ...
 
 
-from System import Guid
 class PanelIds:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -1226,13 +1191,6 @@ class PanelIds:
     def ToString(self) -> str: ...
 
 
-from System import Guid
-from Rhino.PlugIns import PlugIn
-from System.Drawing import Icon
-from System.Reflection import Assembly
-from System.Drawing import Size
-from Rhino import RhinoDoc
-from System import EventHandler
 class Panels:
     @overload
     @staticmethod
@@ -1442,7 +1400,6 @@ class RhinoHelp:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
 class RhinoPageInterop:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -1478,8 +1435,6 @@ class RhinoPlotWidthValue(Enum):
     # None = -1
 
 
-from System import Guid
-from System import IntPtr
 class RuiUpdateUi:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -1525,7 +1480,6 @@ class RuiUpdateUi:
     def ToString(self) -> str: ...
 
 
-from System.Windows.Forms import DialogResult
 class SaveFileDialog:
     @overload
     def __init__(self): ...
@@ -1615,8 +1569,6 @@ class ShowMessageResult(Enum):
     No = 7
 
 
-from System import Guid
-from Rhino import RhinoDoc
 class ShowPanelEventArgs(PanelEventArgs):
     @overload
     def __init__(self, panelId: Guid, documentSerialNumber: int, show: bool): ...
@@ -1652,9 +1604,6 @@ class Size(Enum):
     Title = 3
 
 
-from System import IntPtr
-from System.Drawing import Image
-from System.Drawing import Color
 class StackedDialogPage:
     @overload
     def AddChildPage(self, pageToAdd: StackedDialogPage) -> None: ...
@@ -1720,7 +1669,6 @@ class StackedDialogPage:
     def ToString(self) -> str: ...
 
 
-from Rhino.Geometry import Point3d
 class StatusBar:
     @overload
     @staticmethod
@@ -1779,8 +1727,6 @@ class Style(Enum):
     Strikeout = 8
 
 
-from System import Guid
-from System.Drawing import Size
 class Toolbar:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -1808,7 +1754,6 @@ class Toolbar:
     def ToString(self) -> str: ...
 
 
-from System import Guid
 class ToolbarFile:
     @overload
     def Close(self, prompt: bool) -> bool: ...
@@ -1878,7 +1823,6 @@ class ToolbarFileCollection:
     def ToString(self) -> str: ...
 
 
-from System import Guid
 class ToolbarGroup:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -1900,12 +1844,6 @@ class ToolbarGroup:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from System import AsyncCallback
-from System import IAsyncResult
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
-from System.Reflection import MethodInfo
 class UpdateMenuItemEventHandler:
     @overload
     def __init__(self, object: object, method: IntPtr): ...

@@ -1,12 +1,109 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
-
-
-from Rhino.DocObjects import ModelComponentType
-from Rhino.DocObjects import BitmapEntry
 from Rhino import RhinoDoc
+from Rhino.Collections import RhinoList
+from Rhino.Display import DefinedViewportProjection
+from Rhino.Display import RhinoPageView
+from Rhino.Display import RhinoView
+from Rhino.Display import RhinoViewport
+from Rhino.Display import Text3d
+from Rhino.Display import ViewTypeFilter
+from Rhino.DocObjects import BitmapEntry
+from Rhino.DocObjects import BrepObject
+from Rhino.DocObjects import ConstructionPlane
+from Rhino.DocObjects import CurveObject
+from Rhino.DocObjects import DimensionStyle
+from Rhino.DocObjects import Font
+from Rhino.DocObjects import GripObject
+from Rhino.DocObjects import Group
+from Rhino.DocObjects import HatchPattern
+from Rhino.DocObjects import HistoryRecord
+from Rhino.DocObjects import InstanceDefinition
+from Rhino.DocObjects import InstanceDefinitionUpdateType
+from Rhino.DocObjects import InstanceObject
+from Rhino.DocObjects import Layer
+from Rhino.DocObjects import LightObject
+from Rhino.DocObjects import Linetype
+from Rhino.DocObjects import Material
+from Rhino.DocObjects import MeshObject
+from Rhino.DocObjects import ModelComponentType
+from Rhino.DocObjects import ObjectAttributes
+from Rhino.DocObjects import ObjectEnumeratorSettings
+from Rhino.DocObjects import ObjectLinetypeSource
+from Rhino.DocObjects import ObjectMaterialSource
+from Rhino.DocObjects import ObjectType
+from Rhino.DocObjects import ObjRef
+from Rhino.DocObjects import PointObject
+from Rhino.DocObjects import RhinoObject
+from Rhino.DocObjects import ViewInfo
+from Rhino.DocObjects.Custom import CustomBrepObject
+from Rhino.DocObjects.Custom import CustomCurveObject
+from Rhino.DocObjects.Custom import CustomMeshObject
+from Rhino.DocObjects.Custom import CustomPointObject
+from Rhino.DocObjects.Custom import UserData
+from Rhino.FileIO import FileReference
+from Rhino.FileIO import NameHash
+from Rhino.Geometry import AngularDimension
+from Rhino.Geometry import AnnotationBase
+from Rhino.Geometry import Arc
+from Rhino.Geometry import BoundingBox
+from Rhino.Geometry import Box
+from Rhino.Geometry import Brep
+from Rhino.Geometry import Centermark
+from Rhino.Geometry import Circle
+from Rhino.Geometry import ClippingPlaneSurface
+from Rhino.Geometry import Curve
+from Rhino.Geometry import Ellipse
+from Rhino.Geometry import Extrusion
+from Rhino.Geometry import GeometryBase
+from Rhino.Geometry import Hatch
+from Rhino.Geometry import InstanceDefinitionGeometry
+from Rhino.Geometry import Leader
+from Rhino.Geometry import Light
+from Rhino.Geometry import Line
+from Rhino.Geometry import LinearDimension
+from Rhino.Geometry import Mesh
+from Rhino.Geometry import MorphControl
+from Rhino.Geometry import OrdinateDimension
+from Rhino.Geometry import Plane
+from Rhino.Geometry import Point
+from Rhino.Geometry import Point2d
+from Rhino.Geometry import Point3d
+from Rhino.Geometry import Point3f
+from Rhino.Geometry import PointCloud
+from Rhino.Geometry import Polyline
+from Rhino.Geometry import RadialDimension
+from Rhino.Geometry import Rectangle3d
+from Rhino.Geometry import Sphere
+from Rhino.Geometry import SubD
+from Rhino.Geometry import Surface
+from Rhino.Geometry import TextDot
+from Rhino.Geometry import TextEntity
+from Rhino.Geometry import TextJustification
+from Rhino.Geometry import Transform
+from Rhino.Input.Custom import PickContext
+from Rhino.Render import RenderMaterial
+from Rhino.Render import Skylight
+from Rhino.Render import Sun
+from Rhino.Render import TextureMapping
+from System import Enum
 from System import Guid
+from System import IFormatProvider
+from System import TypeCode
+from System.Collections.Generic import Dictionary
+from System.Collections.Generic import Enumerator
+from System.Collections.Generic import IEqualityComparer
+from System.Collections.Generic import KeyCollection
+from System.Collections.Generic import ValueCollection
+from System.Drawing import Color
+from System.Drawing import Rectangle
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+
+
+
+
 class BitmapTable:
     def __iter__(self) -> Iterator[BitmapEntry]: ...
     def __getitem__(self, index: int) -> BitmapEntry: ...
@@ -49,11 +146,6 @@ class BitmapTable:
     def ToString(self) -> str: ...
 
 
-from Rhino.DocObjects import DimensionStyle
-from System import Guid
-from Rhino.DocObjects import ModelComponentType
-from Rhino.Geometry import AnnotationBase
-from Rhino import RhinoDoc
 class DimStyleTable:
     def __iter__(self) -> Iterator[DimensionStyle]: ...
     def __getitem__(self, index: int) -> DimensionStyle: ...
@@ -122,8 +214,6 @@ class DimStyleTable:
     def ToString(self) -> str: ...
 
 
-from Rhino import RhinoDoc
-from Rhino.DocObjects import DimensionStyle
 class DimStyleTableEventArgs:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -154,9 +244,6 @@ class DimStyleTableEventType(Enum):
     Current = 5
 
 
-from Rhino import RhinoDoc
-from Rhino.DocObjects import Font
-from Rhino.DocObjects import DimensionStyle
 class FontTable:
     def __iter__(self) -> Iterator[Font]: ...
     @overload
@@ -183,12 +270,6 @@ class FontTable:
     def ToString(self) -> str: ...
 
 
-from Rhino.DocObjects import ModelComponentType
-from Rhino.DocObjects import Group
-from Rhino.FileIO import NameHash
-from System import Guid
-from System.Collections.Generic import Dictionary
-from Rhino import RhinoDoc
 class GroupTable:
     def __iter__(self) -> Iterator[Group]: ...
     def __getitem__(self, index: int) -> Group: ...
@@ -267,8 +348,6 @@ class GroupTable:
     def Unlock(self, groupIndex: int) -> int: ...
 
 
-from Rhino import RhinoDoc
-from Rhino.DocObjects import Group
 class GroupTableEventArgs:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -298,11 +377,6 @@ class GroupTableEventType(Enum):
     Sorted = 4
 
 
-from Rhino.DocObjects import HatchPattern
-from Rhino.DocObjects import ModelComponentType
-from Rhino.FileIO import NameHash
-from Rhino import RhinoDoc
-from System import Guid
 class HatchPatternTable:
     def __iter__(self) -> Iterator[HatchPattern]: ...
     def __getitem__(self, index: int) -> HatchPattern: ...
@@ -357,8 +431,6 @@ class HatchPatternTable:
     def ToString(self) -> str: ...
 
 
-from Rhino import RhinoDoc
-from Rhino.DocObjects import HatchPattern
 class HatchPatternTableEventArgs:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -389,16 +461,6 @@ class HatchPatternTableEventType(Enum):
     Current = 5
 
 
-from Rhino import RhinoDoc
-from Rhino.DocObjects import ModelComponentType
-from Rhino.DocObjects import InstanceDefinition
-from System import Guid
-from Rhino.Geometry import Point3d
-from Rhino.Geometry import GeometryBase
-from Rhino.DocObjects import ObjectAttributes
-from Rhino.DocObjects.Custom import UserData
-from Rhino.DocObjects import InstanceDefinitionUpdateType
-from Rhino.FileIO import FileReference
 class InstanceDefinitionTable:
     def __iter__(self) -> Iterator[InstanceDefinition]: ...
     def __getitem__(self, index: int) -> InstanceDefinition: ...
@@ -487,9 +549,6 @@ class InstanceDefinitionTable:
     def UpdateLinkedInstanceDefinition(self, idefIndex: int, filename: str, updateNestedLinks: bool, quiet: bool) -> bool: ...
 
 
-from Rhino import RhinoDoc
-from Rhino.DocObjects import InstanceDefinition
-from Rhino.Geometry import InstanceDefinitionGeometry
 class InstanceDefinitionTableEventArgs:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -519,12 +578,6 @@ class InstanceDefinitionTableEventType(Enum):
     Sorted = 4
 
 
-from Rhino import RhinoDoc
-from Rhino.DocObjects import Layer
-from Rhino.DocObjects import ModelComponentType
-from System import Guid
-from Rhino.FileIO import NameHash
-from System.Drawing import Color
 class LayerTable:
     def __iter__(self) -> Iterator[Layer]: ...
     def __getitem__(self, index: int) -> Layer: ...
@@ -643,8 +696,6 @@ class LayerTable:
     def UndoModify(self, layerId: Guid, undoRecordSerialNumber: int) -> bool: ...
 
 
-from Rhino import RhinoDoc
-from Rhino.DocObjects import Layer
 class LayerTableEventArgs:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -681,15 +732,6 @@ class LayerType(Enum):
     WorkSessionParentLayer = 4
 
 
-from Rhino import RhinoDoc
-from Rhino.Render import Sun
-from Rhino.Render import Skylight
-from Rhino.DocObjects import ModelComponentType
-from Rhino.DocObjects import LightObject
-from System import Guid
-from Rhino.FileIO import NameHash
-from Rhino.Geometry import Light
-from Rhino.DocObjects import ObjectAttributes
 class LightTable:
     def __iter__(self) -> Iterator[LightObject]: ...
     def __getitem__(self, index: int) -> LightObject: ...
@@ -746,9 +788,6 @@ class LightTable:
     def Undelete(self, index: int) -> bool: ...
 
 
-from Rhino import RhinoDoc
-from Rhino.DocObjects import LightObject
-from Rhino.Geometry import Light
 class LightTableEventArgs:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -778,12 +817,6 @@ class LightTableEventType(Enum):
     Sorted = 4
 
 
-from Rhino import RhinoDoc
-from Rhino.DocObjects import Linetype
-from Rhino.DocObjects import ObjectLinetypeSource
-from Rhino.DocObjects import RhinoObject
-from System import Guid
-from Rhino.DocObjects import ModelComponentType
 class LinetypeTable:
     def __iter__(self) -> Iterator[Linetype]: ...
     def __getitem__(self, index: int) -> Linetype: ...
@@ -872,8 +905,6 @@ class LinetypeTable:
     def UndoModify(self, index: int) -> bool: ...
 
 
-from Rhino import RhinoDoc
-from Rhino.DocObjects import Linetype
 class LinetypeTableEventArgs:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -904,11 +935,6 @@ class LinetypeTableEventType(Enum):
     Current = 5
 
 
-from Rhino.DocObjects import Material
-from Rhino.DocObjects import ObjectMaterialSource
-from Rhino.DocObjects import ModelComponentType
-from System import Guid
-from Rhino import RhinoDoc
 class MaterialTable:
     def __iter__(self) -> Iterator[Material]: ...
     def __getitem__(self, index: int) -> Material: ...
@@ -967,8 +993,6 @@ class MaterialTable:
     def ToString(self) -> str: ...
 
 
-from Rhino import RhinoDoc
-from Rhino.DocObjects import Material
 class MaterialTableEventArgs:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -1003,9 +1027,6 @@ class ModifyType(Enum):
     NotSaved = 2
 
 
-from Rhino import RhinoDoc
-from Rhino.DocObjects import ConstructionPlane
-from Rhino.Geometry import Plane
 class NamedConstructionPlaneTable:
     def __iter__(self) -> Iterator[ConstructionPlane]: ...
     @overload
@@ -1036,8 +1057,6 @@ class NamedConstructionPlaneTable:
     def ToString(self) -> str: ...
 
 
-from Rhino import RhinoDoc
-from System import Guid
 class NamedLayerStateTable:
     @overload
     def Delete(self, name: str) -> bool: ...
@@ -1071,10 +1090,6 @@ class NamedLayerStateTable:
     def ToString(self) -> str: ...
 
 
-from Rhino import RhinoDoc
-from System import Guid
-from Rhino.DocObjects import RhinoObject
-from Rhino.Geometry import Transform
 class NamedPositionTable:
     @overload
     def Append(self, name: str, objects: Iterable[RhinoObject]) -> bool: ...
@@ -1138,11 +1153,6 @@ class NamedPositionTable:
     def Update(self, name: str) -> bool: ...
 
 
-from Rhino import RhinoDoc
-from Rhino.DocObjects import ViewInfo
-from System import Guid
-from Rhino.Display import RhinoViewport
-from Rhino.Display import RhinoView
 class NamedViewTable:
     def __iter__(self) -> Iterator[ViewInfo]: ...
     @overload
@@ -1187,68 +1197,6 @@ class NamedViewTable:
     def ToString(self) -> str: ...
 
 
-from Rhino.DocObjects import RhinoObject
-from System import Guid
-from Rhino.Geometry import BoundingBox
-from Rhino.DocObjects import ModelComponentType
-from Rhino.DocObjects import ObjRef
-from Rhino.Geometry import Transform
-from Rhino.Input.Custom import PickContext
-from Rhino.DocObjects import ObjectEnumeratorSettings
-from Rhino.DocObjects import ObjectType
-from Rhino.Geometry import Surface
-from Rhino.DocObjects import ObjectAttributes
-from Rhino.DocObjects import HistoryRecord
-from Rhino.Geometry import Extrusion
-from Rhino.Geometry import ClippingPlaneSurface
-from Rhino.Geometry import Mesh
-from Rhino.Geometry import Brep
-from Rhino.DocObjects import InstanceObject
-from Rhino.Geometry import Plane
-from Rhino.Geometry import Hatch
-from Rhino.Geometry import MorphControl
-from Rhino.DocObjects import GripObject
-from Rhino.Render import RenderMaterial
-from Rhino.Render import TextureMapping
-from Rhino.Geometry import GeometryBase
-from Rhino.Geometry import Point3d
-from Rhino.Geometry import Point
-from Rhino.Geometry import TextEntity
-from Rhino.Geometry import Leader
-from Rhino.Geometry import TextDot
-from Rhino.Geometry import Line
-from Rhino.Geometry import Circle
-from Rhino.Geometry import Arc
-from Rhino.Geometry import Polyline
-from Rhino.Geometry import Curve
-from Rhino.Geometry import SubD
-from Rhino.Geometry import PointCloud
-from Rhino import RhinoDoc
-from Rhino.DocObjects import Layer
-from System.Drawing import Color
-from Rhino.Display import RhinoViewport
-from Rhino.Geometry import Point2d
-from Rhino.DocObjects.Custom import CustomMeshObject
-from Rhino.DocObjects import MeshObject
-from Rhino.DocObjects.Custom import CustomBrepObject
-from Rhino.DocObjects import BrepObject
-from Rhino.DocObjects.Custom import CustomPointObject
-from Rhino.DocObjects import PointObject
-from Rhino.DocObjects import CurveObject
-from Rhino.DocObjects.Custom import CustomCurveObject
-from Rhino.Geometry import Point3f
-from Rhino.Collections import RhinoList
-from Rhino.Geometry import RadialDimension
-from Rhino.Geometry import Rectangle3d
-from Rhino.Geometry import Box
-from Rhino.Geometry import Ellipse
-from Rhino.Geometry import Sphere
-from Rhino.Geometry import LinearDimension
-from Rhino.Geometry import AngularDimension
-from Rhino.Geometry import OrdinateDimension
-from Rhino.Geometry import Centermark
-from Rhino.Display import Text3d
-from Rhino.Geometry import TextJustification
 class ObjectTable:
     def __iter__(self) -> Iterator[RhinoObject]: ...
     def __getitem__(self, index: int) -> RhinoObject: ...
@@ -1845,13 +1793,6 @@ class RestoreLayerProperties(Enum):
 
 
 
-from Rhino import RhinoDoc
-from System.Collections.Generic import IEqualityComparer
-from System.Collections.Generic import KeyCollection
-from System.Collections.Generic import ValueCollection
-from System.Collections.Generic import Enumerator
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
 class RuntimeDocumentDataTable:
     def __iter__(self) -> Iterator[KeyValuePair]: ...
     @overload
@@ -1900,7 +1841,6 @@ class RuntimeDocumentDataTable:
     def TryGetValue(self, key: object) -> tuple[bool, object]: ...
 
 
-from Rhino import RhinoDoc
 class SnapshotTable:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -1916,7 +1856,6 @@ class SnapshotTable:
     def ToString(self) -> str: ...
 
 
-from Rhino import RhinoDoc
 class StringTable:
     @overload
     def Delete(self, key: str) -> None: ...
@@ -1956,13 +1895,6 @@ class StringTable:
     def ToString(self) -> str: ...
 
 
-from Rhino import RhinoDoc
-from Rhino.Display import RhinoView
-from Rhino.Display import ViewTypeFilter
-from System import Guid
-from Rhino.Display import DefinedViewportProjection
-from System.Drawing import Rectangle
-from Rhino.Display import RhinoPageView
 class ViewTable:
     def __iter__(self) -> Iterator[RhinoView]: ...
     @overload

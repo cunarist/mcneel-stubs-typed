@@ -1,6 +1,19 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
+from Rhino.Display import Color4f
+from Rhino.Geometry import Point2d
+from Rhino.Geometry import Point3d
+from Rhino.Geometry import Point4d
+from Rhino.Geometry import Transform
+from Rhino.Geometry import Vector2d
+from Rhino.Geometry import Vector3d
+from Rhino.Render import ChangeContexts
+from System import DateTime
+from System import Guid
+from System.Drawing import Color
+
+
 
 
 class BoolField(Field):
@@ -105,8 +118,6 @@ class ByteArrayField(Field):
     def ValueAsObject(self) -> object: ...
 
 
-from Rhino.Display import Color4f
-from System.Drawing import Color
 class Color4fField(Field):
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -162,7 +173,6 @@ class Color4fField(Field):
     def ValueAsObject(self) -> object: ...
 
 
-from System import DateTime
 class DateTimeField(Field):
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -312,17 +322,6 @@ class Field:
     def ValueAsObject(self) -> object: ...
 
 
-from System import Guid
-from Rhino.Render import ChangeContexts
-from Rhino.Geometry import Transform
-from System import DateTime
-from Rhino.Display import Color4f
-from System.Drawing import Color
-from Rhino.Geometry import Vector2d
-from Rhino.Geometry import Vector3d
-from Rhino.Geometry import Point2d
-from Rhino.Geometry import Point3d
-from Rhino.Geometry import Point4d
 class FieldDictionary:
     def __iter__(self) -> Iterator[Any]: ...
     @overload
@@ -646,7 +645,6 @@ class FloatField(Field):
     def ValueAsObject(self) -> object: ...
 
 
-from System import Guid
 class GuidField(Field):
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -800,7 +798,6 @@ class NullField(Field):
     def ValueAsObject(self) -> object: ...
 
 
-from Rhino.Geometry import Point2d
 class Point2dField(Field):
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -852,7 +849,6 @@ class Point2dField(Field):
     def ValueAsObject(self) -> object: ...
 
 
-from Rhino.Geometry import Point3d
 class Point3dField(Field):
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -904,7 +900,6 @@ class Point3dField(Field):
     def ValueAsObject(self) -> object: ...
 
 
-from Rhino.Geometry import Point4d
 class Point4dField(Field):
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -1007,7 +1002,6 @@ class StringField(Field):
     def ValueAsObject(self) -> object: ...
 
 
-from Rhino.Geometry import Transform
 class TransformField(Field):
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -1059,7 +1053,6 @@ class TransformField(Field):
     def ValueAsObject(self) -> object: ...
 
 
-from Rhino.Geometry import Vector2d
 class Vector2dField(Field):
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -1111,7 +1104,6 @@ class Vector2dField(Field):
     def ValueAsObject(self) -> object: ...
 
 
-from Rhino.Geometry import Vector3d
 class Vector3dField(Field):
     @overload
     def Equals(self, obj: object) -> bool: ...

@@ -1,6 +1,87 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
+from Rhino import AntialiasLevel
+from Rhino import RhinoDoc
+from Rhino import UnitSystem
+from Rhino.Collections import ArchivableDictionary
+from Rhino.Commands import Result
+from Rhino.Display import BackgroundStyle
+from Rhino.Display import Color4f
+from Rhino.Display import DisplayPipeline
+from Rhino.Display import DisplayPipelineAttributes
+from Rhino.Display import DisplayTechnology
+from Rhino.Display import RhinoView
+from Rhino.DocObjects import Material
+from Rhino.DocObjects import ModelComponentType
+from Rhino.DocObjects import ObjRef
+from Rhino.DocObjects import PhysicallyBasedMaterial
+from Rhino.DocObjects import RhinoObject
+from Rhino.DocObjects import Texture
+from Rhino.DocObjects import TextureType
+from Rhino.DocObjects import ViewInfo
+from Rhino.DocObjects import ViewportInfo
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.FileIO import SerializationOptions
+from Rhino.Geometry import BoundingBox
+from Rhino.Geometry import Box
+from Rhino.Geometry import ComponentStatus
+from Rhino.Geometry import Cone
+from Rhino.Geometry import Cylinder
+from Rhino.Geometry import Interval
+from Rhino.Geometry import Light
+from Rhino.Geometry import Mesh
+from Rhino.Geometry import Plane
+from Rhino.Geometry import PlaneSurface
+from Rhino.Geometry import Point2d
+from Rhino.Geometry import Point3d
+from Rhino.Geometry import Sphere
+from Rhino.Geometry import Transform
+from Rhino.Geometry import Vector2d
+from Rhino.Geometry import Vector3d
+from Rhino.PlugIns import PlugIn
+from Rhino.PlugIns import PreviewNotification
+from Rhino.Render.DataSources import ContentFactory
+from Rhino.Render.DataSources import MetaData
+from Rhino.Render.Fields import Field
+from Rhino.Render.Fields import FieldDictionary
+from Rhino.Render.PostEffects import PostEffectCollection
+from Rhino.Render.PostEffects import PostEffectExecutionControl
+from Rhino.Render.UI import UserInterfaceSection
+from Rhino.Runtime.InteropWrappers import SimpleArrayByte
+from Rhino.Runtime.InteropWrappers import SimpleArrayFloat
+from Rhino.Runtime.InteropWrappers import StdVectorByte
+from Rhino.Runtime.InteropWrappers import StdVectorFloat
+from Rhino.UI.Controls import ExpandableContentUI
+from Rhino.UI.Controls import ICollapsibleSection
+from System import Action
+from System import Comparison
+from System import Converter
+from System import DateTime
+from System import DateTimeKind
+from System import Enum
+from System import EventHandler
+from System import Guid
+from System import IConvertible
+from System import IFormatProvider
+from System import IntPtr
+from System import Predicate
+from System import TypeCode
+from System.Collections.Generic import Enumerator
+from System.Collections.Generic import IComparer
+from System.Collections.ObjectModel import ReadOnlyCollection
+from System.Drawing import Bitmap
+from System.Drawing import Color
+from System.Drawing import Icon
+from System.Drawing import Point
+from System.Drawing import Rectangle
+from System.Drawing import Size
+from System.Reflection import Assembly
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Threading import Thread
+from System.Threading import ThreadStart
+
 from . import ChangeQueue
 from . import ChildSlotNames
 from . import CustomRenderMeshes
@@ -13,12 +94,12 @@ from . import UI
 __all__ = ['ChangeQueue', 'ChildSlotNames', 'CustomRenderMeshes', 'DataSources', 'Fields', 'ParameterNames', 'PostEffects', 'UI']
 
 
+
 class Accuracies(Enum):
     Minimum = 0
     Maximum = 1
 
 
-from System import EventHandler
 class AddCustomUISections:
     @overload
     @staticmethod
@@ -36,8 +117,6 @@ class AddCustomUISections:
     def ToString(self) -> str: ...
 
 
-from Rhino.UI.Controls import ExpandableContentUI
-from System import Guid
 class AddCustomUISectionsEventArgs:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -65,8 +144,6 @@ class AssignToSubFaceChoices(Enum):
     Ask = 2
 
 
-from System.Threading import Thread
-from System.Threading import ThreadStart
 class AsyncRenderContext:
     @overload
     def Dispose(self) -> None: ...
@@ -135,13 +212,6 @@ class BasicMaterialParameterNames:
     def ToString(self) -> str: ...
 
 
-from System import Guid
-from Rhino.Geometry import Point3d
-from Rhino.DocObjects.Custom import UserDataList
-from Rhino.Collections import ArchivableDictionary
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
-from Rhino.FileIO import SerializationOptions
 from Rhino.Runtime import CommonObject
 class CachedTextureCoordinates(CommonObject):
     def __iter__(self) -> Iterator[Point3d]: ...
@@ -212,10 +282,6 @@ class ChangeContexts(Enum):
     Script = 9
 
 
-from System.Drawing import Rectangle
-from System.Drawing import Size
-from Rhino.Display import Color4f
-from System import Guid
 class Channel:
     @overload
     def AddValue(self, x: int, y: int, value: Color4f) -> None: ...
@@ -263,9 +329,6 @@ class Channel(Enum):
     kLum = 4
 
 
-from Rhino.Display import DisplayTechnology
-from System import Guid
-from System import IntPtr
 class ChannelGPU:
     @overload
     def Clone(self) -> ChannelGPU: ...
@@ -347,7 +410,6 @@ class ContentChooserFlags(Enum):
     DisableImportButton = 16
 
 
-from System import IntPtr
 class ContentCollectionIterator:
     @overload
     def __init__(self, pCollection: IntPtr): ...
@@ -392,7 +454,6 @@ class ContentUndoBlocker:
     def ToString(self) -> str: ...
 
 
-from Rhino import RhinoDoc
 class ContentUndoHelper:
     @overload
     def __init__(self, doc: RhinoDoc): ...
@@ -416,7 +477,6 @@ class ContentUndoHelper:
     def TweakContent(self, content: RenderContent, parameterName: str) -> bool: ...
 
 
-from System import Guid
 class ContentUuids:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -611,10 +671,6 @@ class ContentUuids:
     def ToString(self) -> str: ...
 
 
-from System import IConvertible
-from Rhino.Display import Color4f
-from Rhino.Geometry import Vector2d
-from Rhino.Geometry import Vector3d
 class ConvertibleExtensions:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -645,11 +701,6 @@ class CrcRenderHashFlags(Enum):
     ExcludeDocumentEffects = 13
 
 
-from Rhino.PlugIns import PreviewNotification
-from System.Drawing import Size
-from System.Drawing import Bitmap
-from System import Guid
-from Rhino.DocObjects import ViewportInfo
 class CreatePreviewEventArgs:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -701,8 +752,6 @@ class CreatePreviewReason(Enum):
     Other = 99
 
 
-from System.Drawing import Size
-from System.Drawing import Bitmap
 class CreateTexture2dPreviewEventArgs:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -720,7 +769,6 @@ class CreateTexture2dPreviewEventArgs:
     def ToString(self) -> str: ...
 
 
-from System import Guid
 class CustomRenderContentAttribute:
     @overload
     def __init__(self, renderEngineGuid: str, imageBased: bool, category: str, is_elevated: bool, is_built_in: bool, is_private: bool): ...
@@ -776,12 +824,6 @@ class CustomRenderContentAttribute:
     def ToString(self) -> str: ...
 
 
-from System import Guid
-from Rhino.Geometry import Point3d
-from Rhino.Geometry import Vector3d
-from Rhino.Display import Color4f
-from Rhino.Geometry import Point2d
-from System import IntPtr
 class Decal:
     @overload
     def ConstPointer(self) -> IntPtr: ...
@@ -856,9 +898,6 @@ class Decal:
     def VertSweep(self) -> tuple[float, float]: ...
 
 
-from System import Guid
-from Rhino.Geometry import Point3d
-from Rhino.Geometry import Vector3d
 class DecalCreateParams:
     @overload
     def __init__(self): ...
@@ -978,7 +1017,6 @@ class Decals:
     def ToString(self) -> str: ...
 
 
-from Rhino.Display import DisplayPipelineAttributes
 class DisplayPipelineSettingsChangedEventArgs:
     @overload
     def __init__(self, dpa: DisplayPipelineAttributes): ...
@@ -1046,7 +1084,6 @@ class DocumentOrFreeFloatingBase(FreeFloatingBase):
     def ToString(self) -> str: ...
 
 
-from Rhino.Display import DisplayPipeline
 class DrawMiddlegroundEventArgs:
     @overload
     def __init__(self, dp: DisplayPipeline): ...
@@ -1161,9 +1198,6 @@ class FreeFloatingBase:
     def ToString(self) -> str: ...
 
 
-from System import EventHandler
-from System import Guid
-from Rhino.Geometry import Vector2d
 class GroundPlane(DocumentOrFreeFloatingBase):
     @overload
     def __init__(self): ...
@@ -1303,7 +1337,6 @@ class ImageAdjust:
     def ToString(self) -> str: ...
 
 
-from System import EventHandler
 class ImageFile:
     @overload
     @staticmethod
@@ -1339,7 +1372,6 @@ class ImageFileEvent(Enum):
     Deleted = 2
 
 
-from System import Guid
 class ImageFileEventArgs:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -1363,7 +1395,6 @@ class ImageFileEventArgs:
     def ToString(self) -> str: ...
 
 
-from Rhino.Display import DisplayPipeline
 class InitFramebufferEventArgs:
     @overload
     def __init__(self, dp: DisplayPipeline): ...
@@ -1389,8 +1420,6 @@ class it_strategy(Enum):
     ContentSelection = 1
 
 
-from System import IntPtr
-from Rhino.Geometry import Light
 class LightArray:
     @overload
     def __init__(self): ...
@@ -1416,11 +1445,6 @@ class LightArray:
     def ToString(self) -> str: ...
 
 
-from Rhino.PlugIns import PlugIn
-from System.Reflection import Assembly
-from System import Guid
-from Rhino import RhinoDoc
-from Rhino.Geometry import Light
 class LightManagerSupport:
     @overload
     def DeleteLight(self, doc: RhinoDoc, light: Light, bUndelete: bool) -> bool: ...
@@ -1468,10 +1492,6 @@ class LightManagerSupport:
     def UnGroup(self, doc: RhinoDoc, light_array: LightArray) -> tuple[LightArray]: ...
 
 
-from System import IntPtr
-from System import Guid
-from Rhino.Geometry import Light
-from Rhino.DocObjects import RhinoObject
 class LightManagerSupportClient:
     @overload
     def __init__(self, doc_uuid: int): ...
@@ -1577,8 +1597,6 @@ class LoadMultipleFlags(Enum):
     Preload = 1
 
 
-from System import Guid
-from Rhino.Geometry import Transform
 class MappingTag:
     @overload
     def __init__(self): ...
@@ -1614,8 +1632,6 @@ class MatchDataResult(Enum):
     All = 2
 
 
-from System import IntPtr
-from System import Guid
 class MetaDataProxy:
     @overload
     def __init__(self): ...
@@ -1667,7 +1683,6 @@ class NamedValue:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
 class PixelBuffer:
     @overload
     def __init__(self, bufferPointer: IntPtr): ...
@@ -1683,8 +1698,6 @@ class PixelBuffer:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from Rhino.Render.DataSources import MetaData
 class PreviewAppearance:
     @overload
     def __init__(self, pRenderContent: IntPtr): ...
@@ -1734,8 +1747,6 @@ class PreviewAppearance:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from System import Guid
 class PreviewBackground:
     @overload
     def __init__(self, pPreviewBackground: IntPtr): ...
@@ -1765,7 +1776,6 @@ class PreviewBackgroundType(Enum):
     Scene = 4
 
 
-from System import IntPtr
 class PreviewGeometry:
     @overload
     def __init__(self, pPreviewGeometry: IntPtr): ...
@@ -1795,7 +1805,6 @@ class PreviewGeometryType(Enum):
     Scene = 7
 
 
-from System import IntPtr
 class PreviewJobSignature:
     @overload
     def __init__(self): ...
@@ -1823,7 +1832,6 @@ class PreviewJobSignature:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
 class PreviewLighting:
     @overload
     def __init__(self, pPreviewLighting: IntPtr): ...
@@ -1851,7 +1859,6 @@ class PreviewQuality(Enum):
     Full = 4
 
 
-from System.Drawing import Bitmap
 class PreviewRenderedEventArgs:
     @overload
     def __init__(self): ...
@@ -1896,7 +1903,6 @@ class PreviewSceneQuality(Enum):
     Full = 4
 
 
-from System import IntPtr
 class PreviewSceneServer:
     @overload
     def __init__(self, pPreviewSceneServer: IntPtr): ...
@@ -1954,7 +1960,6 @@ class RdkTextureSize(Enum):
     Size5 = 2048
 
 
-from System import IntPtr
 class RdkUndo:
     @overload
     def __init__(self, pUndoRecord: IntPtr): ...
@@ -1972,7 +1977,6 @@ class RdkUndo:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
 class RdkUndoRecord:
     @overload
     def __init__(self, pUndoRecord: IntPtr): ...
@@ -1990,16 +1994,6 @@ class RdkUndoRecord:
     def ToString(self) -> str: ...
 
 
-from System import EventHandler
-from Rhino.PlugIns import PlugIn
-from System.Reflection import Assembly
-from System import Guid
-from Rhino.DocObjects import ViewInfo
-from System import IntPtr
-from Rhino import RhinoDoc
-from Rhino.Display import DisplayPipelineAttributes
-from Rhino.DocObjects import ViewportInfo
-from System import DateTime
 class RealtimeDisplayMode:
     @overload
     def add_HudLockButtonDoubleClicked(self, value: EventHandler) -> None: ...
@@ -2268,7 +2262,6 @@ class RealtimeDisplayMode:
     def UseFastDraw(self) -> bool: ...
 
 
-from System import Guid
 class RealtimeDisplayModeClassInfo:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -2290,7 +2283,6 @@ class RealtimeDisplayModeClassInfo:
     def ToString(self) -> str: ...
 
 
-from System import EventHandler
 class RenderChannels(DocumentOrFreeFloatingBase):
     @overload
     def __init__(self): ...
@@ -2326,21 +2318,6 @@ class RenderChannels(DocumentOrFreeFloatingBase):
     def ToString(self) -> str: ...
 
 
-from System import Guid
-from System.Drawing import Size
-from System.Drawing import Bitmap
-from System import EventHandler
-from Rhino import RhinoDoc
-from Rhino.PlugIns import PlugIn
-from System.Reflection import Assembly
-from Rhino.Commands import Result
-from Rhino.Render.Fields import FieldDictionary
-from System import IntPtr
-from Rhino.Render.Fields import Field
-from Rhino.Render.UI import UserInterfaceSection
-from Rhino.UI.Controls import ICollapsibleSection
-from Rhino.Render.DataSources import ContentFactory
-from Rhino import UnitSystem
 class RenderContent:
     @overload
     @staticmethod
@@ -2671,7 +2648,6 @@ class RenderContent:
     def VirtualIcon(self, size: Size) -> tuple[bool, Bitmap]: ...
 
 
-from Rhino import RhinoDoc
 class RenderContentChangedEventArgs(RenderContentEventArgs):
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -2709,8 +2685,6 @@ class RenderContentChangeReason(Enum):
     Delete = 8
 
 
-from System import IntPtr
-from System import Guid
 class RenderContentCollection:
     @overload
     def __init__(self): ...
@@ -2767,7 +2741,6 @@ class RenderContentCollection:
     def ToString(self) -> str: ...
 
 
-from Rhino import RhinoDoc
 class RenderContentEventArgs:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -2789,7 +2762,6 @@ class RenderContentEventArgs:
     def ToString(self) -> str: ...
 
 
-from Rhino import RhinoDoc
 class RenderContentFieldChangedEventArgs(RenderContentChangedEventArgs):
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -2824,7 +2796,6 @@ class RenderContentKind(Enum):
     Texture = 4
 
 
-from System import IntPtr
 class RenderContentKindList:
     @overload
     def __init__(self): ...
@@ -2871,8 +2842,6 @@ class RenderContentManager:
     def ToString(self) -> str: ...
 
 
-from System import Guid
-from Rhino import RhinoDoc
 class RenderContentSerializer:
     @overload
     def CanLoadMultiple(self) -> bool: ...
@@ -2928,8 +2897,6 @@ class RenderContentStyles(Enum):
     NameTypeSection = 2048
 
 
-from System import Guid
-from Rhino import RhinoDoc
 class RenderContentType:
     @overload
     def __init__(self, typeId: Guid): ...
@@ -2977,17 +2944,6 @@ class RenderEndEventArgs:
     def ToString(self) -> str: ...
 
 
-from Rhino import RhinoDoc
-from System import Guid
-from System.Drawing import Size
-from System.Drawing import Bitmap
-from Rhino.Render.Fields import FieldDictionary
-from System import IntPtr
-from Rhino.Render.Fields import Field
-from Rhino.Render.UI import UserInterfaceSection
-from Rhino.UI.Controls import ICollapsibleSection
-from Rhino.Render.DataSources import ContentFactory
-from Rhino import UnitSystem
 class RenderEnvironment(RenderContent):
     @overload
     def AddAutomaticUserInterfaceSection(self, caption: str, id: int) -> bool: ...
@@ -3219,7 +3175,6 @@ class RenderEnvironment(RenderContent):
     def VirtualIcon(self, size: Size) -> tuple[bool, Bitmap]: ...
 
 
-from System import Guid
 class RenderEnvironmentTable:
     def __iter__(self) -> Iterator[RenderEnvironment]: ...
     @overload
@@ -3255,21 +3210,6 @@ class RenderingSources(Enum):
     SnapShot = 3
 
 
-from Rhino.DocObjects import Material
-from Rhino import RhinoDoc
-from Rhino.DocObjects import ObjRef
-from System import Guid
-from Rhino.DocObjects import TextureType
-from Rhino.DocObjects import PhysicallyBasedMaterial
-from System.Drawing import Size
-from System.Drawing import Bitmap
-from Rhino.Render.Fields import FieldDictionary
-from System import IntPtr
-from Rhino.Render.Fields import Field
-from Rhino.Render.UI import UserInterfaceSection
-from Rhino.UI.Controls import ICollapsibleSection
-from Rhino.Render.DataSources import ContentFactory
-from Rhino import UnitSystem
 class RenderMaterial(RenderContent):
     @overload
     def AddAutomaticUserInterfaceSection(self, caption: str, id: int) -> bool: ...
@@ -3578,7 +3518,6 @@ class RenderMaterial(RenderContent):
     def VirtualIcon(self, size: Size) -> tuple[bool, Bitmap]: ...
 
 
-from System import Guid
 class RenderMaterialTable:
     def __iter__(self) -> Iterator[RenderMaterial]: ...
     @overload
@@ -3607,8 +3546,6 @@ class RenderMaterialTable:
     def ToString(self) -> str: ...
 
 
-from Rhino.PlugIns import PlugIn
-from System import Guid
 class RenderPanels:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -3631,14 +3568,6 @@ class RenderPanelType(Enum):
     RenderWindow = 0
 
 
-from Rhino.Commands import Result
-from System import Guid
-from Rhino.Display import RhinoView
-from System.Drawing import Rectangle
-from System.Drawing import Size
-from Rhino import RhinoDoc
-from Rhino.DocObjects import ViewportInfo
-from Rhino.PlugIns import PlugIn
 class RenderPipeline:
     @overload
     def CloseWindow(self) -> bool: ...
@@ -3697,7 +3626,6 @@ class RenderPipeline:
     def ToString(self) -> str: ...
 
 
-from System import Guid
 class RenderPlugInInfo:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -3717,13 +3645,6 @@ class RenderPlugInInfo:
     def ToString(self) -> str: ...
 
 
-from System.Collections.ObjectModel import ReadOnlyCollection
-from System.Collections.Generic import IComparer
-from System import Predicate
-from System import Action
-from System.Collections.Generic import Enumerator
-from System import Comparison
-from System import Converter
 class RenderPlugInList:
     @overload
     def __init__(self): ...
@@ -3840,15 +3761,6 @@ class RenderPlugInList:
     def TrueForAll(self, match: Predicate) -> bool: ...
 
 
-from Rhino.DocObjects import RhinoObject
-from Rhino.Geometry import Mesh
-from Rhino.Geometry import Sphere
-from Rhino.Geometry import Box
-from Rhino.Geometry import PlaneSurface
-from Rhino.Geometry import Cone
-from Rhino.Geometry import Plane
-from Rhino.Geometry import Transform
-from Rhino.Geometry import BoundingBox
 class RenderPrimitive:
     @overload
     def Dispose(self) -> None: ...
@@ -3891,7 +3803,6 @@ class RenderPrimitiveType(Enum):
     Cone = 5
 
 
-from Rhino import RhinoDoc
 class RenderPropertyChangedEvent:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -3922,18 +3833,6 @@ class RenderReturnCode(Enum):
     InternalError = 11
 
 
-from System.Drawing import Color
-from Rhino import AntialiasLevel
-from Rhino import UnitSystem
-from System.Drawing import Size
-from Rhino.Display import BackgroundStyle
-from System import Guid
-from Rhino.Render.PostEffects import PostEffectCollection
-from Rhino.DocObjects.Custom import UserDataList
-from Rhino.Collections import ArchivableDictionary
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
-from Rhino.FileIO import SerializationOptions
 from Rhino.Runtime import CommonObject
 class RenderSettings(CommonObject):
     @overload
@@ -4102,8 +4001,6 @@ class RenderSettings(CommonObject):
     def ToString(self) -> str: ...
 
 
-from Rhino import RhinoDoc
-from Rhino.DocObjects import ViewInfo
 class RenderSourceView:
     @overload
     def __init__(self, doc: RhinoDoc): ...
@@ -4126,9 +4023,6 @@ class RenderSuccessCode(Enum):
     Failed = 1
 
 
-from Rhino.PlugIns import PlugIn
-from System import Guid
-from System.Drawing import Icon
 class RenderTabs:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -4151,21 +4045,6 @@ class RenderTabs:
     def ToString(self) -> str: ...
 
 
-from Rhino import RhinoDoc
-from System.Drawing import Bitmap
-from Rhino.Geometry import Transform
-from Rhino.DocObjects import RhinoObject
-from Rhino.Geometry import Vector3d
-from Rhino.Geometry import Point3d
-from System import IntPtr
-from System import Guid
-from System.Drawing import Size
-from Rhino.Render.Fields import FieldDictionary
-from Rhino.Render.Fields import Field
-from Rhino.Render.UI import UserInterfaceSection
-from Rhino.UI.Controls import ICollapsibleSection
-from Rhino.Render.DataSources import ContentFactory
-from Rhino import UnitSystem
 class RenderTexture(RenderContent):
     @overload
     def AddAutomaticUserInterfaceSection(self, caption: str, id: int) -> bool: ...
@@ -4505,7 +4384,6 @@ class RenderTexture(RenderContent):
     def VirtualIcon(self, size: Size) -> tuple[bool, Bitmap]: ...
 
 
-from System import Guid
 class RenderTextureTable:
     def __iter__(self) -> Iterator[RenderTexture]: ...
     @overload
@@ -4534,15 +4412,6 @@ class RenderTextureTable:
     def ToString(self) -> str: ...
 
 
-from System.Drawing import Size
-from System import Guid
-from System import EventHandler
-from Rhino.DocObjects import ViewInfo
-from System.Drawing import Bitmap
-from Rhino import RhinoDoc
-from Rhino.DocObjects import ViewportInfo
-from System.Drawing import Rectangle
-from Rhino.Render.PostEffects import PostEffectExecutionControl
 class RenderWindow:
     @overload
     @staticmethod
@@ -4622,7 +4491,6 @@ class RenderWindow:
     def ToString(self) -> str: ...
 
 
-from System import Guid
 class RenderWindowClonedEventArgs:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -4642,8 +4510,6 @@ class RenderWindowClonedEventArgs:
     def ToString(self) -> str: ...
 
 
-from Rhino import RhinoDoc
-from System import EventHandler
 class SafeFrame(DocumentOrFreeFloatingBase):
     @overload
     def __init__(self): ...
@@ -4723,7 +4589,6 @@ class SafeFrame(DocumentOrFreeFloatingBase):
     def ToString(self) -> str: ...
 
 
-from Rhino.Geometry import Mesh
 class SceneObject:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -4739,7 +4604,6 @@ class SceneObject:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
 class SceneServerData:
     @overload
     def __init__(self, appearance: PreviewAppearance, usage: SceneServerDataUsage): ...
@@ -4778,8 +4642,6 @@ class ShowContentChooserResults(Enum):
     Instance = 3
 
 
-from System.Drawing import Color
-from System import IntPtr
 class SimulatedEnvironment:
     @overload
     def __init__(self): ...
@@ -4815,12 +4677,6 @@ class SimulatedEnvironment:
     def ToString(self) -> str: ...
 
 
-from Rhino import RhinoDoc
-from Rhino.DocObjects import Texture
-from Rhino.Geometry import Transform
-from Rhino.Geometry import Vector2d
-from Rhino.Display import Color4f
-from System import IntPtr
 class SimulatedTexture:
     @overload
     def __init__(self): ...
@@ -4906,8 +4762,6 @@ class SimulatedTexture:
     def UnitsToMeters(self, doc: RhinoDoc, units: float) -> float: ...
 
 
-from System import EventHandler
-from System import Guid
 class Skylight(DocumentOrFreeFloatingBase):
     @overload
     def __init__(self): ...
@@ -5015,12 +4869,6 @@ class StandardChildSlots(Enum):
     PbrAlpha = 123
 
 
-from System import EventHandler
-from System import DateTime
-from Rhino.Geometry import Vector3d
-from Rhino.Geometry import Light
-from System import DateTimeKind
-from System.Drawing import Color
 class Sun(DocumentOrFreeFloatingBase):
     @overload
     def __init__(self): ...
@@ -5380,7 +5228,6 @@ class SupportOptions:
     def UseRenderedPreview() -> bool: ...
 
 
-from Rhino.Display import Color4f
 class TexturedColor:
     @overload
     def __init__(self, name: str, value: Color4f, on: bool, amount: float): ...
@@ -5431,13 +5278,6 @@ class TextureEnvironmentMappingMode(Enum):
     Hemispherical = 9
 
 
-from Rhino.Geometry import Point3d
-from Rhino.Geometry import Vector3d
-from Rhino.Display import Color4f
-from Rhino.Runtime.InteropWrappers import SimpleArrayByte
-from Rhino.Runtime.InteropWrappers import SimpleArrayFloat
-from Rhino.Runtime.InteropWrappers import StdVectorByte
-from Rhino.Runtime.InteropWrappers import StdVectorFloat
 class TextureEvaluator:
     @overload
     def Dispose(self) -> None: ...
@@ -5480,7 +5320,6 @@ class TextureGeneration(Enum):
     Disallow = 2
 
 
-from System import IntPtr
 class TextureGraphInfo:
     @overload
     def __init__(self): ...
@@ -5518,22 +5357,6 @@ class TextureGraphInfo:
     def ToString(self) -> str: ...
 
 
-from System import Guid
-from Rhino.Geometry import Transform
-from Rhino.DocObjects import ModelComponentType
-from Rhino.Geometry import Point3d
-from Rhino.Geometry import Vector3d
-from Rhino.Geometry import Plane
-from Rhino.Geometry import Interval
-from Rhino.Geometry import Sphere
-from Rhino.Geometry import Cylinder
-from Rhino.Geometry import Mesh
-from Rhino.Geometry import ComponentStatus
-from Rhino.DocObjects.Custom import UserDataList
-from Rhino.Collections import ArchivableDictionary
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
-from Rhino.FileIO import SerializationOptions
 from Rhino.DocObjects import ModelComponent
 class TextureMapping(ModelComponent):
     @overload
@@ -5785,21 +5608,6 @@ class TimeZone:
     def ToString(self) -> str: ...
 
 
-from Rhino.Display import Color4f
-from Rhino.Geometry import Transform
-from Rhino.DocObjects import RhinoObject
-from System.Drawing import Bitmap
-from Rhino.Geometry import Vector3d
-from System import Guid
-from System.Drawing import Size
-from Rhino.Render.Fields import FieldDictionary
-from System import IntPtr
-from Rhino.Render.Fields import Field
-from Rhino import RhinoDoc
-from Rhino.Render.UI import UserInterfaceSection
-from Rhino.UI.Controls import ICollapsibleSection
-from Rhino.Render.DataSources import ContentFactory
-from Rhino import UnitSystem
 class TwoColorRenderTexture(RenderTexture):
     @overload
     def AddAutomaticUserInterfaceSection(self, caption: str, id: int) -> bool: ...
@@ -6135,7 +5943,6 @@ class TwoColorRenderTexture(RenderTexture):
     def VirtualIcon(self, size: Size) -> tuple[bool, Bitmap]: ...
 
 
-from System import EventHandler
 class UndoRedo:
     @overload
     @staticmethod
@@ -6159,11 +5966,6 @@ class UndoRedo:
     def ToString(self) -> str: ...
 
 
-from System import Guid
-from Rhino import RhinoDoc
-from System import IntPtr
-from System.Drawing import Rectangle
-from System.Drawing import Point
 class Utilities:
     @overload
     @staticmethod

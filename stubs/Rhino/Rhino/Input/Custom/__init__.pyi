@@ -1,6 +1,62 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
+from Rhino import RhinoDoc
+from Rhino.ApplicationSettings import OsnapModes
+from Rhino.Collections import TransformObjectList
+from Rhino.Commands import Result
+from Rhino.Display import DisplayPipeline
+from Rhino.Display import RhinoView
+from Rhino.Display import RhinoViewport
+from Rhino.DocObjects import ObjectType
+from Rhino.DocObjects import ObjRef
+from Rhino.DocObjects import RhinoObject
+from Rhino.Geometry import Arc
+from Rhino.Geometry import BezierCurve
+from Rhino.Geometry import BoundingBox
+from Rhino.Geometry import Brep
+from Rhino.Geometry import BrepFace
+from Rhino.Geometry import Circle
+from Rhino.Geometry import ComponentIndex
+from Rhino.Geometry import Cone
+from Rhino.Geometry import Curve
+from Rhino.Geometry import Cylinder
+from Rhino.Geometry import GeometryBase
+from Rhino.Geometry import Line
+from Rhino.Geometry import Mesh
+from Rhino.Geometry import NurbsCurve
+from Rhino.Geometry import NurbsSurface
+from Rhino.Geometry import Plane
+from Rhino.Geometry import Point2d
+from Rhino.Geometry import Point3d
+from Rhino.Geometry import PointCloud
+from Rhino.Geometry import Polyline
+from Rhino.Geometry import Sphere
+from Rhino.Geometry import Surface
+from Rhino.Geometry import Torus
+from Rhino.Geometry import Transform
+from Rhino.Geometry import Vector3d
+from Rhino.Input import GetResult
+from Rhino.UI import CursorStyle
+from Rhino.UI import LocalizeStringPair
+from System import AsyncCallback
+from System import Enum
+from System import EventHandler
+from System import IAsyncResult
+from System import IFormatProvider
+from System import IntPtr
+from System import IProgress
+from System import TypeCode
+from System.Drawing import Color
+from System.Drawing import Point
+from System.Drawing import Rectangle
+from System.Reflection import MethodInfo
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Threading import CancellationToken
+from System.Threading.Tasks import Task
+
+
 
 
 class CommandLineOption:
@@ -95,8 +151,6 @@ class GeometryAttributeFilter(Enum):
     AcceptAllAttributes = 4294967295
 
 
-from Rhino.Geometry import Arc
-from Rhino.Commands import Result
 class GetArc:
     @overload
     def __init__(self): ...
@@ -138,15 +192,6 @@ class GetArc:
     def ToString(self) -> str: ...
 
 
-from Rhino.Geometry import Point3d
-from System.Drawing import Color
-from Rhino.UI import LocalizeStringPair
-from Rhino.Input import GetResult
-from Rhino.Commands import Result
-from Rhino.Geometry import Vector3d
-from Rhino.Display import RhinoView
-from System.Drawing import Rectangle
-from System.Drawing import Point
 class GetBaseClass:
     @overload
     def AcceptColor(self, enable: bool) -> None: ...
@@ -289,20 +334,6 @@ class GetBaseClass:
     def View(self) -> RhinoView: ...
 
 
-from System.Threading import CancellationToken
-from System import EventHandler
-from System.Threading.Tasks import Task
-from Rhino import RhinoDoc
-from Rhino.Commands import Result
-from System import IProgress
-from Rhino.Geometry import Point3d
-from System.Drawing import Color
-from Rhino.UI import LocalizeStringPair
-from Rhino.Input import GetResult
-from Rhino.Geometry import Vector3d
-from Rhino.Display import RhinoView
-from System.Drawing import Rectangle
-from System.Drawing import Point
 class GetCancel(GetBaseClass):
     @overload
     def __init__(self): ...
@@ -468,8 +499,6 @@ class GetCancel(GetBaseClass):
     def WaitAll(self, tasks: Iterable[Task], doc: RhinoDoc) -> Result: ...
 
 
-from Rhino.Geometry import Circle
-from Rhino.Commands import Result
 class GetCircle:
     @overload
     def __init__(self): ...
@@ -515,8 +544,6 @@ class GetCircle:
     def ToString(self) -> str: ...
 
 
-from Rhino.Geometry import Cone
-from Rhino.Commands import Result
 class GetCone:
     @overload
     def __init__(self): ...
@@ -570,8 +597,6 @@ class GetCone:
     def ToString(self) -> str: ...
 
 
-from Rhino.Geometry import Cylinder
-from Rhino.Commands import Result
 class GetCylinder:
     @overload
     def __init__(self): ...
@@ -617,9 +642,6 @@ class GetCylinder:
     def ToString(self) -> str: ...
 
 
-from Rhino.Geometry import Point3d
-from Rhino.Geometry import NurbsCurve
-from Rhino.Commands import Result
 class GetEllipse:
     @overload
     def __init__(self): ...
@@ -647,10 +669,6 @@ class GetEllipse:
     def ToString(self) -> str: ...
 
 
-from Rhino.Geometry import Point3d
-from Rhino.Geometry import NurbsSurface
-from Rhino.Commands import Result
-from Rhino.Geometry import Mesh
 class GetEllipsoid:
     @overload
     def __init__(self): ...
@@ -701,15 +719,6 @@ class GetFileNameMode(Enum):
     SaveWorksession = 18
 
 
-from Rhino.Input import GetResult
-from Rhino.Geometry import Point3d
-from System.Drawing import Color
-from Rhino.UI import LocalizeStringPair
-from Rhino.Commands import Result
-from Rhino.Geometry import Vector3d
-from Rhino.Display import RhinoView
-from System.Drawing import Rectangle
-from System.Drawing import Point
 class GetInteger(GetBaseClass):
     @overload
     def __init__(self): ...
@@ -859,10 +868,6 @@ class GetInteger(GetBaseClass):
     def View(self) -> RhinoView: ...
 
 
-from Rhino.Geometry import Line
-from Rhino.Commands import Result
-from System.Drawing import Color
-from Rhino.Geometry import Point3d
 class GetLine:
     @overload
     def __init__(self): ...
@@ -931,15 +936,6 @@ class GetLineMode(Enum):
     CPlaneNormalVector = 9
 
 
-from Rhino.Input import GetResult
-from Rhino.Geometry import Point3d
-from System.Drawing import Color
-from Rhino.UI import LocalizeStringPair
-from Rhino.Commands import Result
-from Rhino.Geometry import Vector3d
-from Rhino.Display import RhinoView
-from System.Drawing import Rectangle
-from System.Drawing import Point
 class GetNumber(GetBaseClass):
     @overload
     def __init__(self): ...
@@ -1087,21 +1083,6 @@ class GetNumber(GetBaseClass):
     def View(self) -> RhinoView: ...
 
 
-from Rhino import RhinoDoc
-from Rhino.DocObjects import ObjectType
-from Rhino.DocObjects import RhinoObject
-from Rhino.Geometry import GeometryBase
-from Rhino.Geometry import ComponentIndex
-from Rhino.Input import GetResult
-from Rhino.DocObjects import ObjRef
-from Rhino.Geometry import Point3d
-from System.Drawing import Color
-from Rhino.UI import LocalizeStringPair
-from Rhino.Commands import Result
-from Rhino.Geometry import Vector3d
-from Rhino.Display import RhinoView
-from System.Drawing import Rectangle
-from System.Drawing import Point
 class GetObject(GetBaseClass):
     @overload
     def __init__(self): ...
@@ -1338,15 +1319,6 @@ class GetObject(GetBaseClass):
     def View(self) -> RhinoView: ...
 
 
-from System import IntPtr
-from Rhino.DocObjects import RhinoObject
-from Rhino.Geometry import GeometryBase
-from Rhino.Geometry import ComponentIndex
-from System import AsyncCallback
-from System import IAsyncResult
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
-from System.Reflection import MethodInfo
 class GetObjectGeometryFilter:
     @overload
     def __init__(self, object: object, method: IntPtr): ...
@@ -1378,15 +1350,6 @@ class GetObjectGeometryFilter:
     def ToString(self) -> str: ...
 
 
-from Rhino.Input import GetResult
-from Rhino.Geometry import Point3d
-from System.Drawing import Color
-from Rhino.UI import LocalizeStringPair
-from Rhino.Commands import Result
-from Rhino.Geometry import Vector3d
-from Rhino.Display import RhinoView
-from System.Drawing import Rectangle
-from System.Drawing import Point
 class GetOption(GetBaseClass):
     @overload
     def __init__(self): ...
@@ -1530,31 +1493,6 @@ class GetOption(GetBaseClass):
     def View(self) -> RhinoView: ...
 
 
-from Rhino.Geometry import Point3d
-from Rhino.Display import RhinoViewport
-from Rhino.Geometry import Plane
-from System.Drawing import Color
-from Rhino.UI import CursorStyle
-from Rhino.Geometry import Line
-from Rhino.Geometry import Arc
-from Rhino.Geometry import Circle
-from Rhino.Geometry import Sphere
-from Rhino.Geometry import Cylinder
-from Rhino.Geometry import Curve
-from Rhino.Geometry import Surface
-from Rhino.Geometry import Brep
-from Rhino.Geometry import Mesh
-from System import EventHandler
-from Rhino.Input import GetResult
-from Rhino.ApplicationSettings import OsnapModes
-from Rhino.DocObjects import ObjRef
-from Rhino.Geometry import BrepFace
-from Rhino.UI import LocalizeStringPair
-from Rhino.Commands import Result
-from Rhino.Geometry import Vector3d
-from Rhino.Display import RhinoView
-from System.Drawing import Rectangle
-from System.Drawing import Point
 class GetPoint(GetBaseClass):
     @overload
     def __init__(self): ...
@@ -1828,10 +1766,6 @@ class GetPoint(GetBaseClass):
     def View(self) -> RhinoView: ...
 
 
-from Rhino.Geometry import Point3d
-from Rhino.Display import RhinoViewport
-from Rhino.Display import DisplayPipeline
-from Rhino import RhinoDoc
 from Rhino.Display import DrawEventArgs
 class GetPointDrawEventArgs(DrawEventArgs):
     @overload
@@ -1854,9 +1788,6 @@ class GetPointDrawEventArgs(DrawEventArgs):
     def ToString(self) -> str: ...
 
 
-from Rhino.Display import RhinoViewport
-from Rhino.Geometry import Point3d
-from System.Drawing import Point
 class GetPointMouseEventArgs:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -1886,9 +1817,6 @@ class GetPointMouseEventArgs:
     def ToString(self) -> str: ...
 
 
-from Rhino.Geometry import Polyline
-from Rhino.Commands import Result
-from Rhino.Geometry import Point3d
 class GetPolyline:
     @overload
     def __init__(self): ...
@@ -1932,8 +1860,6 @@ class GetPolyline:
     def ToString(self) -> str: ...
 
 
-from Rhino.Geometry import Sphere
-from Rhino.Commands import Result
 class GetSphere:
     @overload
     def __init__(self): ...
@@ -1961,15 +1887,6 @@ class GetSphere:
     def ToString(self) -> str: ...
 
 
-from Rhino.Input import GetResult
-from Rhino.Geometry import Point3d
-from System.Drawing import Color
-from Rhino.UI import LocalizeStringPair
-from Rhino.Commands import Result
-from Rhino.Geometry import Vector3d
-from Rhino.Display import RhinoView
-from System.Drawing import Rectangle
-from System.Drawing import Point
 class GetString(GetBaseClass):
     @overload
     def __init__(self): ...
@@ -2115,8 +2032,6 @@ class GetString(GetBaseClass):
     def View(self) -> RhinoView: ...
 
 
-from Rhino.Geometry import Torus
-from Rhino.Commands import Result
 class GetTorus:
     @overload
     def __init__(self): ...
@@ -2176,33 +2091,6 @@ class GetTorus:
     def ToString(self) -> str: ...
 
 
-from Rhino.Collections import TransformObjectList
-from Rhino.Display import RhinoViewport
-from Rhino.Geometry import Point3d
-from Rhino.Geometry import Transform
-from Rhino.Input import GetResult
-from Rhino.Geometry import Plane
-from System.Drawing import Color
-from Rhino.UI import CursorStyle
-from Rhino.Geometry import Line
-from Rhino.Geometry import Arc
-from Rhino.Geometry import Circle
-from Rhino.Geometry import Sphere
-from Rhino.Geometry import Cylinder
-from Rhino.Geometry import Curve
-from Rhino.Geometry import Surface
-from Rhino.Geometry import Brep
-from Rhino.Geometry import Mesh
-from System import EventHandler
-from Rhino.ApplicationSettings import OsnapModes
-from Rhino.DocObjects import ObjRef
-from Rhino.Geometry import BrepFace
-from Rhino.UI import LocalizeStringPair
-from Rhino.Commands import Result
-from Rhino.Geometry import Vector3d
-from Rhino.Display import RhinoView
-from System.Drawing import Rectangle
-from System.Drawing import Point
 class GetTransform(GetPoint):
     @overload
     def AcceptColor(self, enable: bool) -> None: ...
@@ -2490,9 +2378,6 @@ class GetTransform(GetPoint):
     def View(self) -> RhinoView: ...
 
 
-from Rhino.Geometry import Brep
-from Rhino.Commands import Result
-from Rhino.Geometry import Mesh
 class GetTruncatedCone:
     @overload
     def __init__(self): ...
@@ -2557,7 +2442,6 @@ class MeshSphereStyle(Enum):
     Quad = 2
 
 
-from System.Drawing import Color
 class OptionColor:
     @overload
     def __init__(self, initialValue: Color): ...
@@ -2629,7 +2513,6 @@ class OptionInteger:
     def ToString(self) -> str: ...
 
 
-from Rhino.UI import LocalizeStringPair
 class OptionToggle:
     @overload
     def __init__(self, initialValue: bool, offValue: str, onValue: str): ...
@@ -2653,16 +2536,6 @@ class OptionToggle:
     def ToString(self) -> str: ...
 
 
-from Rhino.Display import RhinoView
-from Rhino.Geometry import Line
-from Rhino.Geometry import Transform
-from Rhino.Geometry import BoundingBox
-from Rhino.Geometry import Point3d
-from Rhino.Geometry import PointCloud
-from Rhino.Geometry import BezierCurve
-from Rhino.Geometry import NurbsCurve
-from Rhino.Geometry import Mesh
-from Rhino.Geometry import Point2d
 class PickContext:
     @overload
     def __init__(self): ...
@@ -2740,8 +2613,6 @@ class PickStyle(Enum):
     CrossingPick = 3
 
 
-from System.Threading.Tasks import Task
-from Rhino import RhinoDoc
 class TaskCompleteEventArgs:
     @overload
     def __init__(self, task: Task, doc: RhinoDoc): ...

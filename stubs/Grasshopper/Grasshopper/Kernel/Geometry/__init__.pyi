@@ -1,12 +1,35 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
+from Grasshopper.Kernel.Types import IGH_GeometricGoo
+from Rhino.Geometry import BoundingBox
+from Rhino.Geometry import Curve
+from Rhino.Geometry import GeometryBase
+from Rhino.Geometry import Plane
+from Rhino.Geometry import Point3d
+from Rhino.Geometry import Point3f
+from Rhino.Geometry import Vector2d
+from Rhino.Geometry import Vector2f
+from Rhino.Geometry import Vector3d
+from Rhino.Geometry import Vector3f
+from System import AsyncCallback
+from System import Enum
+from System import IAsyncResult
+from System import IFormatProvider
+from System import IntPtr
+from System import TypeCode
+from System.Collections.Generic import IList
+from System.Reflection import MethodInfo
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+
 from . import ConvexHull
 from . import Delaunay
 from . import SpatialTrees
 from . import Voronoi
 
 __all__ = ['ConvexHull', 'Delaunay', 'SpatialTrees', 'Voronoi']
+
 
 
 class Circle2:
@@ -66,8 +89,6 @@ class Containment(Enum):
     outside = 3
 
 
-from Rhino.Geometry import Curve
-from Rhino.Geometry import Plane
 class GH_CurveOffset:
     @overload
     def __init__(self, curve: Curve, offsetPlane: Plane): ...
@@ -95,11 +116,6 @@ class GH_CurveOffsetCorner(Enum):
     Fillet = 2
 
 
-from Rhino.Geometry import BoundingBox
-from Rhino.Geometry import GeometryBase
-from Grasshopper.Kernel.Types import IGH_GeometricGoo
-from Rhino.Geometry import Point3d
-from Rhino.Geometry import Plane
 class GH_SanityXForm:
     @overload
     def __init__(self): ...
@@ -141,12 +157,6 @@ class ILeafAction:
     def LeafAction(self, Leaf: Node3Leaf) -> VorLeafRecursionResult: ...
 
 
-from System import IntPtr
-from System import AsyncCallback
-from System import IAsyncResult
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
-from System.Reflection import MethodInfo
 class LeafAction:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -178,12 +188,6 @@ class LeafAction:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from System import AsyncCallback
-from System import IAsyncResult
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
-from System.Reflection import MethodInfo
 class LeafAction:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -639,8 +643,6 @@ class Node2Tree:
     def ToString(self) -> str: ...
 
 
-from Rhino.Geometry import Point3d
-from Rhino.Geometry import Point3f
 class Node3:
     @overload
     def __init__(self): ...
@@ -951,8 +953,6 @@ class Parallax(Enum):
     AntiParallel = -1
 
 
-from Rhino.Geometry import Plane
-from System.Collections.Generic import IList
 class Plane:
     @overload
     def __init__(self): ...
@@ -995,7 +995,6 @@ class Plane:
     def Unitize(self) -> None: ...
 
 
-from Rhino.Geometry import Point3d
 class PointCloud:
     @overload
     def __init__(self): ...
@@ -1090,8 +1089,6 @@ class Side2(Enum):
     Left = -1
 
 
-from Rhino.Geometry import Vector2d
-from Rhino.Geometry import Vector2f
 class Vec2:
     @overload
     def __init__(self): ...
@@ -1155,8 +1152,6 @@ class Vec2:
     def Unitize(self) -> None: ...
 
 
-from Rhino.Geometry import Vector3d
-from Rhino.Geometry import Vector3f
 class Vec3:
     @overload
     def __init__(self): ...

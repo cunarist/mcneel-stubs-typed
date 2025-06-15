@@ -1,15 +1,46 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
+from GH_IO.Serialization import GH_IReader
+from GH_IO.Serialization import GH_IWriter
+from Grasshopper.Kernel.Types import Complex
+from Grasshopper.Kernel.Types import GH_Number
+from Grasshopper.Kernel.Types import GH_QuickCastType
+from Grasshopper.Kernel.Types import IGH_Goo
+from Grasshopper.Kernel.Types import IGH_GooProxy
+from Grasshopper.Kernel.Types import IGH_QuickCast
+from Grasshopper.Kernel.Types import T
+from Grasshopper.Rhinoceros import Attributes
+from Grasshopper.Rhinoceros import ModelColor
+from Grasshopper.Rhinoceros import ModelContent
+from Grasshopper.Rhinoceros import ModelContentName
+from Grasshopper.Rhinoceros import ModelData
+from Grasshopper.Rhinoceros import ModelTags
+from Grasshopper.Rhinoceros import ModelUserText
+from Grasshopper.Rhinoceros import ModelValue
+from Grasshopper.Rhinoceros import T
+from Rhino.DocObjects import HatchLine
+from Rhino.DocObjects import HatchPattern
+from Rhino.DocObjects import Linetype
+from Rhino.DocObjects import ObjectLinetypeSource
+from Rhino.DocObjects import ObjectPlotColorSource
+from Rhino.DocObjects import ObjectPlotWeightSource
+from Rhino.Geometry import Interval
+from Rhino.Geometry import Matrix
+from Rhino.Geometry import Point2d
+from Rhino.Geometry import Point3d
+from Rhino.Geometry import Vector2d
+from Rhino.Geometry import Vector3d
+from System import Guid
+from System.Collections.Generic import IReadOnlyList
+from System.Drawing import Color
+
 from . import Params
 
 __all__ = ['Params']
 
 
-from Rhino.Geometry import Point2d
-from Rhino.Geometry import Vector2d
-from System.Collections.Generic import IReadOnlyList
-from Rhino.DocObjects import HatchLine
+
 class Attributes:
     @overload
     def Equals(self, other: object) -> bool: ...
@@ -44,12 +75,6 @@ class Attributes:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import IReadOnlyList
-from Grasshopper.Rhinoceros import ModelData
-from Grasshopper.Rhinoceros import ModelUserText
-from Grasshopper.Rhinoceros import ModelContentName
-from Grasshopper.Rhinoceros import ModelTags
-from Grasshopper.Rhinoceros import Attributes
 class Attributes:
     @overload
     def __init__(self): ...
@@ -99,12 +124,6 @@ class Attributes:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import IReadOnlyList
-from Grasshopper.Rhinoceros import ModelData
-from Grasshopper.Rhinoceros import ModelUserText
-from Grasshopper.Rhinoceros import ModelContentName
-from Grasshopper.Rhinoceros import ModelTags
-from Grasshopper.Rhinoceros import Attributes
 class Attributes:
     @overload
     def __init__(self): ...
@@ -207,12 +226,6 @@ class Attributes:
     def ToString(self) -> str: ...
 
 
-from Rhino.DocObjects import HatchLine
-from Rhino.Geometry import Point2d
-from Rhino.Geometry import Vector2d
-from System.Collections.Generic import IReadOnlyList
-from Grasshopper.Rhinoceros import ModelValue
-from Grasshopper.Rhinoceros import T
 from Grasshopper.Rhinoceros import ModelValue
 class ModelHatchLine(ModelValue):
     @overload
@@ -262,16 +275,6 @@ class ModelHatchLine(ModelValue):
     def ToString(self) -> str: ...
 
 
-from Rhino.DocObjects import HatchPattern
-from System import Guid
-from System.Collections.Generic import IReadOnlyList
-from Grasshopper.Rhinoceros import Attributes
-from Grasshopper.Rhinoceros import ModelUserText
-from Grasshopper.Rhinoceros import ModelContentName
-from Grasshopper.Rhinoceros import ModelTags
-from Grasshopper.Rhinoceros import ModelContent
-from Grasshopper.Rhinoceros import T
-from Grasshopper.Rhinoceros import ModelData
 from Grasshopper.Rhinoceros import ModelComponentContent
 class ModelHatchPattern(ModelComponentContent):
     @overload
@@ -346,16 +349,6 @@ class ModelHatchPattern(ModelComponentContent):
     def ToString(self) -> str: ...
 
 
-from Rhino.DocObjects import Linetype
-from System import Guid
-from Grasshopper.Rhinoceros import ModelContentName
-from System.Collections.Generic import IReadOnlyList
-from Grasshopper.Rhinoceros import Attributes
-from Grasshopper.Rhinoceros import ModelUserText
-from Grasshopper.Rhinoceros import ModelTags
-from Grasshopper.Rhinoceros import ModelContent
-from Grasshopper.Rhinoceros import T
-from Grasshopper.Rhinoceros import ModelData
 from Grasshopper.Rhinoceros import ModelComponentContent
 class ModelLinetype(ModelComponentContent):
     @overload
@@ -438,20 +431,6 @@ class ModelLinetype(ModelComponentContent):
     def ToString(self) -> str: ...
 
 
-from Grasshopper.Kernel.Types import IGH_Goo
-from Grasshopper.Kernel.Types import GH_Number
-from Grasshopper.Kernel.Types import T
-from Grasshopper.Kernel.Types import GH_QuickCastType
-from Grasshopper.Kernel.Types import IGH_QuickCast
-from Grasshopper.Kernel.Types import Complex
-from Rhino.Geometry import Matrix
-from Rhino.Geometry import Point3d
-from Rhino.Geometry import Vector3d
-from System.Drawing import Color
-from Rhino.Geometry import Interval
-from GH_IO.Serialization import GH_IWriter
-from GH_IO.Serialization import GH_IReader
-from Grasshopper.Kernel.Types import IGH_GooProxy
 from Grasshopper.Kernel.Types import GH_Number
 class ModelLineWidth(GH_Number):
     @overload
@@ -527,7 +506,6 @@ class ModelLineWidth(GH_Number):
 
 
 from Grasshopper.Rhinoceros import ModelValue
-from Grasshopper.Rhinoceros import ModelValue
 class ObjectDrafting(ModelValue):
     @overload
     def __init__(self): ...
@@ -574,8 +552,6 @@ class ObjectDrafting(ModelValue):
     def ToString(self) -> str: ...
 
 
-from Rhino.DocObjects import ObjectPlotColorSource
-from Grasshopper.Rhinoceros import ModelValue
 from Grasshopper.Rhinoceros import ModelValue
 class ObjectDraftingColor(ModelValue):
     @overload
@@ -617,8 +593,6 @@ class ObjectDraftingColor(ModelValue):
     def ToString(self) -> str: ...
 
 
-from Rhino.DocObjects import ObjectLinetypeSource
-from Grasshopper.Rhinoceros import ModelValue
 from Grasshopper.Rhinoceros import ModelValue
 class ObjectDraftingLinetype(ModelValue):
     @overload
@@ -658,8 +632,6 @@ class ObjectDraftingLinetype(ModelValue):
     def ToString(self) -> str: ...
 
 
-from Rhino.DocObjects import ObjectPlotWeightSource
-from Grasshopper.Rhinoceros import ModelValue
 from Grasshopper.Rhinoceros import ModelValue
 class ObjectDraftingLineWidth(ModelValue):
     @overload
@@ -701,8 +673,6 @@ class ObjectDraftingLineWidth(ModelValue):
     def ToString(self) -> str: ...
 
 
-from Rhino.DocObjects import ObjectPlotColorSource
-from Grasshopper.Rhinoceros import ModelColor
 class Value:
     @overload
     def __init__(self, source: ObjectPlotColorSource): ...
@@ -749,7 +719,6 @@ class Value:
     def ToString(self) -> str: ...
 
 
-from Rhino.DocObjects import ObjectLinetypeSource
 class Value:
     @overload
     def __init__(self, source: ObjectLinetypeSource): ...
@@ -796,7 +765,6 @@ class Value:
     def ToString(self) -> str: ...
 
 
-from Rhino.DocObjects import ObjectPlotWeightSource
 class Value:
     @overload
     def __init__(self, source: ObjectPlotWeightSource): ...

@@ -1,11 +1,31 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
-
-
-from System import Guid
+from Rhino.Display import DisplayPipelineAttributes
 from Rhino.DocObjects import ObjectAttributes
+from Rhino.DocObjects import RhinoObject
+from Rhino.DocObjects import ViewInfo
+from Rhino.Geometry import BoundingBox
+from Rhino.Geometry import Light
+from Rhino.Geometry import Mesh
+from Rhino.Geometry import Plane
 from Rhino.Geometry import Transform
+from Rhino.Geometry import Vector2d
+from Rhino.Render import Decals
+from Rhino.Render import RenderEnvironment
+from Rhino.Render import RenderMaterial
+from Rhino.Render import RenderSettings
+from Rhino.Render import RenderTexture
+from Rhino.Render import TextureMapping
+from Rhino.Render import Usage
+from System import Enum
+from System import Guid
+from System import IFormatProvider
+from System import TypeCode
+
+
+
+
 class AncestryRecord:
     @overload
     def __init__(self): ...
@@ -40,16 +60,6 @@ class BakingFunctions(Enum):
     All = 4294967295
 
 
-from System import Guid
-from Rhino.Render import RenderSettings
-from Rhino.Geometry import Light
-from Rhino.DocObjects import ViewInfo
-from Rhino.Geometry import BoundingBox
-from Rhino.Render import RenderMaterial
-from Rhino.Render import RenderTexture
-from Rhino.Render import RenderEnvironment
-from Rhino.Render import Usage
-from Rhino.Display import DisplayPipelineAttributes
 class ChangeQueue:
     @overload
     def AreViewsEqual(self, aView: ViewInfo, bView: ViewInfo) -> bool: ...
@@ -111,9 +121,6 @@ class ChangeQueue:
     def ToString(self) -> str: ...
 
 
-from Rhino.Geometry import Plane
-from Rhino.DocObjects import ObjectAttributes
-from System import Guid
 class ClippingPlane:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -154,7 +161,6 @@ class DisplayRenderSettings:
     def ToString(self) -> str: ...
 
 
-from Rhino.Geometry import Transform
 class DynamicObjectTransform:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -201,7 +207,6 @@ class FrameBufferFillMode(Enum):
     Force32Bit = 4294967295
 
 
-from Rhino.Geometry import Vector2d
 class GroundPlane:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -231,8 +236,6 @@ class GroundPlane:
     def ToString(self) -> str: ...
 
 
-from System import Guid
-from Rhino.Geometry import Light
 class Light:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -254,8 +257,6 @@ class Light:
     def ToString(self) -> str: ...
 
 
-from Rhino.Geometry import Transform
-from Rhino.Render import TextureMapping
 class MappingChannel:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -309,11 +310,6 @@ class Material:
     def ToString(self) -> str: ...
 
 
-from Rhino.Geometry import Mesh
-from System import Guid
-from Rhino.Geometry import Transform
-from Rhino.DocObjects import ObjectAttributes
-from Rhino.DocObjects import RhinoObject
 class Mesh:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -343,11 +339,6 @@ class Mesh:
     def ToString(self) -> str: ...
 
 
-from System import Guid
-from Rhino.Render import RenderMaterial
-from Rhino.Geometry import Transform
-from Rhino.Render import Decals
-from Rhino.DocObjects import ObjectAttributes
 class MeshInstance:
     @overload
     def Equals(self, obj: object) -> bool: ...

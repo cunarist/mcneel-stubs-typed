@@ -1,12 +1,40 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
+from System import Action
+from System import AsyncCallback
+from System import Comparison
+from System import Delegate
+from System import Enum
+from System import EventHandler
+from System import IAsyncResult
+from System import IDisposable
+from System import IFormatProvider
+from System import IntPtr
+from System import TypeCode
+from System.Collections.Generic import Dictionary
+from System.Collections.Generic import Enumerator
+from System.Collections.Generic import IComparer
+from System.Collections.Generic import IEqualityComparer
+from System.Collections.Generic import KeyCollection
+from System.Collections.Generic import ValueCollection
+from System.Collections.Specialized import NotifyCollectionChangedEventHandler
+from System.ComponentModel import PropertyChangedEventHandler
+from System.Globalization import CultureInfo
+from System.IO import Stream
+from System.Reflection import Assembly
+from System.Reflection import MethodInfo
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Windows.Input import ICommand
+
 from . import Drawing
 from . import Forms
 from . import IO
 from . import Threading
 
 __all__ = ['Drawing', 'Forms', 'IO', 'Threading']
+
 
 
 class AttachableMemberIdentifier:
@@ -80,7 +108,6 @@ class ContentPropertyAttribute:
 
 
 
-from System import Action
 class DefaultStyleProvider:
     @overload
     def __init__(self): ...
@@ -275,7 +302,6 @@ class IControlObjectSource:
     def ControlObject(self) -> object: ...
 
 
-from System import IntPtr
 class IHandler:
     @property
     def ID(self) -> str: ...
@@ -319,8 +345,6 @@ class IStyleProvider:
     def Inherit(self) -> bool: ...
 
 
-from System.Reflection import Assembly
-from System.IO import Stream
 class NamespaceInfo:
     @overload
     def __init__(self, ns: str): ...
@@ -377,11 +401,6 @@ class OperatingSystemPlatform:
     def ToString(self) -> str: ...
 
 
-from System import EventHandler
-from System.Reflection import Assembly
-from System.Collections.Generic import Dictionary
-from System import IDisposable
-from System import Action
 class Platform:
     @overload
     def add_HandlerCreated(self, value: EventHandler) -> None: ...
@@ -529,16 +548,6 @@ class Platforms:
     def ToString(self) -> str: ...
 
 
-from System import Delegate
-from System.ComponentModel import PropertyChangedEventHandler
-from System import Action
-from System.Windows.Input import ICommand
-from System.Collections.Generic import IEqualityComparer
-from System.Collections.Generic import KeyCollection
-from System.Collections.Generic import ValueCollection
-from System.Collections.Generic import Enumerator
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
 class PropertyStore:
     @overload
     def __init__(self, parent: object): ...
@@ -636,7 +645,6 @@ class RuntimeNamePropertyAttribute:
     def ToString(self) -> str: ...
 
 
-from System import Action
 class Style:
     @overload
     @staticmethod
@@ -687,8 +695,6 @@ class UnhandledExceptionEventArgs:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from System import EventHandler
 class Widget:
     @overload
     def add_StyleChanged(self, value: EventHandler) -> None: ...

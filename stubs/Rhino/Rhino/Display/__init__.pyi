@@ -1,6 +1,74 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
+from Rhino import PersistentSettings
+from Rhino import RhinoDoc
+from Rhino import UnitSystem
+from Rhino.DocObjects import ActiveSpace
+from Rhino.DocObjects import ConstructionPlane
+from Rhino.DocObjects import CoordinateSystem
+from Rhino.DocObjects import DetailViewObject
+from Rhino.DocObjects import InstanceDefinition
+from Rhino.DocObjects import LineCapStyle
+from Rhino.DocObjects import LineJoinStyle
+from Rhino.DocObjects import Linetype
+from Rhino.DocObjects import Material
+from Rhino.DocObjects import ObjectAttributes
+from Rhino.DocObjects import ObjectType
+from Rhino.DocObjects import RhinoObject
+from Rhino.DocObjects import TextHorizontalAlignment
+from Rhino.DocObjects import Texture
+from Rhino.DocObjects import TextVerticalAlignment
+from Rhino.DocObjects import ViewInfo
+from Rhino.DocObjects import ViewportInfo
+from Rhino.Geometry import AnnotationBase
+from Rhino.Geometry import Arc
+from Rhino.Geometry import Arrowhead
+from Rhino.Geometry import BoundingBox
+from Rhino.Geometry import Box
+from Rhino.Geometry import Brep
+from Rhino.Geometry import Circle
+from Rhino.Geometry import Cone
+from Rhino.Geometry import Curve
+from Rhino.Geometry import Cylinder
+from Rhino.Geometry import Extrusion
+from Rhino.Geometry import Hatch
+from Rhino.Geometry import Light
+from Rhino.Geometry import Line
+from Rhino.Geometry import Mesh
+from Rhino.Geometry import ParticleSystem
+from Rhino.Geometry import Plane
+from Rhino.Geometry import Point2d
+from Rhino.Geometry import Point2f
+from Rhino.Geometry import Point3d
+from Rhino.Geometry import PointCloud
+from Rhino.Geometry import Sphere
+from Rhino.Geometry import SubD
+from Rhino.Geometry import Surface
+from Rhino.Geometry import TextDot
+from Rhino.Geometry import TextEntity
+from Rhino.Geometry import Torus
+from Rhino.Geometry import Transform
+from Rhino.Geometry import Vector3d
+from Rhino.Render import RealtimeDisplayMode
+from System import Enum
+from System import EventHandler
+from System import Guid
+from System import IFormatProvider
+from System import IntPtr
+from System import TypeCode
+from System.Collections.Specialized import NameValueCollection
+from System.Drawing import Bitmap
+from System.Drawing import Color
+from System.Drawing import Point
+from System.Drawing import PointF
+from System.Drawing import Rectangle
+from System.Drawing import Size
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Xml import XmlDocument
+
+
 
 
 class AnalysisStyle(Enum):
@@ -53,8 +121,6 @@ class BoundingBoxDisplayMode(Enum):
     OnDuringDynamicDisplay = 2
 
 
-from Rhino.Geometry import BoundingBox
-from Rhino import RhinoDoc
 class CalculateBoundingBoxEventArgs(DrawEventArgs):
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -95,7 +161,6 @@ class ClippingShadeColorUse(Enum):
     SolidColor = 2
 
 
-from System.Drawing import Color
 class Color4f:
     @overload
     def __init__(self, color: Color): ...
@@ -151,7 +216,6 @@ class Color4f:
     def ToString(self) -> str: ...
 
 
-from System.Drawing import Color
 class ColorCMYK:
     @overload
     def __init__(self, rgb: Color): ...
@@ -211,7 +275,6 @@ class ColorCMYK:
     def ToString(self) -> str: ...
 
 
-from Rhino.Geometry import Point3d
 class ColorGradient:
     @overload
     def __init__(self): ...
@@ -247,7 +310,6 @@ class ColorGradient:
     def ToString(self) -> str: ...
 
 
-from System.Drawing import Color
 class ColorHSL:
     @overload
     def __init__(self, rgb: Color): ...
@@ -303,7 +365,6 @@ class ColorHSL:
     def ToString(self) -> str: ...
 
 
-from System.Drawing import Color
 class ColorHSV:
     @overload
     def __init__(self, rgb: Color): ...
@@ -359,7 +420,6 @@ class ColorHSV:
     def ToString(self) -> str: ...
 
 
-from System.Drawing import Color
 class ColorLAB:
     @overload
     def __init__(self, rgb: Color): ...
@@ -413,7 +473,6 @@ class ColorLAB:
     def ToString(self) -> str: ...
 
 
-from System.Drawing import Color
 class ColorLCH:
     @overload
     def __init__(self, rgb: Color): ...
@@ -472,8 +531,6 @@ class ColorMode(Enum):
     BlackAndWhite = 2
 
 
-from System.Drawing import Color
-from System import IFormatProvider
 class ColorRGBA:
     @overload
     def __init__(self, color: ColorRGBA): ...
@@ -575,7 +632,6 @@ class ColorRGBA:
     def ToString(self, format: str, formatProvider: IFormatProvider) -> str: ...
 
 
-from System.Drawing import Color
 class ColorStop:
     @overload
     def __init__(self, color: Color, t: float): ...
@@ -597,7 +653,6 @@ class ColorStop:
     def ToString(self) -> str: ...
 
 
-from System.Drawing import Color
 class ColorXYZ:
     @overload
     def __init__(self, rgb: Color): ...
@@ -667,8 +722,6 @@ class CullFaceMode(Enum):
     DrawBackFaces = 2
 
 
-from Rhino.DocObjects import RhinoObject
-from Rhino import RhinoDoc
 class CullObjectEventArgs(DrawEventArgs):
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -699,15 +752,6 @@ class CurveThicknessUse(Enum):
     Pixels = 1
 
 
-from Rhino.Geometry import BoundingBox
-from Rhino.Geometry import Point3d
-from System.Drawing import Color
-from Rhino.Geometry import Line
-from Rhino.Geometry import Vector3d
-from Rhino.Geometry import Arc
-from Rhino.Geometry import Circle
-from Rhino.Geometry import Curve
-from Rhino.Geometry import Plane
 class CustomDisplay:
     @overload
     def __init__(self, enable: bool): ...
@@ -802,8 +846,6 @@ class DepthMode(Enum):
     AlwaysInBack = 2
 
 
-from System.Drawing import Bitmap
-from System.Drawing import Size
 class DisplayBitmap:
     @overload
     def __init__(self, bitmap: Bitmap): ...
@@ -832,9 +874,6 @@ class DisplayBitmap:
     def Update(self, bitmap: Bitmap) -> None: ...
 
 
-from Rhino.Geometry import BoundingBox
-from Rhino.Geometry import Vector3d
-from System.Drawing import Color
 class DisplayBitmapDrawList:
     @overload
     def __init__(self): ...
@@ -866,9 +905,6 @@ class DisplayBitmapDrawList:
     def ToString(self) -> str: ...
 
 
-from Rhino.DocObjects import ObjectType
-from System import Guid
-from Rhino.DocObjects import ActiveSpace
 class DisplayConduit:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -913,9 +949,6 @@ class DisplayEngine:
     def ToString(self) -> str: ...
 
 
-from Rhino.DocObjects import Material
-from System.Drawing import Color
-from Rhino.DocObjects import Texture
 class DisplayMaterial:
     @overload
     def __init__(self): ...
@@ -1017,8 +1050,6 @@ class DisplayMaterial:
     def ToString(self) -> str: ...
 
 
-from Rhino import RhinoDoc
-from System import Guid
 class DisplayModeChangedEventArgs:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -1038,7 +1069,6 @@ class DisplayModeChangedEventArgs:
     def ToString(self) -> str: ...
 
 
-from System import Guid
 class DisplayModeDescription:
     @overload
     @staticmethod
@@ -1156,12 +1186,6 @@ class DisplayModeDescription:
     def UpdateDisplayMode(displayMode: DisplayModeDescription) -> bool: ...
 
 
-from Rhino.DocObjects import Linetype
-from System.Drawing import Color
-from Rhino.DocObjects import CoordinateSystem
-from Rhino.DocObjects import LineCapStyle
-from Rhino.DocObjects import LineJoinStyle
-from Rhino.Geometry import Point2f
 class DisplayPen:
     @overload
     def __init__(self): ...
@@ -1228,49 +1252,6 @@ class DisplayPen:
     def ToString(self) -> str: ...
 
 
-from System.Drawing import Point
-from System.Drawing import Color
-from System.Drawing import PointF
-from Rhino import RhinoDoc
-from Rhino.DocObjects import RhinoObject
-from Rhino.DocObjects import ObjectAttributes
-from Rhino.Geometry import Transform
-from Rhino.Geometry import Brep
-from Rhino.Geometry import Extrusion
-from Rhino.Geometry import Mesh
-from Rhino.Geometry import Point3d
-from Rhino.Geometry import PointCloud
-from Rhino.Geometry import Vector3d
-from Rhino.Geometry import Line
-from Rhino.Geometry import TextDot
-from Rhino.Geometry import Hatch
-from Rhino.Geometry import BoundingBox
-from Rhino.Geometry import Box
-from Rhino.Geometry import Light
-from Rhino.DocObjects import ConstructionPlane
-from Rhino.Geometry import Point2d
-from Rhino.Geometry import Plane
-from Rhino.DocObjects import TextHorizontalAlignment
-from Rhino.DocObjects import TextVerticalAlignment
-from Rhino.Geometry import TextEntity
-from System.Drawing import Rectangle
-from Rhino.DocObjects import InstanceDefinition
-from Rhino.Geometry import AnnotationBase
-from Rhino.Geometry import Arrowhead
-from Rhino.Geometry import Arc
-from Rhino.Geometry import Circle
-from Rhino.Geometry import Sphere
-from Rhino.Geometry import Torus
-from Rhino.Geometry import Cylinder
-from Rhino.Geometry import Cone
-from Rhino.Geometry import Curve
-from Rhino.Geometry import Surface
-from Rhino.Geometry import ParticleSystem
-from System import EventHandler
-from System.Drawing import Size
-from System.Drawing import Bitmap
-from Rhino.DocObjects import ViewportInfo
-from Rhino.Geometry import SubD
 class DisplayPipeline:
     @overload
     @staticmethod
@@ -1795,10 +1776,6 @@ class DisplayPipeline:
     def ToString(self) -> str: ...
 
 
-from System.Drawing import Color
-from System import Guid
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
 class DisplayPipelineAttributes:
     @overload
     def Dispose(self) -> None: ...
@@ -2680,7 +2657,6 @@ class DisplayPipelineAttributes:
     def ToString(self) -> str: ...
 
 
-from Rhino.Geometry import Point3d
 class DisplayPoint:
     @overload
     def __init__(self, location: Point3d): ...
@@ -2766,7 +2742,6 @@ class DisplayTechnology(Enum):
     Vulkan = 5
 
 
-from Rhino import RhinoDoc
 class DrawEventArgs:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -2784,7 +2759,6 @@ class DrawEventArgs:
     def ToString(self) -> str: ...
 
 
-from Rhino import RhinoDoc
 class DrawForegroundEventArgs(DrawEventArgs):
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -2834,8 +2808,6 @@ class DrawFrameStages(Enum):
     All = 4294836223
 
 
-from Rhino.DocObjects import RhinoObject
-from Rhino import RhinoDoc
 class DrawObjectEventArgs(DrawEventArgs):
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -2916,7 +2888,6 @@ class InferenceLineType(Enum):
     InfiniteLine = 2
 
 
-from System.Drawing import Color
 class InitFrameBufferEventArgs:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -2961,7 +2932,6 @@ class LockedObjectUse(Enum):
     UseAppSettings = 2
 
 
-from System.Drawing import Color
 class MeshDisplayAttributes:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -2993,7 +2963,6 @@ class MeshDisplayAttributes:
     def ToString(self) -> str: ...
 
 
-from Rhino import RhinoDoc
 class PageViewPropertiesChangeEventArgs:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -3013,7 +2982,6 @@ class PageViewPropertiesChangeEventArgs:
     def ToString(self) -> str: ...
 
 
-from System import Guid
 class PageViewSpaceChangeEventArgs:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -3058,18 +3026,6 @@ class PointStyle(Enum):
     # None = 1000
 
 
-from System import Guid
-from Rhino.DocObjects import DetailViewObject
-from Rhino.Geometry import Point2d
-from System.Drawing import Size
-from System.Drawing import Bitmap
-from System import EventHandler
-from System import IntPtr
-from Rhino.Render import RealtimeDisplayMode
-from System.Drawing import Rectangle
-from System.Drawing import Point
-from Rhino import RhinoDoc
-from System.Drawing import PointF
 class RhinoPageView(RhinoView):
     @overload
     @staticmethod
@@ -3215,17 +3171,6 @@ class RhinoPageView(RhinoView):
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from Rhino.Render import RealtimeDisplayMode
-from System.Drawing import Rectangle
-from System.Drawing import Size
-from System.Drawing import Point
-from Rhino.Geometry import Point2d
-from System.Drawing import Bitmap
-from Rhino import RhinoDoc
-from System import Guid
-from System.Drawing import PointF
-from System import EventHandler
 class RhinoView:
     @overload
     @staticmethod
@@ -3364,23 +3309,6 @@ class RhinoView:
     def ToString(self) -> str: ...
 
 
-from System.Drawing import Point
-from Rhino.Geometry import Line
-from Rhino.Geometry import Point2d
-from Rhino.Geometry import Plane
-from System import Guid
-from Rhino.Geometry import BoundingBox
-from Rhino.Geometry import Point3d
-from System.Drawing import Size
-from Rhino.Geometry import Vector3d
-from Rhino.DocObjects import ConstructionPlane
-from Rhino.DocObjects import ViewportInfo
-from Rhino.DocObjects import ViewInfo
-from System.Drawing import Rectangle
-from Rhino.Geometry import Transform
-from System.Collections.Specialized import NameValueCollection
-from Rhino.Geometry import Sphere
-from Rhino.DocObjects import CoordinateSystem
 class RhinoViewport:
     @overload
     def __init__(self): ...
@@ -3735,10 +3663,6 @@ class SurfaceThicknessUse(Enum):
     Pixels = 1
 
 
-from Rhino.Geometry import Plane
-from Rhino.Geometry import BoundingBox
-from Rhino.DocObjects import TextHorizontalAlignment
-from Rhino.DocObjects import TextVerticalAlignment
 class Text3d:
     @overload
     def __init__(self, text: str): ...
@@ -3796,8 +3720,6 @@ class ViewAreaMapping(Enum):
     Window = 2
 
 
-from System.Drawing import Bitmap
-from System.Xml import XmlDocument
 class ViewCapture:
     @overload
     def __init__(self): ...
@@ -3861,13 +3783,6 @@ class ViewCapture:
     def ToString(self) -> str: ...
 
 
-from System.Drawing import Size
-from Rhino import RhinoDoc
-from System.Drawing import Rectangle
-from Rhino import UnitSystem
-from Rhino.Geometry import Point2d
-from Rhino.Geometry import Point3d
-from Rhino import PersistentSettings
 class ViewCaptureSettings:
     @overload
     def __init__(self): ...
@@ -4063,7 +3978,6 @@ class ViewCaptureSettings:
     def ToString(self) -> str: ...
 
 
-from System.Drawing import Color
 class ViewDisplayAttributes:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -4127,7 +4041,6 @@ class ViewDisplayAttributes:
     def ToString(self) -> str: ...
 
 
-from Rhino import RhinoDoc
 class ViewEnableDrawingEventArgs:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -4176,9 +4089,6 @@ class ViewTypeFilter(Enum):
     All = 268435455
 
 
-from System import Guid
-from Rhino import RhinoDoc
-from Rhino.DocObjects import RhinoObject
 class VisualAnalysisMode:
     @overload
     @staticmethod
@@ -4250,9 +4160,6 @@ class ZBiasMode(Enum):
     AwayFromCamera = 2
 
 
-from System import Guid
-from Rhino.Geometry import Point3d
-from System.Drawing import Bitmap
 class ZBufferCapture:
     @overload
     def __init__(self, viewport: RhinoViewport): ...

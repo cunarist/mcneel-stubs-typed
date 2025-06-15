@@ -1,37 +1,53 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
-
-
+from Rhino.DocObjects import ObjRef
+from Rhino.DocObjects import RhinoObject
 from Rhino.DocObjects.Custom import UserData
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
-from Rhino.Geometry import Point3f
-from Rhino.Geometry import Point3d
-from Rhino.Geometry import Vector3d
-from System import Guid
+from Rhino.Geometry import Arc
+from Rhino.Geometry import BoundingBox
+from Rhino.Geometry import Circle
+from Rhino.Geometry import Curve
+from Rhino.Geometry import Ellipse
+from Rhino.Geometry import GeometryBase
+from Rhino.Geometry import Interval
+from Rhino.Geometry import Line
+from Rhino.Geometry import MeshingParameters
 from Rhino.Geometry import Plane
+from Rhino.Geometry import Point2d
+from Rhino.Geometry import Point3d
+from Rhino.Geometry import Point3f
+from Rhino.Geometry import Point4d
+from Rhino.Geometry import PointCloud
+from Rhino.Geometry import Ray3d
+from Rhino.Geometry import Transform
+from Rhino.Geometry import Vector2d
+from Rhino.Geometry import Vector3d
+from Rhino.Geometry import Vector3f
+from Rhino.Input.Custom import GetObject
+from System import Action
+from System import Comparison
+from System import Converter
+from System import Guid
+from System import Predicate
 from System import SByte
+from System.Collections.Generic import IComparer
+from System.Collections.Generic import IList
+from System.Collections.ObjectModel import ReadOnlyCollection
 from System.Drawing import Color
+from System.Drawing import Font
 from System.Drawing import Point
 from System.Drawing import PointF
 from System.Drawing import Rectangle
 from System.Drawing import RectangleF
 from System.Drawing import Size
 from System.Drawing import SizeF
-from System.Drawing import Font
-from Rhino.Geometry import Interval
-from Rhino.Geometry import Point2d
-from Rhino.Geometry import Point4d
-from Rhino.Geometry import Vector2d
-from Rhino.Geometry import BoundingBox
-from Rhino.Geometry import Ray3d
-from Rhino.Geometry import Transform
-from Rhino.Geometry import Line
-from Rhino.Geometry import Vector3f
-from Rhino.Geometry import MeshingParameters
-from Rhino.Geometry import GeometryBase
-from Rhino.DocObjects import ObjRef
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+
+
+
+
 class ArchivableDictionary:
     @overload
     def __init__(self): ...
@@ -274,18 +290,6 @@ class ArchivableDictionary:
     def TryGetVector3d(self, key: str) -> tuple[bool, Vector3d]: ...
 
 
-from Rhino.Geometry import Line
-from Rhino.Geometry import Circle
-from Rhino.Geometry import Arc
-from Rhino.Geometry import Ellipse
-from Rhino.Geometry import Transform
-from Rhino.Geometry import Curve
-from System import Predicate
-from System.Collections.Generic import IComparer
-from System import Action
-from System import Comparison
-from System.Collections.ObjectModel import ReadOnlyCollection
-from System import Converter
 class CurveList:
     @overload
     def __init__(self): ...
@@ -452,16 +456,6 @@ class CurveList:
 
 
 
-from Rhino.Geometry import BoundingBox
-from Rhino.Geometry import Point3d
-from Rhino.Geometry import Transform
-from System.Collections.Generic import IList
-from System import Predicate
-from System.Collections.Generic import IComparer
-from System import Action
-from System import Comparison
-from System.Collections.ObjectModel import ReadOnlyCollection
-from System import Converter
 class Point3dList:
     @overload
     def __init__(self): ...
@@ -636,7 +630,6 @@ class Point3dList:
     def TrueForAll(self, match: Predicate) -> bool: ...
 
 
-from Rhino.Geometry import PointCloud
 class RhinoList:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -665,11 +658,6 @@ class RhinoList:
 
 
 
-from Rhino.Geometry import BoundingBox
-from Rhino.Geometry import Transform
-from Rhino.DocObjects import RhinoObject
-from Rhino.DocObjects import ObjRef
-from Rhino.Input.Custom import GetObject
 class TransformObjectList:
     @overload
     def __init__(self): ...

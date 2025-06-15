@@ -1,11 +1,13 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
-
-
 from Grasshopper.Kernel.Geometry import Node2List
-from Rhino.Geometry import Polyline
 from Grasshopper.Kernel.Geometry import Plane
+from Rhino.Geometry import Polyline
+
+
+
+
 class Solver:
     @overload
     @staticmethod

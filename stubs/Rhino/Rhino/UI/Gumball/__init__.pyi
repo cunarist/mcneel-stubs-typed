@@ -1,9 +1,30 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
-
-
+from Rhino.DocObjects import ActiveSpace
+from Rhino.Geometry import Arc
+from Rhino.Geometry import BoundingBox
+from Rhino.Geometry import Circle
+from Rhino.Geometry import Curve
+from Rhino.Geometry import Ellipse
+from Rhino.Geometry import Extrusion
+from Rhino.Geometry import Hatch
+from Rhino.Geometry import Light
+from Rhino.Geometry import Line
+from Rhino.Geometry import Plane
+from Rhino.Geometry import Point3d
+from Rhino.Geometry import Transform
+from Rhino.Geometry import Vector3d
+from Rhino.Input.Custom import GetPoint
+from Rhino.Input.Custom import PickContext
+from System import Enum
+from System import IFormatProvider
+from System import TypeCode
 from System.Drawing import Color
+
+
+
+
 class GumballAppearanceSettings:
     @overload
     def __init__(self): ...
@@ -133,13 +154,6 @@ class GumballAppearanceSettings:
     def ToString(self) -> str: ...
 
 
-from Rhino.DocObjects import ActiveSpace
-from Rhino.Geometry import Transform
-from Rhino.Geometry import Point3d
-from Rhino.Geometry import Line
-from Rhino.Geometry import Plane
-from Rhino.Input.Custom import PickContext
-from Rhino.Input.Custom import GetPoint
 class GumballDisplayConduit:
     @overload
     def __init__(self): ...
@@ -189,8 +203,6 @@ class GumballDisplayConduit:
     def UpdateGumball(self, point: Point3d, worldLine: Line) -> bool: ...
 
 
-from Rhino.Geometry import Plane
-from Rhino.Geometry import Vector3d
 class GumballFrame:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -241,16 +253,6 @@ class GumballMode(Enum):
     CutZ = 23
 
 
-from Rhino.Geometry import BoundingBox
-from Rhino.Geometry import Plane
-from Rhino.Geometry import Line
-from Rhino.Geometry import Arc
-from Rhino.Geometry import Circle
-from Rhino.Geometry import Ellipse
-from Rhino.Geometry import Light
-from Rhino.Geometry import Hatch
-from Rhino.Geometry import Curve
-from Rhino.Geometry import Extrusion
 class GumballObject:
     @overload
     def __init__(self): ...

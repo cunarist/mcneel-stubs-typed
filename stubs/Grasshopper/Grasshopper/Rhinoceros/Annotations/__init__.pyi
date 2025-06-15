@@ -1,15 +1,38 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
+from GH_IO.Serialization import GH_IReader
+from GH_IO.Serialization import GH_IWriter
+from Grasshopper.Kernel.Types import Complex
+from Grasshopper.Kernel.Types import GH_QuickCastType
+from Grasshopper.Kernel.Types import GH_String
+from Grasshopper.Kernel.Types import IGH_Goo
+from Grasshopper.Kernel.Types import IGH_GooProxy
+from Grasshopper.Kernel.Types import IGH_QuickCast
+from Grasshopper.Kernel.Types import T
+from Grasshopper.Rhinoceros import Attributes
+from Grasshopper.Rhinoceros import ModelContent
+from Grasshopper.Rhinoceros import ModelContentName
+from Grasshopper.Rhinoceros import ModelData
+from Grasshopper.Rhinoceros import ModelTags
+from Grasshopper.Rhinoceros import ModelUserText
+from Grasshopper.Rhinoceros import T
+from Rhino.DocObjects import ArrowType
+from Rhino.DocObjects import DimensionStyle
+from Rhino.DocObjects import Font
+from Rhino.Geometry import Interval
+from Rhino.Geometry import Matrix
+from Rhino.Geometry import Point3d
+from Rhino.Geometry import Vector3d
+from System import Guid
+from System.Drawing import Color
+
 from . import Params
 
 __all__ = ['Params']
 
 
-from Rhino.DocObjects import ArrowType
-from Grasshopper.Rhinoceros import Attributes
-from Grasshopper.Rhinoceros import ModelData
-from Grasshopper.Rhinoceros import T
+
 from Grasshopper.Rhinoceros import ModelData
 class AnnotationArrow(ModelData):
     @overload
@@ -53,10 +76,6 @@ class AnnotationArrow(ModelData):
     def ToString(self) -> str: ...
 
 
-from Rhino.DocObjects import DimensionStyle
-from Grasshopper.Rhinoceros import Attributes
-from Grasshopper.Rhinoceros import ModelData
-from Grasshopper.Rhinoceros import T
 from Grasshopper.Rhinoceros import ModelData
 class AnnotationArrowSettings(ModelData):
     @overload
@@ -111,20 +130,6 @@ class AnnotationArrowSettings(ModelData):
     def ToString(self) -> str: ...
 
 
-from Grasshopper.Kernel.Types import GH_String
-from Grasshopper.Kernel.Types import IGH_Goo
-from Grasshopper.Kernel.Types import T
-from Grasshopper.Kernel.Types import GH_QuickCastType
-from Grasshopper.Kernel.Types import IGH_QuickCast
-from Grasshopper.Kernel.Types import Complex
-from Rhino.Geometry import Matrix
-from Rhino.Geometry import Point3d
-from Rhino.Geometry import Vector3d
-from System.Drawing import Color
-from Rhino.Geometry import Interval
-from GH_IO.Serialization import GH_IWriter
-from GH_IO.Serialization import GH_IReader
-from Grasshopper.Kernel.Types import IGH_GooProxy
 from Grasshopper.Kernel.Types import GH_String
 class AnnotationDateTimeFormat(GH_String):
     @overload
@@ -203,10 +208,6 @@ class AnnotationDateTimeFormat(GH_String):
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
-from Rhino.DocObjects import DimensionStyle
-from Grasshopper.Rhinoceros import Attributes
-from Grasshopper.Rhinoceros import ModelData
-from Grasshopper.Rhinoceros import T
 from Grasshopper.Rhinoceros import ModelData
 class AnnotationDimensionSettings(ModelData):
     @overload
@@ -281,10 +282,6 @@ class AnnotationDimensionSettings(ModelData):
     def ToString(self) -> str: ...
 
 
-from Rhino.DocObjects import DimensionStyle
-from Grasshopper.Rhinoceros import Attributes
-from Grasshopper.Rhinoceros import ModelData
-from Grasshopper.Rhinoceros import T
 from Grasshopper.Rhinoceros import ModelData
 class AnnotationLeaderSettings(ModelData):
     @overload
@@ -339,11 +336,6 @@ class AnnotationLeaderSettings(ModelData):
     def ToString(self) -> str: ...
 
 
-from Rhino.DocObjects import DimensionStyle
-from Rhino.DocObjects import Font
-from Grasshopper.Rhinoceros import Attributes
-from Grasshopper.Rhinoceros import ModelData
-from Grasshopper.Rhinoceros import T
 from Grasshopper.Rhinoceros import ModelData
 class AnnotationTextSettings(ModelData):
     @overload
@@ -410,10 +402,6 @@ class AnnotationTextSettings(ModelData):
     def ToString(self) -> str: ...
 
 
-from Rhino.DocObjects import DimensionStyle
-from Grasshopper.Rhinoceros import Attributes
-from Grasshopper.Rhinoceros import ModelData
-from Grasshopper.Rhinoceros import T
 from Grasshopper.Rhinoceros import ModelData
 class AnnotationToleranceSettings(ModelData):
     @overload
@@ -466,10 +454,6 @@ class AnnotationToleranceSettings(ModelData):
     def ToString(self) -> str: ...
 
 
-from Rhino.DocObjects import DimensionStyle
-from Grasshopper.Rhinoceros import Attributes
-from Grasshopper.Rhinoceros import ModelData
-from Grasshopper.Rhinoceros import T
 from Grasshopper.Rhinoceros import ModelData
 class AnnotationUnitsSettings(ModelData):
     @overload
@@ -536,9 +520,6 @@ class AnnotationUnitsSettings(ModelData):
     def ToString(self) -> str: ...
 
 
-from Grasshopper.Rhinoceros import ModelData
-from Rhino.DocObjects import DimensionStyle
-from Grasshopper.Rhinoceros import Attributes
 class Attributes:
     @overload
     def __init__(self): ...
@@ -585,10 +566,6 @@ class Attributes:
     def ToString(self) -> str: ...
 
 
-from Rhino.DocObjects import Font
-from Grasshopper.Rhinoceros import ModelData
-from Rhino.DocObjects import DimensionStyle
-from Grasshopper.Rhinoceros import Attributes
 class Attributes:
     @overload
     def __init__(self): ...
@@ -663,9 +640,6 @@ class Attributes:
     def ToString(self) -> str: ...
 
 
-from Grasshopper.Rhinoceros import ModelData
-from Rhino.DocObjects import DimensionStyle
-from Grasshopper.Rhinoceros import Attributes
 class Attributes:
     @overload
     def __init__(self): ...
@@ -716,11 +690,6 @@ class Attributes:
     def ToString(self) -> str: ...
 
 
-from Grasshopper.Rhinoceros import ModelData
-from Grasshopper.Rhinoceros import ModelUserText
-from Grasshopper.Rhinoceros import ModelContentName
-from Grasshopper.Rhinoceros import ModelTags
-from Grasshopper.Rhinoceros import Attributes
 class Attributes:
     @overload
     def __init__(self): ...
@@ -794,9 +763,6 @@ class Attributes:
     def ToString(self) -> str: ...
 
 
-from Grasshopper.Rhinoceros import ModelData
-from Rhino.DocObjects import DimensionStyle
-from Grasshopper.Rhinoceros import Attributes
 class Attributes:
     @overload
     def __init__(self): ...
@@ -847,9 +813,6 @@ class Attributes:
     def ToString(self) -> str: ...
 
 
-from Grasshopper.Rhinoceros import ModelData
-from Rhino.DocObjects import ArrowType
-from Grasshopper.Rhinoceros import Attributes
 class Attributes:
     @overload
     def __init__(self): ...
@@ -876,9 +839,6 @@ class Attributes:
     def ToString(self) -> str: ...
 
 
-from Grasshopper.Rhinoceros import ModelData
-from Rhino.DocObjects import DimensionStyle
-from Grasshopper.Rhinoceros import Attributes
 class Attributes:
     @overload
     def __init__(self): ...
@@ -953,9 +913,6 @@ class Attributes:
     def ToString(self) -> str: ...
 
 
-from Grasshopper.Rhinoceros import ModelData
-from Rhino.DocObjects import DimensionStyle
-from Grasshopper.Rhinoceros import Attributes
 class Attributes:
     @overload
     def __init__(self): ...
@@ -1046,14 +1003,6 @@ class Attributes:
     def ToString(self) -> str: ...
 
 
-from Rhino.DocObjects import DimensionStyle
-from System import Guid
-from Grasshopper.Rhinoceros import Attributes
-from Grasshopper.Rhinoceros import ModelUserText
-from Grasshopper.Rhinoceros import ModelContentName
-from Grasshopper.Rhinoceros import ModelTags
-from Grasshopper.Rhinoceros import ModelContent
-from Grasshopper.Rhinoceros import ModelData
 from Grasshopper.Rhinoceros import ModelComponentContent
 class ModelAnnotationStyle(ModelComponentContent):
     @overload

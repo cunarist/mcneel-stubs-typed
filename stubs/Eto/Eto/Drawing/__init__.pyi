@@ -1,14 +1,26 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
-
-
+from Eto import ITypeDescriptorContext
+from Eto import Platform
+from Eto import PropertyStore
+from Eto.Forms import Range
+from System import Enum
+from System import EventHandler
+from System import IDisposable
+from System import IFormatProvider
+from System import IntPtr
+from System import TypeCode
+from System.Collections.Specialized import NotifyCollectionChangedEventHandler
+from System.Globalization import CultureInfo
+from System.IO import BinaryReader
+from System.IO import BinaryWriter
 from System.IO import Stream
 from System.Reflection import Assembly
-from Eto import Platform
-from System import IntPtr
-from Eto import PropertyStore
-from System import EventHandler
+
+
+
+
 class Bitmap(Image):
     @overload
     def __init__(self, fileName: str): ...
@@ -100,7 +112,6 @@ class Bitmap(Image):
     def WithSize(self, width: int, height: int) -> Icon: ...
 
 
-from System import IntPtr
 class BitmapData:
     @overload
     def Dispose(self) -> None: ...
@@ -1369,11 +1380,6 @@ class FillMode(Enum):
     Winding = 1
 
 
-from System.IO import Stream
-from Eto import Platform
-from System import IntPtr
-from Eto import PropertyStore
-from System import EventHandler
 from Eto import Widget
 class Font(Widget):
     @overload
@@ -1499,10 +1505,6 @@ class FontFamilies:
     def ToString(self) -> str: ...
 
 
-from Eto import Platform
-from System import IntPtr
-from Eto import PropertyStore
-from System import EventHandler
 from Eto import Widget
 class FontFamily(Widget):
     @overload
@@ -1613,12 +1615,6 @@ class FontStyle(Enum):
     Italic = 2
 
 
-from System.IO import Stream
-from Eto.Forms import Range
-from Eto import Platform
-from System import IntPtr
-from Eto import PropertyStore
-from System import EventHandler
 from Eto import Widget
 class FontTypeface(Widget):
     @overload
@@ -1689,10 +1685,6 @@ class FontTypeface(Widget):
     def ToString(self) -> str: ...
 
 
-from Eto import Platform
-from System import IntPtr
-from Eto import PropertyStore
-from System import EventHandler
 from Eto import Widget
 class FormattedText(Widget):
     @overload
@@ -1796,11 +1788,6 @@ class GradientWrapMode(Enum):
     Reflect = 2
 
 
-from System import IDisposable
-from Eto import Platform
-from System import IntPtr
-from Eto import PropertyStore
-from System import EventHandler
 from Eto import Widget
 class Graphics(Widget):
     @overload
@@ -2126,12 +2113,6 @@ class GraphicsPathExtensions:
     def ToString(self) -> str: ...
 
 
-from System.IO import Stream
-from System.Reflection import Assembly
-from Eto import Platform
-from System import IntPtr
-from Eto import PropertyStore
-from System import EventHandler
 class Icon(Image):
     @overload
     def __init__(self, handler: IHandler): ...
@@ -2201,8 +2182,6 @@ class Icon(Image):
     def WithSize(self, width: int, height: int) -> Icon: ...
 
 
-from System.IO import Stream
-from System.Reflection import Assembly
 class IconFrame:
     @overload
     def __init__(self, scale: float, load: Callable[..., Any]): ...
@@ -2281,7 +2260,6 @@ class IGraphicsPath:
     def Transform(self, matrix: IMatrix) -> None: ...
 
 
-from System.IO import Stream
 class IHandler:
     @overload
     def Create(self, frame: IconFrame, stream: Stream) -> object: ...
@@ -2333,7 +2311,6 @@ class IHandler:
     def SetColor(self, widget: SolidBrush, color: Color) -> None: ...
 
 
-from System.IO import Stream
 class IHandler:
     @overload
     def Create(self, stream: Stream) -> None: ...
@@ -2434,7 +2411,6 @@ class IHandler:
     def Wrap(self, value: FormattedTextWrapMode) -> None: ...
 
 
-from System.IO import Stream
 class IHandler:
     @overload
     def Create(self, family: FontFamily) -> None: ...
@@ -2518,7 +2494,6 @@ class IHandler:
     def ModifyComponent(self, controlObject: object, r: float | None, g: float | None, b: float | None, a: float | None) -> object: ...
 
 
-from System.IO import Stream
 class IHandler:
     @overload
     def Clone(self, rectangle: Rectangle | None) -> Bitmap: ...
@@ -2677,10 +2652,6 @@ class ILockableImage:
     def Unlock(self, bitmapData: BitmapData) -> None: ...
 
 
-from Eto import Platform
-from System import IntPtr
-from Eto import PropertyStore
-from System import EventHandler
 from Eto import Widget
 class Image(Widget):
     @overload
@@ -2794,10 +2765,6 @@ class IMatrix:
     def Translate(self, offsetX: float, offsetY: float) -> None: ...
 
 
-from Eto import Platform
-from System import IntPtr
-from Eto import PropertyStore
-from System import EventHandler
 class IndexedBitmap(Image):
     @overload
     def __init__(self, width: int, height: int, bitsPerPixel: int): ...
@@ -3123,9 +3090,6 @@ class PaddingF:
     def ToString(self) -> str: ...
 
 
-from System.IO import BinaryWriter
-from System.IO import BinaryReader
-from System.Collections.Specialized import NotifyCollectionChangedEventHandler
 class Palette:
     @overload
     def __init__(self): ...
@@ -4475,10 +4439,6 @@ class RectangleF:
     def Union(rect1: RectangleF, rect2: RectangleF) -> RectangleF: ...
 
 
-from Eto import Platform
-from System import IntPtr
-from Eto import PropertyStore
-from System import EventHandler
 from Eto import Widget
 class Region(Widget):
     @overload

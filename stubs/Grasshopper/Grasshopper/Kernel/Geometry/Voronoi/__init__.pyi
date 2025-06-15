@@ -1,14 +1,40 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
-
-
-from Grasshopper.Kernel.Geometry import Node2
 from Grasshopper.Kernel.Geometry import Line2
+from Grasshopper.Kernel.Geometry import Node2
+from Grasshopper.Kernel.Geometry import Node2List
 from Grasshopper.Kernel.Geometry import Side2
-from Rhino.Geometry import Polyline
+from Grasshopper.Kernel.Geometry.Delaunay import Connectivity
+from Rhino.Collections import Point3dList
+from Rhino.Collections import RhinoList
+from Rhino.Collections import XAccess
+from Rhino.Collections import YAccess
+from Rhino.Collections import ZAccess
+from Rhino.Geometry import BoundingBox
+from Rhino.Geometry import Box
+from Rhino.Geometry import Brep
+from Rhino.Geometry import Interval
+from Rhino.Geometry import Line
+from Rhino.Geometry import NurbsCurve
+from Rhino.Geometry import Plane
+from Rhino.Geometry import Point3d
 from Rhino.Geometry import PolyCurve
+from Rhino.Geometry import Polyline
+from Rhino.Geometry import PolylineCurve
+from Rhino.Geometry import Transform
+from Rhino.Geometry import Vector3d
+from System import Action
+from System import Comparison
+from System import Converter
+from System import Predicate
+from System.Collections.Generic import IComparer
+from System.Collections.ObjectModel import ReadOnlyCollection
 from System.Drawing.Drawing2D import GraphicsPath
+
+
+
+
 class Cell2:
     @overload
     def __init__(self): ...
@@ -45,10 +71,6 @@ class Cell2:
     def ToString(self) -> str: ...
 
 
-from Rhino.Geometry import Point3d
-from Rhino.Geometry import Box
-from Rhino.Geometry import Plane
-from Rhino.Geometry import Brep
 class Cell3:
     @overload
     def __init__(self, other: Cell3): ...
@@ -89,26 +111,6 @@ class Cell3:
     def ToString(self) -> str: ...
 
 
-from Rhino.Geometry import Point3d
-from Rhino.Geometry import Line
-from Rhino.Geometry import Vector3d
-from Rhino.Geometry import Interval
-from Rhino.Geometry import Polyline
-from Rhino.Geometry import NurbsCurve
-from Rhino.Geometry import PolylineCurve
-from Rhino.Geometry import BoundingBox
-from Rhino.Collections import XAccess
-from Rhino.Collections import YAccess
-from Rhino.Collections import ZAccess
-from Rhino.Geometry import Transform
-from Rhino.Collections import Point3dList
-from System import Predicate
-from Rhino.Collections import RhinoList
-from System.Collections.Generic import IComparer
-from System import Action
-from System import Comparison
-from System.Collections.ObjectModel import ReadOnlyCollection
-from System import Converter
 class Cell3Facet:
     @overload
     def __init__(self): ...
@@ -335,8 +337,6 @@ class Cell3Facet:
     def TrueForAll(self, match: Predicate) -> bool: ...
 
 
-from Grasshopper.Kernel.Geometry import Node2List
-from Grasshopper.Kernel.Geometry.Delaunay import Connectivity
 class Solver:
     @overload
     def Equals(self, obj: object) -> bool: ...

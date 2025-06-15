@@ -1,13 +1,24 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
-
-
-from System import Guid
+from Rhino import PersistentSettings
 from Rhino import RhinoDoc
 from Rhino.PlugIns import PlugIn
-from Rhino import PersistentSettings
+from System import AsyncCallback
+from System import Enum
 from System import EventHandler
+from System import Guid
+from System import IAsyncResult
+from System import IFormatProvider
+from System import IntPtr
+from System import TypeCode
+from System.Reflection import MethodInfo
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+
+
+
+
 class Command:
     @overload
     @staticmethod
@@ -89,8 +100,6 @@ class Command:
     def ToString(self) -> str: ...
 
 
-from System import Guid
-from Rhino import RhinoDoc
 class CommandEventArgs:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -139,8 +148,6 @@ class CommandStyleAttribute:
     def ToString(self) -> str: ...
 
 
-from System import Guid
-from Rhino import RhinoDoc
 class CustomUndoEventArgs:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -195,13 +202,6 @@ class Result(Enum):
     ExitRhino = 268435455
 
 
-from System import IntPtr
-from Rhino import RhinoDoc
-from System import AsyncCallback
-from System import IAsyncResult
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
-from System.Reflection import MethodInfo
 class RunCommandDelegate:
     @overload
     def __init__(self, object: object, method: IntPtr): ...
@@ -238,9 +238,6 @@ class RunMode(Enum):
     Scripted = 1
 
 
-from Rhino.PlugIns import PlugIn
-from System import Guid
-from Rhino import PersistentSettings
 class SelCommand(Command):
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -283,9 +280,6 @@ class Style(Enum):
     NotUndoable = 16
 
 
-from Rhino.PlugIns import PlugIn
-from System import Guid
-from Rhino import PersistentSettings
 class TransformCommand(Command):
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -307,7 +301,6 @@ class TransformCommand(Command):
     def ToString(self) -> str: ...
 
 
-from System import Guid
 class UndoRedoEventArgs:
     @overload
     def Equals(self, obj: object) -> bool: ...

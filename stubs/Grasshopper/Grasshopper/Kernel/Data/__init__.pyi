@@ -1,14 +1,34 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
-
-
-
-
+from GH_IO.Serialization import GH_IReader
+from GH_IO.Serialization import GH_IWriter
+from Grasshopper import DataTree
+from Grasshopper.GUI.Canvas import GH_Viewport
+from Grasshopper.Kernel import IGH_Param
+from Grasshopper.Kernel.Expressions import GH_ExpressionParser
+from System import AsyncCallback
+from System import Enum
+from System import IAsyncResult
+from System import IFormatProvider
+from System import IntPtr
+from System import TypeCode
 from System.Collections import IDictionary
+from System.Collections import IList
+from System.Collections.Generic import IList
+from System.Drawing import Graphics
+from System.Drawing import PointF
+from System.Drawing import RectangleF
 from System.Reflection import MethodBase
+from System.Reflection import MethodInfo
 from System.Runtime.Serialization import SerializationInfo
 from System.Runtime.Serialization import StreamingContext
+
+
+
+
+
+
 class GH_BracketMismatchException:
     @overload
     def __init__(self): ...
@@ -54,7 +74,6 @@ class GH_BracketMismatchException:
     def ToString(self) -> str: ...
 
 
-from Grasshopper import DataTree
 class GH_DirtyCaster:
     @overload
     @staticmethod
@@ -86,8 +105,6 @@ class GH_GraftMode(Enum):
     GraftAll = 3
 
 
-from System.Collections import IList
-from System.Drawing import Graphics
 class GH_GraphicBranch:
     @overload
     def __init__(self): ...
@@ -166,9 +183,6 @@ class GH_GraphicBranch:
     def ToString(self) -> str: ...
 
 
-from Grasshopper.GUI.Canvas import GH_Viewport
-from System.Drawing import PointF
-from System.Drawing import RectangleF
 class GH_GraphicTreeDisplayArgs:
     @overload
     def __init__(self): ...
@@ -225,8 +239,6 @@ class GH_GraphicTreeDisplayArgs:
     def Visible(self, P0: PointF, P1: PointF, P2: PointF, P3: PointF, fuzz: float) -> bool: ...
 
 
-from GH_IO.Serialization import GH_IWriter
-from GH_IO.Serialization import GH_IReader
 class GH_IndexRange:
     @overload
     def __init__(self, index: int): ...
@@ -279,8 +291,6 @@ class GH_IndexRange:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
-from GH_IO.Serialization import GH_IWriter
-from GH_IO.Serialization import GH_IReader
 class GH_IndexRanges:
     @overload
     def __init__(self): ...
@@ -341,8 +351,6 @@ class GH_IndexRuleSet:
     def ToString(self) -> str: ...
 
 
-from Grasshopper.Kernel.Expressions import GH_ExpressionParser
-from Grasshopper import DataTree
 class GH_Lexer:
     @overload
     def __init__(self): ...
@@ -401,8 +409,6 @@ class GH_LexerCombo:
     def ToString(self) -> str: ...
 
 
-from GH_IO.Serialization import GH_IWriter
-from GH_IO.Serialization import GH_IReader
 class GH_Path:
     @overload
     def __init__(self): ...
@@ -682,10 +688,6 @@ class GH_SimplificationMode(Enum):
     CollapseAllOverlaps = 2
 
 
-from System.Collections import IDictionary
-from System.Reflection import MethodBase
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
 class GH_StringMismatchException:
     @overload
     def __init__(self): ...
@@ -853,7 +855,6 @@ class GH_TreeRules:
     def ToString(self) -> str: ...
 
 
-from Grasshopper.Kernel import IGH_Param
 class IGH_DataTree:
     @overload
     def MergeWithParameter(self, param: IGH_Param) -> bool: ...
@@ -873,8 +874,6 @@ class IGH_Rule:
     def Notation(self) -> str: ...
 
 
-from System.Collections.Generic import IList
-from System.Collections import IList
 class IGH_Structure:
     @overload
     def AllData(self, skipNulls: bool) -> IGH_StructureEnumerator: ...

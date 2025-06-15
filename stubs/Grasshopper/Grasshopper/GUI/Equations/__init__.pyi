@@ -1,15 +1,17 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
-
-
 from System.Drawing import Bitmap
-from System.Drawing import PointF
-from System.Drawing import SizeF
-from System.Drawing import RectangleF
+from System.Drawing import Color
 from System.Drawing import Font
 from System.Drawing import Graphics
-from System.Drawing import Color
+from System.Drawing import PointF
+from System.Drawing import RectangleF
+from System.Drawing import SizeF
+
+
+
+
 class GH_EquationFragment:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -43,13 +45,6 @@ class GH_EquationFragment:
     def ToString(self) -> str: ...
 
 
-from System.Drawing import Font
-from System.Drawing import PointF
-from System.Drawing import Graphics
-from System.Drawing import Color
-from System.Drawing import Bitmap
-from System.Drawing import SizeF
-from System.Drawing import RectangleF
 class GH_SequenceFragment(GH_EquationFragment):
     @overload
     def __init__(self): ...
@@ -87,13 +82,6 @@ class GH_SequenceFragment(GH_EquationFragment):
     def ToString(self) -> str: ...
 
 
-from System.Drawing import Font
-from System.Drawing import PointF
-from System.Drawing import Graphics
-from System.Drawing import Color
-from System.Drawing import Bitmap
-from System.Drawing import SizeF
-from System.Drawing import RectangleF
 class GH_TextFragment(GH_EquationFragment):
     @overload
     def __init__(self): ...
@@ -133,13 +121,6 @@ class GH_TextFragment(GH_EquationFragment):
     def ToString(self) -> str: ...
 
 
-from System.Drawing import PointF
-from System.Drawing import SizeF
-from System.Drawing import RectangleF
-from System.Drawing import Bitmap
-from System.Drawing import Font
-from System.Drawing import Graphics
-from System.Drawing import Color
 class IGH_EquationFragment:
     @property
     def Bounds(self) -> RectangleF: ...

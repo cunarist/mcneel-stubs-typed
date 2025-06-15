@@ -1,6 +1,96 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
+from Rhino.ApplicationSettings import Installation
+from Rhino.ApplicationSettings import LicenseNode
+from Rhino.Collections import ArchivableDictionary
+from Rhino.Commands import Result
+from Rhino.Display import DisplayPipelineAttributes
+from Rhino.DocObjects import ActiveSpace
+from Rhino.DocObjects import AnimationProperties
+from Rhino.DocObjects import ConstructionPlaneGridDefaults
+from Rhino.DocObjects import EarthAnchorPoint
+from Rhino.DocObjects import Font
+from Rhino.DocObjects import InstanceObject
+from Rhino.DocObjects import ObjectAttributes
+from Rhino.DocObjects import RhinoObject
+from Rhino.DocObjects import ViewportInfo
+from Rhino.DocObjects import Worksession
+from Rhino.DocObjects.Tables import BitmapTable
+from Rhino.DocObjects.Tables import DimStyleTable
+from Rhino.DocObjects.Tables import FontTable
+from Rhino.DocObjects.Tables import GroupTable
+from Rhino.DocObjects.Tables import HatchPatternTable
+from Rhino.DocObjects.Tables import InstanceDefinitionTable
+from Rhino.DocObjects.Tables import LayerTable
+from Rhino.DocObjects.Tables import LightTable
+from Rhino.DocObjects.Tables import LinetypeTable
+from Rhino.DocObjects.Tables import MaterialTable
+from Rhino.DocObjects.Tables import NamedConstructionPlaneTable
+from Rhino.DocObjects.Tables import NamedLayerStateTable
+from Rhino.DocObjects.Tables import NamedPositionTable
+from Rhino.DocObjects.Tables import NamedViewTable
+from Rhino.DocObjects.Tables import ObjectTable
+from Rhino.DocObjects.Tables import RuntimeDocumentDataTable
+from Rhino.DocObjects.Tables import SnapshotTable
+from Rhino.DocObjects.Tables import StringTable
+from Rhino.DocObjects.Tables import ViewTable
+from Rhino.FileIO import FileReadOptions
+from Rhino.FileIO import FileReference
+from Rhino.FileIO import FileWriteOptions
+from Rhino.FileIO import ManifestTable
+from Rhino.FileIO import TextLog
+from Rhino.Geometry import BoundingBox
+from Rhino.Geometry import MeshingParameters
+from Rhino.Geometry import MeshingParameterStyle
+from Rhino.Geometry import MeshType
+from Rhino.Geometry import Plane
+from Rhino.Geometry import Point3d
+from Rhino.Geometry import SubDComponentLocation
+from Rhino.Geometry import Vector3d
+from Rhino.Input import StringParserSettings
+from Rhino.PlugIns import PlugIn
+from Rhino.Render import GroundPlane
+from Rhino.Render import ICurrentEnvironment
+from Rhino.Render import RenderContentCollection
+from Rhino.Render import RenderEnvironmentTable
+from Rhino.Render import RenderMaterialTable
+from Rhino.Render import RenderPrimitiveList
+from Rhino.Render import RenderSettings
+from Rhino.Render import RenderTextureTable
+from Rhino.Render import TextureMapping
+from Rhino.Render.CustomRenderMeshes import Flags
+from Rhino.Render.PostEffects import IPostEffects
+from Rhino.UI import ToolbarFileCollection
+from System import Action
+from System import AsyncCallback
+from System import DateTime
+from System import Decimal
+from System import Delegate
+from System import Enum
+from System import EventHandler
+from System import Guid
+from System import IAsyncResult
+from System import IFormatProvider
+from System import IntPtr
+from System import TypeCode
+from System import Version
+from System.Collections.Generic import ICollection
+from System.Drawing import Bitmap
+from System.Drawing import Color
+from System.Drawing import Image
+from System.Drawing import Point
+from System.Drawing import Rectangle
+from System.Drawing import Size
+from System.IO import DirectoryInfo
+from System.Reflection import MethodInfo
+from System.Runtime.Remoting import ObjRef
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Text import Encoding
+from System.Threading.Tasks import Task
+from System.Windows.Forms import IWin32Window
+
 from . import ApplicationSettings
 from . import Collections
 from . import Commands
@@ -16,6 +106,7 @@ from . import Runtime
 from . import UI
 
 __all__ = ['ApplicationSettings', 'Collections', 'Commands', 'Display', 'DocObjects', 'FileIO', 'Geometry', 'Input', 'NodeInCode', 'PlugIns', 'Render', 'Runtime', 'UI']
+
 
 
 class AngleUnitSystem(Enum):
@@ -36,8 +127,6 @@ class AntialiasLevel(Enum):
     High = 3
 
 
-from System.Drawing import Bitmap
-from Rhino.FileIO import FileReference
 class BitmapExtensions:
     @overload
     @staticmethod
@@ -58,11 +147,6 @@ class BitmapExtensions:
     def ToString(self) -> str: ...
 
 
-from System.Text import Encoding
-from System import IFormatProvider
-from System import Decimal
-from System.Threading.Tasks import Task
-from System.Runtime.Remoting import ObjRef
 class CommandLineTextWriter:
     @overload
     def __init__(self): ...
@@ -336,12 +420,6 @@ class IRhinoDocObserver:
     def RhinoDocClosed(self, e: RhinoDocObserverArgs) -> None: ...
 
 
-from System import IntPtr
-from System import AsyncCallback
-from System import IAsyncResult
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
-from System.Reflection import MethodInfo
 class KeyboardHookEvent:
     @overload
     def __init__(self, object: object, method: IntPtr): ...
@@ -373,7 +451,6 @@ class KeyboardHookEvent:
     def ToString(self) -> str: ...
 
 
-from Rhino.Input import StringParserSettings
 class LengthValue:
     @overload
     def ChangeLength(self, newLength: float) -> LengthValue: ...
@@ -418,15 +495,6 @@ class LengthValue:
     def ToString(self) -> str: ...
 
 
-from System.Drawing import Point
-from Rhino.Geometry import Point3d
-from System.Drawing import Size
-from System.Drawing import Rectangle
-from System import DateTime
-from System.Drawing import Color
-from System import Guid
-from System.Collections.Generic import ICollection
-from System import EventHandler
 class PersistentSettings:
     @overload
     def AddChild(self, key: str) -> PersistentSettings: ...
@@ -871,7 +939,6 @@ class RenderContentTableEventType(Enum):
     MaterialAssignmentChanged = 3
 
 
-from System import Guid
 class RenderMaterialAssignmentChangedEventArgs:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -899,23 +966,6 @@ class RenderMaterialAssignmentChangedEventArgs:
     def ToString(self) -> str: ...
 
 
-from System import EventHandler
-from Rhino.UI import ToolbarFileCollection
-from Rhino.DocObjects import Font
-from Rhino.DocObjects import RhinoObject
-from Rhino.DocObjects import InstanceObject
-from System import DateTime
-from System import Version
-from Rhino.ApplicationSettings import LicenseNode
-from Rhino.ApplicationSettings import Installation
-from System.IO import DirectoryInfo
-from System import Guid
-from Rhino.Commands import Result
-from System import Delegate
-from System import Action
-from System import IntPtr
-from System.Windows.Forms import IWin32Window
-from System.Drawing import Image
 class RhinoApp:
     @overload
     @staticmethod
@@ -1332,60 +1382,6 @@ class RhinoApp:
     def WriteLine(format: str, arg0: object, arg1: object, arg2: object) -> None: ...
 
 
-from System import EventHandler
-from Rhino.DocObjects.Tables import ViewTable
-from Rhino.DocObjects.Tables import ObjectTable
-from Rhino.FileIO import ManifestTable
-from Rhino.DocObjects import ObjectAttributes
-from Rhino.DocObjects.Tables import BitmapTable
-from Rhino.DocObjects.Tables import MaterialTable
-from Rhino.DocObjects.Tables import LinetypeTable
-from Rhino.DocObjects.Tables import LayerTable
-from Rhino.DocObjects.Tables import GroupTable
-from Rhino.DocObjects.Tables import FontTable
-from Rhino.DocObjects.Tables import DimStyleTable
-from Rhino.DocObjects.Tables import LightTable
-from Rhino.DocObjects.Tables import HatchPatternTable
-from Rhino.DocObjects.Tables import InstanceDefinitionTable
-from Rhino.DocObjects.Tables import NamedConstructionPlaneTable
-from Rhino.DocObjects.Tables import NamedViewTable
-from Rhino.DocObjects.Tables import StringTable
-from Rhino.DocObjects.Tables import RuntimeDocumentDataTable
-from Rhino.DocObjects.Tables import NamedPositionTable
-from Rhino.DocObjects.Tables import SnapshotTable
-from Rhino.DocObjects.Tables import NamedLayerStateTable
-from Rhino.Render import RenderMaterialTable
-from Rhino.Render import RenderEnvironmentTable
-from Rhino.Render import RenderTextureTable
-from Rhino.Render import ICurrentEnvironment
-from Rhino.Render.PostEffects import IPostEffects
-from Rhino.DocObjects import ViewportInfo
-from System import Guid
-from Rhino.Geometry import MeshType
-from Rhino.Render.CustomRenderMeshes import Flags
-from Rhino.PlugIns import PlugIn
-from Rhino.Display import DisplayPipelineAttributes
-from Rhino.Geometry import BoundingBox
-from Rhino.Render import GroundPlane
-from Rhino.FileIO import TextLog
-from System.Drawing import Bitmap
-from Rhino.Render import RenderContentCollection
-from Rhino.Render import RenderPrimitiveList
-from Rhino.FileIO import FileReadOptions
-from Rhino.Collections import ArchivableDictionary
-from Rhino.FileIO import FileWriteOptions
-from System import DateTime
-from Rhino.Geometry import Plane
-from Rhino.Geometry import Point3d
-from Rhino.Geometry import SubDComponentLocation
-from Rhino.DocObjects import ConstructionPlaneGridDefaults
-from Rhino.DocObjects import ActiveSpace
-from Rhino.DocObjects import EarthAnchorPoint
-from Rhino.Render import RenderSettings
-from Rhino.DocObjects import AnimationProperties
-from Rhino.Geometry import MeshingParameterStyle
-from Rhino.Geometry import MeshingParameters
-from Rhino.DocObjects import Worksession
 class RhinoDoc:
     @overload
     @staticmethod
@@ -1981,7 +1977,6 @@ class RhinoFileWatcherChangeReason(Enum):
     Renamed = 5
 
 
-from Rhino.Geometry import Vector3d
 class RhinoMath:
     HalfPI: float
     QuarterPI: float
@@ -2068,8 +2063,6 @@ class RhinoMath:
     def Wrap(value: float, bound1: float, bound2: float) -> float: ...
 
 
-from System import IntPtr
-from System import Delegate
 class RhinoWindow:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -2105,7 +2098,6 @@ class ScaleStringFormat(Enum):
     Unset = 255
 
 
-from Rhino.Input import StringParserSettings
 class ScaleValue:
     @overload
     def __init__(self): ...
@@ -2172,7 +2164,6 @@ class Symbols:
     def ToString(self) -> str: ...
 
 
-from Rhino.Render import TextureMapping
 class TextureMappingEventArgs:
     @overload
     def Equals(self, obj: object) -> bool: ...

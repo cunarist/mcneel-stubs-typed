@@ -1,9 +1,26 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
-
-
+from System import Action
+from System import Enum
+from System import IFormatProvider
+from System import IProgress
+from System import Tuple
+from System import TypeCode
+from System.Collections import IDictionary
+from System.Collections.Generic import Dictionary
 from System.Collections.Generic import IReadOnlyCollection
+from System.Collections.Generic import IReadOnlyDictionary
+from System.Reflection import Assembly
+from System.Reflection import MethodBase
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Threading import CancellationToken
+from System.Threading.Tasks import Task
+
+
+
+
 class IOAuth2Token:
     @property
     def Exp(self) -> DateTime | None: ...
@@ -15,8 +32,6 @@ class IOAuth2Token:
     def Scope(self) -> IReadOnlyCollection: ...
 
 
-from System.Collections.Generic import IReadOnlyDictionary
-from System.Collections.Generic import IReadOnlyCollection
 class IOpenIDConnectToken:
     @property
     def AdminGroups(self) -> IReadOnlyDictionary: ...
@@ -64,11 +79,6 @@ class IOpenIDConnectToken:
     def UpdatedAt(self) -> DateTime | None: ...
 
 
-from System.Threading.Tasks import Task
-from System import Action
-from System import Tuple
-from System.Threading import CancellationToken
-from System import IProgress
 class IRhinoAccountsManager:
     @overload
     def ExecuteProtectedCode(self, protectedCode: Action) -> None: ...
@@ -95,7 +105,6 @@ class ProgressState(Enum):
     Other = 3
 
 
-from System.Collections.Generic import Dictionary
 class RhinoAccoountsProgressInfo:
     @overload
     def __init__(self, state: ProgressState, metadata: Dictionary, customDescription: str): ...
@@ -115,10 +124,6 @@ class RhinoAccoountsProgressInfo:
     def ToString(self) -> str: ...
 
 
-from System.Collections import IDictionary
-from System.Reflection import MethodBase
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
 class RhinoAccountsAuthTokenMismatchException(RhinoAccountsException):
     @overload
     def __init__(self, innerException: Exception): ...
@@ -162,10 +167,6 @@ class RhinoAccountsAuthTokenMismatchException(RhinoAccountsException):
     def ToString(self) -> str: ...
 
 
-from System.Collections import IDictionary
-from System.Reflection import MethodBase
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
 class RhinoAccountsCannotListenException(RhinoAccountsException):
     @overload
     def __init__(self, innerException: Exception): ...
@@ -207,10 +208,6 @@ class RhinoAccountsCannotListenException(RhinoAccountsException):
     def ToString(self) -> str: ...
 
 
-from System.Collections import IDictionary
-from System.Reflection import MethodBase
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
 class RhinoAccountsException:
     @overload
     def __init__(self, innerException: Exception): ...
@@ -269,10 +266,6 @@ class RhinoAccountsGroup:
     def ToString(self) -> str: ...
 
 
-from System.Collections import IDictionary
-from System.Reflection import MethodBase
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
 class RhinoAccountsInvalidResponseException(RhinoAccountsException):
     @overload
     def __init__(self, innerException: Exception): ...
@@ -314,10 +307,6 @@ class RhinoAccountsInvalidResponseException(RhinoAccountsException):
     def ToString(self) -> str: ...
 
 
-from System.Collections import IDictionary
-from System.Reflection import MethodBase
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
 class RhinoAccountsInvalidStateException(RhinoAccountsException):
     @overload
     def __init__(self, innerException: Exception): ...
@@ -359,10 +348,6 @@ class RhinoAccountsInvalidStateException(RhinoAccountsException):
     def ToString(self) -> str: ...
 
 
-from System.Collections import IDictionary
-from System.Reflection import MethodBase
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
 class RhinoAccountsInvalidTokenException(RhinoAccountsException):
     @overload
     def __init__(self, innerException: Exception): ...
@@ -404,11 +389,6 @@ class RhinoAccountsInvalidTokenException(RhinoAccountsException):
     def ToString(self) -> str: ...
 
 
-from System import Action
-from System.Threading.Tasks import Task
-from System.Threading import CancellationToken
-from System import IProgress
-from System import Tuple
 class RhinoAccountsManager:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -444,11 +424,6 @@ class RhinoAccountsManager:
     def UpdateOpenIDConnectTokenAsync(currentToken: IOpenIDConnectToken, oauth2Token: IOAuth2Token, secretKey: SecretKey, cancellationToken: CancellationToken) -> Task: ...
 
 
-from System.Reflection import Assembly
-from System.Collections import IDictionary
-from System.Reflection import MethodBase
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
 class RhinoAccountsOperationInProgressException(RhinoAccountsException):
     @overload
     def __init__(self, message: str, innerException: Exception): ...
@@ -490,10 +465,6 @@ class RhinoAccountsOperationInProgressException(RhinoAccountsException):
     def ToString(self) -> str: ...
 
 
-from System.Collections import IDictionary
-from System.Reflection import MethodBase
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
 class RhinoAccountsProxyException(RhinoAccountsException):
     @overload
     def __init__(self, innerException: Exception): ...
@@ -535,10 +506,6 @@ class RhinoAccountsProxyException(RhinoAccountsException):
     def ToString(self) -> str: ...
 
 
-from System.Collections import IDictionary
-from System.Reflection import MethodBase
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
 class RhinoAccountsServerException(RhinoAccountsException):
     @overload
     def __init__(self, innerException: Exception): ...
@@ -580,10 +547,6 @@ class RhinoAccountsServerException(RhinoAccountsException):
     def ToString(self) -> str: ...
 
 
-from System.Collections import IDictionary
-from System.Reflection import MethodBase
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
 class RhinoAccountsServerNotReachableException(RhinoAccountsException):
     @overload
     def __init__(self, innerException: Exception): ...

@@ -1,14 +1,26 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
-
-
-from System.Drawing import Color
-from System.Drawing import RectangleF
-from System.Drawing import PointF
-from System.Drawing import Graphics
-from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from GH_IO.Serialization import GH_IWriter
+from System import AsyncCallback
+from System import Enum
+from System import Guid
+from System import IAsyncResult
+from System import IFormatProvider
+from System import IntPtr
+from System import TypeCode
+from System.Drawing import Color
+from System.Drawing import Graphics
+from System.Drawing import PointF
+from System.Drawing import RectangleF
+from System.Reflection import MethodInfo
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+
+
+
+
 class GH_Gradient:
     @overload
     def __init__(self): ...
@@ -147,10 +159,6 @@ class GH_GradientChangedEventArgs:
     def ToString(self) -> str: ...
 
 
-from System.Drawing import Color
-from System import Guid
-from GH_IO.Serialization import GH_IWriter
-from GH_IO.Serialization import GH_IReader
 class GH_Grip:
     @overload
     def __init__(self): ...
@@ -214,12 +222,6 @@ class GH_GripType(Enum):
     Discontinuous = 1
 
 
-from System import IntPtr
-from System import AsyncCallback
-from System import IAsyncResult
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
-from System.Reflection import MethodInfo
 class GradientChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -251,12 +253,6 @@ class GradientChangedEventHandler:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from System import AsyncCallback
-from System import IAsyncResult
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
-from System.Reflection import MethodInfo
 class SelectionChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...

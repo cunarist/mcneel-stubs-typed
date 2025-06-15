@@ -1,11 +1,16 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
-
-
-from Rhino.Geometry import Transform
-from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from GH_IO.Serialization import GH_IWriter
+from Rhino.Geometry import Plane
+from Rhino.Geometry import Point3d
+from Rhino.Geometry import Transform
+from Rhino.Geometry import Vector3d
+
+
+
+
 class Generic:
     @overload
     def __init__(self): ...
@@ -37,9 +42,6 @@ class Generic:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
-from GH_IO.Serialization import GH_IWriter
-from GH_IO.Serialization import GH_IReader
-from Rhino.Geometry import Transform
 class Identity:
     @overload
     def __init__(self): ...
@@ -65,7 +67,6 @@ class Identity:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
-from Rhino.Geometry import Transform
 class ITransform:
     @overload
     def Duplicate(self) -> ITransform: ...
@@ -79,10 +80,6 @@ class ITransform:
     def ToString(self) -> str: ...
 
 
-from Rhino.Geometry import Plane
-from Rhino.Geometry import Transform
-from GH_IO.Serialization import GH_IWriter
-from GH_IO.Serialization import GH_IReader
 class Orientation:
     @overload
     def __init__(self): ...
@@ -118,10 +115,6 @@ class Orientation:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
-from Rhino.Geometry import Plane
-from Rhino.Geometry import Transform
-from GH_IO.Serialization import GH_IWriter
-from GH_IO.Serialization import GH_IReader
 class Projection:
     @overload
     def __init__(self): ...
@@ -153,11 +146,6 @@ class Projection:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
-from Rhino.Geometry import Point3d
-from Rhino.Geometry import Vector3d
-from Rhino.Geometry import Transform
-from GH_IO.Serialization import GH_IWriter
-from GH_IO.Serialization import GH_IReader
 class Rotation:
     @overload
     def __init__(self): ...
@@ -199,11 +187,6 @@ class Rotation:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
-from Rhino.Geometry import Point3d
-from Rhino.Geometry import Plane
-from Rhino.Geometry import Transform
-from GH_IO.Serialization import GH_IWriter
-from GH_IO.Serialization import GH_IReader
 class Scale:
     @overload
     def __init__(self): ...
@@ -251,10 +234,6 @@ class Scale:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
-from Rhino.Geometry import Vector3d
-from Rhino.Geometry import Transform
-from GH_IO.Serialization import GH_IWriter
-from GH_IO.Serialization import GH_IReader
 class Translation:
     @overload
     def __init__(self): ...

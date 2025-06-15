@@ -1,11 +1,20 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
+from GH_IO.Serialization import GH_IReader
+from GH_IO.Serialization import GH_IWriter
+from System import DateTime
+from System import Enum
+from System import IFormatProvider
+from System import TypeCode
+from System import Version
+
 from . import Serialization
 from . import Types
 from . import UserInterface
 
 __all__ = ['Serialization', 'Types', 'UserInterface']
+
 
 
 class Branch(Enum):
@@ -16,8 +25,6 @@ class Branch(Enum):
     Release = 4
 
 
-from GH_IO.Serialization import GH_IWriter
-from GH_IO.Serialization import GH_IReader
 class GH_ISerializable:
     @overload
     def Read(self, reader: GH_IReader) -> bool: ...
@@ -25,8 +32,6 @@ class GH_ISerializable:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
-from System import DateTime
-from System import Version
 class VersionNumber:
     @overload
     def __init__(self, version: Version): ...

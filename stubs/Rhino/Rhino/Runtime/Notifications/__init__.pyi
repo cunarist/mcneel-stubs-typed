@@ -1,6 +1,17 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
+from System import Action
+from System import DateTime
+from System import Enum
+from System import IFormatProvider
+from System import TypeCode
+from System.Collections.Generic import ICollection
+from System.Collections.Generic import IDictionary
+from System.Collections.Specialized import NotifyCollectionChangedEventHandler
+from System.ComponentModel import PropertyChangedEventHandler
+
+
 
 
 class ButtonType(Enum):
@@ -14,11 +25,6 @@ class IAssemblyRestrictedObject:
     def Editable(self) -> bool: ...
 
 
-from System import DateTime
-from System.Collections.Generic import ICollection
-from System.Collections.Generic import IDictionary
-from System import Action
-from System.ComponentModel import PropertyChangedEventHandler
 class Notification:
     @overload
     def __init__(self): ...

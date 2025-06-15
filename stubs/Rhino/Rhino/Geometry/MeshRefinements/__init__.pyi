@@ -1,6 +1,12 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
+from System import Enum
+from System import IFormatProvider
+from System import TypeCode
+from System.Threading import CancellationToken
+
+
 
 
 class CreaseEdges(Enum):
@@ -16,7 +22,6 @@ class LoopFormula(Enum):
     WarrenWeimer = 2
 
 
-from System.Threading import CancellationToken
 class RefinementSettings:
     @overload
     def __init__(self): ...

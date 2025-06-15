@@ -1,16 +1,96 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
-
-
-from Eto.Drawing import Image
-from System import Uri
-from Eto.Forms import Window
-from Eto.Forms import DialogResult
+from Eto import DefaultStyleProvider
+from Eto import FileAction
 from Eto import ICallback
-from Eto.Forms import Dialog
+from Eto import IStyleProvider
+from Eto import Platform
+from Eto import PropertyStore
+from Eto import Widget
+from Eto.Drawing import Color
+from Eto.Drawing import Font
+from Eto.Drawing import Icon
+from Eto.Drawing import Image
+from Eto.Drawing import Padding
+from Eto.Drawing import PenLineCap
+from Eto.Drawing import Point
+from Eto.Drawing import PointF
+from Eto.Drawing import Rectangle
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Size
+from Eto.Drawing import SizeF
 from Eto.Forms import AboutDialog
+from Eto.Forms import AutoSelectMode
+from Eto.Forms import BindingCollection
+from Eto.Forms import BindingUpdateMode
+from Eto.Forms import Button
+from Eto.Forms import ButtonSegmentedItem
+from Eto.Forms import CollectionEditor
+from Eto.Forms import ColorPicker
+from Eto.Forms import Command
+from Eto.Forms import Container
+from Eto.Forms import ContextMenu
+from Eto.Forms import Control
+from Eto.Forms import Cursor
+from Eto.Forms import DataObject
+from Eto.Forms import Dialog
+from Eto.Forms import DialogDisplayMode
+from Eto.Forms import DialogResult
+from Eto.Forms import DocumentControl
+from Eto.Forms import DocumentPage
+from Eto.Forms import DragEffects
+from Eto.Forms import Drawable
+from Eto.Forms import Expander
+from Eto.Forms import FileFilter
+from Eto.Forms import FilePicker
+from Eto.Forms import FontPicker
+from Eto.Forms import ICallback
+from Eto.Forms import IndirectBinding
+from Eto.Forms import MenuBar
+from Eto.Forms import MenuSegmentedItem
+from Eto.Forms import MessageBoxButtons
+from Eto.Forms import MessageBoxDefaultButton
+from Eto.Forms import MessageBoxType
+from Eto.Forms import Orientation
+from Eto.Forms import Panel
+from Eto.Forms import PropertyGrid
+from Eto.Forms import Range
+from Eto.Forms import Screen
+from Eto.Forms import SegmentedButton
+from Eto.Forms import SegmentedItem
+from Eto.Forms import SegmentedSelectionMode
+from Eto.Forms import Spinner
+from Eto.Forms import Splitter
+from Eto.Forms import SplitterFixedPanel
+from Eto.Forms import StackLayout
+from Eto.Forms import Stepper
+from Eto.Forms import StepperValidDirections
+from Eto.Forms import T
+from Eto.Forms import TableLayout
+from Eto.Forms import TextAlignment
+from Eto.Forms import TextBox
+from Eto.Forms import TextStepper
+from Eto.Forms import ToggleButton
+from Eto.Forms import ToolBar
+from Eto.Forms import Window
+from Eto.Forms import WindowState
+from Eto.Forms import WindowStyle
+from System import Enum
+from System import EventArgs
+from System import EventHandler
+from System import IFormatProvider
 from System import IntPtr
+from System import TimeSpan
+from System import TypeCode
+from System import Uri
+from System.Collections.Generic import IList
+from System.Collections.ObjectModel import Collection
+from System.Threading.Tasks import Task
+
+
+
+
 class ThemedAboutDialogHandler:
     @overload
     def __init__(self): ...
@@ -98,11 +178,6 @@ class ThemedAboutDialogHandler:
     def ToString(self) -> str: ...
 
 
-from Eto.Drawing import Image
-from Eto.Forms import ICallback
-from Eto.Forms import ToggleButton
-from Eto.Forms import ButtonSegmentedItem
-from System import IntPtr
 class ThemedButtonSegmentedItemHandler:
     @overload
     def __init__(self): ...
@@ -168,33 +243,6 @@ class ThemedButtonSegmentedItemHandler:
     def ToString(self) -> str: ...
 
 
-from Eto.Forms import Control
-from Eto.Drawing import Padding
-from Eto.Drawing import Size
-from Eto.Forms import ContextMenu
-from Eto import IStyleProvider
-from Eto import DefaultStyleProvider
-from Eto.Forms import T
-from Eto.Forms import Container
-from System import EventHandler
-from Eto.Drawing import Rectangle
-from Eto.Drawing import SizeF
-from Eto.Drawing import Color
-from Eto.Forms import Window
-from Eto.Forms import Command
-from Eto.Drawing import PointF
-from Eto.Drawing import RectangleF
-from Eto.Drawing import Point
-from Eto.Forms import Cursor
-from Eto.Forms import DataObject
-from Eto.Forms import DragEffects
-from Eto.Drawing import Image
-from Eto import Widget
-from Eto.Forms import BindingCollection
-from Eto.Forms import BindingUpdateMode
-from Eto import Platform
-from System import IntPtr
-from Eto import PropertyStore
 from Eto.Forms import Panel
 class ThemedCollectionEditor(Panel):
     @overload
@@ -539,23 +587,6 @@ class ThemedCollectionEditor(Panel):
     def UpdateLayout(self) -> None: ...
 
 
-from Eto.Drawing import Color
-from Eto.Drawing import Size
-from Eto.Drawing import SizeF
-from Eto.Drawing import Rectangle
-from System import EventArgs
-from Eto.Forms import Container
-from Eto.Drawing import PointF
-from Eto.Forms import Command
-from Eto.Drawing import Point
-from Eto.Forms import Cursor
-from Eto.Forms import DataObject
-from Eto.Forms import DragEffects
-from Eto.Drawing import Image
-from Eto.Forms import Window
-from Eto.Forms import ICallback
-from Eto.Forms import CollectionEditor
-from System import IntPtr
 class ThemedCollectionEditorHandler:
     @overload
     def __init__(self): ...
@@ -695,24 +726,6 @@ class ThemedCollectionEditorHandler:
     def UpdateLayout(self) -> None: ...
 
 
-from Eto.Drawing import Color
-from Eto.Drawing import Size
-from Eto.Drawing import SizeF
-from Eto.Drawing import Rectangle
-from System import EventArgs
-from Eto.Forms import Container
-from Eto.Drawing import PointF
-from Eto.Forms import Command
-from Eto.Drawing import Point
-from Eto.Forms import Cursor
-from Eto.Forms import DataObject
-from Eto.Forms import DragEffects
-from Eto.Drawing import Image
-from Eto.Forms import Window
-from Eto.Forms import ICallback
-from Eto.Forms import Control
-from Eto.Forms import ColorPicker
-from System import IntPtr
 class ThemedColorPickerHandler:
     @overload
     def __init__(self): ...
@@ -854,27 +867,6 @@ class ThemedColorPickerHandler:
     def UpdateLayout(self) -> None: ...
 
 
-from Eto.Drawing import Padding
-from Eto.Drawing import Font
-from Eto.Drawing import Color
-from System import EventArgs
-from Eto.Forms import DocumentPage
-from Eto.Drawing import Size
-from Eto.Drawing import SizeF
-from Eto.Drawing import Rectangle
-from Eto.Forms import Container
-from Eto.Drawing import PointF
-from Eto.Forms import Command
-from Eto.Drawing import Point
-from Eto.Forms import Cursor
-from Eto.Forms import DataObject
-from Eto.Forms import DragEffects
-from Eto.Drawing import Image
-from Eto.Forms import Window
-from Eto.Forms import ICallback
-from Eto.Forms import TableLayout
-from Eto.Forms import DocumentControl
-from System import IntPtr
 class ThemedDocumentControlHandler:
     @overload
     def __init__(self): ...
@@ -1096,27 +1088,6 @@ class ThemedDocumentControlHandler:
     def UpdateLayout(self) -> None: ...
 
 
-from Eto.Forms import Control
-from Eto.Forms import ContextMenu
-from Eto.Drawing import Image
-from Eto.Drawing import Size
-from Eto.Drawing import Padding
-from Eto.Drawing import Color
-from Eto.Drawing import SizeF
-from Eto.Drawing import Rectangle
-from System import EventArgs
-from Eto.Forms import Container
-from Eto.Drawing import PointF
-from Eto.Forms import Command
-from Eto.Drawing import Point
-from Eto.Forms import Cursor
-from Eto.Forms import DataObject
-from Eto.Forms import DragEffects
-from Eto.Forms import Window
-from Eto.Forms import ICallback
-from Eto.Forms import Panel
-from Eto.Forms import DocumentPage
-from System import IntPtr
 class ThemedDocumentPageHandler:
     @overload
     def __init__(self): ...
@@ -1286,27 +1257,6 @@ class ThemedDocumentPageHandler:
     def UpdateLayout(self) -> None: ...
 
 
-from Eto.Forms import Control
-from Eto.Drawing import Padding
-from Eto.Drawing import Size
-from Eto.Forms import ContextMenu
-from Eto.Drawing import Color
-from Eto.Drawing import SizeF
-from Eto.Drawing import Rectangle
-from System import EventArgs
-from Eto.Forms import Container
-from Eto.Drawing import PointF
-from Eto.Forms import Command
-from Eto.Drawing import Point
-from Eto.Forms import Cursor
-from Eto.Forms import DataObject
-from Eto.Forms import DragEffects
-from Eto.Drawing import Image
-from Eto.Forms import Window
-from Eto.Forms import ICallback
-from Eto.Forms import StackLayout
-from Eto.Forms import Expander
-from System import IntPtr
 class ThemedExpanderHandler:
     @overload
     def __init__(self): ...
@@ -1476,26 +1426,6 @@ class ThemedExpanderHandler:
     def UpdateLayout(self) -> None: ...
 
 
-from Eto import FileAction
-from Eto.Forms import FileFilter
-from Eto.Drawing import Color
-from Eto.Drawing import Size
-from Eto.Drawing import SizeF
-from Eto.Drawing import Rectangle
-from System import EventArgs
-from Eto.Forms import Container
-from Eto.Drawing import PointF
-from Eto.Forms import Command
-from Eto.Drawing import Point
-from Eto.Forms import Cursor
-from Eto.Forms import DataObject
-from Eto.Forms import DragEffects
-from Eto.Drawing import Image
-from Eto.Forms import Window
-from Eto.Forms import ICallback
-from Eto.Forms import StackLayout
-from Eto.Forms import FilePicker
-from System import IntPtr
 class ThemedFilePickerHandler:
     @overload
     def __init__(self): ...
@@ -1649,25 +1579,6 @@ class ThemedFilePickerHandler:
     def UpdateLayout(self) -> None: ...
 
 
-from Eto.Drawing import Font
-from Eto.Drawing import Color
-from Eto.Drawing import Size
-from Eto.Drawing import SizeF
-from Eto.Drawing import Rectangle
-from System import EventArgs
-from Eto.Forms import Container
-from Eto.Drawing import PointF
-from Eto.Forms import Command
-from Eto.Drawing import Point
-from Eto.Forms import Cursor
-from Eto.Forms import DataObject
-from Eto.Forms import DragEffects
-from Eto.Drawing import Image
-from Eto.Forms import Window
-from Eto.Forms import ICallback
-from Eto.Forms import Button
-from Eto.Forms import FontPicker
-from System import IntPtr
 class ThemedFontPickerHandler:
     @overload
     def __init__(self): ...
@@ -1803,13 +1714,6 @@ class ThemedFontPickerHandler:
     def UpdateLayout(self) -> None: ...
 
 
-from System import TimeSpan
-from Eto.Forms import ContextMenu
-from Eto.Drawing import Image
-from Eto.Forms import ICallback
-from Eto.Forms import ToggleButton
-from Eto.Forms import MenuSegmentedItem
-from System import IntPtr
 class ThemedMenuSegmentedItemHandler:
     @overload
     def __init__(self): ...
@@ -1891,44 +1795,6 @@ class ThemedMenuSegmentedItemHandler:
     def ToString(self) -> str: ...
 
 
-from Eto.Forms import TextAlignment
-from Eto.Drawing import Image
-from Eto.Forms import DialogDisplayMode
-from Eto.Forms import Button
-from System.Collections.ObjectModel import Collection
-from Eto.Forms import Control
-from System.Threading.Tasks import Task
-from System import EventHandler
-from Eto.Drawing import Point
-from Eto.Drawing import Rectangle
-from Eto.Forms import ToolBar
-from Eto.Forms import Window
-from Eto.Forms import Screen
-from Eto.Forms import MenuBar
-from Eto.Drawing import Icon
-from Eto.Forms import WindowState
-from Eto.Forms import WindowStyle
-from Eto.Drawing import Padding
-from Eto.Drawing import Size
-from Eto.Forms import ContextMenu
-from Eto import IStyleProvider
-from Eto import DefaultStyleProvider
-from Eto.Forms import T
-from Eto.Forms import Container
-from Eto.Drawing import SizeF
-from Eto.Drawing import Color
-from Eto.Forms import Command
-from Eto.Drawing import PointF
-from Eto.Drawing import RectangleF
-from Eto.Forms import Cursor
-from Eto.Forms import DataObject
-from Eto.Forms import DragEffects
-from Eto import Widget
-from Eto.Forms import BindingCollection
-from Eto.Forms import BindingUpdateMode
-from Eto import Platform
-from System import IntPtr
-from Eto import PropertyStore
 from Eto.Forms import Dialog
 class ThemedMessageBox(Dialog):
     @overload
@@ -2415,13 +2281,6 @@ class ThemedMessageBox(Dialog):
     def UpdateLayout(self) -> None: ...
 
 
-from Eto.Forms import MessageBoxType
-from Eto.Forms import MessageBoxButtons
-from Eto.Forms import MessageBoxDefaultButton
-from Eto.Forms import Control
-from Eto.Forms import DialogResult
-from Eto import Widget
-from System import IntPtr
 class ThemedMessageBoxHandler:
     @overload
     def __init__(self): ...
@@ -2473,35 +2332,6 @@ class ThemedMessageBoxHandler:
     def ToString(self) -> str: ...
 
 
-from System import EventHandler
-from Eto.Forms import IndirectBinding
-from System.Collections.Generic import IList
-from Eto.Drawing import Padding
-from Eto.Drawing import Size
-from Eto.Forms import ContextMenu
-from Eto.Forms import Control
-from Eto import IStyleProvider
-from Eto import DefaultStyleProvider
-from Eto.Forms import T
-from Eto.Forms import Container
-from Eto.Drawing import Rectangle
-from Eto.Drawing import SizeF
-from Eto.Drawing import Color
-from Eto.Forms import Window
-from Eto.Forms import Command
-from Eto.Drawing import PointF
-from Eto.Drawing import RectangleF
-from Eto.Drawing import Point
-from Eto.Forms import Cursor
-from Eto.Forms import DataObject
-from Eto.Forms import DragEffects
-from Eto.Drawing import Image
-from Eto import Widget
-from Eto.Forms import BindingCollection
-from Eto.Forms import BindingUpdateMode
-from Eto import Platform
-from System import IntPtr
-from Eto import PropertyStore
 from Eto.Forms import Panel
 class ThemedPropertyGrid(Panel):
     @overload
@@ -2868,23 +2698,6 @@ class ThemedPropertyGrid(Panel):
     def UpdateLayout(self) -> None: ...
 
 
-from Eto.Drawing import Color
-from Eto.Drawing import Size
-from Eto.Drawing import SizeF
-from Eto.Drawing import Rectangle
-from System import EventArgs
-from Eto.Forms import Container
-from Eto.Drawing import PointF
-from Eto.Forms import Command
-from Eto.Drawing import Point
-from Eto.Forms import Cursor
-from Eto.Forms import DataObject
-from Eto.Forms import DragEffects
-from Eto.Drawing import Image
-from Eto.Forms import Window
-from Eto.Forms import ICallback
-from Eto.Forms import PropertyGrid
-from System import IntPtr
 class ThemedPropertyGridHandler:
     @overload
     def __init__(self): ...
@@ -3034,26 +2847,6 @@ class ThemedPropertyGridHandler:
     def UpdateLayout(self) -> None: ...
 
 
-from Eto.Forms import SegmentedSelectionMode
-from Eto.Forms import SegmentedItem
-from System import EventArgs
-from Eto.Drawing import SizeF
-from Eto.Drawing import Color
-from Eto.Drawing import Size
-from Eto.Drawing import Rectangle
-from Eto.Forms import Container
-from Eto.Drawing import PointF
-from Eto.Forms import Command
-from Eto.Drawing import Point
-from Eto.Forms import Cursor
-from Eto.Forms import DataObject
-from Eto.Forms import DragEffects
-from Eto.Drawing import Image
-from Eto.Forms import Window
-from Eto.Forms import ICallback
-from Eto.Forms import Panel
-from Eto.Forms import SegmentedButton
-from System import IntPtr
 class ThemedSegmentedButtonHandler:
     @overload
     def __init__(self): ...
@@ -3220,25 +3013,6 @@ class ThemedSpinnerDirection(Enum):
     CounterClockwise = -1
 
 
-from Eto.Drawing import Color
-from Eto.Drawing import PenLineCap
-from System import EventArgs
-from Eto.Drawing import Size
-from Eto.Drawing import SizeF
-from Eto.Drawing import Rectangle
-from Eto.Forms import Container
-from Eto.Drawing import PointF
-from Eto.Forms import Command
-from Eto.Drawing import Point
-from Eto.Forms import Cursor
-from Eto.Forms import DataObject
-from Eto.Forms import DragEffects
-from Eto.Drawing import Image
-from Eto.Forms import Window
-from Eto.Forms import ICallback
-from Eto.Forms import Drawable
-from Eto.Forms import Spinner
-from System import IntPtr
 class ThemedSpinnerHandler:
     @overload
     def __init__(self): ...
@@ -3419,28 +3193,6 @@ class ThemedSpinnerMode(Enum):
     Circle = 1
 
 
-from Eto.Forms import Orientation
-from Eto.Forms import SplitterFixedPanel
-from Eto.Forms import Control
-from Eto.Forms import Panel
-from Eto.Drawing import Size
-from Eto.Drawing import Color
-from Eto.Drawing import SizeF
-from Eto.Drawing import Rectangle
-from System import EventArgs
-from Eto.Forms import Container
-from Eto.Drawing import PointF
-from Eto.Forms import Command
-from Eto.Drawing import Point
-from Eto.Forms import Cursor
-from Eto.Forms import DataObject
-from Eto.Forms import DragEffects
-from Eto.Drawing import Image
-from Eto.Forms import Window
-from Eto.Forms import ICallback
-from Eto.Forms import TableLayout
-from Eto.Forms import Splitter
-from System import IntPtr
 class ThemedSplitterHandler:
     @overload
     def __init__(self): ...
@@ -3616,27 +3368,6 @@ class ThemedSplitterHandler:
     def UpdateLayout(self) -> None: ...
 
 
-from Eto.Drawing import Font
-from Eto.Forms import Orientation
-from Eto.Forms import StepperValidDirections
-from Eto.Drawing import Color
-from Eto.Drawing import Size
-from Eto.Drawing import SizeF
-from Eto.Drawing import Rectangle
-from System import EventArgs
-from Eto.Forms import Container
-from Eto.Drawing import PointF
-from Eto.Forms import Command
-from Eto.Drawing import Point
-from Eto.Forms import Cursor
-from Eto.Forms import DataObject
-from Eto.Forms import DragEffects
-from Eto.Drawing import Image
-from Eto.Forms import Window
-from Eto.Forms import ICallback
-from Eto.Forms import Panel
-from Eto.Forms import Stepper
-from System import IntPtr
 class ThemedStepperHandler:
     @overload
     def __init__(self): ...
@@ -3788,31 +3519,6 @@ class ThemedStepperHandler:
     def UpdateLayout(self) -> None: ...
 
 
-from Eto.Forms import TextBox
-from Eto.Forms import Stepper
-from Eto.Drawing import Font
-from Eto.Forms import Range
-from Eto.Drawing import Color
-from Eto.Forms import StepperValidDirections
-from Eto.Forms import TextAlignment
-from Eto.Forms import AutoSelectMode
-from Eto.Drawing import Size
-from Eto.Drawing import SizeF
-from Eto.Drawing import Rectangle
-from System import EventArgs
-from Eto.Forms import Container
-from Eto.Drawing import PointF
-from Eto.Forms import Command
-from Eto.Drawing import Point
-from Eto.Forms import Cursor
-from Eto.Forms import DataObject
-from Eto.Forms import DragEffects
-from Eto.Drawing import Image
-from Eto.Forms import Window
-from Eto.Forms import ICallback
-from Eto.Forms import TableLayout
-from Eto.Forms import TextStepper
-from System import IntPtr
 class ThemedTextStepperHandler:
     @overload
     def __init__(self): ...

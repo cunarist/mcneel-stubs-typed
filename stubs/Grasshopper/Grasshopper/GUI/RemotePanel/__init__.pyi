@@ -1,15 +1,91 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
-
-
-from System import IntPtr
-from System import EventArgs
+from GH_IO.Serialization import GH_IReader
+from GH_IO.Serialization import GH_IWriter
+from Grasshopper.GUI import GH_VerticalScrollBar
+from Grasshopper.GUI.Canvas import GH_ObjectResponse
+from Grasshopper.Kernel import GH_Document
+from Rhino.ApplicationSettings import PaintColor
 from System import AsyncCallback
+from System import Delegate
+from System import Enum
+from System import EventArgs
+from System import EventHandler
+from System import Guid
 from System import IAsyncResult
+from System import IFormatProvider
+from System import IntPtr
+from System import TypeCode
+from System.ComponentModel import CancelEventHandler
+from System.ComponentModel import IContainer
+from System.ComponentModel import ISite
+from System.Drawing import Bitmap
+from System.Drawing import Color
+from System.Drawing import Font
+from System.Drawing import Graphics
+from System.Drawing import Image
+from System.Drawing import Point
+from System.Drawing import Rectangle
+from System.Drawing import Region
+from System.Drawing import Size
+from System.Drawing import SizeF
+from System.Reflection import MethodInfo
+from System.Runtime.Remoting import ObjRef
 from System.Runtime.Serialization import SerializationInfo
 from System.Runtime.Serialization import StreamingContext
-from System.Reflection import MethodInfo
+from System.Windows.Forms import AccessibleObject
+from System.Windows.Forms import AccessibleRole
+from System.Windows.Forms import AnchorStyles
+from System.Windows.Forms import AutoScaleMode
+from System.Windows.Forms import AutoSizeMode
+from System.Windows.Forms import AutoValidate
+from System.Windows.Forms import BindingContext
+from System.Windows.Forms import BorderStyle
+from System.Windows.Forms import BoundsSpecified
+from System.Windows.Forms import ContextMenu
+from System.Windows.Forms import ContextMenuStrip
+from System.Windows.Forms import Control
+from System.Windows.Forms import ControlBindingsCollection
+from System.Windows.Forms import ControlCollection
+from System.Windows.Forms import ControlEventHandler
+from System.Windows.Forms import Cursor
+from System.Windows.Forms import DockPaddingEdges
+from System.Windows.Forms import DockStyle
+from System.Windows.Forms import DragDropEffects
+from System.Windows.Forms import DragEventHandler
+from System.Windows.Forms import Form
+from System.Windows.Forms import GetChildAtPointSkip
+from System.Windows.Forms import GiveFeedbackEventHandler
+from System.Windows.Forms import HelpEventHandler
+from System.Windows.Forms import HScrollProperties
+from System.Windows.Forms import IContainerControl
+from System.Windows.Forms import ImageLayout
+from System.Windows.Forms import ImeMode
+from System.Windows.Forms import InvalidateEventHandler
+from System.Windows.Forms import IWindowTarget
+from System.Windows.Forms import KeyEventHandler
+from System.Windows.Forms import KeyPressEventHandler
+from System.Windows.Forms import LayoutEventHandler
+from System.Windows.Forms import Message
+from System.Windows.Forms import MouseEventArgs
+from System.Windows.Forms import MouseEventHandler
+from System.Windows.Forms import Padding
+from System.Windows.Forms import PaintEventHandler
+from System.Windows.Forms import PreProcessControlState
+from System.Windows.Forms import PreviewKeyDownEventHandler
+from System.Windows.Forms import QueryAccessibilityHelpEventHandler
+from System.Windows.Forms import QueryContinueDragEventHandler
+from System.Windows.Forms import RightToLeft
+from System.Windows.Forms import ScrollEventHandler
+from System.Windows.Forms import UICuesEventHandler
+from System.Windows.Forms import ValidationConstraints
+from System.Windows.Forms import VScrollProperties
+from System.Windows.Forms.Layout import LayoutEngine
+
+
+
+
 class EditModeChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -41,11 +117,6 @@ class EditModeChangedEventHandler:
     def ToString(self) -> str: ...
 
 
-from System.Drawing import Rectangle
-from System import Guid
-from System.Drawing import Graphics
-from System.Windows.Forms import MouseEventArgs
-from Grasshopper.GUI.Canvas import GH_ObjectResponse
 class IRcpItem:
     @property
     def Bounds(self) -> Rectangle: ...
@@ -71,12 +142,6 @@ class IRcpItem:
     def Bounds(self, Value: Rectangle) -> None: ...
 
 
-from System import IntPtr
-from System import AsyncCallback
-from System import IAsyncResult
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
-from System.Reflection import MethodInfo
 class LayoutChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -108,11 +173,6 @@ class LayoutChangedEventHandler:
     def ToString(self) -> str: ...
 
 
-from System import Guid
-from System.Drawing import Graphics
-from System.Drawing import Rectangle
-from System.Windows.Forms import MouseEventArgs
-from Grasshopper.GUI.Canvas import GH_ObjectResponse
 class RcpDeadItem(RcpItem):
     @overload
     def __init__(self, id: Guid): ...
@@ -150,15 +210,6 @@ class RcpDeadItem(RcpItem):
 
 
 
-from System.Drawing import Color
-from System.Drawing import Rectangle
-from System.Drawing import Point
-from System.Drawing import Graphics
-from GH_IO.Serialization import GH_IWriter
-from GH_IO.Serialization import GH_IReader
-from System import Guid
-from System.Windows.Forms import MouseEventArgs
-from Grasshopper.GUI.Canvas import GH_ObjectResponse
 class RcpGroup(RcpItem):
     @overload
     def __init__(self): ...
@@ -267,13 +318,6 @@ class RcpIndex:
     def ToString(self) -> str: ...
 
 
-from System.Drawing import Rectangle
-from System import Guid
-from System.Windows.Forms import MouseEventArgs
-from Grasshopper.GUI.Canvas import GH_ObjectResponse
-from Rhino.ApplicationSettings import PaintColor
-from System.Drawing import Color
-from System.Drawing import Graphics
 class RcpItem:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -310,11 +354,6 @@ class RcpItem:
     def ToString(self) -> str: ...
 
 
-from System import Guid
-from System.Drawing import Graphics
-from System.Drawing import Rectangle
-from System.Windows.Forms import MouseEventArgs
-from Grasshopper.GUI.Canvas import GH_ObjectResponse
 class RcpLabelItem(RcpItem):
     @overload
     def __init__(self, text: str): ...
@@ -354,9 +393,6 @@ class RcpLabelItem(RcpItem):
     def ToString(self) -> str: ...
 
 
-from Grasshopper.Kernel import GH_Document
-from GH_IO.Serialization import GH_IWriter
-from GH_IO.Serialization import GH_IReader
 class RcpLayout:
     @overload
     def __init__(self, document: GH_Document): ...
@@ -403,69 +439,6 @@ class RcpLayout:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
-from Grasshopper.GUI import GH_VerticalScrollBar
-from System.Windows.Forms import KeyEventHandler
-from System.Windows.Forms import KeyPressEventHandler
-from System.Windows.Forms import AutoSizeMode
-from System import EventHandler
-from System.Windows.Forms import BorderStyle
-from System.Drawing import Rectangle
-from System.Drawing import Size
-from System.Drawing import Point
-from System.Windows.Forms import HScrollProperties
-from System.Windows.Forms import VScrollProperties
-from System.Windows.Forms import DockPaddingEdges
-from System.Windows.Forms import Control
-from System.Windows.Forms import ScrollEventHandler
-from System.Windows.Forms import AnchorStyles
-from System.Windows.Forms.Layout import LayoutEngine
-from System.Drawing import Image
-from System.Windows.Forms import ImageLayout
-from System.Windows.Forms import BindingContext
-from System.Windows.Forms import ContextMenu
-from System.Windows.Forms import ContextMenuStrip
-from System.Windows.Forms import Cursor
-from System.Windows.Forms import ControlBindingsCollection
-from System.Windows.Forms import DockStyle
-from System.Drawing import Font
-from System.Drawing import Color
-from System.Windows.Forms import RightToLeft
-from System.ComponentModel import ISite
-from System import Delegate
-from System import IAsyncResult
-from System.Windows.Forms import Message
-from System.Windows.Forms import AccessibleObject
-from System.Windows.Forms import AccessibleRole
-from System.Windows.Forms import ControlCollection
-from System import IntPtr
-from System.Windows.Forms import Padding
-from System.Drawing import Region
-from System.Windows.Forms import IWindowTarget
-from System.Windows.Forms import ControlEventHandler
-from System.Windows.Forms import DragEventHandler
-from System.Windows.Forms import GiveFeedbackEventHandler
-from System.Windows.Forms import HelpEventHandler
-from System.Windows.Forms import InvalidateEventHandler
-from System.Windows.Forms import PaintEventHandler
-from System.Windows.Forms import QueryContinueDragEventHandler
-from System.Windows.Forms import QueryAccessibilityHelpEventHandler
-from System.Windows.Forms import LayoutEventHandler
-from System.Windows.Forms import MouseEventHandler
-from System.Windows.Forms import PreviewKeyDownEventHandler
-from System.Windows.Forms import UICuesEventHandler
-from System.ComponentModel import CancelEventHandler
-from System.Drawing import Graphics
-from System.Windows.Forms import DragDropEffects
-from System.Drawing import Bitmap
-from System.Windows.Forms import Form
-from System.Windows.Forms import GetChildAtPointSkip
-from System.Windows.Forms import IContainerControl
-from System.Windows.Forms import PreProcessControlState
-from System.Drawing import SizeF
-from System.Windows.Forms import BoundsSpecified
-from System.Windows.Forms import ImeMode
-from System.ComponentModel import IContainer
-from System.Runtime.Remoting import ObjRef
 from Grasshopper.GUI import GH_DoubleBufferedPanel
 class RcpLayoutControl(GH_DoubleBufferedPanel):
     @overload
@@ -1237,11 +1210,6 @@ class RcpLayoutKind(Enum):
     GroupMoved = 8
 
 
-from System.Drawing import Rectangle
-from System.Drawing import Graphics
-from System import Guid
-from System.Windows.Forms import MouseEventArgs
-from Grasshopper.GUI.Canvas import GH_ObjectResponse
 class RcpPlaceHolder(RcpItem):
     @overload
     def __init__(self, bounds: Rectangle): ...
@@ -1277,11 +1245,6 @@ class RcpPlaceHolder(RcpItem):
     def ToString(self) -> str: ...
 
 
-from System import Guid
-from System.Drawing import Graphics
-from System.Drawing import Rectangle
-from System.Windows.Forms import MouseEventArgs
-from Grasshopper.GUI.Canvas import GH_ObjectResponse
 class RcpSeparatorItem(RcpItem):
     @overload
     def __init__(self): ...
@@ -1317,72 +1280,6 @@ class RcpSeparatorItem(RcpItem):
     def ToString(self) -> str: ...
 
 
-from Grasshopper.Kernel import GH_Document
-from System.Windows.Forms import AutoValidate
-from System.Windows.Forms import ValidationConstraints
-from System import EventHandler
-from System.Windows.Forms import AutoSizeMode
-from System.Windows.Forms import BorderStyle
-from System.Windows.Forms import BindingContext
-from System.Windows.Forms import Control
-from System.Drawing import SizeF
-from System.Windows.Forms import AutoScaleMode
-from System.Windows.Forms import Form
-from System.Drawing import Rectangle
-from System.Drawing import Size
-from System.Drawing import Point
-from System.Windows.Forms import HScrollProperties
-from System.Windows.Forms import VScrollProperties
-from System.Windows.Forms import DockPaddingEdges
-from System.Windows.Forms import ScrollEventHandler
-from System.Windows.Forms import AnchorStyles
-from System.Windows.Forms.Layout import LayoutEngine
-from System.Drawing import Image
-from System.Windows.Forms import ImageLayout
-from System.Windows.Forms import ContextMenu
-from System.Windows.Forms import ContextMenuStrip
-from System.Windows.Forms import Cursor
-from System.Windows.Forms import ControlBindingsCollection
-from System.Windows.Forms import DockStyle
-from System.Drawing import Font
-from System.Drawing import Color
-from System.Windows.Forms import RightToLeft
-from System.ComponentModel import ISite
-from System import Delegate
-from System import IAsyncResult
-from System.Windows.Forms import Message
-from System.Windows.Forms import AccessibleObject
-from System.Windows.Forms import AccessibleRole
-from System.Windows.Forms import ControlCollection
-from System import IntPtr
-from System.Windows.Forms import Padding
-from System.Drawing import Region
-from System.Windows.Forms import IWindowTarget
-from System.Windows.Forms import ControlEventHandler
-from System.Windows.Forms import DragEventHandler
-from System.Windows.Forms import GiveFeedbackEventHandler
-from System.Windows.Forms import HelpEventHandler
-from System.Windows.Forms import InvalidateEventHandler
-from System.Windows.Forms import PaintEventHandler
-from System.Windows.Forms import QueryContinueDragEventHandler
-from System.Windows.Forms import QueryAccessibilityHelpEventHandler
-from System.Windows.Forms import KeyEventHandler
-from System.Windows.Forms import KeyPressEventHandler
-from System.Windows.Forms import LayoutEventHandler
-from System.Windows.Forms import MouseEventHandler
-from System.Windows.Forms import PreviewKeyDownEventHandler
-from System.Windows.Forms import UICuesEventHandler
-from System.ComponentModel import CancelEventHandler
-from System.Drawing import Graphics
-from System.Windows.Forms import DragDropEffects
-from System.Drawing import Bitmap
-from System.Windows.Forms import GetChildAtPointSkip
-from System.Windows.Forms import IContainerControl
-from System.Windows.Forms import PreProcessControlState
-from System.Windows.Forms import BoundsSpecified
-from System.Windows.Forms import ImeMode
-from System.ComponentModel import IContainer
-from System.Runtime.Remoting import ObjRef
 class RemoteControlPanel:
     @overload
     def __init__(self): ...

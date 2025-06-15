@@ -1,6 +1,21 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
+from Rhino import RhinoDoc
+from Rhino.Display import DisplayPipelineAttributes
+from Rhino.DocObjects import ViewportInfo
+from Rhino.Geometry import Mesh
+from Rhino.Geometry import MeshType
+from Rhino.Geometry import Transform
+from Rhino.PlugIns import PlugIn
+from Rhino.Render import RenderMaterial
+from System import Enum
+from System import Guid
+from System import IFormatProvider
+from System import TypeCode
+from System.Reflection import Assembly
+
+
 
 
 class CustomRenderMeshProviderAttribute:
@@ -37,9 +52,6 @@ class Flags(Enum):
     Incomplete = 64
 
 
-from Rhino.Geometry import Mesh
-from Rhino.Render import RenderMaterial
-from Rhino.Geometry import Transform
 class Instance:
     @overload
     def __init__(self): ...
@@ -79,7 +91,6 @@ class Instance:
     def ToString(self) -> str: ...
 
 
-from System import Guid
 class MeshProviderIds:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -106,8 +117,6 @@ class MeshProviderIds:
     def ToString(self) -> str: ...
 
 
-from Rhino import RhinoDoc
-from System import Guid
 class RenderMeshes:
     @overload
     def __init__(self, doc: RhinoDoc, objectId: Guid, renderMeshProviderId: Guid, runningHash: int): ...
@@ -140,13 +149,6 @@ class RenderMeshes:
     def ToString(self) -> str: ...
 
 
-from System import Guid
-from Rhino.Geometry import MeshType
-from Rhino.DocObjects import ViewportInfo
-from Rhino import RhinoDoc
-from Rhino.PlugIns import PlugIn
-from Rhino.Display import DisplayPipelineAttributes
-from System.Reflection import Assembly
 class RenderMeshProvider:
     @overload
     def Dispose(self) -> None: ...
@@ -188,7 +190,6 @@ class RenderMeshProvider:
     def ToString(self) -> str: ...
 
 
-from System import Guid
 class RenderMeshProviderProgress:
     @overload
     def __init__(self): ...

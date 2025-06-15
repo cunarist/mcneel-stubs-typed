@@ -1,10 +1,18 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
-
-
-from System.Drawing.Drawing2D import HatchStyle
+from GH_IO.Serialization import GH_IReader
+from GH_IO.Serialization import GH_IWriter
+from Grasshopper.GUI.Canvas import GH_PaletteStyle
+from System import Enum
+from System import IFormatProvider
+from System import TypeCode
 from System.Drawing import Color
+from System.Drawing.Drawing2D import HatchStyle
+
+
+
+
 class GH_BackgroundSettings:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -39,7 +47,6 @@ class GH_BackgroundStyle(Enum):
     GradientTopBottom = 11
 
 
-from System.Drawing import Color
 class GH_ObjectSettings:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -67,7 +74,6 @@ class GH_ObjectSettings:
     def ToString(self) -> str: ...
 
 
-from System.Drawing import Color
 class GH_PageSettings:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -123,7 +129,6 @@ class GH_PageSettings:
     def ToString(self) -> str: ...
 
 
-from Grasshopper.GUI.Canvas import GH_PaletteStyle
 class GH_PaletteSettings:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -175,8 +180,6 @@ class GH_PaletteSettings:
     def ToString(self) -> str: ...
 
 
-from GH_IO.Serialization import GH_IWriter
-from GH_IO.Serialization import GH_IReader
 class GH_Theme:
     @overload
     def __init__(self): ...
@@ -213,7 +216,6 @@ class GH_Theme:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
-from System.Drawing import Color
 class GH_WireSettings:
     @overload
     def Equals(self, obj: object) -> bool: ...

@@ -1,6 +1,24 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
+from Rhino import RhinoDoc
+from Rhino.PlugIns import PlugIn
+from Rhino.Render import ChangeContexts
+from Rhino.Render import Channel
+from Rhino.Render import ChannelGPU
+from Rhino.Render import FreeFloatingBase
+from Rhino.UI.Controls import ICollapsibleSection
+from System import Enum
+from System import Guid
+from System import IConvertible
+from System import IFormatProvider
+from System import IntPtr
+from System import TypeCode
+from System.Drawing import Rectangle
+from System.Drawing import Size
+from System.Reflection import Assembly
+
+
 
 
 class CustomPostEffectAttribute:
@@ -46,7 +64,6 @@ class CustomPostEffectAttribute:
     def ToString(self) -> str: ...
 
 
-from System import Guid
 class IPostEffects:
     @overload
     def GetPostEffects(self, type: PostEffectType) -> Iterable[PostEffect]: ...
@@ -54,12 +71,6 @@ class IPostEffects:
     def PostEffectFromId(self, uuid: Guid) -> PostEffect: ...
 
 
-from System import Guid
-from Rhino.PlugIns import PlugIn
-from System.Reflection import Assembly
-from System.Drawing import Rectangle
-from Rhino import RhinoDoc
-from Rhino.Render import ChangeContexts
 class PostEffect:
     @overload
     def __init__(self): ...
@@ -135,9 +146,6 @@ class PostEffect:
     def WriteState(self, state: PostEffectState) -> tuple[bool, PostEffectState]: ...
 
 
-from System import Guid
-from Rhino.Render import Channel
-from Rhino.Render import ChannelGPU
 class PostEffectChannel:
     @overload
     def Clone(self) -> PostEffectChannel: ...
@@ -163,9 +171,6 @@ class PostEffectChannel:
     def ToString(self) -> str: ...
 
 
-from System import Guid
-from Rhino.Render import FreeFloatingBase
-from Rhino.Render import ChangeContexts
 from Rhino.Render import DocumentOrFreeFloatingBase
 class PostEffectCollection(DocumentOrFreeFloatingBase):
     @overload
@@ -201,8 +206,6 @@ class PostEffectCollection(DocumentOrFreeFloatingBase):
     def ToString(self) -> str: ...
 
 
-from System import Guid
-from System import IConvertible
 class PostEffectData:
     @overload
     def DataCRC(self, current_remainder: int) -> int: ...
@@ -254,8 +257,6 @@ class PostEffectExecuteWhileRenderingOptions(Enum):
     UseExecutionControl = 3
 
 
-from System import Guid
-from System import IntPtr
 class PostEffectExecutionControl:
     @overload
     def __init__(self): ...
@@ -289,7 +290,6 @@ class PostEffectHistograms(Enum):
     All = 15
 
 
-from System.Drawing import Rectangle
 class PostEffectJob:
     @overload
     def __init__(self): ...
@@ -311,7 +311,6 @@ class PostEffectJob:
     def ToString(self) -> str: ...
 
 
-from System import Guid
 class PostEffectJobChannels:
     @overload
     def Dispose(self) -> None: ...
@@ -327,9 +326,6 @@ class PostEffectJobChannels:
     def ToString(self) -> str: ...
 
 
-from System import Guid
-from System.Drawing import Size
-from System.Drawing import Rectangle
 class PostEffectPipeline:
     @overload
     def Dimensions(self) -> Size: ...
@@ -395,7 +391,6 @@ class PostEffectStyles(Enum):
     DefaultOn = 1024
 
 
-from System.Drawing import Rectangle
 class PostEffectThreadEngine:
     @overload
     def Dispose(self) -> None: ...
@@ -417,7 +412,6 @@ class PostEffectType(Enum):
     Late = 2
 
 
-from Rhino.UI.Controls import ICollapsibleSection
 class PostEffectUI:
     @overload
     def AddSection(self, section: ICollapsibleSection) -> None: ...
@@ -433,7 +427,6 @@ class PostEffectUI:
     def ToString(self) -> str: ...
 
 
-from System import Guid
 class PostEffectUuids:
     @overload
     def Equals(self, obj: object) -> bool: ...

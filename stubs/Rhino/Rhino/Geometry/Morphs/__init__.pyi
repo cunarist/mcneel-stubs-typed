@@ -1,11 +1,18 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
-
-
-from Rhino.Geometry import Point3d
+from Rhino.Geometry import Curve
 from Rhino.Geometry import GeometryBase
+from Rhino.Geometry import Line
 from Rhino.Geometry import Plane
+from Rhino.Geometry import Point2d
+from Rhino.Geometry import Point3d
+from Rhino.Geometry import Surface
+from Rhino.Geometry import Vector3d
+
+
+
+
 from Rhino.Geometry import SpaceMorph
 class BendSpaceMorph(SpaceMorph):
     @overload
@@ -44,10 +51,6 @@ class BendSpaceMorph(SpaceMorph):
     def ToString(self) -> str: ...
 
 
-from Rhino.Geometry import Curve
-from Rhino.Geometry import Point3d
-from Rhino.Geometry import GeometryBase
-from Rhino.Geometry import Plane
 from Rhino.Geometry import SpaceMorph
 class FlowSpaceMorph(SpaceMorph):
     @overload
@@ -86,9 +89,6 @@ class FlowSpaceMorph(SpaceMorph):
     def ToString(self) -> str: ...
 
 
-from Rhino.Geometry import Plane
-from Rhino.Geometry import Point3d
-from Rhino.Geometry import GeometryBase
 from Rhino.Geometry import SpaceMorph
 class MaelstromSpaceMorph(SpaceMorph):
     @overload
@@ -125,11 +125,6 @@ class MaelstromSpaceMorph(SpaceMorph):
     def ToString(self) -> str: ...
 
 
-from Rhino.Geometry import Plane
-from Rhino.Geometry import Surface
-from Rhino.Geometry import Point2d
-from Rhino.Geometry import Point3d
-from Rhino.Geometry import GeometryBase
 from Rhino.Geometry import SpaceMorph
 class SplopSpaceMorph(SpaceMorph):
     @overload
@@ -170,12 +165,6 @@ class SplopSpaceMorph(SpaceMorph):
     def ToString(self) -> str: ...
 
 
-from Rhino.Geometry import Surface
-from Rhino.Geometry import Point2d
-from Rhino.Geometry import Vector3d
-from Rhino.Geometry import Point3d
-from Rhino.Geometry import GeometryBase
-from Rhino.Geometry import Plane
 from Rhino.Geometry import SpaceMorph
 class SporphSpaceMorph(SpaceMorph):
     @overload
@@ -218,9 +207,6 @@ class SporphSpaceMorph(SpaceMorph):
     def ToString(self) -> str: ...
 
 
-from Rhino.Geometry import Point3d
-from Rhino.Geometry import GeometryBase
-from Rhino.Geometry import Plane
 from Rhino.Geometry import SpaceMorph
 class StretchSpaceMorph(SpaceMorph):
     @overload
@@ -259,9 +245,6 @@ class StretchSpaceMorph(SpaceMorph):
     def ToString(self) -> str: ...
 
 
-from Rhino.Geometry import Point3d
-from Rhino.Geometry import GeometryBase
-from Rhino.Geometry import Plane
 from Rhino.Geometry import SpaceMorph
 class TaperSpaceMorph(SpaceMorph):
     @overload
@@ -298,10 +281,6 @@ class TaperSpaceMorph(SpaceMorph):
     def ToString(self) -> str: ...
 
 
-from Rhino.Geometry import Line
-from Rhino.Geometry import Point3d
-from Rhino.Geometry import GeometryBase
-from Rhino.Geometry import Plane
 from Rhino.Geometry import SpaceMorph
 class TwistSpaceMorph(SpaceMorph):
     @overload

@@ -1,6 +1,12 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
+from System import Enum
+from System import IFormatProvider
+from System import TypeCode
+from System.Collections.ObjectModel import ReadOnlyCollection
+
+
 
 
 class GH_Audience(Enum):
@@ -49,7 +55,6 @@ class GH_Format:
     def ToString(self) -> str: ...
 
 
-from System.Collections.ObjectModel import ReadOnlyCollection
 class GH_GlossaryItem:
     @overload
     def Equals(self, obj: object) -> bool: ...

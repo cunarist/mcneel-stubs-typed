@@ -1,15 +1,38 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
+from Grasshopper.Rhinoceros import Attributes
+from Grasshopper.Rhinoceros import ModelContent
+from Grasshopper.Rhinoceros import ModelContentName
+from Grasshopper.Rhinoceros import ModelData
+from Grasshopper.Rhinoceros import ModelTags
+from Grasshopper.Rhinoceros import ModelUserText
+from Grasshopper.Rhinoceros import T
+from Grasshopper.Rhinoceros.Display import ObjectDisplay
+from Grasshopper.Rhinoceros.Display import ObjectVisibility
+from Grasshopper.Rhinoceros.Drafting import ModelLinetype
+from Grasshopper.Rhinoceros.Drafting import ObjectDrafting
+from Grasshopper.Rhinoceros.Render import ModelRenderMaterial
+from Grasshopper.Rhinoceros.Render import ObjectRender
+from Rhino import RhinoDoc
+from Rhino.DocObjects import EarthAnchorPoint
+from Rhino.DocObjects import InstanceDefinition
+from Rhino.DocObjects import Layer
+from Rhino.DocObjects import ObjectAttributes
+from Rhino.DocObjects import ObjectType
+from Rhino.DocObjects import RhinoObject
+from Rhino.Geometry import BoundingBox
+from Rhino.Geometry import GeometryBase
+from Rhino.Geometry import Transform
+from System import Guid
+from System.Collections.Generic import IReadOnlyList
+
 from . import Params
 
 __all__ = ['Params']
 
 
-from Grasshopper.Rhinoceros import ModelData
-from Grasshopper.Rhinoceros import ModelContentName
-from Grasshopper.Rhinoceros import ModelTags
-from Grasshopper.Rhinoceros import Attributes
+
 class Attributes:
     @overload
     def __init__(self): ...
@@ -69,12 +92,6 @@ class Attributes:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import IReadOnlyList
-from Grasshopper.Rhinoceros import ModelData
-from Grasshopper.Rhinoceros import ModelUserText
-from Grasshopper.Rhinoceros import ModelContentName
-from Grasshopper.Rhinoceros import ModelTags
-from Grasshopper.Rhinoceros import Attributes
 class Attributes:
     @overload
     def __init__(self): ...
@@ -144,13 +161,6 @@ class Attributes:
     def ToString(self) -> str: ...
 
 
-from Grasshopper.Rhinoceros.Drafting import ModelLinetype
-from Grasshopper.Rhinoceros.Render import ModelRenderMaterial
-from Grasshopper.Rhinoceros import ModelData
-from Grasshopper.Rhinoceros import ModelUserText
-from Grasshopper.Rhinoceros import ModelContentName
-from Grasshopper.Rhinoceros import ModelTags
-from Grasshopper.Rhinoceros import Attributes
 class Attributes:
     @overload
     def __init__(self): ...
@@ -232,15 +242,6 @@ class Attributes:
     def ToString(self) -> str: ...
 
 
-from Grasshopper.Rhinoceros.Display import ObjectVisibility
-from Grasshopper.Rhinoceros.Display import ObjectDisplay
-from Grasshopper.Rhinoceros.Drafting import ObjectDrafting
-from Grasshopper.Rhinoceros.Render import ObjectRender
-from Grasshopper.Rhinoceros import ModelData
-from Grasshopper.Rhinoceros import ModelUserText
-from Grasshopper.Rhinoceros import ModelContentName
-from Grasshopper.Rhinoceros import ModelTags
-from Grasshopper.Rhinoceros import Attributes
 class Attributes:
     @overload
     def __init__(self): ...
@@ -312,12 +313,6 @@ class Attributes:
     def ToString(self) -> str: ...
 
 
-from Rhino.DocObjects import EarthAnchorPoint
-from Grasshopper.Rhinoceros import Attributes
-from Grasshopper.Rhinoceros import ModelContentName
-from Grasshopper.Rhinoceros import ModelTags
-from Grasshopper.Rhinoceros import ModelContent
-from Grasshopper.Rhinoceros import ModelData
 from Grasshopper.Rhinoceros import ModelContent
 class ModelEarthAnchorPoint(ModelContent):
     @overload
@@ -391,19 +386,6 @@ class ModelEarthAnchorPoint(ModelContent):
     def ToString(self) -> str: ...
 
 
-from Rhino.DocObjects import InstanceDefinition
-from System import Guid
-from Rhino.Geometry import Transform
-from Rhino.Geometry import BoundingBox
-from System.Collections.Generic import IReadOnlyList
-from Rhino import RhinoDoc
-from Rhino.DocObjects import ObjectAttributes
-from Grasshopper.Rhinoceros import Attributes
-from Grasshopper.Rhinoceros import ModelUserText
-from Grasshopper.Rhinoceros import ModelContentName
-from Grasshopper.Rhinoceros import ModelTags
-from Grasshopper.Rhinoceros import ModelContent
-from Grasshopper.Rhinoceros import ModelData
 from Grasshopper.Rhinoceros import ModelComponentContent
 class ModelInstanceDefinition(ModelComponentContent):
     @overload
@@ -490,17 +472,6 @@ class ModelInstanceDefinition(ModelComponentContent):
     def ToString(self) -> str: ...
 
 
-from Rhino.DocObjects import Layer
-from System import Guid
-from Grasshopper.Rhinoceros.Drafting import ModelLinetype
-from Grasshopper.Rhinoceros.Render import ModelRenderMaterial
-from Grasshopper.Rhinoceros import Attributes
-from Grasshopper.Rhinoceros import ModelUserText
-from Grasshopper.Rhinoceros import ModelContentName
-from Grasshopper.Rhinoceros import ModelTags
-from Grasshopper.Rhinoceros import ModelContent
-from Grasshopper.Rhinoceros import T
-from Grasshopper.Rhinoceros import ModelData
 from Grasshopper.Rhinoceros import ModelComponentContent
 class ModelLayer(ModelComponentContent):
     @overload
@@ -589,24 +560,6 @@ class ModelLayer(ModelComponentContent):
     def ToString(self) -> str: ...
 
 
-from Rhino.DocObjects import RhinoObject
-from Rhino import RhinoDoc
-from Rhino.DocObjects import ObjectAttributes
-from Rhino.Geometry import GeometryBase
-from System import Guid
-from Rhino.DocObjects import ObjectType
-from Grasshopper.Rhinoceros.Display import ObjectVisibility
-from Grasshopper.Rhinoceros.Display import ObjectDisplay
-from Grasshopper.Rhinoceros.Drafting import ObjectDrafting
-from Grasshopper.Rhinoceros.Render import ObjectRender
-from Rhino.Geometry import Transform
-from Rhino.Geometry import BoundingBox
-from Grasshopper.Rhinoceros import Attributes
-from Grasshopper.Rhinoceros import ModelUserText
-from Grasshopper.Rhinoceros import ModelContentName
-from Grasshopper.Rhinoceros import ModelTags
-from Grasshopper.Rhinoceros import ModelContent
-from Grasshopper.Rhinoceros import ModelData
 from Grasshopper.Rhinoceros import ModelComponentContent
 class ModelObject(ModelComponentContent):
     @overload

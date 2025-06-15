@@ -1,6 +1,12 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
+from System import Enum
+from System import IFormatProvider
+from System import TypeCode
+from System.Drawing import RectangleF
+
+
 
 
 class GH_Align(Enum):
@@ -19,7 +25,6 @@ class GH_Distribute(Enum):
     Horizontal = 2
 
 
-from System.Drawing import RectangleF
 class GH_Solver:
     @overload
     def __init__(self): ...

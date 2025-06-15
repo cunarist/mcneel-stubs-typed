@@ -1,15 +1,28 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
+from Grasshopper.Rhinoceros import Attributes
+from Grasshopper.Rhinoceros import ModelContent
+from Grasshopper.Rhinoceros import ModelContentName
+from Grasshopper.Rhinoceros import ModelData
+from Grasshopper.Rhinoceros import ModelMeshingParameters
+from Grasshopper.Rhinoceros import ModelTags
+from Grasshopper.Rhinoceros import ModelValue
+from Grasshopper.Rhinoceros import T
+from Rhino.Display import ColorRGBA
+from Rhino.DocObjects import Material
+from Rhino.DocObjects import ObjectMaterialSource
+from Rhino.Render import RenderEnvironment
+from Rhino.Render import RenderMaterial
+from Rhino.Render import RenderTexture
+from System import Guid
+
 from . import Params
 
 __all__ = ['Params']
 
 
-from Grasshopper.Rhinoceros import ModelContentName
-from Grasshopper.Rhinoceros import ModelTags
-from Grasshopper.Rhinoceros import Attributes
-from Grasshopper.Rhinoceros import ModelData
+
 class Attributes:
     @overload
     def Clone(self) -> Attributes: ...
@@ -47,11 +60,6 @@ class Attributes:
     def ToString(self) -> str: ...
 
 
-from Rhino.Render import RenderEnvironment
-from Grasshopper.Rhinoceros import ModelData
-from Grasshopper.Rhinoceros import ModelContentName
-from Grasshopper.Rhinoceros import ModelTags
-from Grasshopper.Rhinoceros import Attributes
 class Attributes:
     @overload
     def __init__(self): ...
@@ -97,11 +105,6 @@ class Attributes:
     def ToString(self) -> str: ...
 
 
-from Rhino.Render import RenderMaterial
-from Grasshopper.Rhinoceros import ModelData
-from Grasshopper.Rhinoceros import ModelContentName
-from Grasshopper.Rhinoceros import ModelTags
-from Grasshopper.Rhinoceros import Attributes
 class Attributes:
     @overload
     def __init__(self): ...
@@ -147,10 +150,6 @@ class Attributes:
     def ToString(self) -> str: ...
 
 
-from Grasshopper.Rhinoceros import ModelData
-from Grasshopper.Rhinoceros import ModelContentName
-from Grasshopper.Rhinoceros import ModelTags
-from Grasshopper.Rhinoceros import Attributes
 class Attributes:
     @overload
     def __init__(self): ...
@@ -202,10 +201,6 @@ class Attributes:
     def ToString(self) -> str: ...
 
 
-from Grasshopper.Rhinoceros import ModelData
-from Grasshopper.Rhinoceros import ModelContentName
-from Grasshopper.Rhinoceros import ModelTags
-from Grasshopper.Rhinoceros import Attributes
 class Attributes:
     @overload
     def __init__(self): ...
@@ -297,11 +292,6 @@ class Attributes:
     def ToString(self) -> str: ...
 
 
-from Rhino.Render import RenderTexture
-from Grasshopper.Rhinoceros import ModelData
-from Grasshopper.Rhinoceros import ModelContentName
-from Grasshopper.Rhinoceros import ModelTags
-from Grasshopper.Rhinoceros import Attributes
 class Attributes:
     @overload
     def __init__(self): ...
@@ -347,7 +337,6 @@ class Attributes:
     def ToString(self) -> str: ...
 
 
-from Grasshopper.Rhinoceros import ModelMeshingParameters
 class Attributes:
     @overload
     def Equals(self, other: object) -> bool: ...
@@ -377,12 +366,6 @@ class Attributes:
     def ToString(self) -> str: ...
 
 
-from Grasshopper.Rhinoceros import Attributes
-from Grasshopper.Rhinoceros import ModelContentName
-from Grasshopper.Rhinoceros import ModelTags
-from Grasshopper.Rhinoceros import ModelContent
-from Grasshopper.Rhinoceros import T
-from Grasshopper.Rhinoceros import ModelData
 from Grasshopper.Rhinoceros import ModelContent
 class ModelRenderContent(ModelContent):
     @overload
@@ -429,14 +412,6 @@ class ModelRenderContent(ModelContent):
     def ToString(self) -> str: ...
 
 
-from Rhino.Render import RenderEnvironment
-from System import Guid
-from Rhino.Display import ColorRGBA
-from Grasshopper.Rhinoceros import Attributes
-from Grasshopper.Rhinoceros import ModelContentName
-from Grasshopper.Rhinoceros import ModelTags
-from Grasshopper.Rhinoceros import ModelContent
-from Grasshopper.Rhinoceros import ModelData
 class ModelRenderEnvironment(ModelRenderContent):
     @overload
     def __init__(self): ...
@@ -503,15 +478,6 @@ class ModelRenderEnvironment(ModelRenderContent):
     def ToString(self) -> str: ...
 
 
-from Rhino.DocObjects import Material
-from Rhino.Render import RenderMaterial
-from System import Guid
-from Rhino.Display import ColorRGBA
-from Grasshopper.Rhinoceros import ModelContentName
-from Grasshopper.Rhinoceros import Attributes
-from Grasshopper.Rhinoceros import ModelTags
-from Grasshopper.Rhinoceros import ModelContent
-from Grasshopper.Rhinoceros import ModelData
 class ModelRenderMaterial(ModelRenderContent):
     @overload
     def __init__(self): ...
@@ -585,11 +551,6 @@ class ModelRenderMaterial(ModelRenderContent):
     def ToString(self) -> str: ...
 
 
-from Grasshopper.Rhinoceros import Attributes
-from Grasshopper.Rhinoceros import ModelContentName
-from Grasshopper.Rhinoceros import ModelTags
-from Grasshopper.Rhinoceros import ModelContent
-from Grasshopper.Rhinoceros import ModelData
 from Grasshopper.Rhinoceros import ModelContent
 class ModelRenderSkylight(ModelContent):
     @overload
@@ -649,11 +610,6 @@ class ModelRenderSkylight(ModelContent):
     def ToString(self) -> str: ...
 
 
-from Grasshopper.Rhinoceros import Attributes
-from Grasshopper.Rhinoceros import ModelContentName
-from Grasshopper.Rhinoceros import ModelTags
-from Grasshopper.Rhinoceros import ModelContent
-from Grasshopper.Rhinoceros import ModelData
 from Grasshopper.Rhinoceros import ModelContent
 class ModelRenderSun(ModelContent):
     @overload
@@ -733,14 +689,6 @@ class ModelRenderSun(ModelContent):
     def ToString(self) -> str: ...
 
 
-from Rhino.Render import RenderTexture
-from System import Guid
-from Rhino.Display import ColorRGBA
-from Grasshopper.Rhinoceros import Attributes
-from Grasshopper.Rhinoceros import ModelContentName
-from Grasshopper.Rhinoceros import ModelTags
-from Grasshopper.Rhinoceros import ModelContent
-from Grasshopper.Rhinoceros import ModelData
 class ModelRenderTexture(ModelRenderContent):
     @overload
     def __init__(self): ...
@@ -807,8 +755,6 @@ class ModelRenderTexture(ModelRenderContent):
     def ToString(self) -> str: ...
 
 
-from Grasshopper.Rhinoceros import ModelMeshingParameters
-from Grasshopper.Rhinoceros import ModelValue
 from Grasshopper.Rhinoceros import ModelValue
 class ObjectRender(ModelValue):
     @overload
@@ -854,8 +800,6 @@ class ObjectRender(ModelValue):
     def ToString(self) -> str: ...
 
 
-from Rhino.DocObjects import ObjectMaterialSource
-from Grasshopper.Rhinoceros import ModelValue
 from Grasshopper.Rhinoceros import ModelValue
 class ObjectRenderMaterial(ModelValue):
     @overload
@@ -895,7 +839,6 @@ class ObjectRenderMaterial(ModelValue):
     def ToString(self) -> str: ...
 
 
-from Rhino.DocObjects import ObjectMaterialSource
 class Value:
     @overload
     def __init__(self, source: ObjectMaterialSource): ...

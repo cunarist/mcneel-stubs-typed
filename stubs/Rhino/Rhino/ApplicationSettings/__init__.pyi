@@ -1,10 +1,25 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
-
-
+from Rhino import AntialiasLevel
+from Rhino.DocObjects import ObjectType
+from Rhino.Geometry import Interval
+from Rhino.Geometry import Vector3d
+from Rhino.UI import KeyboardKey
+from Rhino.UI import ModifierKey
+from System import Enum
+from System import IFormatProvider
+from System import TimeSpan
+from System import TypeCode
+from System.Collections.Generic import Dictionary
 from System.Drawing import Color
+from System.Drawing import Point
 from System.Drawing import Rectangle
+from System.IO import DirectoryInfo
+
+
+
+
 class AppearanceSettings:
     @overload
     @staticmethod
@@ -358,7 +373,6 @@ class AppearanceSettings:
     def UsingDefaultLightModeColors() -> bool: ...
 
 
-from System.Drawing import Color
 class AppearanceSettingsState:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -538,7 +552,6 @@ class AppearanceSettingsState:
     def ToString(self) -> str: ...
 
 
-from System.Drawing import Color
 class ChooseOneObjectSettings:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -652,7 +665,6 @@ class ChooseOneObjectSettings:
     def UpdateFromState(state: ChooseOneObjectSettingsState) -> None: ...
 
 
-from System.Drawing import Color
 class ChooseOneObjectSettingsState:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -730,7 +742,6 @@ class ClipboardState(Enum):
     PromptWhenBig = 2
 
 
-from System.Collections.Generic import Dictionary
 class CommandAliasList:
     @overload
     @staticmethod
@@ -788,8 +799,6 @@ class CursorMode(Enum):
     WhiteOnBlack = 2
 
 
-from System.Drawing import Point
-from System.Drawing import Color
 class CursorTooltipSettings:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -873,8 +882,6 @@ class CursorTooltipSettings:
     def ToString(self) -> str: ...
 
 
-from System.Drawing import Point
-from System.Drawing import Color
 class CursorTooltipSettingsState:
     @overload
     def __init__(self): ...
@@ -932,7 +939,6 @@ class CursorTooltipSettingsState:
     def ToString(self) -> str: ...
 
 
-from Rhino.Geometry import Interval
 class CurvatureAnalysisSettings:
     @overload
     @staticmethod
@@ -989,7 +995,6 @@ class CurvatureAnalysisSettings:
     def UpdateFromState(state: CurvatureAnalysisSettingsState) -> None: ...
 
 
-from Rhino.Geometry import Interval
 class CurvatureAnalysisSettingsState:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -1021,7 +1026,6 @@ class CurvatureAnalysisSettingsState:
     def ToString(self) -> str: ...
 
 
-from System.Drawing import Color
 class CurvatureGraphSettings:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -1093,7 +1097,6 @@ class CurvatureGraphSettings:
     def UpdateFromState(state: CurvatureGraphSettingsState) -> None: ...
 
 
-from System.Drawing import Color
 class CurvatureGraphSettingsState:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -1144,8 +1147,6 @@ class CurvatureStyle(Enum):
     MaxRadius = 3
 
 
-from Rhino.Geometry import Interval
-from Rhino.Geometry import Vector3d
 class DraftAngleAnalysisSettings:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -1187,8 +1188,6 @@ class DraftAngleAnalysisSettings:
     def UpdateFromState(state: DraftAngleAnalysisSettingsState) -> None: ...
 
 
-from Rhino.Geometry import Interval
-from Rhino.Geometry import Vector3d
 class DraftAngleAnalysisSettingsState:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -1212,7 +1211,6 @@ class DraftAngleAnalysisSettingsState:
     def ToString(self) -> str: ...
 
 
-from System.Drawing import Color
 class EdgeAnalysisSettings:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -1248,7 +1246,6 @@ class EdgeAnalysisSettings:
     def UpdateFromState(state: EdgeAnalysisSettingsState) -> None: ...
 
 
-from System.Drawing import Color
 class EdgeAnalysisSettingsState:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -1268,8 +1265,6 @@ class EdgeAnalysisSettingsState:
     def ToString(self) -> str: ...
 
 
-from System import TimeSpan
-from System.IO import DirectoryInfo
 class FileSettings:
     @overload
     @staticmethod
@@ -1413,7 +1408,6 @@ class FileSettings:
     def UpdateFromState(state: FileSettingsState) -> None: ...
 
 
-from System import TimeSpan
 class FileSettingsState:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -1465,7 +1459,6 @@ class FileSettingsState:
     def ToString(self) -> str: ...
 
 
-from System import TimeSpan
 class GeneralSettings:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -1552,7 +1545,6 @@ class GeneralSettings:
     def ToString(self) -> str: ...
 
 
-from System import TimeSpan
 class GeneralSettingsState:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -1663,8 +1655,6 @@ class Installation(Enum):
     EvaluationTimed = 10
 
 
-from Rhino.UI import ModifierKey
-from Rhino.UI import KeyboardKey
 class KeyboardShortcut:
     @overload
     def __init__(self): ...
@@ -2091,7 +2081,6 @@ class NeverRepeatList:
     def ToString(self) -> str: ...
 
 
-from Rhino import AntialiasLevel
 class OpenGLSettings:
     @overload
     def __init__(self): ...
@@ -2123,7 +2112,6 @@ class OpenGLSettings:
     def UpdateFromState(state: OpenGLSettingsState) -> None: ...
 
 
-from Rhino import AntialiasLevel
 class OpenGLSettingsState:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -2204,7 +2192,6 @@ class PointDisplayMode(Enum):
     CplanePoint = 1
 
 
-from Rhino.DocObjects import ObjectType
 class SelectionFilterSettings:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -2252,7 +2239,6 @@ class SelectionFilterSettings:
     def UpdateFromState(state: SelectionFilterSettingsState) -> None: ...
 
 
-from Rhino.DocObjects import ObjectType
 class SelectionFilterSettingsState:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -2761,8 +2747,6 @@ class ShortcutKey(Enum):
     MacControlShiftF12 = 477
 
 
-from Rhino.UI import KeyboardKey
-from Rhino.UI import ModifierKey
 class ShortcutKeySettings:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -2798,7 +2782,6 @@ class ShortcutKeySettings:
     def Update(shortcuts: Iterable[KeyboardShortcut], replaceAll: bool) -> None: ...
 
 
-from System.Drawing import Color
 class SmartTrackSettings:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -2885,7 +2868,6 @@ class SmartTrackSettings:
     def UpdateFromState(state: SmartTrackSettingsState) -> None: ...
 
 
-from System.Drawing import Color
 class SmartTrackSettingsState:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -3176,7 +3158,6 @@ class WidgetColor(Enum):
     WAxisColor = 2
 
 
-from System.Drawing import Color
 class ZebraAnalysisSettings:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -3224,7 +3205,6 @@ class ZebraAnalysisSettings:
     def UpdateFromState(state: ZebraAnalysisSettingsState) -> None: ...
 
 
-from System.Drawing import Color
 class ZebraAnalysisSettingsState:
     @overload
     def Equals(self, obj: object) -> bool: ...

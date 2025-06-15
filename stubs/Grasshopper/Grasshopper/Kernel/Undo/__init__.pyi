@@ -1,14 +1,27 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
+from GH_IO.Serialization import GH_IReader
+from GH_IO.Serialization import GH_IWriter
+from Grasshopper.Kernel import GH_DebugDescriptionWriter
+from Grasshopper.Kernel import GH_Document
+from System import DateTime
+from System import Enum
+from System import Guid
+from System import IFormatProvider
+from System import TypeCode
+from System.Collections import IDictionary
+from System.Collections.Generic import IList
+from System.Reflection import MethodBase
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+
 from . import Actions
 
 __all__ = ['Actions']
 
 
-from GH_IO.Serialization import GH_IWriter
-from GH_IO.Serialization import GH_IReader
-from Grasshopper.Kernel import GH_Document
+
 class GH_ArchivedUndoAction(GH_UndoAction):
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -34,9 +47,6 @@ class GH_ArchivedUndoAction(GH_UndoAction):
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
-from Grasshopper.Kernel import GH_Document
-from GH_IO.Serialization import GH_IWriter
-from GH_IO.Serialization import GH_IReader
 class GH_ObjectUndoAction(GH_UndoAction):
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -62,9 +72,6 @@ class GH_ObjectUndoAction(GH_UndoAction):
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
-from Grasshopper.Kernel import GH_Document
-from GH_IO.Serialization import GH_IWriter
-from GH_IO.Serialization import GH_IReader
 class GH_UndoAction:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -90,10 +97,6 @@ class GH_UndoAction:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
-from System.Collections import IDictionary
-from System.Reflection import MethodBase
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
 class GH_UndoException:
     @overload
     def __init__(self, message: str): ...
@@ -135,10 +138,6 @@ class GH_UndoException:
     def ToString(self) -> str: ...
 
 
-from System import Guid
-from System import DateTime
-from System.Collections.Generic import IList
-from Grasshopper.Kernel import GH_Document
 class GH_UndoRecord:
     @overload
     def __init__(self): ...
@@ -184,9 +183,6 @@ class GH_UndoRecord:
     def Undo(self, doc: GH_Document) -> None: ...
 
 
-from Grasshopper.Kernel import GH_Document
-from System import Guid
-from Grasshopper.Kernel import GH_DebugDescriptionWriter
 class GH_UndoServer:
     @overload
     def __init__(self, owner: GH_Document): ...
@@ -245,7 +241,6 @@ class GH_UndoState(Enum):
     redo = 1
 
 
-from Grasshopper.Kernel import GH_Document
 class IGH_UndoAction:
     @property
     def ExpiresDisplay(self) -> bool: ...

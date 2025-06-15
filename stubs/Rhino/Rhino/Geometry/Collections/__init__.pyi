@@ -1,9 +1,47 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
-
-
+from Rhino import IndexPair
+from Rhino.FileIO import TextLog
+from Rhino.Geometry import BoundingBox
+from Rhino.Geometry import Brep
+from Rhino.Geometry import BrepEdge
+from Rhino.Geometry import BrepFace
+from Rhino.Geometry import BrepLoop
+from Rhino.Geometry import BrepLoopType
+from Rhino.Geometry import BrepTrim
+from Rhino.Geometry import BrepVertex
+from Rhino.Geometry import ControlPoint
 from Rhino.Geometry import Curve
+from Rhino.Geometry import CurveEnd
+from Rhino.Geometry import Interval
+from Rhino.Geometry import IsoStatus
+from Rhino.Geometry import KnotStyle
+from Rhino.Geometry import Line
+from Rhino.Geometry import Mesh
+from Rhino.Geometry import MeshFace
+from Rhino.Geometry import MeshNgon
+from Rhino.Geometry import Point2d
+from Rhino.Geometry import Point2f
+from Rhino.Geometry import Point3d
+from Rhino.Geometry import Point3f
+from Rhino.Geometry import Point4d
+from Rhino.Geometry import Polyline
+from Rhino.Geometry import SubDEdge
+from Rhino.Geometry import SubDEdgeTag
+from Rhino.Geometry import SubDFace
+from Rhino.Geometry import SubDVertex
+from Rhino.Geometry import SubDVertexTag
+from Rhino.Geometry import Surface
+from Rhino.Geometry import Vector3d
+from Rhino.Geometry import Vector3f
+from Rhino.Render import MappingTag
+from Rhino.Render import TextureMapping
+from System.Drawing import Color
+
+
+
+
 class BrepCurveList:
     def __iter__(self) -> Iterator[Curve]: ...
     @overload
@@ -24,9 +62,6 @@ class BrepCurveList:
     def ToString(self) -> str: ...
 
 
-from Rhino.Geometry import BrepEdge
-from Rhino.Geometry import BrepVertex
-from Rhino.Geometry import Interval
 class BrepEdgeList:
     def __iter__(self) -> Iterator[BrepEdge]: ...
     @overload
@@ -67,11 +102,6 @@ class BrepEdgeList:
     def ToString(self) -> str: ...
 
 
-from Rhino.Geometry import BrepFace
-from Rhino.Geometry import Brep
-from Rhino.Geometry import Surface
-from Rhino.Geometry import BrepEdge
-from Rhino.Geometry import BrepVertex
 class BrepFaceList:
     def __iter__(self) -> Iterator[BrepFace]: ...
     @overload
@@ -132,9 +162,6 @@ class BrepFaceList:
     def ToString(self) -> str: ...
 
 
-from Rhino.Geometry import BrepLoop
-from Rhino.Geometry import BrepLoopType
-from Rhino.Geometry import BrepFace
 class BrepLoopList:
     def __iter__(self) -> Iterator[BrepLoop]: ...
     @overload
@@ -161,7 +188,6 @@ class BrepLoopList:
     def ToString(self) -> str: ...
 
 
-from Rhino.Geometry import Surface
 class BrepSurfaceList:
     def __iter__(self) -> Iterator[Surface]: ...
     @overload
@@ -180,12 +206,6 @@ class BrepSurfaceList:
     def ToString(self) -> str: ...
 
 
-from Rhino.Geometry import BrepTrim
-from Rhino.Geometry import BrepLoop
-from Rhino.Geometry import BrepEdge
-from Rhino.Geometry import BrepVertex
-from Rhino.Geometry import IsoStatus
-from Rhino.Geometry import BrepFace
 class BrepTrimList:
     def __iter__(self) -> Iterator[BrepTrim]: ...
     @overload
@@ -224,9 +244,6 @@ class BrepTrimList:
     def ToString(self) -> str: ...
 
 
-from Rhino.Geometry import BrepVertex
-from Rhino.Geometry import Point3d
-from Rhino.Geometry import BrepFace
 class BrepVertexList:
     def __iter__(self) -> Iterator[BrepVertex]: ...
     @overload
@@ -251,11 +268,6 @@ class BrepVertexList:
     def ToString(self) -> str: ...
 
 
-from Rhino.Geometry import MeshFace
-from Rhino.Geometry import Point3f
-from Rhino.Geometry import BoundingBox
-from Rhino.Geometry import Point3d
-from Rhino.Geometry import Mesh
 class MeshFaceList:
     def __iter__(self) -> Iterator[MeshFace]: ...
     def __getitem__(self, index: int) -> MeshFace: ...
@@ -364,8 +376,6 @@ class MeshFaceList:
     def ToString(self) -> str: ...
 
 
-from Rhino.Geometry import Vector3f
-from Rhino.Geometry import Vector3d
 class MeshFaceNormalList:
     def __iter__(self) -> Iterator[Vector3f]: ...
     def __getitem__(self, index: int) -> Vector3f: ...
@@ -416,10 +426,6 @@ class MeshFaceNormalList:
     def UnitizeFaceNormals(self) -> bool: ...
 
 
-from Rhino.Geometry import MeshNgon
-from Rhino.Geometry import BoundingBox
-from Rhino.Geometry import Point3d
-from Rhino.FileIO import TextLog
 class MeshNgonList:
     def __iter__(self) -> Iterator[MeshNgon]: ...
     def __getitem__(self, index: int) -> MeshNgon: ...
@@ -494,10 +500,6 @@ class MeshNgonList:
     def ToString(self) -> str: ...
 
 
-from Rhino.Geometry import Point2f
-from Rhino.Geometry import Point3d
-from Rhino.Geometry import Point3f
-from Rhino.Render import TextureMapping
 class MeshTextureCoordinateList:
     def __iter__(self) -> Iterator[Point2f]: ...
     def __getitem__(self, index: int) -> Point2f: ...
@@ -558,9 +560,6 @@ class MeshTextureCoordinateList:
     def TransposeTextureCoordinates(self) -> bool: ...
 
 
-from Rhino import IndexPair
-from Rhino.Geometry import Line
-from Rhino.Geometry import Point3d
 class MeshTopologyEdgeList:
     @overload
     def CollapseEdge(self, topologyEdgeIndex: int) -> bool: ...
@@ -604,7 +603,6 @@ class MeshTopologyEdgeList:
     def ToString(self) -> str: ...
 
 
-from Rhino.Geometry import Point3f
 class MeshTopologyVertexList:
     def __iter__(self) -> Iterator[Point3f]: ...
     def __getitem__(self, index: int) -> Point3f: ...
@@ -649,9 +647,6 @@ class MeshTopologyVertexList:
     def ToString(self) -> str: ...
 
 
-from System.Drawing import Color
-from Rhino.Render import MappingTag
-from Rhino.Geometry import MeshFace
 class MeshVertexColorList:
     def __iter__(self) -> Iterator[Color]: ...
     def __getitem__(self, index: int) -> Color: ...
@@ -706,8 +701,6 @@ class MeshVertexColorList:
     def ToString(self) -> str: ...
 
 
-from Rhino.Geometry import Point3f
-from Rhino.Geometry import Point3d
 class MeshVertexList:
     def __iter__(self) -> Iterator[Point3f]: ...
     def __getitem__(self, index: int) -> Point3f: ...
@@ -801,8 +794,6 @@ class MeshVertexList:
     def ToString(self) -> str: ...
 
 
-from Rhino.Geometry import Vector3f
-from Rhino.Geometry import Vector3d
 class MeshVertexNormalList:
     def __iter__(self) -> Iterator[Vector3f]: ...
     def __getitem__(self, index: int) -> Vector3f: ...
@@ -901,8 +892,6 @@ class MeshVertexStatusList:
     def ToString(self) -> str: ...
 
 
-from Rhino.Geometry import CurveEnd
-from Rhino.Geometry import KnotStyle
 class NurbsCurveKnotList:
     def __iter__(self) -> Iterator[float]: ...
     def __getitem__(self, index: int) -> float: ...
@@ -957,11 +946,6 @@ class NurbsCurveKnotList:
     def ToString(self) -> str: ...
 
 
-from Rhino.Geometry import ControlPoint
-from Rhino.Geometry import Polyline
-from Rhino.Geometry import Point3d
-from Rhino.Geometry import Point4d
-from Rhino.Geometry import Vector3d
 class NurbsCurvePointList:
     def __iter__(self) -> Iterator[ControlPoint]: ...
     def __getitem__(self, index: int) -> ControlPoint: ...
@@ -1024,7 +1008,6 @@ class NurbsCurvePointList:
     def ValidateSpacing(self, closeTolerance: float, stackTolerance: float) -> tuple[bool, Iterable[int], Iterable[int]]: ...
 
 
-from Rhino.Geometry import KnotStyle
 class NurbsSurfaceKnotList:
     def __iter__(self) -> Iterator[float]: ...
     @overload
@@ -1069,11 +1052,6 @@ class NurbsSurfaceKnotList:
     def ToString(self) -> str: ...
 
 
-from Rhino.Geometry import Point2d
-from Rhino.Geometry import ControlPoint
-from Rhino.Geometry import Point3d
-from Rhino.Geometry import Point4d
-from Rhino.Geometry import Vector3d
 class NurbsSurfacePointList:
     def __iter__(self) -> Iterator[ControlPoint]: ...
     @overload
@@ -1124,9 +1102,6 @@ class NurbsSurfacePointList:
     def ValidateSpacing(self, closeTolerance: float, stackTolerance: float) -> tuple[bool, Iterable[IndexPair], Iterable[IndexPair]]: ...
 
 
-from Rhino.Geometry import SubDEdge
-from Rhino.Geometry import SubDEdgeTag
-from Rhino.Geometry import SubDVertex
 class SubDEdgeList:
     def __iter__(self) -> Iterator[SubDEdge]: ...
     @overload
@@ -1153,7 +1128,6 @@ class SubDEdgeList:
     def ToString(self) -> str: ...
 
 
-from Rhino.Geometry import SubDFace
 class SubDFaceList:
     def __iter__(self) -> Iterator[SubDFace]: ...
     @overload
@@ -1178,9 +1152,6 @@ class SubDFaceList:
     def ToString(self) -> str: ...
 
 
-from Rhino.Geometry import SubDVertex
-from Rhino.Geometry import SubDVertexTag
-from Rhino.Geometry import Point3d
 class SubDVertexList:
     @overload
     def Add(self, tag: SubDVertexTag, vertex: Point3d) -> SubDVertex: ...

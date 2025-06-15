@@ -1,6 +1,13 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
+from Eto import Platform
+from Eto import PropertyStore
+from System import Action
+from System import EventHandler
+from System import IntPtr
+
+
 
 
 class ICallback:
@@ -25,11 +32,6 @@ class IHandler:
     def Start(self) -> None: ...
 
 
-from System import Action
-from Eto import Platform
-from System import IntPtr
-from Eto import PropertyStore
-from System import EventHandler
 from Eto import Widget
 class Thread(Widget):
     @overload

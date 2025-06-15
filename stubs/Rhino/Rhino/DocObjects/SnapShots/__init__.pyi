@@ -1,18 +1,20 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
-
-
-from System import IntPtr
-from System import Guid
 from Rhino import RhinoDoc
-from Rhino.FileIO import BinaryArchiveWriter
-from Rhino.FileIO import BinaryArchiveReader
 from Rhino.DocObjects import RhinoObject
-from Rhino.Geometry import Transform
-from Rhino.Geometry import BoundingBox
-from Rhino.Runtime.InteropWrappers import SimpleArrayBinaryArchiveReader
+from Rhino.FileIO import BinaryArchiveReader
+from Rhino.FileIO import BinaryArchiveWriter
 from Rhino.FileIO import TextLog
+from Rhino.Geometry import BoundingBox
+from Rhino.Geometry import Transform
+from Rhino.Runtime.InteropWrappers import SimpleArrayBinaryArchiveReader
+from System import Guid
+from System import IntPtr
+
+
+
+
 class SnapShotsClient:
     @overload
     def __init__(self): ...

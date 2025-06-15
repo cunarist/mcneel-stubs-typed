@@ -1,14 +1,25 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
+from System import AsyncCallback
+from System import Enum
+from System import IAsyncResult
+from System import IFormatProvider
+from System import IntPtr
+from System import TypeCode
+from System.Drawing import PointF
+from System.Drawing import RectangleF
+from System.Drawing import SizeF
+from System.Reflection import MethodInfo
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+
 from . import MetaBall
 
 __all__ = ['MetaBall']
 
 
-from System.Drawing import PointF
-from System.Drawing import SizeF
-from System.Drawing import RectangleF
+
 class BezierF:
     @overload
     def __init__(self, p0: PointF, p1: PointF, p2: PointF, p3: PointF): ...

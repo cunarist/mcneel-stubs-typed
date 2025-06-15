@@ -1,6 +1,9 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
+from Grasshopper.Kernel import IGH_DocumentObject
+
+
 
 
 class GH_NetworkSorter:
@@ -22,7 +25,6 @@ class GH_NetworkSorter:
     def ToString(self) -> str: ...
 
 
-from Grasshopper.Kernel import IGH_DocumentObject
 class GH_NetworkSorterNode:
     @overload
     def __init__(self, obj_target: IGH_DocumentObject): ...

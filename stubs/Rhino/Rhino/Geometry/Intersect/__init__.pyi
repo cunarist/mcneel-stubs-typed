@@ -1,6 +1,36 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
+from Rhino.DocObjects import RhinoObject
+from Rhino.FileIO import TextLog
+from Rhino.Geometry import Arc
+from Rhino.Geometry import BoundingBox
+from Rhino.Geometry import Box
+from Rhino.Geometry import Brep
+from Rhino.Geometry import BrepFace
+from Rhino.Geometry import Circle
+from Rhino.Geometry import Curve
+from Rhino.Geometry import Cylinder
+from Rhino.Geometry import Interval
+from Rhino.Geometry import Line
+from Rhino.Geometry import Mesh
+from Rhino.Geometry import MeshingParameters
+from Rhino.Geometry import MeshType
+from Rhino.Geometry import Plane
+from Rhino.Geometry import Point3d
+from Rhino.Geometry import Polyline
+from Rhino.Geometry import PolylineCurve
+from Rhino.Geometry import Ray3d
+from Rhino.Geometry import Sphere
+from Rhino.Geometry import Surface
+from Rhino.Geometry import Vector3d
+from System import Enum
+from System import IFormatProvider
+from System import IProgress
+from System import TypeCode
+from System.Threading import CancellationToken
+
+
 
 
 class ArcArcIntersection(Enum):
@@ -41,28 +71,6 @@ class CurveIntersections:
     def ToString(self) -> str: ...
 
 
-from Rhino.Geometry import Line
-from Rhino.Geometry import Plane
-from Rhino.Geometry import Point3d
-from Rhino.Geometry import Circle
-from Rhino.Geometry import Sphere
-from Rhino.Geometry import Cylinder
-from Rhino.Geometry import Arc
-from Rhino.Geometry import BoundingBox
-from Rhino.Geometry import Interval
-from Rhino.Geometry import Box
-from Rhino.Geometry import Curve
-from Rhino.Geometry import Mesh
-from Rhino.Geometry import Brep
-from Rhino.FileIO import TextLog
-from Rhino.Geometry import Surface
-from Rhino.Geometry import BrepFace
-from Rhino.Geometry import Polyline
-from System.Threading import CancellationToken
-from System import IProgress
-from Rhino.Geometry import Ray3d
-from Rhino.Geometry import PolylineCurve
-from Rhino.Geometry import Vector3d
 class Intersection:
     @overload
     @staticmethod
@@ -245,9 +253,6 @@ class Intersection:
     def ToString(self) -> str: ...
 
 
-from Rhino.Geometry import Point3d
-from Rhino.Geometry import Interval
-from Rhino.FileIO import TextLog
 class IntersectionEvent:
     @overload
     def __init__(self): ...
@@ -310,11 +315,6 @@ class LineSphereIntersection(Enum):
     Multiple = 2
 
 
-from Rhino.Geometry import Mesh
-from Rhino.Geometry import Point3d
-from Rhino.Geometry import MeshType
-from Rhino.Geometry import MeshingParameters
-from Rhino.DocObjects import RhinoObject
 class MeshClash:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -407,7 +407,6 @@ class PlaneSphereIntersection(Enum):
     Circle = 2
 
 
-from Rhino.Geometry import Point3d
 class RayShootEvent:
     @overload
     def Equals(self, obj: object) -> bool: ...

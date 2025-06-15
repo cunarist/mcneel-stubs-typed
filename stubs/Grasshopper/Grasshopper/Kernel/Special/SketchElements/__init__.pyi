@@ -1,6 +1,16 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
+from GH_IO.Serialization import GH_IReader
+from GH_IO.Serialization import GH_IWriter
+from Grasshopper.Kernel import GH_PickBox
+from System import Guid
+from System.Drawing import Image
+from System.Drawing import PointF
+from System.Drawing import RectangleF
+from System.Drawing.Drawing2D import GraphicsPath
+
+
 
 
 class GH_SketchBox:
@@ -29,14 +39,6 @@ class GH_SketchCloud:
     def ToString(self) -> str: ...
 
 
-from System.Drawing.Drawing2D import GraphicsPath
-from System.Drawing import RectangleF
-from System.Drawing import PointF
-from Grasshopper.Kernel import GH_PickBox
-from System.Drawing import Image
-from System import Guid
-from GH_IO.Serialization import GH_IWriter
-from GH_IO.Serialization import GH_IReader
 class GH_SketchElement:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -135,11 +137,6 @@ class GH_SketchLine:
     def ToString(self) -> str: ...
 
 
-from System.Drawing import Image
-from System.Drawing import RectangleF
-from System.Drawing.Drawing2D import GraphicsPath
-from System.Drawing import PointF
-from Grasshopper.Kernel import GH_PickBox
 class IGH_SketchElement:
     @property
     def BoundingBox(self) -> RectangleF: ...

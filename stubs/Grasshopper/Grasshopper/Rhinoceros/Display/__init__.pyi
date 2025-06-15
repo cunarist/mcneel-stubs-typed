@@ -1,9 +1,49 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
+from GH_IO.Serialization import GH_IReader
+from GH_IO.Serialization import GH_IWriter
+from Grasshopper.Kernel import GH_PreviewMeshArgs
+from Grasshopper.Kernel import GH_PreviewWireArgs
+from Grasshopper.Kernel.Types import Complex
+from Grasshopper.Kernel.Types import GH_QuickCastType
+from Grasshopper.Kernel.Types import IGH_GeometricGoo
+from Grasshopper.Kernel.Types import IGH_Goo
+from Grasshopper.Kernel.Types import IGH_GooProxy
+from Grasshopper.Kernel.Types import IGH_QuickCast
+from Grasshopper.Rhinoceros import Attributes
+from Grasshopper.Rhinoceros import ModelColor
+from Grasshopper.Rhinoceros import ModelContent
+from Grasshopper.Rhinoceros import ModelContentName
+from Grasshopper.Rhinoceros import ModelData
+from Grasshopper.Rhinoceros import ModelTags
+from Grasshopper.Rhinoceros import ModelUserText
+from Grasshopper.Rhinoceros import ModelValue
+from Grasshopper.Rhinoceros import T
+from Rhino.Display import ColorGradient
+from Rhino.Display import ColorStop
+from Rhino.Display import DisplayModeDescription
+from Rhino.Display import RhinoView
+from Rhino.Display import RhinoViewport
+from Rhino.Display import ViewportType
+from Rhino.DocObjects import ActiveSpace
+from Rhino.DocObjects import ObjectColorSource
+from Rhino.DocObjects import ViewInfo
+from Rhino.DocObjects import ViewportInfo
+from Rhino.Geometry import BoundingBox
+from Rhino.Geometry import Interval
+from Rhino.Geometry import Matrix
+from Rhino.Geometry import Point3d
+from Rhino.Geometry import SpaceMorph
+from Rhino.Geometry import Transform
+from Rhino.Geometry import Vector3d
+from System import Guid
+from System.Drawing import Color
+
 from . import Params
 
 __all__ = ['Params']
+
 
 
 class Attributes:
@@ -56,11 +96,6 @@ class Attributes:
     def ToString(self) -> str: ...
 
 
-from Grasshopper.Rhinoceros import ModelUserText
-from Grasshopper.Rhinoceros import ModelData
-from Grasshopper.Rhinoceros import ModelContentName
-from Grasshopper.Rhinoceros import ModelTags
-from Grasshopper.Rhinoceros import Attributes
 class Attributes:
     @overload
     def __init__(self): ...
@@ -112,11 +147,6 @@ class Attributes:
     def ToString(self) -> str: ...
 
 
-from Grasshopper.Rhinoceros import ModelData
-from Grasshopper.Rhinoceros import ModelUserText
-from Grasshopper.Rhinoceros import ModelContentName
-from Grasshopper.Rhinoceros import ModelTags
-from Grasshopper.Rhinoceros import Attributes
 class Attributes:
     @overload
     def __init__(self): ...
@@ -168,11 +198,6 @@ class Attributes:
     def ToString(self) -> str: ...
 
 
-from Grasshopper.Rhinoceros import ModelData
-from Grasshopper.Rhinoceros import ModelUserText
-from Grasshopper.Rhinoceros import ModelContentName
-from Grasshopper.Rhinoceros import ModelTags
-from Grasshopper.Rhinoceros import Attributes
 class Attributes:
     @overload
     def __init__(self): ...
@@ -228,10 +253,6 @@ class Attributes:
     def ToString(self) -> str: ...
 
 
-from Grasshopper.Rhinoceros import ModelData
-from Grasshopper.Rhinoceros import ModelContentName
-from Grasshopper.Rhinoceros import ModelTags
-from Grasshopper.Rhinoceros import Attributes
 class Attributes:
     @overload
     def __init__(self): ...
@@ -275,10 +296,6 @@ class Attributes:
     def ToString(self) -> str: ...
 
 
-from Grasshopper.Rhinoceros import ModelData
-from Grasshopper.Rhinoceros import ModelContentName
-from Grasshopper.Rhinoceros import ModelTags
-from Grasshopper.Rhinoceros import Attributes
 class Attributes:
     @overload
     def __init__(self): ...
@@ -318,14 +335,6 @@ class Attributes:
     def ToString(self) -> str: ...
 
 
-from Rhino.Display import ColorGradient
-from Grasshopper.Kernel.Types import IGH_Goo
-from Rhino.Geometry import BoundingBox
-from Grasshopper.Kernel import GH_PreviewWireArgs
-from Grasshopper.Kernel import GH_PreviewMeshArgs
-from GH_IO.Serialization import GH_IWriter
-from GH_IO.Serialization import GH_IReader
-from Grasshopper.Kernel.Types import IGH_GooProxy
 class DisplayColorGradient:
     @overload
     def __init__(self): ...
@@ -377,19 +386,6 @@ class DisplayColorGradient:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
-from Rhino.Display import ColorStop
-from Grasshopper.Kernel.Types import IGH_Goo
-from Grasshopper.Kernel.Types import GH_QuickCastType
-from Grasshopper.Kernel.Types import IGH_QuickCast
-from Grasshopper.Kernel.Types import Complex
-from Rhino.Geometry import Matrix
-from Rhino.Geometry import Point3d
-from Rhino.Geometry import Vector3d
-from System.Drawing import Color
-from Rhino.Geometry import Interval
-from GH_IO.Serialization import GH_IWriter
-from GH_IO.Serialization import GH_IReader
-from Grasshopper.Kernel.Types import IGH_GooProxy
 class DisplayColorStop:
     @overload
     def __init__(self): ...
@@ -463,14 +459,6 @@ class DisplayColorStop:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
-from Rhino.Display import DisplayModeDescription
-from System import Guid
-from Grasshopper.Rhinoceros import Attributes
-from Grasshopper.Rhinoceros import ModelContentName
-from Grasshopper.Rhinoceros import ModelTags
-from Grasshopper.Rhinoceros import ModelContent
-from Grasshopper.Rhinoceros import T
-from Grasshopper.Rhinoceros import ModelData
 from Grasshopper.Rhinoceros import ModelContent
 class ModelDisplayMode(ModelContent):
     @overload
@@ -539,12 +527,6 @@ class ModelDisplayMode(ModelContent):
     def ToString(self) -> str: ...
 
 
-from Rhino.DocObjects import ViewInfo
-from Grasshopper.Rhinoceros import Attributes
-from Grasshopper.Rhinoceros import ModelContentName
-from Grasshopper.Rhinoceros import ModelTags
-from Grasshopper.Rhinoceros import ModelContent
-from Grasshopper.Rhinoceros import ModelData
 from Grasshopper.Rhinoceros import ModelContent
 class ModelNamedView(ModelContent):
     @overload
@@ -600,16 +582,6 @@ class ModelNamedView(ModelContent):
     def ToString(self) -> str: ...
 
 
-from Rhino.Display import RhinoViewport
-from System import Guid
-from Rhino.Display import ViewportType
-from Rhino.DocObjects import ActiveSpace
-from Grasshopper.Rhinoceros import ModelUserText
-from Grasshopper.Rhinoceros import Attributes
-from Grasshopper.Rhinoceros import ModelContentName
-from Grasshopper.Rhinoceros import ModelTags
-from Grasshopper.Rhinoceros import ModelContent
-from Grasshopper.Rhinoceros import ModelData
 class ModelPageViewport(ModelViewport):
     @overload
     def __init__(self): ...
@@ -684,16 +656,6 @@ class ModelPageViewport(ModelViewport):
     def ToString(self) -> str: ...
 
 
-from Rhino.Display import RhinoViewport
-from System import Guid
-from Rhino.Display import ViewportType
-from Rhino.DocObjects import ActiveSpace
-from Grasshopper.Rhinoceros import ModelUserText
-from Grasshopper.Rhinoceros import Attributes
-from Grasshopper.Rhinoceros import ModelContentName
-from Grasshopper.Rhinoceros import ModelTags
-from Grasshopper.Rhinoceros import ModelContent
-from Grasshopper.Rhinoceros import ModelData
 class ModelStandardViewport(ModelViewport):
     @overload
     def __init__(self): ...
@@ -766,15 +728,6 @@ class ModelStandardViewport(ModelViewport):
     def ToString(self) -> str: ...
 
 
-from Rhino.DocObjects import ViewportInfo
-from Rhino.DocObjects import ViewInfo
-from Rhino.Display import RhinoView
-from Rhino.Display import RhinoViewport
-from System import Guid
-from Rhino.Geometry import Transform
-from Rhino.Geometry import BoundingBox
-from Grasshopper.Kernel.Types import IGH_GeometricGoo
-from Rhino.Geometry import SpaceMorph
 class ModelView:
     @overload
     def __init__(self): ...
@@ -819,15 +772,6 @@ class ModelView:
     def Transform(self, xform: Transform) -> IGH_GeometricGoo: ...
 
 
-from Rhino.Display import ViewportType
-from Rhino.DocObjects import ActiveSpace
-from Grasshopper.Rhinoceros import ModelUserText
-from Rhino.Display import RhinoViewport
-from Grasshopper.Rhinoceros import Attributes
-from Grasshopper.Rhinoceros import ModelContentName
-from Grasshopper.Rhinoceros import ModelTags
-from Grasshopper.Rhinoceros import ModelContent
-from Grasshopper.Rhinoceros import ModelData
 from Grasshopper.Rhinoceros import ModelContent
 class ModelViewport(ModelContent):
     @overload
@@ -895,7 +839,6 @@ class ModelViewport(ModelContent):
 
 
 from Grasshopper.Rhinoceros import ModelValue
-from Grasshopper.Rhinoceros import ModelValue
 class ObjectDisplay(ModelValue):
     @overload
     def __init__(self): ...
@@ -938,8 +881,6 @@ class ObjectDisplay(ModelValue):
     def ToString(self) -> str: ...
 
 
-from Rhino.DocObjects import ObjectColorSource
-from Grasshopper.Rhinoceros import ModelValue
 from Grasshopper.Rhinoceros import ModelValue
 class ObjectDisplayColor(ModelValue):
     @overload
@@ -979,7 +920,6 @@ class ObjectDisplayColor(ModelValue):
     def ToString(self) -> str: ...
 
 
-from Grasshopper.Rhinoceros import ModelValue
 from Grasshopper.Rhinoceros import ModelValue
 class ObjectVisibility(ModelValue):
     @overload
@@ -1023,8 +963,6 @@ class ObjectVisibility(ModelValue):
     def ToString(self) -> str: ...
 
 
-from Rhino.DocObjects import ObjectColorSource
-from Grasshopper.Rhinoceros import ModelColor
 class Value:
     @overload
     def __init__(self, source: ObjectColorSource): ...

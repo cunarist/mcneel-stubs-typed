@@ -1,9 +1,12 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
-
-
+from Grasshopper.Kernel.Parameters import IGH_TypeHint
 from System import Guid
+
+
+
+
 class GH_AnnotationBaseHint:
     @overload
     def __init__(self): ...
@@ -23,7 +26,6 @@ class GH_AnnotationBaseHint:
     def ToString(self) -> str: ...
 
 
-from System import Guid
 class GH_ArcHint:
     @overload
     def __init__(self): ...
@@ -43,7 +45,6 @@ class GH_ArcHint:
     def ToString(self) -> str: ...
 
 
-from System import Guid
 class GH_BooleanHint_CS:
     @overload
     def __init__(self): ...
@@ -63,7 +64,6 @@ class GH_BooleanHint_CS:
     def ToString(self) -> str: ...
 
 
-from System import Guid
 class GH_BooleanHint_VB:
     @overload
     def __init__(self): ...
@@ -83,7 +83,6 @@ class GH_BooleanHint_VB:
     def ToString(self) -> str: ...
 
 
-from System import Guid
 class GH_BoxHint:
     @overload
     def __init__(self): ...
@@ -103,7 +102,6 @@ class GH_BoxHint:
     def ToString(self) -> str: ...
 
 
-from System import Guid
 class GH_BrepHint:
     @overload
     def __init__(self): ...
@@ -123,7 +121,6 @@ class GH_BrepHint:
     def ToString(self) -> str: ...
 
 
-from System import Guid
 class GH_CircleHint:
     @overload
     def __init__(self): ...
@@ -143,7 +140,6 @@ class GH_CircleHint:
     def ToString(self) -> str: ...
 
 
-from System import Guid
 class GH_ColorHint:
     @overload
     def __init__(self): ...
@@ -163,7 +159,6 @@ class GH_ColorHint:
     def ToString(self) -> str: ...
 
 
-from System import Guid
 class GH_ComplexHint:
     @overload
     def __init__(self): ...
@@ -183,7 +178,6 @@ class GH_ComplexHint:
     def ToString(self) -> str: ...
 
 
-from System import Guid
 class GH_CurveHint:
     @overload
     def __init__(self): ...
@@ -203,7 +197,6 @@ class GH_CurveHint:
     def ToString(self) -> str: ...
 
 
-from System import Guid
 class GH_DateTimeHint:
     @overload
     def __init__(self): ...
@@ -223,7 +216,6 @@ class GH_DateTimeHint:
     def ToString(self) -> str: ...
 
 
-from System import Guid
 class GH_DimensionHint:
     @overload
     def __init__(self): ...
@@ -243,7 +235,6 @@ class GH_DimensionHint:
     def ToString(self) -> str: ...
 
 
-from System import Guid
 class GH_DoubleHint_CS:
     @overload
     def __init__(self): ...
@@ -263,7 +254,6 @@ class GH_DoubleHint_CS:
     def ToString(self) -> str: ...
 
 
-from System import Guid
 class GH_DoubleHint_VB:
     @overload
     def __init__(self): ...
@@ -283,7 +273,6 @@ class GH_DoubleHint_VB:
     def ToString(self) -> str: ...
 
 
-from System import Guid
 class GH_ExtrusionHint:
     @overload
     def __init__(self): ...
@@ -303,7 +292,6 @@ class GH_ExtrusionHint:
     def ToString(self) -> str: ...
 
 
-from System import Guid
 class GH_GeometryBaseHint:
     @overload
     def __init__(self): ...
@@ -325,7 +313,6 @@ class GH_GeometryBaseHint:
 
 
 
-from System import Guid
 class GH_GuidHint:
     @overload
     def __init__(self): ...
@@ -345,7 +332,6 @@ class GH_GuidHint:
     def ToString(self) -> str: ...
 
 
-from System import Guid
 class GH_HatchHint:
     @overload
     def __init__(self): ...
@@ -365,7 +351,6 @@ class GH_HatchHint:
     def ToString(self) -> str: ...
 
 
-from System import Guid
 class GH_HintSeparator:
     @overload
     def __init__(self): ...
@@ -385,7 +370,6 @@ class GH_HintSeparator:
     def ToString(self) -> str: ...
 
 
-from System import Guid
 class GH_IntegerHint_CS:
     @overload
     def __init__(self): ...
@@ -405,7 +389,6 @@ class GH_IntegerHint_CS:
     def ToString(self) -> str: ...
 
 
-from System import Guid
 class GH_IntegerHint_VB:
     @overload
     def __init__(self): ...
@@ -425,7 +408,6 @@ class GH_IntegerHint_VB:
     def ToString(self) -> str: ...
 
 
-from System import Guid
 class GH_IntervalHint:
     @overload
     def __init__(self): ...
@@ -445,7 +427,6 @@ class GH_IntervalHint:
     def ToString(self) -> str: ...
 
 
-from System import Guid
 class GH_LeaderHint:
     @overload
     def __init__(self): ...
@@ -465,7 +446,6 @@ class GH_LeaderHint:
     def ToString(self) -> str: ...
 
 
-from System import Guid
 class GH_LineHint:
     @overload
     def __init__(self): ...
@@ -485,7 +465,6 @@ class GH_LineHint:
     def ToString(self) -> str: ...
 
 
-from System import Guid
 class GH_MeshHint:
     @overload
     def __init__(self): ...
@@ -505,7 +484,6 @@ class GH_MeshHint:
     def ToString(self) -> str: ...
 
 
-from System import Guid
 class GH_NullHint:
     @overload
     def __init__(self): ...
@@ -525,7 +503,6 @@ class GH_NullHint:
     def ToString(self) -> str: ...
 
 
-from System import Guid
 class GH_PlaneHint:
     @overload
     def __init__(self): ...
@@ -545,7 +522,6 @@ class GH_PlaneHint:
     def ToString(self) -> str: ...
 
 
-from System import Guid
 class GH_Point3dHint:
     @overload
     def __init__(self): ...
@@ -565,7 +541,6 @@ class GH_Point3dHint:
     def ToString(self) -> str: ...
 
 
-from System import Guid
 class GH_PointCloudHint:
     @overload
     def __init__(self): ...
@@ -585,7 +560,6 @@ class GH_PointCloudHint:
     def ToString(self) -> str: ...
 
 
-from System import Guid
 class GH_PolylineHint:
     @overload
     def __init__(self): ...
@@ -605,7 +579,6 @@ class GH_PolylineHint:
     def ToString(self) -> str: ...
 
 
-from System import Guid
 class GH_Rectangle3dHint:
     @overload
     def __init__(self): ...
@@ -625,7 +598,6 @@ class GH_Rectangle3dHint:
     def ToString(self) -> str: ...
 
 
-from System import Guid
 class GH_StringHint_CS:
     @overload
     def __init__(self): ...
@@ -645,7 +617,6 @@ class GH_StringHint_CS:
     def ToString(self) -> str: ...
 
 
-from System import Guid
 class GH_StringHint_VB:
     @overload
     def __init__(self): ...
@@ -665,7 +636,6 @@ class GH_StringHint_VB:
     def ToString(self) -> str: ...
 
 
-from System import Guid
 class GH_SubDHint:
     @overload
     def __init__(self): ...
@@ -685,7 +655,6 @@ class GH_SubDHint:
     def ToString(self) -> str: ...
 
 
-from System import Guid
 class GH_SurfaceHint:
     @overload
     def __init__(self): ...
@@ -705,7 +674,6 @@ class GH_SurfaceHint:
     def ToString(self) -> str: ...
 
 
-from System import Guid
 class GH_TextDotHint:
     @overload
     def __init__(self): ...
@@ -725,7 +693,6 @@ class GH_TextDotHint:
     def ToString(self) -> str: ...
 
 
-from System import Guid
 class GH_TextEntityHint:
     @overload
     def __init__(self): ...
@@ -745,7 +712,6 @@ class GH_TextEntityHint:
     def ToString(self) -> str: ...
 
 
-from System import Guid
 class GH_TransformHint:
     @overload
     def __init__(self): ...
@@ -765,8 +731,6 @@ class GH_TransformHint:
     def ToString(self) -> str: ...
 
 
-from System import Guid
-from Grasshopper.Kernel.Parameters import IGH_TypeHint
 class GH_TypeHintServer:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -784,7 +748,6 @@ class GH_TypeHintServer:
     def ToString(self) -> str: ...
 
 
-from System import Guid
 class GH_UVIntervalHint:
     @overload
     def __init__(self): ...
@@ -804,7 +767,6 @@ class GH_UVIntervalHint:
     def ToString(self) -> str: ...
 
 
-from System import Guid
 class GH_Vector3dHint:
     @overload
     def __init__(self): ...

@@ -1,11 +1,15 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
-
-
-from System import Guid
 from Grasshopper.GUI.Canvas import GH_Canvas
 from Grasshopper.GUI.Canvas import GH_CanvasChannel
+from Grasshopper.Kernel import IGH_Param
+from System import Guid
+from System.Drawing import Color
+
+
+
+
 class GH_TagArtist:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -21,11 +25,6 @@ class GH_TagArtist:
     def ToString(self) -> str: ...
 
 
-from Grasshopper.Kernel import IGH_Param
-from System.Drawing import Color
-from System import Guid
-from Grasshopper.GUI.Canvas import GH_Canvas
-from Grasshopper.GUI.Canvas import GH_CanvasChannel
 class GH_TagArtist_WirePainter(GH_TagArtist):
     @overload
     def __init__(self, source: IGH_Param, target: IGH_Param, colour: Color, width: int): ...
@@ -46,9 +45,6 @@ class GH_TagArtist_WirePainter(GH_TagArtist):
     def ToString(self) -> str: ...
 
 
-from System import Guid
-from Grasshopper.GUI.Canvas import GH_Canvas
-from Grasshopper.GUI.Canvas import GH_CanvasChannel
 class IGH_TagArtist:
     @property
     def ID(self) -> Guid: ...

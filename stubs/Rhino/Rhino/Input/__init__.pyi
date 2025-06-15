@@ -1,9 +1,40 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
+from Rhino import AngleUnitSystem
+from Rhino import RhinoDoc
+from Rhino import UnitSystem
+from Rhino.Commands import Result
+from Rhino.Display import RhinoView
+from Rhino.Display import ViewCaptureSettings
+from Rhino.DocObjects import GripObject
+from Rhino.DocObjects import MeshObject
+from Rhino.DocObjects import ObjectType
+from Rhino.DocObjects import ObjRef
+from Rhino.Geometry import Arc
+from Rhino.Geometry import Box
+from Rhino.Geometry import Circle
+from Rhino.Geometry import Line
+from Rhino.Geometry import LinearDimension
+from Rhino.Geometry import MeshingParameters
+from Rhino.Geometry import NurbsCurve
+from Rhino.Geometry import Plane
+from Rhino.Geometry import Point3d
+from Rhino.Geometry import Polyline
+from Rhino.Input.Custom import GetFileNameMode
+from Rhino.Input.Custom import GetObjectGeometryFilter
+from Rhino.UI import LocalizeStringPair
+from System import Enum
+from System import Guid
+from System import IFormatProvider
+from System import TypeCode
+from System.Drawing import Color
+from System.Drawing import Rectangle
+
 from . import Custom
 
 __all__ = ['Custom']
+
 
 
 class BitmapFileTypes(Enum):
@@ -56,30 +87,6 @@ class GetResult(Enum):
     User1 = 4294967295
 
 
-from Rhino.UI import LocalizeStringPair
-from Rhino import RhinoDoc
-from Rhino.Geometry import Point3d
-from Rhino.Commands import Result
-from System import Guid
-from Rhino.DocObjects import MeshObject
-from System.Drawing import Color
-from Rhino.DocObjects import ObjectType
-from Rhino.DocObjects import ObjRef
-from Rhino.Input.Custom import GetObjectGeometryFilter
-from Rhino.Geometry import Plane
-from System.Drawing import Rectangle
-from Rhino.Display import RhinoView
-from Rhino.Geometry import Box
-from Rhino.Geometry import MeshingParameters
-from Rhino.DocObjects import GripObject
-from Rhino.Geometry import NurbsCurve
-from Rhino.Geometry import Line
-from Rhino.Geometry import Polyline
-from Rhino.Geometry import Arc
-from Rhino.Geometry import Circle
-from Rhino.Geometry import LinearDimension
-from Rhino.Input.Custom import GetFileNameMode
-from Rhino.Display import ViewCaptureSettings
 class RhinoGet:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -232,8 +239,6 @@ class RhinoGet:
     def ToString(self) -> str: ...
 
 
-from Rhino import UnitSystem
-from Rhino import AngleUnitSystem
 class StringParser:
     @overload
     def __init__(self): ...
@@ -265,8 +270,6 @@ class StringParser:
     def ToString(self) -> str: ...
 
 
-from Rhino import AngleUnitSystem
-from Rhino import UnitSystem
 class StringParserSettings:
     @overload
     def __init__(self): ...

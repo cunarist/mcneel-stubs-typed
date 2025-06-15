@@ -1,9 +1,13 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
-
-
+from Grasshopper.Kernel.Geometry import Node2
 from Grasshopper.Kernel.Geometry import Node2List
+from Rhino.Geometry import Mesh
+
+
+
+
 class Connectivity:
     @overload
     def __init__(self): ...
@@ -118,8 +122,6 @@ class Face:
     def ToString(self) -> str: ...
 
 
-from Grasshopper.Kernel.Geometry import Node2List
-from Grasshopper.Kernel.Geometry import Node2
 class FaceEx(Face):
     @overload
     def __init__(self): ...
@@ -167,7 +169,6 @@ class FaceEx(Face):
     def ToString(self) -> str: ...
 
 
-from Grasshopper.Kernel.Geometry import Node2List
 class FaceExList:
     @overload
     def __init__(self): ...
@@ -203,8 +204,6 @@ class FaceExList:
     def TrimNulls(self) -> int: ...
 
 
-from Grasshopper.Kernel.Geometry import Node2List
-from Rhino.Geometry import Mesh
 class Solver:
     @overload
     def Equals(self, obj: object) -> bool: ...

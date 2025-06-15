@@ -1,9 +1,27 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
-
-
+from Grasshopper.Kernel.Types import GH_PointRefData
 from Rhino.Geometry import Interval
+from Rhino.Geometry import Plane
+from Rhino.Geometry import Point3d
+from Rhino.Geometry import Vector3d
+from System import AsyncCallback
+from System import IAsyncResult
+from System import IntPtr
+from System.Collections import ICollection
+from System.Collections import IDictionary
+from System.ComponentModel import ITypeDescriptorContext
+from System.ComponentModel import PropertyDescriptorCollection
+from System.ComponentModel import StandardValuesCollection
+from System.Globalization import CultureInfo
+from System.Reflection import MethodInfo
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+
+
+
+
 class GH_Interval_Wrapper:
     @overload
     def __init__(self, interval: Interval, wrapperdelegate: GH_IntervalWrapperDelegate): ...
@@ -31,12 +49,6 @@ class GH_Interval_Wrapper:
     def ToString(self) -> str: ...
 
 
-from System.ComponentModel import ITypeDescriptorContext
-from System.Globalization import CultureInfo
-from System.ComponentModel import PropertyDescriptorCollection
-from System.Collections import IDictionary
-from System.Collections import ICollection
-from System.ComponentModel import StandardValuesCollection
 class GH_Interval_Wrapper_TypeConverter:
     @overload
     def __init__(self): ...
@@ -120,13 +132,6 @@ class GH_Interval_Wrapper_TypeConverter:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from Rhino.Geometry import Interval
-from System import AsyncCallback
-from System import IAsyncResult
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
-from System.Reflection import MethodInfo
 class GH_IntervalWrapperDelegate:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -158,8 +163,6 @@ class GH_IntervalWrapperDelegate:
     def ToString(self) -> str: ...
 
 
-from Rhino.Geometry import Plane
-from Rhino.Geometry import Vector3d
 class GH_PlaneModifier:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -180,7 +183,6 @@ class GH_PlaneModifier:
     def ToString(self) -> str: ...
 
 
-from Rhino.Geometry import Point3d
 class GH_Point3d_Wrapper:
     @overload
     def __init__(self, pt: Point3d, wrapperdelegate: GH_Point3dWrapperDelegate): ...
@@ -208,12 +210,6 @@ class GH_Point3d_Wrapper:
     def ToString(self) -> str: ...
 
 
-from System.ComponentModel import ITypeDescriptorContext
-from System.Globalization import CultureInfo
-from System.ComponentModel import PropertyDescriptorCollection
-from System.Collections import IDictionary
-from System.Collections import ICollection
-from System.ComponentModel import StandardValuesCollection
 class GH_Point3d_Wrapper_TypeConverter:
     @overload
     def __init__(self): ...
@@ -297,13 +293,6 @@ class GH_Point3d_Wrapper_TypeConverter:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from Rhino.Geometry import Point3d
-from System import AsyncCallback
-from System import IAsyncResult
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
-from System.Reflection import MethodInfo
 class GH_Point3dWrapperDelegate:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -335,7 +324,6 @@ class GH_Point3dWrapperDelegate:
     def ToString(self) -> str: ...
 
 
-from Grasshopper.Kernel.Types import GH_PointRefData
 class GH_PointRefUV_Wrapper:
     @overload
     def __init__(self, ref: GH_PointRefData, wrapperdelegate: GH_PointRefUVWrapperDelegate): ...
@@ -359,12 +347,6 @@ class GH_PointRefUV_Wrapper:
     def ToString(self) -> str: ...
 
 
-from System.ComponentModel import ITypeDescriptorContext
-from System.Globalization import CultureInfo
-from System.ComponentModel import PropertyDescriptorCollection
-from System.Collections import IDictionary
-from System.Collections import ICollection
-from System.ComponentModel import StandardValuesCollection
 class GH_PointRefUV_Wrapper_TypeConverter:
     @overload
     def __init__(self): ...
@@ -448,13 +430,6 @@ class GH_PointRefUV_Wrapper_TypeConverter:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from Grasshopper.Kernel.Types import GH_PointRefData
-from System import AsyncCallback
-from System import IAsyncResult
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
-from System.Reflection import MethodInfo
 class GH_PointRefUVWrapperDelegate:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -486,7 +461,6 @@ class GH_PointRefUVWrapperDelegate:
     def ToString(self) -> str: ...
 
 
-from Rhino.Geometry import Vector3d
 class GH_Vector3d_Wrapper:
     @overload
     def __init__(self, vec: Vector3d, wrapperdelegate: GH_Vector3dWrapperDelegate): ...
@@ -518,12 +492,6 @@ class GH_Vector3d_Wrapper:
     def ToString(self) -> str: ...
 
 
-from System.ComponentModel import ITypeDescriptorContext
-from System.Globalization import CultureInfo
-from System.ComponentModel import PropertyDescriptorCollection
-from System.Collections import IDictionary
-from System.Collections import ICollection
-from System.ComponentModel import StandardValuesCollection
 class GH_Vector3d_Wrapper_TypeConverter:
     @overload
     def __init__(self): ...
@@ -607,13 +575,6 @@ class GH_Vector3d_Wrapper_TypeConverter:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from Rhino.Geometry import Vector3d
-from System import AsyncCallback
-from System import IAsyncResult
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
-from System.Reflection import MethodInfo
 class GH_Vector3dWrapperDelegate:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...

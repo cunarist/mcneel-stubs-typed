@@ -1,14 +1,80 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
-
-
-from System import IntPtr
 from System import AsyncCallback
+from System import DateTime
+from System import Delegate
+from System import Enum
+from System import EventHandler
 from System import IAsyncResult
+from System import IFormatProvider
+from System import IntPtr
+from System import TypeCode
+from System.ComponentModel import CancelEventHandler
+from System.ComponentModel import IContainer
+from System.ComponentModel import ISite
+from System.Drawing import Bitmap
+from System.Drawing import Color
+from System.Drawing import Font
+from System.Drawing import Graphics
+from System.Drawing import Image
+from System.Drawing import Point
+from System.Drawing import Rectangle
+from System.Drawing import Region
+from System.Drawing import Size
+from System.Drawing import SizeF
+from System.Reflection import MethodInfo
+from System.Runtime.Remoting import ObjRef
 from System.Runtime.Serialization import SerializationInfo
 from System.Runtime.Serialization import StreamingContext
-from System.Reflection import MethodInfo
+from System.Windows.Forms import AccessibleObject
+from System.Windows.Forms import AccessibleRole
+from System.Windows.Forms import AnchorStyles
+from System.Windows.Forms import AutoSizeMode
+from System.Windows.Forms import BindingContext
+from System.Windows.Forms import BorderStyle
+from System.Windows.Forms import BoundsSpecified
+from System.Windows.Forms import ContextMenu
+from System.Windows.Forms import ContextMenuStrip
+from System.Windows.Forms import Control
+from System.Windows.Forms import ControlBindingsCollection
+from System.Windows.Forms import ControlCollection
+from System.Windows.Forms import ControlEventHandler
+from System.Windows.Forms import Cursor
+from System.Windows.Forms import DockPaddingEdges
+from System.Windows.Forms import DockStyle
+from System.Windows.Forms import DragDropEffects
+from System.Windows.Forms import DragEventHandler
+from System.Windows.Forms import Form
+from System.Windows.Forms import GetChildAtPointSkip
+from System.Windows.Forms import GiveFeedbackEventHandler
+from System.Windows.Forms import HelpEventHandler
+from System.Windows.Forms import HScrollProperties
+from System.Windows.Forms import IContainerControl
+from System.Windows.Forms import ImageLayout
+from System.Windows.Forms import ImeMode
+from System.Windows.Forms import InvalidateEventHandler
+from System.Windows.Forms import IWindowTarget
+from System.Windows.Forms import KeyEventHandler
+from System.Windows.Forms import KeyPressEventHandler
+from System.Windows.Forms import LayoutEventHandler
+from System.Windows.Forms import Message
+from System.Windows.Forms import MouseEventHandler
+from System.Windows.Forms import Padding
+from System.Windows.Forms import PaintEventHandler
+from System.Windows.Forms import PreProcessControlState
+from System.Windows.Forms import PreviewKeyDownEventHandler
+from System.Windows.Forms import QueryAccessibilityHelpEventHandler
+from System.Windows.Forms import QueryContinueDragEventHandler
+from System.Windows.Forms import RightToLeft
+from System.Windows.Forms import ScrollEventHandler
+from System.Windows.Forms import UICuesEventHandler
+from System.Windows.Forms import VScrollProperties
+from System.Windows.Forms.Layout import LayoutEngine
+
+
+
+
 class FileSelectedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -40,10 +106,6 @@ class FileSelectedEventHandler:
     def ToString(self) -> str: ...
 
 
-from System import DateTime
-from System.Drawing import Bitmap
-from System.Drawing import Rectangle
-from System.Drawing import Graphics
 class GH_FileEntry:
     @overload
     def __init__(self, owner: GH_TimeLine, path: str, date: DateTime, name: str): ...
@@ -86,7 +148,6 @@ class GH_FileResolveState(Enum):
     Valid = 2
 
 
-from System import DateTime
 class GH_MRU_Entry:
     @overload
     def __init__(self, new_date: DateTime, new_path: str): ...
@@ -114,7 +175,6 @@ class GH_MRU_Entry:
     def ToString(self) -> str: ...
 
 
-from System import DateTime
 class GH_MRU_Server:
     @overload
     def __init__(self): ...
@@ -160,68 +220,6 @@ class GH_MRU_Server:
     def WriteList(self) -> None: ...
 
 
-from System.Windows.Forms import KeyEventHandler
-from System.Windows.Forms import KeyPressEventHandler
-from System.Windows.Forms import AutoSizeMode
-from System import EventHandler
-from System.Windows.Forms import BorderStyle
-from System.Drawing import Rectangle
-from System.Drawing import Size
-from System.Drawing import Point
-from System.Windows.Forms import HScrollProperties
-from System.Windows.Forms import VScrollProperties
-from System.Windows.Forms import DockPaddingEdges
-from System.Windows.Forms import Control
-from System.Windows.Forms import ScrollEventHandler
-from System.Windows.Forms import AnchorStyles
-from System.Windows.Forms.Layout import LayoutEngine
-from System.Drawing import Image
-from System.Windows.Forms import ImageLayout
-from System.Windows.Forms import BindingContext
-from System.Windows.Forms import ContextMenu
-from System.Windows.Forms import ContextMenuStrip
-from System.Windows.Forms import Cursor
-from System.Windows.Forms import ControlBindingsCollection
-from System.Windows.Forms import DockStyle
-from System.Drawing import Font
-from System.Drawing import Color
-from System.Windows.Forms import RightToLeft
-from System.ComponentModel import ISite
-from System import Delegate
-from System import IAsyncResult
-from System.Windows.Forms import Message
-from System.Windows.Forms import AccessibleObject
-from System.Windows.Forms import AccessibleRole
-from System.Windows.Forms import ControlCollection
-from System import IntPtr
-from System.Windows.Forms import Padding
-from System.Drawing import Region
-from System.Windows.Forms import IWindowTarget
-from System.Windows.Forms import ControlEventHandler
-from System.Windows.Forms import DragEventHandler
-from System.Windows.Forms import GiveFeedbackEventHandler
-from System.Windows.Forms import HelpEventHandler
-from System.Windows.Forms import InvalidateEventHandler
-from System.Windows.Forms import PaintEventHandler
-from System.Windows.Forms import QueryContinueDragEventHandler
-from System.Windows.Forms import QueryAccessibilityHelpEventHandler
-from System.Windows.Forms import LayoutEventHandler
-from System.Windows.Forms import MouseEventHandler
-from System.Windows.Forms import PreviewKeyDownEventHandler
-from System.Windows.Forms import UICuesEventHandler
-from System.ComponentModel import CancelEventHandler
-from System.Drawing import Graphics
-from System.Windows.Forms import DragDropEffects
-from System.Drawing import Bitmap
-from System.Windows.Forms import Form
-from System.Windows.Forms import GetChildAtPointSkip
-from System.Windows.Forms import IContainerControl
-from System.Windows.Forms import PreProcessControlState
-from System.Drawing import SizeF
-from System.Windows.Forms import BoundsSpecified
-from System.Windows.Forms import ImeMode
-from System.ComponentModel import IContainer
-from System.Runtime.Remoting import ObjRef
 from Grasshopper.GUI import GH_DoubleBufferedPanel
 class GH_TimeLine(GH_DoubleBufferedPanel):
     @overload
@@ -961,9 +959,6 @@ class GH_TimeLine(GH_DoubleBufferedPanel):
     def Update(self) -> None: ...
 
 
-from System import DateTime
-from System.Drawing import Rectangle
-from System.Drawing import Graphics
 class GH_TimeSpan:
     @overload
     def __init__(self, owner: GH_TimeLine): ...
@@ -1004,12 +999,6 @@ class GH_TimeSpan:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from System import AsyncCallback
-from System import IAsyncResult
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
-from System.Reflection import MethodInfo
 class MRURecordCountChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -1041,12 +1030,6 @@ class MRURecordCountChangedEventHandler:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from System import AsyncCallback
-from System import IAsyncResult
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
-from System.Reflection import MethodInfo
 class VisibleRecordCountChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...

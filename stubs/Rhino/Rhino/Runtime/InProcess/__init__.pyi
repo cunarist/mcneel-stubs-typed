@@ -1,10 +1,15 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
-
-
-from System import IntPtr
 from System import Action
+from System import Enum
+from System import IFormatProvider
+from System import IntPtr
+from System import TypeCode
+
+
+
+
 class RhinoCore:
     @overload
     def __init__(self): ...

@@ -1,10 +1,24 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
-
-
-from System import IntPtr
+from Rhino import RhinoDoc
+from Rhino.DocObjects import ClippingPlaneObject
 from Rhino.DocObjects import ObjRef
+from Rhino.FileIO import BinaryArchiveReader
+from Rhino.Geometry import Brep
+from Rhino.Geometry import Extrusion
+from Rhino.Geometry import Interval
+from Rhino.Geometry import Mesh
+from Rhino.Geometry import Point3d
+from Rhino.Geometry import Point3f
+from Rhino.Geometry import Polyline
+from Rhino.Geometry import SubD
+from System import Guid
+from System import IntPtr
+
+
+
+
 class ClassArrayObjRef:
     @overload
     def __init__(self): ...
@@ -34,9 +48,6 @@ class ClassArrayObjRef:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from Rhino.DocObjects import ObjRef
-from Rhino import RhinoDoc
 class ClassArrayOnObjRef:
     @overload
     def __init__(self): ...
@@ -66,7 +77,6 @@ class ClassArrayOnObjRef:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
 class ClassArrayString:
     @overload
     def __init__(self): ...
@@ -92,7 +102,6 @@ class ClassArrayString:
     def ToString(self) -> str: ...
 
 
-from Rhino.Geometry import Interval
 class CurveSegment:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -134,8 +143,6 @@ class MeshPointDataStruct:
     def ToString(self) -> str: ...
 
 
-from Rhino.Geometry import Point3d
-from Rhino.Geometry import Point3f
 class RhDisplayPoint:
     @overload
     def __init__(self, location: Point3d): ...
@@ -159,7 +166,6 @@ class RhDisplayPoint:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
 class SimpleArray2dex:
     @overload
     def __init__(self): ...
@@ -185,9 +191,6 @@ class SimpleArray2dex:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from Rhino.Geometry import Point3d
-from Rhino.Geometry import Polyline
 class SimpleArrayArrayPoint3d:
     @overload
     def __init__(self): ...
@@ -215,8 +218,6 @@ class SimpleArrayArrayPoint3d:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from Rhino.FileIO import BinaryArchiveReader
 class SimpleArrayBinaryArchiveReader:
     @overload
     def __init__(self): ...
@@ -244,8 +245,6 @@ class SimpleArrayBinaryArchiveReader:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from Rhino.Geometry import Brep
 class SimpleArrayBrepPointer:
     @overload
     def __init__(self): ...
@@ -271,7 +270,6 @@ class SimpleArrayBrepPointer:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
 class SimpleArrayByte:
     @overload
     def __init__(self): ...
@@ -305,8 +303,6 @@ class SimpleArrayByte:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from Rhino.DocObjects import ClippingPlaneObject
 class SimpleArrayClippingPlaneObjectPointer:
     @overload
     def __init__(self): ...
@@ -330,7 +326,6 @@ class SimpleArrayClippingPlaneObjectPointer:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
 class SimpleArrayCurvePointer:
     @overload
     def __init__(self): ...
@@ -354,7 +349,6 @@ class SimpleArrayCurvePointer:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
 class SimpleArrayDouble:
     @overload
     def __init__(self): ...
@@ -380,8 +374,6 @@ class SimpleArrayDouble:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from Rhino.Geometry import Extrusion
 class SimpleArrayExtrusionPointer:
     @overload
     def __init__(self): ...
@@ -407,7 +399,6 @@ class SimpleArrayExtrusionPointer:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
 class SimpleArrayFloat:
     @overload
     def __init__(self): ...
@@ -441,7 +432,6 @@ class SimpleArrayFloat:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
 class SimpleArrayGeometryPointer:
     @overload
     def __init__(self): ...
@@ -467,8 +457,6 @@ class SimpleArrayGeometryPointer:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from System import Guid
 class SimpleArrayGuid:
     @overload
     def __init__(self): ...
@@ -502,8 +490,6 @@ class SimpleArrayGuid:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from System import Guid
 class SimpleArrayGuidPointer:
     @overload
     def __init__(self): ...
@@ -529,7 +515,6 @@ class SimpleArrayGuidPointer:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
 class SimpleArrayHatchLinePointer:
     @overload
     def __init__(self): ...
@@ -551,7 +536,6 @@ class SimpleArrayHatchLinePointer:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
 class SimpleArrayInt:
     @overload
     def __init__(self): ...
@@ -577,8 +561,6 @@ class SimpleArrayInt:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from Rhino.Geometry import Interval
 class SimpleArrayInterval:
     @overload
     def __init__(self): ...
@@ -604,7 +586,6 @@ class SimpleArrayInterval:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
 class SimpleArrayIntPtr:
     @overload
     def __init__(self): ...
@@ -628,7 +609,6 @@ class SimpleArrayIntPtr:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
 class SimpleArrayLine:
     @overload
     def __init__(self): ...
@@ -652,7 +632,6 @@ class SimpleArrayLine:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
 class SimpleArrayLinetypePointer:
     @overload
     def __init__(self): ...
@@ -676,7 +655,6 @@ class SimpleArrayLinetypePointer:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
 class SimpleArrayMeshFace:
     @overload
     def __init__(self): ...
@@ -700,8 +678,6 @@ class SimpleArrayMeshFace:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from Rhino.Geometry import Mesh
 class SimpleArrayMeshPointer:
     @overload
     def __init__(self): ...
@@ -727,7 +703,6 @@ class SimpleArrayMeshPointer:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
 class SimpleArrayPlane:
     @overload
     def __init__(self): ...
@@ -751,7 +726,6 @@ class SimpleArrayPlane:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
 class SimpleArrayPoint2d:
     @overload
     def __init__(self): ...
@@ -775,8 +749,6 @@ class SimpleArrayPoint2d:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from Rhino.Geometry import Point3d
 class SimpleArrayPoint3d:
     @overload
     def __init__(self): ...
@@ -804,8 +776,6 @@ class SimpleArrayPoint3d:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from Rhino.Geometry import SubD
 class SimpleArraySubDPointer:
     @overload
     def __init__(self): ...
@@ -831,7 +801,6 @@ class SimpleArraySubDPointer:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
 class SimpleArraySurfacePointer:
     @overload
     def __init__(self): ...
@@ -853,7 +822,6 @@ class SimpleArraySurfacePointer:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
 class SimpleArrayUint:
     @overload
     def __init__(self): ...
@@ -881,7 +849,6 @@ class SimpleArrayUint:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
 class StdVectorByte:
     @overload
     def __init__(self): ...
@@ -915,7 +882,6 @@ class StdVectorByte:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
 class StdVectorFloat:
     @overload
     def __init__(self): ...
@@ -949,8 +915,6 @@ class StdVectorFloat:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from System import Guid
 class StdVectorGuid:
     @overload
     def __init__(self): ...
@@ -980,8 +944,6 @@ class StdVectorGuid:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from Rhino.Geometry import Mesh
 class StdVectorOfSharedPtrToMesh:
     @overload
     def __init__(self): ...
@@ -1007,7 +969,6 @@ class StdVectorOfSharedPtrToMesh:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
 class StringHolder:
     @overload
     def __init__(self): ...
@@ -1032,7 +993,6 @@ class StringHolder:
     def ToStringSafe(self) -> str: ...
 
 
-from System import IntPtr
 class StringWrapper:
     @overload
     def __init__(self): ...

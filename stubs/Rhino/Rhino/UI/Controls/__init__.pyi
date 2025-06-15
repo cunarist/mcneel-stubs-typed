@@ -1,13 +1,27 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
+from Rhino.PlugIns import PlugIn
+from Rhino.UI import LocalizeStringPair
+from System import AsyncCallback
+from System import EventHandler
+from System import Guid
+from System import IAsyncResult
+from System import IntPtr
+from System.Drawing import Bitmap
+from System.Drawing import Color
+from System.Drawing import Rectangle
+from System.Reflection import MethodInfo
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+
 from . import DataSource
 from . import ThumbnailUI
 
 __all__ = ['DataSource', 'ThumbnailUI']
 
 
-from System import IntPtr
+
 class CollapsibleSectionHolderImpl:
     @overload
     def __init__(self, client: ICollapsibleSectionHolder): ...
@@ -33,9 +47,6 @@ class CollapsibleSectionHolderImpl:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from System import Guid
-from System import EventHandler
 class CollapsibleSectionImpl:
     @overload
     def __init__(self, section: ICollapsibleSection): ...
@@ -86,8 +97,6 @@ class CollapsibleSectionImpl:
     def ToString(self) -> str: ...
 
 
-from System import Guid
-from System import IntPtr
 class CollapsibleSectionViewModel:
     @overload
     def __init__(self, section: ICollapsibleSection): ...
@@ -111,8 +120,6 @@ class CollapsibleSectionViewModel:
     def UndoHelper(self, description: str) -> UndoRecord: ...
 
 
-from System import IntPtr
-from System import Guid
 class ContentUI:
     @overload
     def __init__(self, pContentUI: IntPtr): ...
@@ -140,12 +147,6 @@ class ContentUI:
     def Uuid(self) -> Guid: ...
 
 
-from System import IntPtr
-from System import AsyncCallback
-from System import IAsyncResult
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
-from System.Reflection import MethodInfo
 class CREATEFROMCPPPROC:
     @overload
     def __init__(self, object: object, method: IntPtr): ...
@@ -177,12 +178,6 @@ class CREATEFROMCPPPROC:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from System import AsyncCallback
-from System import IAsyncResult
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
-from System.Reflection import MethodInfo
 class CREATEHOSTFROMCPPPROC:
     @overload
     def __init__(self, object: object, method: IntPtr): ...
@@ -227,8 +222,6 @@ class Delegates:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from System import Guid
 class ExpandableContentUI(ContentUI):
     @overload
     def AddSection(self, pSection: ICollapsibleSection) -> None: ...
@@ -258,8 +251,6 @@ class ExpandableContentUI(ContentUI):
     def Uuid(self) -> Guid: ...
 
 
-from System import Guid
-from System import IntPtr
 class Factory(FactoryBase):
     @overload
     def __init__(self): ...
@@ -275,9 +266,6 @@ class Factory(FactoryBase):
     def ToString(self) -> str: ...
 
 
-from System import Guid
-from System import IntPtr
-from Rhino.PlugIns import PlugIn
 class FactoryBase:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -297,9 +285,6 @@ class FactoryBase:
     def ToString(self) -> str: ...
 
 
-from System import Guid
-from System.Drawing import Color
-from Rhino.UI import LocalizeStringPair
 class ICollapsibleSection:
     @property
     def BackgroundColor(self) -> Color: ...
@@ -351,7 +336,6 @@ class ICollapsibleSection3:
     def UpdateView(self, flags: int) -> None: ...
 
 
-from System.Drawing import Color
 class ICollapsibleSectionHolder:
     @overload
     def Add(self, section: ICollapsibleSection) -> None: ...
@@ -406,14 +390,11 @@ class ICollapsibleSectionHolder2:
     def ShowHeaderButton(self, s: ICollapsibleSection, index: int, bShow: bool) -> bool: ...
 
 
-from System import IntPtr
 class IHasCppImplementation:
     @property
     def CppPointer(self) -> IntPtr: ...
 
 
-from System.Drawing import Bitmap
-from System.Drawing import Rectangle
 class IHeaderButtonHandler:
     @overload
     def ButtonDetails(self, index: int, iconOut: Bitmap, sToolTipOut: str) -> tuple[bool, Bitmap, str]: ...
@@ -425,8 +406,6 @@ class IHeaderButtonHandler:
     def OnButtonClicked(self, index: int) -> bool: ...
 
 
-from System import Guid
-from System import IntPtr
 class InternalRdkViewModelFactory(FactoryBase):
     @overload
     def __init__(self): ...
@@ -442,7 +421,6 @@ class InternalRdkViewModelFactory(FactoryBase):
     def ToString(self) -> str: ...
 
 
-from System import Guid
 class IRdkViewModel:
     @overload
     def Commit(self, uuidDataType: Guid) -> None: ...
@@ -452,9 +430,6 @@ class IRdkViewModel:
     def GetData(self, uuidDataType: Guid, bForWrite: bool, bAutoChangeBracket: bool) -> object: ...
 
 
-from Rhino.UI import LocalizeStringPair
-from System import IntPtr
-from System.Drawing import Rectangle
 class IWindow:
     @property
     def Caption(self) -> LocalizeStringPair: ...

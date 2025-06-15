@@ -136,8 +136,9 @@ namespace PyStubblerLib
         {
             // sort the stub list so we get consistent output over time
             stubTypes.Sort((a, b) => { return a.Name.CompareTo(b.Name); });
+            var thisNamespace = stubTypes[0].Namespace;
 
-            string[] ns = stubTypes[0].Namespace.Split('.');
+            string[] ns = thisNamespace.Split('.');
             string path = rootDirectory.FullName;
             for (int i = 1; i < ns.Length; i++)
                 path = Path.Combine(path, ns[i]);
@@ -146,13 +147,82 @@ namespace PyStubblerLib
                 Directory.CreateDirectory(path);
 
             path = Path.Combine(path, "__init__.pyi");
-
             var sb = new System.Text.StringBuilder();
 
-            string[] allChildNamespaces = GetChildNamespaces(stubTypes[0].Namespace, allNamespaces);
+            // import standard types
             sb.AppendLine("from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable");
             sb.AppendLine("from enum import Enum");
             sb.Append("\n");
+
+            // analyze classes to import
+            var reqImports = new SortedSet<Tuple<string, string>>();
+            foreach (var stubType in stubTypes)
+            {                
+                // get the list of constructors and methods
+                ConstructorInfo[] constructors = stubType.GetConstructors();
+                MethodInfo[] methods = stubType.GetMethods();
+                FieldInfo[] fields = stubType.GetFields();
+
+                foreach (var constructor in constructors)
+                {
+                    var parameters = constructor.GetParameters();
+                    for (int i = 0; i < parameters.Length; i++)
+                    {
+                        var param = parameters[i];
+                        var paramType = param.ParameterType;
+                        reqImports.Add(
+                            Tuple.Create(paramType.Namespace, ToPythonType(paramType.Name))
+                        );
+                    }
+                }
+
+                foreach (var method in methods)
+                {
+                    var parameters = method.GetParameters();
+                    for (int i = 0; i < parameters.Length; i++)
+                    {
+                        var param = parameters[i];
+                        var paramType = param.ParameterType;
+                        reqImports.Add(
+                            Tuple.Create(paramType.Namespace, ToPythonType(paramType.Name))
+                        );
+                    }
+                    if (method.ReturnType != typeof(void))
+                    {
+                        var returnType = method.ReturnType;
+                        reqImports.Add(
+                            Tuple.Create(returnType.Namespace, ToPythonType(returnType.Name))
+                        );
+                    }
+                }
+
+                foreach (var field in fields)
+                {
+                    var fieldType = field.FieldType;
+                    reqImports.Add(
+                        Tuple.Create(fieldType.Namespace, ToPythonType(fieldType.Name))
+                    );
+                }
+            }
+
+            // import types that are used in parameters, return types, etc
+            foreach (var paramImport in reqImports)
+            {
+                var paramNamespace = paramImport.Item1;
+                var paramType = paramImport.Item2;
+                if (paramType.EndsWith("]") || ShouldAvoidImporting(paramType))
+                {
+                    continue;
+                }
+                if (paramNamespace != thisNamespace)
+                {
+                    sb.AppendLine($"from {paramNamespace} import {paramType}");
+                }
+            }
+            sb.Append("\n");
+
+            // import child namespaces
+            string[] allChildNamespaces = GetChildNamespaces(thisNamespace, allNamespaces);
             if( allChildNamespaces.Length > 0 )
             {                
                 for(int i=0; i<allChildNamespaces.Length; i++)
@@ -169,7 +239,8 @@ namespace PyStubblerLib
                 }
                 sb.AppendLine("]");
             }
-
+            sb.Append("\n");
+            
             foreach (var stubType in stubTypes)
             {
                 var obsolete = stubType.GetCustomAttribute(typeof(System.ObsoleteAttribute));
@@ -202,62 +273,6 @@ namespace PyStubblerLib
                 ConstructorInfo[] constructors = stubType.GetConstructors();
                 MethodInfo[] methods = stubType.GetMethods();
                 FieldInfo[] fields = stubType.GetFields();
-
-                // analyze classes to import
-                HashSet<Tuple<string, string>> reqImports = new HashSet<Tuple<string, string>>();
-                foreach (var constructor in constructors)
-                {
-                    var parameters = constructor.GetParameters();
-                    for (int i = 0; i < parameters.Length; i++)
-                    {
-                        var param = parameters[i];
-                        var paramType = param.ParameterType;
-                        reqImports.Add(
-                            Tuple.Create(paramType.Namespace, ToPythonType(paramType.Name))
-                        );
-                    }
-                }
-                foreach (var method in methods)
-                {
-                    var parameters = method.GetParameters();
-                    for (int i = 0; i < parameters.Length; i++)
-                    {
-                        var param = parameters[i];
-                        var paramType = param.ParameterType;
-                        reqImports.Add(
-                            Tuple.Create(paramType.Namespace, ToPythonType(paramType.Name))
-                        );
-                    }
-                    if (method.ReturnType != typeof(void))
-                    {
-                        var returnType = method.ReturnType;
-                        reqImports.Add(
-                            Tuple.Create(returnType.Namespace, ToPythonType(returnType.Name))
-                        );
-                    }
-                }
-                foreach (var field in fields)
-                {
-                    var fieldType = field.FieldType;
-                    reqImports.Add(
-                        Tuple.Create(fieldType.Namespace, ToPythonType(fieldType.Name))
-                    );
-                }
-
-                // import parameter and return types
-                foreach (var paramImport in reqImports)
-                {
-                    var paramNamespace = paramImport.Item1;
-                    var paramType = paramImport.Item2;
-                    if (paramType.EndsWith("]") || ShouldAvoidImporting(paramType))
-                    {
-                        continue;
-                    }
-                    if (paramNamespace != stubType.Namespace)
-                    {
-                        sb.AppendLine($"from {paramNamespace} import {paramType}");
-                    }
-                }
 
                 // write class definition
                 var baseType = stubType.BaseType;

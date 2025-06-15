@@ -1,50 +1,57 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
-
-
-from System import Guid
+from GH_IO.Serialization import GH_IReader
+from GH_IO.Serialization import GH_IWriter
+from Grasshopper.Kernel import AttributesChangedEventHandler
+from Grasshopper.Kernel import DisplayExpiredEventHandler
+from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel import GH_DataMapping
+from Grasshopper.Kernel import GH_Document
+from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_Exposure
 from Grasshopper.Kernel import GH_GuidTable
+from Grasshopper.Kernel import GH_IconDisplayMode
+from Grasshopper.Kernel import GH_ObjectChangedEventArgs
+from Grasshopper.Kernel import GH_ObjectEventType
+from Grasshopper.Kernel import GH_ParamAccess
+from Grasshopper.Kernel import GH_ParamData
+from Grasshopper.Kernel import GH_ParamKind
+from Grasshopper.Kernel import GH_ParamWireDisplay
+from Grasshopper.Kernel import GH_PrincipalState
+from Grasshopper.Kernel import GH_RuntimeMessageLevel
+from Grasshopper.Kernel import GH_SolutionPhase
+from Grasshopper.Kernel import GH_StateTagList
+from Grasshopper.Kernel import IGH_ActiveObject
+from Grasshopper.Kernel import IGH_Attributes
+from Grasshopper.Kernel import IGH_InstanceDescription
+from Grasshopper.Kernel import IGH_Param
+from Grasshopper.Kernel import IGH_PreviewArgs
+from Grasshopper.Kernel import ObjectChangedEventHandler
+from Grasshopper.Kernel import PingDocumentEventHandler
+from Grasshopper.Kernel import PreviewExpiredEventHandler
+from Grasshopper.Kernel import SolutionExpiredEventHandler
+from Grasshopper.Kernel.Data import GH_Path
+from Grasshopper.Kernel.Data import GH_Structure
+from Grasshopper.Kernel.Data import IGH_Structure
+from Grasshopper.Kernel.Undo import GH_UndoRecord
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Rhinoceros.Model import ModelEarthAnchorPoint
+from Grasshopper.Rhinoceros.Model import ModelInstanceDefinition
+from Grasshopper.Rhinoceros.Model import ModelLayer
+from Grasshopper.Rhinoceros.Model import ModelObject
 from Rhino import RhinoDoc
 from Rhino.DocObjects import ObjectAttributes
-from Grasshopper.Rhinoceros.Model import ModelEarthAnchorPoint
-from Grasshopper.Kernel.Data import GH_Structure
-from Grasshopper.Kernel import GH_ParamData
-from System.Windows.Forms import ToolStripDropDown
-from GH_IO.Serialization import GH_IWriter
-from GH_IO.Serialization import GH_IReader
-from System.Collections.Generic import IList
-from Grasshopper.Kernel import IGH_Param
-from Grasshopper.Kernel import IGH_ActiveObject
-from Grasshopper.Kernel import GH_Document
-from Grasshopper.Kernel import GH_ParamKind
-from Grasshopper.Kernel import GH_ParamAccess
-from Grasshopper.Kernel import GH_StateTagList
-from Grasshopper.Kernel import GH_ParamWireDisplay
-from Grasshopper.Kernel import GH_DataMapping
-from Grasshopper.Kernel.Data import GH_Path
-from Grasshopper.Kernel.Data import IGH_Structure
+from Rhino.Geometry import BoundingBox
+from System import Guid
 from System import TimeSpan
-from Grasshopper.Kernel import GH_PrincipalState
-from Grasshopper.Kernel import GH_SolutionPhase
-from Grasshopper.Kernel import GH_RuntimeMessageLevel
-from Grasshopper.Kernel import IGH_Attributes
-from Grasshopper.Kernel import ObjectChangedEventHandler
-from Grasshopper.Kernel import GH_ObjectEventType
-from Grasshopper.Kernel import GH_ObjectChangedEventArgs
-from Grasshopper.Kernel import AttributesChangedEventHandler
-from Grasshopper.Kernel import SolutionExpiredEventHandler
-from Grasshopper.Kernel import DisplayExpiredEventHandler
-from Grasshopper.Kernel import PreviewExpiredEventHandler
-from Grasshopper.Kernel import PingDocumentEventHandler
-from Grasshopper.Kernel import GH_DocumentContext
-from Grasshopper.Kernel import GH_AutoSaveTrigger
-from Grasshopper.Kernel.Undo import IGH_UndoAction
-from Grasshopper.Kernel.Undo import GH_UndoRecord
+from System.Collections.Generic import IList
 from System.Drawing import Bitmap
-from Grasshopper.Kernel import GH_IconDisplayMode
-from Grasshopper.Kernel import IGH_InstanceDescription
+from System.Windows.Forms import ToolStripDropDown
+
+
+
+
 class Param_EarthAnchorPoint:
     @overload
     def __init__(self): ...
@@ -352,50 +359,6 @@ class Param_EarthAnchorPoint:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
-from System import Guid
-from Grasshopper.Kernel import GH_Exposure
-from Rhino.Geometry import BoundingBox
-from Grasshopper.Kernel import IGH_PreviewArgs
-from Grasshopper.Kernel import GH_GuidTable
-from Rhino import RhinoDoc
-from Rhino.DocObjects import ObjectAttributes
-from Grasshopper.Rhinoceros.Model import ModelInstanceDefinition
-from Grasshopper.Kernel.Data import GH_Structure
-from Grasshopper.Kernel import GH_ParamData
-from System.Windows.Forms import ToolStripDropDown
-from GH_IO.Serialization import GH_IWriter
-from GH_IO.Serialization import GH_IReader
-from System.Collections.Generic import IList
-from Grasshopper.Kernel import IGH_Param
-from Grasshopper.Kernel import IGH_ActiveObject
-from Grasshopper.Kernel import GH_Document
-from Grasshopper.Kernel import GH_ParamKind
-from Grasshopper.Kernel import GH_ParamAccess
-from Grasshopper.Kernel import GH_StateTagList
-from Grasshopper.Kernel import GH_ParamWireDisplay
-from Grasshopper.Kernel import GH_DataMapping
-from Grasshopper.Kernel.Data import GH_Path
-from Grasshopper.Kernel.Data import IGH_Structure
-from System import TimeSpan
-from Grasshopper.Kernel import GH_PrincipalState
-from Grasshopper.Kernel import GH_SolutionPhase
-from Grasshopper.Kernel import GH_RuntimeMessageLevel
-from Grasshopper.Kernel import IGH_Attributes
-from Grasshopper.Kernel import ObjectChangedEventHandler
-from Grasshopper.Kernel import GH_ObjectEventType
-from Grasshopper.Kernel import GH_ObjectChangedEventArgs
-from Grasshopper.Kernel import AttributesChangedEventHandler
-from Grasshopper.Kernel import SolutionExpiredEventHandler
-from Grasshopper.Kernel import DisplayExpiredEventHandler
-from Grasshopper.Kernel import PreviewExpiredEventHandler
-from Grasshopper.Kernel import PingDocumentEventHandler
-from Grasshopper.Kernel import GH_DocumentContext
-from Grasshopper.Kernel import GH_AutoSaveTrigger
-from Grasshopper.Kernel.Undo import IGH_UndoAction
-from Grasshopper.Kernel.Undo import GH_UndoRecord
-from System.Drawing import Bitmap
-from Grasshopper.Kernel import GH_IconDisplayMode
-from Grasshopper.Kernel import IGH_InstanceDescription
 class Param_ModelInstanceDefinition:
     @overload
     def __init__(self): ...
@@ -715,48 +678,6 @@ class Param_ModelInstanceDefinition:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
-from System import Guid
-from Grasshopper.Kernel import GH_Exposure
-from Grasshopper.Kernel import GH_GuidTable
-from Rhino import RhinoDoc
-from Rhino.DocObjects import ObjectAttributes
-from Grasshopper.Rhinoceros.Model import ModelLayer
-from Grasshopper.Kernel.Data import GH_Structure
-from Grasshopper.Kernel import GH_ParamData
-from System.Windows.Forms import ToolStripDropDown
-from GH_IO.Serialization import GH_IWriter
-from GH_IO.Serialization import GH_IReader
-from System.Collections.Generic import IList
-from Grasshopper.Kernel import IGH_Param
-from Grasshopper.Kernel import IGH_ActiveObject
-from Grasshopper.Kernel import GH_Document
-from Grasshopper.Kernel import GH_ParamKind
-from Grasshopper.Kernel import GH_ParamAccess
-from Grasshopper.Kernel import GH_StateTagList
-from Grasshopper.Kernel import GH_ParamWireDisplay
-from Grasshopper.Kernel import GH_DataMapping
-from Grasshopper.Kernel.Data import GH_Path
-from Grasshopper.Kernel.Data import IGH_Structure
-from System import TimeSpan
-from Grasshopper.Kernel import GH_PrincipalState
-from Grasshopper.Kernel import GH_SolutionPhase
-from Grasshopper.Kernel import GH_RuntimeMessageLevel
-from Grasshopper.Kernel import IGH_Attributes
-from Grasshopper.Kernel import ObjectChangedEventHandler
-from Grasshopper.Kernel import GH_ObjectEventType
-from Grasshopper.Kernel import GH_ObjectChangedEventArgs
-from Grasshopper.Kernel import AttributesChangedEventHandler
-from Grasshopper.Kernel import SolutionExpiredEventHandler
-from Grasshopper.Kernel import DisplayExpiredEventHandler
-from Grasshopper.Kernel import PreviewExpiredEventHandler
-from Grasshopper.Kernel import PingDocumentEventHandler
-from Grasshopper.Kernel import GH_DocumentContext
-from Grasshopper.Kernel import GH_AutoSaveTrigger
-from Grasshopper.Kernel.Undo import IGH_UndoAction
-from Grasshopper.Kernel.Undo import GH_UndoRecord
-from System.Drawing import Bitmap
-from Grasshopper.Kernel import GH_IconDisplayMode
-from Grasshopper.Kernel import IGH_InstanceDescription
 class Param_ModelLayer:
     @overload
     def __init__(self): ...
@@ -1064,50 +985,6 @@ class Param_ModelLayer:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
-from System import Guid
-from Grasshopper.Kernel import GH_Exposure
-from Rhino.Geometry import BoundingBox
-from Grasshopper.Kernel import IGH_PreviewArgs
-from Grasshopper.Kernel import GH_GuidTable
-from Rhino import RhinoDoc
-from Rhino.DocObjects import ObjectAttributes
-from Grasshopper.Rhinoceros.Model import ModelObject
-from Grasshopper.Kernel.Data import GH_Structure
-from Grasshopper.Kernel import GH_ParamData
-from System.Windows.Forms import ToolStripDropDown
-from GH_IO.Serialization import GH_IWriter
-from GH_IO.Serialization import GH_IReader
-from System.Collections.Generic import IList
-from Grasshopper.Kernel import IGH_Param
-from Grasshopper.Kernel import IGH_ActiveObject
-from Grasshopper.Kernel import GH_Document
-from Grasshopper.Kernel import GH_ParamKind
-from Grasshopper.Kernel import GH_ParamAccess
-from Grasshopper.Kernel import GH_StateTagList
-from Grasshopper.Kernel import GH_ParamWireDisplay
-from Grasshopper.Kernel import GH_DataMapping
-from Grasshopper.Kernel.Data import GH_Path
-from Grasshopper.Kernel.Data import IGH_Structure
-from System import TimeSpan
-from Grasshopper.Kernel import GH_PrincipalState
-from Grasshopper.Kernel import GH_SolutionPhase
-from Grasshopper.Kernel import GH_RuntimeMessageLevel
-from Grasshopper.Kernel import IGH_Attributes
-from Grasshopper.Kernel import ObjectChangedEventHandler
-from Grasshopper.Kernel import GH_ObjectEventType
-from Grasshopper.Kernel import GH_ObjectChangedEventArgs
-from Grasshopper.Kernel import AttributesChangedEventHandler
-from Grasshopper.Kernel import SolutionExpiredEventHandler
-from Grasshopper.Kernel import DisplayExpiredEventHandler
-from Grasshopper.Kernel import PreviewExpiredEventHandler
-from Grasshopper.Kernel import PingDocumentEventHandler
-from Grasshopper.Kernel import GH_DocumentContext
-from Grasshopper.Kernel import GH_AutoSaveTrigger
-from Grasshopper.Kernel.Undo import IGH_UndoAction
-from Grasshopper.Kernel.Undo import GH_UndoRecord
-from System.Drawing import Bitmap
-from Grasshopper.Kernel import GH_IconDisplayMode
-from Grasshopper.Kernel import IGH_InstanceDescription
 class Param_ModelObject:
     @overload
     def __init__(self): ...

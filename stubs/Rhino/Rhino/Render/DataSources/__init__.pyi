@@ -1,6 +1,19 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
+from Rhino.Display import RhinoView
+from Rhino.DocObjects import ViewInfo
+from Rhino.Render import RenderContent
+from Rhino.Render import RenderContentCollection
+from Rhino.Render import RenderContentKind
+from Rhino.Render import RenderSettings
+from System import Enum
+from System import Guid
+from System import IFormatProvider
+from System import IntPtr
+from System import TypeCode
+
+
 
 
 class AssignBys(Enum):
@@ -12,8 +25,6 @@ class AssignBys(Enum):
     PlugIn = 5
 
 
-from System import IntPtr
-from System import Guid
 class ContentFactories:
     @overload
     def __init__(self, pRdkContentFactories: IntPtr): ...
@@ -37,10 +48,6 @@ class ContentFactories:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from Rhino.Render import RenderContent
-from Rhino.Render import RenderContentKind
-from System import Guid
 class ContentFactory:
     @overload
     def __init__(self, pRdkContentFactory: IntPtr): ...
@@ -64,8 +71,6 @@ class ContentFactory:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from System import Guid
 class MetaData:
     @overload
     def __init__(self, pMetaData: IntPtr): ...
@@ -94,8 +99,6 @@ class Modes(Enum):
     Tree = 3
 
 
-from System import IntPtr
-from Rhino.Render import RenderContentCollection
 class RdkEdit:
     @overload
     def __init__(self, pRdkEdit: IntPtr): ...
@@ -115,8 +118,6 @@ class RdkEdit:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from Rhino.Render import RenderContentCollection
 class RdkSelectionNavigator:
     @overload
     def __init__(self, pRhinoSettings: IntPtr): ...
@@ -146,11 +147,6 @@ class RdkSelectionNavigator:
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from System import Guid
-from Rhino.Render import RenderSettings
-from Rhino.Display import RhinoView
-from Rhino.DocObjects import ViewInfo
 class RhinoSettings:
     @overload
     def __init__(self, pRhinoSettings: IntPtr): ...

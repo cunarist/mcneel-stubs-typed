@@ -1,15 +1,21 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
-
-
-from System.Drawing import PointF
-from System.Drawing import Point
-from Grasshopper.GUI.Canvas import GH_Canvas
-from System.Windows.Forms import KeyEventArgs
-from Grasshopper.GUI.Canvas import GH_ObjectResponse
 from Grasshopper.GUI import GH_CanvasMouseEvent
 from Grasshopper.GUI import GH_TooltipDisplayEventArgs
+from Grasshopper.GUI.Canvas import GH_Canvas
+from Grasshopper.GUI.Canvas import GH_ObjectResponse
+from Grasshopper.Kernel import IGH_Attributes
+from Grasshopper.Kernel import IGH_ObjectProxy
+from Grasshopper.Kernel import IGH_Param
+from System import Guid
+from System.Drawing import Point
+from System.Drawing import PointF
+from System.Windows.Forms import KeyEventArgs
+
+
+
+
 class GH_AbstractInteraction:
     @overload
     def Destroy(self) -> None: ...
@@ -51,13 +57,6 @@ class GH_AbstractInteraction:
     def ToString(self) -> str: ...
 
 
-from Grasshopper.GUI.Canvas import GH_Canvas
-from System.Windows.Forms import KeyEventArgs
-from Grasshopper.GUI.Canvas import GH_ObjectResponse
-from Grasshopper.GUI import GH_CanvasMouseEvent
-from System.Drawing import PointF
-from System.Drawing import Point
-from Grasshopper.GUI import GH_TooltipDisplayEventArgs
 class GH_CycleInteraction(GH_AbstractInteraction):
     @overload
     def __init__(self, parentCanvas: GH_Canvas): ...
@@ -101,14 +100,6 @@ class GH_CycleInteraction(GH_AbstractInteraction):
     def ToString(self) -> str: ...
 
 
-from Grasshopper.GUI.Canvas import GH_Canvas
-from Grasshopper.GUI import GH_CanvasMouseEvent
-from Grasshopper.Kernel import IGH_Attributes
-from Grasshopper.GUI.Canvas import GH_ObjectResponse
-from System.Windows.Forms import KeyEventArgs
-from System.Drawing import PointF
-from System.Drawing import Point
-from Grasshopper.GUI import GH_TooltipDisplayEventArgs
 class GH_DragInteraction(GH_AbstractInteraction):
     @overload
     def __init__(self, canvas: GH_Canvas, e: GH_CanvasMouseEvent): ...
@@ -158,15 +149,6 @@ class GH_DragInteraction(GH_AbstractInteraction):
     def ToString(self) -> str: ...
 
 
-from Grasshopper.GUI.Canvas import GH_Canvas
-from System import Guid
-from Grasshopper.Kernel import IGH_ObjectProxy
-from Grasshopper.GUI import GH_CanvasMouseEvent
-from Grasshopper.GUI.Canvas import GH_ObjectResponse
-from System.Windows.Forms import KeyEventArgs
-from System.Drawing import PointF
-from System.Drawing import Point
-from Grasshopper.GUI import GH_TooltipDisplayEventArgs
 class GH_DumpInteraction(GH_AbstractInteraction):
     @overload
     def __init__(self, parent: GH_Canvas): ...
@@ -216,13 +198,6 @@ class GH_DumpInteraction(GH_AbstractInteraction):
     def ToString(self) -> str: ...
 
 
-from Grasshopper.GUI.Canvas import GH_Canvas
-from Grasshopper.GUI import GH_CanvasMouseEvent
-from Grasshopper.GUI.Canvas import GH_ObjectResponse
-from System.Drawing import PointF
-from System.Drawing import Point
-from System.Windows.Forms import KeyEventArgs
-from Grasshopper.GUI import GH_TooltipDisplayEventArgs
 class GH_PanInteraction(GH_AbstractInteraction):
     @overload
     def __init__(self, iParent: GH_Canvas, mEvent: GH_CanvasMouseEvent): ...
@@ -266,13 +241,6 @@ class GH_PanInteraction(GH_AbstractInteraction):
     def ToString(self) -> str: ...
 
 
-from Grasshopper.GUI.Canvas import GH_Canvas
-from Grasshopper.GUI import GH_CanvasMouseEvent
-from Grasshopper.GUI.Canvas import GH_ObjectResponse
-from System.Drawing import PointF
-from Grasshopper.GUI import GH_TooltipDisplayEventArgs
-from System.Drawing import Point
-from System.Windows.Forms import KeyEventArgs
 class GH_RadialMenuInteraction(GH_AbstractInteraction):
     @overload
     def __init__(self, canvas: GH_Canvas, e: GH_CanvasMouseEvent): ...
@@ -316,14 +284,6 @@ class GH_RadialMenuInteraction(GH_AbstractInteraction):
     def ToString(self) -> str: ...
 
 
-from Grasshopper.GUI.Canvas import GH_Canvas
-from Grasshopper.GUI import GH_CanvasMouseEvent
-from Grasshopper.Kernel import IGH_Param
-from Grasshopper.GUI.Canvas import GH_ObjectResponse
-from System.Windows.Forms import KeyEventArgs
-from System.Drawing import PointF
-from System.Drawing import Point
-from Grasshopper.GUI import GH_TooltipDisplayEventArgs
 class GH_RewireInteraction(GH_AbstractInteraction):
     @overload
     def __init__(self, iParent: GH_Canvas, mEvent: GH_CanvasMouseEvent, Source: IGH_Param): ...
@@ -369,13 +329,6 @@ class GH_RewireInteraction(GH_AbstractInteraction):
     def ToString(self) -> str: ...
 
 
-from Grasshopper.GUI.Canvas import GH_Canvas
-from Grasshopper.GUI import GH_CanvasMouseEvent
-from Grasshopper.GUI.Canvas import GH_ObjectResponse
-from System.Windows.Forms import KeyEventArgs
-from System.Drawing import PointF
-from System.Drawing import Point
-from Grasshopper.GUI import GH_TooltipDisplayEventArgs
 class GH_SketchInteraction(GH_AbstractInteraction):
     @overload
     def __init__(self, iParent: GH_Canvas): ...
@@ -419,14 +372,6 @@ class GH_SketchInteraction(GH_AbstractInteraction):
     def ToString(self) -> str: ...
 
 
-from Grasshopper.GUI.Canvas import GH_Canvas
-from Grasshopper.GUI import GH_CanvasMouseEvent
-from Grasshopper.Kernel import IGH_Attributes
-from Grasshopper.GUI.Canvas import GH_ObjectResponse
-from System.Windows.Forms import KeyEventArgs
-from System.Drawing import PointF
-from System.Drawing import Point
-from Grasshopper.GUI import GH_TooltipDisplayEventArgs
 class GH_SplitInteraction(GH_AbstractInteraction):
     @overload
     def __init__(self, canvas: GH_Canvas, e: GH_CanvasMouseEvent): ...
@@ -472,13 +417,6 @@ class GH_SplitInteraction(GH_AbstractInteraction):
     def ToString(self) -> str: ...
 
 
-from Grasshopper.GUI.Canvas import GH_Canvas
-from Grasshopper.GUI import GH_CanvasMouseEvent
-from Grasshopper.GUI.Canvas import GH_ObjectResponse
-from System.Windows.Forms import KeyEventArgs
-from System.Drawing import PointF
-from System.Drawing import Point
-from Grasshopper.GUI import GH_TooltipDisplayEventArgs
 class GH_WindowSelectInteraction(GH_AbstractInteraction):
     @overload
     def __init__(self, canvas: GH_Canvas, mEvent: GH_CanvasMouseEvent): ...
@@ -522,14 +460,6 @@ class GH_WindowSelectInteraction(GH_AbstractInteraction):
     def ToString(self) -> str: ...
 
 
-from Grasshopper.GUI.Canvas import GH_Canvas
-from Grasshopper.GUI import GH_CanvasMouseEvent
-from Grasshopper.Kernel import IGH_Param
-from Grasshopper.GUI.Canvas import GH_ObjectResponse
-from System.Windows.Forms import KeyEventArgs
-from System.Drawing import PointF
-from System.Drawing import Point
-from Grasshopper.GUI import GH_TooltipDisplayEventArgs
 class GH_WireInteraction(GH_AbstractInteraction):
     @overload
     def __init__(self, iParent: GH_Canvas, mEvent: GH_CanvasMouseEvent, Source: IGH_Param): ...
@@ -573,13 +503,6 @@ class GH_WireInteraction(GH_AbstractInteraction):
     def ToString(self) -> str: ...
 
 
-from Grasshopper.GUI.Canvas import GH_Canvas
-from Grasshopper.GUI import GH_CanvasMouseEvent
-from Grasshopper.GUI.Canvas import GH_ObjectResponse
-from System.Drawing import PointF
-from System.Drawing import Point
-from System.Windows.Forms import KeyEventArgs
-from Grasshopper.GUI import GH_TooltipDisplayEventArgs
 class GH_ZoomInteraction(GH_AbstractInteraction):
     @overload
     def __init__(self, iParent: GH_Canvas, mEvent: GH_CanvasMouseEvent): ...
@@ -623,9 +546,6 @@ class GH_ZoomInteraction(GH_AbstractInteraction):
     def ToString(self) -> str: ...
 
 
-from System.Drawing import Point
-from System.Drawing import PointF
-from Grasshopper.GUI.Canvas import GH_Canvas
 class IGH_MouseInteraction:
     @overload
     def Destroy(self) -> None: ...

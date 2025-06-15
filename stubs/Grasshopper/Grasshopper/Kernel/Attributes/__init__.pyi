@@ -1,25 +1,28 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
-
-
-from Grasshopper.Kernel import IGH_Component
-from System.Drawing import RectangleF
-from Grasshopper.GUI.Canvas import GH_Canvas
+from GH_IO.Serialization import GH_IReader
+from GH_IO.Serialization import GH_IWriter
 from Grasshopper.GUI import GH_CanvasMouseEvent
-from Grasshopper.GUI.Canvas import GH_ObjectResponse
-from System.Drawing import PointF
 from Grasshopper.GUI import GH_TooltipDisplayEventArgs
-from System.Drawing import Graphics
+from Grasshopper.GUI.Canvas import GH_Canvas
+from Grasshopper.GUI.Canvas import GH_CanvasChannel
+from Grasshopper.GUI.Canvas import GH_ObjectResponse
 from Grasshopper.GUI.Canvas import GH_PaletteStyle
 from Grasshopper.Kernel import GH_PickBox
 from Grasshopper.Kernel import IGH_Attributes
+from Grasshopper.Kernel import IGH_Component
 from Grasshopper.Kernel import IGH_DocumentObject
+from Grasshopper.Kernel import IGH_Param
 from System import Guid
-from GH_IO.Serialization import GH_IWriter
-from GH_IO.Serialization import GH_IReader
-from Grasshopper.GUI.Canvas import GH_CanvasChannel
+from System.Drawing import Graphics
+from System.Drawing import PointF
+from System.Drawing import RectangleF
 from System.Windows.Forms import KeyEventArgs
+
+
+
+
 class GH_ComponentAttributes:
     @overload
     def __init__(self, component: IGH_Component): ...
@@ -130,21 +133,6 @@ class GH_ComponentAttributes:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
-from Grasshopper.Kernel import IGH_Param
-from System.Drawing import PointF
-from Grasshopper.GUI import GH_TooltipDisplayEventArgs
-from Grasshopper.GUI.Canvas import GH_Canvas
-from Grasshopper.GUI import GH_CanvasMouseEvent
-from Grasshopper.GUI.Canvas import GH_ObjectResponse
-from System.Drawing import RectangleF
-from Grasshopper.Kernel import GH_PickBox
-from Grasshopper.Kernel import IGH_Attributes
-from Grasshopper.Kernel import IGH_DocumentObject
-from System import Guid
-from GH_IO.Serialization import GH_IWriter
-from GH_IO.Serialization import GH_IReader
-from Grasshopper.GUI.Canvas import GH_CanvasChannel
-from System.Windows.Forms import KeyEventArgs
 class GH_FloatingParamAttributes:
     @overload
     def __init__(self, param: IGH_Param): ...
@@ -241,21 +229,6 @@ class GH_FloatingParamAttributes:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
-from Grasshopper.Kernel import IGH_Param
-from Grasshopper.Kernel import IGH_Attributes
-from System.Drawing import PointF
-from Grasshopper.GUI import GH_TooltipDisplayEventArgs
-from System.Drawing import RectangleF
-from Grasshopper.Kernel import GH_PickBox
-from Grasshopper.Kernel import IGH_DocumentObject
-from System import Guid
-from GH_IO.Serialization import GH_IWriter
-from GH_IO.Serialization import GH_IReader
-from Grasshopper.GUI.Canvas import GH_Canvas
-from Grasshopper.GUI.Canvas import GH_CanvasChannel
-from Grasshopper.GUI import GH_CanvasMouseEvent
-from System.Windows.Forms import KeyEventArgs
-from Grasshopper.GUI.Canvas import GH_ObjectResponse
 class GH_LinkedParamAttributes:
     @overload
     def __init__(self, param: IGH_Param, parent: IGH_Attributes): ...

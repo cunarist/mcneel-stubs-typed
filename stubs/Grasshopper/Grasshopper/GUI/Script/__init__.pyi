@@ -1,14 +1,112 @@
 from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
-
-
-from System import IntPtr
+from Grasshopper.GUI import GH_DocumentEditor
+from Grasshopper.GUI import GH_TooltipDisplayEventArgs
+from Grasshopper.Kernel import IGH_DocumentObject
+from System import Action
 from System import AsyncCallback
+from System import Comparison
+from System import Converter
+from System import DateTime
+from System import Delegate
+from System import Enum
+from System import EventArgs
+from System import EventHandler
 from System import IAsyncResult
+from System import IFormatProvider
+from System import IntPtr
+from System import Predicate
+from System import TypeCode
+from System.Collections.Generic import Enumerator
+from System.Collections.Generic import IComparer
+from System.Collections.ObjectModel import ReadOnlyCollection
+from System.ComponentModel import CancelEventHandler
+from System.ComponentModel import IContainer
+from System.ComponentModel import ISite
+from System.Drawing import Bitmap
+from System.Drawing import Color
+from System.Drawing import Font
+from System.Drawing import Graphics
+from System.Drawing import Icon
+from System.Drawing import Image
+from System.Drawing import Point
+from System.Drawing import Rectangle
+from System.Drawing import Region
+from System.Drawing import Size
+from System.Drawing import SizeF
+from System.Reflection import Assembly
+from System.Reflection import MethodInfo
+from System.Runtime.Remoting import ObjRef
 from System.Runtime.Serialization import SerializationInfo
 from System.Runtime.Serialization import StreamingContext
-from System.Reflection import MethodInfo
+from System.Threading.Tasks import Task
+from System.Windows.Forms import AccessibleObject
+from System.Windows.Forms import AccessibleRole
+from System.Windows.Forms import AnchorStyles
+from System.Windows.Forms import AutoScaleMode
+from System.Windows.Forms import AutoSizeMode
+from System.Windows.Forms import AutoValidate
+from System.Windows.Forms import BindingContext
+from System.Windows.Forms import BoundsSpecified
+from System.Windows.Forms import ContextMenu
+from System.Windows.Forms import ContextMenuStrip
+from System.Windows.Forms import Control
+from System.Windows.Forms import ControlBindingsCollection
+from System.Windows.Forms import ControlCollection
+from System.Windows.Forms import ControlEventHandler
+from System.Windows.Forms import Cursor
+from System.Windows.Forms import DialogResult
+from System.Windows.Forms import DockPaddingEdges
+from System.Windows.Forms import DockStyle
+from System.Windows.Forms import DpiChangedEventHandler
+from System.Windows.Forms import DragDropEffects
+from System.Windows.Forms import DragEventHandler
+from System.Windows.Forms import Form
+from System.Windows.Forms import FormBorderStyle
+from System.Windows.Forms import FormClosedEventHandler
+from System.Windows.Forms import FormClosingEventHandler
+from System.Windows.Forms import FormStartPosition
+from System.Windows.Forms import FormWindowState
+from System.Windows.Forms import GetChildAtPointSkip
+from System.Windows.Forms import GiveFeedbackEventHandler
+from System.Windows.Forms import HelpEventHandler
+from System.Windows.Forms import HScrollProperties
+from System.Windows.Forms import IButtonControl
+from System.Windows.Forms import IContainerControl
+from System.Windows.Forms import ImageLayout
+from System.Windows.Forms import ImeMode
+from System.Windows.Forms import InputLanguageChangedEventHandler
+from System.Windows.Forms import InputLanguageChangingEventHandler
+from System.Windows.Forms import InvalidateEventHandler
+from System.Windows.Forms import IWin32Window
+from System.Windows.Forms import IWindowTarget
+from System.Windows.Forms import KeyEventHandler
+from System.Windows.Forms import KeyPressEventHandler
+from System.Windows.Forms import LayoutEventHandler
+from System.Windows.Forms import MainMenu
+from System.Windows.Forms import MdiLayout
+from System.Windows.Forms import MenuStrip
+from System.Windows.Forms import Message
+from System.Windows.Forms import MouseEventArgs
+from System.Windows.Forms import MouseEventHandler
+from System.Windows.Forms import Padding
+from System.Windows.Forms import PaintEventHandler
+from System.Windows.Forms import PreProcessControlState
+from System.Windows.Forms import PreviewKeyDownEventHandler
+from System.Windows.Forms import QueryAccessibilityHelpEventHandler
+from System.Windows.Forms import QueryContinueDragEventHandler
+from System.Windows.Forms import RightToLeft
+from System.Windows.Forms import ScrollEventHandler
+from System.Windows.Forms import SizeGripStyle
+from System.Windows.Forms import UICuesEventHandler
+from System.Windows.Forms import ValidationConstraints
+from System.Windows.Forms import VScrollProperties
+from System.Windows.Forms.Layout import LayoutEngine
+
+
+
+
 class CompileCodeRequestEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -40,87 +138,6 @@ class CompileCodeRequestEventHandler:
     def ToString(self) -> str: ...
 
 
-from System.Collections.ObjectModel import ReadOnlyCollection
-from System.Drawing import Size
-from System.Windows.Forms import AutoValidate
-from System.Drawing import Color
-from System.Windows.Forms import ValidationConstraints
-from System.Windows.Forms import IButtonControl
-from System.Windows.Forms import Form
-from System import EventHandler
-from System.Windows.Forms import AutoSizeMode
-from System.Windows.Forms import FormBorderStyle
-from System.Drawing import Rectangle
-from System.Drawing import Point
-from System.Windows.Forms import DialogResult
-from System.ComponentModel import CancelEventHandler
-from System.Drawing import Icon
-from System.Windows.Forms import MenuStrip
-from System.Windows.Forms import Padding
-from System.Windows.Forms import MainMenu
-from System.Windows.Forms import SizeGripStyle
-from System.Windows.Forms import FormStartPosition
-from System.Windows.Forms import FormWindowState
-from System.Windows.Forms import FormClosingEventHandler
-from System.Windows.Forms import FormClosedEventHandler
-from System.Windows.Forms import InputLanguageChangedEventHandler
-from System.Windows.Forms import InputLanguageChangingEventHandler
-from System.Windows.Forms import MdiLayout
-from System.Windows.Forms import DpiChangedEventHandler
-from System.Windows.Forms import IWin32Window
-from System.Windows.Forms import BindingContext
-from System.Windows.Forms import Control
-from System.Drawing import SizeF
-from System.Windows.Forms import AutoScaleMode
-from System.Windows.Forms import HScrollProperties
-from System.Windows.Forms import VScrollProperties
-from System.Windows.Forms import DockPaddingEdges
-from System.Windows.Forms import ScrollEventHandler
-from System.Windows.Forms import AnchorStyles
-from System.Windows.Forms.Layout import LayoutEngine
-from System.Drawing import Image
-from System.Windows.Forms import ImageLayout
-from System.Windows.Forms import ContextMenu
-from System.Windows.Forms import ContextMenuStrip
-from System.Windows.Forms import Cursor
-from System.Windows.Forms import ControlBindingsCollection
-from System.Windows.Forms import DockStyle
-from System.Drawing import Font
-from System.Windows.Forms import RightToLeft
-from System.ComponentModel import ISite
-from System import Delegate
-from System import IAsyncResult
-from System.Windows.Forms import Message
-from System.Windows.Forms import AccessibleObject
-from System.Windows.Forms import AccessibleRole
-from System.Windows.Forms import ControlCollection
-from System import IntPtr
-from System.Drawing import Region
-from System.Windows.Forms import IWindowTarget
-from System.Windows.Forms import ControlEventHandler
-from System.Windows.Forms import DragEventHandler
-from System.Windows.Forms import GiveFeedbackEventHandler
-from System.Windows.Forms import HelpEventHandler
-from System.Windows.Forms import InvalidateEventHandler
-from System.Windows.Forms import PaintEventHandler
-from System.Windows.Forms import QueryContinueDragEventHandler
-from System.Windows.Forms import QueryAccessibilityHelpEventHandler
-from System.Windows.Forms import KeyEventHandler
-from System.Windows.Forms import KeyPressEventHandler
-from System.Windows.Forms import LayoutEventHandler
-from System.Windows.Forms import MouseEventHandler
-from System.Windows.Forms import PreviewKeyDownEventHandler
-from System.Windows.Forms import UICuesEventHandler
-from System.Drawing import Graphics
-from System.Windows.Forms import DragDropEffects
-from System.Drawing import Bitmap
-from System.Windows.Forms import GetChildAtPointSkip
-from System.Windows.Forms import IContainerControl
-from System.Windows.Forms import PreProcessControlState
-from System.Windows.Forms import BoundsSpecified
-from System.Windows.Forms import ImeMode
-from System.ComponentModel import IContainer
-from System.Runtime.Remoting import ObjRef
 class GH_AssemblyBrowser:
     @overload
     def __init__(self): ...
@@ -1146,10 +1163,6 @@ class GH_AssemblyBrowser:
     def ValidateChildren(self, validationConstraints: ValidationConstraints) -> bool: ...
 
 
-from System.Drawing import Bitmap
-from Grasshopper.GUI import GH_TooltipDisplayEventArgs
-from System.Windows.Forms import MouseEventArgs
-from System.Drawing import Rectangle
 class GH_BeforeAfterSolveInstanceSnippetButton(GH_ScriptEditorButton):
     @overload
     def __init__(self): ...
@@ -1208,13 +1221,6 @@ class GH_CodeBlock:
     def ToString(self) -> str: ...
 
 
-from System.Collections.ObjectModel import ReadOnlyCollection
-from System.Collections.Generic import IComparer
-from System import Predicate
-from System import Action
-from System.Collections.Generic import Enumerator
-from System import Comparison
-from System import Converter
 class GH_CodeBlocks:
     @overload
     def __init__(self): ...
@@ -1344,7 +1350,6 @@ class GH_CodeBlocks:
     def TrueForAll(self, match: Predicate) -> bool: ...
 
 
-from System.Reflection import Assembly
 class GH_CustomReference:
     @overload
     def __init__(self): ...
@@ -1368,10 +1373,6 @@ class GH_CustomReference:
     def ToString(self) -> str: ...
 
 
-from System.Windows.Forms import MouseEventArgs
-from System.Drawing import Bitmap
-from Grasshopper.GUI import GH_TooltipDisplayEventArgs
-from System.Drawing import Rectangle
 class GH_FontPickButton(GH_ScriptEditorButton):
     @overload
     def __init__(self): ...
@@ -1403,7 +1404,6 @@ class GH_FontPickButton(GH_ScriptEditorButton):
     def ToString(self) -> str: ...
 
 
-from System import DateTime
 class GH_HistoricAssembly:
     @overload
     def __init__(self): ...
@@ -1421,10 +1421,6 @@ class GH_HistoricAssembly:
     def ToString(self) -> str: ...
 
 
-from System.Drawing import Bitmap
-from Grasshopper.GUI import GH_TooltipDisplayEventArgs
-from System.Windows.Forms import MouseEventArgs
-from System.Drawing import Rectangle
 class GH_PreviewSnippetButton(GH_ScriptEditorButton):
     @overload
     def __init__(self): ...
@@ -1456,13 +1452,6 @@ class GH_PreviewSnippetButton(GH_ScriptEditorButton):
     def ToString(self) -> str: ...
 
 
-from Grasshopper.Kernel import IGH_DocumentObject
-from System import EventHandler
-from System.Threading.Tasks import Task
-from Grasshopper.GUI import GH_DocumentEditor
-from System.Drawing import Font
-from System.Drawing import Point
-from System import EventArgs
 class GH_ScriptEditor:
     @overload
     def __init__(self, language: GH_ScriptLanguage): ...
@@ -1562,10 +1551,6 @@ class GH_ScriptEditor:
     def ToString(self) -> str: ...
 
 
-from System.Drawing import Rectangle
-from System.Drawing import Bitmap
-from Grasshopper.GUI import GH_TooltipDisplayEventArgs
-from System.Windows.Forms import MouseEventArgs
 class GH_ScriptEditorButton:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -1601,10 +1586,6 @@ class GH_ScriptLanguage(Enum):
     CS = 2
 
 
-from System.Drawing import Rectangle
-from System.Drawing import Bitmap
-from Grasshopper.GUI import GH_TooltipDisplayEventArgs
-from System.Windows.Forms import MouseEventArgs
 class GH_ShrinkEditorButton(GH_ScriptEditorButton):
     @overload
     def __init__(self): ...
@@ -1648,12 +1629,6 @@ class GH_ShrinkEditorButton(GH_ScriptEditorButton):
     def ToString(self) -> str: ...
 
 
-from System import IntPtr
-from System import AsyncCallback
-from System import IAsyncResult
-from System.Runtime.Serialization import SerializationInfo
-from System.Runtime.Serialization import StreamingContext
-from System.Reflection import MethodInfo
 class SourceCodeChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
