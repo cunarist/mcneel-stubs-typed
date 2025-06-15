@@ -9,7 +9,6 @@ from System import IntPtr
 
 
 
-
 class ICallback:
     @overload
     def OnExecuted(self, widget: Thread) -> None: ...

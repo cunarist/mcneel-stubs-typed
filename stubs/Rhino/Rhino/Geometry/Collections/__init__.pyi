@@ -41,7 +41,6 @@ from System.Drawing import Color
 
 
 
-
 class BrepCurveList:
     def __iter__(self) -> Iterator[Curve]: ...
     @overload

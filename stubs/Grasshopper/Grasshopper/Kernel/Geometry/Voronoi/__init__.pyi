@@ -34,7 +34,6 @@ from System.Drawing.Drawing2D import GraphicsPath
 
 
 
-
 class Cell2:
     @overload
     def __init__(self): ...

@@ -19,7 +19,6 @@ from System.Reflection import Assembly
 
 
 
-
 class CustomPostEffectAttribute:
     @overload
     def __init__(self, postEffectType: PostEffectType, name: str, styles: PostEffectStyles, executeWhileRenderingOption: PostEffectExecuteWhileRenderingOptions, canDisplayHelp: bool, executeWhileRenderingDelay: int): ...

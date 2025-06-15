@@ -21,7 +21,6 @@ from System.Xml import XmlWriter
 
 
 
-
 class GH_BoundingBox:
     @overload
     def __init__(self, nMin: GH_Point3D, nMax: GH_Point3D): ...

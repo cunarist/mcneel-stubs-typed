@@ -69,7 +69,6 @@ from System.Xml import XmlDocument
 
 
 
-
 class AnalysisStyle(Enum):
     Wireframe = 1
     Texture = 2

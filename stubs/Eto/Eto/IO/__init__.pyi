@@ -5,4 +5,3 @@ from Eto.Drawing import Icon
 from System import IFormatProvider
 from System import TypeCode
 
-

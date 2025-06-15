@@ -105,7 +105,6 @@ from System.Windows.Forms.Layout import LayoutEngine
 
 
 
-
 class CompileCodeRequestEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...

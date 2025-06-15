@@ -26,7 +26,6 @@ from System.Windows.Forms import IWin32Window
 
 
 
-
 class GH_CharType(Enum):
     undefined = 0
     whitespace = 1

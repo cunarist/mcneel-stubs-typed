@@ -14,7 +14,6 @@ from System import IntPtr
 
 
 
-
 class SnapShotsClient:
     @overload
     def __init__(self): ...

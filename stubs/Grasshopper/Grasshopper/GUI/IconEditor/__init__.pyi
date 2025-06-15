@@ -13,7 +13,6 @@ from System.Drawing import Size
 
 
 
-
 class GH_IconObject:
     @overload
     def Contains(self, pt: PointF) -> bool: ...

@@ -7,7 +7,6 @@ from Rhino.Geometry import Polyline
 
 
 
-
 class Solver:
     @overload
     @staticmethod

@@ -8,7 +8,6 @@ from System.Resources import ResourceManager
 
 
 
-
 class Res_CanvasToolbar:
     @overload
     def Equals(self, obj: object) -> bool: ...

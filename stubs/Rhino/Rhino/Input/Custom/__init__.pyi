@@ -57,7 +57,6 @@ from System.Threading.Tasks import Task
 
 
 
-
 class CommandLineOption:
     @overload
     def Equals(self, obj: object) -> bool: ...

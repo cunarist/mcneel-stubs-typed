@@ -10,7 +10,6 @@ from Rhino.Geometry import Vector3d
 
 
 
-
 class Generic:
     @overload
     def __init__(self): ...

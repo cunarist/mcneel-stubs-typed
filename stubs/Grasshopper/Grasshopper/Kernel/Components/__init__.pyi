@@ -71,7 +71,6 @@ from System.Windows.Forms import ToolStripDropDown
 
 
 
-
 class BufferMode(Enum):
     Never = 0
     Always = 1

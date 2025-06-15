@@ -27,7 +27,6 @@ from System.Runtime.Serialization import StreamingContext
 
 
 
-
 class GH_BracketMismatchException:
     @overload
     def __init__(self): ...

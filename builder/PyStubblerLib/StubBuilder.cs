@@ -223,7 +223,7 @@ namespace PyStubblerLib
 
             // import child namespaces
             string[] allChildNamespaces = GetChildNamespaces(thisNamespace, allNamespaces);
-            if( allChildNamespaces.Length > 0 )
+            if ( allChildNamespaces.Length > 0 )
             {                
                 for(int i=0; i<allChildNamespaces.Length; i++)
                 {
@@ -238,8 +238,8 @@ namespace PyStubblerLib
                     sb.Append($"'{allChildNamespaces[i]}'");
                 }
                 sb.AppendLine("]");
+                sb.Append("\n");
             }
-            sb.Append("\n");
             
             foreach (var stubType in stubTypes)
             {

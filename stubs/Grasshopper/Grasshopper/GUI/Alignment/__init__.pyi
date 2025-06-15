@@ -7,7 +7,6 @@ from System.Drawing import RectangleF
 
 
 
-
 class GH_Align(Enum):
     # None = 0
     Left = 1

@@ -6,7 +6,6 @@ from System import IntPtr
 
 
 
-
 class EventArgs:
     @overload
     def Equals(self, obj: object) -> bool: ...

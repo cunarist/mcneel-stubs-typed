@@ -12,7 +12,6 @@ from System.ComponentModel import PropertyChangedEventHandler
 
 
 
-
 class ButtonType(Enum):
     CancelOrClose = 0
     Confirm = 1

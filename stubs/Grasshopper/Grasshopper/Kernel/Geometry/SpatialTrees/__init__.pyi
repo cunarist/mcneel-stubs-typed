@@ -23,7 +23,6 @@ from System.Runtime.Serialization import StreamingContext
 
 
 
-
 class TreeDelegates:
     @overload
     def Equals(self, obj: object) -> bool: ...

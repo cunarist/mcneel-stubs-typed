@@ -12,7 +12,6 @@ from System.Drawing import Bitmap
 
 
 
-
 class Commands:
     @overload
     def Equals(self, obj: object) -> bool: ...

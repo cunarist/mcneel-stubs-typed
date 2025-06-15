@@ -15,7 +15,6 @@ from System.Drawing import Color
 
 
 
-
 class BoolField(Field):
     @overload
     def Equals(self, obj: object) -> bool: ...

@@ -56,7 +56,6 @@ from System.Windows.Forms import ToolStripDropDown
 
 
 
-
 class Param_DisplayColorGradient:
     @overload
     def __init__(self): ...

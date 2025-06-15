@@ -19,7 +19,6 @@ from System.Reflection import Assembly
 
 
 
-
 class Bitmap(Image):
     @overload
     def __init__(self, fileName: str): ...

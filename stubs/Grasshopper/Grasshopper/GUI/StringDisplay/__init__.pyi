@@ -16,7 +16,6 @@ from System.Runtime.Serialization import StreamingContext
 
 
 
-
 class GH_FormattedListItem(GH_SimpleListItem):
     @overload
     def __init__(self): ...

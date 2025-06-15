@@ -13,4 +13,3 @@ from System.ComponentModel import PropertyChangedEventHandler
 from System.Drawing import Bitmap
 from System.Drawing import RectangleF
 
-

@@ -53,7 +53,6 @@ from System.Runtime.Serialization import StreamingContext
 
 
 
-
 class ClassIdAttribute:
     @overload
     def __init__(self, id: str): ...

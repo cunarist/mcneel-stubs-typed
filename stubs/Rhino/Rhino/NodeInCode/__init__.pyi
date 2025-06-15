@@ -21,7 +21,6 @@ from System.Linq.Expressions import Expression
 
 
 
-
 class ComponentFunctionInfo:
     @overload
     def Equals(self, obj: object) -> bool: ...

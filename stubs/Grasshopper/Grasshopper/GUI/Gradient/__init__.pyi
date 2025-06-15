@@ -19,7 +19,6 @@ from System.Runtime.Serialization import StreamingContext
 
 
 
-
 class GH_Gradient:
     @overload
     def __init__(self): ...

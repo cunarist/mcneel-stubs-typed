@@ -12,7 +12,6 @@ from Rhino.Geometry import Vector3d
 
 
 
-
 from Rhino.Geometry import SpaceMorph
 class BendSpaceMorph(SpaceMorph):
     @overload

@@ -15,7 +15,6 @@ from System.Windows.Forms import KeyEventArgs
 
 
 
-
 class GH_AbstractInteraction:
     @overload
     def Destroy(self) -> None: ...

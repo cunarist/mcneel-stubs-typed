@@ -5,7 +5,6 @@ from Grasshopper.Kernel import GH_Document
 
 
 
-
 class GH_GDLParser:
     @overload
     def Equals(self, obj: object) -> bool: ...

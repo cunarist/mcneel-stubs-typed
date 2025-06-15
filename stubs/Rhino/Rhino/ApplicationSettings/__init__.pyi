@@ -18,7 +18,6 @@ from System.IO import DirectoryInfo
 
 
 
-
 class AppearanceSettings:
     @overload
     @staticmethod

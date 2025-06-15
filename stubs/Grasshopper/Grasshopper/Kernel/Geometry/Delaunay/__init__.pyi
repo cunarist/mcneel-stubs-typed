@@ -7,7 +7,6 @@ from Rhino.Geometry import Mesh
 
 
 
-
 class Connectivity:
     @overload
     def __init__(self): ...

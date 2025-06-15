@@ -11,7 +11,6 @@ from System.Drawing.Drawing2D import HatchStyle
 
 
 
-
 class GH_BackgroundSettings:
     @overload
     def Equals(self, obj: object) -> bool: ...

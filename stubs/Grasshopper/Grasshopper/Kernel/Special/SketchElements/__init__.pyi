@@ -12,7 +12,6 @@ from System.Drawing.Drawing2D import GraphicsPath
 
 
 
-
 class GH_SketchBox:
     @overload
     def __init__(self): ...

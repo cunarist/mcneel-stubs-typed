@@ -7,7 +7,6 @@ from System.Collections.ObjectModel import ReadOnlyCollection
 
 
 
-
 class GH_Audience(Enum):
     Beginner = 0
     Intermediate = 1

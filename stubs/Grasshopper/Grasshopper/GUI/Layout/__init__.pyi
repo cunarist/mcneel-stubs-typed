@@ -5,7 +5,6 @@ from System.Drawing import Rectangle
 
 
 
-
 class GH_GenericLayout:
     @overload
     def Equals(self, obj: object) -> bool: ...

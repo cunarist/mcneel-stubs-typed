@@ -89,7 +89,6 @@ from System.Threading.Tasks import Task
 
 
 
-
 class ThemedAboutDialogHandler:
     @overload
     def __init__(self): ...

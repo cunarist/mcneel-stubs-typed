@@ -24,7 +24,6 @@ from System.Windows.Forms import ToolStripDropDownMenu
 
 
 
-
 class DockCornerChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...

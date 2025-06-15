@@ -18,7 +18,6 @@ from System import IntPtr
 
 
 
-
 class ClassArrayObjRef:
     @overload
     def __init__(self): ...

@@ -11,7 +11,6 @@ from System.Drawing import SizeF
 
 
 
-
 class GH_EquationFragment:
     @overload
     def Equals(self, obj: object) -> bool: ...

@@ -35,7 +35,6 @@ from Rhino.Geometry import Point3d
 
 
 
-
 class GH_AngularDimensionGetter:
     @overload
     def Equals(self, obj: object) -> bool: ...

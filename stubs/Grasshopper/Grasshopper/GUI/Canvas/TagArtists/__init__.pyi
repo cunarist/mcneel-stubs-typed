@@ -9,7 +9,6 @@ from System.Drawing import Color
 
 
 
-
 class GH_TagArtist:
     @overload
     def Equals(self, obj: object) -> bool: ...

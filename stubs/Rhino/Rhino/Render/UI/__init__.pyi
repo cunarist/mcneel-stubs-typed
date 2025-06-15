@@ -9,7 +9,6 @@ from System.Drawing import Point
 
 
 
-
 class WorldMapDayNight:
     @overload
     def __init__(self): ...

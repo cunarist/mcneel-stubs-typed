@@ -5,7 +5,6 @@ from Grasshopper.Kernel import IGH_DocumentObject
 
 
 
-
 class GH_NetworkSorter:
     @overload
     def __init__(self): ...

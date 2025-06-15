@@ -14,7 +14,6 @@ from System.Windows.Forms import Control
 
 
 
-
 class GH_Interpolation(Enum):
     linear = 1
     cubic = 2

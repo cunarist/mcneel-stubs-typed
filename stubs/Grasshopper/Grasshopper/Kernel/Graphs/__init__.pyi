@@ -24,7 +24,6 @@ from System.Windows.Forms import KeyEventArgs
 
 
 
-
 class GH_AbstractGraph:
     @overload
     def add_GraphChanged(self, obj: GraphChangedEventHandler) -> None: ...

@@ -21,7 +21,6 @@ from System.Runtime.Serialization import StreamingContext
 
 
 
-
 class GH_Interval_Wrapper:
     @overload
     def __init__(self, interval: Interval, wrapperdelegate: GH_IntervalWrapperDelegate): ...

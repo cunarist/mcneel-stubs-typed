@@ -17,7 +17,6 @@ from System.Runtime.Serialization import StreamingContext
 
 
 
-
 class Command:
     @overload
     @staticmethod

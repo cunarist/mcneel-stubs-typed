@@ -21,7 +21,6 @@ from System.Runtime.Serialization import StreamingContext
 
 
 
-
 class FieldSolver:
     @overload
     def __init__(self, object: object, method: IntPtr): ...

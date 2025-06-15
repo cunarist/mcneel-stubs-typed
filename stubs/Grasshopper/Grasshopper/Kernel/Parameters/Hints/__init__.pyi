@@ -6,7 +6,6 @@ from System import Guid
 
 
 
-
 class GH_AnnotationBaseHint:
     @overload
     def __init__(self): ...

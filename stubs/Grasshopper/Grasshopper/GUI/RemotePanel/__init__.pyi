@@ -84,7 +84,6 @@ from System.Windows.Forms.Layout import LayoutEngine
 
 
 
-
 class EditModeChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...

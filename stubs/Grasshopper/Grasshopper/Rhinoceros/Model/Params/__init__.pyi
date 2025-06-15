@@ -51,7 +51,6 @@ from System.Windows.Forms import ToolStripDropDown
 
 
 
-
 class Param_EarthAnchorPoint:
     @overload
     def __init__(self): ...

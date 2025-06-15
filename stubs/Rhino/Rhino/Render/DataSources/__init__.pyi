@@ -14,7 +14,6 @@ from System import TypeCode
 
 
 
-
 class AssignBys(Enum):
     Unset = 0
     Layer = 1

@@ -31,7 +31,6 @@ from System.Windows.Forms import Padding
 
 
 
-
 class ColorChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...

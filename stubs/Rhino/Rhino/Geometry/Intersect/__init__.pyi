@@ -31,7 +31,6 @@ from System.Threading import CancellationToken
 
 
 
-
 class ArcArcIntersection(Enum):
     # None = 0
     Single = 1

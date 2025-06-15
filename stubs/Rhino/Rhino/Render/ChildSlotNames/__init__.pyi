@@ -5,7 +5,6 @@ from Rhino.DocObjects import TextureType
 
 
 
-
 class PhysicallyBased:
     @overload
     def Equals(self, obj: object) -> bool: ...

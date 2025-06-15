@@ -102,7 +102,6 @@ from System.Runtime.Serialization import StreamingContext
 
 
 
-
 class BitmapTable:
     def __iter__(self) -> Iterator[BitmapEntry]: ...
     def __getitem__(self, index: int) -> BitmapEntry: ...

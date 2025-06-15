@@ -93,7 +93,6 @@ from System.Runtime.Serialization import StreamingContext
 
 
 
-
 class AnimationMode(Enum):
     X = 0
     Y = 1

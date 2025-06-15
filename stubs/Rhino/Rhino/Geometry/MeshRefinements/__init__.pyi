@@ -7,7 +7,6 @@ from System.Threading import CancellationToken
 
 
 
-
 class CreaseEdges(Enum):
     NakedFixed = 0
     NakedSmooth = 1

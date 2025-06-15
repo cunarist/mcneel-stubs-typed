@@ -23,7 +23,6 @@ from System.Drawing import Color
 
 
 
-
 class GumballAppearanceSettings:
     @overload
     def __init__(self): ...

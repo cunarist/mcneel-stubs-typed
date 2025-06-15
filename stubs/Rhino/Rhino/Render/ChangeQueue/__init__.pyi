@@ -24,7 +24,6 @@ from System import TypeCode
 
 
 
-
 class AncestryRecord:
     @overload
     def __init__(self): ...
