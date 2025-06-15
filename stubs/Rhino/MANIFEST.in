@@ -1,2 +1,2 @@
-include Rhino-stubs/*.pyi
+include Rhino/*.pyi
 

@@ -1,2 +1,2 @@
-include GH_IO-stubs/*.pyi
+include GH_IO/*.pyi
 

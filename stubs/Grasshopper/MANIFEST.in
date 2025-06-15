@@ -1,2 +1,2 @@
-include Grasshopper-stubs/*.pyi
+include Grasshopper/*.pyi
 
