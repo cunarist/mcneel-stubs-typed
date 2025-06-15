@@ -7,6 +7,8 @@ from enum import Enum
 
 from System.Collections import IDictionary
 from System.Reflection import MethodBase
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 class GH_BracketMismatchException:
     @overload
     def __init__(self): ...
@@ -164,6 +166,7 @@ class GH_GraphicBranch:
     def ToString(self) -> str: ...
 
 
+from Grasshopper.GUI.Canvas import GH_Viewport
 from System.Drawing import PointF
 from System.Drawing import RectangleF
 class GH_GraphicTreeDisplayArgs:
@@ -338,6 +341,7 @@ class GH_IndexRuleSet:
     def ToString(self) -> str: ...
 
 
+from Grasshopper.Kernel.Expressions import GH_ExpressionParser
 from Grasshopper import DataTree
 class GH_Lexer:
     @overload
@@ -680,6 +684,8 @@ class GH_SimplificationMode(Enum):
 
 from System.Collections import IDictionary
 from System.Reflection import MethodBase
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 class GH_StringMismatchException:
     @overload
     def __init__(self): ...
@@ -867,6 +873,7 @@ class IGH_Rule:
     def Notation(self) -> str: ...
 
 
+from System.Collections.Generic import IList
 from System.Collections import IList
 class IGH_Structure:
     @overload

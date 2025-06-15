@@ -6,6 +6,8 @@ from enum import Enum
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from System.Reflection import MethodInfo
 class ColorChangedEventHandler:
     @overload
@@ -42,6 +44,8 @@ from System import IntPtr
 from System.Drawing import Graphics
 from System import AsyncCallback
 from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from System.Reflection import MethodInfo
 class DrawSliderChannel:
     @overload
@@ -77,6 +81,7 @@ class DrawSliderChannel:
 from System.Drawing import Rectangle
 from Rhino.Geometry import Point4d
 from System.Drawing import Point
+from System.Drawing.Drawing2D import GraphicsPath
 from System.Drawing import PointF
 from System.Drawing import Graphics
 from System.Drawing import Color
@@ -172,10 +177,14 @@ class GH_ColourCube:
 
 
 from System.Drawing import Rectangle
+from System.Windows.Forms import Padding
 from System.Drawing import Color
 from System.Drawing import Font
 from Rhino.Geometry import Point4d
+from System.Windows.Forms import MouseEventArgs
 from System.Drawing import PointF
+from System.Windows.Forms import Control
+from System.Drawing.Drawing2D import Matrix
 from Grasshopper.GUI import GH_ToolstripItemKeyHandlerResult
 from System.Drawing import Graphics
 class GH_ColourPickerBase:
@@ -325,6 +334,7 @@ class GH_DigitAlign(Enum):
 
 
 from System import Decimal
+from System.Collections.Generic import IList
 class GH_DigitNumber:
     @overload
     def __init__(self, decimalPlaces: int): ...
@@ -390,9 +400,14 @@ class GH_DigitNumber:
 
 from System import Decimal
 from System.Drawing import Color
+from System.Windows.Forms import Padding
+from Grasshopper.GUI.Gradient import GH_Gradient
 from System.Drawing import Font
 from System.Drawing import Rectangle
+from System.Windows.Forms import MouseEventArgs
 from System.Drawing import PointF
+from System.Windows.Forms import Control
+from System.Drawing.Drawing2D import Matrix
 from System.Drawing import Graphics
 from Grasshopper.GUI import GH_ToolstripItemKeyHandlerResult
 class GH_DigitScrollerBase(GH_TextBoxInputBase):
@@ -645,10 +660,15 @@ class GH_SliderAccuracy(Enum):
 
 from System.Drawing import Color
 from System.Drawing import Font
+from System.Windows.Forms import Padding
 from System.Drawing import Rectangle
 from System.Drawing import RectangleF
 from System import Decimal
+from System.Windows.Forms import MouseEventArgs
 from System.Drawing import PointF
+from System.Windows.Forms import KeyEventArgs
+from System.Windows.Forms import Control
+from System.Drawing.Drawing2D import Matrix
 from System.Drawing import Graphics
 from Grasshopper.GUI import GH_ToolstripItemKeyHandlerResult
 class GH_SliderBase(GH_TextBoxInputBase):
@@ -921,6 +941,8 @@ class GH_SliderTickDisplay(Enum):
 
 from System.Drawing import Rectangle
 from System.Drawing import Font
+from System.Windows.Forms import Control
+from System.Drawing.Drawing2D import Matrix
 from Grasshopper.GUI import GH_ToolstripItemKeyHandlerResult
 class GH_TextBoxInputBase:
     @overload
@@ -959,6 +981,8 @@ from System import IntPtr
 from System import EventArgs
 from System import AsyncCallback
 from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from System.Reflection import MethodInfo
 class InvalidatedEventHandler:
     @overload
@@ -995,6 +1019,8 @@ from System import IntPtr
 from System import EventArgs
 from System import AsyncCallback
 from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from System.Reflection import MethodInfo
 class InvalidatedEventHandler:
     @overload
@@ -1062,6 +1088,8 @@ class SliderSnapRange:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from System.Reflection import MethodInfo
 class TextInputHandler:
     @overload
@@ -1097,6 +1125,8 @@ class TextInputHandler:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from System.Reflection import MethodInfo
 class ValueChangedEventHandler:
     @overload
@@ -1132,6 +1162,8 @@ class ValueChangedEventHandler:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from System.Reflection import MethodInfo
 class ValueChangedEventHandler:
     @overload

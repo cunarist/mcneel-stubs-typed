@@ -42,7 +42,7 @@ class AdvancedSetting(Enum):
     RecordAnimationTargetFolder = 29
 
 
-from .Specialized import NameValueCollection
+from System.Collections.Specialized import NameValueCollection
 from System import Guid
 class Analytics:
     @overload
@@ -119,10 +119,12 @@ class AssemblyResolver:
     def ToString(self) -> str: ...
 
 
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
-from .Generic import Dictionary
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Collections.Generic import Dictionary
+from Rhino.FileIO import SerializationOptions
 class CommonObject:
     @overload
     def Dispose(self) -> None: ...
@@ -172,8 +174,10 @@ class CommonObject:
 
 
 from System import IntPtr
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Collections import IDictionary
+from System.Reflection import MethodBase
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 class CorruptGeometryException:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -215,8 +219,10 @@ class CorruptGeometryException:
     def ToString(self) -> str: ...
 
 
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Collections import IDictionary
+from System.Reflection import MethodBase
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 class DocumentCollectedException:
     @overload
     def __init__(self): ...
@@ -261,8 +267,9 @@ class DocumentCollectedException:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class ExceptionReportDelegate:
     @overload
     def __init__(self, object: object, method: IntPtr): ...
@@ -297,8 +304,9 @@ class ExceptionReportDelegate:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class FillProc:
     @overload
     def __init__(self, object: object, method: IntPtr): ...
@@ -330,10 +338,16 @@ class FillProc:
     def ToString(self) -> str: ...
 
 
+from System.Reflection import Assembly
 from System import Version
 from System import EventHandler
+from Rhino.Geometry import GeometryBase
 from System import Guid
 from System import IntPtr
+from Rhino.Geometry import BezierCurve
+from Rhino.PlugIns import PlugIn
+from Rhino.Commands import Command
+from System.Threading import ThreadExceptionEventArgs
 class HostUtils:
     @overload
     @staticmethod
@@ -629,9 +643,25 @@ class InstanceAttributeField:
 
 
 from System import IntPtr
+from Rhino.DocObjects import Font
+from Rhino.Display import ViewCaptureSettings
 from Rhino import RhinoDoc
-from .Custom import GetPoint
-from .Custom import CommandLineOption
+from Rhino.Geometry import GeometryBase
+from Rhino.DocObjects import ViewportInfo
+from Rhino.Display import RhinoViewport
+from Rhino.Display import DisplayPipeline
+from Rhino.Input.Custom import GetPoint
+from Rhino.DocObjects import RhinoObject
+from Rhino.FileIO import FileWriteOptions
+from Rhino.FileIO import FileReadOptions
+from Rhino.Geometry import Arc
+from Rhino.Geometry import Brep
+from Rhino.Geometry import Surface
+from Rhino.Geometry import Mesh
+from Rhino.Geometry import Curve
+from Rhino.Geometry import Transform
+from Rhino.Input.Custom import CommandLineOption
+from Rhino.PlugIns import PlugIn
 class Interop:
     @overload
     @staticmethod
@@ -741,6 +771,10 @@ class IPlatformServiceLocator:
     def GetService(self) -> T: ...
 
 
+from Rhino.Geometry import Mesh
+from Rhino.Geometry import ShrinkWrapParameters
+from Rhino.Geometry import PointCloud
+from Rhino.Geometry import MeshingParameters
 class IShrinkWrapService:
     @overload
     def ShrinkWrap(self, mesh: Mesh, parameters: ShrinkWrapParameters) -> Mesh: ...
@@ -753,6 +787,8 @@ class IShrinkWrapService:
 
 
 from System import Guid
+from Rhino.PlugIns import LicenseStatus
+from System.Drawing import Image
 from System import DateTime
 class IZooClientUtilities:
     @overload
@@ -845,8 +881,18 @@ class Mode(Enum):
     InvalidMode = 100
 
 
+from System.Drawing import Point
+from Rhino.Geometry import Point3d
+from Rhino.Geometry import Vector3d
+from System.Drawing import Color
 from System import Guid
+from Rhino.DocObjects import ViewportInfo
+from Rhino.Geometry import GeometryBase
 from System import IntPtr
+from Rhino.Geometry import Line
+from Rhino.Geometry import Arc
+from Rhino.Geometry import Plane
+from Rhino.Geometry import MeshingParameters
 class NamedParametersEventArgs:
     @overload
     def __init__(self): ...
@@ -958,8 +1004,10 @@ class NamedParametersEventArgs:
     def TryGetWindowImageHandle(self, name: str) -> Tuple[bool, IntPtr]: ...
 
 
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Collections import IDictionary
+from System.Reflection import MethodBase
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 class NotLicensedException:
     @overload
     def __init__(self): ...
@@ -1003,6 +1051,7 @@ class NotLicensedException:
     def ToString(self) -> str: ...
 
 
+from System.Drawing import PointF
 class PathPoint:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -1022,6 +1071,9 @@ class PathPoint:
     def ToString(self) -> str: ...
 
 
+from System.Drawing import Color
+from Rhino.DocObjects import LineCapStyle
+from Rhino.DocObjects import LineJoinStyle
 class Pen:
     @overload
     def __init__(self): ...
@@ -1066,7 +1118,9 @@ class PythonCompiledCode:
     def ToString(self) -> str: ...
 
 
+from System.Reflection import Assembly
 from System import Action
+from Rhino.Commands import Command
 class PythonScript:
     @overload
     @staticmethod
@@ -1137,8 +1191,10 @@ class PythonScript:
     def ToString(self) -> str: ...
 
 
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Collections import IDictionary
+from System.Reflection import MethodBase
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 class RdkNotLoadedException:
     @overload
     def __init__(self): ...
@@ -1196,8 +1252,9 @@ class RiskyAction:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class SendLogMessageToCloudDelegate:
     @overload
     def __init__(self, object: object, method: IntPtr): ...
@@ -1232,8 +1289,9 @@ class SendLogMessageToCloudDelegate:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class SetClipRectProc:
     @overload
     def __init__(self, object: object, method: IntPtr): ...
@@ -1282,6 +1340,8 @@ class Skin:
     def ToString(self) -> str: ...
 
 
+from Rhino.DocObjects import TextObject
+from Rhino.DocObjects import InstanceDefinition
 from Rhino import RhinoDoc
 class TextFields:
     @overload
@@ -1439,10 +1499,12 @@ class TextFields:
 
 
 from System import IntPtr
+from Rhino.Geometry import Arc
 from System import AsyncCallback
 from System import IAsyncResult
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class VectorArcProc:
     @overload
     def __init__(self, object: object, method: IntPtr): ...
@@ -1477,8 +1539,9 @@ class VectorArcProc:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class VectorBitmapProc:
     @overload
     def __init__(self, object: object, method: IntPtr): ...
@@ -1513,8 +1576,9 @@ class VectorBitmapProc:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class VectorClipPathProc:
     @overload
     def __init__(self, object: object, method: IntPtr): ...
@@ -1549,8 +1613,9 @@ class VectorClipPathProc:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class VectorFillPolygonProc:
     @overload
     def __init__(self, object: object, method: IntPtr): ...
@@ -1585,8 +1650,9 @@ class VectorFillPolygonProc:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class VectorGradientProc:
     @overload
     def __init__(self, object: object, method: IntPtr): ...
@@ -1621,8 +1687,9 @@ class VectorGradientProc:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class VectorPathProc:
     @overload
     def __init__(self, object: object, method: IntPtr): ...
@@ -1657,8 +1724,9 @@ class VectorPathProc:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class VectorPointProc:
     @overload
     def __init__(self, object: object, method: IntPtr): ...
@@ -1693,8 +1761,9 @@ class VectorPointProc:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class VectorPolylineProc:
     @overload
     def __init__(self, object: object, method: IntPtr): ...
@@ -1729,8 +1798,9 @@ class VectorPolylineProc:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class VectorRoundedRectProc:
     @overload
     def __init__(self, object: object, method: IntPtr): ...
@@ -1765,8 +1835,9 @@ class VectorRoundedRectProc:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class VectorStringProc:
     @overload
     def __init__(self, object: object, method: IntPtr): ...
@@ -1798,6 +1869,7 @@ class VectorStringProc:
     def ToString(self) -> str: ...
 
 
+from System.Drawing import Size
 from System import IntPtr
 from Rhino import RhinoDoc
 class ViewCaptureWriter:
@@ -1816,7 +1888,14 @@ class ViewCaptureWriter:
 
 
 from System import Guid
+from Rhino.PlugIns import LicenseCapabilities
+from Rhino.PlugIns import ValidateProductKeyDelegate
+from Rhino.PlugIns import OnLeaseChangedDelegate
+from Rhino.PlugIns import VerifyLicenseKeyDelegate
+from Rhino.PlugIns import VerifyPreviousVersionLicenseDelegate
 from System import DateTime
+from Rhino.PlugIns import LicenseData
+from Rhino.PlugIns import ValidateResult
 class ZooClientParameters:
     @overload
     def __init__(self, productGuid: Guid, licenseGuid: Guid, productTitle: str, productBuildType: int, capabilities: LicenseCapabilities, licenseEntryTextMask: str, productPath: str, parentWindow: object, selectedLicenseType: LicenseTypes, validateProductKey: ValidateProductKeyDelegate, onLeaseChangedDelegate: OnLeaseChangedDelegate, verifyLicenseKeyDelegate: VerifyLicenseKeyDelegate, verifyPreviousVersionLicenseKeyDelegate: VerifyPreviousVersionLicenseDelegate): ...

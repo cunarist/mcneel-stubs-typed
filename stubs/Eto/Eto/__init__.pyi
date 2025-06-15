@@ -80,6 +80,7 @@ class ContentPropertyAttribute:
 
 
 
+from System import Action
 class DefaultStyleProvider:
     @overload
     def __init__(self): ...
@@ -274,6 +275,7 @@ class IControlObjectSource:
     def ControlObject(self) -> object: ...
 
 
+from System import IntPtr
 class IHandler:
     @property
     def ID(self) -> str: ...
@@ -317,8 +319,8 @@ class IStyleProvider:
     def Inherit(self) -> bool: ...
 
 
-from .Reflection import Assembly
-from .IO import Stream
+from System.Reflection import Assembly
+from System.IO import Stream
 class NamespaceInfo:
     @overload
     def __init__(self, ns: str): ...
@@ -375,8 +377,12 @@ class OperatingSystemPlatform:
     def ToString(self) -> str: ...
 
 
-from .Reflection import Assembly
-from .Collections.Generic import Dictionary
+from System import EventHandler
+from System.Reflection import Assembly
+from System import Func
+from System.Collections.Generic import Dictionary
+from System import IDisposable
+from System import Action
 class Platform:
     @overload
     def add_HandlerCreated(self, value: EventHandler) -> None: ...
@@ -524,14 +530,17 @@ class Platforms:
     def ToString(self) -> str: ...
 
 
-from .ComponentModel import PropertyChangedEventHandler
-from .Windows.Input import ICommand
-from .Collections.Generic import IEqualityComparer
-from .Collections.Generic import KeyCollection
-from .Collections.Generic import ValueCollection
-from .Collections.Generic import Enumerator
-from .Runtime.Serialization import SerializationInfo
-from .Runtime.Serialization import StreamingContext
+from System import Func
+from System import Delegate
+from System.ComponentModel import PropertyChangedEventHandler
+from System import Action
+from System.Windows.Input import ICommand
+from System.Collections.Generic import IEqualityComparer
+from System.Collections.Generic import KeyCollection
+from System.Collections.Generic import ValueCollection
+from System.Collections.Generic import Enumerator
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 class PropertyStore:
     @overload
     def __init__(self, parent: object): ...
@@ -629,6 +638,7 @@ class RuntimeNamePropertyAttribute:
     def ToString(self) -> str: ...
 
 
+from System import Action
 class Style:
     @overload
     @staticmethod
@@ -679,6 +689,8 @@ class UnhandledExceptionEventArgs:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from System import EventHandler
 class Widget:
     @overload
     def add_StyleChanged(self, value: EventHandler) -> None: ...

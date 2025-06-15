@@ -143,6 +143,8 @@ class ContentUI:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from System.Reflection import MethodInfo
 class CREATEFROMCPPPROC:
     @overload
@@ -178,6 +180,8 @@ class CREATEFROMCPPPROC:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from System.Reflection import MethodInfo
 class CREATEHOSTFROMCPPPROC:
     @overload

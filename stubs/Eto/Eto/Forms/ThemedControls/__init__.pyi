@@ -1895,7 +1895,9 @@ from Eto.Forms import TextAlignment
 from Eto.Drawing import Image
 from Eto.Forms import DialogDisplayMode
 from Eto.Forms import Button
+from System.Collections.ObjectModel import Collection
 from Eto.Forms import Control
+from System.Threading.Tasks import Task
 from System import EventHandler
 from Eto.Drawing import Point
 from Eto.Drawing import Rectangle
@@ -2473,6 +2475,7 @@ class ThemedMessageBoxHandler:
 
 from System import EventHandler
 from Eto.Forms import IndirectBinding
+from System.Collections.Generic import IList
 from Eto.Drawing import Padding
 from Eto.Drawing import Size
 from Eto.Forms import ContextMenu

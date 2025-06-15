@@ -6,6 +6,8 @@ from enum import Enum
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from System.Reflection import MethodInfo
 class DockCornerChangedEventHandler:
     @overload
@@ -39,9 +41,13 @@ class DockCornerChangedEventHandler:
 
 
 from System.Drawing import Bitmap
+from Grasshopper.GUI.Canvas import GH_Canvas
 from Grasshopper.GUI import GH_CanvasMouseEvent
+from Grasshopper.GUI.Canvas import GH_ObjectResponse
 from System.Drawing import Point
 from System.Drawing import PointF
+from System.Windows.Forms import ToolStripDropDownMenu
+from System.Windows.Forms import KeyEventArgs
 from Grasshopper.GUI import GH_TooltipDisplayEventArgs
 class GH_AlignWidget(GH_Widget):
     @overload
@@ -108,11 +114,16 @@ class GH_AlignWidget(GH_Widget):
     def ToString(self) -> str: ...
 
 
+from Grasshopper.GUI.Canvas import GH_Viewport
 from System.Drawing import Point
 from System.Drawing import PointF
+from Grasshopper.GUI.Canvas import GH_Canvas
 from System.Drawing import SizeF
 from System.Drawing import Size
 from System.Drawing import Bitmap
+from System.Windows.Forms import ToolStripDropDownMenu
+from System.Windows.Forms import KeyEventArgs
+from Grasshopper.GUI.Canvas import GH_ObjectResponse
 from Grasshopper.GUI import GH_CanvasMouseEvent
 from Grasshopper.GUI import GH_TooltipDisplayEventArgs
 class GH_CanvasWidget_FixedObject(GH_Widget):
@@ -183,7 +194,12 @@ from System.Drawing import Size
 from System.Drawing import Point
 from System.Drawing import PointF
 from System.Drawing import SizeF
+from System.Windows.Forms import ToolStripDropDownMenu
+from Grasshopper.GUI.Canvas import GH_Canvas
+from System.Windows.Forms import KeyEventArgs
+from Grasshopper.GUI.Canvas import GH_ObjectResponse
 from Grasshopper.GUI import GH_CanvasMouseEvent
+from Grasshopper.GUI.Canvas import GH_Viewport
 from Grasshopper.GUI import GH_TooltipDisplayEventArgs
 class GH_CompassWidget(GH_CanvasWidget_FixedObject):
     @overload
@@ -285,8 +301,12 @@ class GH_CompassWidget(GH_CanvasWidget_FixedObject):
 from System.Drawing import Bitmap
 from System.Drawing import Point
 from System.Drawing import PointF
+from Grasshopper.GUI.Canvas import GH_Canvas
 from Grasshopper.GUI import GH_CanvasMouseEvent
+from Grasshopper.GUI.Canvas import GH_ObjectResponse
 from Grasshopper.GUI import GH_TooltipDisplayEventArgs
+from System.Windows.Forms import ToolStripDropDownMenu
+from System.Windows.Forms import KeyEventArgs
 class GH_MarkovWidget(GH_Widget):
     @overload
     def __init__(self): ...
@@ -387,7 +407,11 @@ from System.Drawing import Bitmap
 from System.Drawing import PointF
 from Grasshopper.GUI import GH_TooltipDisplayEventArgs
 from System.Drawing import Point
+from Grasshopper.GUI.Canvas import GH_Canvas
 from Grasshopper.GUI import GH_CanvasMouseEvent
+from Grasshopper.GUI.Canvas import GH_ObjectResponse
+from System.Windows.Forms import ToolStripDropDownMenu
+from System.Windows.Forms import KeyEventArgs
 class GH_MessageWidget(GH_Widget):
     @overload
     def __init__(self): ...
@@ -459,10 +483,14 @@ class GH_MessageWidget(GH_Widget):
     def ToString(self) -> str: ...
 
 
+from System.Windows.Forms import ToolStripDropDownMenu
+from Grasshopper.GUI.Canvas import GH_Canvas
 from Grasshopper.GUI import GH_CanvasMouseEvent
+from Grasshopper.GUI.Canvas import GH_ObjectResponse
 from System.Drawing import Bitmap
 from System.Drawing import Point
 from System.Drawing import PointF
+from System.Windows.Forms import KeyEventArgs
 from Grasshopper.GUI import GH_TooltipDisplayEventArgs
 class GH_ProfilerWidget(GH_Widget):
     @overload
@@ -553,9 +581,13 @@ class GH_ProfilerWidget(GH_Widget):
     def ToString(self) -> str: ...
 
 
+from Grasshopper.GUI.Canvas import GH_Canvas
 from System.Drawing import Point
 from System.Drawing import PointF
 from System.Drawing import Bitmap
+from System.Windows.Forms import ToolStripDropDownMenu
+from System.Windows.Forms import KeyEventArgs
+from Grasshopper.GUI.Canvas import GH_ObjectResponse
 from Grasshopper.GUI import GH_CanvasMouseEvent
 from Grasshopper.GUI import GH_TooltipDisplayEventArgs
 class GH_Widget:
@@ -612,6 +644,8 @@ class GH_Widget:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from System.Reflection import MethodInfo
 class IconLimitChangedEventHandler:
     @overload
@@ -644,9 +678,11 @@ class IconLimitChangedEventHandler:
     def ToString(self) -> str: ...
 
 
+from Grasshopper.GUI.Canvas import GH_Canvas
 from System.Drawing import Bitmap
 from System.Drawing import Point
 from System.Drawing import PointF
+from System.Windows.Forms import ToolStripDropDownMenu
 class IGH_Widget:
     @overload
     def AppendToMenu(self, menu: ToolStripDropDownMenu) -> None: ...
@@ -675,6 +711,8 @@ class IGH_Widget:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from System.Reflection import MethodInfo
 class ProfilerThresholdChangedEventHandler:
     @overload
@@ -710,6 +748,8 @@ class ProfilerThresholdChangedEventHandler:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from System.Reflection import MethodInfo
 class ShowDurationChangedEventHandler:
     @overload
@@ -745,6 +785,8 @@ class ShowDurationChangedEventHandler:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from System.Reflection import MethodInfo
 class WidgetDrawModeChangedEventHandler:
     @overload
@@ -780,6 +822,8 @@ class WidgetDrawModeChangedEventHandler:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from System.Reflection import MethodInfo
 class WidgetLevelChangedEventHandler:
     @overload
@@ -815,6 +859,8 @@ class WidgetLevelChangedEventHandler:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from System.Reflection import MethodInfo
 class WidgetVisibleChangedEventHandler:
     @overload
@@ -850,6 +896,8 @@ class WidgetVisibleChangedEventHandler:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from System.Reflection import MethodInfo
 class WidgetVisibleChangedEventHandler:
     @overload
@@ -885,6 +933,8 @@ class WidgetVisibleChangedEventHandler:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from System.Reflection import MethodInfo
 class WidgetVisibleChangedEventHandler:
     @overload
@@ -920,6 +970,8 @@ class WidgetVisibleChangedEventHandler:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from System.Reflection import MethodInfo
 class WidgetVisibleChangedEventHandler:
     @overload
@@ -955,6 +1007,8 @@ class WidgetVisibleChangedEventHandler:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from System.Reflection import MethodInfo
 class WidgetVisibleChangedEventHandler:
     @overload

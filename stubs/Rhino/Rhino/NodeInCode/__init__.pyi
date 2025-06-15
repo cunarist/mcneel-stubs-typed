@@ -3,7 +3,7 @@ from enum import Enum
 
 
 
-from .Generic import IReadOnlyList
+from System.Collections.Generic import IReadOnlyList
 from System import Guid
 from System import Delegate
 class ComponentFunctionInfo:
@@ -80,7 +80,20 @@ class Components:
     def ToString(self) -> str: ...
 
 
-from .Expressions import Expression
+from System.Dynamic import GetMemberBinder
+from System.Dynamic import InvokeMemberBinder
+from System.Dynamic import GetIndexBinder
+from System.Dynamic import SetMemberBinder
+from System.Dynamic import DeleteMemberBinder
+from System.Dynamic import ConvertBinder
+from System.Dynamic import CreateInstanceBinder
+from System.Dynamic import InvokeBinder
+from System.Dynamic import BinaryOperationBinder
+from System.Dynamic import UnaryOperationBinder
+from System.Dynamic import SetIndexBinder
+from System.Dynamic import DeleteIndexBinder
+from System.Linq.Expressions import Expression
+from System.Dynamic import DynamicMetaObject
 class NodeInCodeTable:
     @overload
     def __init__(self, items: Iterable[ComponentFunctionInfo]): ...

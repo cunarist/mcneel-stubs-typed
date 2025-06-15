@@ -15,6 +15,8 @@ class IAssemblyRestrictedObject:
 
 
 from System import DateTime
+from System.Collections.Generic import ICollection
+from System.Collections.Generic import IDictionary
 from System import Action
 from System import Nullable
 from System import Func

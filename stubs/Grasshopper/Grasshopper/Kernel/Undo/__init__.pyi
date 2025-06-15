@@ -92,6 +92,8 @@ class GH_UndoAction:
 
 from System.Collections import IDictionary
 from System.Reflection import MethodBase
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 class GH_UndoException:
     @overload
     def __init__(self, message: str): ...
@@ -135,6 +137,7 @@ class GH_UndoException:
 
 from System import Guid
 from System import DateTime
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import GH_Document
 class GH_UndoRecord:
     @overload

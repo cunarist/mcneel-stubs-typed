@@ -21,8 +21,9 @@ __all__ = ['Attributes', 'Components', 'Data', 'Expressions', 'GDL', 'Geometry',
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class AttributesChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -57,8 +58,9 @@ class AttributesChangedEventHandler:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class AutoSaveFileFormatChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -91,11 +93,13 @@ class AutoSaveFileFormatChangedEventHandler:
 
 
 from System import IntPtr
-from .Base import GH_ColourPickerEventArgs
+from Grasshopper.GUI import GH_ColourPicker
+from Grasshopper.GUI.Base import GH_ColourPickerEventArgs
 from System import AsyncCallback
 from System import IAsyncResult
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class ColourEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -130,8 +134,9 @@ class ColourEventHandler:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class ConsoleFamilyChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -166,8 +171,9 @@ class ConsoleFamilyChangedEventHandler:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class ContextChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -200,10 +206,12 @@ class ContextChangedEventHandler:
 
 
 from System import IntPtr
+from System.Drawing import Color
 from System import AsyncCallback
 from System import IAsyncResult
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class DefaultPreviewColourChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -236,10 +244,12 @@ class DefaultPreviewColourChangedEventHandler:
 
 
 from System import IntPtr
+from System.Drawing import Color
 from System import AsyncCallback
 from System import IAsyncResult
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class DefaultSelectedPreviewColourChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -274,8 +284,9 @@ class DefaultSelectedPreviewColourChangedEventHandler:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class DisplayExpiredEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -310,8 +321,9 @@ class DisplayExpiredEventHandler:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class DocumentAddedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -346,8 +358,9 @@ class DocumentAddedEventHandler:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class DocumentRemovedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -382,8 +395,9 @@ class DocumentRemovedEventHandler:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class EnableAutoSaveChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -418,8 +432,9 @@ class EnableAutoSaveChangedEventHandler:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class EnabledChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -454,8 +469,9 @@ class EnabledChangedEventHandler:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class EnableSolutionsChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -488,10 +504,12 @@ class EnableSolutionsChangedEventHandler:
 
 
 from System import IntPtr
+from System.IO import WatcherChangeTypes
 from System import AsyncCallback
 from System import IAsyncResult
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class FileChanged:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -526,8 +544,9 @@ class FileChanged:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class FileChangedSimple:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -562,8 +581,9 @@ class FileChangedSimple:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class FileEvent:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -598,8 +618,9 @@ class FileEvent:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class FilePathChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -631,12 +652,15 @@ class FilePathChangedEventHandler:
     def ToString(self) -> str: ...
 
 
-from .Generic import IList
+from System.Collections.Generic import IList
 from System import TimeSpan
-from .Forms import ToolStripDropDown
+from System.Windows.Forms import ToolStripDropDown
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from System import Guid
-from .Undo import IGH_UndoAction
-from .Undo import GH_UndoRecord
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
+from System.Drawing import Bitmap
 class GH_ActiveObject(GH_DocumentObject):
     @overload
     def add_AttributesChanged(self, obj: AttributesChangedEventHandler) -> None: ...
@@ -831,8 +855,9 @@ class GH_ActiveObject(GH_DocumentObject):
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class GH_ActiveObjectFilter:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -905,6 +930,7 @@ class GH_Arrange(Enum):
     MoveBackwards = 3
 
 
+from System.IO import SearchOption
 class GH_AssemblyFolderInfo:
     @overload
     def __init__(self, folder: str, type: GH_PluginFolderType): ...
@@ -922,7 +948,9 @@ class GH_AssemblyFolderInfo:
     def ToString(self) -> str: ...
 
 
+from System.Drawing import Bitmap
 from System import Guid
+from System.Reflection import Assembly
 class GH_AssemblyInfo:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -968,6 +996,8 @@ class GH_AssemblyInfo:
     def ToString(self) -> str: ...
 
 
+from System.Reflection import Assembly
+from System.Drawing import Bitmap
 from System import Guid
 class GH_AssemblyInfoStub(GH_AssemblyInfo):
     @overload
@@ -1044,6 +1074,8 @@ class GH_AttributesChangedEventArgs:
     def ToString(self) -> str: ...
 
 
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 class GH_Author:
     @overload
     def __init__(self): ...
@@ -1226,6 +1258,7 @@ class GH_AutoSaveTrigger(Enum):
     object_generic = 7
 
 
+from Rhino.DocObjects import ObjectAttributes
 from Rhino import RhinoDoc
 class GH_BakeUtility:
     @overload
@@ -1280,13 +1313,18 @@ class GH_ClipboardType(Enum):
     Global = 2
 
 
-from .Generic import IList
-from .Forms import ToolStripDropDown
+from System.Collections.Generic import IList
+from System.Windows.Forms import ToolStripDropDown
 from System import TimeSpan
+from Rhino.Geometry import BoundingBox
 from Rhino import RhinoDoc
+from Rhino.DocObjects import ObjectAttributes
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from System import Guid
-from .Undo import IGH_UndoAction
-from .Undo import GH_UndoRecord
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
+from System.Drawing import Bitmap
 class GH_Component(GH_ActiveObject):
     @overload
     def add_AttributesChanged(self, obj: AttributesChangedEventHandler) -> None: ...
@@ -1523,6 +1561,9 @@ class GH_ComponentPaletteStyle(Enum):
 
 
 from System import Guid
+from System.IO import BinaryWriter
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 class GH_ComponentParamServer:
     def __iter__(self) -> Iterator[IGH_Param]: ...
     @overload
@@ -1655,12 +1696,13 @@ class GH_ComponentParamServer:
     def WriteParamHashData(writer: BinaryWriter, param: IGH_Param, fields: GH_ParamHashFields) -> None: ...
 
 
-from .ObjectModel import ReadOnlyCollection
+from System.Collections.ObjectModel import ReadOnlyCollection
 from System import Guid
-from .Forms import AutoCompleteStringCollection
-from .Generic import IList
-from .Graphs import IGH_Graph
-from .Ribbon import GH_Layout
+from System.Windows.Forms import AutoCompleteStringCollection
+from System.Collections.Generic import IList
+from System.Drawing import Bitmap
+from Grasshopper.Kernel.Graphs import IGH_Graph
+from Grasshopper.GUI.Ribbon import GH_Layout
 class GH_ComponentServer:
     @overload
     def __init__(self): ...
@@ -1800,7 +1842,7 @@ class GH_ComponentServer:
     def UpdateRibbonUI() -> None: ...
 
 
-from .ObjectModel import ReadOnlyCollection
+from System.Collections.ObjectModel import ReadOnlyCollection
 from System import Guid
 class GH_ConnectivityDiagram:
     @overload
@@ -1829,7 +1871,7 @@ class GH_ConnectivityDiagram:
     def ToString(self) -> str: ...
 
 
-from .ObjectModel import ReadOnlyCollection
+from System.Collections.ObjectModel import ReadOnlyCollection
 from System import Guid
 class GH_ConnectivityDisparity:
     @overload
@@ -1861,7 +1903,7 @@ class GH_ConnectivityDisparity:
 
 
 from System import Guid
-from .ObjectModel import ReadOnlyCollection
+from System.Collections.ObjectModel import ReadOnlyCollection
 class GH_ConnectivityNode:
     @overload
     def __init__(self, other: GH_ConnectivityNode): ...
@@ -1887,55 +1929,94 @@ class GH_Conversion(Enum):
     Both = 2
 
 
-from .Expressions import GH_Variant
+from Rhino.Geometry import Line
+from Rhino.Geometry import Rectangle3d
+from Rhino.Geometry import Circle
+from Rhino.Geometry import Arc
+from Rhino.Geometry import Curve
+from Rhino.Geometry import Surface
+from Rhino.Geometry import Brep
+from Rhino.Geometry import Extrusion
+from Rhino.Geometry import SubD
+from Rhino.Geometry import Mesh
+from Rhino.Geometry import PointCloud
+from Rhino.Geometry import Hatch
+from Rhino.Geometry import TextDot
+from Rhino.Geometry import TextEntity
+from Rhino.Geometry import Leader
+from Rhino.Geometry import Dimension
+from Rhino.Geometry import AnnotationBase
+from Grasshopper.Kernel.Expressions import GH_Variant
 from System import DateTime
 from System import Guid
-from .Types import GH_Time
-from .Types import GH_String
-from .Types import GH_Guid
-from .Types import GH_Colour
-from .Types import GH_Interval
-from .Types import GH_Interval2D
-from .Types import GH_Matrix
-from .Types import GH_Point
-from .Types import GH_Vector
-from .Types import GH_Plane
-from .Types import GH_Box
-from .Types import GH_Line
-from .Types import GH_Rectangle
-from .Types import GH_Circle
-from .Types import GH_Arc
-from .Types import GH_Curve
-from .Types import GH_Surface
-from .Types import GH_Brep
-from .Types import GH_Extrusion
-from .Types import GH_SubD
-from .Types import GH_Mesh
-from .Types import GH_MeshFace
-from .Types import GH_PointCloud
-from .Types import GH_InstanceReference
-from .Types import GH_Hatch
-from .Types import GH_TextEntity
-from .Types import GH_TextDot
-from .Types import GH_Leader
-from .Types import GH_LinearDimension
-from .Types import GH_RadialDimension
-from .Types import GH_AngularDimension
-from .Types import GH_OrdinateDimension
-from .Types import GH_Centermark
-from .Types import GH_Dimension
-from .Types import GH_AnnotationBase
-from .Types import GH_Light
-from .Types import Complex
-from .Generic import SortedDictionary
-from .Types import UVInterval
+from Grasshopper.Kernel.Types import GH_Time
+from Grasshopper.Kernel.Types import GH_String
+from Grasshopper.Kernel.Types import GH_Guid
+from Grasshopper.Kernel.Types import GH_Colour
+from Grasshopper.Kernel.Types import GH_Interval
+from Grasshopper.Kernel.Types import GH_Interval2D
+from Grasshopper.Kernel.Types import GH_Matrix
+from Grasshopper.Kernel.Types import GH_Point
+from Grasshopper.Kernel.Types import GH_Vector
+from Grasshopper.Kernel.Types import GH_Plane
+from Grasshopper.Kernel.Types import GH_Box
+from Grasshopper.Kernel.Types import GH_Line
+from Grasshopper.Kernel.Types import GH_Rectangle
+from Grasshopper.Kernel.Types import GH_Circle
+from Grasshopper.Kernel.Types import GH_Arc
+from Grasshopper.Kernel.Types import GH_Curve
+from Grasshopper.Kernel.Types import GH_Surface
+from Grasshopper.Kernel.Types import GH_Brep
+from Grasshopper.Kernel.Types import GH_Extrusion
+from Grasshopper.Kernel.Types import GH_SubD
+from Grasshopper.Kernel.Types import GH_Mesh
+from Grasshopper.Kernel.Types import GH_MeshFace
+from Grasshopper.Kernel.Types import GH_PointCloud
+from Grasshopper.Kernel.Types import GH_InstanceReference
+from Grasshopper.Kernel.Types import GH_Hatch
+from Grasshopper.Kernel.Types import GH_TextEntity
+from Grasshopper.Kernel.Types import GH_TextDot
+from Grasshopper.Kernel.Types import GH_Leader
+from Grasshopper.Kernel.Types import GH_LinearDimension
+from Grasshopper.Kernel.Types import GH_RadialDimension
+from Grasshopper.Kernel.Types import GH_AngularDimension
+from Grasshopper.Kernel.Types import GH_OrdinateDimension
+from Grasshopper.Kernel.Types import GH_Centermark
+from Grasshopper.Kernel.Types import GH_Dimension
+from Grasshopper.Kernel.Types import GH_AnnotationBase
+from Grasshopper.Kernel.Types import GH_Light
+from Grasshopper.Kernel.Types import Complex
+from System.Drawing import Color
+from System.Globalization import CultureInfo
+from System.Collections.Generic import SortedDictionary
+from Rhino.Geometry import Interval
+from Grasshopper.Kernel.Types import UVInterval
+from Rhino.Geometry import Matrix
+from Rhino.Geometry import Point3d
+from Rhino.Geometry import Vector3d
+from Rhino.Geometry import Plane
+from Rhino.Geometry import BoundingBox
+from Rhino.Geometry import Box
+from Rhino.Geometry import Light
+from System.Drawing import RectangleF
+from System.Drawing import Rectangle
+from System.Drawing import SizeF
+from System.Drawing import Size
+from System.Drawing import PointF
+from System.Drawing import Point
+from System.IO import Stream
 from Rhino import RhinoDoc
-from .Types import IGH_Goo
-from .Types import IGH_GeometricGoo
-from .Types import GH_Boolean
-from .Types import GH_Integer
-from .Types import GH_Number
-from .Types import GH_ComplexNumber
+from Rhino.DocObjects import ObjectType
+from Rhino.DocObjects import RhinoObject
+from Grasshopper.Kernel.Types import IGH_Goo
+from Grasshopper.Kernel.Types import IGH_GeometricGoo
+from Rhino.DocObjects import ObjRef
+from Rhino.Geometry import GeometryBase
+from Rhino.Runtime import CommonObject
+from Grasshopper.Kernel.Types import GH_Boolean
+from Grasshopper.Kernel.Types import GH_Integer
+from Grasshopper.Kernel.Types import GH_Number
+from Grasshopper.Kernel.Types import GH_ComplexNumber
 class GH_Convert:
     PureDateTicks: int
     PureTimeTicks: int
@@ -2735,7 +2816,7 @@ class GH_Convert:
     def ToVector3d_Secondary(data: object, rc: Vector3d) -> Tuple[bool, Vector3d]: ...
 
 
-from .Generic import SortedDictionary
+from System.Collections.Generic import SortedDictionary
 class GH_CustomEventServer:
     @overload
     def __init__(self, consumer: IGH_EventConsumer): ...
@@ -2877,7 +2958,7 @@ class GH_DocModifiedEventArgs:
     def ToString(self) -> str: ...
 
 
-from .ObjectModel import ReadOnlyCollection
+from System.Collections.ObjectModel import ReadOnlyCollection
 class GH_DocObjectEventArgs:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -2914,20 +2995,32 @@ class GH_DocSettingsEventArgs:
     def ToString(self) -> str: ...
 
 
-from .Alignment import GH_Align
-from .Alignment import GH_Distribute
+from System.Drawing import PointF
+from Grasshopper.GUI.Alignment import GH_Align
+from Grasshopper.GUI.Alignment import GH_Distribute
+from System.Drawing import Size
 from System import TimeSpan
 from System import Guid
-from .Undo import GH_UndoRecord
+from Grasshopper.Kernel.Undo import GH_UndoRecord
+from System.Drawing import Point
+from System.Drawing import RectangleF
+from System.Drawing import Color
+from Rhino.Geometry import MeshingParameters
+from Rhino.Geometry import BoundingBox
+from Rhino.Display import DisplayPipeline
 from Rhino import RhinoDoc
-from .RemotePanel import RcpLayout
-from .Generic import SortedDictionary
-from .Expressions import GH_Variant
-from .Expressions import GH_ExpressionParser
-from .Undo import GH_UndoServer
-from .Generic import IList
-from .Generic import SortedList
-from .Generic import HashSet
+from Grasshopper.GUI.RemotePanel import RcpLayout
+from System.Collections.Generic import SortedDictionary
+from Grasshopper.Kernel.Expressions import GH_Variant
+from Grasshopper.Kernel.Expressions import GH_ExpressionParser
+from System.Drawing import Bitmap
+from Grasshopper.Kernel.Undo import GH_UndoServer
+from Rhino.Commands import Command
+from System.Collections.Generic import IList
+from System.Collections.Generic import SortedList
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import HashSet
 class GH_Document:
     @overload
     def __init__(self): ...
@@ -3491,7 +3584,9 @@ class GH_DocumentEventServer:
     def ToString(self) -> str: ...
 
 
-from .Forms import DialogResult
+from System.Windows.Forms import DialogResult
+from System.Drawing import Bitmap
+from System.Drawing import Size
 from System import DateTime
 class GH_DocumentIO:
     @overload
@@ -3573,18 +3668,26 @@ class GH_DocumentIO:
 
 
 from System import Guid
-from .Undo import IGH_UndoAction
-from .Undo import GH_UndoRecord
-from .Forms import ToolStripDropDown
-from .Forms import ToolStrip
-from .Forms import ToolStripSeparator
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
+from System.Windows.Forms import ToolStripDropDown
+from System.Windows.Forms import ToolStrip
+from System.Windows.Forms import ToolStripSeparator
 from System import EventHandler
-from .Forms import ToolStripMenuItem
-from .Forms import ToolStripItem
-from .Forms import ToolStripTextBox
+from System.Drawing import Image
+from System.Windows.Forms import ToolStripMenuItem
+from System.Windows.Forms import ToolStripItem
+from Grasshopper.GUI import KeyDownEventHandler
+from Grasshopper.GUI import TextChangedEventHandler
+from System.Windows.Forms import ToolStripTextBox
 from System import Decimal
-from .Base import GH_DigitScrollerBase
-from .Forms import Control
+from Grasshopper.GUI.Base import GH_DigitScrollerBase
+from System.Windows.Forms import Control
+from System.Drawing import Color
+from Grasshopper.GUI import GH_ColourPicker
+from System.Drawing import Bitmap
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 class GH_DocumentObject(GH_InstanceDescription):
     @overload
     def add_AttributesChanged(self, obj: AttributesChangedEventHandler) -> None: ...
@@ -3788,6 +3891,11 @@ class GH_DocumentObject(GH_InstanceDescription):
 
 
 from System import DateTime
+from System.Drawing import Point
+from System.Drawing import Size
+from System.Drawing import Bitmap
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 class GH_DocumentProperties:
     @overload
     def __init__(self): ...
@@ -3956,7 +4064,7 @@ class GH_DocumentTreeNode:
     def ToString(self) -> str: ...
 
 
-from .Undo import GH_UndoRecord
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 class GH_DocUndoEventArgs:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -4046,8 +4154,8 @@ class GH_FileSystemEventServer:
 
 
 from System import TimeSpan
-from .Forms import Control
-from .Forms import Form
+from System.Windows.Forms import Control
+from System.Windows.Forms import Form
 class GH_FileWatcher:
     @overload
     @staticmethod
@@ -4108,6 +4216,11 @@ class GH_Filter(Enum):
     Exclude = 2
 
 
+from System.Drawing import FontStyle
+from System.Drawing import Font
+from System.Drawing import FontFamily
+from System.Drawing import Size
+from System.Drawing import SizeF
 class GH_FontServer:
     @overload
     @staticmethod
@@ -4234,47 +4347,76 @@ class GH_FontServer:
 
 
 from Rhino import UnitSystem
-from .Forms import Keys
-from .Types import Complex
+from System.Windows.Forms import Keys
+from Grasshopper.Kernel.Types import Complex
+from Rhino.Geometry import Interval
+from Rhino.Geometry import Point3d
+from Rhino.Geometry import Vector3d
+from Rhino.Geometry import Plane
+from Rhino.Geometry import Rectangle3d
+from Rhino.Geometry import Box
+from Rhino.Geometry import BoundingBox
+from Rhino.Geometry import Line
+from Rhino.Geometry import Circle
+from Rhino.Geometry import Arc
+from Rhino.Geometry import Transform
+from Rhino.Geometry import MeshFace
+from Rhino.Geometry import Curve
+from Rhino.Geometry import Surface
+from Rhino.Geometry import Brep
+from Rhino.Geometry import Extrusion
+from Rhino.Geometry import SubD
+from Rhino.Geometry import Mesh
+from Rhino.Geometry import PointCloud
+from Rhino.Geometry import Hatch
+from Rhino.Geometry import TextDot
+from Rhino.Geometry import AnnotationBase
+from Rhino.Geometry import Light
+from Rhino.Geometry import InstanceReferenceGeometry
+from Rhino.Geometry import DetailView
 from System import IFormatProvider
-from .Types import GH_Boolean
-from .Types import GH_Integer
-from .Types import GH_Matrix
-from .Types import GH_Number
-from .Types import GH_ComplexNumber
-from .Types import GH_Colour
-from .Types import GH_Time
+from Grasshopper.Kernel.Types import GH_Boolean
+from Grasshopper.Kernel.Types import GH_Integer
+from Grasshopper.Kernel.Types import GH_Matrix
+from Rhino.Geometry import Matrix
+from Grasshopper.Kernel.Types import GH_Number
+from Grasshopper.Kernel.Types import GH_ComplexNumber
+from Grasshopper.Kernel.Types import GH_Colour
+from System.Drawing import Color
+from Grasshopper.Kernel.Types import GH_Time
 from System import DateTime
-from .Types import GH_Interval
-from .Types import GH_Interval2D
-from .Types import GH_Point
-from .Types import GH_Hatch
-from .Types import GH_TextEntity
-from .Types import GH_TextDot
-from .Types import GH_Leader
-from .Types import GH_Dimension
-from .Types import GH_LinearDimension
-from .Types import GH_RadialDimension
-from .Types import GH_AngularDimension
-from .Types import GH_OrdinateDimension
-from .Types import GH_Centermark
-from .Types import GH_InstanceReference
-from .Types import GH_DetailView
-from .Types import GH_Vector
-from .Types import GH_Plane
-from .Types import GH_Line
-from .Types import GH_Circle
-from .Types import GH_Arc
-from .Types import GH_Curve
-from .Types import GH_Surface
-from .Types import GH_Brep
-from .Types import GH_Extrusion
-from .Types import GH_SubD
-from .Types import GH_Box
-from .Types import GH_Mesh
-from .Types import GH_MeshFace
-from .Types import GH_PointCloud
-from .Types import IGH_GeometricGoo
+from Grasshopper.Kernel.Types import GH_Interval
+from Grasshopper.Kernel.Types import GH_Interval2D
+from Grasshopper.Kernel.Types import GH_Point
+from Grasshopper.Kernel.Types import GH_Hatch
+from Rhino.Geometry import TextEntity
+from Grasshopper.Kernel.Types import GH_TextEntity
+from Grasshopper.Kernel.Types import GH_TextDot
+from Grasshopper.Kernel.Types import GH_Leader
+from Grasshopper.Kernel.Types import GH_Dimension
+from Grasshopper.Kernel.Types import GH_LinearDimension
+from Grasshopper.Kernel.Types import GH_RadialDimension
+from Grasshopper.Kernel.Types import GH_AngularDimension
+from Grasshopper.Kernel.Types import GH_OrdinateDimension
+from Grasshopper.Kernel.Types import GH_Centermark
+from Grasshopper.Kernel.Types import GH_InstanceReference
+from Grasshopper.Kernel.Types import GH_DetailView
+from Grasshopper.Kernel.Types import GH_Vector
+from Grasshopper.Kernel.Types import GH_Plane
+from Grasshopper.Kernel.Types import GH_Line
+from Grasshopper.Kernel.Types import GH_Circle
+from Grasshopper.Kernel.Types import GH_Arc
+from Grasshopper.Kernel.Types import GH_Curve
+from Grasshopper.Kernel.Types import GH_Surface
+from Grasshopper.Kernel.Types import GH_Brep
+from Grasshopper.Kernel.Types import GH_Extrusion
+from Grasshopper.Kernel.Types import GH_SubD
+from Grasshopper.Kernel.Types import GH_Box
+from Grasshopper.Kernel.Types import GH_Mesh
+from Grasshopper.Kernel.Types import GH_MeshFace
+from Grasshopper.Kernel.Types import GH_PointCloud
+from Grasshopper.Kernel.Types import IGH_GeometricGoo
+from System.Drawing import Font
 class GH_Format:
     @overload
     @staticmethod
@@ -4592,7 +4734,9 @@ class GH_GetterResult(Enum):
     cancel = 2
 
 
+from System.Drawing import Bitmap
 from System import Guid
+from System.Reflection import Assembly
 class GH_GHALoadingEventArgs:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -4616,6 +4760,8 @@ class GH_GHALoadingEventArgs:
     def ToString(self) -> str: ...
 
 
+from GH_IO.Serialization import GH_Archive
+from GH_IO.Serialization import GH_IReader
 class GH_GHXHarvester:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -4645,8 +4791,9 @@ class GH_GHXHarvester:
     def ToString(self) -> str: ...
 
 
-from .Graphs import IGH_Graph
+from Grasshopper.Kernel.Graphs import IGH_Graph
 from System import Guid
+from System.Drawing import Image
 class GH_GraphProxy:
     @overload
     def __init__(self, nGraph: IGH_Graph, T: type): ...
@@ -4738,6 +4885,8 @@ class GH_IncrementalParamNameConstructor:
 
 
 from System import Guid
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 class GH_InstanceDescription:
     @overload
     def __init__(self): ...
@@ -5071,8 +5220,13 @@ class GH_MathUtil:
     def WrapInteger(number: int, lower: int, upper: int) -> int: ...
 
 
-from .Drawing2D import WrapMode
-from .Forms import Padding
+from System.Drawing import Bitmap
+from System.Drawing.Drawing2D import WrapMode
+from System.Drawing import Color
+from System.Drawing import Rectangle
+from System.Drawing import Size
+from System.Windows.Forms import Padding
+from System.Drawing import Image
 class GH_MemoryBitmap:
     @overload
     def __init__(self, bitmap: Bitmap): ...
@@ -5266,6 +5420,7 @@ class GH_ParamData(Enum):
 
 
 from Rhino import RhinoDoc
+from Rhino.Commands import RunMode
 class GH_ParameterContext:
     @overload
     def __init__(self, name: str, rhDoc: RhinoDoc, runmode: RunMode): ...
@@ -5347,6 +5502,7 @@ class GH_ParamWireDisplay(Enum):
     hidden = 2
 
 
+from System.Globalization import CultureInfo
 class GH_PatternMatching:
     @overload
     @staticmethod
@@ -5414,6 +5570,11 @@ class GH_PluginFolderType(Enum):
     UserFolder = 3
 
 
+from Rhino.Display import DisplayPipeline
+from Rhino.Display import RhinoViewport
+from Rhino.Display import DisplayMaterial
+from System.Drawing import Color
+from Rhino.Geometry import MeshingParameters
 class GH_PreviewArgs:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -5443,6 +5604,10 @@ class GH_PreviewArgs:
     def ToString(self) -> str: ...
 
 
+from System.Drawing import Region
+from System.Drawing import RectangleF
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 class GH_PreviewBoundary:
     @overload
     def __init__(self, points: Iterable[PointF]): ...
@@ -5496,6 +5661,10 @@ class GH_PreviewMesh(Enum):
     Custom = 4
 
 
+from Rhino.Display import RhinoViewport
+from Rhino.Display import DisplayPipeline
+from Rhino.Display import DisplayMaterial
+from Rhino.Geometry import MeshingParameters
 class GH_PreviewMeshArgs:
     @overload
     def __init__(self, vp: RhinoViewport, pl: DisplayPipeline, mat: DisplayMaterial, meshParams: MeshingParameters): ...
@@ -5523,6 +5692,14 @@ class GH_PreviewMode(Enum):
     Shaded = 2
 
 
+from System.Drawing import Color
+from Rhino.Geometry import Point3d
+from Rhino.Geometry import Line
+from Rhino.Geometry import Plane
+from Rhino.Geometry import Curve
+from Rhino.Geometry import Brep
+from Rhino.Geometry import Box
+from Rhino.Geometry import Mesh
 class GH_PreviewUtil:
     @overload
     def __init__(self): ...
@@ -5568,6 +5745,9 @@ class GH_PreviewUtil:
     def ToString(self) -> str: ...
 
 
+from Rhino.Display import RhinoViewport
+from Rhino.Display import DisplayPipeline
+from System.Drawing import Color
 class GH_PreviewWireArgs:
     @overload
     def __init__(self, vp: RhinoViewport, pl: DisplayPipeline, col: Color, thickness: int): ...
@@ -5631,72 +5811,86 @@ class GH_Process:
     def ToString(self) -> str: ...
 
 
-from .Forms import AutoValidate
-from .Forms import ValidationConstraints
-from .Forms import IButtonControl
-from .Forms import Form
+from System.Drawing import Size
+from System.Windows.Forms import AutoValidate
+from System.Drawing import Color
+from System.Windows.Forms import ValidationConstraints
+from System.Windows.Forms import IButtonControl
+from System.Windows.Forms import Form
 from System import EventHandler
-from .Forms import AutoSizeMode
-from .Forms import FormBorderStyle
-from .Forms import DialogResult
-from .Forms import MenuStrip
-from .Forms import Padding
-from .Forms import MainMenu
-from .Forms import SizeGripStyle
-from .Forms import FormStartPosition
-from .Forms import FormWindowState
-from .Forms import FormClosingEventHandler
-from .Forms import FormClosedEventHandler
-from .Forms import InputLanguageChangedEventHandler
-from .Forms import InputLanguageChangingEventHandler
-from .Forms import MdiLayout
-from .Forms import DpiChangedEventHandler
-from .Forms import IWin32Window
-from .Forms import BindingContext
-from .Forms import Control
-from .Forms import AutoScaleMode
-from .Forms import HScrollProperties
-from .Forms import VScrollProperties
-from .Forms import DockPaddingEdges
-from .Forms import ScrollEventHandler
-from .Forms import AnchorStyles
-from .Forms.Layout import LayoutEngine
-from .Forms import ImageLayout
-from .Forms import ContextMenu
-from .Forms import ContextMenuStrip
-from .Forms import Cursor
-from .Forms import ControlBindingsCollection
-from .Forms import DockStyle
-from .Forms import RightToLeft
+from System.Windows.Forms import AutoSizeMode
+from System.Windows.Forms import FormBorderStyle
+from System.Drawing import Rectangle
+from System.Drawing import Point
+from System.Windows.Forms import DialogResult
+from System.ComponentModel import CancelEventHandler
+from System.Drawing import Icon
+from System.Windows.Forms import MenuStrip
+from System.Windows.Forms import Padding
+from System.Windows.Forms import MainMenu
+from System.Windows.Forms import SizeGripStyle
+from System.Windows.Forms import FormStartPosition
+from System.Windows.Forms import FormWindowState
+from System.Windows.Forms import FormClosingEventHandler
+from System.Windows.Forms import FormClosedEventHandler
+from System.Windows.Forms import InputLanguageChangedEventHandler
+from System.Windows.Forms import InputLanguageChangingEventHandler
+from System.Windows.Forms import MdiLayout
+from System.Windows.Forms import DpiChangedEventHandler
+from System.Windows.Forms import IWin32Window
+from System.Windows.Forms import BindingContext
+from System.Windows.Forms import Control
+from System.Drawing import SizeF
+from System.Windows.Forms import AutoScaleMode
+from System.Windows.Forms import HScrollProperties
+from System.Windows.Forms import VScrollProperties
+from System.Windows.Forms import DockPaddingEdges
+from System.Windows.Forms import ScrollEventHandler
+from System.Windows.Forms import AnchorStyles
+from System.Windows.Forms.Layout import LayoutEngine
+from System.Drawing import Image
+from System.Windows.Forms import ImageLayout
+from System.Windows.Forms import ContextMenu
+from System.Windows.Forms import ContextMenuStrip
+from System.Windows.Forms import Cursor
+from System.Windows.Forms import ControlBindingsCollection
+from System.Windows.Forms import DockStyle
+from System.Drawing import Font
+from System.Windows.Forms import RightToLeft
+from System.ComponentModel import ISite
 from System import Delegate
 from System import IAsyncResult
-from .Forms import Message
-from .Forms import AccessibleObject
-from .Forms import AccessibleRole
-from .Forms import ControlCollection
+from System.Windows.Forms import Message
+from System.Windows.Forms import AccessibleObject
+from System.Windows.Forms import AccessibleRole
+from System.Windows.Forms import ControlCollection
 from System import IntPtr
-from .Forms import IWindowTarget
-from .Forms import ControlEventHandler
-from .Forms import DragEventHandler
-from .Forms import GiveFeedbackEventHandler
-from .Forms import HelpEventHandler
-from .Forms import InvalidateEventHandler
-from .Forms import PaintEventHandler
-from .Forms import QueryContinueDragEventHandler
-from .Forms import QueryAccessibilityHelpEventHandler
-from .Forms import KeyEventHandler
-from .Forms import KeyPressEventHandler
-from .Forms import LayoutEventHandler
-from .Forms import MouseEventHandler
-from .Forms import PreviewKeyDownEventHandler
-from .Forms import UICuesEventHandler
-from .Forms import DragDropEffects
-from .Forms import GetChildAtPointSkip
-from .Forms import IContainerControl
-from .Forms import PreProcessControlState
-from .Forms import BoundsSpecified
-from .Forms import ImeMode
-from .Remoting import ObjRef
+from System.Drawing import Region
+from System.Windows.Forms import IWindowTarget
+from System.Windows.Forms import ControlEventHandler
+from System.Windows.Forms import DragEventHandler
+from System.Windows.Forms import GiveFeedbackEventHandler
+from System.Windows.Forms import HelpEventHandler
+from System.Windows.Forms import InvalidateEventHandler
+from System.Windows.Forms import PaintEventHandler
+from System.Windows.Forms import QueryContinueDragEventHandler
+from System.Windows.Forms import QueryAccessibilityHelpEventHandler
+from System.Windows.Forms import KeyEventHandler
+from System.Windows.Forms import KeyPressEventHandler
+from System.Windows.Forms import LayoutEventHandler
+from System.Windows.Forms import MouseEventHandler
+from System.Windows.Forms import PreviewKeyDownEventHandler
+from System.Windows.Forms import UICuesEventHandler
+from System.Drawing import Graphics
+from System.Windows.Forms import DragDropEffects
+from System.Drawing import Bitmap
+from System.Windows.Forms import GetChildAtPointSkip
+from System.Windows.Forms import IContainerControl
+from System.Windows.Forms import PreProcessControlState
+from System.Windows.Forms import BoundsSpecified
+from System.Windows.Forms import ImeMode
+from System.ComponentModel import IContainer
+from System.Runtime.Remoting import ObjRef
 class GH_ProcessForm:
     @overload
     def __init__(self): ...
@@ -6726,7 +6920,8 @@ class GH_ProfilerMode(Enum):
     Memory = 2
 
 
-from .Special import GH_Group
+from System.Drawing import PointF
+from Grasshopper.Kernel.Special import GH_Group
 class GH_RelevantObjectData:
     @overload
     def __init__(self, pt: PointF): ...
@@ -6778,8 +6973,12 @@ class GH_RelevantObjectFilter(Enum):
 
 
 from Rhino import RhinoDoc
+from Rhino.DocObjects import ViewportInfo
+from Rhino.Render import RenderPrimitiveList
 from System import Guid
-from .Generic import Dictionary
+from Rhino.Render import RenderMaterial
+from System.Collections.Generic import Dictionary
+from Rhino.Geometry import Transform
 class GH_RenderArgs:
     @overload
     def __init__(self, doc: RhinoDoc, vp: ViewportInfo, geometry: RenderPrimitiveList, id: Guid, materialCache: Dictionary): ...
@@ -6818,6 +7017,8 @@ class GH_RenderArgs:
 
 
 from System import DateTime
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 class GH_Revision:
     @overload
     def __init__(self): ...
@@ -6879,8 +7080,9 @@ class GH_RuntimeMessageLevel(Enum):
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class GH_ScheduleDelegate:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -6912,6 +7114,7 @@ class GH_ScheduleDelegate:
     def ToString(self) -> str: ...
 
 
+from System.Reflection import Assembly
 class GH_ScriptComponentUtilities:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -6941,6 +7144,7 @@ class GH_ScriptComponentUtilities:
     def ToString(self) -> str: ...
 
 
+from Rhino.Geometry import BoundingBox
 class GH_ScriptInstance:
     @overload
     def AfterRunScript(self) -> None: ...
@@ -7000,8 +7204,14 @@ class GH_SelectionTopology(Enum):
     Concave = 2
 
 
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from System import DateTime
-from .Forms import IWin32Window
+from System.Drawing import Color
+from System.Drawing import Point
+from System.Drawing import Size
+from System.Drawing import Rectangle
+from System.Windows.Forms import IWin32Window
 class GH_SettingsServer:
     @overload
     def __init__(self, databaseName: str): ...
@@ -7167,7 +7377,9 @@ class GH_SolutionSpan:
 
 from System import DateTime
 from System import Guid
-from .Generic import SortedList
+from System.Collections.Generic import SortedList
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 class GH_State:
     @overload
     def __init__(self): ...
@@ -7209,11 +7421,13 @@ class GH_State:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
-from .ObjectModel import ReadOnlyCollection
-from .Generic import IComparer
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from System.Collections.ObjectModel import ReadOnlyCollection
+from System.Collections.Generic import IComparer
 from System import Predicate
 from System import Action
-from .Generic import Enumerator
+from System.Collections.Generic import Enumerator
 from System import Comparison
 from System import Converter
 class GH_StateServer:
@@ -7350,6 +7564,9 @@ class GH_StateServer:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from System.Drawing import Bitmap
+from System.Drawing import Rectangle
+from System.Drawing import Graphics
 class GH_StateTag:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -7382,11 +7599,15 @@ class GH_StateTagLayoutDirection(Enum):
     Right = 1
 
 
-from .ObjectModel import ReadOnlyCollection
-from .Generic import IComparer
+from System.Drawing import Rectangle
+from System.Drawing import Graphics
+from System.Drawing import PointF
+from Grasshopper.GUI import GH_TooltipDisplayEventArgs
+from System.Collections.ObjectModel import ReadOnlyCollection
+from System.Collections.Generic import IComparer
 from System import Predicate
 from System import Action
-from .Generic import Enumerator
+from System.Collections.Generic import Enumerator
 from System import Comparison
 from System import Converter
 class GH_StateTagList:
@@ -7858,9 +8079,9 @@ class GH_UndoOperation(Enum):
     Redo = 5
 
 
-from .Undo import GH_UndoRecord
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System import Guid
-from .Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import IGH_UndoAction
 class GH_UndoUtil:
     @overload
     def CreateAddObjectEvent(self, name: str, objs: Iterable[IGH_DocumentObject]) -> GH_UndoRecord: ...
@@ -8011,6 +8232,7 @@ class GH_UpgradeUtil:
 
 
 from System import Guid
+from System.Drawing import Bitmap
 class GH_UserObject:
     @overload
     def __init__(self): ...
@@ -8095,6 +8317,8 @@ class GH_VarParamSide(Enum):
 
 
 from System import Guid
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 class GH_WireTopology:
     @overload
     def __init__(self): ...
@@ -8132,11 +8356,13 @@ class GH_WireTopology:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
-from .ObjectModel import ReadOnlyCollection
-from .Generic import IComparer
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from System.Collections.ObjectModel import ReadOnlyCollection
+from System.Collections.Generic import IComparer
 from System import Predicate
 from System import Action
-from .Generic import Enumerator
+from System.Collections.Generic import Enumerator
 from System import Comparison
 from System import Converter
 class GH_WireTopologyDiagram:
@@ -8271,6 +8497,8 @@ class GH_WireTopologyDiagram:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from System.Drawing import PointF
+from Grasshopper.GUI import GH_TooltipDisplayEventArgs
 class GH_ZuiAction:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -8295,8 +8523,9 @@ class GH_ZuiAction:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class GHAFileLoadedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -8328,7 +8557,7 @@ class GHAFileLoadedEventHandler:
     def ToString(self) -> str: ...
 
 
-from .Generic import IList
+from System.Collections.Generic import IList
 from System import TimeSpan
 class IGH_ActiveObject:
     @overload
@@ -8369,8 +8598,11 @@ class IGH_ActiveObject:
     def Phase(self, Value: GH_SolutionPhase) -> None: ...
 
 
-from .Canvas import GH_Canvas
-from .Canvas import GH_CanvasChannel
+from System.Drawing import PointF
+from System.Drawing import RectangleF
+from Grasshopper.GUI.Canvas import GH_Canvas
+from Grasshopper.GUI.Canvas import GH_CanvasChannel
+from Grasshopper.GUI import GH_CanvasMouseEvent
 from System import Guid
 class IGH_Attributes:
     @overload
@@ -8451,6 +8683,7 @@ class IGH_Author:
 
 
 from Rhino import RhinoDoc
+from Rhino.DocObjects import ObjectAttributes
 from System import Guid
 class IGH_BakeAwareData:
     @overload
@@ -8458,6 +8691,7 @@ class IGH_BakeAwareData:
 
 
 from Rhino import RhinoDoc
+from Rhino.DocObjects import ObjectAttributes
 class IGH_BakeAwareObject:
     @overload
     def BakeGeometry(self, doc: RhinoDoc, obj_ids: MutableSequence[Guid]) -> None: ...
@@ -8490,6 +8724,7 @@ class IGH_Component:
     def Message(self, Value: str) -> None: ...
 
 
+from GH_IO.Serialization import GH_Archive
 class IGH_ContextualComponent:
     @property
     def Archive(self) -> GH_Archive: ...
@@ -8517,10 +8752,10 @@ class IGH_ContextualParameter2:
     def ClearContextualData(self) -> None: ...
 
 
-from .Data import GH_Path
-from .Data import IGH_DataTree
-from .Data import IGH_Structure
-from .Data import GH_Structure
+from Grasshopper.Kernel.Data import GH_Path
+from Grasshopper.Kernel.Data import IGH_DataTree
+from Grasshopper.Kernel.Data import IGH_Structure
+from Grasshopper.Kernel.Data import GH_Structure
 class IGH_DataAccess:
     @overload
     def AbortComponentSolution(self) -> None: ...
@@ -8584,9 +8819,10 @@ class IGH_DebugDescription:
 
 
 from System import Guid
-from .Undo import IGH_UndoAction
-from .Undo import GH_UndoRecord
-from .Forms import ToolStripDropDown
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
+from System.Windows.Forms import ToolStripDropDown
+from System.Drawing import Bitmap
 class IGH_DocumentObject:
     @overload
     def add_AttributesChanged(self, obj: AttributesChangedEventHandler) -> None: ...
@@ -8693,6 +8929,7 @@ class IGH_DocumentOwner:
     def OwnerDocument(self) -> GH_Document: ...
 
 
+from Rhino.DocObjects import RhinoObject
 class IGH_EventConsumer:
     @overload
     def IsRelevantEvent(self, obj: RhinoObject) -> bool: ...
@@ -8745,13 +8982,14 @@ class IGH_InstanceDescription:
     def SubCategory(self, Value: str) -> None: ...
 
 
-from .Generic import SortedDictionary
+from System.Collections.Generic import SortedDictionary
 class IGH_InstanceGuidDependent:
     @overload
     def InstanceGuidsChanged(self, map: SortedDictionary) -> None: ...
 
 
 from System import Guid
+from System.Drawing import Bitmap
 class IGH_ObjectProxy:
     @overload
     def CreateInstance(self) -> IGH_DocumentObject: ...
@@ -8782,9 +9020,9 @@ class IGH_ObjectProxy:
 
 
 from System import Guid
-from .Generic import IList
-from .Data import IGH_Structure
-from .Data import GH_Path
+from System.Collections.Generic import IList
+from Grasshopper.Kernel.Data import IGH_Structure
+from Grasshopper.Kernel.Data import GH_Path
 class IGH_Param:
     @overload
     def AddSource(self, source: IGH_Param) -> None: ...
@@ -8878,6 +9116,11 @@ class IGH_ParamWithPostProcess:
     def PostProcessData(self) -> None: ...
 
 
+from System.Drawing import Color
+from Rhino.Display import DisplayMaterial
+from Rhino.Display import RhinoViewport
+from Rhino.Display import DisplayPipeline
+from Rhino.Geometry import MeshingParameters
 class IGH_PreviewArgs:
     @property
     def DefaultCurveThickness(self) -> int: ...
@@ -8899,6 +9142,7 @@ class IGH_PreviewArgs:
     def WireColour_Selected(self) -> Color: ...
 
 
+from Rhino.Geometry import BoundingBox
 class IGH_PreviewData:
     @overload
     def DrawViewportMeshes(self, args: GH_PreviewMeshArgs) -> None: ...
@@ -8915,6 +9159,7 @@ class IGH_PreviewMeshData:
     def GetPreviewMeshes(self) -> Iterable[Mesh]: ...
 
 
+from Rhino.Geometry import BoundingBox
 class IGH_PreviewObject:
     @overload
     def DrawViewportMeshes(self, args: IGH_PreviewArgs) -> None: ...
@@ -8936,6 +9181,7 @@ class IGH_ProxyParameter:
     def ProxyGuid(self) -> Guid: ...
 
 
+from Rhino.Render import RenderMaterial
 class IGH_RenderAwareData:
     @overload
     def AppendRenderGeometry(self, args: GH_RenderArgs, material: RenderMaterial) -> None: ...
@@ -8957,6 +9203,9 @@ class IGH_StateAwareObject:
     def SaveState(self) -> str: ...
 
 
+from System.Drawing import Bitmap
+from System.Drawing import Rectangle
+from System.Drawing import Graphics
 class IGH_StateTag:
     @property
     def Description(self) -> str: ...
@@ -9006,9 +9255,9 @@ class IGH_UpgradeObject:
     def Upgrade(self, target: IGH_DocumentObject, document: GH_Document) -> IGH_DocumentObject: ...
 
 
-from .Forms import ToolStripMenuItem
-from .Types import IGH_Goo
-from .Data import IGH_Structure
+from System.Windows.Forms import ToolStripMenuItem
+from Grasshopper.Kernel.Types import IGH_Goo
+from Grasshopper.Kernel.Data import IGH_Structure
 class IGH_UserPromptAware:
     @overload
     def PromptMenuMultipleItems(self) -> ToolStripMenuItem: ...
@@ -9058,6 +9307,7 @@ class IGH_VariableParameterComponent:
     def VariableParameterMaintenance(self) -> None: ...
 
 
+from Grasshopper.GUI import GH_VariableParameterManager
 class IGH_VarParamComponent:
     @overload
     def ConstructVariable(self, e: GH_VarParamEventArgs) -> IGH_Param: ...
@@ -9080,7 +9330,7 @@ class IGH_ZuiAction:
     def Perform(self) -> None: ...
 
 
-from .RemotePanel import IRcpItem
+from Grasshopper.GUI.RemotePanel import IRcpItem
 class IRcpAwareObject:
     @overload
     def PublishRcpItem(self) -> IRcpItem: ...
@@ -9098,8 +9348,9 @@ class MatchingMode(Enum):
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class ModifiedChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -9131,11 +9382,17 @@ class ModifiedChangedEventHandler:
     def ToString(self) -> str: ...
 
 
+from GH_IO.Serialization import GH_IReader
+from GH_IO.Serialization import GH_IWriter
+from System.Drawing import PointF
+from System.Drawing import RectangleF
+from Grasshopper.GUI import GH_TooltipDisplayEventArgs
 from System import Guid
-from .Canvas import GH_Canvas
-from .Canvas import GH_CanvasChannel
-from .Forms import KeyEventArgs
-from .Canvas import GH_ObjectResponse
+from Grasshopper.GUI.Canvas import GH_Canvas
+from Grasshopper.GUI.Canvas import GH_CanvasChannel
+from Grasshopper.GUI import GH_CanvasMouseEvent
+from System.Windows.Forms import KeyEventArgs
+from Grasshopper.GUI.Canvas import GH_ObjectResponse
 class NullParamAttributes:
     @overload
     def __init__(self, param: IGH_Param): ...
@@ -9232,8 +9489,9 @@ class NullParamAttributes:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class ObjectChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -9268,8 +9526,9 @@ class ObjectChangedEventHandler:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class ObjectsAddedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -9304,8 +9563,9 @@ class ObjectsAddedEventHandler:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class ObjectsDeletedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -9340,8 +9600,9 @@ class ObjectsDeletedEventHandler:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class ParameterChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -9376,8 +9637,9 @@ class ParameterChangedEventHandler:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class ParameterNickNameChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -9412,8 +9674,9 @@ class ParameterNickNameChangedEventHandler:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class ParameterSourcesChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -9448,8 +9711,9 @@ class ParameterSourcesChangedEventHandler:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class PingDocumentEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -9484,8 +9748,9 @@ class PingDocumentEventHandler:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class PreviewExpiredEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -9520,8 +9785,9 @@ class PreviewExpiredEventHandler:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class SaveOnDataFlatteningChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -9556,8 +9822,9 @@ class SaveOnDataFlatteningChangedEventHandler:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class SaveOnDocumentUnloadChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -9592,8 +9859,9 @@ class SaveOnDocumentUnloadChangedEventHandler:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class SaveOnObjectAddedChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -9628,8 +9896,9 @@ class SaveOnObjectAddedChangedEventHandler:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class SaveOnObjectChangeChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -9664,8 +9933,9 @@ class SaveOnObjectChangeChangedEventHandler:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class SaveOnObjectRemovedChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -9700,8 +9970,9 @@ class SaveOnObjectRemovedChangedEventHandler:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class SaveOnWireEventChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -9736,8 +10007,9 @@ class SaveOnWireEventChangedEventHandler:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class ScriptFamilyChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -9772,8 +10044,9 @@ class ScriptFamilyChangedEventHandler:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class SettingsChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -9808,8 +10081,9 @@ class SettingsChangedEventHandler:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class SolutionEndEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -9844,8 +10118,9 @@ class SolutionEndEventHandler:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class SolutionExpiredEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -9880,8 +10155,9 @@ class SolutionExpiredEventHandler:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class SolutionStartEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -9916,8 +10192,9 @@ class SolutionStartEventHandler:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class StandardFamilyChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -9952,8 +10229,9 @@ class StandardFamilyChangedEventHandler:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class UndoStateChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...

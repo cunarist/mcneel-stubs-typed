@@ -6,8 +6,9 @@ from enum import Enum
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class FieldSolver:
     @overload
     def __init__(self, object: object, method: IntPtr): ...
@@ -133,11 +134,11 @@ class GH_Direction(Enum):
     up = 4
 
 
-from .ObjectModel import ReadOnlyCollection
-from .Generic import IComparer
+from System.Collections.ObjectModel import ReadOnlyCollection
+from System.Collections.Generic import IComparer
 from System import Predicate
 from System import Action
-from .Generic import Enumerator
+from System.Collections.Generic import Enumerator
 from System import Comparison
 from System import Converter
 class GH_IsoSurface:
@@ -301,6 +302,7 @@ class GH_Particle:
     def ToString(self) -> str: ...
 
 
+from System.Drawing import PointF
 class GH_Vertex:
     @overload
     def __init__(self): ...

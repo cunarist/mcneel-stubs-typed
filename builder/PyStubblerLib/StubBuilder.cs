@@ -212,11 +212,8 @@ namespace PyStubblerLib
                     {
                         var param = parameters[i];
                         var paramType = param.ParameterType;
-                        var relativeNamespace = FindRelativeNamespace(
-                            stubType.Namespace, paramType.Namespace
-                        );
                         reqImports.Add(
-                            Tuple.Create(relativeNamespace, ToPythonType(paramType.Name))
+                            Tuple.Create(paramType.Namespace, ToPythonType(paramType.Name))
                         );
                     }
                 }
@@ -227,61 +224,50 @@ namespace PyStubblerLib
                     {
                         var param = parameters[i];
                         var paramType = param.ParameterType;
-                        var relativeNamespace = FindRelativeNamespace(
-                            stubType.Namespace, paramType.Namespace
-                        );
                         reqImports.Add(
-                            Tuple.Create(relativeNamespace, ToPythonType(paramType.Name))
+                            Tuple.Create(paramType.Namespace, ToPythonType(paramType.Name))
                         );
                     }
                     if (method.ReturnType != typeof(void))
                     {
                         var returnType = method.ReturnType;
-                        var relativeNamespace = FindRelativeNamespace(
-                            stubType.Namespace, returnType.Namespace
-                        );
                         reqImports.Add(
-                            Tuple.Create(relativeNamespace, ToPythonType(returnType.Name))
+                            Tuple.Create(returnType.Namespace, ToPythonType(returnType.Name))
                         );
                     }
                 }
                 foreach (var field in fields)
                 {
                     var fieldType = field.FieldType;
-                    var relativeNamespace = FindRelativeNamespace(
-                        stubType.Namespace, fieldType.Namespace
-                    );
                     reqImports.Add(
-                        Tuple.Create(relativeNamespace, ToPythonType(fieldType.Name))
+                        Tuple.Create(fieldType.Namespace, ToPythonType(fieldType.Name))
                     );
                 }
 
                 // import parameter and return types
                 foreach (var paramImport in reqImports)
                 {
-                    var relativeNamespace = paramImport.Item1;
+                    var paramNamespace = paramImport.Item1;
                     var paramType = paramImport.Item2;
                     if (paramType.EndsWith("]") || ShouldAvoidImporting(paramType))
                     {
                         continue;
                     }
-                    if (relativeNamespace != "" && relativeNamespace != ".")
+                    if (paramNamespace != stubType.Namespace)
                     {
-                        sb.AppendLine($"from {relativeNamespace} import {paramType}");
+                        sb.AppendLine($"from {paramNamespace} import {paramType}");
                     }
                 }
 
                 // write class definition
-                if (stubType.BaseType != null &&
-                  stubType.BaseType.FullName.StartsWith(ns[0]) &&
-                  stubType.BaseType.FullName.IndexOf('+') < 0 &&
-                  stubType.BaseType.FullName.IndexOf('`') < 0
+                var baseType = stubType.BaseType;
+                if (baseType != null &&
+                  baseType.FullName.StartsWith(ns[0]) &&
+                  baseType.FullName.IndexOf('+') < 0 &&
+                  baseType.FullName.IndexOf('`') < 0
                 ) {
-                    var relativeNamespace = FindRelativeNamespace(
-                        stubType.Namespace, stubType.BaseType.Namespace
-                    );
-                    if (relativeNamespace != "" && relativeNamespace != ".")
-                        sb.AppendLine($"from {relativeNamespace} import {stubType.BaseType.Name}");
+                    if (stubType.Namespace != baseType.Namespace)
+                        sb.AppendLine($"from {baseType.Namespace} import {baseType.Name}");
                     sb.AppendLine($"class {stubType.Name}({stubType.BaseType.Name}):");
                 }
                 else
@@ -606,28 +592,6 @@ namespace PyStubblerLib
             else if (s == "def")
                 return "def_";
             return s;
-        }
-
-        private static string FindRelativeNamespace(string from, string to)
-        {
-            // Split the paths into components
-            var fromParts = from.Split('.');
-            var toParts = to.Split('.');
-
-            if (fromParts.Length == toParts.Length) {
-                return "";
-            } else if (fromParts.Length > toParts.Length) {
-                return to;
-            } else {
-                var relativePathParts = new List<string>();
-                // Add the remaining parts of the 'to' path
-                for (int i = fromParts.Length; i < toParts.Length; i++)
-                {
-                    relativePathParts.Add("." + toParts[i]);
-                }
-                // Join the parts into a single string
-                return string.Join("", relativePathParts);
-            }
         }
 
         private static bool ShouldAvoidImporting(string s)

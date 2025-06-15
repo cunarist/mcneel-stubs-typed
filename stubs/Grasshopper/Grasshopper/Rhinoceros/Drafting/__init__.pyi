@@ -8,6 +8,7 @@ __all__ = ['Params']
 
 from Rhino.Geometry import Point2d
 from Rhino.Geometry import Vector2d
+from System.Collections.Generic import IReadOnlyList
 from Rhino.DocObjects import HatchLine
 class Attributes:
     @overload
@@ -43,6 +44,7 @@ class Attributes:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import IReadOnlyList
 from Grasshopper.Rhinoceros import ModelData
 from Grasshopper.Rhinoceros import ModelUserText
 from Grasshopper.Rhinoceros import ModelContentName
@@ -97,6 +99,7 @@ class Attributes:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import IReadOnlyList
 from System import Nullable
 from Grasshopper.Rhinoceros import ModelData
 from Grasshopper.Rhinoceros import ModelUserText
@@ -209,6 +212,7 @@ class Attributes:
 from Rhino.DocObjects import HatchLine
 from Rhino.Geometry import Point2d
 from Rhino.Geometry import Vector2d
+from System.Collections.Generic import IReadOnlyList
 from Grasshopper.Rhinoceros import ModelValue
 from Grasshopper.Rhinoceros import T
 from Grasshopper.Rhinoceros import ModelValue
@@ -262,6 +266,7 @@ class ModelHatchLine(ModelValue):
 
 from Rhino.DocObjects import HatchPattern
 from System import Guid
+from System.Collections.Generic import IReadOnlyList
 from System import Nullable
 from Grasshopper.Rhinoceros import Attributes
 from Grasshopper.Rhinoceros import ModelUserText
@@ -347,6 +352,7 @@ class ModelHatchPattern(ModelComponentContent):
 from Rhino.DocObjects import Linetype
 from System import Guid
 from Grasshopper.Rhinoceros import ModelContentName
+from System.Collections.Generic import IReadOnlyList
 from System import Nullable
 from Grasshopper.Rhinoceros import Attributes
 from Grasshopper.Rhinoceros import ModelUserText
@@ -436,6 +442,12 @@ class ModelLinetype(ModelComponentContent):
     def ToString(self) -> str: ...
 
 
+from Grasshopper.Kernel.Types import IGH_Goo
+from Grasshopper.Kernel.Types import GH_Number
+from Grasshopper.Kernel.Types import T
+from Grasshopper.Kernel.Types import GH_QuickCastType
+from Grasshopper.Kernel.Types import IGH_QuickCast
+from Grasshopper.Kernel.Types import Complex
 from Rhino.Geometry import Matrix
 from Rhino.Geometry import Point3d
 from Rhino.Geometry import Vector3d
@@ -443,6 +455,8 @@ from System.Drawing import Color
 from Rhino.Geometry import Interval
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from Grasshopper.Kernel.Types import IGH_GooProxy
+from Grasshopper.Kernel.Types import GH_Number
 class ModelLineWidth(GH_Number):
     @overload
     def __init__(self): ...

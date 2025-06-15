@@ -121,6 +121,7 @@ class Complex:
 
 
 from Rhino.Geometry import AngularDimension
+from Grasshopper.Rhinoceros.Annotations import ModelAnnotationStyle
 from System import Guid
 from Rhino.Geometry import Arc
 from Rhino.Geometry import Point3d
@@ -249,6 +250,7 @@ class GH_AngularDimension(GH_Dimension):
 from Rhino.Geometry import BoundingBox
 from Rhino.Geometry import Transform
 from Rhino.DocObjects import DimensionStyle
+from Grasshopper.Rhinoceros.Annotations import ModelAnnotationStyle
 from System import Guid
 from Rhino import RhinoDoc
 from Rhino.Geometry import SpaceMorph
@@ -615,6 +617,9 @@ class GH_Box:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from Grasshopper.Kernel.Utility import GH_Point3d_Wrapper
+from Grasshopper.Kernel.Utility import GH_Vector3d_Wrapper
+from Grasshopper.Kernel.Utility import GH_Interval_Wrapper
 class GH_BoxProxy:
     @overload
     def __init__(self, Value: GH_Box): ...
@@ -829,6 +834,7 @@ class GH_BrepProxy:
 
 
 from Rhino.Geometry import Centermark
+from Grasshopper.Rhinoceros.Annotations import ModelAnnotationStyle
 from System import Guid
 from Rhino.Geometry import Dimension
 from Rhino.Geometry import BoundingBox
@@ -1029,6 +1035,8 @@ class GH_Circle:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from Grasshopper.Kernel.Utility import GH_Point3d_Wrapper
+from Grasshopper.Kernel.Utility import GH_Vector3d_Wrapper
 class GH_CircleProxy:
     @overload
     def __init__(self, nOwner: GH_Circle): ...
@@ -1533,6 +1541,7 @@ from Rhino.Geometry import Dimension
 from Rhino.Geometry import BoundingBox
 from Rhino.Geometry import Transform
 from Rhino.DocObjects import DimensionStyle
+from Grasshopper.Rhinoceros.Annotations import ModelAnnotationStyle
 from Rhino import RhinoDoc
 from Rhino.Geometry import SpaceMorph
 from GH_IO.Serialization import GH_IWriter
@@ -2181,6 +2190,7 @@ class GH_Guid:
 
 
 from Rhino.Geometry import Hatch
+from Grasshopper.Rhinoceros.Drafting import ModelHatchPattern
 from System import Guid
 from Rhino.Geometry import BoundingBox
 from Rhino.Geometry import Transform
@@ -2285,6 +2295,7 @@ class GH_Hatch:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from Grasshopper.Kernel.Utility import GH_Point3d_Wrapper
 class GH_HatchProxy:
     @overload
     def __init__(self, Value: GH_Hatch): ...
@@ -2335,6 +2346,7 @@ class GH_HatchProxy:
 from Rhino.Geometry import Transform
 from System import Guid
 from Rhino.Geometry import InstanceReferenceGeometry
+from Grasshopper.Rhinoceros.Model import ModelInstanceDefinition
 from Rhino.Geometry import BoundingBox
 from Rhino import RhinoDoc
 from Rhino.Geometry import SpaceMorph
@@ -2760,6 +2772,7 @@ class GH_Interval2DProxy:
 
 
 from Rhino.Geometry import Leader
+from Grasshopper.Rhinoceros.Annotations import ModelAnnotationStyle
 from System import Guid
 from Rhino.Geometry import BoundingBox
 from Rhino.Geometry import Transform
@@ -3046,6 +3059,7 @@ class GH_Line:
 
 
 from Rhino.Geometry import LinearDimension
+from Grasshopper.Rhinoceros.Annotations import ModelAnnotationStyle
 from System import Guid
 from Rhino.Geometry import Dimension
 from Rhino.Geometry import BoundingBox
@@ -3994,6 +4008,7 @@ class GH_ObjectWrapper:
 
 
 from Rhino.Geometry import OrdinateDimension
+from Grasshopper.Rhinoceros.Annotations import ModelAnnotationStyle
 from System import Guid
 from Rhino.Geometry import Dimension
 from Rhino.Geometry import BoundingBox
@@ -4213,6 +4228,8 @@ class GH_Plane:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from Grasshopper.Kernel.Utility import GH_Point3d_Wrapper
+from Grasshopper.Kernel.Utility import GH_Vector3d_Wrapper
 class GH_PlaneProxy:
     @overload
     def __init__(self, nOwner: GH_Plane): ...
@@ -4260,6 +4277,8 @@ from Rhino.Geometry import Point3d
 from System import Guid
 from Rhino.Geometry import Curve
 from Rhino.Geometry import Surface
+from System.Windows.Forms import DialogResult
+from System.Windows.Forms import IWin32Window
 from Rhino import RhinoDoc
 from Rhino.DocObjects import RhinoObject
 from Rhino.Geometry import BrepFace
@@ -4582,6 +4601,7 @@ class GH_PointCloud:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from Grasshopper.Kernel.Utility import GH_PointRefUV_Wrapper
 class GH_PointProxy:
     @overload
     def __init__(self, Value: GH_Point): ...
@@ -4790,6 +4810,7 @@ class GH_QuickCastType(Enum):
 
 
 from Rhino.Geometry import RadialDimension
+from Grasshopper.Rhinoceros.Annotations import ModelAnnotationStyle
 from System import Guid
 from Rhino.Geometry import Dimension
 from Rhino.Geometry import BoundingBox
@@ -4990,6 +5011,9 @@ class GH_Rectangle:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from Grasshopper.Kernel.Utility import GH_Point3d_Wrapper
+from Grasshopper.Kernel.Utility import GH_Vector3d_Wrapper
+from Grasshopper.Kernel.Utility import GH_Interval_Wrapper
 class GH_RectangleProxy:
     @overload
     def __init__(self, nOwner: GH_Rectangle): ...
@@ -5188,6 +5212,7 @@ class GH_String:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from Grasshopper.Kernel.Data import GH_Path
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 class GH_StructurePath:
@@ -5647,6 +5672,7 @@ class GH_TextDot:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from Grasshopper.Kernel.Utility import GH_Point3d_Wrapper
 class GH_TextDotProxy:
     @overload
     def __init__(self, Value: GH_TextDot): ...
@@ -5693,6 +5719,7 @@ class GH_TextDotProxy:
 
 
 from Rhino.Geometry import TextEntity
+from Grasshopper.Rhinoceros.Annotations import ModelAnnotationStyle
 from System import Guid
 from Rhino.Geometry import BoundingBox
 from Rhino.Geometry import Transform
@@ -5848,7 +5875,7 @@ class GH_Time:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
-from .Transforms import ITransform
+from Grasshopper.Kernel.Types.Transforms import ITransform
 from Rhino.Geometry import Transform
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader

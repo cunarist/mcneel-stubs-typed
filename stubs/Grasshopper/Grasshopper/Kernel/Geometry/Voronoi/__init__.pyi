@@ -336,6 +336,7 @@ class Cell3Facet:
 
 
 from Grasshopper.Kernel.Geometry import Node2List
+from Grasshopper.Kernel.Geometry.Delaunay import Connectivity
 class Solver:
     @overload
     def Equals(self, obj: object) -> bool: ...

@@ -3,6 +3,7 @@ from enum import Enum
 
 
 
+from System.Drawing.Drawing2D import HatchStyle
 from System.Drawing import Color
 class GH_BackgroundSettings:
     @overload
@@ -122,6 +123,7 @@ class GH_PageSettings:
     def ToString(self) -> str: ...
 
 
+from Grasshopper.GUI.Canvas import GH_PaletteStyle
 class GH_PaletteSettings:
     @overload
     def Equals(self, obj: object) -> bool: ...

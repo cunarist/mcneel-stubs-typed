@@ -64,9 +64,11 @@ class GH_BarData:
 from Grasshopper.Kernel import GH_ParamKind
 from Grasshopper.Kernel import GH_Exposure
 from System.Drawing import Color
+from System.Windows.Forms import ToolStripDropDown
 from System import Guid
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_Param
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
@@ -75,6 +77,10 @@ from Grasshopper.Kernel import GH_StateTagList
 from Grasshopper.Kernel import GH_ParamWireDisplay
 from Grasshopper.Kernel import GH_DataMapping
 from Grasshopper.Kernel import GH_ParamData
+from Grasshopper.Kernel.Data import GH_Path
+from Grasshopper.Kernel.Types import GH_Number
+from Grasshopper.Kernel.Data import IGH_Structure
+from Grasshopper.Kernel.Data import GH_Structure
 from System import TimeSpan
 from Grasshopper.Kernel import GH_PrincipalState
 from Grasshopper.Kernel import GH_SolutionPhase
@@ -91,6 +97,8 @@ from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -393,7 +401,9 @@ class GH_BarGraph:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from Grasshopper.GUI.Canvas import GH_Canvas
 from Grasshopper.GUI import GH_CanvasMouseEvent
+from Grasshopper.GUI.Canvas import GH_ObjectResponse
 from System.Drawing import PointF
 from System.Drawing import RectangleF
 from Grasshopper.Kernel import GH_PickBox
@@ -403,6 +413,8 @@ from Grasshopper.Kernel import IGH_DocumentObject
 from System import Guid
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from Grasshopper.GUI.Canvas import GH_CanvasChannel
+from System.Windows.Forms import KeyEventArgs
 class GH_BarGraphAttributes:
     @overload
     def __init__(self, owner: GH_BarGraph): ...
@@ -498,10 +510,12 @@ class GH_BarGraphAttributes:
 
 from Grasshopper.Kernel import GH_ParamKind
 from Grasshopper.Kernel import GH_ParamData
+from System.Windows.Forms import ToolStripDropDown
 from Grasshopper.Kernel import GH_Exposure
 from System import Guid
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_Param
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
@@ -509,6 +523,10 @@ from Grasshopper.Kernel import GH_ParamAccess
 from Grasshopper.Kernel import GH_StateTagList
 from Grasshopper.Kernel import GH_ParamWireDisplay
 from Grasshopper.Kernel import GH_DataMapping
+from Grasshopper.Kernel.Data import GH_Path
+from Grasshopper.Kernel.Types import GH_Boolean
+from Grasshopper.Kernel.Data import IGH_Structure
+from Grasshopper.Kernel.Data import GH_Structure
 from System import TimeSpan
 from Grasshopper.Kernel import GH_PrincipalState
 from Grasshopper.Kernel import GH_SolutionPhase
@@ -525,6 +543,8 @@ from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -821,7 +841,9 @@ class GH_BooleanSwitch_Obsolete:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from Grasshopper.GUI.Canvas import GH_Canvas
 from Grasshopper.GUI import GH_CanvasMouseEvent
+from Grasshopper.GUI.Canvas import GH_ObjectResponse
 from System.Drawing import PointF
 from System.Drawing import RectangleF
 from Grasshopper.Kernel import GH_PickBox
@@ -831,6 +853,8 @@ from Grasshopper.Kernel import IGH_DocumentObject
 from System import Guid
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from Grasshopper.GUI.Canvas import GH_CanvasChannel
+from System.Windows.Forms import KeyEventArgs
 class GH_BooleanSwitchAttributesObsolete:
     @overload
     def __init__(self, owner: GH_BooleanSwitch_Obsolete): ...
@@ -929,8 +953,11 @@ from Grasshopper.Kernel import GH_ParamKind
 from Grasshopper.Kernel import GH_ParamData
 from Grasshopper.Kernel import GH_Exposure
 from System import Guid
+from System.Windows.Forms import ToolStripDropDown
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from Grasshopper.GUI.RemotePanel import IRcpItem
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_Param
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
@@ -938,6 +965,10 @@ from Grasshopper.Kernel import GH_ParamAccess
 from Grasshopper.Kernel import GH_StateTagList
 from Grasshopper.Kernel import GH_ParamWireDisplay
 from Grasshopper.Kernel import GH_DataMapping
+from Grasshopper.Kernel.Data import GH_Path
+from Grasshopper.Kernel.Types import GH_Boolean
+from Grasshopper.Kernel.Data import IGH_Structure
+from Grasshopper.Kernel.Data import GH_Structure
 from System import TimeSpan
 from Grasshopper.Kernel import GH_PrincipalState
 from Grasshopper.Kernel import GH_SolutionPhase
@@ -954,6 +985,8 @@ from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -1254,7 +1287,9 @@ class GH_BooleanToggle:
 
 from System.Drawing import PointF
 from Grasshopper.GUI import GH_TooltipDisplayEventArgs
+from Grasshopper.GUI.Canvas import GH_Canvas
 from Grasshopper.GUI import GH_CanvasMouseEvent
+from Grasshopper.GUI.Canvas import GH_ObjectResponse
 from System.Drawing import RectangleF
 from Grasshopper.Kernel import GH_PickBox
 from Grasshopper.Kernel import IGH_Attributes
@@ -1262,6 +1297,8 @@ from Grasshopper.Kernel import IGH_DocumentObject
 from System import Guid
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from Grasshopper.GUI.Canvas import GH_CanvasChannel
+from System.Windows.Forms import KeyEventArgs
 class GH_BooleanToggleAttributes:
     @overload
     def __init__(self, owner: GH_BooleanToggle): ...
@@ -1356,6 +1393,8 @@ class GH_BooleanToggleAttributes:
 
 
 from System.Drawing import Graphics
+from System.Windows.Forms import MouseEventArgs
+from Grasshopper.GUI.Canvas import GH_ObjectResponse
 from System import Guid
 from System.Drawing import Rectangle
 class GH_BooleanTogglePublishProxy:
@@ -1399,8 +1438,11 @@ from Grasshopper.Kernel import GH_ParamKind
 from Grasshopper.Kernel import GH_ParamData
 from Grasshopper.Kernel import GH_Exposure
 from System import Guid
+from System.Windows.Forms import ToolStripDropDown
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from Grasshopper.GUI.RemotePanel import IRcpItem
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_Param
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
@@ -1408,6 +1450,10 @@ from Grasshopper.Kernel import GH_ParamAccess
 from Grasshopper.Kernel import GH_StateTagList
 from Grasshopper.Kernel import GH_ParamWireDisplay
 from Grasshopper.Kernel import GH_DataMapping
+from Grasshopper.Kernel.Data import GH_Path
+from Grasshopper.Kernel.Types import IGH_Goo
+from Grasshopper.Kernel.Data import IGH_Structure
+from Grasshopper.Kernel.Data import GH_Structure
 from System import TimeSpan
 from Grasshopper.Kernel import GH_PrincipalState
 from Grasshopper.Kernel import GH_SolutionPhase
@@ -1424,6 +1470,8 @@ from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -1730,7 +1778,9 @@ class GH_ButtonObject:
 
 from System.Drawing import PointF
 from Grasshopper.GUI import GH_TooltipDisplayEventArgs
+from Grasshopper.GUI.Canvas import GH_Canvas
 from Grasshopper.GUI import GH_CanvasMouseEvent
+from Grasshopper.GUI.Canvas import GH_ObjectResponse
 from System.Drawing import RectangleF
 from Grasshopper.Kernel import GH_PickBox
 from Grasshopper.Kernel import IGH_Attributes
@@ -1738,6 +1788,8 @@ from Grasshopper.Kernel import IGH_DocumentObject
 from System import Guid
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from Grasshopper.GUI.Canvas import GH_CanvasChannel
+from System.Windows.Forms import KeyEventArgs
 class GH_ButtonObjectAttributes:
     @overload
     def __init__(self, owner: GH_ButtonObject): ...
@@ -1832,6 +1884,8 @@ class GH_ButtonObjectAttributes:
 
 
 from System.Drawing import Graphics
+from System.Windows.Forms import MouseEventArgs
+from Grasshopper.GUI.Canvas import GH_ObjectResponse
 from System import Guid
 from System.Drawing import Rectangle
 class GH_ButtonPublishProxy:
@@ -1876,6 +1930,7 @@ from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_Exposure
 from System import Guid
 from System.Drawing import Point
+from System.Collections.Generic import SortedDictionary
 from Grasshopper.Kernel import IGH_PreviewArgs
 from Rhino.Geometry import BoundingBox
 from Rhino import RhinoDoc
@@ -1886,8 +1941,10 @@ from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from Grasshopper.Kernel import GH_ComponentParamServer
 from Grasshopper.Kernel import GH_RuntimeMessageLevel
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_GuidTable
+from System.Windows.Forms import ToolStripDropDown
 from Grasshopper.Kernel import GH_DataComparison
 from System import TimeSpan
 from Grasshopper.Kernel import GH_RenderArgs
@@ -1902,6 +1959,8 @@ from Grasshopper.Kernel import DisplayExpiredEventHandler
 from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -2212,12 +2271,14 @@ from System import Guid
 from Grasshopper.Kernel import GH_Document
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from System.Windows.Forms import ToolStripDropDown
 from Grasshopper.Kernel import IGH_PreviewArgs
 from Rhino.Geometry import BoundingBox
 from Rhino import RhinoDoc
 from Rhino.DocObjects import ObjectAttributes
 from Grasshopper.Kernel import GH_ComponentParamServer
 from Grasshopper.Kernel import GH_RuntimeMessageLevel
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_GuidTable
@@ -2235,6 +2296,8 @@ from Grasshopper.Kernel import DisplayExpiredEventHandler
 from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -2502,7 +2565,9 @@ class GH_Cluster_OBSOLETE(GH_Component):
 
 from System.Drawing import PointF
 from Grasshopper.GUI import GH_TooltipDisplayEventArgs
+from Grasshopper.GUI.Canvas import GH_Canvas
 from Grasshopper.GUI import GH_CanvasMouseEvent
+from Grasshopper.GUI.Canvas import GH_ObjectResponse
 from System.Drawing import RectangleF
 from Grasshopper.Kernel import GH_PickBox
 from Grasshopper.Kernel import IGH_Attributes
@@ -2511,6 +2576,9 @@ from Grasshopper.Kernel import IGH_Component
 from System import Guid
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from Grasshopper.GUI.Canvas import GH_CanvasChannel
+from System.Windows.Forms import KeyEventArgs
+from Grasshopper.Kernel.Attributes import GH_ComponentAttributes
 class GH_ClusterAttributes(GH_ComponentAttributes):
     @overload
     def __init__(self, owner: GH_Cluster): ...
@@ -2608,7 +2676,9 @@ class GH_ClusterAttributes(GH_ComponentAttributes):
 
 from System.Drawing import PointF
 from Grasshopper.GUI import GH_TooltipDisplayEventArgs
+from Grasshopper.GUI.Canvas import GH_Canvas
 from Grasshopper.GUI import GH_CanvasMouseEvent
+from Grasshopper.GUI.Canvas import GH_ObjectResponse
 from System.Drawing import RectangleF
 from Grasshopper.Kernel import GH_PickBox
 from Grasshopper.Kernel import IGH_Attributes
@@ -2617,6 +2687,9 @@ from Grasshopper.Kernel import IGH_Component
 from System import Guid
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from Grasshopper.GUI.Canvas import GH_CanvasChannel
+from System.Windows.Forms import KeyEventArgs
+from Grasshopper.Kernel.Attributes import GH_ComponentAttributes
 class GH_ClusterAttributes_OBSOLETE(GH_ComponentAttributes):
     @overload
     def __init__(self, owner: GH_Cluster_OBSOLETE): ...
@@ -2712,9 +2785,11 @@ class GH_ClusterAttributes_OBSOLETE(GH_ComponentAttributes):
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from Grasshopper.Kernel.Undo import GH_UndoState
 from Grasshopper.Kernel import GH_Document
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from Grasshopper.Kernel.Undo import GH_ObjectUndoAction
 class GH_ClusterDocumentIdAction(GH_ObjectUndoAction):
     @overload
     def __init__(self, cluster: GH_Cluster): ...
@@ -2752,8 +2827,10 @@ class GH_ClusterFileType(Enum):
 
 from Grasshopper.Kernel import IGH_InstanceDescription
 from Grasshopper.Kernel import GH_ParamKind
+from System.Windows.Forms import ToolStripDropDown
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_Param
 from System import Guid
 from Grasshopper.Kernel import IGH_ActiveObject
@@ -2763,6 +2840,10 @@ from Grasshopper.Kernel import GH_StateTagList
 from Grasshopper.Kernel import GH_ParamWireDisplay
 from Grasshopper.Kernel import GH_DataMapping
 from Grasshopper.Kernel import GH_ParamData
+from Grasshopper.Kernel.Data import GH_Path
+from Grasshopper.Kernel.Types import IGH_Goo
+from Grasshopper.Kernel.Data import IGH_Structure
+from Grasshopper.Kernel.Data import GH_Structure
 from System import TimeSpan
 from Grasshopper.Kernel import GH_PrincipalState
 from Grasshopper.Kernel import GH_SolutionPhase
@@ -2779,6 +2860,8 @@ from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from Grasshopper.Kernel import GH_Exposure
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
@@ -3084,9 +3167,12 @@ class GH_ClusterHook:
 from Grasshopper.Kernel import IGH_Param
 from System import Guid
 from Grasshopper.Kernel import GH_Exposure
+from Grasshopper.Kernel.Data import GH_Structure
 from Grasshopper.Kernel import GH_ParamKind
+from System.Windows.Forms import ToolStripDropDown
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
 from Grasshopper.Kernel import GH_ParamAccess
@@ -3094,6 +3180,9 @@ from Grasshopper.Kernel import GH_StateTagList
 from Grasshopper.Kernel import GH_ParamWireDisplay
 from Grasshopper.Kernel import GH_DataMapping
 from Grasshopper.Kernel import GH_ParamData
+from Grasshopper.Kernel.Data import GH_Path
+from Grasshopper.Kernel.Types import IGH_Goo
+from Grasshopper.Kernel.Data import IGH_Structure
 from System import TimeSpan
 from Grasshopper.Kernel import GH_PrincipalState
 from Grasshopper.Kernel import GH_SolutionPhase
@@ -3110,6 +3199,8 @@ from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -3423,12 +3514,16 @@ from System.Drawing import PointF
 from Grasshopper.GUI import GH_TooltipDisplayEventArgs
 from System.Drawing import RectangleF
 from Grasshopper.Kernel import GH_PickBox
+from Grasshopper.GUI.Canvas import GH_Canvas
 from Grasshopper.GUI import GH_CanvasMouseEvent
+from Grasshopper.GUI.Canvas import GH_ObjectResponse
 from Grasshopper.Kernel import IGH_Attributes
 from Grasshopper.Kernel import IGH_DocumentObject
 from System import Guid
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from Grasshopper.GUI.Canvas import GH_CanvasChannel
+from System.Windows.Forms import KeyEventArgs
 class GH_ClusterInputHookAttributes:
     @overload
     def __init__(self, owner: GH_ClusterInputHook): ...
@@ -3530,8 +3625,10 @@ from Grasshopper.Kernel import IGH_Param
 from System import Guid
 from Grasshopper.Kernel import GH_Exposure
 from Grasshopper.Kernel import GH_ParamKind
+from System.Windows.Forms import ToolStripDropDown
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
 from Grasshopper.Kernel import GH_ParamAccess
@@ -3539,6 +3636,10 @@ from Grasshopper.Kernel import GH_StateTagList
 from Grasshopper.Kernel import GH_ParamWireDisplay
 from Grasshopper.Kernel import GH_DataMapping
 from Grasshopper.Kernel import GH_ParamData
+from Grasshopper.Kernel.Data import GH_Path
+from Grasshopper.Kernel.Types import IGH_Goo
+from Grasshopper.Kernel.Data import IGH_Structure
+from Grasshopper.Kernel.Data import GH_Structure
 from System import TimeSpan
 from Grasshopper.Kernel import GH_PrincipalState
 from Grasshopper.Kernel import GH_SolutionPhase
@@ -3555,6 +3656,8 @@ from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -3864,12 +3967,16 @@ from System.Drawing import PointF
 from Grasshopper.GUI import GH_TooltipDisplayEventArgs
 from System.Drawing import RectangleF
 from Grasshopper.Kernel import GH_PickBox
+from Grasshopper.GUI.Canvas import GH_Canvas
 from Grasshopper.GUI import GH_CanvasMouseEvent
+from Grasshopper.GUI.Canvas import GH_ObjectResponse
 from Grasshopper.Kernel import IGH_Attributes
 from Grasshopper.Kernel import IGH_DocumentObject
 from System import Guid
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from Grasshopper.GUI.Canvas import GH_CanvasChannel
+from System.Windows.Forms import KeyEventArgs
 class GH_ClusterOutputHookAttributes:
     @overload
     def __init__(self, owner: GH_ClusterOutputHook): ...
@@ -3967,9 +4074,11 @@ class GH_ClusterOutputHookAttributes:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from Grasshopper.Kernel.Undo import GH_UndoState
 from Grasshopper.Kernel import GH_Document
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from Grasshopper.Kernel.Undo import GH_ObjectUndoAction
 class GH_ClusterPasswordUndoAction(GH_ObjectUndoAction):
     @overload
     def __init__(self, cluster: GH_Cluster): ...
@@ -3997,9 +4106,11 @@ class GH_ClusterPasswordUndoAction(GH_ObjectUndoAction):
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from Grasshopper.Kernel.Undo import GH_UndoState
 from Grasshopper.Kernel import GH_Document
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from Grasshopper.Kernel.Undo import GH_ObjectUndoAction
 class GH_ClusterPreviewDocumentAction(GH_ObjectUndoAction):
     @overload
     def __init__(self, cluster: GH_Cluster): ...
@@ -4027,9 +4138,11 @@ class GH_ClusterPreviewDocumentAction(GH_ObjectUndoAction):
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from Grasshopper.Kernel.Undo import GH_UndoState
 from Grasshopper.Kernel import GH_Document
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from Grasshopper.Kernel.Undo import GH_ObjectUndoAction
 class GH_ClusterPropertiesUndoAction(GH_ObjectUndoAction):
     @overload
     def __init__(self, cluster: GH_Cluster): ...
@@ -4062,9 +4175,11 @@ class GH_ClusterProtection(Enum):
     Protected = 1
 
 
+from Grasshopper.Kernel.Undo import GH_UndoState
 from Grasshopper.Kernel import GH_Document
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from Grasshopper.Kernel.Undo import GH_ObjectUndoAction
 class GH_ClusterReferenceAction(GH_ObjectUndoAction):
     @overload
     def __init__(self, cluster: GH_Cluster): ...
@@ -4092,7 +4207,9 @@ class GH_ClusterReferenceAction(GH_ObjectUndoAction):
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from Grasshopper.GUI.Canvas import GH_Canvas
 from Grasshopper.GUI import GH_CanvasMouseEvent
+from Grasshopper.GUI.Canvas import GH_ObjectResponse
 from System.Drawing import PointF
 from Grasshopper.GUI import GH_TooltipDisplayEventArgs
 from GH_IO.Serialization import GH_IWriter
@@ -4102,6 +4219,8 @@ from Grasshopper.Kernel import GH_PickBox
 from Grasshopper.Kernel import IGH_Attributes
 from Grasshopper.Kernel import IGH_DocumentObject
 from System import Guid
+from Grasshopper.GUI.Canvas import GH_CanvasChannel
+from System.Windows.Forms import KeyEventArgs
 class GH_ColourPickerAttributes:
     @overload
     def __init__(self, owner: GH_ColourPickerObject): ...
@@ -4200,6 +4319,7 @@ from System import Guid
 from System.Drawing import Color
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_Param
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
@@ -4209,8 +4329,13 @@ from Grasshopper.Kernel import GH_StateTagList
 from Grasshopper.Kernel import GH_ParamWireDisplay
 from Grasshopper.Kernel import GH_DataMapping
 from Grasshopper.Kernel import GH_ParamData
+from Grasshopper.Kernel.Data import GH_Path
+from Grasshopper.Kernel.Types import GH_Colour
+from Grasshopper.Kernel.Data import IGH_Structure
+from Grasshopper.Kernel.Data import GH_Structure
 from System import TimeSpan
 from Grasshopper.Kernel import GH_PrincipalState
+from System.Windows.Forms import ToolStripDropDown
 from Grasshopper.Kernel import GH_SolutionPhase
 from Grasshopper.Kernel import GH_GuidTable
 from Grasshopper.Kernel import GH_RuntimeMessageLevel
@@ -4225,6 +4350,8 @@ from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -4524,6 +4651,8 @@ from Grasshopper.Kernel import GH_Exposure
 from System import Guid
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from Grasshopper.GUI.RemotePanel import IRcpItem
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_Param
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
@@ -4531,8 +4660,13 @@ from Grasshopper.Kernel import GH_ParamAccess
 from Grasshopper.Kernel import GH_StateTagList
 from Grasshopper.Kernel import GH_ParamWireDisplay
 from Grasshopper.Kernel import GH_DataMapping
+from Grasshopper.Kernel.Data import GH_Path
+from Grasshopper.Kernel.Types import GH_Colour
+from Grasshopper.Kernel.Data import IGH_Structure
+from Grasshopper.Kernel.Data import GH_Structure
 from System import TimeSpan
 from Grasshopper.Kernel import GH_PrincipalState
+from System.Windows.Forms import ToolStripDropDown
 from Grasshopper.Kernel import GH_SolutionPhase
 from Grasshopper.Kernel import GH_GuidTable
 from Grasshopper.Kernel import GH_RuntimeMessageLevel
@@ -4547,6 +4681,8 @@ from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -4845,7 +4981,9 @@ class GH_ColourSwatch:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from Grasshopper.GUI.Canvas import GH_Canvas
 from Grasshopper.GUI import GH_CanvasMouseEvent
+from Grasshopper.GUI.Canvas import GH_ObjectResponse
 from System.Drawing import PointF
 from System.Drawing import RectangleF
 from Grasshopper.Kernel import GH_PickBox
@@ -4855,6 +4993,8 @@ from Grasshopper.Kernel import IGH_DocumentObject
 from System import Guid
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from Grasshopper.GUI.Canvas import GH_CanvasChannel
+from System.Windows.Forms import KeyEventArgs
 class GH_ColourSwatchAttributes:
     @overload
     def __init__(self, owner: GH_ColourSwatch): ...
@@ -4950,6 +5090,8 @@ class GH_ColourSwatchAttributes:
 
 
 from System.Drawing import Graphics
+from System.Windows.Forms import MouseEventArgs
+from Grasshopper.GUI.Canvas import GH_ObjectResponse
 from System import Guid
 from System.Drawing import Rectangle
 class GH_ColourSwatchPublishProxy:
@@ -4991,8 +5133,10 @@ class GH_ColourSwatchPublishProxy:
 
 from Grasshopper.Kernel import GH_Exposure
 from System import Guid
+from System.Windows.Forms import ToolStripDropDown
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_Param
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
@@ -5002,6 +5146,10 @@ from Grasshopper.Kernel import GH_StateTagList
 from Grasshopper.Kernel import GH_ParamWireDisplay
 from Grasshopper.Kernel import GH_DataMapping
 from Grasshopper.Kernel import GH_ParamData
+from Grasshopper.Kernel.Data import GH_Path
+from Grasshopper.Kernel.Types import GH_Colour
+from Grasshopper.Kernel.Data import IGH_Structure
+from Grasshopper.Kernel.Data import GH_Structure
 from System import TimeSpan
 from Grasshopper.Kernel import GH_PrincipalState
 from Grasshopper.Kernel import GH_SolutionPhase
@@ -5018,6 +5166,8 @@ from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -5314,7 +5464,9 @@ class GH_ColourWheel:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from Grasshopper.GUI.Canvas import GH_Canvas
 from Grasshopper.GUI import GH_CanvasMouseEvent
+from Grasshopper.GUI.Canvas import GH_ObjectResponse
 from System.Drawing import PointF
 from System.Drawing import RectangleF
 from Grasshopper.Kernel import GH_PickBox
@@ -5324,6 +5476,8 @@ from Grasshopper.Kernel import IGH_DocumentObject
 from System import Guid
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from Grasshopper.GUI.Canvas import GH_CanvasChannel
+from System.Windows.Forms import KeyEventArgs
 class GH_ColourWheelAttributes:
     @overload
     def __init__(self, owner: GH_ColourWheel): ...
@@ -5538,6 +5692,7 @@ class GH_ColourWheelStyle(Enum):
 from Grasshopper.Kernel import GH_Exposure
 from Grasshopper.Kernel import GH_ParamKind
 from System import Guid
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_Param
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
@@ -5546,8 +5701,13 @@ from Grasshopper.Kernel import GH_StateTagList
 from Grasshopper.Kernel import GH_ParamWireDisplay
 from Grasshopper.Kernel import GH_DataMapping
 from Grasshopper.Kernel import GH_ParamData
+from Grasshopper.Kernel.Data import GH_Path
+from Grasshopper.Kernel.Types import IGH_Goo
+from Grasshopper.Kernel.Data import IGH_Structure
+from Grasshopper.Kernel.Data import GH_Structure
 from System import TimeSpan
 from Grasshopper.Kernel import GH_PrincipalState
+from System.Windows.Forms import ToolStripDropDown
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from Grasshopper.Kernel import GH_SolutionPhase
@@ -5564,6 +5724,8 @@ from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -5854,7 +6016,9 @@ class GH_ConstantObject:
 
 from System.Drawing import PointF
 from Grasshopper.GUI import GH_TooltipDisplayEventArgs
+from Grasshopper.GUI.Canvas import GH_Canvas
 from Grasshopper.GUI import GH_CanvasMouseEvent
+from Grasshopper.GUI.Canvas import GH_ObjectResponse
 from System.Drawing import RectangleF
 from Grasshopper.Kernel import GH_PickBox
 from Grasshopper.Kernel import IGH_Attributes
@@ -5863,6 +6027,9 @@ from Grasshopper.Kernel import IGH_Param
 from System import Guid
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from Grasshopper.GUI.Canvas import GH_CanvasChannel
+from System.Windows.Forms import KeyEventArgs
+from Grasshopper.Kernel.Attributes import GH_FloatingParamAttributes
 class GH_ConstantObjectAttributes(GH_FloatingParamAttributes):
     @overload
     def __init__(self, owner: GH_ConstantObject): ...
@@ -5958,10 +6125,12 @@ class GH_ConstantObjectAttributes(GH_FloatingParamAttributes):
 
 from Grasshopper.Kernel import GH_Exposure
 from System import Guid
+from System.Windows.Forms import ToolStripDropDown
 from Rhino.Geometry import BoundingBox
 from Grasshopper.Kernel import IGH_PreviewArgs
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_Param
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
@@ -5971,6 +6140,10 @@ from Grasshopper.Kernel import GH_StateTagList
 from Grasshopper.Kernel import GH_ParamWireDisplay
 from Grasshopper.Kernel import GH_DataMapping
 from Grasshopper.Kernel import GH_ParamData
+from Grasshopper.Kernel.Data import GH_Path
+from Grasshopper.Kernel.Types import IGH_Goo
+from Grasshopper.Kernel.Data import IGH_Structure
+from Grasshopper.Kernel.Data import GH_Structure
 from System import TimeSpan
 from Grasshopper.Kernel import GH_PrincipalState
 from Grasshopper.Kernel import GH_SolutionPhase
@@ -5987,6 +6160,8 @@ from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -6299,7 +6474,9 @@ class GH_DataRecorder:
 
 from System.Drawing import PointF
 from Grasshopper.GUI import GH_TooltipDisplayEventArgs
+from Grasshopper.GUI.Canvas import GH_Canvas
 from Grasshopper.GUI import GH_CanvasMouseEvent
+from Grasshopper.GUI.Canvas import GH_ObjectResponse
 from System.Drawing import RectangleF
 from Grasshopper.Kernel import GH_PickBox
 from Grasshopper.Kernel import IGH_Attributes
@@ -6307,6 +6484,8 @@ from Grasshopper.Kernel import IGH_DocumentObject
 from System import Guid
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from Grasshopper.GUI.Canvas import GH_CanvasChannel
+from System.Windows.Forms import KeyEventArgs
 class GH_DataRecorderAttributes:
     @overload
     def __init__(self, owner: GH_DataRecorder): ...
@@ -6403,8 +6582,10 @@ class GH_DataRecorderAttributes:
 from Grasshopper.Kernel import GH_Exposure
 from System import Guid
 from System import Decimal
+from System.Windows.Forms import ToolStripDropDown
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_Param
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
@@ -6414,6 +6595,10 @@ from Grasshopper.Kernel import GH_StateTagList
 from Grasshopper.Kernel import GH_ParamWireDisplay
 from Grasshopper.Kernel import GH_DataMapping
 from Grasshopper.Kernel import GH_ParamData
+from Grasshopper.Kernel.Data import GH_Path
+from Grasshopper.Kernel.Types import GH_Number
+from Grasshopper.Kernel.Data import IGH_Structure
+from Grasshopper.Kernel.Data import GH_Structure
 from System import TimeSpan
 from Grasshopper.Kernel import GH_PrincipalState
 from Grasshopper.Kernel import GH_SolutionPhase
@@ -6430,6 +6615,8 @@ from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -6759,13 +6946,17 @@ class GH_DialKnob:
 from System.Drawing import PointF
 from System.Drawing import RectangleF
 from Grasshopper.Kernel import GH_PickBox
+from Grasshopper.GUI.Canvas import GH_Canvas
 from Grasshopper.GUI import GH_CanvasMouseEvent
+from Grasshopper.GUI.Canvas import GH_ObjectResponse
 from Grasshopper.GUI import GH_TooltipDisplayEventArgs
 from Grasshopper.Kernel import IGH_Attributes
 from Grasshopper.Kernel import IGH_DocumentObject
 from System import Guid
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from Grasshopper.GUI.Canvas import GH_CanvasChannel
+from System.Windows.Forms import KeyEventArgs
 class GH_DialKnobAttributes:
     @overload
     def __init__(self, owner: GH_DialKnob): ...
@@ -6859,12 +7050,15 @@ class GH_DialKnobAttributes:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from Grasshopper.GUI.Base import GH_DigitScrollerBase
 from Grasshopper.Kernel import GH_ParamKind
 from Grasshopper.Kernel import GH_ParamData
+from System.Windows.Forms import ToolStripDropDown
 from Grasshopper.Kernel import GH_Exposure
 from System import Guid
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_Param
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
@@ -6872,6 +7066,10 @@ from Grasshopper.Kernel import GH_ParamAccess
 from Grasshopper.Kernel import GH_StateTagList
 from Grasshopper.Kernel import GH_ParamWireDisplay
 from Grasshopper.Kernel import GH_DataMapping
+from Grasshopper.Kernel.Data import GH_Path
+from Grasshopper.Kernel.Types import GH_Number
+from Grasshopper.Kernel.Data import IGH_Structure
+from Grasshopper.Kernel.Data import GH_Structure
 from System import TimeSpan
 from Grasshopper.Kernel import GH_PrincipalState
 from Grasshopper.Kernel import GH_SolutionPhase
@@ -6888,6 +7086,8 @@ from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -7187,7 +7387,9 @@ class GH_DigitScroller:
 
 
 from System.Drawing import RectangleF
+from Grasshopper.GUI.Canvas import GH_Canvas
 from Grasshopper.GUI import GH_CanvasMouseEvent
+from Grasshopper.GUI.Canvas import GH_ObjectResponse
 from System.Drawing import PointF
 from Grasshopper.Kernel import GH_PickBox
 from Grasshopper.GUI import GH_TooltipDisplayEventArgs
@@ -7196,6 +7398,8 @@ from Grasshopper.Kernel import IGH_DocumentObject
 from System import Guid
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from Grasshopper.GUI.Canvas import GH_CanvasChannel
+from System.Windows.Forms import KeyEventArgs
 class GH_DigitScrollerAttributes:
     @overload
     def __init__(self, nOwner: GH_DigitScroller): ...
@@ -7293,11 +7497,13 @@ class GH_DigitScrollerAttributes:
 
 from Grasshopper.Kernel import GH_Exposure
 from System import Guid
+from System.Windows.Forms import ToolStripDropDown
 from Rhino.Geometry import BoundingBox
 from Grasshopper.Kernel import IGH_PreviewArgs
 from Grasshopper.Kernel import GH_GuidTable
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_Param
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
@@ -7307,6 +7513,10 @@ from Grasshopper.Kernel import GH_StateTagList
 from Grasshopper.Kernel import GH_ParamWireDisplay
 from Grasshopper.Kernel import GH_DataMapping
 from Grasshopper.Kernel import GH_ParamData
+from Grasshopper.Kernel.Data import GH_Path
+from Grasshopper.Kernel.Types import IGH_GeometricGoo
+from Grasshopper.Kernel.Data import IGH_Structure
+from Grasshopper.Kernel.Data import GH_Structure
 from System import TimeSpan
 from Grasshopper.Kernel import GH_PrincipalState
 from Grasshopper.Kernel import GH_SolutionPhase
@@ -7322,6 +7532,8 @@ from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -7626,7 +7838,9 @@ class GH_GeometryCache:
     def WriteGeometryCache(self) -> None: ...
 
 
+from Grasshopper.GUI.Canvas import GH_Canvas
 from Grasshopper.GUI import GH_CanvasMouseEvent
+from Grasshopper.GUI.Canvas import GH_ObjectResponse
 from System.Drawing import PointF
 from Grasshopper.GUI import GH_TooltipDisplayEventArgs
 from System.Drawing import RectangleF
@@ -7636,6 +7850,8 @@ from Grasshopper.Kernel import IGH_DocumentObject
 from System import Guid
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from Grasshopper.GUI.Canvas import GH_CanvasChannel
+from System.Windows.Forms import KeyEventArgs
 class GH_GeometryCacheAttributes:
     @overload
     def __init__(self, owner: GH_GeometryCache): ...
@@ -7735,10 +7951,12 @@ from Rhino.DocObjects import ObjectType
 from Grasshopper.Kernel import GH_Document
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_GuidTable
+from System.Windows.Forms import ToolStripDropDown
 from Rhino.Geometry import BoundingBox
 from Grasshopper.Kernel import IGH_PreviewArgs
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_Param
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_ParamKind
@@ -7747,6 +7965,10 @@ from Grasshopper.Kernel import GH_StateTagList
 from Grasshopper.Kernel import GH_ParamWireDisplay
 from Grasshopper.Kernel import GH_DataMapping
 from Grasshopper.Kernel import GH_ParamData
+from Grasshopper.Kernel.Data import GH_Path
+from Grasshopper.Kernel.Types import IGH_GeometricGoo
+from Grasshopper.Kernel.Data import IGH_Structure
+from Grasshopper.Kernel.Data import GH_Structure
 from System import TimeSpan
 from Grasshopper.Kernel import GH_PrincipalState
 from Grasshopper.Kernel import GH_SolutionPhase
@@ -7761,6 +7983,8 @@ from Grasshopper.Kernel import DisplayExpiredEventHandler
 from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -8093,7 +8317,9 @@ class GH_GeometryPipeline:
 
 from System.Drawing import PointF
 from Grasshopper.GUI import GH_TooltipDisplayEventArgs
+from Grasshopper.GUI.Canvas import GH_Canvas
 from Grasshopper.GUI import GH_CanvasMouseEvent
+from Grasshopper.GUI.Canvas import GH_ObjectResponse
 from System.Drawing import RectangleF
 from Grasshopper.Kernel import GH_PickBox
 from Grasshopper.Kernel import IGH_Attributes
@@ -8101,6 +8327,8 @@ from Grasshopper.Kernel import IGH_DocumentObject
 from System import Guid
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from Grasshopper.GUI.Canvas import GH_CanvasChannel
+from System.Windows.Forms import KeyEventArgs
 class GH_GeometryPipelineAttributes:
     @overload
     def __init__(self, owner: GH_GeometryPipeline): ...
@@ -8196,10 +8424,13 @@ class GH_GeometryPipelineAttributes:
 
 from System import Guid
 from Grasshopper.Kernel import GH_Exposure
+from System.Windows.Forms import ToolStripDropDown
+from Grasshopper.GUI.Gradient import GH_Gradient
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from Grasshopper.Kernel import GH_ComponentParamServer
 from Grasshopper.Kernel import GH_RuntimeMessageLevel
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
 from Grasshopper.Kernel import GH_DocumentContext
@@ -8222,6 +8453,8 @@ from Grasshopper.Kernel import DisplayExpiredEventHandler
 from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -8477,7 +8710,9 @@ class GH_GradientControl(GH_Component):
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from Grasshopper.GUI.Canvas import GH_Canvas
 from Grasshopper.GUI import GH_CanvasMouseEvent
+from Grasshopper.GUI.Canvas import GH_ObjectResponse
 from System.Drawing import Rectangle
 from System.Drawing import PointF
 from System.Drawing import RectangleF
@@ -8488,6 +8723,8 @@ from Grasshopper.Kernel import IGH_DocumentObject
 from System import Guid
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from Grasshopper.GUI.Canvas import GH_CanvasChannel
+from System.Windows.Forms import KeyEventArgs
 class GH_GradientControlAttributes:
     @overload
     def __init__(self, gradient: GH_GradientControl): ...
@@ -8583,10 +8820,14 @@ class GH_GradientControlAttributes:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from Grasshopper.Kernel.Graphs import GH_GraphContainer
+from Grasshopper.Kernel.Graphs import IGH_Graph
 from Grasshopper.Kernel import GH_Exposure
+from System.Windows.Forms import ToolStripDropDown
 from System import Guid
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_Param
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
@@ -8596,6 +8837,10 @@ from Grasshopper.Kernel import GH_StateTagList
 from Grasshopper.Kernel import GH_ParamWireDisplay
 from Grasshopper.Kernel import GH_DataMapping
 from Grasshopper.Kernel import GH_ParamData
+from Grasshopper.Kernel.Data import GH_Path
+from Grasshopper.Kernel.Types import IGH_Goo
+from Grasshopper.Kernel.Data import IGH_Structure
+from Grasshopper.Kernel.Data import GH_Structure
 from System import TimeSpan
 from Grasshopper.Kernel import GH_PrincipalState
 from Grasshopper.Kernel import GH_SolutionPhase
@@ -8612,6 +8857,8 @@ from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -8910,7 +9157,9 @@ class GH_GraphMapper:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from Grasshopper.GUI.Canvas import GH_Canvas
 from Grasshopper.GUI import GH_CanvasMouseEvent
+from Grasshopper.GUI.Canvas import GH_ObjectResponse
 from System.Drawing import PointF
 from System.Drawing import RectangleF
 from Grasshopper.Kernel import GH_PickBox
@@ -8920,6 +9169,8 @@ from Grasshopper.Kernel import IGH_DocumentObject
 from System import Guid
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from Grasshopper.GUI.Canvas import GH_CanvasChannel
+from System.Windows.Forms import KeyEventArgs
 class GH_GraphMapperAttributes:
     @overload
     def __init__(self, owner: GH_GraphMapper): ...
@@ -9019,7 +9270,9 @@ class GH_GraphMapperAttributes:
 
 from Grasshopper.Kernel import GH_Exposure
 from System.Drawing import Color
+from System.Collections.Generic import SortedDictionary
 from System import Guid
+from System.Windows.Forms import ToolStripDropDown
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from Grasshopper.Kernel import IGH_Attributes
@@ -9034,6 +9287,8 @@ from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_Document
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -9229,7 +9484,11 @@ from System.Drawing import PointF
 from Grasshopper.GUI import GH_TooltipDisplayEventArgs
 from System.Drawing import RectangleF
 from Grasshopper.Kernel import GH_PickBox
+from Grasshopper.GUI.Canvas import GH_Canvas
+from Grasshopper.GUI.Canvas import GH_CanvasChannel
 from Grasshopper.GUI import GH_CanvasMouseEvent
+from System.Windows.Forms import KeyEventArgs
+from Grasshopper.GUI.Canvas import GH_ObjectResponse
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 class GH_GroupAttributes:
@@ -9332,11 +9591,15 @@ class GH_GroupBorder(Enum):
 
 from Grasshopper.Kernel import GH_ParamKind
 from Grasshopper.Kernel import GH_Exposure
+from System.Windows.Forms import ToolStripDropDown
 from System.Drawing import Bitmap
+from System.Drawing.Drawing2D import WrapMode
+from Grasshopper.Kernel.Types import UVInterval
 from System import Guid
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from System.Drawing import PointF
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_Param
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
@@ -9345,6 +9608,10 @@ from Grasshopper.Kernel import GH_StateTagList
 from Grasshopper.Kernel import GH_ParamWireDisplay
 from Grasshopper.Kernel import GH_DataMapping
 from Grasshopper.Kernel import GH_ParamData
+from Grasshopper.Kernel.Data import GH_Path
+from Grasshopper.Kernel.Types import IGH_Goo
+from Grasshopper.Kernel.Data import IGH_Structure
+from Grasshopper.Kernel.Data import GH_Structure
 from System import TimeSpan
 from Grasshopper.Kernel import GH_PrincipalState
 from Grasshopper.Kernel import GH_SolutionPhase
@@ -9361,6 +9628,8 @@ from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
 class GH_ImageSampler:
@@ -9690,7 +9959,9 @@ class GH_ImageSampler:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from Grasshopper.GUI.Canvas import GH_Canvas
 from Grasshopper.GUI import GH_CanvasMouseEvent
+from Grasshopper.GUI.Canvas import GH_ObjectResponse
 from System.Drawing import PointF
 from System.Drawing import RectangleF
 from Grasshopper.Kernel import GH_PickBox
@@ -9700,6 +9971,8 @@ from Grasshopper.Kernel import IGH_DocumentObject
 from System import Guid
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from Grasshopper.GUI.Canvas import GH_CanvasChannel
+from System.Windows.Forms import KeyEventArgs
 class GH_ImageSamplerAttributes:
     @overload
     def __init__(self, owner: GH_ImageSampler): ...
@@ -9795,6 +10068,8 @@ class GH_ImageSamplerAttributes:
 
 from Grasshopper.Kernel import GH_Exposure
 from System import Guid
+from Grasshopper.Kernel.Data import GH_Path
+from Grasshopper.Kernel.Data import IGH_Structure
 from System.Collections import IList
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
@@ -9802,6 +10077,7 @@ from Rhino.Geometry import BoundingBox
 from Grasshopper.Kernel import IGH_PreviewArgs
 from Rhino import RhinoDoc
 from Rhino.DocObjects import ObjectAttributes
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_Param
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
@@ -9811,8 +10087,11 @@ from Grasshopper.Kernel import GH_StateTagList
 from Grasshopper.Kernel import GH_ParamWireDisplay
 from Grasshopper.Kernel import GH_DataMapping
 from Grasshopper.Kernel import GH_ParamData
+from Grasshopper.Kernel.Types import IGH_Goo
+from Grasshopper.Kernel.Data import GH_Structure
 from System import TimeSpan
 from Grasshopper.Kernel import GH_PrincipalState
+from System.Windows.Forms import ToolStripDropDown
 from Grasshopper.Kernel import GH_SolutionPhase
 from Grasshopper.Kernel import GH_GuidTable
 from Grasshopper.Kernel import GH_RuntimeMessageLevel
@@ -9827,6 +10106,8 @@ from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -10145,7 +10426,9 @@ class GH_ItemPicker:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from Grasshopper.GUI.Canvas import GH_Canvas
 from Grasshopper.GUI import GH_CanvasMouseEvent
+from Grasshopper.GUI.Canvas import GH_ObjectResponse
 from System.Drawing import PointF
 from Grasshopper.GUI import GH_TooltipDisplayEventArgs
 from System.Drawing import RectangleF
@@ -10155,6 +10438,9 @@ from Grasshopper.Kernel import IGH_DocumentObject
 from System import Guid
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from Grasshopper.GUI.Canvas import GH_CanvasChannel
+from System.Windows.Forms import KeyEventArgs
+from Grasshopper.GUI.Base import GH_DigitScrollerBase
 class GH_ItemPickerAttributes:
     @overload
     def __init__(self, owner: GH_ItemPicker): ...
@@ -10251,6 +10537,7 @@ class GH_ItemPickerAttributes:
 
 from Grasshopper.Kernel import GH_Exposure
 from System import Guid
+from System.Windows.Forms import ToolStripDropDown
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from Grasshopper.Kernel import IGH_Attributes
@@ -10265,6 +10552,8 @@ from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_Document
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -10435,12 +10724,16 @@ from System.Drawing import PointF
 from System.Drawing import RectangleF
 from Grasshopper.Kernel import GH_PickBox
 from Grasshopper.GUI import GH_TooltipDisplayEventArgs
+from Grasshopper.GUI.Canvas import GH_Canvas
 from Grasshopper.GUI import GH_CanvasMouseEvent
+from Grasshopper.GUI.Canvas import GH_ObjectResponse
 from Grasshopper.Kernel import IGH_Attributes
 from Grasshopper.Kernel import IGH_DocumentObject
 from System import Guid
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from Grasshopper.GUI.Canvas import GH_CanvasChannel
+from System.Windows.Forms import KeyEventArgs
 class GH_JumpObjectAttributes:
     @overload
     def __init__(self, owner: GH_JumpObject): ...
@@ -10542,10 +10835,12 @@ from Rhino.Geometry import BoundingBox
 from Grasshopper.Kernel import IGH_PreviewArgs
 from Grasshopper.Kernel import GH_ComponentParamServer
 from Grasshopper.Kernel import GH_RuntimeMessageLevel
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_GuidTable
+from System.Windows.Forms import ToolStripDropDown
 from Grasshopper.Kernel import GH_DataComparison
 from System import TimeSpan
 from Grasshopper.Kernel import GH_RenderArgs
@@ -10562,6 +10857,8 @@ from Grasshopper.Kernel import DisplayExpiredEventHandler
 from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -10803,7 +11100,9 @@ class GH_Legend(GH_Component):
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from Grasshopper.GUI.Canvas import GH_Canvas
 from Grasshopper.GUI import GH_CanvasMouseEvent
+from Grasshopper.GUI.Canvas import GH_ObjectResponse
 from System.Drawing import PointF
 from System.Drawing import RectangleF
 from Grasshopper.Kernel import GH_PickBox
@@ -10813,6 +11112,8 @@ from Grasshopper.Kernel import IGH_DocumentObject
 from System import Guid
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from Grasshopper.GUI.Canvas import GH_CanvasChannel
+from System.Windows.Forms import KeyEventArgs
 class GH_LegendAttributes:
     @overload
     def __init__(self, component: GH_Legend): ...
@@ -10961,6 +11262,7 @@ class GH_LegendType(Enum):
 
 from Grasshopper.Kernel import GH_Exposure
 from System import Guid
+from System.Windows.Forms import ToolStripDropDown
 from System import EventArgs
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
@@ -10976,6 +11278,8 @@ from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_Document
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -11142,7 +11446,9 @@ class GH_Markup(GH_DocumentObject):
 from System.Drawing import PointF
 from System.Drawing import RectangleF
 from Grasshopper.Kernel import GH_PickBox
+from Grasshopper.GUI.Canvas import GH_Canvas
 from Grasshopper.GUI import GH_CanvasMouseEvent
+from Grasshopper.GUI.Canvas import GH_ObjectResponse
 from System.Drawing import Pen
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
@@ -11150,6 +11456,8 @@ from Grasshopper.GUI import GH_TooltipDisplayEventArgs
 from Grasshopper.Kernel import IGH_Attributes
 from Grasshopper.Kernel import IGH_DocumentObject
 from System import Guid
+from Grasshopper.GUI.Canvas import GH_CanvasChannel
+from System.Windows.Forms import KeyEventArgs
 class GH_MarkupAttributes:
     @overload
     def __init__(self, owner: GH_Markup): ...
@@ -11266,6 +11574,7 @@ class GH_MarkupAttributes:
 from Rhino.Geometry import Polyline
 from Rhino.Geometry import Transform
 from Rhino.Geometry import BoundingBox
+from System.Drawing.Drawing2D import GraphicsPath
 class GH_MarkupCollection:
     @overload
     def __init__(self): ...
@@ -11344,6 +11653,7 @@ from Grasshopper.Kernel import GH_Exposure
 from System import Guid
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_Param
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
@@ -11352,8 +11662,13 @@ from Grasshopper.Kernel import GH_StateTagList
 from Grasshopper.Kernel import GH_ParamWireDisplay
 from Grasshopper.Kernel import GH_DataMapping
 from Grasshopper.Kernel import GH_ParamData
+from Grasshopper.Kernel.Data import GH_Path
+from Grasshopper.Kernel.Types import GH_Point
+from Grasshopper.Kernel.Data import IGH_Structure
+from Grasshopper.Kernel.Data import GH_Structure
 from System import TimeSpan
 from Grasshopper.Kernel import GH_PrincipalState
+from System.Windows.Forms import ToolStripDropDown
 from Grasshopper.Kernel import GH_SolutionPhase
 from Grasshopper.Kernel import GH_GuidTable
 from Grasshopper.Kernel import GH_RuntimeMessageLevel
@@ -11368,6 +11683,8 @@ from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -11688,7 +12005,9 @@ class GH_MultiDimensionalSlider:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from Grasshopper.GUI.Canvas import GH_Canvas
 from Grasshopper.GUI import GH_CanvasMouseEvent
+from Grasshopper.GUI.Canvas import GH_ObjectResponse
 from System.Drawing import PointF
 from System.Drawing import RectangleF
 from Grasshopper.Kernel import GH_PickBox
@@ -11698,6 +12017,8 @@ from Grasshopper.Kernel import IGH_DocumentObject
 from System import Guid
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from Grasshopper.GUI.Canvas import GH_CanvasChannel
+from System.Windows.Forms import KeyEventArgs
 class GH_MultiDimensionalSliderAttributes:
     @overload
     def __init__(self, owner: GH_MultiDimensionalSlider): ...
@@ -11791,13 +12112,18 @@ class GH_MultiDimensionalSliderAttributes:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from Grasshopper.GUI.Base import GH_SliderBase
 from System import Decimal
+from System.Windows.Forms import ToolStripDropDown
 from Grasshopper.Kernel import GH_Exposure
+from Grasshopper.GUI.Base import GH_SliderAccuracy
 from Grasshopper.Kernel import GH_ParamKind
 from Grasshopper.Kernel import GH_ParamData
 from System import Guid
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from Grasshopper.GUI.RemotePanel import IRcpItem
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_Param
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
@@ -11805,6 +12131,10 @@ from Grasshopper.Kernel import GH_ParamAccess
 from Grasshopper.Kernel import GH_StateTagList
 from Grasshopper.Kernel import GH_ParamWireDisplay
 from Grasshopper.Kernel import GH_DataMapping
+from Grasshopper.Kernel.Data import GH_Path
+from Grasshopper.Kernel.Types import GH_Number
+from Grasshopper.Kernel.Data import IGH_Structure
+from Grasshopper.Kernel.Data import GH_Structure
 from System import TimeSpan
 from Grasshopper.Kernel import GH_PrincipalState
 from Grasshopper.Kernel import GH_SolutionPhase
@@ -11821,6 +12151,8 @@ from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -12155,7 +12487,9 @@ class GH_NumberSlider:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from Grasshopper.GUI.Canvas import GH_Canvas
 from Grasshopper.GUI import GH_CanvasMouseEvent
+from Grasshopper.GUI.Canvas import GH_ObjectResponse
 from System.Drawing import PointF
 from System.Drawing import RectangleF
 from Grasshopper.Kernel import GH_PickBox
@@ -12165,6 +12499,8 @@ from Grasshopper.Kernel import IGH_DocumentObject
 from System import Guid
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from Grasshopper.GUI.Canvas import GH_CanvasChannel
+from System.Windows.Forms import KeyEventArgs
 class GH_NumberSliderAttributes:
     @overload
     def __init__(self, nOwner: GH_NumberSlider): ...
@@ -12259,6 +12595,8 @@ class GH_NumberSliderAttributes:
 
 
 from System.Drawing import Graphics
+from System.Windows.Forms import MouseEventArgs
+from Grasshopper.GUI.Canvas import GH_ObjectResponse
 from System import Guid
 from System.Drawing import Rectangle
 class GH_NumberSliderPublishProxy:
@@ -12302,8 +12640,11 @@ from System import Guid
 from Grasshopper.Kernel import GH_Document
 from Grasshopper.Kernel import GH_ParamKind
 from Grasshopper.Kernel import GH_Exposure
+from System.Windows.Forms import ToolStripDropDown
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from Grasshopper.GUI.RemotePanel import IRcpItem
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_Param
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_ParamAccess
@@ -12311,6 +12652,10 @@ from Grasshopper.Kernel import GH_StateTagList
 from Grasshopper.Kernel import GH_ParamWireDisplay
 from Grasshopper.Kernel import GH_DataMapping
 from Grasshopper.Kernel import GH_ParamData
+from Grasshopper.Kernel.Data import GH_Path
+from Grasshopper.Kernel.Types import GH_String
+from Grasshopper.Kernel.Data import IGH_Structure
+from Grasshopper.Kernel.Data import GH_Structure
 from System import TimeSpan
 from Grasshopper.Kernel import GH_PrincipalState
 from Grasshopper.Kernel import GH_SolutionPhase
@@ -12327,6 +12672,8 @@ from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -12646,7 +12993,9 @@ class GH_Panel:
 
 
 from System.Drawing import Rectangle
+from Grasshopper.GUI.Canvas import GH_Canvas
 from Grasshopper.GUI import GH_CanvasMouseEvent
+from Grasshopper.GUI.Canvas import GH_ObjectResponse
 from System.Drawing import PointF
 from Grasshopper.GUI import GH_TooltipDisplayEventArgs
 from GH_IO.Serialization import GH_IWriter
@@ -12656,6 +13005,8 @@ from Grasshopper.Kernel import GH_PickBox
 from Grasshopper.Kernel import IGH_Attributes
 from Grasshopper.Kernel import IGH_DocumentObject
 from System import Guid
+from Grasshopper.GUI.Canvas import GH_CanvasChannel
+from System.Windows.Forms import KeyEventArgs
 class GH_PanelAttributes:
     @overload
     def __init__(self, owner: GH_Panel): ...
@@ -12865,6 +13216,8 @@ class GH_PanelProperties:
 from System.Drawing import Graphics
 from System import Guid
 from System.Drawing import Rectangle
+from System.Windows.Forms import MouseEventArgs
+from Grasshopper.GUI.Canvas import GH_ObjectResponse
 class GH_PanelPublishProxy:
     @overload
     def __init__(self, owner: GH_Panel): ...
@@ -12905,10 +13258,14 @@ class GH_PanelPublishProxy:
 from System import Guid
 from Grasshopper.Kernel import GH_Exposure
 from Grasshopper.Kernel import GH_ParamKind
+from Grasshopper.Kernel.Data import GH_GraphicBranch
+from Grasshopper.Kernel.Data import GH_GraphicTreeDisplayArgs
 from Grasshopper.Kernel import IGH_Param
+from System.Windows.Forms import ToolStripDropDown
 from System import EventArgs
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
 from Grasshopper.Kernel import GH_ParamAccess
@@ -12916,6 +13273,10 @@ from Grasshopper.Kernel import GH_StateTagList
 from Grasshopper.Kernel import GH_ParamWireDisplay
 from Grasshopper.Kernel import GH_DataMapping
 from Grasshopper.Kernel import GH_ParamData
+from Grasshopper.Kernel.Data import GH_Path
+from Grasshopper.Kernel.Types import GH_StructurePath
+from Grasshopper.Kernel.Data import IGH_Structure
+from Grasshopper.Kernel.Data import GH_Structure
 from System import TimeSpan
 from Grasshopper.Kernel import GH_PrincipalState
 from Grasshopper.Kernel import GH_SolutionPhase
@@ -12932,6 +13293,8 @@ from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -13234,7 +13597,9 @@ class GH_ParamViewer:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from Grasshopper.GUI.Canvas import GH_Canvas
 from Grasshopper.GUI import GH_CanvasMouseEvent
+from Grasshopper.GUI.Canvas import GH_ObjectResponse
 from System.Drawing import Rectangle
 from System.Drawing import PointF
 from System.Drawing import RectangleF
@@ -13245,6 +13610,8 @@ from Grasshopper.Kernel import IGH_DocumentObject
 from System import Guid
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from Grasshopper.GUI.Canvas import GH_CanvasChannel
+from System.Windows.Forms import KeyEventArgs
 class GH_ParamViewerAttributes:
     @overload
     def __init__(self, owner: GH_ParamViewer): ...
@@ -13349,8 +13716,10 @@ class GH_ParamViewerAttributes:
 from Grasshopper.Kernel import GH_Exposure
 from System import Guid
 from Grasshopper.Kernel import GH_ParamKind
+from System.Windows.Forms import ToolStripDropDown
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_Param
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
@@ -13359,6 +13728,10 @@ from Grasshopper.Kernel import GH_StateTagList
 from Grasshopper.Kernel import GH_ParamWireDisplay
 from Grasshopper.Kernel import GH_DataMapping
 from Grasshopper.Kernel import GH_ParamData
+from Grasshopper.Kernel.Data import GH_Path
+from Grasshopper.Kernel.Types import IGH_Goo
+from Grasshopper.Kernel.Data import IGH_Structure
+from Grasshopper.Kernel.Data import GH_Structure
 from System import TimeSpan
 from Grasshopper.Kernel import GH_PrincipalState
 from Grasshopper.Kernel import GH_SolutionPhase
@@ -13375,6 +13748,8 @@ from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -13679,7 +14054,9 @@ class GH_PathMapper:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from Grasshopper.GUI.Canvas import GH_Canvas
 from Grasshopper.GUI import GH_CanvasMouseEvent
+from Grasshopper.GUI.Canvas import GH_ObjectResponse
 from System.Drawing import PointF
 from System.Drawing import RectangleF
 from Grasshopper.Kernel import GH_PickBox
@@ -13689,6 +14066,8 @@ from Grasshopper.Kernel import IGH_DocumentObject
 from System import Guid
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from Grasshopper.GUI.Canvas import GH_CanvasChannel
+from System.Windows.Forms import KeyEventArgs
 class GH_PathMapperAttributes:
     @overload
     def __init__(self, owner: GH_PathMapper): ...
@@ -13785,6 +14164,7 @@ class GH_PathMapperAttributes:
 from System import Guid
 from Grasshopper.Kernel import GH_Exposure
 from Grasshopper.Kernel import GH_ParamKind
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_Param
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
@@ -13793,8 +14173,13 @@ from Grasshopper.Kernel import GH_StateTagList
 from Grasshopper.Kernel import GH_ParamWireDisplay
 from Grasshopper.Kernel import GH_DataMapping
 from Grasshopper.Kernel import GH_ParamData
+from Grasshopper.Kernel.Data import GH_Path
+from Grasshopper.Kernel.Types import GH_String
+from Grasshopper.Kernel.Data import IGH_Structure
+from Grasshopper.Kernel.Data import GH_Structure
 from System import TimeSpan
 from Grasshopper.Kernel import GH_PrincipalState
+from System.Windows.Forms import ToolStripDropDown
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from Grasshopper.Kernel import GH_SolutionPhase
@@ -13811,6 +14196,8 @@ from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -14104,13 +14491,17 @@ class GH_PieChart:
 from System.Drawing import PointF
 from System.Drawing import RectangleF
 from Grasshopper.Kernel import GH_PickBox
+from Grasshopper.GUI.Canvas import GH_Canvas
 from Grasshopper.GUI import GH_CanvasMouseEvent
+from Grasshopper.GUI.Canvas import GH_ObjectResponse
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from Grasshopper.GUI import GH_TooltipDisplayEventArgs
 from Grasshopper.Kernel import IGH_Attributes
 from Grasshopper.Kernel import IGH_DocumentObject
 from System import Guid
+from Grasshopper.GUI.Canvas import GH_CanvasChannel
+from System.Windows.Forms import KeyEventArgs
 class GH_PieChartAttributes:
     @overload
     def __init__(self, owner: GH_PieChart): ...
@@ -14208,6 +14599,7 @@ class GH_PieChartAttributes:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from System.Collections.Generic import IList
 class GH_PieChartDataSet:
     @overload
     def __init__(self): ...
@@ -14262,8 +14654,10 @@ class GH_PolylineReductionSetManager:
 from Grasshopper.Kernel import GH_Exposure
 from System import Guid
 from Grasshopper.Kernel import GH_ParamKind
+from System.Windows.Forms import ToolStripDropDown
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_Param
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
@@ -14272,6 +14666,10 @@ from Grasshopper.Kernel import GH_StateTagList
 from Grasshopper.Kernel import GH_ParamWireDisplay
 from Grasshopper.Kernel import GH_DataMapping
 from Grasshopper.Kernel import GH_ParamData
+from Grasshopper.Kernel.Data import GH_Path
+from Grasshopper.Kernel.Types import GH_Number
+from Grasshopper.Kernel.Data import IGH_Structure
+from Grasshopper.Kernel.Data import GH_Structure
 from System import TimeSpan
 from Grasshopper.Kernel import GH_PrincipalState
 from Grasshopper.Kernel import GH_SolutionPhase
@@ -14288,6 +14686,8 @@ from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -14588,7 +14988,9 @@ class GH_QuickGraph:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from Grasshopper.GUI.Canvas import GH_Canvas
 from Grasshopper.GUI import GH_CanvasMouseEvent
+from Grasshopper.GUI.Canvas import GH_ObjectResponse
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from System.Drawing import PointF
@@ -14598,6 +15000,8 @@ from Grasshopper.GUI import GH_TooltipDisplayEventArgs
 from Grasshopper.Kernel import IGH_Attributes
 from Grasshopper.Kernel import IGH_DocumentObject
 from System import Guid
+from Grasshopper.GUI.Canvas import GH_CanvasChannel
+from System.Windows.Forms import KeyEventArgs
 class GH_QuickGraphAttributes:
     @overload
     def __init__(self, owner: GH_QuickGraph): ...
@@ -14799,6 +15203,8 @@ class GH_QuickGraphTrack:
 from System import Guid
 from Grasshopper.Kernel import GH_Exposure
 from Grasshopper.Kernel import GH_Document
+from System.Windows.Forms import ToolStripDropDown
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_Param
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_ParamKind
@@ -14807,6 +15213,10 @@ from Grasshopper.Kernel import GH_StateTagList
 from Grasshopper.Kernel import GH_ParamWireDisplay
 from Grasshopper.Kernel import GH_DataMapping
 from Grasshopper.Kernel import GH_ParamData
+from Grasshopper.Kernel.Data import GH_Path
+from Grasshopper.Kernel.Types import IGH_Goo
+from Grasshopper.Kernel.Data import IGH_Structure
+from Grasshopper.Kernel.Data import GH_Structure
 from System import TimeSpan
 from Grasshopper.Kernel import GH_PrincipalState
 from GH_IO.Serialization import GH_IWriter
@@ -14825,6 +15235,8 @@ from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -15124,7 +15536,9 @@ class GH_Relay:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from Grasshopper.GUI.Canvas import GH_Canvas
 from Grasshopper.GUI import GH_CanvasMouseEvent
+from Grasshopper.GUI.Canvas import GH_ObjectResponse
 from System.Drawing import PointF
 from Grasshopper.GUI import GH_TooltipDisplayEventArgs
 from System.Drawing import RectangleF
@@ -15134,6 +15548,8 @@ from Grasshopper.Kernel import IGH_DocumentObject
 from System import Guid
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from Grasshopper.GUI.Canvas import GH_CanvasChannel
+from System.Windows.Forms import KeyEventArgs
 class GH_RelayAttributes:
     @overload
     def __init__(self, owner: GH_Relay): ...
@@ -15257,6 +15673,9 @@ from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_Document
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
+from System.Windows.Forms import ToolStripDropDown
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -15442,13 +15861,18 @@ class GH_Scribble(GH_DocumentObject):
 from System.Drawing import PointF
 from System.Drawing import RectangleF
 from Grasshopper.Kernel import GH_PickBox
+from Grasshopper.GUI.Canvas import GH_Canvas
 from Grasshopper.GUI import GH_CanvasMouseEvent
+from Grasshopper.GUI.Canvas import GH_ObjectResponse
+from System.Drawing.Drawing2D import GraphicsPath
 from Grasshopper.GUI import GH_TooltipDisplayEventArgs
 from Grasshopper.Kernel import IGH_Attributes
 from Grasshopper.Kernel import IGH_DocumentObject
 from System import Guid
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from Grasshopper.GUI.Canvas import GH_CanvasChannel
+from System.Windows.Forms import KeyEventArgs
 class GH_ScribbleAttributes:
     @overload
     def __init__(self, owner: GH_Scribble): ...
@@ -15605,6 +16029,8 @@ class GH_SliderAnimator:
 
 from System import Guid
 from Grasshopper.Kernel import GH_Exposure
+from System.Windows.Forms import ToolStripDropDown
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_Param
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
@@ -15614,6 +16040,10 @@ from Grasshopper.Kernel import GH_StateTagList
 from Grasshopper.Kernel import GH_ParamWireDisplay
 from Grasshopper.Kernel import GH_DataMapping
 from Grasshopper.Kernel import GH_ParamData
+from Grasshopper.Kernel.Data import GH_Path
+from Grasshopper.Kernel.Types import IGH_Goo
+from Grasshopper.Kernel.Data import IGH_Structure
+from Grasshopper.Kernel.Data import GH_Structure
 from System import TimeSpan
 from Grasshopper.Kernel import GH_PrincipalState
 from GH_IO.Serialization import GH_IWriter
@@ -15632,6 +16062,8 @@ from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -15929,7 +16361,11 @@ from Grasshopper.Kernel import IGH_DocumentObject
 from System import Guid
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from Grasshopper.GUI.Canvas import GH_Canvas
+from Grasshopper.GUI.Canvas import GH_CanvasChannel
 from Grasshopper.GUI import GH_CanvasMouseEvent
+from System.Windows.Forms import KeyEventArgs
+from Grasshopper.GUI.Canvas import GH_ObjectResponse
 class GH_SuireStyleNodeAttributes:
     @overload
     def __init__(self, owner: GH_SuireSimplifyNode): ...
@@ -16048,6 +16484,9 @@ from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_Document
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
+from System.Windows.Forms import ToolStripDropDown
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -16220,13 +16659,17 @@ class GH_TextBalloon(GH_DocumentObject):
 from System.Drawing import PointF
 from System.Drawing import RectangleF
 from Grasshopper.Kernel import GH_PickBox
+from Grasshopper.GUI.Canvas import GH_Canvas
 from Grasshopper.GUI import GH_CanvasMouseEvent
+from Grasshopper.GUI.Canvas import GH_ObjectResponse
 from Grasshopper.GUI import GH_TooltipDisplayEventArgs
 from Grasshopper.Kernel import IGH_Attributes
 from Grasshopper.Kernel import IGH_DocumentObject
 from System import Guid
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from Grasshopper.GUI.Canvas import GH_CanvasChannel
+from System.Windows.Forms import KeyEventArgs
 class GH_TextBalloonAttributes:
     @overload
     def __init__(self, owner: GH_TextBalloon): ...
@@ -16326,11 +16769,14 @@ from System import Guid
 from Grasshopper.Kernel import GH_Exposure
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import IGH_DocumentObject
+from System.Collections.Generic import SortedDictionary
+from System.Windows.Forms import ToolStripDropDown
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from Grasshopper.Kernel import GH_SolutionPhase
 from Grasshopper.Kernel import GH_GuidTable
 from Grasshopper.Kernel import GH_RuntimeMessageLevel
+from System.Collections.Generic import IList
 from System import TimeSpan
 from Grasshopper.Kernel import IGH_Attributes
 from Grasshopper.Kernel import ObjectChangedEventHandler
@@ -16344,6 +16790,8 @@ from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_Document
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -16597,16 +17045,21 @@ class GH_Timer(GH_ActiveObject):
 
 from System.Drawing import PointF
 from Grasshopper.GUI import GH_TooltipDisplayEventArgs
+from Grasshopper.GUI.Canvas import GH_Canvas
 from Grasshopper.GUI import GH_CanvasMouseEvent
+from Grasshopper.GUI.Canvas import GH_ObjectResponse
 from System.Drawing import Graphics
 from System.Drawing import RectangleF
 from System.Drawing import Color
+from System.Drawing.Drawing2D import GraphicsPath
 from Grasshopper.Kernel import GH_PickBox
 from Grasshopper.Kernel import IGH_Attributes
 from Grasshopper.Kernel import IGH_DocumentObject
 from System import Guid
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from Grasshopper.GUI.Canvas import GH_CanvasChannel
+from System.Windows.Forms import KeyEventArgs
 class GH_TimerAttributes:
     @overload
     def __init__(self, owner: GH_Timer): ...
@@ -16706,11 +17159,14 @@ class GH_TimerAttributes:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from Grasshopper.GUI.Canvas import GH_Canvas
 from Grasshopper.GUI import GH_CanvasMouseEvent
+from Grasshopper.GUI.Canvas import GH_ObjectResponse
+from System.Windows.Forms import KeyEventArgs
 from System.Drawing import PointF
 from System.Drawing import Point
 from Grasshopper.GUI import GH_TooltipDisplayEventArgs
-from .Interaction import GH_AbstractInteraction
+from Grasshopper.GUI.Canvas.Interaction import GH_AbstractInteraction
 class GH_TimerTargetInteraction(GH_AbstractInteraction):
     @overload
     def __init__(self, timer: GH_Timer, canvas: GH_Canvas, e: GH_CanvasMouseEvent): ...
@@ -16756,12 +17212,15 @@ class GH_TimerTargetInteraction(GH_AbstractInteraction):
 
 from Grasshopper.Kernel import GH_Exposure
 from System import Guid
+from System.Windows.Forms import IWin32Window
+from System.Windows.Forms import ToolStripDropDown
 from Rhino.Geometry import BoundingBox
 from Grasshopper.Kernel import IGH_PreviewArgs
 from Rhino import RhinoDoc
 from Rhino.DocObjects import ObjectAttributes
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_Param
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
@@ -16771,6 +17230,10 @@ from Grasshopper.Kernel import GH_StateTagList
 from Grasshopper.Kernel import GH_ParamWireDisplay
 from Grasshopper.Kernel import GH_DataMapping
 from Grasshopper.Kernel import GH_ParamData
+from Grasshopper.Kernel.Data import GH_Path
+from Grasshopper.Kernel.Types import IGH_Goo
+from Grasshopper.Kernel.Data import IGH_Structure
+from Grasshopper.Kernel.Data import GH_Structure
 from System import TimeSpan
 from Grasshopper.Kernel import GH_PrincipalState
 from Grasshopper.Kernel import GH_SolutionPhase
@@ -16787,6 +17250,8 @@ from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -17121,7 +17586,9 @@ class GH_ValueList:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from Grasshopper.GUI.Canvas import GH_Canvas
 from Grasshopper.GUI import GH_CanvasMouseEvent
+from Grasshopper.GUI.Canvas import GH_ObjectResponse
 from System.Drawing import PointF
 from System.Drawing import RectangleF
 from Grasshopper.Kernel import GH_PickBox
@@ -17131,6 +17598,8 @@ from Grasshopper.Kernel import IGH_DocumentObject
 from System import Guid
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from Grasshopper.GUI.Canvas import GH_CanvasChannel
+from System.Windows.Forms import KeyEventArgs
 class GH_ValueListAttributes:
     @overload
     def __init__(self, owner: GH_ValueList): ...
@@ -17226,6 +17695,7 @@ class GH_ValueListAttributes:
 
 
 from System.Drawing import RectangleF
+from Grasshopper.Kernel.Types import IGH_Goo
 class GH_ValueListItem:
     @overload
     def __init__(self): ...
@@ -17284,10 +17754,12 @@ from Grasshopper.Kernel import GH_ParameterSide
 from Grasshopper.Kernel import IGH_Param
 from Grasshopper.Kernel import GH_ComponentParamServer
 from Grasshopper.Kernel import GH_RuntimeMessageLevel
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_GuidTable
+from System.Windows.Forms import ToolStripDropDown
 from Grasshopper.Kernel import GH_DataComparison
 from System import TimeSpan
 from Rhino.Geometry import BoundingBox
@@ -17308,6 +17780,8 @@ from Grasshopper.Kernel import DisplayExpiredEventHandler
 from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -17558,8 +18032,10 @@ from Grasshopper.Kernel import GH_ParamKind
 from Grasshopper.Kernel import GH_Exposure
 from Rhino.Geometry import Interval
 from System.Drawing import Color
+from System.Windows.Forms import ToolStripDropDown
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_Param
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
@@ -17568,6 +18044,10 @@ from Grasshopper.Kernel import GH_StateTagList
 from Grasshopper.Kernel import GH_ParamWireDisplay
 from Grasshopper.Kernel import GH_DataMapping
 from Grasshopper.Kernel import GH_ParamData
+from Grasshopper.Kernel.Data import GH_Path
+from Grasshopper.Kernel.Types import GH_Number
+from Grasshopper.Kernel.Data import IGH_Structure
+from Grasshopper.Kernel.Data import GH_Structure
 from System import TimeSpan
 from Grasshopper.Kernel import GH_PrincipalState
 from Grasshopper.Kernel import GH_SolutionPhase
@@ -17584,6 +18064,8 @@ from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -17896,7 +18378,9 @@ class GH_ValueTracker:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from Grasshopper.GUI.Canvas import GH_Canvas
 from Grasshopper.GUI import GH_CanvasMouseEvent
+from Grasshopper.GUI.Canvas import GH_ObjectResponse
 from System.Drawing import PointF
 from System.Drawing import RectangleF
 from Grasshopper.Kernel import GH_PickBox
@@ -17906,6 +18390,8 @@ from Grasshopper.Kernel import IGH_DocumentObject
 from System import Guid
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from Grasshopper.GUI.Canvas import GH_CanvasChannel
+from System.Windows.Forms import KeyEventArgs
 class GH_ValueTrackerAttributes:
     @overload
     def __init__(self, owner: GH_ValueTracker): ...

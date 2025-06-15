@@ -417,6 +417,7 @@ class PostEffectType(Enum):
     Late = 2
 
 
+from Rhino.UI.Controls import ICollapsibleSection
 class PostEffectUI:
     @overload
     def AddSection(self, section: ICollapsibleSection) -> None: ...

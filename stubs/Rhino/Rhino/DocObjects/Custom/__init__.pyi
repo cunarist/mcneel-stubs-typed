@@ -41,18 +41,23 @@ from Rhino.Display import VisualAnalysisMode
 from Rhino.FileIO import TextLog
 from Rhino.Geometry import MeshType
 from Rhino.Geometry import MeshingParameters
+from Rhino.UI.Gumball import GumballFrame
 from Rhino.Geometry import Plane
 from Rhino.DocObjects import ObjectFrameFlags
 from Rhino.Geometry import Transform
 from Rhino.DocObjects import ViewportInfo
 from Rhino.Display import DisplayPipelineAttributes
 from Rhino.Render import RenderPrimitiveList
+from Rhino.Render.CustomRenderMeshes import Flags
 from Rhino.PlugIns import PlugIn
+from Rhino.Render.CustomRenderMeshes import RenderMeshes
 from Rhino.Geometry import BoundingBox
 from Rhino.Render import TextureMapping
 from Rhino.Render import RenderMaterial
 from Rhino.Geometry import ComponentStatus
 from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from Rhino.FileIO import SerializationOptions
 from Rhino.DocObjects import BrepObject
 class CustomBrepObject(BrepObject):
@@ -358,18 +363,23 @@ from Rhino.Display import VisualAnalysisMode
 from Rhino.FileIO import TextLog
 from Rhino.Geometry import MeshType
 from Rhino.Geometry import MeshingParameters
+from Rhino.UI.Gumball import GumballFrame
 from Rhino.Geometry import Plane
 from Rhino.DocObjects import ObjectFrameFlags
 from Rhino.Geometry import Transform
 from Rhino.DocObjects import ViewportInfo
 from Rhino.Display import DisplayPipelineAttributes
 from Rhino.Render import RenderPrimitiveList
+from Rhino.Render.CustomRenderMeshes import Flags
 from Rhino.PlugIns import PlugIn
+from Rhino.Render.CustomRenderMeshes import RenderMeshes
 from Rhino.Geometry import BoundingBox
 from Rhino.Render import TextureMapping
 from Rhino.Render import RenderMaterial
 from Rhino.Geometry import ComponentStatus
 from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from Rhino.FileIO import SerializationOptions
 from Rhino.DocObjects import CurveObject
 class CustomCurveObject(CurveObject):
@@ -684,17 +694,22 @@ from Rhino.Display import VisualAnalysisMode
 from Rhino.FileIO import TextLog
 from Rhino.Geometry import MeshType
 from Rhino.Geometry import MeshingParameters
+from Rhino.UI.Gumball import GumballFrame
 from Rhino.Geometry import Plane
 from Rhino.DocObjects import ObjectFrameFlags
 from Rhino.DocObjects import ViewportInfo
 from Rhino.Display import DisplayPipelineAttributes
 from Rhino.Render import RenderPrimitiveList
+from Rhino.Render.CustomRenderMeshes import Flags
 from Rhino.PlugIns import PlugIn
+from Rhino.Render.CustomRenderMeshes import RenderMeshes
 from Rhino.Geometry import BoundingBox
 from Rhino.Render import TextureMapping
 from Rhino.Render import RenderMaterial
 from Rhino.Geometry import ComponentStatus
 from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from Rhino.FileIO import SerializationOptions
 from Rhino.DocObjects import GripObject
 class CustomGripObject(GripObject):
@@ -1046,18 +1061,23 @@ from Rhino.Display import VisualAnalysisMode
 from Rhino.FileIO import TextLog
 from Rhino.Geometry import MeshType
 from Rhino.Geometry import MeshingParameters
+from Rhino.UI.Gumball import GumballFrame
 from Rhino.Geometry import Plane
 from Rhino.DocObjects import ObjectFrameFlags
 from Rhino.Geometry import Transform
 from Rhino.DocObjects import ViewportInfo
 from Rhino.Display import DisplayPipelineAttributes
 from Rhino.Render import RenderPrimitiveList
+from Rhino.Render.CustomRenderMeshes import Flags
 from Rhino.PlugIns import PlugIn
+from Rhino.Render.CustomRenderMeshes import RenderMeshes
 from Rhino.Geometry import BoundingBox
 from Rhino.Render import TextureMapping
 from Rhino.Render import RenderMaterial
 from Rhino.Geometry import ComponentStatus
 from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from Rhino.FileIO import SerializationOptions
 from Rhino.DocObjects import MeshObject
 class CustomMeshObject(MeshObject):
@@ -1399,18 +1419,23 @@ from Rhino.Display import VisualAnalysisMode
 from Rhino.FileIO import TextLog
 from Rhino.Geometry import MeshType
 from Rhino.Geometry import MeshingParameters
+from Rhino.UI.Gumball import GumballFrame
 from Rhino.Geometry import Plane
 from Rhino.DocObjects import ObjectFrameFlags
 from Rhino.Geometry import Transform
 from Rhino.DocObjects import ViewportInfo
 from Rhino.Display import DisplayPipelineAttributes
 from Rhino.Render import RenderPrimitiveList
+from Rhino.Render.CustomRenderMeshes import Flags
 from Rhino.PlugIns import PlugIn
+from Rhino.Render.CustomRenderMeshes import RenderMeshes
 from Rhino.Geometry import BoundingBox
 from Rhino.Render import TextureMapping
 from Rhino.Render import RenderMaterial
 from Rhino.Geometry import ComponentStatus
 from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from Rhino.FileIO import SerializationOptions
 from Rhino.DocObjects import PointObject
 class CustomPointObject(PointObject):
@@ -1779,6 +1804,8 @@ from System import IntPtr
 from Rhino.DocObjects import RhinoObject
 from System import AsyncCallback
 from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from System.Reflection import MethodInfo
 class TurnOnGripsEventHandler:
     @overload

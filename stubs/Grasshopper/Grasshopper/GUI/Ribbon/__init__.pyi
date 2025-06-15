@@ -99,23 +99,67 @@ class GH_LayoutItem:
 
 
 from System.Drawing import Rectangle
+from System.Windows.Forms import KeyEventHandler
+from System.Windows.Forms import KeyPressEventHandler
+from System.Windows.Forms import AutoSizeMode
 from System import EventHandler
+from System.Windows.Forms import BorderStyle
 from System.Drawing import Size
 from System.Drawing import Point
-from .Layout import LayoutEngine
+from System.Windows.Forms import HScrollProperties
+from System.Windows.Forms import VScrollProperties
+from System.Windows.Forms import DockPaddingEdges
+from System.Windows.Forms import Control
+from System.Windows.Forms import ScrollEventHandler
+from System.Windows.Forms import AnchorStyles
+from System.Windows.Forms.Layout import LayoutEngine
 from System.Drawing import Image
+from System.Windows.Forms import ImageLayout
+from System.Windows.Forms import BindingContext
+from System.Windows.Forms import ContextMenu
+from System.Windows.Forms import ContextMenuStrip
+from System.Windows.Forms import Cursor
+from System.Windows.Forms import ControlBindingsCollection
+from System.Windows.Forms import DockStyle
 from System.Drawing import Font
 from System.Drawing import Color
+from System.Windows.Forms import RightToLeft
 from System.ComponentModel import ISite
 from System import Delegate
 from System import IAsyncResult
+from System.Windows.Forms import Message
+from System.Windows.Forms import AccessibleObject
+from System.Windows.Forms import AccessibleRole
+from System.Windows.Forms import ControlCollection
 from System import IntPtr
+from System.Windows.Forms import Padding
 from System.Drawing import Region
+from System.Windows.Forms import IWindowTarget
+from System.Windows.Forms import ControlEventHandler
+from System.Windows.Forms import DragEventHandler
+from System.Windows.Forms import GiveFeedbackEventHandler
+from System.Windows.Forms import HelpEventHandler
+from System.Windows.Forms import InvalidateEventHandler
+from System.Windows.Forms import PaintEventHandler
+from System.Windows.Forms import QueryContinueDragEventHandler
+from System.Windows.Forms import QueryAccessibilityHelpEventHandler
+from System.Windows.Forms import LayoutEventHandler
+from System.Windows.Forms import MouseEventHandler
+from System.Windows.Forms import PreviewKeyDownEventHandler
+from System.Windows.Forms import UICuesEventHandler
 from System.ComponentModel import CancelEventHandler
 from System.Drawing import Graphics
+from System.Windows.Forms import DragDropEffects
 from System.Drawing import Bitmap
+from System.Windows.Forms import Form
+from System.Windows.Forms import GetChildAtPointSkip
+from System.Windows.Forms import IContainerControl
+from System.Windows.Forms import PreProcessControlState
 from System.Drawing import SizeF
+from System.Windows.Forms import BoundsSpecified
+from System.Windows.Forms import ImeMode
 from System.ComponentModel import IContainer
+from System.Runtime.Remoting import ObjRef
 from Grasshopper.GUI import GH_DoubleBufferedPanel
 class GH_LayoutMenuItem(GH_DoubleBufferedPanel):
     @overload
@@ -933,24 +977,72 @@ class GH_LayoutTab:
 
 
 from System.Drawing import Graphics
+from System.Windows.Forms import ToolStripDropDown
 from System import Guid
 from System.Drawing import Rectangle
+from System.Windows.Forms import AutoValidate
+from System.Windows.Forms import ValidationConstraints
 from System import EventHandler
+from System.Windows.Forms import AutoSizeMode
+from System.Windows.Forms import BorderStyle
+from System.Windows.Forms import BindingContext
+from System.Windows.Forms import Control
 from System.Drawing import SizeF
+from System.Windows.Forms import AutoScaleMode
+from System.Windows.Forms import Form
 from System.Drawing import Size
 from System.Drawing import Point
-from .Layout import LayoutEngine
+from System.Windows.Forms import HScrollProperties
+from System.Windows.Forms import VScrollProperties
+from System.Windows.Forms import DockPaddingEdges
+from System.Windows.Forms import ScrollEventHandler
+from System.Windows.Forms import AnchorStyles
+from System.Windows.Forms.Layout import LayoutEngine
 from System.Drawing import Image
+from System.Windows.Forms import ImageLayout
+from System.Windows.Forms import ContextMenu
+from System.Windows.Forms import ContextMenuStrip
+from System.Windows.Forms import Cursor
+from System.Windows.Forms import ControlBindingsCollection
+from System.Windows.Forms import DockStyle
 from System.Drawing import Font
 from System.Drawing import Color
+from System.Windows.Forms import RightToLeft
 from System.ComponentModel import ISite
 from System import Delegate
 from System import IAsyncResult
+from System.Windows.Forms import Message
+from System.Windows.Forms import AccessibleObject
+from System.Windows.Forms import AccessibleRole
+from System.Windows.Forms import ControlCollection
 from System import IntPtr
+from System.Windows.Forms import Padding
 from System.Drawing import Region
+from System.Windows.Forms import IWindowTarget
+from System.Windows.Forms import ControlEventHandler
+from System.Windows.Forms import DragEventHandler
+from System.Windows.Forms import GiveFeedbackEventHandler
+from System.Windows.Forms import HelpEventHandler
+from System.Windows.Forms import InvalidateEventHandler
+from System.Windows.Forms import PaintEventHandler
+from System.Windows.Forms import QueryContinueDragEventHandler
+from System.Windows.Forms import QueryAccessibilityHelpEventHandler
+from System.Windows.Forms import KeyEventHandler
+from System.Windows.Forms import KeyPressEventHandler
+from System.Windows.Forms import LayoutEventHandler
+from System.Windows.Forms import MouseEventHandler
+from System.Windows.Forms import PreviewKeyDownEventHandler
+from System.Windows.Forms import UICuesEventHandler
 from System.ComponentModel import CancelEventHandler
+from System.Windows.Forms import DragDropEffects
 from System.Drawing import Bitmap
+from System.Windows.Forms import GetChildAtPointSkip
+from System.Windows.Forms import IContainerControl
+from System.Windows.Forms import PreProcessControlState
+from System.Windows.Forms import BoundsSpecified
+from System.Windows.Forms import ImeMode
 from System.ComponentModel import IContainer
+from System.Runtime.Remoting import ObjRef
 class GH_Ribbon:
     @overload
     def __init__(self): ...
@@ -1740,6 +1832,7 @@ class GH_Ribbon:
     def ValidateChildren(self, validationConstraints: ValidationConstraints) -> bool: ...
 
 
+from System.Windows.Forms import Padding
 from System.Drawing import Point
 from System.Drawing import Rectangle
 class GH_RibbonContentBase:
@@ -1781,23 +1874,84 @@ class GH_RibbonContentBase:
 from System import Guid
 from System.Drawing import Rectangle
 from System.Drawing import Size
+from System.Windows.Forms import AutoValidate
 from System.Drawing import Color
+from System.Windows.Forms import ValidationConstraints
+from System.Windows.Forms import IButtonControl
+from System.Windows.Forms import Form
 from System import EventHandler
+from System.Windows.Forms import AutoSizeMode
+from System.Windows.Forms import FormBorderStyle
 from System.Drawing import Point
+from System.Windows.Forms import DialogResult
 from System.ComponentModel import CancelEventHandler
 from System.Drawing import Icon
+from System.Windows.Forms import MenuStrip
+from System.Windows.Forms import Padding
+from System.Windows.Forms import MainMenu
+from System.Windows.Forms import SizeGripStyle
+from System.Windows.Forms import FormStartPosition
+from System.Windows.Forms import FormWindowState
+from System.Windows.Forms import FormClosingEventHandler
+from System.Windows.Forms import FormClosedEventHandler
+from System.Windows.Forms import InputLanguageChangedEventHandler
+from System.Windows.Forms import InputLanguageChangingEventHandler
+from System.Windows.Forms import MdiLayout
+from System.Windows.Forms import DpiChangedEventHandler
+from System.Windows.Forms import IWin32Window
+from System.Windows.Forms import BindingContext
+from System.Windows.Forms import Control
 from System.Drawing import SizeF
-from .Layout import LayoutEngine
+from System.Windows.Forms import AutoScaleMode
+from System.Windows.Forms import HScrollProperties
+from System.Windows.Forms import VScrollProperties
+from System.Windows.Forms import DockPaddingEdges
+from System.Windows.Forms import ScrollEventHandler
+from System.Windows.Forms import AnchorStyles
+from System.Windows.Forms.Layout import LayoutEngine
 from System.Drawing import Image
+from System.Windows.Forms import ImageLayout
+from System.Windows.Forms import ContextMenu
+from System.Windows.Forms import ContextMenuStrip
+from System.Windows.Forms import Cursor
+from System.Windows.Forms import ControlBindingsCollection
+from System.Windows.Forms import DockStyle
 from System.Drawing import Font
+from System.Windows.Forms import RightToLeft
 from System.ComponentModel import ISite
 from System import Delegate
 from System import IAsyncResult
+from System.Windows.Forms import Message
+from System.Windows.Forms import AccessibleObject
+from System.Windows.Forms import AccessibleRole
+from System.Windows.Forms import ControlCollection
 from System import IntPtr
 from System.Drawing import Region
+from System.Windows.Forms import IWindowTarget
+from System.Windows.Forms import ControlEventHandler
+from System.Windows.Forms import DragEventHandler
+from System.Windows.Forms import GiveFeedbackEventHandler
+from System.Windows.Forms import HelpEventHandler
+from System.Windows.Forms import InvalidateEventHandler
+from System.Windows.Forms import PaintEventHandler
+from System.Windows.Forms import QueryContinueDragEventHandler
+from System.Windows.Forms import QueryAccessibilityHelpEventHandler
+from System.Windows.Forms import KeyEventHandler
+from System.Windows.Forms import KeyPressEventHandler
+from System.Windows.Forms import LayoutEventHandler
+from System.Windows.Forms import MouseEventHandler
+from System.Windows.Forms import PreviewKeyDownEventHandler
+from System.Windows.Forms import UICuesEventHandler
 from System.Drawing import Graphics
+from System.Windows.Forms import DragDropEffects
 from System.Drawing import Bitmap
+from System.Windows.Forms import GetChildAtPointSkip
+from System.Windows.Forms import IContainerControl
+from System.Windows.Forms import PreProcessControlState
+from System.Windows.Forms import BoundsSpecified
+from System.Windows.Forms import ImeMode
 from System.ComponentModel import IContainer
+from System.Runtime.Remoting import ObjRef
 class GH_RibbonDropdown:
     @overload
     def __init__(self): ...
@@ -2824,6 +2978,7 @@ class GH_RibbonDropdown:
 from Grasshopper.Kernel import IGH_ObjectProxy
 from Grasshopper.GUI import GH_TooltipDisplayEventArgs
 from System.Drawing import Graphics
+from System.Windows.Forms import Padding
 from System.Drawing import Point
 from System.Drawing import Rectangle
 class GH_RibbonItem(GH_RibbonContentBase):
@@ -2895,6 +3050,8 @@ class GH_RibbonMouseEvent(Enum):
     Handled_Redraw = 3
 
 
+from System.Windows.Forms import MouseEventArgs
+from System.Windows.Forms import MouseButtons
 from System.Drawing import Point
 class GH_RibbonMouseEventArgs:
     @overload
@@ -2940,6 +3097,7 @@ class GH_RibbonMouseEventArgs:
 from System.Drawing import Rectangle
 from System.Drawing import Color
 from System.Drawing import Brush
+from System.Drawing.Drawing2D import GraphicsPath
 class GH_RibbonPainter:
     @overload
     @staticmethod
@@ -2988,6 +3146,7 @@ from System.Drawing import Rectangle
 from Grasshopper.GUI import GH_TooltipDisplayEventArgs
 from System.Drawing import Font
 from System.Drawing import Graphics
+from System.Windows.Forms import Padding
 class GH_RibbonPanel(GH_RibbonContentBase):
     @overload
     def __init__(self): ...
@@ -3092,6 +3251,7 @@ from System.Drawing import Bitmap
 from System.Drawing import Rectangle
 from Grasshopper.GUI import GH_TooltipDisplayEventArgs
 from System.Drawing import Graphics
+from System.Windows.Forms import Padding
 from System.Drawing import Point
 class GH_RibbonTab(GH_RibbonContentBase):
     @overload

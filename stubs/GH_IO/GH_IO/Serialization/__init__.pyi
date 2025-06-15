@@ -31,10 +31,12 @@ class ChunkKeyedCollection:
     def TryGetValue(self, id: ID) -> Tuple[bool, GH_Chunk]: ...
 
 
-from .Tasks import Task
+from System.Text import Encoding
+from System.Text import StringBuilder
+from System.Threading.Tasks import Task
 from System import IFormatProvider
 from System import Decimal
-from .Remoting import ObjRef
+from System.Runtime.Remoting import ObjRef
 class EncodedStringWriter:
     @overload
     def __init__(self): ...
@@ -160,7 +162,8 @@ class EncodedStringWriter:
     def WriteLineAsync(self, buffer: Iterable[str], index: int, count: int) -> Task: ...
 
 
-from .Forms import DialogResult
+from GH_IO.Types import GH_Version
+from System.Windows.Forms import DialogResult
 from GH_IO import GH_ISerializable
 class GH_Archive:
     @overload
@@ -243,9 +246,31 @@ class GH_Archive:
     def WriteToFile(self, fileName: str, overwrite: bool, rememberPath: bool) -> bool: ...
 
 
+from GH_IO.Types import GH_Item
+from System.IO import BinaryWriter
+from System.IO import BinaryReader
+from System.Xml import XmlWriter
+from System.Xml import XmlNode
 from System import Decimal
 from System import DateTime
 from System import Guid
+from System.Drawing import Point
+from System.Drawing import PointF
+from System.Drawing import Size
+from System.Drawing import SizeF
+from System.Drawing import Rectangle
+from System.Drawing import RectangleF
+from System.Drawing import Color
+from System.Drawing import Bitmap
+from GH_IO.Types import GH_Point2D
+from GH_IO.Types import GH_Point3D
+from GH_IO.Types import GH_Point4D
+from GH_IO.Types import GH_Interval1D
+from GH_IO.Types import GH_Interval2D
+from GH_IO.Types import GH_Line
+from GH_IO.Types import GH_BoundingBox
+from GH_IO.Types import GH_Plane
+from GH_IO.Types import GH_Version
 class GH_Chunk:
     @overload
     def AddComment(self, comment_text: str) -> None: ...
@@ -693,6 +718,8 @@ class GH_Compression:
     def ToString(self) -> str: ...
 
 
+from System.IO import BinaryWriter
+from System.IO import BinaryReader
 class GH_IBinarySupport:
     @overload
     def Read(self, reader: BinaryReader) -> None: ...
@@ -721,9 +748,27 @@ class GH_IChunk:
     def Name(self) -> str: ...
 
 
+from GH_IO.Types import GH_Item
 from System import Decimal
 from System import DateTime
 from System import Guid
+from System.Drawing import Point
+from System.Drawing import PointF
+from System.Drawing import Size
+from System.Drawing import SizeF
+from System.Drawing import Rectangle
+from System.Drawing import RectangleF
+from System.Drawing import Color
+from System.Drawing import Bitmap
+from GH_IO.Types import GH_Point2D
+from GH_IO.Types import GH_Point3D
+from GH_IO.Types import GH_Point4D
+from GH_IO.Types import GH_Interval1D
+from GH_IO.Types import GH_Interval2D
+from GH_IO.Types import GH_Line
+from GH_IO.Types import GH_BoundingBox
+from GH_IO.Types import GH_Plane
+from GH_IO.Types import GH_Version
 class GH_IReader:
     @overload
     def ChunkExists(self, name: str) -> bool: ...
@@ -970,6 +1015,23 @@ class GH_IReader:
 from System import Decimal
 from System import DateTime
 from System import Guid
+from System.Drawing import Point
+from System.Drawing import PointF
+from System.Drawing import Size
+from System.Drawing import SizeF
+from System.Drawing import Rectangle
+from System.Drawing import RectangleF
+from System.Drawing import Color
+from System.Drawing import Bitmap
+from GH_IO.Types import GH_Point2D
+from GH_IO.Types import GH_Point3D
+from GH_IO.Types import GH_Point4D
+from GH_IO.Types import GH_Interval1D
+from GH_IO.Types import GH_Interval2D
+from GH_IO.Types import GH_Line
+from GH_IO.Types import GH_BoundingBox
+from GH_IO.Types import GH_Plane
+from GH_IO.Types import GH_Version
 class GH_IWriter:
     @overload
     def AddComment(self, comment_text: str) -> None: ...
@@ -1113,6 +1175,8 @@ class GH_IWriter:
     def SetVersion(self, item_name: str, item_index: int, major: int, minor: int, revision: int) -> None: ...
 
 
+from System.Xml import XmlWriter
+from System.Xml import XmlNode
 class GH_IXmlSupport:
     @overload
     def Read(self, node: XmlNode) -> None: ...
@@ -1120,9 +1184,31 @@ class GH_IXmlSupport:
     def Write(self, writer: XmlWriter) -> None: ...
 
 
+from GH_IO.Types import GH_Item
+from System.IO import BinaryWriter
+from System.IO import BinaryReader
+from System.Xml import XmlWriter
+from System.Xml import XmlNode
 from System import Decimal
 from System import DateTime
 from System import Guid
+from System.Drawing import Point
+from System.Drawing import PointF
+from System.Drawing import Size
+from System.Drawing import SizeF
+from System.Drawing import Rectangle
+from System.Drawing import RectangleF
+from System.Drawing import Color
+from System.Drawing import Bitmap
+from GH_IO.Types import GH_Point2D
+from GH_IO.Types import GH_Point3D
+from GH_IO.Types import GH_Point4D
+from GH_IO.Types import GH_Interval1D
+from GH_IO.Types import GH_Interval2D
+from GH_IO.Types import GH_Line
+from GH_IO.Types import GH_BoundingBox
+from GH_IO.Types import GH_Plane
+from GH_IO.Types import GH_Version
 class GH_LooseChunk(GH_Chunk):
     @overload
     def __init__(self, chunk_name: str): ...

@@ -138,6 +138,8 @@ from Rhino.Geometry import Transform
 from Rhino.Geometry import Point3d
 from Rhino.Geometry import Line
 from Rhino.Geometry import Plane
+from Rhino.Input.Custom import PickContext
+from Rhino.Input.Custom import GetPoint
 class GumballDisplayConduit:
     @overload
     def __init__(self): ...

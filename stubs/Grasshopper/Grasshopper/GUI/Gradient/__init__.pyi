@@ -217,6 +217,8 @@ class GH_GripType(Enum):
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from System.Reflection import MethodInfo
 class GradientChangedEventHandler:
     @overload
@@ -252,6 +254,8 @@ class GradientChangedEventHandler:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from System.Reflection import MethodInfo
 class SelectionChangedEventHandler:
     @overload

@@ -70,6 +70,7 @@ class Attributes:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import IReadOnlyList
 from System import Nullable
 from Grasshopper.Rhinoceros import ModelData
 from Grasshopper.Rhinoceros import ModelUserText
@@ -146,6 +147,8 @@ class Attributes:
 
 
 from System import Nullable
+from Grasshopper.Rhinoceros.Drafting import ModelLinetype
+from Grasshopper.Rhinoceros.Render import ModelRenderMaterial
 from Grasshopper.Rhinoceros import ModelData
 from Grasshopper.Rhinoceros import ModelUserText
 from Grasshopper.Rhinoceros import ModelContentName
@@ -233,6 +236,10 @@ class Attributes:
 
 
 from System import Nullable
+from Grasshopper.Rhinoceros.Display import ObjectVisibility
+from Grasshopper.Rhinoceros.Display import ObjectDisplay
+from Grasshopper.Rhinoceros.Drafting import ObjectDrafting
+from Grasshopper.Rhinoceros.Render import ObjectRender
 from Grasshopper.Rhinoceros import ModelData
 from Grasshopper.Rhinoceros import ModelUserText
 from Grasshopper.Rhinoceros import ModelContentName
@@ -393,6 +400,7 @@ from Rhino.DocObjects import InstanceDefinition
 from System import Guid
 from Rhino.Geometry import Transform
 from Rhino.Geometry import BoundingBox
+from System.Collections.Generic import IReadOnlyList
 from System import Nullable
 from Rhino import RhinoDoc
 from Rhino.DocObjects import ObjectAttributes
@@ -491,6 +499,8 @@ class ModelInstanceDefinition(ModelComponentContent):
 from Rhino.DocObjects import Layer
 from System import Guid
 from System import Nullable
+from Grasshopper.Rhinoceros.Drafting import ModelLinetype
+from Grasshopper.Rhinoceros.Render import ModelRenderMaterial
 from Grasshopper.Rhinoceros import Attributes
 from Grasshopper.Rhinoceros import ModelUserText
 from Grasshopper.Rhinoceros import ModelContentName
@@ -592,6 +602,10 @@ from Rhino.DocObjects import ObjectAttributes
 from Rhino.Geometry import GeometryBase
 from System import Guid
 from Rhino.DocObjects import ObjectType
+from Grasshopper.Rhinoceros.Display import ObjectVisibility
+from Grasshopper.Rhinoceros.Display import ObjectDisplay
+from Grasshopper.Rhinoceros.Drafting import ObjectDrafting
+from Grasshopper.Rhinoceros.Render import ObjectRender
 from System import Nullable
 from Rhino.Geometry import Transform
 from Rhino.Geometry import BoundingBox

@@ -44,6 +44,7 @@ class GH_Motion:
     def ToString(self) -> str: ...
 
 
+from System.Windows.Forms import Control
 from System.Drawing import Rectangle
 class GH_Stack:
     @overload
@@ -119,6 +120,8 @@ class GH_Stack:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from System.Reflection import MethodInfo
 class GH_StackEventDelegate:
     @overload

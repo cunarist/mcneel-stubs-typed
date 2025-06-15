@@ -6,9 +6,9 @@ import MetaBall
 __all__ = ['MetaBall']
 
 
-from .Drawing import PointF
-from .Drawing import SizeF
-from .Drawing import RectangleF
+from System.Drawing import PointF
+from System.Drawing import SizeF
+from System.Drawing import RectangleF
 class BezierF:
     @overload
     def __init__(self, p0: PointF, p1: PointF, p2: PointF, p3: PointF): ...

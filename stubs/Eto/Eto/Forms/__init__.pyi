@@ -6,6 +6,8 @@ import ThemedControls
 __all__ = ['ThemedControls']
 
 
+from System.Reflection import Assembly
+from Eto.Drawing import Image
 from System import Uri
 from Eto import Platform
 from System import IntPtr
@@ -110,7 +112,7 @@ from Eto import Platform
 from System import EventHandler
 from System import Action
 from System import Func
-from .Tasks import Task
+from System.Threading.Tasks import Task
 from System import IntPtr
 from Eto import PropertyStore
 from Eto import Widget
@@ -252,7 +254,7 @@ class AutoSelectMode(Enum):
 
 
 
-from .Expressions import Expression
+from System.Linq.Expressions import Expression
 from System import Nullable
 class BindableExtensions:
     @overload
@@ -390,7 +392,7 @@ class BindableWidget(Widget):
 from System import EventHandler
 from System import Func
 from System import Action
-from .Expressions import Expression
+from System.Linq.Expressions import Expression
 class Binding:
     @overload
     def add_Changed(self, value: EventHandler) -> None: ...
@@ -557,7 +559,16 @@ class BorderType(Enum):
 
 
 from System import EventHandler
-from .Input import ICommand
+from System.Windows.Input import ICommand
+from Eto.Drawing import Image
+from Eto.Drawing import Size
+from Eto.Drawing import Color
+from Eto.Drawing import Font
+from Eto.Drawing import Rectangle
+from Eto.Drawing import SizeF
+from Eto.Drawing import PointF
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Point
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -904,7 +915,8 @@ class ButtonImagePosition(Enum):
 
 
 from System import EventHandler
-from .Input import ICommand
+from Eto.Drawing import Image
+from System.Windows.Input import ICommand
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -1038,7 +1050,8 @@ class ButtonMenuItem(MenuItem):
     def UpdateBindings(self, mode: BindingUpdateMode) -> None: ...
 
 
-from .Input import ICommand
+from Eto.Drawing import Image
+from System.Windows.Input import ICommand
 from System import EventHandler
 from Eto import Widget
 from Eto import Platform
@@ -1160,8 +1173,9 @@ class ButtonSegmentedItem(SegmentedItem):
 
 
 from System import EventHandler
-from .Input import ICommand
+from System.Windows.Input import ICommand
 from System import EventArgs
+from Eto.Drawing import Image
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -1281,6 +1295,14 @@ class ButtonToolItem(ToolItem):
 
 from System import EventHandler
 from System import DateTime
+from Eto.Drawing import Rectangle
+from Eto.Drawing import Size
+from Eto.Drawing import SizeF
+from Eto.Drawing import Color
+from Eto.Drawing import PointF
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Point
+from Eto.Drawing import Image
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -1649,6 +1671,8 @@ class Cell(Widget):
     def ToString(self) -> str: ...
 
 
+from Eto.Drawing import Color
+from System.ComponentModel import PropertyChangedEventHandler
 class CellEventArgs:
     @overload
     def __init__(self, row: int, item: object, cellState: CellStates): ...
@@ -1696,6 +1720,8 @@ class CellEventArgs:
     def ToString(self) -> str: ...
 
 
+from Eto.Drawing import Graphics
+from Eto.Drawing import RectangleF
 class CellPaintEventArgs(PaintEventArgs):
     @overload
     def __init__(self, graphics: Graphics, clipRectangle: RectangleF, cellState: CellStates, item: object): ...
@@ -1729,6 +1755,15 @@ class CellStates(Enum):
 
 from System import EventHandler
 from System import Nullable
+from Eto.Drawing import Color
+from Eto.Drawing import Font
+from Eto.Drawing import Rectangle
+from Eto.Drawing import Size
+from Eto.Drawing import SizeF
+from Eto.Drawing import PointF
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Point
+from Eto.Drawing import Image
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -2104,8 +2139,17 @@ class CheckBoxCell:
 
 
 from System import EventHandler
+from Eto.Drawing import Color
+from Eto.Drawing import Size
+from Eto.Drawing import Padding
 from Eto import IStyleProvider
 from Eto import DefaultStyleProvider
+from Eto.Drawing import Rectangle
+from Eto.Drawing import SizeF
+from Eto.Drawing import PointF
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Point
+from Eto.Drawing import Image
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -2492,8 +2536,9 @@ class CheckBoxList(Panel):
 
 
 from System import EventHandler
+from Eto.Drawing import Image
 from Eto import PropertyStore
-from .Input import ICommand
+from System.Windows.Input import ICommand
 class CheckCommand(Command):
     @overload
     def __init__(self): ...
@@ -2592,7 +2637,7 @@ class CheckCommand(Command):
 
 
 from System import EventHandler
-from .Input import ICommand
+from System.Windows.Input import ICommand
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -2727,7 +2772,8 @@ class CheckMenuItem(MenuItem):
 
 from System import EventHandler
 from System import EventArgs
-from .Input import ICommand
+from System.Windows.Input import ICommand
+from Eto.Drawing import Image
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -2853,6 +2899,8 @@ class CheckToolItem(ToolItem):
     def UpdateBindings(self, mode: BindingUpdateMode) -> None: ...
 
 
+from System.IO import Stream
+from Eto.Drawing import Image
 from Eto import Platform
 from System import IntPtr
 from Eto import PropertyStore
@@ -2951,6 +2999,14 @@ class Clipboard(Widget):
 
 
 from System import EventHandler
+from Eto.Drawing import Rectangle
+from Eto.Drawing import Size
+from Eto.Drawing import SizeF
+from Eto.Drawing import Color
+from Eto.Drawing import PointF
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Point
+from Eto.Drawing import Image
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -3251,6 +3307,7 @@ class CollectionEditor(Control):
 
 
 from System import EventHandler
+from Eto.Drawing import Color
 from Eto import Platform
 from System import IntPtr
 from Eto import PropertyStore
@@ -3312,6 +3369,14 @@ class ColorDialog(CommonDialog):
 
 
 from System import EventHandler
+from Eto.Drawing import Color
+from Eto.Drawing import Rectangle
+from Eto.Drawing import Size
+from Eto.Drawing import SizeF
+from Eto.Drawing import PointF
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Point
+from Eto.Drawing import Image
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -3623,6 +3688,15 @@ class ColorPicker(Control):
 
 
 from System import EventHandler
+from Eto.Drawing import Color
+from Eto.Drawing import Font
+from Eto.Drawing import Rectangle
+from Eto.Drawing import Size
+from Eto.Drawing import SizeF
+from Eto.Drawing import PointF
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Point
+from Eto.Drawing import Image
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -4075,8 +4149,9 @@ class ComboBoxCell:
 
 
 from System import EventHandler
+from Eto.Drawing import Image
 from Eto import PropertyStore
-from .Input import ICommand
+from System.Windows.Input import ICommand
 class Command:
     @overload
     def __init__(self): ...
@@ -4170,7 +4245,16 @@ class Command:
     def ToString(self) -> str: ...
 
 
+from Eto.Drawing import Font
 from System import EventHandler
+from Eto.Drawing import Rectangle
+from Eto.Drawing import Size
+from Eto.Drawing import SizeF
+from Eto.Drawing import Color
+from Eto.Drawing import PointF
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Point
+from Eto.Drawing import Image
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -4510,9 +4594,17 @@ class CommonDialog(Widget):
     def ToString(self) -> str: ...
 
 
+from Eto.Drawing import Size
 from Eto import IStyleProvider
 from Eto import DefaultStyleProvider
 from System import EventHandler
+from Eto.Drawing import Rectangle
+from Eto.Drawing import SizeF
+from Eto.Drawing import Color
+from Eto.Drawing import PointF
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Point
+from Eto.Drawing import Image
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -4830,6 +4922,7 @@ class Container(Control):
     def UpdateLayout(self) -> None: ...
 
 
+from Eto.Drawing import PointF
 from System import Nullable
 from System import EventHandler
 from Eto import Widget
@@ -4937,6 +5030,14 @@ class ContextMenu(Menu):
 
 
 from System import EventHandler
+from Eto.Drawing import Rectangle
+from Eto.Drawing import Size
+from Eto.Drawing import SizeF
+from Eto.Drawing import Color
+from Eto.Drawing import PointF
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Point
+from Eto.Drawing import Image
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -5269,6 +5370,11 @@ class CreateNativeControlArgs:
     def ToString(self) -> str: ...
 
 
+from System.IO import Stream
+from Eto.Drawing import Bitmap
+from Eto.Drawing import PointF
+from Eto.Drawing import Icon
+from System.Reflection import Assembly
 from Eto import Platform
 from System import IntPtr
 from Eto import PropertyStore
@@ -5520,6 +5626,8 @@ class DataFormats:
     def ToString(self) -> str: ...
 
 
+from System.IO import Stream
+from Eto.Drawing import Image
 from Eto import Platform
 from System import IntPtr
 from Eto import PropertyStore
@@ -5640,6 +5748,15 @@ class DataStoreExtensions:
 from System import EventHandler
 from System import DateTime
 from System import Nullable
+from Eto.Drawing import Color
+from Eto.Drawing import Font
+from Eto.Drawing import Rectangle
+from Eto.Drawing import Size
+from Eto.Drawing import SizeF
+from Eto.Drawing import PointF
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Point
+from Eto.Drawing import Image
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -5975,11 +6092,21 @@ class DateTimePickerMode(Enum):
 
 
 
-from .ObjectModel import Collection
-from .Tasks import Task
+from System.Collections.ObjectModel import Collection
+from System.Threading.Tasks import Task
 from System import EventHandler
+from Eto.Drawing import Point
+from Eto.Drawing import Rectangle
+from Eto.Drawing import Icon
+from Eto.Drawing import Padding
+from Eto.Drawing import Size
 from Eto import IStyleProvider
 from Eto import DefaultStyleProvider
+from Eto.Drawing import SizeF
+from Eto.Drawing import Color
+from Eto.Drawing import PointF
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Image
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -6481,9 +6608,17 @@ class DockPosition(Enum):
 
 
 from System import EventHandler
-from .Generic import IList
+from System.Collections.Generic import IList
+from Eto.Drawing import Size
 from Eto import IStyleProvider
 from Eto import DefaultStyleProvider
+from Eto.Drawing import Rectangle
+from Eto.Drawing import SizeF
+from Eto.Drawing import Color
+from Eto.Drawing import PointF
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Point
+from Eto.Drawing import Image
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -6838,8 +6973,17 @@ class DocumentControl(Container):
 
 from System import Nullable
 from System import EventHandler
+from Eto.Drawing import Image
+from Eto.Drawing import Padding
+from Eto.Drawing import Size
 from Eto import IStyleProvider
 from Eto import DefaultStyleProvider
+from Eto.Drawing import Rectangle
+from Eto.Drawing import SizeF
+from Eto.Drawing import Color
+from Eto.Drawing import PointF
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Point
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -7262,6 +7406,7 @@ class DragEffects(Enum):
     All = 7
 
 
+from Eto.Drawing import PointF
 class DragEventArgs:
     @overload
     def __init__(self, source: Control, data: DataObject, allowedEffects: DragEffects, location: PointF, modifiers: Keys, buttons: MouseButtons, controlObject: object): ...
@@ -7298,8 +7443,18 @@ class DragEventArgs:
 
 
 from System import EventHandler
+from Eto.Drawing import Graphics
+from Eto.Drawing import Rectangle
+from Eto.Drawing import Padding
+from Eto.Drawing import Size
 from Eto import IStyleProvider
 from Eto import DefaultStyleProvider
+from Eto.Drawing import SizeF
+from Eto.Drawing import Color
+from Eto.Drawing import PointF
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Point
+from Eto.Drawing import Image
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -7699,6 +7854,15 @@ class DrawableCell(Cell):
 
 
 from System import EventHandler
+from Eto.Drawing import Color
+from Eto.Drawing import Font
+from Eto.Drawing import Rectangle
+from Eto.Drawing import Size
+from Eto.Drawing import SizeF
+from Eto.Drawing import PointF
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Point
+from Eto.Drawing import Image
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -8073,6 +8237,7 @@ class DropDown(ListControl):
     def UpdateLayout(self) -> None: ...
 
 
+from Eto.Drawing import Font
 class DropDownFormatEventArgs:
     @overload
     def __init__(self, item: object, row: int, font: Font): ...
@@ -8096,9 +8261,10 @@ class DropDownFormatEventArgs:
     def ToString(self) -> str: ...
 
 
-from .Input import ICommand
+from System.Windows.Input import ICommand
 from System import EventHandler
 from System import EventArgs
+from Eto.Drawing import Image
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -8258,7 +8424,7 @@ class DynamicControl(DynamicItem):
     def ToString(self) -> str: ...
 
 
-from .ObjectModel import Collection
+from System.Collections.ObjectModel import Collection
 from System import Nullable
 class DynamicGroup(DynamicTable):
     @overload
@@ -8343,11 +8509,20 @@ class DynamicItem:
     def ToString(self) -> str: ...
 
 
-from .ObjectModel import Collection
+from System.Collections.ObjectModel import Collection
 from System import Nullable
+from Eto.Drawing import Padding
+from Eto.Drawing import Size
 from Eto import IStyleProvider
 from Eto import DefaultStyleProvider
 from System import EventHandler
+from Eto.Drawing import Rectangle
+from Eto.Drawing import SizeF
+from Eto.Drawing import Color
+from Eto.Drawing import PointF
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Point
+from Eto.Drawing import Image
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -8760,7 +8935,7 @@ class DynamicLayout(Panel):
 
 
 from System import Nullable
-from .ObjectModel import Collection
+from System.Collections.ObjectModel import Collection
 class DynamicRow:
     @overload
     def __init__(self): ...
@@ -8819,7 +8994,7 @@ class DynamicRow:
     def ToString(self) -> str: ...
 
 
-from .ObjectModel import Collection
+from System.Collections.ObjectModel import Collection
 from System import Nullable
 class DynamicScrollable(DynamicTable):
     @overload
@@ -8876,7 +9051,7 @@ class DynamicScrollable(DynamicTable):
     def ToString(self) -> str: ...
 
 
-from .ObjectModel import Collection
+from System.Collections.ObjectModel import Collection
 from System import Nullable
 class DynamicTable(DynamicItem):
     @overload
@@ -8938,8 +9113,17 @@ class DynamicTable(DynamicItem):
 
 
 from System import EventHandler
+from Eto.Drawing import Padding
+from Eto.Drawing import Size
 from Eto import IStyleProvider
 from Eto import DefaultStyleProvider
+from Eto.Drawing import Rectangle
+from Eto.Drawing import SizeF
+from Eto.Drawing import Color
+from Eto.Drawing import PointF
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Point
+from Eto.Drawing import Image
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -9288,7 +9472,7 @@ class Expander(Panel):
     def UpdateLayout(self) -> None: ...
 
 
-from .ObjectModel import Collection
+from System.Collections.ObjectModel import Collection
 from System import Uri
 from Eto import Platform
 from System import IntPtr
@@ -9386,9 +9570,17 @@ class FileFilter:
     def ToString(self) -> str: ...
 
 
-from .ObjectModel import Collection
+from System.Collections.ObjectModel import Collection
 from Eto import FileAction
 from System import EventHandler
+from Eto.Drawing import Rectangle
+from Eto.Drawing import Size
+from Eto.Drawing import SizeF
+from Eto.Drawing import Color
+from Eto.Drawing import PointF
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Point
+from Eto.Drawing import Image
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -9709,6 +9901,7 @@ class FilePicker(Control):
 
 
 
+from System.Globalization import CultureInfo
 class FixedMaskedTextProvider:
     @overload
     def __init__(self, mask: str, culture: CultureInfo, allowPromptAsInput: bool, restrictToAscii: bool): ...
@@ -9782,10 +9975,20 @@ class FixedMaskedTextProvider:
 
 
 
-from .Tasks import Task
+from System.Threading.Tasks import Task
 from System import EventHandler
+from Eto.Drawing import Point
+from Eto.Drawing import Rectangle
+from Eto.Drawing import Icon
+from Eto.Drawing import Padding
+from Eto.Drawing import Size
 from Eto import IStyleProvider
 from Eto import DefaultStyleProvider
+from Eto.Drawing import SizeF
+from Eto.Drawing import Color
+from Eto.Drawing import PointF
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Image
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -10246,6 +10449,7 @@ class FloatingForm(Form):
 
 
 from System import EventHandler
+from Eto.Drawing import Font
 from Eto import Platform
 from System import IntPtr
 from Eto import PropertyStore
@@ -10301,7 +10505,16 @@ class FontDialog(CommonDialog):
     def ToString(self) -> str: ...
 
 
+from Eto.Drawing import Font
 from System import EventHandler
+from Eto.Drawing import Rectangle
+from Eto.Drawing import Size
+from Eto.Drawing import SizeF
+from Eto.Drawing import Color
+from Eto.Drawing import PointF
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Point
+from Eto.Drawing import Image
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -10606,10 +10819,20 @@ class FontPicker(Control):
     def UpdateLayout(self) -> None: ...
 
 
-from .Tasks import Task
+from System.Threading.Tasks import Task
 from System import EventHandler
+from Eto.Drawing import Point
+from Eto.Drawing import Rectangle
+from Eto.Drawing import Icon
+from Eto.Drawing import Padding
+from Eto.Drawing import Size
 from Eto import IStyleProvider
 from Eto import DefaultStyleProvider
+from Eto.Drawing import SizeF
+from Eto.Drawing import Color
+from Eto.Drawing import PointF
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Image
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -11072,6 +11295,14 @@ class Form(Window):
 
 
 from System import EventHandler
+from Eto.Drawing import Rectangle
+from Eto.Drawing import Size
+from Eto.Drawing import SizeF
+from Eto.Drawing import Color
+from Eto.Drawing import PointF
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Point
+from Eto.Drawing import Image
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -11504,6 +11735,8 @@ class GridCell:
     def ToString(self) -> str: ...
 
 
+from Eto.Drawing import Font
+from Eto.Drawing import Color
 class GridCellFormatEventArgs:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -11533,7 +11766,9 @@ class GridCellFormatEventArgs:
     def ToString(self) -> str: ...
 
 
+from Eto.Drawing import PointF
 from System import Nullable
+from Eto.Drawing import SizeF
 class GridCellMouseEventArgs(MouseEventArgs):
     @overload
     def __init__(self, gridColumn: GridColumn, row: int, column: int, item: object, buttons: MouseButtons, modifiers: Keys, location: PointF, delta: Nullable, pressure: float): ...
@@ -11679,7 +11914,7 @@ class GridColumn(Widget):
     def ToString(self) -> str: ...
 
 
-from .Specialized import NotifyCollectionChangedEventHandler
+from System.Collections.Specialized import NotifyCollectionChangedEventHandler
 class GridColumnCollection:
     @overload
     def __init__(self): ...
@@ -11779,6 +12014,7 @@ class GridLines(Enum):
     Both = 3
 
 
+from Eto.Drawing import Color
 class GridRowFormatEventArgs:
     @overload
     def __init__(self, item: object, row: int): ...
@@ -11801,7 +12037,15 @@ class GridRowFormatEventArgs:
 
 
 from System import Func
+from Eto.Drawing import PointF
 from System import EventHandler
+from Eto.Drawing import Rectangle
+from Eto.Drawing import Size
+from Eto.Drawing import SizeF
+from Eto.Drawing import Color
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Point
+from Eto.Drawing import Image
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -12295,9 +12539,19 @@ class GridViewDragInfo:
     def ToString(self) -> str: ...
 
 
+from Eto.Drawing import Font
+from Eto.Drawing import Color
+from Eto.Drawing import Padding
+from Eto.Drawing import Size
 from Eto import IStyleProvider
 from Eto import DefaultStyleProvider
 from System import EventHandler
+from Eto.Drawing import Rectangle
+from Eto.Drawing import SizeF
+from Eto.Drawing import PointF
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Point
+from Eto.Drawing import Image
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -12751,6 +13005,7 @@ class ICallback:
 
 
 from System import EventArgs
+from System.ComponentModel import CancelEventArgs
 from Eto import UnhandledExceptionEventArgs
 class ICallback:
     @overload
@@ -12766,6 +13021,7 @@ class ICallback:
 
 
 from System import EventArgs
+from System.ComponentModel import CancelEventArgs
 class ICallback:
     @overload
     def OnClosed(self, widget: Window, e: EventArgs) -> None: ...
@@ -13176,6 +13432,7 @@ class IContextMenuHost:
     def ContextMenu(self, value: ContextMenu) -> None: ...
 
 
+from Eto.Drawing import Image
 class IDataObject:
     @overload
     def Clear(self) -> None: ...
@@ -13227,6 +13484,8 @@ class IDataObject:
 
 
 
+from Eto.Drawing import Image
+from Eto.Drawing import Size
 class IHandler:
     @property
     def Image(self) -> Image: ...
@@ -13258,6 +13517,7 @@ class IHandler:
     def Create(self, nativeControl: object) -> None: ...
 
 
+from Eto.Drawing import Font
 class IHandler:
     @property
     def Value(self) -> Font: ...
@@ -13269,6 +13529,7 @@ class IHandler:
     pass
 
 
+from Eto.Drawing import ImageInterpolation
 class IHandler:
     @property
     def AutoSelectMode(self) -> AutoSelectMode: ...
@@ -13427,6 +13688,7 @@ class IHandler:
     def BadgeLabel(self, value: str) -> None: ...
 
 
+from Eto.Drawing import Color
 class IHandler:
     @property
     def AllowAlpha(self) -> bool: ...
@@ -13445,6 +13707,7 @@ class IHandler:
     def ShowDialog(self, parent: Window) -> DialogResult: ...
 
 
+from Eto.Drawing import ImageInterpolation
 class IHandler:
     @property
     def ImageInterpolation(self) -> ImageInterpolation: ...
@@ -13476,6 +13739,7 @@ class IHandler:
     def SelectedRange(self, value: Range) -> None: ...
 
 
+from Eto.Drawing import Color
 class IHandler:
     @property
     def DisabledTextColor(self) -> Color: ...
@@ -13490,6 +13754,8 @@ class IHandler:
     def ShowBorder(self, value: bool) -> None: ...
 
 
+from Eto.Drawing import Rectangle
+from Eto.Drawing import Graphics
 class IHandler:
     @overload
     def Create(self) -> None: ...
@@ -13529,6 +13795,7 @@ class IHandler:
     def Header(self, value: Control) -> None: ...
 
 
+from Eto.Drawing import Image
 class IHandler:
     @property
     def Closable(self) -> bool: ...
@@ -13584,6 +13851,7 @@ class IHandler:
 
 from System import Nullable
 from System import DateTime
+from Eto.Drawing import Color
 class IHandler:
     @property
     def MaxDate(self) -> DateTime: ...
@@ -13611,6 +13879,9 @@ class IHandler:
     def Value(self, value: Nullable) -> None: ...
 
 
+from Eto.Drawing import Point
+from Eto.Drawing import Icon
+from Eto.Drawing import Rectangle
 class IHandler:
     @overload
     def BringToFront(self) -> None: ...
@@ -13692,7 +13963,14 @@ class IHandler:
     def SetOwner(self, owner: Window) -> None: ...
 
 
+from Eto.Drawing import Color
+from Eto.Drawing import Size
+from Eto.Drawing import Rectangle
 from System import EventArgs
+from Eto.Drawing import PointF
+from Eto.Drawing import Point
+from Eto.Drawing import Image
+from Eto.Drawing import SizeF
 class IHandler:
     @overload
     def CaptureMouse(self) -> bool: ...
@@ -13784,6 +14062,7 @@ class IHandler:
     def UpdateLayout(self) -> None: ...
 
 
+from Eto.Drawing import Font
 class IHandler:
     @property
     def Font(self) -> Font: ...
@@ -13806,6 +14085,7 @@ class IHandler:
     def Text(self, value: str) -> None: ...
 
 
+from Eto.Drawing import Image
 class IHandler:
     @property
     def Image(self) -> Image: ...
@@ -13813,6 +14093,7 @@ class IHandler:
     def Image(self, value: Image) -> None: ...
 
 
+from Eto.Drawing import Color
 class IHandler:
     @property
     def DataStore(self) -> Iterable[object]: ...
@@ -13836,6 +14117,7 @@ class IHandler:
     def TextColor(self, value: Color) -> None: ...
 
 
+from Eto.Drawing import Color
 class IHandler:
     @property
     def AllowAlpha(self) -> bool: ...
@@ -13849,6 +14131,8 @@ class IHandler:
     def Color(self, value: Color) -> None: ...
 
 
+from Eto.Drawing import Font
+from Eto.Drawing import Color
 class IHandler:
     @property
     def Font(self) -> Font: ...
@@ -13864,6 +14148,7 @@ class IHandler:
     def TextColor(self, value: Color) -> None: ...
 
 
+from Eto.Drawing import PointF
 class IHandler:
     @property
     def DataStore(self) -> Iterable[object]: ...
@@ -13965,6 +14250,7 @@ class IHandler:
     def Width(self, value: int) -> None: ...
 
 
+from Eto.Drawing import Size
 class IHandler:
     @property
     def ClientSize(self) -> Size: ...
@@ -13975,7 +14261,7 @@ class IHandler:
 
 
 from System import Uri
-from .Tasks import Task
+from System.Threading.Tasks import Task
 class IHandler:
     @overload
     def ExecuteScript(self, script: str) -> str: ...
@@ -14009,6 +14295,8 @@ class IHandler:
     def Stop(self) -> None: ...
 
 
+from Eto.Drawing import Color
+from System.Globalization import CultureInfo
 class IHandler:
     @property
     def CultureInfo(self) -> CultureInfo: ...
@@ -14072,6 +14360,7 @@ class IHandler:
     def MultiSelect(self, value: bool) -> None: ...
 
 
+from Eto.Drawing import Image
 class IHandler:
     @property
     def ContentImage(self) -> Image: ...
@@ -14095,6 +14384,7 @@ class IHandler:
     def Show(self, indicator: TrayIndicator) -> None: ...
 
 
+from Eto.Drawing import PointF
 class IHandler:
     @property
     def Buttons(self) -> MouseButtons: ...
@@ -14148,6 +14438,7 @@ class IHandler:
     def Checked(self, value: bool) -> None: ...
 
 
+from Eto.Drawing import RectangleF
 class IHandler:
     @property
     def PrintableArea(self) -> RectangleF: ...
@@ -14191,6 +14482,7 @@ class IHandler:
     def Checked(self, value: bool) -> None: ...
 
 
+from Eto.Drawing import Image
 class IHandler:
     @property
     def Image(self) -> Image: ...
@@ -14198,6 +14490,7 @@ class IHandler:
     def Image(self, value: Image) -> None: ...
 
 
+from System.Globalization import CultureInfo
 class IHandler:
     @overload
     def Create(self, mask: str, culture: CultureInfo, allowPromptAsInput: bool, restrictToAscii: bool) -> None: ...
@@ -14350,6 +14643,7 @@ class IHandler:
     def Stop(self) -> None: ...
 
 
+from Eto.Drawing import Image
 class IHandler:
     @property
     def Image(self) -> Image: ...
@@ -14369,6 +14663,7 @@ class IHandler:
     def Visible(self, value: bool) -> None: ...
 
 
+from Eto.Drawing import Image
 class IHandler:
     @overload
     def CreateFromCommand(self, command: Command) -> None: ...
@@ -14469,6 +14764,7 @@ class IHandler:
     def Title(self, value: str) -> None: ...
 
 
+from Eto.Drawing import Image
 class IHandler:
     @property
     def Enabled(self) -> bool: ...
@@ -14542,6 +14838,8 @@ class IHandler:
     pass
 
 
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Image
 class IHandler:
     @property
     def BitsPerPixel(self) -> int: ...
@@ -14607,6 +14905,7 @@ class IHandler:
     def Show(self) -> None: ...
 
 
+from Eto.Drawing import Font
 class IHandler:
     @property
     def Font(self) -> Font: ...
@@ -14614,6 +14913,8 @@ class IHandler:
     def Font(self, value: Font) -> None: ...
 
 
+from Eto.Drawing import Size
+from Eto.Drawing import Padding
 class IHandler:
     @overload
     def CreateControl(self, columns: int, rows: int) -> None: ...
@@ -14669,6 +14970,10 @@ class IHandler:
     def Value(self, value: int) -> None: ...
 
 
+from Eto.Drawing import Font
+from Eto.Drawing import Color
+from Eto.Drawing import FontFamily
+from Eto.Drawing import FontTypeface
 class IHandler:
     @property
     def Buffer(self) -> ITextBuffer: ...
@@ -14723,6 +15028,8 @@ class IHandler:
     pass
 
 
+from Eto.Drawing import Padding
+from Eto.Drawing import Size
 class IHandler:
     @property
     def Content(self) -> Control: ...
@@ -14819,6 +15126,7 @@ class IHandler:
     def TabPosition(self, value: DockPosition) -> None: ...
 
 
+from Eto.Drawing import Image
 class IHandler:
     @property
     def Image(self) -> Image: ...
@@ -14952,6 +15260,7 @@ class IHandler:
     def Checked(self, value: bool) -> None: ...
 
 
+from Eto.Drawing import Color
 class IHandler:
     @property
     def Text(self) -> str: ...
@@ -14963,6 +15272,8 @@ class IHandler:
     def TextColor(self, value: Color) -> None: ...
 
 
+from Eto.Drawing import PointF
+from Eto.Drawing import Color
 class IHandler:
     @property
     def DataStore(self) -> ITreeStore: ...
@@ -15033,7 +15344,7 @@ class IHandler:
     def ReadOnly(self, value: bool) -> None: ...
 
 
-from .Tasks import Task
+from System.Threading.Tasks import Task
 class IHandler:
     @property
     def AbortButton(self) -> Button: ...
@@ -15064,6 +15375,7 @@ class IHandler:
     def TrySetObject(self, value: object, type: str) -> bool: ...
 
 
+from Eto.Drawing import PointF
 class IHandler:
     @property
     def DataStore(self) -> ITreeGridStore: ...
@@ -15094,6 +15406,9 @@ class IHandler:
     def Text(self) -> str: ...
 
 
+from Eto.Drawing import Point
+from Eto.Drawing import Size
+from Eto.Drawing import Rectangle
 class IHandler:
     @property
     def Border(self) -> BorderType: ...
@@ -15133,6 +15448,9 @@ class IHandler:
     def UpdateScrollSizes(self) -> None: ...
 
 
+from Eto.Drawing import Image
+from Eto.Drawing import PointF
+from System.IO import Stream
 class IHandler:
     @overload
     def Create(self, type: CursorType) -> None: ...
@@ -15163,6 +15481,7 @@ class IHandler:
     def Value(self, value: int) -> None: ...
 
 
+from Eto.Drawing import Image
 from System import Uri
 class IHandler:
     @property
@@ -15215,6 +15534,7 @@ class IHandler:
     def WebsiteLabel(self, value: str) -> None: ...
 
 
+from Eto.Drawing import Image
 class IImageListItem:
     @property
     def Image(self) -> Image: ...
@@ -15247,6 +15567,7 @@ class IListItem:
     def Text(self, value: str) -> None: ...
 
 
+from Eto.Drawing import Image
 class ImageListItem(ListItem):
     @overload
     def __init__(self): ...
@@ -15276,6 +15597,7 @@ class ImageListItem(ListItem):
     def ToString(self) -> str: ...
 
 
+from Eto.Drawing import ImageInterpolation
 from Eto import Platform
 from System import IntPtr
 from Eto import PropertyStore
@@ -15347,7 +15669,15 @@ class ImageTextCell(Cell):
     def ToString(self) -> str: ...
 
 
+from Eto.Drawing import Image
 from System import EventHandler
+from Eto.Drawing import Rectangle
+from Eto.Drawing import Size
+from Eto.Drawing import SizeF
+from Eto.Drawing import Color
+from Eto.Drawing import PointF
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Point
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -15643,6 +15973,7 @@ class ImageView(Control):
     def UpdateLayout(self) -> None: ...
 
 
+from Eto.Drawing import ImageInterpolation
 from Eto import Platform
 from System import IntPtr
 from Eto import PropertyStore
@@ -15811,6 +16142,10 @@ class ISubmenuHandler:
     def RemoveMenu(self, item: MenuItem) -> None: ...
 
 
+from Eto.Drawing import Font
+from Eto.Drawing import Color
+from Eto.Drawing import FontFamily
+from System.IO import Stream
 class ITextBuffer:
     @overload
     def Clear(self) -> None: ...
@@ -15862,6 +16197,7 @@ class ITreeStore:
 
 
 
+from System.Globalization import CultureInfo
 class IValueConverter:
     @overload
     def Convert(self, value: object, targetType: type, parameter: object, culture: CultureInfo) -> object: ...
@@ -15869,6 +16205,7 @@ class IValueConverter:
     def ConvertBack(self, value: object, targetType: type, parameter: object, culture: CultureInfo) -> object: ...
 
 
+from Eto.Drawing import PointF
 class IWindowHandler:
     @overload
     def FromPoint(self, point: PointF) -> Window: ...
@@ -16094,6 +16431,15 @@ class KeysExtensions:
 
 
 from System import EventHandler
+from Eto.Drawing import Color
+from Eto.Drawing import Font
+from Eto.Drawing import Rectangle
+from Eto.Drawing import Size
+from Eto.Drawing import SizeF
+from Eto.Drawing import PointF
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Point
+from Eto.Drawing import Image
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -16423,9 +16769,17 @@ class Label(TextControl):
     def UpdateLayout(self) -> None: ...
 
 
+from Eto.Drawing import Size
 from Eto import IStyleProvider
 from Eto import DefaultStyleProvider
 from System import EventHandler
+from Eto.Drawing import Rectangle
+from Eto.Drawing import SizeF
+from Eto.Drawing import Color
+from Eto.Drawing import PointF
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Point
+from Eto.Drawing import Image
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -16750,7 +17104,16 @@ class Layout(Container):
 
 
 from System import EventHandler
-from .Input import ICommand
+from System.Windows.Input import ICommand
+from Eto.Drawing import Color
+from Eto.Drawing import Font
+from Eto.Drawing import Rectangle
+from Eto.Drawing import Size
+from Eto.Drawing import SizeF
+from Eto.Drawing import PointF
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Point
+from Eto.Drawing import Image
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -17078,6 +17441,15 @@ class LinkButton(TextControl):
 
 
 from System import EventHandler
+from Eto.Drawing import Color
+from Eto.Drawing import Font
+from Eto.Drawing import Rectangle
+from Eto.Drawing import Size
+from Eto.Drawing import SizeF
+from Eto.Drawing import PointF
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Point
+from Eto.Drawing import Image
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -17450,6 +17822,15 @@ class ListBox(ListControl):
 
 
 from System import EventHandler
+from Eto.Drawing import Color
+from Eto.Drawing import Font
+from Eto.Drawing import Rectangle
+from Eto.Drawing import Size
+from Eto.Drawing import SizeF
+from Eto.Drawing import PointF
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Point
+from Eto.Drawing import Image
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -17826,9 +18207,9 @@ class ListItem:
     def ToString(self) -> str: ...
 
 
-from .Generic import IComparer
+from System.Collections.Generic import IComparer
 from System import Comparison
-from .Specialized import NotifyCollectionChangedEventHandler
+from System.Collections.Specialized import NotifyCollectionChangedEventHandler
 class ListItemCollection:
     @overload
     def __init__(self): ...
@@ -17907,6 +18288,15 @@ class LocalizeEventArgs:
 
 
 from System import EventHandler
+from Eto.Drawing import Color
+from Eto.Drawing import Font
+from Eto.Drawing import Rectangle
+from Eto.Drawing import Size
+from Eto.Drawing import SizeF
+from Eto.Drawing import PointF
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Point
+from Eto.Drawing import Image
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -18287,6 +18677,15 @@ class MaskedTextBox(TextBox):
 
 
 from System import EventHandler
+from Eto.Drawing import Color
+from Eto.Drawing import Font
+from Eto.Drawing import Rectangle
+from Eto.Drawing import Size
+from Eto.Drawing import SizeF
+from Eto.Drawing import PointF
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Point
+from Eto.Drawing import Image
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -18748,7 +19147,7 @@ class Menu(BindableWidget):
     def UpdateBindings(self, mode: BindingUpdateMode) -> None: ...
 
 
-from .ObjectModel import Collection
+from System.Collections.ObjectModel import Collection
 from System import EventHandler
 from Eto import Widget
 from Eto import Platform
@@ -18860,7 +19259,7 @@ class MenuBarSystemItems(Enum):
     All = 5
 
 
-from .Input import ICommand
+from System.Windows.Input import ICommand
 from System import EventHandler
 from Eto import Widget
 from Eto import Platform
@@ -19030,7 +19429,8 @@ class MenuItemCollection:
     def Trim(self) -> None: ...
 
 
-from .Input import ICommand
+from Eto.Drawing import Image
+from System.Windows.Input import ICommand
 from System import EventHandler
 from Eto import Widget
 from Eto import Platform
@@ -19216,6 +19616,7 @@ class MessageBoxType(Enum):
     Question = 3
 
 
+from Eto.Drawing import PointF
 class Mouse:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -19252,7 +19653,9 @@ class MouseButtons(Enum):
     Middle = 4
 
 
+from Eto.Drawing import PointF
 from System import Nullable
+from Eto.Drawing import SizeF
 class MouseEventArgs:
     @overload
     def __init__(self, buttons: MouseButtons, modifiers: Keys, location: PointF, delta: Nullable, pressure: float): ...
@@ -19281,6 +19684,14 @@ class MouseEventArgs:
 
 
 from System import EventHandler
+from Eto.Drawing import Rectangle
+from Eto.Drawing import Size
+from Eto.Drawing import SizeF
+from Eto.Drawing import Color
+from Eto.Drawing import PointF
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Point
+from Eto.Drawing import Image
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -19575,8 +19986,16 @@ class NativeControlHost(Control):
 
 
 from System import EventHandler
+from Eto.Drawing import Size
 from Eto import IStyleProvider
 from Eto import DefaultStyleProvider
+from Eto.Drawing import Rectangle
+from Eto.Drawing import SizeF
+from Eto.Drawing import Color
+from Eto.Drawing import PointF
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Point
+from Eto.Drawing import Image
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -19963,6 +20382,8 @@ class NavigationItemEventArgs:
     def ToString(self) -> str: ...
 
 
+from Eto.Drawing import Icon
+from Eto.Drawing import Image
 from System import EventHandler
 from Eto import Platform
 from System import IntPtr
@@ -20056,6 +20477,7 @@ class NotificationEventArgs:
 
 
 from System import Func
+from System.Globalization import CultureInfo
 class NumericMaskedTextProvider(VariableMaskedTextProvider):
     @overload
     def __init__(self): ...
@@ -20122,6 +20544,16 @@ class NumericMaskedTextProvider(VariableMaskedTextProvider):
 
 
 from System import EventHandler
+from Eto.Drawing import Color
+from System.Globalization import CultureInfo
+from Eto.Drawing import Font
+from Eto.Drawing import Rectangle
+from Eto.Drawing import Size
+from Eto.Drawing import SizeF
+from Eto.Drawing import PointF
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Point
+from Eto.Drawing import Image
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -20471,7 +20903,7 @@ class NumericStepper(CommonControl):
 
 
 
-from .ObjectModel import Collection
+from System.Collections.ObjectModel import Collection
 from System import Uri
 from Eto import Platform
 from System import IntPtr
@@ -20609,6 +21041,7 @@ class PageOrientation(Enum):
     Landscape = 1
 
 
+from Eto.Drawing import RectangleF
 from Eto import Platform
 from System import IntPtr
 from Eto import PropertyStore
@@ -20655,6 +21088,8 @@ class PageSettings(Widget):
     def ToString(self) -> str: ...
 
 
+from Eto.Drawing import Graphics
+from Eto.Drawing import RectangleF
 class PaintEventArgs:
     @overload
     def __init__(self, graphics: Graphics, clipRectangle: RectangleF): ...
@@ -20672,9 +21107,18 @@ class PaintEventArgs:
     def ToString(self) -> str: ...
 
 
+from Eto.Drawing import Padding
+from Eto.Drawing import Size
 from Eto import IStyleProvider
 from Eto import DefaultStyleProvider
 from System import EventHandler
+from Eto.Drawing import Rectangle
+from Eto.Drawing import SizeF
+from Eto.Drawing import Color
+from Eto.Drawing import PointF
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Point
+from Eto.Drawing import Image
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -21011,6 +21455,15 @@ class Panel(Container):
 
 
 from System import EventHandler
+from Eto.Drawing import Color
+from Eto.Drawing import Font
+from Eto.Drawing import Rectangle
+from Eto.Drawing import Size
+from Eto.Drawing import SizeF
+from Eto.Drawing import PointF
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Point
+from Eto.Drawing import Image
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -21332,9 +21785,17 @@ class PasswordBox(TextControl):
     def UpdateLayout(self) -> None: ...
 
 
+from Eto.Drawing import Point
+from Eto.Drawing import Size
 from Eto import IStyleProvider
 from Eto import DefaultStyleProvider
 from System import EventHandler
+from Eto.Drawing import Rectangle
+from Eto.Drawing import SizeF
+from Eto.Drawing import Color
+from Eto.Drawing import PointF
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Image
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -21812,6 +22273,8 @@ class PrintDocument(Widget):
     def ToString(self) -> str: ...
 
 
+from Eto.Drawing import Graphics
+from Eto.Drawing import SizeF
 class PrintPageEventArgs:
     @overload
     def __init__(self, graphics: Graphics, pageSize: SizeF, currentPage: int): ...
@@ -21965,6 +22428,14 @@ class PrintSettings(Widget):
 
 
 from System import EventHandler
+from Eto.Drawing import Rectangle
+from Eto.Drawing import Size
+from Eto.Drawing import SizeF
+from Eto.Drawing import Color
+from Eto.Drawing import PointF
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Point
+from Eto.Drawing import Image
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -22325,8 +22796,10 @@ class ProgressCell:
 
 
 
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Collections import IDictionary
+from System.Reflection import MethodBase
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 class PropertyBindingException:
     @overload
     def __init__(self): ...
@@ -22370,7 +22843,7 @@ class PropertyBindingException:
     def ToString(self) -> str: ...
 
 
-from .Generic import IList
+from System.Collections.Generic import IList
 from System import Func
 from System import Action
 from System import EventHandler
@@ -22711,6 +23184,14 @@ class PropertyCellTypeString:
 
 
 from System import EventHandler
+from Eto.Drawing import Rectangle
+from Eto.Drawing import Size
+from Eto.Drawing import SizeF
+from Eto.Drawing import Color
+from Eto.Drawing import PointF
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Point
+from Eto.Drawing import Image
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -23060,7 +23541,16 @@ class PropertyValueChangedEventArgs:
 
 
 from System import EventHandler
-from .Input import ICommand
+from System.Windows.Input import ICommand
+from Eto.Drawing import Color
+from Eto.Drawing import Font
+from Eto.Drawing import Rectangle
+from Eto.Drawing import Size
+from Eto.Drawing import SizeF
+from Eto.Drawing import PointF
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Point
+from Eto.Drawing import Image
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -23393,8 +23883,17 @@ class RadioButton(TextControl):
 
 
 from System import EventHandler
+from Eto.Drawing import Color
+from Eto.Drawing import Size
+from Eto.Drawing import Padding
 from Eto import IStyleProvider
 from Eto import DefaultStyleProvider
+from Eto.Drawing import Rectangle
+from Eto.Drawing import SizeF
+from Eto.Drawing import PointF
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Point
+from Eto.Drawing import Image
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -23799,8 +24298,9 @@ class RadioButtonList(Panel):
 
 
 from System import EventHandler
+from Eto.Drawing import Image
 from Eto import PropertyStore
-from .Input import ICommand
+from System.Windows.Input import ICommand
 class RadioCommand(CheckCommand):
     @overload
     def __init__(self): ...
@@ -23903,7 +24403,7 @@ class RadioCommand(CheckCommand):
 
 
 from System import EventHandler
-from .Input import ICommand
+from System.Windows.Input import ICommand
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -24038,7 +24538,8 @@ class RadioMenuItem(MenuItem):
 
 from System import EventHandler
 from System import EventArgs
-from .Input import ICommand
+from System.Windows.Input import ICommand
+from Eto.Drawing import Image
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -24238,7 +24739,18 @@ class RelayCommand:
 
 
 
+from Eto.Drawing import Font
+from Eto.Drawing import Color
+from Eto.Drawing import FontFamily
+from Eto.Drawing import FontTypeface
 from System import EventHandler
+from Eto.Drawing import Rectangle
+from Eto.Drawing import Size
+from Eto.Drawing import SizeF
+from Eto.Drawing import PointF
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Point
+from Eto.Drawing import Image
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -24667,7 +25179,7 @@ class RichTextAreaFormat(Enum):
     PlainText = 1
 
 
-from .ObjectModel import Collection
+from System.Collections.ObjectModel import Collection
 from System import Uri
 from Eto import Platform
 from System import IntPtr
@@ -24742,6 +25254,9 @@ class SaveFileDialog(FileDialog):
     def ToString(self) -> str: ...
 
 
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Image
+from Eto.Drawing import PointF
 from Eto import Platform
 from System import IntPtr
 from Eto import PropertyStore
@@ -24824,8 +25339,17 @@ class Screen(Widget):
 
 
 from System import EventHandler
+from Eto.Drawing import Point
+from Eto.Drawing import Size
+from Eto.Drawing import Rectangle
+from Eto.Drawing import Padding
 from Eto import IStyleProvider
 from Eto import DefaultStyleProvider
+from Eto.Drawing import SizeF
+from Eto.Drawing import Color
+from Eto.Drawing import PointF
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Image
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -25202,6 +25726,7 @@ class Scrollable(Panel):
     def UpdateScrollSizes(self) -> None: ...
 
 
+from Eto.Drawing import Point
 class ScrollEventArgs:
     @overload
     def __init__(self, scrollPosition: Point): ...
@@ -25218,6 +25743,15 @@ class ScrollEventArgs:
 
 
 from System import EventHandler
+from Eto.Drawing import Color
+from Eto.Drawing import Font
+from Eto.Drawing import Rectangle
+from Eto.Drawing import Size
+from Eto.Drawing import SizeF
+from Eto.Drawing import PointF
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Point
+from Eto.Drawing import Image
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -25570,6 +26104,14 @@ class SearchBox(TextBox):
 
 
 from System import EventHandler
+from Eto.Drawing import Rectangle
+from Eto.Drawing import Size
+from Eto.Drawing import SizeF
+from Eto.Drawing import Color
+from Eto.Drawing import PointF
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Point
+from Eto.Drawing import Image
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -25909,7 +26451,8 @@ class SegmentedButton(Control):
     def UpdateLayout(self) -> None: ...
 
 
-from .Input import ICommand
+from Eto.Drawing import Image
+from System.Windows.Input import ICommand
 from System import EventHandler
 from Eto import Widget
 from Eto import Platform
@@ -26051,7 +26594,7 @@ class SegmentedItemClickEventArgs:
     def ToString(self) -> str: ...
 
 
-from .Specialized import NotifyCollectionChangedEventHandler
+from System.Collections.Specialized import NotifyCollectionChangedEventHandler
 class SegmentedItemCollection:
     def __iter__(self) -> Iterator[SegmentedItem]: ...
     def __getitem__(self, index: int) -> SegmentedItem: ...
@@ -26159,7 +26702,7 @@ class SelectFolderDialog(CommonDialog):
     def ToString(self) -> str: ...
 
 
-from .Input import ICommand
+from System.Windows.Input import ICommand
 from System import EventHandler
 from Eto import Widget
 from Eto import Platform
@@ -26280,9 +26823,10 @@ class SeparatorMenuItem(MenuItem):
     def UpdateBindings(self, mode: BindingUpdateMode) -> None: ...
 
 
-from .Input import ICommand
+from System.Windows.Input import ICommand
 from System import EventHandler
 from System import EventArgs
+from Eto.Drawing import Image
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -26415,6 +26959,14 @@ class ShowPromptMode(Enum):
 
 
 from System import EventHandler
+from Eto.Drawing import Rectangle
+from Eto.Drawing import Size
+from Eto.Drawing import SizeF
+from Eto.Drawing import Color
+from Eto.Drawing import PointF
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Point
+from Eto.Drawing import Image
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -26737,6 +27289,14 @@ class Slider(Control):
 
 
 from System import EventHandler
+from Eto.Drawing import Rectangle
+from Eto.Drawing import Size
+from Eto.Drawing import SizeF
+from Eto.Drawing import Color
+from Eto.Drawing import PointF
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Point
+from Eto.Drawing import Image
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -27029,8 +27589,16 @@ class Spinner(Control):
 
 
 from System import EventHandler
+from Eto.Drawing import Size
 from Eto import IStyleProvider
 from Eto import DefaultStyleProvider
+from Eto.Drawing import Rectangle
+from Eto.Drawing import SizeF
+from Eto.Drawing import Color
+from Eto.Drawing import PointF
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Point
+from Eto.Drawing import Image
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -27434,10 +28002,19 @@ class SplitterPositionChangingEventArgs:
     def ToString(self) -> str: ...
 
 
-from .ObjectModel import Collection
+from System.Collections.ObjectModel import Collection
+from Eto.Drawing import Padding
+from Eto.Drawing import Size
 from Eto import IStyleProvider
 from Eto import DefaultStyleProvider
 from System import EventHandler
+from Eto.Drawing import Rectangle
+from Eto.Drawing import SizeF
+from Eto.Drawing import Color
+from Eto.Drawing import PointF
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Point
+from Eto.Drawing import Image
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -27798,6 +28375,7 @@ class StackLayout(Panel):
 
 
 from System import Nullable
+from Eto.Drawing import Image
 class StackLayoutItem:
     @overload
     def __init__(self): ...
@@ -27840,6 +28418,14 @@ class StackLayoutItem:
 
 
 from System import EventHandler
+from Eto.Drawing import Rectangle
+from Eto.Drawing import Size
+from Eto.Drawing import SizeF
+from Eto.Drawing import Color
+from Eto.Drawing import PointF
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Point
+from Eto.Drawing import Image
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -28182,7 +28768,8 @@ class SubmenuExtensions:
 
 
 from System import EventHandler
-from .Input import ICommand
+from Eto.Drawing import Image
+from System.Windows.Input import ICommand
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -28330,9 +28917,17 @@ class SubMenuItem(ButtonMenuItem):
 
 
 from System import EventHandler
-from .ObjectModel import Collection
+from System.Collections.ObjectModel import Collection
+from Eto.Drawing import Size
 from Eto import IStyleProvider
 from Eto import DefaultStyleProvider
+from Eto.Drawing import Rectangle
+from Eto.Drawing import SizeF
+from Eto.Drawing import Color
+from Eto.Drawing import PointF
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Point
+from Eto.Drawing import Image
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -28672,6 +29267,7 @@ class TabControl(Container):
     def UpdateLayout(self) -> None: ...
 
 
+from Eto.Drawing import Image
 class TableCell:
     @overload
     def __init__(self): ...
@@ -28705,11 +29301,20 @@ class TableCell:
     def ToString(self) -> str: ...
 
 
-from .ObjectModel import Collection
+from Eto.Drawing import Size
+from System.Collections.ObjectModel import Collection
 from System import Nullable
+from Eto.Drawing import Point
+from Eto.Drawing import Padding
 from Eto import IStyleProvider
 from Eto import DefaultStyleProvider
 from System import EventHandler
+from Eto.Drawing import Rectangle
+from Eto.Drawing import SizeF
+from Eto.Drawing import Color
+from Eto.Drawing import PointF
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Image
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -29092,7 +29697,8 @@ class TableLayout(Layout):
     def UpdateLayout(self) -> None: ...
 
 
-from .ObjectModel import Collection
+from System.Collections.ObjectModel import Collection
+from Eto.Drawing import Image
 class TableRow:
     @overload
     def __init__(self): ...
@@ -29138,8 +29744,17 @@ class TableRow:
 
 from System import Nullable
 from System import EventHandler
+from Eto.Drawing import Image
+from Eto.Drawing import Padding
+from Eto.Drawing import Size
 from Eto import IStyleProvider
 from Eto import DefaultStyleProvider
+from Eto.Drawing import Rectangle
+from Eto.Drawing import SizeF
+from Eto.Drawing import Color
+from Eto.Drawing import PointF
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Point
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -29518,6 +30133,15 @@ class TextAlignment(Enum):
 
 
 from System import EventHandler
+from Eto.Drawing import Color
+from Eto.Drawing import Font
+from Eto.Drawing import Rectangle
+from Eto.Drawing import Size
+from Eto.Drawing import SizeF
+from Eto.Drawing import PointF
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Point
+from Eto.Drawing import Image
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -29902,6 +30526,15 @@ class TextArea(TextControl):
 
 
 from System import EventHandler
+from Eto.Drawing import Color
+from Eto.Drawing import Font
+from Eto.Drawing import Rectangle
+from Eto.Drawing import Size
+from Eto.Drawing import SizeF
+from Eto.Drawing import PointF
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Point
+from Eto.Drawing import Image
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -30366,6 +30999,15 @@ class TextChangingEventArgs:
 
 
 from System import EventHandler
+from Eto.Drawing import Color
+from Eto.Drawing import Font
+from Eto.Drawing import Rectangle
+from Eto.Drawing import Size
+from Eto.Drawing import SizeF
+from Eto.Drawing import PointF
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Point
+from Eto.Drawing import Image
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -30703,6 +31345,15 @@ class TextReplacements(Enum):
 
 
 from System import EventHandler
+from Eto.Drawing import Color
+from Eto.Drawing import Font
+from Eto.Drawing import Rectangle
+from Eto.Drawing import Size
+from Eto.Drawing import SizeF
+from Eto.Drawing import PointF
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Point
+from Eto.Drawing import Image
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -31072,7 +31723,16 @@ class TextStepper(TextBox):
 
 
 from System import EventHandler
-from .Input import ICommand
+from System.Windows.Input import ICommand
+from Eto.Drawing import Image
+from Eto.Drawing import Size
+from Eto.Drawing import Color
+from Eto.Drawing import Font
+from Eto.Drawing import Rectangle
+from Eto.Drawing import SizeF
+from Eto.Drawing import PointF
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Point
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -31581,9 +32241,10 @@ class ToolBarTextAlign(Enum):
     Underneath = 1
 
 
-from .Input import ICommand
+from System.Windows.Input import ICommand
 from System import EventHandler
 from System import EventArgs
+from Eto.Drawing import Image
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -31741,6 +32402,8 @@ class ToolItemCollection:
     def ToString(self) -> str: ...
 
 
+from Eto.Drawing import Icon
+from Eto.Drawing import Image
 from System import EventHandler
 from Eto import Platform
 from System import IntPtr
@@ -31880,9 +32543,9 @@ class TreeGridItem(GridItem):
     def ToString(self) -> str: ...
 
 
-from .Generic import IComparer
+from System.Collections.Generic import IComparer
 from System import Comparison
-from .Specialized import NotifyCollectionChangedEventHandler
+from System.Collections.Specialized import NotifyCollectionChangedEventHandler
 class TreeGridItemCollection:
     @overload
     def __init__(self): ...
@@ -31936,6 +32599,14 @@ class TreeGridItemCollection:
 
 
 from System import EventHandler
+from Eto.Drawing import PointF
+from Eto.Drawing import Rectangle
+from Eto.Drawing import Size
+from Eto.Drawing import SizeF
+from Eto.Drawing import Color
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Point
+from Eto.Drawing import Image
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -32463,7 +33134,8 @@ class TreeGridViewItemEventArgs:
     def ToString(self) -> str: ...
 
 
-from .Specialized import NotifyCollectionChangedEventHandler
+from System.Collections.Specialized import NotifyCollectionChangedEventHandler
+from Eto.Drawing import Image
 class TreeItem(ImageListItem):
     @overload
     def __init__(self): ...
@@ -32517,9 +33189,9 @@ class TreeItem(ImageListItem):
     def ToString(self) -> str: ...
 
 
-from .Generic import IComparer
+from System.Collections.Generic import IComparer
 from System import Comparison
-from .Specialized import NotifyCollectionChangedEventHandler
+from System.Collections.Specialized import NotifyCollectionChangedEventHandler
 class TreeItemCollection:
     @overload
     def __init__(self): ...
@@ -32627,8 +33299,10 @@ class TreeViewItemEventArgs:
     def ToString(self) -> str: ...
 
 
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Collections import IDictionary
+from System.Reflection import MethodBase
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 class UIThreadAccessException:
     @overload
     def __init__(self): ...
@@ -32780,7 +33454,16 @@ class VerticalAlignment(Enum):
 
 from System import EventHandler
 from System import Uri
-from .Tasks import Task
+from System.Threading.Tasks import Task
+from System.IO import Stream
+from Eto.Drawing import Rectangle
+from Eto.Drawing import Size
+from Eto.Drawing import SizeF
+from Eto.Drawing import Color
+from Eto.Drawing import PointF
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Point
+from Eto.Drawing import Image
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr
@@ -33246,8 +33929,18 @@ class WidgetExtensions:
 
 
 from System import EventHandler
+from Eto.Drawing import PointF
+from Eto.Drawing import Point
+from Eto.Drawing import Rectangle
+from Eto.Drawing import Icon
+from Eto.Drawing import Padding
+from Eto.Drawing import Size
 from Eto import IStyleProvider
 from Eto import DefaultStyleProvider
+from Eto.Drawing import SizeF
+from Eto.Drawing import Color
+from Eto.Drawing import RectangleF
+from Eto.Drawing import Image
 from Eto import Widget
 from Eto import Platform
 from System import IntPtr

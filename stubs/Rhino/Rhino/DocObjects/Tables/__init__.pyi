@@ -187,6 +187,7 @@ from Rhino.DocObjects import ModelComponentType
 from Rhino.DocObjects import Group
 from Rhino.FileIO import NameHash
 from System import Guid
+from System.Collections.Generic import Dictionary
 from Rhino import RhinoDoc
 class GroupTable:
     def __iter__(self) -> Iterator[Group]: ...
@@ -395,6 +396,7 @@ from System import Guid
 from Rhino.Geometry import Point3d
 from Rhino.Geometry import GeometryBase
 from Rhino.DocObjects import ObjectAttributes
+from Rhino.DocObjects.Custom import UserData
 from Rhino.DocObjects import InstanceDefinitionUpdateType
 from Rhino.FileIO import FileReference
 class InstanceDefinitionTable:
@@ -1191,6 +1193,7 @@ from Rhino.Geometry import BoundingBox
 from Rhino.DocObjects import ModelComponentType
 from Rhino.DocObjects import ObjRef
 from Rhino.Geometry import Transform
+from Rhino.Input.Custom import PickContext
 from Rhino.DocObjects import ObjectEnumeratorSettings
 from Rhino.DocObjects import ObjectType
 from Rhino.Geometry import Surface
@@ -1225,10 +1228,14 @@ from Rhino.DocObjects import Layer
 from System.Drawing import Color
 from Rhino.Display import RhinoViewport
 from Rhino.Geometry import Point2d
+from Rhino.DocObjects.Custom import CustomMeshObject
 from Rhino.DocObjects import MeshObject
+from Rhino.DocObjects.Custom import CustomBrepObject
 from Rhino.DocObjects import BrepObject
+from Rhino.DocObjects.Custom import CustomPointObject
 from Rhino.DocObjects import PointObject
 from Rhino.DocObjects import CurveObject
+from Rhino.DocObjects.Custom import CustomCurveObject
 from Rhino.Geometry import Point3f
 from Rhino.Collections import RhinoList
 from Rhino.Geometry import RadialDimension
@@ -1840,6 +1847,12 @@ class RestoreLayerProperties(Enum):
 
 from Rhino import RhinoDoc
 from System import Func
+from System.Collections.Generic import IEqualityComparer
+from System.Collections.Generic import KeyCollection
+from System.Collections.Generic import ValueCollection
+from System.Collections.Generic import Enumerator
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 class RuntimeDocumentDataTable:
     def __iter__(self) -> Iterator[KeyValuePair]: ...
     @overload

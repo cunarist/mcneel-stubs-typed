@@ -106,6 +106,8 @@ class Attributes:
     def ToString(self) -> str: ...
 
 
+from Rhino.Display import ColorRGBA
+from System.Drawing import Color
 class ModelColor:
     @overload
     def CompareTo(self, other: ModelColor) -> int: ...
@@ -252,6 +254,8 @@ class ModelContent(ModelData):
     def ToString(self) -> str: ...
 
 
+from Grasshopper.Kernel import GH_LoadingInstruction
+from Grasshopper.Kernel import GH_AssemblyPriority
 class ModelContentEnablerLoader(GH_AssemblyPriority):
     @overload
     def __init__(self): ...
@@ -352,10 +356,13 @@ class ModelData:
     def ToString(self) -> str: ...
 
 
-from .Generic import IReadOnlyList
-from .Types import IGH_Goo
-from .Types import IGH_GooProxy
-from .Types import Q
+from Rhino.DocObjects import Font
+from System.Collections.Generic import IReadOnlyList
+from Grasshopper.Kernel.Types import IGH_Goo
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from Grasshopper.Kernel.Types import IGH_GooProxy
+from Grasshopper.Kernel.Types import Q
 class ModelFont:
     @overload
     def __init__(self): ...
@@ -420,6 +427,7 @@ class ModelFont:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from Rhino.Geometry import MeshingParameters
 from Rhino import RhinoDoc
 class ModelMeshingParameters(ModelValue):
     @overload
@@ -517,6 +525,7 @@ class ModelTags:
     def ToString(self) -> str: ...
 
 
+from Rhino.DocObjects import ActiveSpace
 from Rhino import RhinoDoc
 from Rhino import UnitSystem
 class ModelUnitSystem(ModelValue):
@@ -570,7 +579,7 @@ class ModelUnitSystem(ModelValue):
     def ToString(self) -> str: ...
 
 
-from .Generic import KeyValuePair
+from System.Collections.Generic import KeyValuePair
 class ModelUserText:
     @overload
     def __init__(self, source: Iterable[KeyValuePair]): ...
@@ -670,6 +679,7 @@ class ModelValue:
     def ToString(self) -> str: ...
 
 
+from Rhino.DocObjects import ActiveSpace
 from Rhino import UnitSystem
 from System import Nullable
 from Rhino import RhinoDoc

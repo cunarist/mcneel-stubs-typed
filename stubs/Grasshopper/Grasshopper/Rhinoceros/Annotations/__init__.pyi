@@ -113,6 +113,12 @@ class AnnotationArrowSettings(ModelData):
     def ToString(self) -> str: ...
 
 
+from Grasshopper.Kernel.Types import GH_String
+from Grasshopper.Kernel.Types import IGH_Goo
+from Grasshopper.Kernel.Types import T
+from Grasshopper.Kernel.Types import GH_QuickCastType
+from Grasshopper.Kernel.Types import IGH_QuickCast
+from Grasshopper.Kernel.Types import Complex
 from Rhino.Geometry import Matrix
 from Rhino.Geometry import Point3d
 from Rhino.Geometry import Vector3d
@@ -120,6 +126,8 @@ from System.Drawing import Color
 from Rhino.Geometry import Interval
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from Grasshopper.Kernel.Types import IGH_GooProxy
+from Grasshopper.Kernel.Types import GH_String
 class AnnotationDateTimeFormat(GH_String):
     @overload
     def __init__(self): ...

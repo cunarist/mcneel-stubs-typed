@@ -9,12 +9,33 @@ import Morphs
 __all__ = ['Collections', 'Intersect', 'MeshRefinements', 'Morphs']
 
 
+from Rhino.DocObjects import DimensionStyle
 from System import Guid
+from Rhino.DocObjects import AngleDisplayFormat
+from Rhino.DocObjects import ZeroSuppression
+from Rhino.DocObjects import ViewportInfo
 from Rhino import UnitSystem
-from .Specialized import NameValueCollection
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.DocObjects import ArrowFit
+from Rhino.DocObjects import TextFit
+from Rhino.DocObjects import TextOrientation
+from Rhino.DocObjects import TextLocation
+from Rhino.DocObjects import LeaderContentAngleStyle
+from Rhino.DocObjects import CenterMarkStyle
+from Rhino.DocObjects import ArrowType
+from Rhino.DocObjects import ToleranceDisplayFormat
+from Rhino.DocObjects import LengthDisplay
+from Rhino.DocObjects import Field
+from Rhino.DocObjects import MaskType
+from Rhino.DocObjects import MaskFrame
+from System.Drawing import Color
+from Rhino.DocObjects import Font
+from Rhino.DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class AngularDimension(Dimension):
     @overload
     def __init__(self): ...
@@ -526,11 +547,22 @@ class AngularDimension(Dimension):
 
 
 from System import Guid
+from Rhino.DocObjects import Field
+from Rhino.DocObjects import DimensionStyle
+from Rhino.DocObjects import MaskType
+from Rhino.DocObjects import MaskFrame
+from System.Drawing import Color
 from Rhino import RhinoDoc
-from .Specialized import NameValueCollection
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.Display import RhinoViewport
+from Rhino.DocObjects import Font
+from Rhino.DocObjects import LengthDisplay
+from Rhino.DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class AnnotationBase(GeometryBase):
     @overload
     def ClearPropertyOverrides(self) -> bool: ...
@@ -901,10 +933,13 @@ class Arc:
     def Trim(self, domain: Interval) -> bool: ...
 
 
-from .Specialized import NameValueCollection
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class ArcCurve(Curve):
     @overload
     def __init__(self): ...
@@ -1453,6 +1488,7 @@ class AreaMassProperties:
     def WorldCoordinatesPrincipalMomentsOfInertia(self) -> Tuple[bool, float, Vector3d, float, Vector3d, float, Vector3d]: ...
 
 
+from Rhino.DocObjects import ArrowType
 from System import Guid
 class Arrowhead:
     @overload
@@ -1479,8 +1515,8 @@ class Attenuation(Enum):
     InverseSquared = 2
 
 
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 class BezierCurve:
     @overload
     def __init__(self, controlPoints: Iterable[Point2d]): ...
@@ -1793,18 +1829,23 @@ class Box:
     def Union(self, point: Point3d) -> None: ...
 
 
-from .Generic import IDictionary
-from .Collections import BrepVertexList
-from .Collections import BrepSurfaceList
-from .Collections import BrepEdgeList
-from .Collections import BrepTrimList
-from .Collections import BrepLoopList
-from .Collections import BrepFaceList
-from .Collections import BrepCurveList
-from .Specialized import NameValueCollection
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.Collections import CurveList
+from System.Collections.Generic import IDictionary
+from Rhino.ApplicationSettings import CurvatureAnalysisSettingsState
+from Rhino.Geometry.Collections import BrepVertexList
+from Rhino.Geometry.Collections import BrepSurfaceList
+from Rhino.Geometry.Collections import BrepEdgeList
+from Rhino.Geometry.Collections import BrepTrimList
+from Rhino.Geometry.Collections import BrepLoopList
+from Rhino.Geometry.Collections import BrepFaceList
+from Rhino.Geometry.Collections import BrepCurveList
+from Rhino.DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class Brep(GeometryBase):
     @overload
     def __init__(self): ...
@@ -2351,10 +2392,13 @@ class Brep(GeometryBase):
     def UnjoinEdges(self, edgesToUnjoin: Iterable[int]) -> Iterable[Brep]: ...
 
 
-from .Specialized import NameValueCollection
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class BrepEdge(CurveProxy):
     @overload
     def AdjacentFaces(self) -> Iterable[int]: ...
@@ -2839,12 +2883,16 @@ class BrepEdgeFilletDistance:
     def ToString(self) -> str: ...
 
 
-from .Collections import BrepLoopList
+from Rhino.Geometry.Collections import BrepLoopList
 from System import Guid
-from .Specialized import NameValueCollection
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Drawing import Color
+from Rhino.DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class BrepFace(SurfaceProxy):
     @overload
     def AdjacentEdges(self) -> Iterable[int]: ...
@@ -3174,11 +3222,14 @@ class BrepFace(SurfaceProxy):
     def VariableOffset(self, uMinvMin: float, uMinvMax: float, uMaxvMin: float, uMaxvMax: float, interiorParameters: Iterable[Point2d], interiorDistances: Iterable[float], tolerance: float) -> Surface: ...
 
 
-from .Collections import BrepTrimList
-from .Specialized import NameValueCollection
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.Geometry.Collections import BrepTrimList
+from Rhino.DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class BrepLoop(GeometryBase):
     @overload
     def ComponentIndex(self) -> ComponentIndex: ...
@@ -3285,9 +3336,12 @@ class BrepLoopType(Enum):
     PointOnSurface = 5
 
 
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
+from Rhino.Runtime import CommonObject
 class BrepRegion(CommonObject):
     @overload
     def BoundaryBrep(self) -> Brep: ...
@@ -3333,9 +3387,12 @@ class BrepRegion(CommonObject):
     def ToString(self) -> str: ...
 
 
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
+from Rhino.Runtime import CommonObject
 class BrepRegionFaceSide(CommonObject):
     @overload
     def Dispose(self) -> None: ...
@@ -3384,10 +3441,13 @@ class BrepSolidOrientation(Enum):
     Inward = -1
 
 
-from .Specialized import NameValueCollection
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class BrepTrim(CurveProxy):
     @overload
     def ChangeClosedCurveSeam(self, t: float) -> bool: ...
@@ -3868,10 +3928,13 @@ class BrepTrimType(Enum):
     Slit = 7
 
 
-from .Specialized import NameValueCollection
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class BrepVertex(Point):
     @overload
     def ComponentIndex(self) -> ComponentIndex: ...
@@ -3967,12 +4030,32 @@ class BrepVertex(Point):
     def Translate(self, x: float, y: float, z: float) -> bool: ...
 
 
+from Rhino.DocObjects import DimensionStyle
+from Rhino.DocObjects import ViewportInfo
 from Rhino import UnitSystem
 from System import Guid
-from .Specialized import NameValueCollection
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.DocObjects import ArrowFit
+from Rhino.DocObjects import TextFit
+from Rhino.DocObjects import TextOrientation
+from Rhino.DocObjects import TextLocation
+from Rhino.DocObjects import LeaderContentAngleStyle
+from Rhino.DocObjects import CenterMarkStyle
+from Rhino.DocObjects import ArrowType
+from Rhino.DocObjects import ZeroSuppression
+from Rhino.DocObjects import ToleranceDisplayFormat
+from Rhino.DocObjects import LengthDisplay
+from Rhino.DocObjects import Field
+from Rhino.DocObjects import MaskType
+from Rhino.DocObjects import MaskFrame
+from System.Drawing import Color
+from Rhino.DocObjects import Font
+from Rhino.DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class Centermark(Dimension):
     @overload
     def __init__(self): ...
@@ -4533,10 +4616,13 @@ class Circle:
 
 
 from System import Guid
-from .Specialized import NameValueCollection
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class ClippingPlaneSurface(PlaneSurface):
     @overload
     def __init__(self): ...
@@ -5097,10 +5183,13 @@ class ConvexCornerOption(Enum):
     AtMeshCorner = 2
 
 
-from .Specialized import NameValueCollection
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class Curve(GeometryBase):
     @overload
     def ChangeClosedCurveSeam(self, t: float) -> bool: ...
@@ -5783,10 +5872,13 @@ class CurveOrientation(Enum):
     Clockwise = -1
 
 
-from .Specialized import NameValueCollection
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class CurveProxy(Curve):
     @overload
     def ChangeClosedCurveSeam(self, t: float) -> bool: ...
@@ -6303,10 +6395,13 @@ class Density(Enum):
 
 
 from Rhino import UnitSystem
-from .Specialized import NameValueCollection
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class DetailView(GeometryBase):
     @overload
     def ComponentIndex(self) -> ComponentIndex: ...
@@ -6429,12 +6524,32 @@ class DevelopableSrf:
     def UntwistRulings(rail0: NurbsCurve, rail1: NurbsCurve, rulings: Iterable[Any]) -> Tuple[bool, Iterable[Any]]: ...
 
 
+from Rhino.DocObjects import ViewportInfo
+from Rhino.DocObjects import DimensionStyle
 from Rhino import UnitSystem
 from System import Guid
-from .Specialized import NameValueCollection
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.DocObjects import ArrowFit
+from Rhino.DocObjects import TextFit
+from Rhino.DocObjects import TextOrientation
+from Rhino.DocObjects import TextLocation
+from Rhino.DocObjects import LeaderContentAngleStyle
+from Rhino.DocObjects import CenterMarkStyle
+from Rhino.DocObjects import ArrowType
+from Rhino.DocObjects import ZeroSuppression
+from Rhino.DocObjects import ToleranceDisplayFormat
+from Rhino.DocObjects import LengthDisplay
+from Rhino.DocObjects import Field
+from Rhino.DocObjects import MaskType
+from Rhino.DocObjects import MaskFrame
+from System.Drawing import Color
+from Rhino.DocObjects import Font
+from Rhino.DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class Dimension(AnnotationBase):
     @overload
     def ClearPropertyOverrides(self) -> bool: ...
@@ -6950,10 +7065,13 @@ class ExtrudeCornerType(Enum):
     Chamfer = 4
 
 
-from .Specialized import NameValueCollection
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class Extrusion(Surface):
     @overload
     def __init__(self): ...
@@ -7297,10 +7415,14 @@ class ForceText(Enum):
     HintLeft = 5
 
 
-from .Specialized import NameValueCollection
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
+from Rhino.Runtime import CommonObject
 class GeometryBase(CommonObject):
     @overload
     def ComponentIndex(self) -> ComponentIndex: ...
@@ -7388,10 +7510,15 @@ class GeometryBase(CommonObject):
     def Translate(self, x: float, y: float, z: float) -> bool: ...
 
 
-from .Specialized import NameValueCollection
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.DocObjects import HatchPattern
+from Rhino.Display import ColorGradient
+from Rhino.DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class Hatch(GeometryBase):
     @overload
     def ComponentIndex(self) -> ComponentIndex: ...
@@ -7571,6 +7698,8 @@ class HermiteSurface:
 
 
 from System import IProgress
+from System.Threading import CancellationToken
+from Rhino.DocObjects import ViewportInfo
 class HiddenLineDrawing:
     @overload
     def BoundingBox(self, includeHidden: bool) -> BoundingBox: ...
@@ -7658,6 +7787,8 @@ class HiddenLineDrawingObjectCurve:
     def ToString(self) -> str: ...
 
 
+from Rhino.DocObjects import ViewportInfo
+from Rhino.Display import RhinoViewport
 class HiddenLineDrawingParameters:
     @overload
     def __init__(self): ...
@@ -7763,11 +7894,15 @@ class HiddenLineDrawingSegment:
     def ToString(self) -> str: ...
 
 
-from .Specialized import NameValueCollection
+from Rhino.DocObjects import ModelComponentType
+from System.Collections.Specialized import NameValueCollection
 from System import Guid
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
+from Rhino.DocObjects import ModelComponent
 class InstanceDefinitionGeometry(ModelComponent):
     @overload
     def __init__(self): ...
@@ -7892,10 +8027,13 @@ class InstanceDefinitionGeometry(ModelComponent):
 
 
 from System import Guid
-from .Specialized import NameValueCollection
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class InstanceReferenceGeometry(GeometryBase):
     @overload
     def __init__(self, instanceDefinitionId: Guid, transform: Transform): ...
@@ -7989,11 +8127,12 @@ class InteriorCreaseOption(Enum):
     AtMeshDoubleEdge = 2
 
 
+from Rhino.Collections import RhinoList
 from System import Predicate
-from .Generic import IComparer
+from System.Collections.Generic import IComparer
 from System import Action
 from System import Comparison
-from .ObjectModel import ReadOnlyCollection
+from System.Collections.ObjectModel import ReadOnlyCollection
 from System import Converter
 class Interpolator:
     @overload
@@ -8255,8 +8394,10 @@ class Interval:
     def ToString(self) -> str: ...
 
 
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Collections import IDictionary
+from System.Reflection import MethodBase
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 class InvalidDimensionStyleIdException:
     @overload
     def __init__(self, msg: str): ...
@@ -8315,11 +8456,26 @@ class KnotStyle(Enum):
     NonUniform = 5
 
 
+from Rhino.DocObjects import DimensionStyle
+from Rhino.DocObjects import TextHorizontalAlignment
+from Rhino.DocObjects import TextVerticalAlignment
+from Rhino.DocObjects import ArrowType
 from System import Guid
-from .Specialized import NameValueCollection
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.DocObjects import LeaderCurveStyle
+from Rhino.DocObjects import LeaderContentAngleStyle
+from Rhino.DocObjects import Field
+from Rhino.DocObjects import MaskType
+from Rhino.DocObjects import MaskFrame
+from System.Drawing import Color
+from Rhino.DocObjects import Font
+from Rhino.DocObjects import LengthDisplay
+from Rhino.DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class Leader(AnnotationBase):
     @overload
     def __init__(self): ...
@@ -8679,11 +8835,17 @@ class LengthMassProperties:
 
 
 from System import DateTime
+from Rhino.Render import Sun
+from Rhino.DocObjects import CoordinateSystem
+from System.Drawing import Color
 from System import Guid
-from .Specialized import NameValueCollection
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class Light(GeometryBase):
     @overload
     def __init__(self): ...
@@ -9021,12 +9183,32 @@ class Line:
     def TryGetPlane(self) -> Tuple[bool, Plane]: ...
 
 
+from Rhino.DocObjects import DimensionStyle
 from Rhino import UnitSystem
+from Rhino.DocObjects import ViewportInfo
 from System import Guid
-from .Specialized import NameValueCollection
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.DocObjects import ArrowFit
+from Rhino.DocObjects import TextFit
+from Rhino.DocObjects import TextOrientation
+from Rhino.DocObjects import TextLocation
+from Rhino.DocObjects import LeaderContentAngleStyle
+from Rhino.DocObjects import CenterMarkStyle
+from Rhino.DocObjects import ArrowType
+from Rhino.DocObjects import ZeroSuppression
+from Rhino.DocObjects import ToleranceDisplayFormat
+from Rhino.DocObjects import LengthDisplay
+from Rhino.DocObjects import Field
+from Rhino.DocObjects import MaskType
+from Rhino.DocObjects import MaskFrame
+from System.Drawing import Color
+from Rhino.DocObjects import Font
+from Rhino.DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class LinearDimension(Dimension):
     @overload
     def __init__(self): ...
@@ -9516,10 +9698,13 @@ class LinearDimension(Dimension):
     def WrapText(self) -> None: ...
 
 
-from .Specialized import NameValueCollection
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class LineCurve(Curve):
     @overload
     def __init__(self): ...
@@ -10051,26 +10236,41 @@ class MeasuredDirection(Enum):
     Yaxis = 2
 
 
+from Rhino.Display import RhinoViewport
+from Rhino.DocObjects import ViewportInfo
+from System.Drawing import Color
+from Rhino.FileIO import TextLog
+from System.Threading import CancellationToken
 from System import IProgress
 from Rhino import RhinoDoc
-from .Tasks import Task
-from .MeshRefinements import LoopFormula
-from .MeshRefinements import RefinementSettings
-from .Collections import MeshVertexList
-from .Collections import MeshTopologyVertexList
-from .Collections import MeshTopologyEdgeList
-from .Collections import MeshVertexNormalList
-from .Collections import MeshFaceList
-from .Collections import MeshNgonList
-from .Collections import MeshFaceNormalList
-from .Collections import MeshVertexColorList
-from .Collections import MeshTextureCoordinateList
-from .Collections import MeshVertexStatusList
+from Rhino.Render import TextureMapping
+from System.Drawing import Bitmap
+from System.Threading.Tasks import Task
+from Rhino.Geometry.MeshRefinements import LoopFormula
+from Rhino.Geometry.MeshRefinements import RefinementSettings
+from Rhino.Commands import Result
+from Rhino.Geometry.Collections import MeshVertexList
+from Rhino.Geometry.Collections import MeshTopologyVertexList
+from Rhino.Geometry.Collections import MeshTopologyEdgeList
+from Rhino.Geometry.Collections import MeshVertexNormalList
+from Rhino.Geometry.Collections import MeshFaceList
+from Rhino.Geometry.Collections import MeshNgonList
+from Rhino.Geometry.Collections import MeshFaceNormalList
+from Rhino.Geometry.Collections import MeshVertexColorList
+from Rhino.Geometry.Collections import MeshTextureCoordinateList
+from Rhino.Geometry.Collections import MeshVertexStatusList
+from Rhino.DocObjects import RhinoObject
+from Rhino.DocObjects import Material
 from System import Guid
-from .Specialized import NameValueCollection
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.Render import CachedTextureCoordinates
+from Rhino.DocObjects import Texture
+from Rhino.DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class Mesh(GeometryBase):
     @overload
     def __init__(self): ...
@@ -10591,6 +10791,8 @@ class Mesh(GeometryBase):
     def WithShutLining(self, faceted: bool, tolerance: float, curves: Iterable[ShutLiningCurveInfo]) -> Mesh: ...
 
 
+from Rhino.FileIO import TextLog
+from System.Threading import CancellationToken
 from System import IProgress
 class MeshBooleanOptions:
     @overload
@@ -10705,6 +10907,8 @@ class MeshCheckParameters:
     def ToString(self) -> str: ...
 
 
+from Rhino.Render import RenderTexture
+from Rhino.Render import TextureMapping
 class MeshDisplacementInfo:
     @overload
     def __init__(self, texture: RenderTexture, mapping: TextureMapping): ...
@@ -10905,8 +11109,8 @@ class MeshFace:
     def ToString(self) -> str: ...
 
 
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from Rhino import RhinoDoc
 class MeshingParameters:
     @overload
@@ -11064,7 +11268,7 @@ class MeshingParameterTextureRange(Enum):
     PackedScaledNormalized = 2
 
 
-from .Generic import IList
+from System.Collections.Generic import IList
 class MeshNgon:
     @overload
     def BoundaryVertexIndexList(self) -> Iterable[int]: ...
@@ -11245,10 +11449,13 @@ class MeshUnwrapper:
     def Unwrap(self, method: MeshUnwrapMethod) -> bool: ...
 
 
-from .Specialized import NameValueCollection
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class MorphControl(GeometryBase):
     @overload
     def __init__(self, originCurve: NurbsCurve, targetCurve: NurbsCurve): ...
@@ -11350,12 +11557,16 @@ class MorphControl(GeometryBase):
     def Translate(self, x: float, y: float, z: float) -> bool: ...
 
 
-from .Collections import NurbsCurveKnotList
-from .Collections import NurbsCurvePointList
-from .Specialized import NameValueCollection
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.Geometry.Collections import NurbsCurveKnotList
+from Rhino.Geometry.Collections import NurbsCurvePointList
+from Rhino.Collections import Point3dList
+from Rhino.DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class NurbsCurve(Curve):
     @overload
     def __init__(self, other: NurbsCurve): ...
@@ -11910,12 +12121,15 @@ class NurbsCurveEndConditionType(Enum):
     Curvature = 3
 
 
-from .Collections import NurbsSurfaceKnotList
-from .Collections import NurbsSurfacePointList
-from .Specialized import NameValueCollection
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.Geometry.Collections import NurbsSurfaceKnotList
+from Rhino.Geometry.Collections import NurbsSurfacePointList
+from Rhino.DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class NurbsSurface(Surface):
     @overload
     def __init__(self, other: NurbsSurface): ...
@@ -12260,12 +12474,32 @@ class NurbsSurfaceType(Enum):
     Unprocessed = 4
 
 
+from Rhino.DocObjects import DimensionStyle
 from Rhino import UnitSystem
+from Rhino.DocObjects import ViewportInfo
 from System import Guid
-from .Specialized import NameValueCollection
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.DocObjects import ArrowFit
+from Rhino.DocObjects import TextFit
+from Rhino.DocObjects import TextOrientation
+from Rhino.DocObjects import TextLocation
+from Rhino.DocObjects import LeaderContentAngleStyle
+from Rhino.DocObjects import CenterMarkStyle
+from Rhino.DocObjects import ArrowType
+from Rhino.DocObjects import ZeroSuppression
+from Rhino.DocObjects import ToleranceDisplayFormat
+from Rhino.DocObjects import LengthDisplay
+from Rhino.DocObjects import Field
+from Rhino.DocObjects import MaskType
+from Rhino.DocObjects import MaskFrame
+from System.Drawing import Color
+from Rhino.DocObjects import Font
+from Rhino.DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class OrdinateDimension(Dimension):
     @overload
     def __init__(self): ...
@@ -12750,6 +12984,7 @@ class OrdinateDimension(Dimension):
     def WrapText(self) -> None: ...
 
 
+from System.Drawing import Color
 class Particle:
     @overload
     def __init__(self): ...
@@ -12969,10 +13204,13 @@ class PlaneFitResult(Enum):
     Failure = -1
 
 
-from .Specialized import NameValueCollection
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class PlaneSurface(Surface):
     @overload
     def __init__(self): ...
@@ -13240,10 +13478,13 @@ class PlaneSurface(Surface):
     def VariableOffset(self, uMinvMin: float, uMinvMax: float, uMaxvMin: float, uMaxvMax: float, interiorParameters: Iterable[Point2d], interiorDistances: Iterable[float], tolerance: float) -> Surface: ...
 
 
-from .Specialized import NameValueCollection
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class Point(GeometryBase):
     @overload
     def __init__(self, location: Point3d): ...
@@ -13650,10 +13891,13 @@ class Point3d:
     def TryParse(input: str) -> Tuple[bool, Point3d]: ...
 
 
-from .Specialized import NameValueCollection
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class Point3dGrid(GeometryBase):
     @overload
     def __init__(self): ...
@@ -13882,12 +14126,17 @@ class Point4d:
     def Transform(self, xform: Transform) -> None: ...
 
 
+from System.Drawing import Color
+from System.Threading import CancellationToken
 from System import IProgress
-from .Generic import IReadOnlyList
-from .Specialized import NameValueCollection
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Collections.Generic import IReadOnlyList
+from Rhino.DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class PointCloud(GeometryBase):
     @overload
     def __init__(self): ...
@@ -14074,6 +14323,7 @@ class PointCloud(GeometryBase):
     def Translate(self, x: float, y: float, z: float) -> bool: ...
 
 
+from System.Drawing import Color
 class PointCloudItem:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -14155,10 +14405,13 @@ class PointFaceRelation(Enum):
     Boundary = 2
 
 
-from .Specialized import NameValueCollection
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class PolyCurve(Curve):
     @overload
     def __init__(self): ...
@@ -14624,12 +14877,18 @@ class PolyCurve(Curve):
     def TryGetPolyline(self) -> Tuple[bool, Polyline, Iterable[float]]: ...
 
 
+from Rhino.Collections import XAccess
+from Rhino.Collections import YAccess
+from Rhino.Collections import ZAccess
+from Rhino.Collections import Point3dList
 from System import Predicate
-from .Generic import IComparer
+from Rhino.Collections import RhinoList
+from System.Collections.Generic import IComparer
 from System import Action
 from System import Comparison
-from .ObjectModel import ReadOnlyCollection
+from System.Collections.ObjectModel import ReadOnlyCollection
 from System import Converter
+from Rhino.Collections import Point3dList
 class Polyline(Point3dList):
     @overload
     def __init__(self): ...
@@ -14856,10 +15115,13 @@ class Polyline(Point3dList):
     def TrueForAll(self, match: Predicate) -> bool: ...
 
 
-from .Specialized import NameValueCollection
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class PolylineCurve(Curve):
     @overload
     def __init__(self): ...
@@ -15515,12 +15777,34 @@ class Quaternion:
     def Unitize(self) -> bool: ...
 
 
+from Rhino.DocObjects import DimensionStyle
 from Rhino import UnitSystem
+from Rhino.DocObjects import TextHorizontalAlignment
+from Rhino.DocObjects import ArrowType
 from System import Guid
-from .Specialized import NameValueCollection
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.DocObjects import LeaderCurveStyle
+from Rhino.DocObjects import TextOrientation
+from Rhino.DocObjects import TextLocation
+from Rhino.DocObjects import LeaderContentAngleStyle
+from Rhino.DocObjects import ViewportInfo
+from Rhino.DocObjects import ArrowFit
+from Rhino.DocObjects import TextFit
+from Rhino.DocObjects import CenterMarkStyle
+from Rhino.DocObjects import ZeroSuppression
+from Rhino.DocObjects import ToleranceDisplayFormat
+from Rhino.DocObjects import LengthDisplay
+from Rhino.DocObjects import Field
+from Rhino.DocObjects import MaskType
+from Rhino.DocObjects import MaskFrame
+from System.Drawing import Color
+from Rhino.DocObjects import Font
+from Rhino.DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class RadialDimension(Dimension):
     @overload
     def __init__(self): ...
@@ -16134,6 +16418,7 @@ class Rectangle3d:
     def Transform(self, xform: Transform) -> bool: ...
 
 
+from System.Threading import CancellationToken
 from System import IProgress
 class ReduceMeshParameters:
     @overload
@@ -16203,10 +16488,13 @@ class RegionContainment(Enum):
     BInsideA = 3
 
 
-from .Specialized import NameValueCollection
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class RevSurface(Surface):
     @overload
     def ClosestPoint(self, testPoint: Point3d) -> Tuple[bool, float, float]: ...
@@ -16703,7 +16991,7 @@ class ShrinkWrapParameters:
     def ToString(self) -> str: ...
 
 
-from .ObjectModel import ReadOnlyCollection
+from System.Collections.ObjectModel import ReadOnlyCollection
 class ShutLiningCurveInfo:
     @overload
     def __init__(self, curve: Curve, radius: float, profile: int, pull: bool, isBump: bool, curveIntervals: Iterable[Interval], enabled: bool): ...
@@ -16738,6 +17026,8 @@ class SideFill(Enum):
     OtherSurface = 3
 
 
+from System.Threading import CancellationToken
+from Rhino.DocObjects import ViewportInfo
 class Silhouette:
     @overload
     @staticmethod
@@ -17036,13 +17326,16 @@ class SquishParameters:
     def ToString(self) -> str: ...
 
 
-from .Collections import SubDFaceList
-from .Collections import SubDVertexList
-from .Collections import SubDEdgeList
-from .Specialized import NameValueCollection
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.Geometry.Collections import SubDFaceList
+from Rhino.Geometry.Collections import SubDVertexList
+from Rhino.Geometry.Collections import SubDEdgeList
+from Rhino.DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class SubD(GeometryBase):
     @overload
     def __init__(self): ...
@@ -17327,8 +17620,8 @@ class SubDCreationOptions:
     def ToString(self) -> str: ...
 
 
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 class SubDDisplayParameters:
     @overload
     def __init__(self): ...
@@ -17482,6 +17775,7 @@ class SubDEndCapStyle(Enum):
     Ngon = 4
 
 
+from System.Drawing import Color
 class SubDFace(SubDComponent):
     @overload
     def ComponentIndex(self) -> ComponentIndex: ...
@@ -17723,10 +18017,13 @@ class SubDVertexTag(Enum):
     Dart = 4
 
 
-from .Specialized import NameValueCollection
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class SumSurface(Surface):
     @overload
     def ClosestPoint(self, testPoint: Point3d) -> Tuple[bool, float, float]: ...
@@ -17978,10 +18275,13 @@ class SumSurface(Surface):
     def VariableOffset(self, uMinvMin: float, uMinvMax: float, uMaxvMin: float, uMaxvMax: float, interiorParameters: Iterable[Point2d], interiorDistances: Iterable[float], tolerance: float) -> Surface: ...
 
 
-from .Specialized import NameValueCollection
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class Surface(GeometryBase):
     @overload
     def ClosestPoint(self, testPoint: Point3d) -> Tuple[bool, float, float]: ...
@@ -18338,10 +18638,13 @@ class SurfaceFilletBase:
     def TrimBreps(self, bExtend: bool, TrimmedBreps0: MutableSequence[Brep], TrimmedBreps1: MutableSequence[Brep]) -> bool: ...
 
 
-from .Specialized import NameValueCollection
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class SurfaceProxy(Surface):
     @overload
     def ClosestPoint(self, testPoint: Point3d) -> Tuple[bool, float, float]: ...
@@ -18745,10 +19048,13 @@ class SweepTwoRail:
     def ToString(self) -> str: ...
 
 
-from .Specialized import NameValueCollection
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class TextDot(GeometryBase):
     @overload
     def __init__(self, text: str, location: Point3d): ...
@@ -18852,11 +19158,24 @@ class TextDot(GeometryBase):
     def Translate(self, x: float, y: float, z: float) -> bool: ...
 
 
+from Rhino.DocObjects import DimensionStyle
+from Rhino.DocObjects import TextHorizontalAlignment
+from Rhino.DocObjects import TextVerticalAlignment
+from Rhino.DocObjects import TextOrientation
 from System import Guid
-from .Specialized import NameValueCollection
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.DocObjects import Field
+from Rhino.DocObjects import MaskType
+from Rhino.DocObjects import MaskFrame
+from System.Drawing import Color
+from Rhino.DocObjects import Font
+from Rhino.DocObjects import LengthDisplay
+from Rhino.DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class TextEntity(AnnotationBase):
     @overload
     def __init__(self): ...

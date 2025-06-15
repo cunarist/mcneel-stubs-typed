@@ -55,6 +55,18 @@ class GH_Interval2D:
 from System import Decimal
 from System import DateTime
 from System import Guid
+from System.Drawing import Point
+from System.Drawing import PointF
+from System.Drawing import Size
+from System.Drawing import SizeF
+from System.Drawing import Rectangle
+from System.Drawing import RectangleF
+from System.Drawing import Color
+from System.Drawing import Bitmap
+from System.IO import BinaryReader
+from System.Xml import XmlNode
+from System.IO import BinaryWriter
+from System.Xml import XmlWriter
 class GH_Item:
     @overload
     def __init__(self, item_name: str, item_data: bool): ...

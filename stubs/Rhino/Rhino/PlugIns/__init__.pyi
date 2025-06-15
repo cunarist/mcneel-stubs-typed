@@ -28,10 +28,17 @@ class DescriptionType(Enum):
     Icon = 8
 
 
+from Rhino.Geometry import Point3d
+from Rhino.UI import MouseButton
+from Rhino.Geometry import Ray3d
+from System.Reflection import Assembly
 from System import Guid
+from System.Drawing import Size
+from System.Drawing import Bitmap
 from System import IntPtr
 from System import EventHandler
 from Rhino import PersistentSettings
+from Rhino.Render import RenderTexture
 class DigitizerPlugIn(PlugIn):
     @overload
     def add_SettingsSaved(self, value: EventHandler) -> None: ...
@@ -91,10 +98,14 @@ class DigitizerPlugIn(PlugIn):
     def ToString(self) -> str: ...
 
 
+from System.Reflection import Assembly
 from System import Guid
+from System.Drawing import Size
+from System.Drawing import Bitmap
 from System import IntPtr
 from System import EventHandler
 from Rhino import PersistentSettings
+from Rhino.Render import RenderTexture
 class FileExportPlugIn(PlugIn):
     @overload
     def add_SettingsSaved(self, value: EventHandler) -> None: ...
@@ -150,10 +161,14 @@ class FileExportPlugIn(PlugIn):
     def ToString(self) -> str: ...
 
 
+from System.Reflection import Assembly
 from System import Guid
+from System.Drawing import Size
+from System.Drawing import Bitmap
 from System import IntPtr
 from System import EventHandler
 from Rhino import PersistentSettings
+from Rhino.Render import RenderTexture
 class FileImportPlugIn(PlugIn):
     @overload
     def add_SettingsSaved(self, value: EventHandler) -> None: ...
@@ -272,6 +287,7 @@ class LicenseChangedEventArgs:
 
 
 from System import Nullable
+from System.Drawing import Icon
 class LicenseData:
     @overload
     def __init__(self): ...
@@ -433,6 +449,7 @@ class LicenseLeaseChangedEventArgs:
 
 from System import Guid
 from System import Nullable
+from System.Drawing import Icon
 class LicenseStatus:
     @overload
     def __init__(self): ...
@@ -506,6 +523,7 @@ class LicenseType(Enum):
     CloudZoo = 4
 
 
+from Rhino.Runtime import Mode
 from System import Guid
 class LicenseUtils:
     @overload
@@ -597,10 +615,12 @@ class LoadReturnCode(Enum):
 
 
 from System import IntPtr
+from System.Drawing import Icon
 from System import AsyncCallback
 from System import IAsyncResult
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class OnLeaseChangedDelegate:
     @overload
     def __init__(self, object: object, method: IntPtr): ...
@@ -633,10 +653,14 @@ class OnLeaseChangedDelegate:
 
 
 from System import Guid
+from System.Reflection import Assembly
 from Rhino import PersistentSettings
+from System.Drawing import Size
+from System.Drawing import Bitmap
 from System import IntPtr
 from System import EventHandler
-from .Generic import Dictionary
+from System.Collections.Generic import Dictionary
+from Rhino.Render import RenderTexture
 class PlugIn:
     @overload
     def add_SettingsSaved(self, value: EventHandler) -> None: ...
@@ -812,6 +836,8 @@ class PlugInDescriptionAttribute:
 
 
 from System import Guid
+from System.Drawing import Size
+from System.Drawing import Bitmap
 class PlugInInfo:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -892,6 +918,7 @@ class PlugInType(Enum):
     Any = 127
 
 
+from Rhino.Render import RenderWindow
 class PreviewNotification:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -940,9 +967,14 @@ class RenderFeature(Enum):
 
 from System import IntPtr
 from Rhino import RhinoDoc
+from Rhino.DocObjects import Material
+from System.Reflection import Assembly
 from System import Guid
+from System.Drawing import Size
+from System.Drawing import Bitmap
 from System import EventHandler
 from Rhino import PersistentSettings
+from Rhino.Render import RenderTexture
 class RenderPlugIn(PlugIn):
     @overload
     def add_SettingsSaved(self, value: EventHandler) -> None: ...
@@ -1024,10 +1056,12 @@ class RenderPlugIn(PlugIn):
 
 
 from System import IntPtr
+from Rhino.Render import RenderWindow
 from System import AsyncCallback
 from System import IAsyncResult
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class SaveFileHandler:
     @overload
     def __init__(self, object: object, method: IntPtr): ...
@@ -1079,8 +1113,9 @@ class UnknownUserDataEventArgs:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class ValidateProductKeyDelegate:
     @overload
     def __init__(self, object: object, method: IntPtr): ...
@@ -1122,8 +1157,9 @@ from System import IntPtr
 from System import DateTime
 from System import AsyncCallback
 from System import IAsyncResult
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class VerifyLicenseKeyDelegate:
     @overload
     def __init__(self, object: object, method: IntPtr): ...
@@ -1158,8 +1194,9 @@ class VerifyLicenseKeyDelegate:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class VerifyPreviousVersionLicenseDelegate:
     @overload
     def __init__(self, object: object, method: IntPtr): ...

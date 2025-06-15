@@ -4,6 +4,9 @@ from enum import Enum
 
 
 from Rhino import RhinoDoc
+from Rhino.Commands import RunMode
+from Grasshopper.Kernel import GH_Document
+from Grasshopper.Kernel import IGH_ActiveObject
 class Commands:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -108,6 +111,7 @@ class GH_PluginUtil:
     def UnloadGrasshopper() -> bool: ...
 
 
+from System.Drawing import Bitmap
 class GH_ResourceGate:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -173,7 +177,11 @@ class GH_ResourceGate:
     def ToString(self) -> str: ...
 
 
+from Grasshopper.Kernel import GH_Document
+from Rhino.Commands import Command
 from Rhino import RhinoDoc
+from Rhino.Commands import RunMode
+from Rhino.Commands import Result
 class GH_RhinoScriptInterface:
     @overload
     def __init__(self): ...

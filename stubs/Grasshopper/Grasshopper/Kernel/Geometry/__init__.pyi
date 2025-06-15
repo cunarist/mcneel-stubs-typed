@@ -97,6 +97,7 @@ class GH_CurveOffsetCorner(Enum):
 
 from Rhino.Geometry import BoundingBox
 from Rhino.Geometry import GeometryBase
+from Grasshopper.Kernel.Types import IGH_GeometricGoo
 from Rhino.Geometry import Point3d
 from Rhino.Geometry import Plane
 class GH_SanityXForm:
@@ -143,6 +144,8 @@ class ILeafAction:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from System.Reflection import MethodInfo
 class LeafAction:
     @overload
@@ -178,6 +181,8 @@ class LeafAction:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from System.Reflection import MethodInfo
 class LeafAction:
     @overload
@@ -947,6 +952,7 @@ class Parallax(Enum):
 
 
 from Rhino.Geometry import Plane
+from System.Collections.Generic import IList
 class Plane:
     @overload
     def __init__(self): ...

@@ -29,16 +29,36 @@ class AngleDisplayMode(Enum):
     Grads = 2
 
 
+from Rhino.Geometry import AngularDimension
+from Rhino.Geometry import AnnotationBase
+from Rhino.Geometry import ComponentIndex
 from System import Guid
 from System import IConvertible
+from Rhino.Display import RhinoViewport
 from Rhino import RhinoDoc
-from .Custom import CustomObjectGrips
-from .Gumball import GumballFrame
-from .CustomRenderMeshes import Flags
-from .CustomRenderMeshes import RenderMeshes
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.Geometry import GeometryBase
+from Rhino.DocObjects.Custom import CustomObjectGrips
+from Rhino.Display import VisualAnalysisMode
+from Rhino.FileIO import TextLog
+from Rhino.Geometry import MeshType
+from Rhino.Geometry import MeshingParameters
+from Rhino.UI.Gumball import GumballFrame
+from Rhino.Geometry import Plane
+from Rhino.Geometry import Transform
+from Rhino.Display import DisplayPipelineAttributes
+from Rhino.Render import RenderPrimitiveList
+from Rhino.Render.CustomRenderMeshes import Flags
+from Rhino.PlugIns import PlugIn
+from Rhino.Render.CustomRenderMeshes import RenderMeshes
+from Rhino.Geometry import BoundingBox
+from Rhino.Render import TextureMapping
+from Rhino.Render import RenderMaterial
+from Rhino.Geometry import ComponentStatus
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class AngularDimensionObject(DimensionObject):
     @overload
     def ClearId(self) -> None: ...
@@ -496,16 +516,35 @@ class AnimationProperties:
     def ToString(self) -> str: ...
 
 
+from Rhino.Geometry import AnnotationBase
+from Rhino.Geometry import ComponentIndex
 from System import Guid
 from System import IConvertible
+from Rhino.Display import RhinoViewport
 from Rhino import RhinoDoc
-from .Custom import CustomObjectGrips
-from .Gumball import GumballFrame
-from .CustomRenderMeshes import Flags
-from .CustomRenderMeshes import RenderMeshes
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.Geometry import GeometryBase
+from Rhino.DocObjects.Custom import CustomObjectGrips
+from Rhino.Display import VisualAnalysisMode
+from Rhino.FileIO import TextLog
+from Rhino.Geometry import MeshType
+from Rhino.Geometry import MeshingParameters
+from Rhino.UI.Gumball import GumballFrame
+from Rhino.Geometry import Plane
+from Rhino.Geometry import Transform
+from Rhino.Display import DisplayPipelineAttributes
+from Rhino.Render import RenderPrimitiveList
+from Rhino.Render.CustomRenderMeshes import Flags
+from Rhino.PlugIns import PlugIn
+from Rhino.Render.CustomRenderMeshes import RenderMeshes
+from Rhino.Geometry import BoundingBox
+from Rhino.Render import TextureMapping
+from Rhino.Render import RenderMaterial
+from Rhino.Geometry import ComponentStatus
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class AnnotationObjectBase(RhinoObject):
     @overload
     def ClearId(self) -> None: ...
@@ -828,9 +867,12 @@ class BackgroundProjections(Enum):
 
 
 from System import Guid
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.Geometry import ComponentStatus
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class BitmapEntry(ModelComponent):
     @overload
     def ClearId(self) -> None: ...
@@ -933,16 +975,35 @@ class BRDFs(Enum):
     Ward = 1
 
 
+from Rhino.Geometry import Brep
+from Rhino.Geometry import ComponentIndex
 from System import Guid
 from System import IConvertible
+from Rhino.Display import RhinoViewport
 from Rhino import RhinoDoc
-from .Custom import CustomObjectGrips
-from .Gumball import GumballFrame
-from .CustomRenderMeshes import Flags
-from .CustomRenderMeshes import RenderMeshes
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.Geometry import GeometryBase
+from Rhino.DocObjects.Custom import CustomObjectGrips
+from Rhino.Display import VisualAnalysisMode
+from Rhino.FileIO import TextLog
+from Rhino.Geometry import MeshType
+from Rhino.Geometry import MeshingParameters
+from Rhino.UI.Gumball import GumballFrame
+from Rhino.Geometry import Plane
+from Rhino.Geometry import Transform
+from Rhino.Display import DisplayPipelineAttributes
+from Rhino.Render import RenderPrimitiveList
+from Rhino.Render.CustomRenderMeshes import Flags
+from Rhino.PlugIns import PlugIn
+from Rhino.Render.CustomRenderMeshes import RenderMeshes
+from Rhino.Geometry import BoundingBox
+from Rhino.Render import TextureMapping
+from Rhino.Render import RenderMaterial
+from Rhino.Geometry import ComponentStatus
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class BrepObject(RhinoObject):
     @overload
     def ClearId(self) -> None: ...
@@ -1239,16 +1300,36 @@ class CaptureTypes(Enum):
     # None = 5
 
 
+from Rhino.Geometry import Centermark
+from Rhino.Geometry import AnnotationBase
+from Rhino.Geometry import ComponentIndex
 from System import Guid
 from System import IConvertible
+from Rhino.Display import RhinoViewport
 from Rhino import RhinoDoc
-from .Custom import CustomObjectGrips
-from .Gumball import GumballFrame
-from .CustomRenderMeshes import Flags
-from .CustomRenderMeshes import RenderMeshes
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.Geometry import GeometryBase
+from Rhino.DocObjects.Custom import CustomObjectGrips
+from Rhino.Display import VisualAnalysisMode
+from Rhino.FileIO import TextLog
+from Rhino.Geometry import MeshType
+from Rhino.Geometry import MeshingParameters
+from Rhino.UI.Gumball import GumballFrame
+from Rhino.Geometry import Plane
+from Rhino.Geometry import Transform
+from Rhino.Display import DisplayPipelineAttributes
+from Rhino.Render import RenderPrimitiveList
+from Rhino.Render.CustomRenderMeshes import Flags
+from Rhino.PlugIns import PlugIn
+from Rhino.Render.CustomRenderMeshes import RenderMeshes
+from Rhino.Geometry import BoundingBox
+from Rhino.Render import TextureMapping
+from Rhino.Render import RenderMaterial
+from Rhino.Geometry import ComponentStatus
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class CentermarkObject(DimensionObject):
     @overload
     def ClearId(self) -> None: ...
@@ -1548,16 +1629,35 @@ class CenterMarkStyle(Enum):
     MarkAndLines = 2
 
 
+from Rhino.Geometry import ClippingPlaneSurface
+from Rhino.Display import RhinoViewport
+from Rhino.Geometry import ComponentIndex
 from System import Guid
 from System import IConvertible
 from Rhino import RhinoDoc
-from .Custom import CustomObjectGrips
-from .Gumball import GumballFrame
-from .CustomRenderMeshes import Flags
-from .CustomRenderMeshes import RenderMeshes
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.Geometry import GeometryBase
+from Rhino.DocObjects.Custom import CustomObjectGrips
+from Rhino.Display import VisualAnalysisMode
+from Rhino.FileIO import TextLog
+from Rhino.Geometry import MeshType
+from Rhino.Geometry import MeshingParameters
+from Rhino.UI.Gumball import GumballFrame
+from Rhino.Geometry import Plane
+from Rhino.Geometry import Transform
+from Rhino.Display import DisplayPipelineAttributes
+from Rhino.Render import RenderPrimitiveList
+from Rhino.Render.CustomRenderMeshes import Flags
+from Rhino.PlugIns import PlugIn
+from Rhino.Render.CustomRenderMeshes import RenderMeshes
+from Rhino.Geometry import BoundingBox
+from Rhino.Render import TextureMapping
+from Rhino.Render import RenderMaterial
+from Rhino.Geometry import ComponentStatus
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class ClippingPlaneObject(RhinoObject):
     @overload
     def AddClipViewport(self, viewport: RhinoViewport, commit: bool) -> bool: ...
@@ -1847,6 +1947,8 @@ class ClippingPlaneObject(RhinoObject):
     def UnselectAllSubObjects(self) -> int: ...
 
 
+from Rhino.Geometry import Plane
+from System.Drawing import Color
 class ConstructionPlane:
     @overload
     def __init__(self): ...
@@ -1968,16 +2070,35 @@ class CoordinateSystem(Enum):
     Screen = 3
 
 
+from Rhino.Geometry import Curve
+from Rhino.Display import RhinoViewport
+from Rhino.Geometry import ComponentIndex
 from System import Guid
 from System import IConvertible
 from Rhino import RhinoDoc
-from .Custom import CustomObjectGrips
-from .Gumball import GumballFrame
-from .CustomRenderMeshes import Flags
-from .CustomRenderMeshes import RenderMeshes
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.Geometry import GeometryBase
+from Rhino.DocObjects.Custom import CustomObjectGrips
+from Rhino.Display import VisualAnalysisMode
+from Rhino.FileIO import TextLog
+from Rhino.Geometry import MeshType
+from Rhino.Geometry import MeshingParameters
+from Rhino.UI.Gumball import GumballFrame
+from Rhino.Geometry import Plane
+from Rhino.Geometry import Transform
+from Rhino.Display import DisplayPipelineAttributes
+from Rhino.Render import RenderPrimitiveList
+from Rhino.Render.CustomRenderMeshes import Flags
+from Rhino.PlugIns import PlugIn
+from Rhino.Render.CustomRenderMeshes import RenderMeshes
+from Rhino.Geometry import BoundingBox
+from Rhino.Render import TextureMapping
+from Rhino.Render import RenderMaterial
+from Rhino.Geometry import ComponentStatus
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class CurveObject(RhinoObject):
     @overload
     def ClearId(self) -> None: ...
@@ -2307,16 +2428,35 @@ class Defaults:
     def ToString(self) -> str: ...
 
 
+from Rhino.Geometry import DetailView
+from Rhino.Display import RhinoViewport
+from Rhino.Geometry import Transform
+from Rhino.Geometry import ComponentIndex
 from System import Guid
 from System import IConvertible
 from Rhino import RhinoDoc
-from .Custom import CustomObjectGrips
-from .Gumball import GumballFrame
-from .CustomRenderMeshes import Flags
-from .CustomRenderMeshes import RenderMeshes
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.Geometry import GeometryBase
+from Rhino.DocObjects.Custom import CustomObjectGrips
+from Rhino.Display import VisualAnalysisMode
+from Rhino.FileIO import TextLog
+from Rhino.Geometry import MeshType
+from Rhino.Geometry import MeshingParameters
+from Rhino.UI.Gumball import GumballFrame
+from Rhino.Geometry import Plane
+from Rhino.Display import DisplayPipelineAttributes
+from Rhino.Render import RenderPrimitiveList
+from Rhino.Render.CustomRenderMeshes import Flags
+from Rhino.PlugIns import PlugIn
+from Rhino.Render.CustomRenderMeshes import RenderMeshes
+from Rhino.Geometry import BoundingBox
+from Rhino.Render import TextureMapping
+from Rhino.Render import RenderMaterial
+from Rhino.Geometry import ComponentStatus
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class DetailViewObject(RhinoObject):
     @overload
     def ClearId(self) -> None: ...
@@ -2622,16 +2762,35 @@ class DetailViewObject(RhinoObject):
     def UnselectAllSubObjects(self) -> int: ...
 
 
+from Rhino.Geometry import AnnotationBase
+from Rhino.Geometry import ComponentIndex
 from System import Guid
 from System import IConvertible
+from Rhino.Display import RhinoViewport
 from Rhino import RhinoDoc
-from .Custom import CustomObjectGrips
-from .Gumball import GumballFrame
-from .CustomRenderMeshes import Flags
-from .CustomRenderMeshes import RenderMeshes
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.Geometry import GeometryBase
+from Rhino.DocObjects.Custom import CustomObjectGrips
+from Rhino.Display import VisualAnalysisMode
+from Rhino.FileIO import TextLog
+from Rhino.Geometry import MeshType
+from Rhino.Geometry import MeshingParameters
+from Rhino.UI.Gumball import GumballFrame
+from Rhino.Geometry import Plane
+from Rhino.Geometry import Transform
+from Rhino.Display import DisplayPipelineAttributes
+from Rhino.Render import RenderPrimitiveList
+from Rhino.Render.CustomRenderMeshes import Flags
+from Rhino.PlugIns import PlugIn
+from Rhino.Render.CustomRenderMeshes import RenderMeshes
+from Rhino.Geometry import BoundingBox
+from Rhino.Render import TextureMapping
+from Rhino.Render import RenderMaterial
+from Rhino.Geometry import ComponentStatus
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class DimensionObject(AnnotationObjectBase):
     @overload
     def ClearId(self) -> None: ...
@@ -2923,13 +3082,18 @@ class DimensionObject(AnnotationObjectBase):
     def UnselectAllSubObjects(self) -> int: ...
 
 
+from System.Drawing import Color
 from System import Guid
-from .Specialized import NameValueCollection
+from System.Collections.Specialized import NameValueCollection
+from System.Drawing import Bitmap
 from Rhino import ScaleValue
 from Rhino import UnitSystem
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.Geometry import ComponentStatus
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class DimensionStyle(ModelComponent):
     @overload
     def __init__(self): ...
@@ -3434,7 +3598,11 @@ class DistanceDisplayMode(Enum):
     FeetAndInches = 2
 
 
+from Rhino.Geometry import Point3d
+from Rhino.Geometry import Vector3d
+from Rhino.Geometry import Plane
 from Rhino import UnitSystem
+from Rhino.Geometry import Transform
 class EarthAnchorPoint:
     @overload
     def __init__(self): ...
@@ -3521,9 +3689,13 @@ class EarthCoordinateSystem(Enum):
     EGM2008 = 6
 
 
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Drawing import Color
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
+from Rhino.Runtime import CommonObject
 class Environment(CommonObject):
     @overload
     def __init__(self): ...
@@ -3565,16 +3737,35 @@ class Environment(CommonObject):
     def ToString(self) -> str: ...
 
 
+from Rhino.Geometry import Extrusion
+from Rhino.Geometry import ComponentIndex
 from System import Guid
 from System import IConvertible
+from Rhino.Display import RhinoViewport
 from Rhino import RhinoDoc
-from .Custom import CustomObjectGrips
-from .Gumball import GumballFrame
-from .CustomRenderMeshes import Flags
-from .CustomRenderMeshes import RenderMeshes
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.Geometry import GeometryBase
+from Rhino.DocObjects.Custom import CustomObjectGrips
+from Rhino.Display import VisualAnalysisMode
+from Rhino.FileIO import TextLog
+from Rhino.Geometry import MeshType
+from Rhino.Geometry import MeshingParameters
+from Rhino.UI.Gumball import GumballFrame
+from Rhino.Geometry import Plane
+from Rhino.Geometry import Transform
+from Rhino.Display import DisplayPipelineAttributes
+from Rhino.Render import RenderPrimitiveList
+from Rhino.Render.CustomRenderMeshes import Flags
+from Rhino.PlugIns import PlugIn
+from Rhino.Render.CustomRenderMeshes import RenderMeshes
+from Rhino.Geometry import BoundingBox
+from Rhino.Render import TextureMapping
+from Rhino.Render import RenderMaterial
+from Rhino.Geometry import ComponentStatus
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class ExtrusionObject(RhinoObject):
     @overload
     def ClearId(self) -> None: ...
@@ -3977,8 +4168,8 @@ class Field(Enum):
     Count = 115
 
 
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 class Font:
     @overload
     def __init__(self, familyName: str): ...
@@ -4132,16 +4323,36 @@ class FontWeight(Enum):
     Heavy = 9
 
 
+from Rhino.Geometry import Point3d
+from Rhino.Geometry import Transform
+from Rhino.Geometry import Vector3d
 from System import Guid
+from Rhino.Geometry import ComponentIndex
 from System import IConvertible
+from Rhino.Display import RhinoViewport
 from Rhino import RhinoDoc
-from .Custom import CustomObjectGrips
-from .Gumball import GumballFrame
-from .CustomRenderMeshes import Flags
-from .CustomRenderMeshes import RenderMeshes
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.Geometry import GeometryBase
+from Rhino.DocObjects.Custom import CustomObjectGrips
+from Rhino.Display import VisualAnalysisMode
+from Rhino.FileIO import TextLog
+from Rhino.Geometry import MeshType
+from Rhino.Geometry import MeshingParameters
+from Rhino.UI.Gumball import GumballFrame
+from Rhino.Geometry import Plane
+from Rhino.Display import DisplayPipelineAttributes
+from Rhino.Render import RenderPrimitiveList
+from Rhino.Render.CustomRenderMeshes import Flags
+from Rhino.PlugIns import PlugIn
+from Rhino.Render.CustomRenderMeshes import RenderMeshes
+from Rhino.Geometry import BoundingBox
+from Rhino.Render import TextureMapping
+from Rhino.Render import RenderMaterial
+from Rhino.Geometry import ComponentStatus
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class GripObject(RhinoObject):
     @overload
     def ClearId(self) -> None: ...
@@ -4461,11 +4672,14 @@ class GripObject(RhinoObject):
     def UnselectAllSubObjects(self) -> int: ...
 
 
-from .Specialized import NameValueCollection
+from System.Collections.Specialized import NameValueCollection
 from System import Guid
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.Geometry import ComponentStatus
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class Group(ModelComponent):
     @overload
     def ClearId(self) -> None: ...
@@ -4571,6 +4785,8 @@ class Group(ModelComponent):
     def ToString(self) -> str: ...
 
 
+from Rhino.Geometry import Point2d
+from Rhino.Geometry import Vector2d
 class HatchLine:
     @overload
     def __init__(self): ...
@@ -4614,16 +4830,35 @@ class HatchLine:
     def ToString(self) -> str: ...
 
 
+from Rhino.Geometry import Hatch
+from Rhino.Geometry import ComponentIndex
 from System import Guid
 from System import IConvertible
+from Rhino.Display import RhinoViewport
 from Rhino import RhinoDoc
-from .Custom import CustomObjectGrips
-from .Gumball import GumballFrame
-from .CustomRenderMeshes import Flags
-from .CustomRenderMeshes import RenderMeshes
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.Geometry import GeometryBase
+from Rhino.DocObjects.Custom import CustomObjectGrips
+from Rhino.Display import VisualAnalysisMode
+from Rhino.FileIO import TextLog
+from Rhino.Geometry import MeshType
+from Rhino.Geometry import MeshingParameters
+from Rhino.UI.Gumball import GumballFrame
+from Rhino.Geometry import Plane
+from Rhino.Geometry import Transform
+from Rhino.Display import DisplayPipelineAttributes
+from Rhino.Render import RenderPrimitiveList
+from Rhino.Render.CustomRenderMeshes import Flags
+from Rhino.PlugIns import PlugIn
+from Rhino.Render.CustomRenderMeshes import RenderMeshes
+from Rhino.Geometry import BoundingBox
+from Rhino.Render import TextureMapping
+from Rhino.Render import RenderMaterial
+from Rhino.Geometry import ComponentStatus
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class HatchObject(RhinoObject):
     @overload
     def ClearId(self) -> None: ...
@@ -4909,11 +5144,14 @@ class HatchObject(RhinoObject):
     def UnselectAllSubObjects(self) -> int: ...
 
 
-from .Specialized import NameValueCollection
+from System.Collections.Specialized import NameValueCollection
 from System import Guid
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.Geometry import ComponentStatus
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class HatchPattern(ModelComponent):
     @overload
     def __init__(self): ...
@@ -5064,8 +5302,17 @@ class HatchPatternFillType(Enum):
     Gradient = 2
 
 
+from Rhino.Commands import Command
 from System import IntPtr
+from Rhino.Geometry import Point3d
+from Rhino.Geometry import Vector3d
+from Rhino.Geometry import Transform
+from System.Drawing import Color
 from System import Guid
+from Rhino.Geometry import Curve
+from Rhino.Geometry import Surface
+from Rhino.Geometry import Brep
+from Rhino.Geometry import Mesh
 class HistoryRecord:
     @overload
     def __init__(self, command: Command, version: int): ...
@@ -5136,11 +5383,19 @@ class HistoryRecord:
 
 
 from Rhino import UnitSystem
+from Rhino.Display import DefinedViewportProjection
+from System.Drawing import Size
+from System.Drawing import Bitmap
 from System import Guid
-from .Specialized import NameValueCollection
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.Display import IsometricCamera
+from System.Collections.Specialized import NameValueCollection
+from Rhino.Geometry import ComponentStatus
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
+from Rhino.Geometry import InstanceDefinitionGeometry
 class InstanceDefinition(InstanceDefinitionGeometry):
     @overload
     def ClearId(self) -> None: ...
@@ -5339,16 +5594,35 @@ class InstanceDefinitionUpdateType(Enum):
     Linked = 3
 
 
+from Rhino.Geometry import Transform
+from Rhino.Geometry import Point3d
 from System import Guid
+from Rhino.Geometry import ComponentIndex
 from System import IConvertible
+from Rhino.Display import RhinoViewport
 from Rhino import RhinoDoc
-from .Custom import CustomObjectGrips
-from .Gumball import GumballFrame
-from .CustomRenderMeshes import Flags
-from .CustomRenderMeshes import RenderMeshes
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.Geometry import GeometryBase
+from Rhino.DocObjects.Custom import CustomObjectGrips
+from Rhino.Display import VisualAnalysisMode
+from Rhino.FileIO import TextLog
+from Rhino.Geometry import MeshType
+from Rhino.Geometry import MeshingParameters
+from Rhino.UI.Gumball import GumballFrame
+from Rhino.Geometry import Plane
+from Rhino.Display import DisplayPipelineAttributes
+from Rhino.Render import RenderPrimitiveList
+from Rhino.Render.CustomRenderMeshes import Flags
+from Rhino.PlugIns import PlugIn
+from Rhino.Render.CustomRenderMeshes import RenderMeshes
+from Rhino.Geometry import BoundingBox
+from Rhino.Render import TextureMapping
+from Rhino.Render import RenderMaterial
+from Rhino.Geometry import ComponentStatus
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class InstanceObject(RhinoObject):
     @overload
     def ClearId(self) -> None: ...
@@ -5646,11 +5920,16 @@ class InstanceObject(RhinoObject):
     def UsesDefinition(self, definitionIndex: int) -> Tuple[bool, int]: ...
 
 
+from Rhino.Geometry import ComponentStatus
 from System import Guid
-from .Specialized import NameValueCollection
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Drawing import Color
+from Rhino.Render import RenderMaterial
+from System.Collections.Specialized import NameValueCollection
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class Layer(ModelComponent):
     @overload
     def __init__(self): ...
@@ -5950,16 +6229,36 @@ class LeaderCurveStyle(Enum):
     Spline = 2
 
 
+from Rhino.Geometry import Leader
+from Rhino.Geometry import AnnotationBase
+from Rhino.Geometry import ComponentIndex
 from System import Guid
 from System import IConvertible
+from Rhino.Display import RhinoViewport
 from Rhino import RhinoDoc
-from .Custom import CustomObjectGrips
-from .Gumball import GumballFrame
-from .CustomRenderMeshes import Flags
-from .CustomRenderMeshes import RenderMeshes
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.Geometry import GeometryBase
+from Rhino.DocObjects.Custom import CustomObjectGrips
+from Rhino.Display import VisualAnalysisMode
+from Rhino.FileIO import TextLog
+from Rhino.Geometry import MeshType
+from Rhino.Geometry import MeshingParameters
+from Rhino.UI.Gumball import GumballFrame
+from Rhino.Geometry import Plane
+from Rhino.Geometry import Transform
+from Rhino.Display import DisplayPipelineAttributes
+from Rhino.Render import RenderPrimitiveList
+from Rhino.Render.CustomRenderMeshes import Flags
+from Rhino.PlugIns import PlugIn
+from Rhino.Render.CustomRenderMeshes import RenderMeshes
+from Rhino.Geometry import BoundingBox
+from Rhino.Render import TextureMapping
+from Rhino.Render import RenderMaterial
+from Rhino.Geometry import ComponentStatus
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class LeaderObject(AnnotationObjectBase):
     @overload
     def ClearId(self) -> None: ...
@@ -6271,16 +6570,35 @@ class LengthDisplayFormat(Enum):
     FeetDecimalInches = 3
 
 
+from Rhino.Geometry import Light
+from Rhino.Geometry import ComponentIndex
 from System import Guid
 from System import IConvertible
+from Rhino.Display import RhinoViewport
 from Rhino import RhinoDoc
-from .Custom import CustomObjectGrips
-from .Gumball import GumballFrame
-from .CustomRenderMeshes import Flags
-from .CustomRenderMeshes import RenderMeshes
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.Geometry import GeometryBase
+from Rhino.DocObjects.Custom import CustomObjectGrips
+from Rhino.Display import VisualAnalysisMode
+from Rhino.FileIO import TextLog
+from Rhino.Geometry import MeshType
+from Rhino.Geometry import MeshingParameters
+from Rhino.UI.Gumball import GumballFrame
+from Rhino.Geometry import Plane
+from Rhino.Geometry import Transform
+from Rhino.Display import DisplayPipelineAttributes
+from Rhino.Render import RenderPrimitiveList
+from Rhino.Render.CustomRenderMeshes import Flags
+from Rhino.PlugIns import PlugIn
+from Rhino.Render.CustomRenderMeshes import RenderMeshes
+from Rhino.Geometry import BoundingBox
+from Rhino.Render import TextureMapping
+from Rhino.Render import RenderMaterial
+from Rhino.Geometry import ComponentStatus
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class LightObject(RhinoObject):
     @overload
     def ClearId(self) -> None: ...
@@ -6568,16 +6886,36 @@ class LightObject(RhinoObject):
     def UnselectAllSubObjects(self) -> int: ...
 
 
+from Rhino.Geometry import LinearDimension
+from Rhino.Geometry import AnnotationBase
+from Rhino.Geometry import ComponentIndex
 from System import Guid
 from System import IConvertible
+from Rhino.Display import RhinoViewport
 from Rhino import RhinoDoc
-from .Custom import CustomObjectGrips
-from .Gumball import GumballFrame
-from .CustomRenderMeshes import Flags
-from .CustomRenderMeshes import RenderMeshes
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.Geometry import GeometryBase
+from Rhino.DocObjects.Custom import CustomObjectGrips
+from Rhino.Display import VisualAnalysisMode
+from Rhino.FileIO import TextLog
+from Rhino.Geometry import MeshType
+from Rhino.Geometry import MeshingParameters
+from Rhino.UI.Gumball import GumballFrame
+from Rhino.Geometry import Plane
+from Rhino.Geometry import Transform
+from Rhino.Display import DisplayPipelineAttributes
+from Rhino.Render import RenderPrimitiveList
+from Rhino.Render.CustomRenderMeshes import Flags
+from Rhino.PlugIns import PlugIn
+from Rhino.Render.CustomRenderMeshes import RenderMeshes
+from Rhino.Geometry import BoundingBox
+from Rhino.Render import TextureMapping
+from Rhino.Render import RenderMaterial
+from Rhino.Geometry import ComponentStatus
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class LinearDimensionObject(DimensionObject):
     @overload
     def ClearId(self) -> None: ...
@@ -6884,11 +7222,15 @@ class LineJoinStyle(Enum):
 
 
 from Rhino import UnitSystem
-from .Specialized import NameValueCollection
+from Rhino.Geometry import Point2d
+from System.Collections.Specialized import NameValueCollection
 from System import Guid
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.Geometry import ComponentStatus
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class Linetype(ModelComponent):
     @overload
     def __init__(self): ...
@@ -7076,10 +7418,15 @@ class MaskType(Enum):
 
 
 from System import Guid
-from .Specialized import NameValueCollection
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.Render import RenderMaterial
+from System.Drawing import Color
+from System.Collections.Specialized import NameValueCollection
+from Rhino.Geometry import ComponentStatus
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class Material(ModelComponent):
     @overload
     def __init__(self): ...
@@ -7387,9 +7734,9 @@ class MaterialRefCreateParams:
     def ToString(self) -> str: ...
 
 
-from .Generic import KeyValuePair
+from System.Collections.Generic import KeyValuePair
 from System import Guid
-from .Generic import ICollection
+from System.Collections.Generic import ICollection
 class MaterialRefs:
     def __iter__(self) -> Iterator[KeyValuePair]: ...
     @overload
@@ -7436,16 +7783,36 @@ class MaterialRefs:
     def TryGetValue(self, key: Guid) -> Tuple[bool, MaterialRef]: ...
 
 
+from Rhino.Geometry import Mesh
+from Rhino.FileIO import TextLog
+from Rhino.Geometry import MeshCheckParameters
+from Rhino.Geometry import ComponentIndex
 from System import Guid
 from System import IConvertible
+from Rhino.Display import RhinoViewport
 from Rhino import RhinoDoc
-from .Custom import CustomObjectGrips
-from .Gumball import GumballFrame
-from .CustomRenderMeshes import Flags
-from .CustomRenderMeshes import RenderMeshes
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.Geometry import GeometryBase
+from Rhino.DocObjects.Custom import CustomObjectGrips
+from Rhino.Display import VisualAnalysisMode
+from Rhino.Geometry import MeshType
+from Rhino.Geometry import MeshingParameters
+from Rhino.UI.Gumball import GumballFrame
+from Rhino.Geometry import Plane
+from Rhino.Geometry import Transform
+from Rhino.Display import DisplayPipelineAttributes
+from Rhino.Render import RenderPrimitiveList
+from Rhino.Render.CustomRenderMeshes import Flags
+from Rhino.PlugIns import PlugIn
+from Rhino.Render.CustomRenderMeshes import RenderMeshes
+from Rhino.Geometry import BoundingBox
+from Rhino.Render import TextureMapping
+from Rhino.Render import RenderMaterial
+from Rhino.Geometry import ComponentStatus
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class MeshObject(RhinoObject):
     @overload
     @staticmethod
@@ -7739,9 +8106,13 @@ class MeshObject(RhinoObject):
 
 
 from System import Guid
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.Geometry import ComponentStatus
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
+from Rhino.Runtime import CommonObject
 class ModelComponent(CommonObject):
     @overload
     def ClearId(self) -> None: ...
@@ -7874,16 +8245,34 @@ class ModelComponentType(Enum):
     Mixed = 254
 
 
+from Rhino.Geometry import ComponentIndex
 from System import Guid
 from System import IConvertible
+from Rhino.Display import RhinoViewport
 from Rhino import RhinoDoc
-from .Custom import CustomObjectGrips
-from .Gumball import GumballFrame
-from .CustomRenderMeshes import Flags
-from .CustomRenderMeshes import RenderMeshes
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.Geometry import GeometryBase
+from Rhino.DocObjects.Custom import CustomObjectGrips
+from Rhino.Display import VisualAnalysisMode
+from Rhino.FileIO import TextLog
+from Rhino.Geometry import MeshType
+from Rhino.Geometry import MeshingParameters
+from Rhino.UI.Gumball import GumballFrame
+from Rhino.Geometry import Plane
+from Rhino.Geometry import Transform
+from Rhino.Display import DisplayPipelineAttributes
+from Rhino.Render import RenderPrimitiveList
+from Rhino.Render.CustomRenderMeshes import Flags
+from Rhino.PlugIns import PlugIn
+from Rhino.Render.CustomRenderMeshes import RenderMeshes
+from Rhino.Geometry import BoundingBox
+from Rhino.Render import TextureMapping
+from Rhino.Render import RenderMaterial
+from Rhino.Geometry import ComponentStatus
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class MorphControlObject(RhinoObject):
     @overload
     def ClearId(self) -> None: ...
@@ -8167,16 +8556,34 @@ class MorphControlObject(RhinoObject):
     def UnselectAllSubObjects(self) -> int: ...
 
 
+from Rhino.Geometry import ComponentIndex
 from System import Guid
 from System import IConvertible
+from Rhino.Display import RhinoViewport
 from Rhino import RhinoDoc
-from .Custom import CustomObjectGrips
-from .Gumball import GumballFrame
-from .CustomRenderMeshes import Flags
-from .CustomRenderMeshes import RenderMeshes
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.Geometry import GeometryBase
+from Rhino.DocObjects.Custom import CustomObjectGrips
+from Rhino.Display import VisualAnalysisMode
+from Rhino.FileIO import TextLog
+from Rhino.Geometry import MeshType
+from Rhino.Geometry import MeshingParameters
+from Rhino.UI.Gumball import GumballFrame
+from Rhino.Geometry import Plane
+from Rhino.Geometry import Transform
+from Rhino.Display import DisplayPipelineAttributes
+from Rhino.Render import RenderPrimitiveList
+from Rhino.Render.CustomRenderMeshes import Flags
+from Rhino.PlugIns import PlugIn
+from Rhino.Render.CustomRenderMeshes import RenderMeshes
+from Rhino.Geometry import BoundingBox
+from Rhino.Render import TextureMapping
+from Rhino.Render import RenderMaterial
+from Rhino.Geometry import ComponentStatus
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class NamedViewWidgetObject(RhinoObject):
     @overload
     def ClearId(self) -> None: ...
@@ -8462,12 +8869,23 @@ class NamedViewWidgetObject(RhinoObject):
     def UnselectAllSubObjects(self) -> int: ...
 
 
+from Rhino.Geometry import Transform
+from System.Drawing import Color
 from System import Guid
+from Rhino.Display import DisplayModeDescription
+from Rhino.Geometry import MeshingParameters
+from Rhino.Render import RenderMaterial
+from Rhino.Render import Decals
+from Rhino.Geometry import Plane
+from Rhino.FileIO import File3dmMeshModifiers
 from Rhino import RhinoDoc
-from .Specialized import NameValueCollection
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Collections.Specialized import NameValueCollection
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
+from Rhino.Runtime import CommonObject
 class ObjectAttributes(CommonObject):
     @overload
     def __init__(self): ...
@@ -8726,6 +9144,7 @@ class ObjectDecoration(Enum):
     BothArrowhead = 24
 
 
+from Rhino.Display import RhinoViewport
 class ObjectEnumeratorSettings:
     @overload
     def __init__(self): ...
@@ -8902,7 +9321,29 @@ class ObjectType(Enum):
 
 from System import Guid
 from Rhino import RhinoDoc
-from .Custom import PickContext
+from Rhino.Geometry import ComponentIndex
+from Rhino.Input.Custom import PickContext
+from Rhino.Geometry import GeometryBase
+from Rhino.Geometry import ClippingPlaneSurface
+from Rhino.Geometry import Curve
+from Rhino.Geometry import BrepEdge
+from Rhino.Geometry import BrepFace
+from Rhino.Geometry import BrepTrim
+from Rhino.Geometry import Brep
+from Rhino.Geometry import Surface
+from Rhino.Geometry import TextDot
+from Rhino.Geometry import Mesh
+from Rhino.Geometry import SubD
+from Rhino.Geometry import SubDFace
+from Rhino.Geometry import SubDEdge
+from Rhino.Geometry import SubDVertex
+from Rhino.Geometry import Point
+from Rhino.Geometry import PointCloud
+from Rhino.Geometry import TextEntity
+from Rhino.Geometry import Light
+from Rhino.Geometry import Hatch
+from Rhino.Geometry import Point3d
+from Rhino.Display import RhinoView
 class ObjRef:
     @overload
     def __init__(self, other: ObjRef): ...
@@ -8994,16 +9435,36 @@ class ObjRef:
     def Trim(self) -> BrepTrim: ...
 
 
+from Rhino.Geometry import OrdinateDimension
+from Rhino.Geometry import AnnotationBase
+from Rhino.Geometry import ComponentIndex
 from System import Guid
 from System import IConvertible
+from Rhino.Display import RhinoViewport
 from Rhino import RhinoDoc
-from .Custom import CustomObjectGrips
-from .Gumball import GumballFrame
-from .CustomRenderMeshes import Flags
-from .CustomRenderMeshes import RenderMeshes
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.Geometry import GeometryBase
+from Rhino.DocObjects.Custom import CustomObjectGrips
+from Rhino.Display import VisualAnalysisMode
+from Rhino.FileIO import TextLog
+from Rhino.Geometry import MeshType
+from Rhino.Geometry import MeshingParameters
+from Rhino.UI.Gumball import GumballFrame
+from Rhino.Geometry import Plane
+from Rhino.Geometry import Transform
+from Rhino.Display import DisplayPipelineAttributes
+from Rhino.Render import RenderPrimitiveList
+from Rhino.Render.CustomRenderMeshes import Flags
+from Rhino.PlugIns import PlugIn
+from Rhino.Render.CustomRenderMeshes import RenderMeshes
+from Rhino.Geometry import BoundingBox
+from Rhino.Render import TextureMapping
+from Rhino.Render import RenderMaterial
+from Rhino.Geometry import ComponentStatus
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class OrdinateDimensionObject(DimensionObject):
     @overload
     def ClearId(self) -> None: ...
@@ -9297,6 +9758,7 @@ class OrdinateDimensionObject(DimensionObject):
     def UnselectAllSubObjects(self) -> int: ...
 
 
+from Rhino.Display import Color4f
 class PhysicallyBasedMaterial:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -9406,16 +9868,35 @@ class PhysicallyBasedMaterial:
     def ToString(self) -> str: ...
 
 
+from Rhino.Geometry import PointCloud
+from Rhino.Geometry import ComponentIndex
 from System import Guid
 from System import IConvertible
+from Rhino.Display import RhinoViewport
 from Rhino import RhinoDoc
-from .Custom import CustomObjectGrips
-from .Gumball import GumballFrame
-from .CustomRenderMeshes import Flags
-from .CustomRenderMeshes import RenderMeshes
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.Geometry import GeometryBase
+from Rhino.DocObjects.Custom import CustomObjectGrips
+from Rhino.Display import VisualAnalysisMode
+from Rhino.FileIO import TextLog
+from Rhino.Geometry import MeshType
+from Rhino.Geometry import MeshingParameters
+from Rhino.UI.Gumball import GumballFrame
+from Rhino.Geometry import Plane
+from Rhino.Geometry import Transform
+from Rhino.Display import DisplayPipelineAttributes
+from Rhino.Render import RenderPrimitiveList
+from Rhino.Render.CustomRenderMeshes import Flags
+from Rhino.PlugIns import PlugIn
+from Rhino.Render.CustomRenderMeshes import RenderMeshes
+from Rhino.Geometry import BoundingBox
+from Rhino.Render import TextureMapping
+from Rhino.Render import RenderMaterial
+from Rhino.Geometry import ComponentStatus
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class PointCloudObject(RhinoObject):
     @overload
     def ClearId(self) -> None: ...
@@ -9703,16 +10184,35 @@ class PointCloudObject(RhinoObject):
     def UnselectAllSubObjects(self) -> int: ...
 
 
+from Rhino.Geometry import Point
+from Rhino.Geometry import ComponentIndex
 from System import Guid
 from System import IConvertible
+from Rhino.Display import RhinoViewport
 from Rhino import RhinoDoc
-from .Custom import CustomObjectGrips
-from .Gumball import GumballFrame
-from .CustomRenderMeshes import Flags
-from .CustomRenderMeshes import RenderMeshes
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.Geometry import GeometryBase
+from Rhino.DocObjects.Custom import CustomObjectGrips
+from Rhino.Display import VisualAnalysisMode
+from Rhino.FileIO import TextLog
+from Rhino.Geometry import MeshType
+from Rhino.Geometry import MeshingParameters
+from Rhino.UI.Gumball import GumballFrame
+from Rhino.Geometry import Plane
+from Rhino.Geometry import Transform
+from Rhino.Display import DisplayPipelineAttributes
+from Rhino.Render import RenderPrimitiveList
+from Rhino.Render.CustomRenderMeshes import Flags
+from Rhino.PlugIns import PlugIn
+from Rhino.Render.CustomRenderMeshes import RenderMeshes
+from Rhino.Geometry import BoundingBox
+from Rhino.Render import TextureMapping
+from Rhino.Render import RenderMaterial
+from Rhino.Geometry import ComponentStatus
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class PointObject(RhinoObject):
     @overload
     def ClearId(self) -> None: ...
@@ -10000,16 +10500,34 @@ class PointObject(RhinoObject):
     def UnselectAllSubObjects(self) -> int: ...
 
 
+from Rhino.Geometry import MeshType
+from Rhino.Geometry import MeshingParameters
+from Rhino.Geometry import ComponentIndex
 from System import Guid
 from System import IConvertible
+from Rhino.Display import RhinoViewport
 from Rhino import RhinoDoc
-from .Custom import CustomObjectGrips
-from .Gumball import GumballFrame
-from .CustomRenderMeshes import Flags
-from .CustomRenderMeshes import RenderMeshes
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.Geometry import GeometryBase
+from Rhino.DocObjects.Custom import CustomObjectGrips
+from Rhino.Display import VisualAnalysisMode
+from Rhino.FileIO import TextLog
+from Rhino.UI.Gumball import GumballFrame
+from Rhino.Geometry import Plane
+from Rhino.Geometry import Transform
+from Rhino.Display import DisplayPipelineAttributes
+from Rhino.Render import RenderPrimitiveList
+from Rhino.Render.CustomRenderMeshes import Flags
+from Rhino.PlugIns import PlugIn
+from Rhino.Render.CustomRenderMeshes import RenderMeshes
+from Rhino.Geometry import BoundingBox
+from Rhino.Render import TextureMapping
+from Rhino.Render import RenderMaterial
+from Rhino.Geometry import ComponentStatus
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class ProxyObject(RhinoObject):
     @overload
     def ClearId(self) -> None: ...
@@ -10293,16 +10811,36 @@ class ProxyObject(RhinoObject):
     def UnselectAllSubObjects(self) -> int: ...
 
 
+from Rhino.Geometry import RadialDimension
+from Rhino.Geometry import AnnotationBase
+from Rhino.Geometry import ComponentIndex
 from System import Guid
 from System import IConvertible
+from Rhino.Display import RhinoViewport
 from Rhino import RhinoDoc
-from .Custom import CustomObjectGrips
-from .Gumball import GumballFrame
-from .CustomRenderMeshes import Flags
-from .CustomRenderMeshes import RenderMeshes
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.Geometry import GeometryBase
+from Rhino.DocObjects.Custom import CustomObjectGrips
+from Rhino.Display import VisualAnalysisMode
+from Rhino.FileIO import TextLog
+from Rhino.Geometry import MeshType
+from Rhino.Geometry import MeshingParameters
+from Rhino.UI.Gumball import GumballFrame
+from Rhino.Geometry import Plane
+from Rhino.Geometry import Transform
+from Rhino.Display import DisplayPipelineAttributes
+from Rhino.Render import RenderPrimitiveList
+from Rhino.Render.CustomRenderMeshes import Flags
+from Rhino.PlugIns import PlugIn
+from Rhino.Render.CustomRenderMeshes import RenderMeshes
+from Rhino.Geometry import BoundingBox
+from Rhino.Render import TextureMapping
+from Rhino.Render import RenderMaterial
+from Rhino.Geometry import ComponentStatus
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class RadialDimensionObject(DimensionObject):
     @overload
     def ClearId(self) -> None: ...
@@ -10598,6 +11136,10 @@ class RadialDimensionObject(DimensionObject):
 
 from Rhino import RhinoDoc
 from System import Guid
+from Rhino.Geometry import Point3d
+from Rhino.Geometry import Vector3d
+from Rhino.Geometry import Transform
+from System.Drawing import Color
 class ReplayHistoryData:
     @overload
     def AppendHistoryResult(self) -> ReplayHistoryResult: ...
@@ -10649,7 +11191,29 @@ class ReplayHistoryData:
     def UpdateResultArray(self, newResults: Iterable[ReplayHistoryResult]) -> None: ...
 
 
+from Rhino.Geometry import Point3d
+from Rhino.Geometry import PointCloud
+from Rhino.Geometry import Plane
 from System import Guid
+from Rhino.Geometry import LinearDimension
+from Rhino.Geometry import RadialDimension
+from Rhino.Geometry import AngularDimension
+from Rhino.Geometry import Arc
+from Rhino.Geometry import Circle
+from Rhino.Geometry import Ellipse
+from Rhino.Geometry import Sphere
+from Rhino.Geometry import Curve
+from Rhino.Geometry import TextDot
+from Rhino.Geometry import TextJustification
+from Rhino.Geometry import TextEntity
+from Rhino.Geometry import Surface
+from Rhino.Geometry import Extrusion
+from Rhino.Geometry import Mesh
+from Rhino.Geometry import SubD
+from Rhino.Geometry import Brep
+from Rhino.Geometry import Leader
+from Rhino.Geometry import Hatch
+from Rhino.Geometry import InstanceReferenceGeometry
 class ReplayHistoryResult:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -10764,16 +11328,35 @@ class RhinoModifyObjectAttributesEventArgs:
     def ToString(self) -> str: ...
 
 
+from Rhino.Geometry import ComponentIndex
 from System import Guid
 from System import IConvertible
+from Rhino.Display import RhinoViewport
+from Rhino.Geometry import MeshingParameters
+from Rhino.Commands import Result
+from Rhino.Geometry import Transform
+from Rhino.Geometry import BoundingBox
+from Rhino.Geometry import Plane
 from Rhino import RhinoDoc
-from .Custom import CustomObjectGrips
-from .Gumball import GumballFrame
-from .CustomRenderMeshes import Flags
-from .CustomRenderMeshes import RenderMeshes
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.Geometry import GeometryBase
+from Rhino.DocObjects.Custom import CustomObjectGrips
+from Rhino.Display import VisualAnalysisMode
+from Rhino.FileIO import TextLog
+from Rhino.Geometry import MeshType
+from Rhino.UI.Gumball import GumballFrame
+from Rhino.Display import DisplayPipelineAttributes
+from Rhino.Render import RenderPrimitiveList
+from Rhino.Render.CustomRenderMeshes import Flags
+from Rhino.PlugIns import PlugIn
+from Rhino.Render.CustomRenderMeshes import RenderMeshes
+from Rhino.Render import TextureMapping
+from Rhino.Render import RenderMaterial
+from Rhino.Geometry import ComponentStatus
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class RhinoObject(ModelComponent):
     @overload
     def ClearId(self) -> None: ...
@@ -11147,6 +11730,7 @@ class RhinoReplaceObjectEventArgs:
     def ToString(self) -> str: ...
 
 
+from Rhino.Geometry import Transform
 class RhinoTransformObjectsEventArgs:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -11197,10 +11781,14 @@ class SectionLabelStyle(Enum):
     TextFromName = 2
 
 
+from System.Drawing import Color
 from System import Guid
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.Geometry import ComponentStatus
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class SectionStyle(ModelComponent):
     @overload
     def __init__(self): ...
@@ -11369,16 +11957,34 @@ class StackDisplayFormat(Enum):
     StackDiagonal = 2
 
 
+from Rhino.Geometry import ComponentIndex
 from System import Guid
 from System import IConvertible
+from Rhino.Display import RhinoViewport
 from Rhino import RhinoDoc
-from .Custom import CustomObjectGrips
-from .Gumball import GumballFrame
-from .CustomRenderMeshes import Flags
-from .CustomRenderMeshes import RenderMeshes
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.Geometry import GeometryBase
+from Rhino.DocObjects.Custom import CustomObjectGrips
+from Rhino.Display import VisualAnalysisMode
+from Rhino.FileIO import TextLog
+from Rhino.Geometry import MeshType
+from Rhino.Geometry import MeshingParameters
+from Rhino.UI.Gumball import GumballFrame
+from Rhino.Geometry import Plane
+from Rhino.Geometry import Transform
+from Rhino.Display import DisplayPipelineAttributes
+from Rhino.Render import RenderPrimitiveList
+from Rhino.Render.CustomRenderMeshes import Flags
+from Rhino.PlugIns import PlugIn
+from Rhino.Render.CustomRenderMeshes import RenderMeshes
+from Rhino.Geometry import BoundingBox
+from Rhino.Render import TextureMapping
+from Rhino.Render import RenderMaterial
+from Rhino.Geometry import ComponentStatus
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class SubDObject(RhinoObject):
     @overload
     def ClearId(self) -> None: ...
@@ -11662,16 +12268,35 @@ class SubDObject(RhinoObject):
     def UnselectAllSubObjects(self) -> int: ...
 
 
+from Rhino.Geometry import Surface
+from Rhino.Geometry import ComponentIndex
 from System import Guid
 from System import IConvertible
+from Rhino.Display import RhinoViewport
 from Rhino import RhinoDoc
-from .Custom import CustomObjectGrips
-from .Gumball import GumballFrame
-from .CustomRenderMeshes import Flags
-from .CustomRenderMeshes import RenderMeshes
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.Geometry import GeometryBase
+from Rhino.DocObjects.Custom import CustomObjectGrips
+from Rhino.Display import VisualAnalysisMode
+from Rhino.FileIO import TextLog
+from Rhino.Geometry import MeshType
+from Rhino.Geometry import MeshingParameters
+from Rhino.UI.Gumball import GumballFrame
+from Rhino.Geometry import Plane
+from Rhino.Geometry import Transform
+from Rhino.Display import DisplayPipelineAttributes
+from Rhino.Render import RenderPrimitiveList
+from Rhino.Render.CustomRenderMeshes import Flags
+from Rhino.PlugIns import PlugIn
+from Rhino.Render.CustomRenderMeshes import RenderMeshes
+from Rhino.Geometry import BoundingBox
+from Rhino.Render import TextureMapping
+from Rhino.Render import RenderMaterial
+from Rhino.Geometry import ComponentStatus
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class SurfaceObject(RhinoObject):
     @overload
     def ClearId(self) -> None: ...
@@ -11966,16 +12591,34 @@ class TextDisplayAlignment(Enum):
     InLine = 3
 
 
+from Rhino.Geometry import ComponentIndex
 from System import Guid
 from System import IConvertible
+from Rhino.Display import RhinoViewport
 from Rhino import RhinoDoc
-from .Custom import CustomObjectGrips
-from .Gumball import GumballFrame
-from .CustomRenderMeshes import Flags
-from .CustomRenderMeshes import RenderMeshes
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.Geometry import GeometryBase
+from Rhino.DocObjects.Custom import CustomObjectGrips
+from Rhino.Display import VisualAnalysisMode
+from Rhino.FileIO import TextLog
+from Rhino.Geometry import MeshType
+from Rhino.Geometry import MeshingParameters
+from Rhino.UI.Gumball import GumballFrame
+from Rhino.Geometry import Plane
+from Rhino.Geometry import Transform
+from Rhino.Display import DisplayPipelineAttributes
+from Rhino.Render import RenderPrimitiveList
+from Rhino.Render.CustomRenderMeshes import Flags
+from Rhino.PlugIns import PlugIn
+from Rhino.Render.CustomRenderMeshes import RenderMeshes
+from Rhino.Geometry import BoundingBox
+from Rhino.Render import TextureMapping
+from Rhino.Render import RenderMaterial
+from Rhino.Geometry import ComponentStatus
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class TextDotObject(RhinoObject):
     @overload
     def ClearId(self) -> None: ...
@@ -12281,16 +12924,36 @@ class TextLocation(Enum):
     BelowDimLine = 2
 
 
+from Rhino.Geometry import TextEntity
+from Rhino.Display import RhinoViewport
+from Rhino.Geometry import AnnotationBase
+from Rhino.Geometry import ComponentIndex
 from System import Guid
 from System import IConvertible
 from Rhino import RhinoDoc
-from .Custom import CustomObjectGrips
-from .Gumball import GumballFrame
-from .CustomRenderMeshes import Flags
-from .CustomRenderMeshes import RenderMeshes
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.Geometry import GeometryBase
+from Rhino.DocObjects.Custom import CustomObjectGrips
+from Rhino.Display import VisualAnalysisMode
+from Rhino.FileIO import TextLog
+from Rhino.Geometry import MeshType
+from Rhino.Geometry import MeshingParameters
+from Rhino.UI.Gumball import GumballFrame
+from Rhino.Geometry import Plane
+from Rhino.Geometry import Transform
+from Rhino.Display import DisplayPipelineAttributes
+from Rhino.Render import RenderPrimitiveList
+from Rhino.Render.CustomRenderMeshes import Flags
+from Rhino.PlugIns import PlugIn
+from Rhino.Render.CustomRenderMeshes import RenderMeshes
+from Rhino.Geometry import BoundingBox
+from Rhino.Render import TextureMapping
+from Rhino.Render import RenderMaterial
+from Rhino.Geometry import ComponentStatus
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
 class TextObject(AnnotationObjectBase):
     @overload
     def ClearId(self) -> None: ...
@@ -12589,10 +13252,17 @@ class TextOrientation(Enum):
     InView = 1
 
 
+from Rhino.FileIO import FileReference
 from System import Guid
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.Geometry import Transform
+from Rhino.Geometry import Vector2d
+from System.Drawing import Color
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
+from Rhino.Runtime import CommonObject
 class Texture(CommonObject):
     @overload
     def __init__(self): ...
@@ -12792,6 +13462,7 @@ class ToleranceDisplayFormat(Enum):
     Limits = 3
 
 
+from Rhino.Display import RhinoViewport
 from System import Guid
 class ViewInfo:
     @overload
@@ -12860,10 +13531,25 @@ class ViewInfoFocalBlurModes(Enum):
     Manual = 2
 
 
+from Rhino.Display import RhinoViewport
+from Rhino.Geometry import Vector3d
+from Rhino.Geometry import Point3d
+from Rhino.Geometry import BoundingBox
+from Rhino.Geometry import Sphere
+from Rhino.Geometry import Plane
+from System.Drawing import Rectangle
+from Rhino.Geometry import Transform
+from Rhino.Geometry import Line
+from System.Drawing import Point
+from System.Drawing import PointF
+from System.Drawing import SizeF
 from System import Guid
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.FileIO import SerializationOptions
+from Rhino.Runtime import CommonObject
 class ViewportInfo(CommonObject):
     @overload
     def __init__(self): ...

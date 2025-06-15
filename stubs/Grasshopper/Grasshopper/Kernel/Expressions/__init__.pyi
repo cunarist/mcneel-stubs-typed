@@ -75,9 +75,14 @@ class GH_CodeStringSegment:
     def ToString(self) -> str: ...
 
 
+from System.Windows.Forms import IWin32Window
+from Grasshopper.Kernel.Types import Complex
 from Rhino.Geometry import Vector3d
 from Rhino.Geometry import Point3d
 from Rhino.Geometry import Plane
+from Grasshopper.Kernel.Types import IGH_Goo
+from System.Collections.Generic import SortedDictionary
+from System.Collections.Generic import Queue
 class GH_ExpressionParser:
     @overload
     def __init__(self): ...
@@ -141,8 +146,11 @@ class GH_ExpressionParser:
     def ToString(self) -> str: ...
 
 
+from System.Collections.ObjectModel import ReadOnlyCollection
+from System.Collections.Generic import IComparer
 from System import Predicate
 from System import Action
+from System.Collections.Generic import Enumerator
 from System import Comparison
 from System import Converter
 class GH_ExpressionString:
@@ -513,6 +521,8 @@ class GH_ScriptVariantType(Enum):
 
 from System.Collections import IDictionary
 from System.Reflection import MethodBase
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 class GH_SignatureException:
     @overload
     def __init__(self, args: MutableSequence[GH_Variant], name: str): ...
@@ -554,6 +564,8 @@ class GH_SignatureException:
 
 from System.Collections import IDictionary
 from System.Reflection import MethodBase
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 class GH_SolverException:
     @overload
     def __init__(self, nMessage: str): ...
@@ -595,6 +607,8 @@ class GH_SolverException:
 
 from System.Collections import IDictionary
 from System.Reflection import MethodBase
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 class GH_SyntaxException:
     @overload
     def __init__(self, nMessage: str): ...
@@ -634,9 +648,11 @@ class GH_SyntaxException:
     def ToString(self) -> str: ...
 
 
+from Grasshopper.Kernel.Types import Complex
 from Rhino.Geometry import Point3d
 from Rhino.Geometry import Vector3d
 from Rhino.Geometry import Plane
+from Grasshopper.Kernel.Types import IGH_Goo
 class GH_Variant:
     @overload
     def __init__(self): ...

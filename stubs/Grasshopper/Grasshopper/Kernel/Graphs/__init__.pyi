@@ -347,7 +347,10 @@ class GH_GaussianGraph(GH_AbstractGraph):
 
 
 from System.Drawing import RectangleF
+from Grasshopper.GUI.Canvas import GH_Canvas
 from Grasshopper.GUI import GH_CanvasMouseEvent
+from Grasshopper.GUI.Canvas import GH_ObjectResponse
+from System.Windows.Forms import KeyEventArgs
 from System.Drawing import Graphics
 from System.Drawing import Pen
 from System.Drawing import PointF
@@ -1097,6 +1100,8 @@ class GH_SquareRootGraph(GH_AbstractGraph):
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from System.Reflection import MethodInfo
 class GraphChangedEventHandler:
     @overload
@@ -1132,6 +1137,8 @@ class GraphChangedEventHandler:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from System.Reflection import MethodInfo
 class GraphChangedEventHandler:
     @overload
@@ -1167,6 +1174,8 @@ class GraphChangedEventHandler:
 from System import IntPtr
 from System import AsyncCallback
 from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from System.Reflection import MethodInfo
 class GripChangedEventHandler:
     @overload

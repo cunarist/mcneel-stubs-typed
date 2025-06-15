@@ -5,6 +5,7 @@ from enum import Enum
 
 from System import Guid
 from Rhino import RhinoDoc
+from Rhino.PlugIns import PlugIn
 from Rhino import PersistentSettings
 from System import EventHandler
 class Command:
@@ -198,8 +199,9 @@ from System import IntPtr
 from Rhino import RhinoDoc
 from System import AsyncCallback
 from System import IAsyncResult
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class RunCommandDelegate:
     @overload
     def __init__(self, object: object, method: IntPtr): ...
@@ -236,6 +238,7 @@ class RunMode(Enum):
     Scripted = 1
 
 
+from Rhino.PlugIns import PlugIn
 from System import Guid
 from Rhino import PersistentSettings
 class SelCommand(Command):
@@ -280,6 +283,7 @@ class Style(Enum):
     NotUndoable = 16
 
 
+from Rhino.PlugIns import PlugIn
 from System import Guid
 from Rhino import PersistentSettings
 class TransformCommand(Command):

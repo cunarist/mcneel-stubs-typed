@@ -3,7 +3,7 @@ from enum import Enum
 
 
 
-from .Types import GH_AngularDimension
+from Grasshopper.Kernel.Types import GH_AngularDimension
 class GH_AngularDimensionGetter:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -21,7 +21,7 @@ class GH_AngularDimensionGetter:
     def ToString(self) -> str: ...
 
 
-from .Types import GH_Arc
+from Grasshopper.Kernel.Types import GH_Arc
 class GH_ArcGetter:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -39,7 +39,7 @@ class GH_ArcGetter:
     def ToString(self) -> str: ...
 
 
-from .Types import GH_Box
+from Grasshopper.Kernel.Types import GH_Box
 class GH_BoxGetter:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -57,7 +57,7 @@ class GH_BoxGetter:
     def ToString(self) -> str: ...
 
 
-from .Types import GH_Brep
+from Grasshopper.Kernel.Types import GH_Brep
 class GH_BrepGetter:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -75,7 +75,7 @@ class GH_BrepGetter:
     def ToString(self) -> str: ...
 
 
-from .Types import GH_Centermark
+from Grasshopper.Kernel.Types import GH_Centermark
 class GH_CentermarkGetter:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -93,7 +93,7 @@ class GH_CentermarkGetter:
     def ToString(self) -> str: ...
 
 
-from .Types import GH_Circle
+from Grasshopper.Kernel.Types import GH_Circle
 class GH_CircleGetter:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -111,7 +111,7 @@ class GH_CircleGetter:
     def ToString(self) -> str: ...
 
 
-from .Types import GH_Curve
+from Grasshopper.Kernel.Types import GH_Curve
 class GH_CurveGetter:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -129,7 +129,7 @@ class GH_CurveGetter:
     def ToString(self) -> str: ...
 
 
-from .Types import GH_Extrusion
+from Grasshopper.Kernel.Types import GH_Extrusion
 class GH_ExtrusionGetter:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -147,7 +147,7 @@ class GH_ExtrusionGetter:
     def ToString(self) -> str: ...
 
 
-from .Types import IGH_GeometricGoo
+from Grasshopper.Kernel.Types import IGH_GeometricGoo
 class GH_GeometryGetter:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -165,7 +165,7 @@ class GH_GeometryGetter:
     def ToString(self) -> str: ...
 
 
-from .Types import GH_Hatch
+from Grasshopper.Kernel.Types import GH_Hatch
 class GH_HatchGetter:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -183,7 +183,7 @@ class GH_HatchGetter:
     def ToString(self) -> str: ...
 
 
-from .Types import GH_InstanceReference
+from Grasshopper.Kernel.Types import GH_InstanceReference
 class GH_InstanceReferenceGetter:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -201,7 +201,7 @@ class GH_InstanceReferenceGetter:
     def ToString(self) -> str: ...
 
 
-from .Types import GH_Leader
+from Grasshopper.Kernel.Types import GH_Leader
 class GH_LeaderGetter:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -219,7 +219,7 @@ class GH_LeaderGetter:
     def ToString(self) -> str: ...
 
 
-from .Types import GH_Light
+from Grasshopper.Kernel.Types import GH_Light
 class GH_LightGetter:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -237,7 +237,7 @@ class GH_LightGetter:
     def ToString(self) -> str: ...
 
 
-from .Types import GH_LinearDimension
+from Grasshopper.Kernel.Types import GH_LinearDimension
 class GH_LinearDimensionGetter:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -255,7 +255,7 @@ class GH_LinearDimensionGetter:
     def ToString(self) -> str: ...
 
 
-from .Types import GH_Line
+from Grasshopper.Kernel.Types import GH_Line
 class GH_LineGetter:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -273,7 +273,7 @@ class GH_LineGetter:
     def ToString(self) -> str: ...
 
 
-from .Types import GH_Mesh
+from Grasshopper.Kernel.Types import GH_Mesh
 class GH_MeshGetter:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -291,7 +291,7 @@ class GH_MeshGetter:
     def ToString(self) -> str: ...
 
 
-from .Types import GH_OrdinateDimension
+from Grasshopper.Kernel.Types import GH_OrdinateDimension
 class GH_OrdinateDimensionGetter:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -309,7 +309,9 @@ class GH_OrdinateDimensionGetter:
     def ToString(self) -> str: ...
 
 
-from .Types import GH_Plane
+from Rhino.Geometry import Plane
+from Rhino.Geometry import Point3d
+from Grasshopper.Kernel.Types import GH_Plane
 class GH_PlaneGetter:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -333,7 +335,7 @@ class GH_PlaneGetter:
     def ToString(self) -> str: ...
 
 
-from .Types import GH_PointCloud
+from Grasshopper.Kernel.Types import GH_PointCloud
 class GH_PointCloudGetter:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -351,8 +353,10 @@ class GH_PointCloudGetter:
     def ToString(self) -> str: ...
 
 
-from .Types import GH_PointRefType
-from .Types import GH_Point
+from Grasshopper.Kernel.Types import GH_PointRefType
+from Grasshopper.Kernel.Types import GH_Point
+from Rhino.Geometry import Point3d
+from Grasshopper.Kernel import GH_GetterResult
 class GH_PointGetter:
     @overload
     def __init__(self): ...
@@ -387,7 +391,7 @@ class GH_PointGetter:
     def ToString(self) -> str: ...
 
 
-from .Types import GH_RadialDimension
+from Grasshopper.Kernel.Types import GH_RadialDimension
 class GH_RadialDimensionGetter:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -405,7 +409,7 @@ class GH_RadialDimensionGetter:
     def ToString(self) -> str: ...
 
 
-from .Types import GH_Rectangle
+from Grasshopper.Kernel.Types import GH_Rectangle
 class GH_RectangleGetter:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -423,7 +427,7 @@ class GH_RectangleGetter:
     def ToString(self) -> str: ...
 
 
-from .Types import GH_SubD
+from Grasshopper.Kernel.Types import GH_SubD
 class GH_SubDGetter:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -441,7 +445,7 @@ class GH_SubDGetter:
     def ToString(self) -> str: ...
 
 
-from .Types import GH_Surface
+from Grasshopper.Kernel.Types import GH_Surface
 class GH_SurfaceGetter:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -459,7 +463,7 @@ class GH_SurfaceGetter:
     def ToString(self) -> str: ...
 
 
-from .Types import GH_TextDot
+from Grasshopper.Kernel.Types import GH_TextDot
 class GH_TextDotGetter:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -477,7 +481,7 @@ class GH_TextDotGetter:
     def ToString(self) -> str: ...
 
 
-from .Types import GH_TextEntity
+from Grasshopper.Kernel.Types import GH_TextEntity
 class GH_TextEntityGetter:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -506,7 +510,7 @@ class GH_TransformGetter:
     def ToString(self) -> str: ...
 
 
-from .Types import GH_Vector
+from Grasshopper.Kernel.Types import GH_Vector
 class GH_VectorGetter:
     @overload
     def Equals(self, obj: object) -> bool: ...

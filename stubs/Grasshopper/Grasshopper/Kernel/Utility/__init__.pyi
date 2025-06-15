@@ -124,6 +124,8 @@ from System import IntPtr
 from Rhino.Geometry import Interval
 from System import AsyncCallback
 from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from System.Reflection import MethodInfo
 class GH_IntervalWrapperDelegate:
     @overload
@@ -299,6 +301,8 @@ from System import IntPtr
 from Rhino.Geometry import Point3d
 from System import AsyncCallback
 from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from System.Reflection import MethodInfo
 class GH_Point3dWrapperDelegate:
     @overload
@@ -331,6 +335,7 @@ class GH_Point3dWrapperDelegate:
     def ToString(self) -> str: ...
 
 
+from Grasshopper.Kernel.Types import GH_PointRefData
 class GH_PointRefUV_Wrapper:
     @overload
     def __init__(self, ref: GH_PointRefData, wrapperdelegate: GH_PointRefUVWrapperDelegate): ...
@@ -444,8 +449,11 @@ class GH_PointRefUV_Wrapper_TypeConverter:
 
 
 from System import IntPtr
+from Grasshopper.Kernel.Types import GH_PointRefData
 from System import AsyncCallback
 from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from System.Reflection import MethodInfo
 class GH_PointRefUVWrapperDelegate:
     @overload
@@ -603,6 +611,8 @@ from System import IntPtr
 from Rhino.Geometry import Vector3d
 from System import AsyncCallback
 from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from System.Reflection import MethodInfo
 class GH_Vector3dWrapperDelegate:
     @overload

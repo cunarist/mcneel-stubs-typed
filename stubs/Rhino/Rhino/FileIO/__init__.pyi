@@ -26,8 +26,10 @@ class AutocadVersion(Enum):
     Acad2018 = 2018
 
 
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from System.Collections import IDictionary
+from System.Reflection import MethodBase
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 class BinaryArchiveException:
     @overload
     def __init__(self, message: str): ...
@@ -99,8 +101,34 @@ class BinaryArchiveMode(Enum):
     Write3dm = 6
 
 
+from Rhino.Collections import ArchivableDictionary
 from System import SByte
 from System import Guid
+from System.Drawing import Color
+from System.Drawing import Point
+from System.Drawing import PointF
+from System.Drawing import Rectangle
+from System.Drawing import RectangleF
+from System.Drawing import Size
+from System.Drawing import SizeF
+from System.Drawing import Font
+from Rhino.DocObjects import ObjRef
+from Rhino.Geometry import Interval
+from Rhino.Geometry import Point2d
+from Rhino.Geometry import Point3d
+from Rhino.Geometry import Point4d
+from Rhino.Geometry import Vector2d
+from Rhino.Geometry import Vector3d
+from Rhino.Geometry import BoundingBox
+from Rhino.Geometry import Ray3d
+from Rhino.Geometry import Transform
+from Rhino.Geometry import Plane
+from Rhino.Geometry import Line
+from Rhino.Geometry import Point3f
+from Rhino.Geometry import Vector3f
+from Rhino.Geometry import MeshingParameters
+from Rhino.Geometry import GeometryBase
+from Rhino.Render import RenderSettings
 class BinaryArchiveReader:
     @overload
     def AtEnd(self) -> bool: ...
@@ -244,8 +272,34 @@ class BinaryArchiveReader:
     def ToString(self) -> str: ...
 
 
+from Rhino.Collections import ArchivableDictionary
 from System import SByte
 from System import Guid
+from System.Drawing import Color
+from System.Drawing import Point
+from System.Drawing import PointF
+from System.Drawing import Rectangle
+from System.Drawing import RectangleF
+from System.Drawing import Size
+from System.Drawing import SizeF
+from System.Drawing import Font
+from Rhino.DocObjects import ObjRef
+from Rhino.Geometry import Interval
+from Rhino.Geometry import Point2d
+from Rhino.Geometry import Point3d
+from Rhino.Geometry import Point4d
+from Rhino.Geometry import Vector2d
+from Rhino.Geometry import Vector3d
+from Rhino.Geometry import BoundingBox
+from Rhino.Geometry import Ray3d
+from Rhino.Geometry import Transform
+from Rhino.Geometry import Plane
+from Rhino.Geometry import Line
+from Rhino.Geometry import Point3f
+from Rhino.Geometry import Vector3f
+from Rhino.Geometry import MeshingParameters
+from Rhino.Geometry import GeometryBase
+from Rhino.Render import RenderSettings
 class BinaryArchiveWriter:
     @overload
     def BeginWrite3dmChunk(self, typecode: int, value: int) -> bool: ...
@@ -447,6 +501,9 @@ class DracoColorFormat(Enum):
     RGBA = 1
 
 
+from Rhino.Geometry import Mesh
+from Rhino.Geometry import PointCloud
+from Rhino.Geometry import GeometryBase
 class DracoCompression:
     @overload
     @staticmethod
@@ -584,7 +641,10 @@ class ExportSurfaceMode(Enum):
 
 
 from System import DateTime
-from .Generic import IList
+from Rhino.DocObjects import EarthAnchorPoint
+from Rhino.Geometry import GeometryBase
+from System.Drawing import Bitmap
+from System.Collections.Generic import IList
 class File3dm:
     @overload
     def __init__(self): ...
@@ -795,6 +855,8 @@ class File3dmCurvePiping:
     def ToString(self) -> str: ...
 
 
+from Rhino.DocObjects import ModelComponentType
+from Rhino.DocObjects import DimensionStyle
 from System import Guid
 class File3dmDimStyleTable:
     def __iter__(self) -> Iterator[DimensionStyle]: ...
@@ -969,10 +1031,14 @@ class File3dmEdgeSoftening:
     def ToString(self) -> str: ...
 
 
+from Rhino.DocObjects import ModelComponentType
 from System import Guid
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.Geometry import ComponentStatus
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.DocObjects import ModelComponent
 class File3dmEmbeddedFile(ModelComponent):
     @overload
     def __init__(self): ...
@@ -1090,6 +1156,8 @@ class File3dmEmbeddedFiles:
     def ToString(self) -> str: ...
 
 
+from Rhino.DocObjects import ModelComponentType
+from Rhino.DocObjects import Group
 from System import Guid
 class File3dmGroupTable:
     def __iter__(self) -> Iterator[Group]: ...
@@ -1133,6 +1201,8 @@ class File3dmGroupTable:
     def ToString(self) -> str: ...
 
 
+from Rhino.DocObjects import ModelComponentType
+from Rhino.DocObjects import HatchPattern
 from System import Guid
 class File3dmHatchPatternTable:
     def __iter__(self) -> Iterator[HatchPattern]: ...
@@ -1172,6 +1242,11 @@ class File3dmHatchPatternTable:
     def ToString(self) -> str: ...
 
 
+from Rhino.DocObjects import ModelComponentType
+from Rhino.Geometry import InstanceDefinitionGeometry
+from Rhino.Geometry import Point3d
+from Rhino.Geometry import GeometryBase
+from Rhino.DocObjects import ObjectAttributes
 from System import Guid
 class File3dmInstanceDefinitionTable:
     def __iter__(self) -> Iterator[InstanceDefinitionGeometry]: ...
@@ -1219,7 +1294,10 @@ class File3dmInstanceDefinitionTable:
     def ToString(self) -> str: ...
 
 
+from Rhino.DocObjects import ModelComponentType
+from System.Drawing import Color
 from System import Guid
+from Rhino.DocObjects import Layer
 class File3dmLayerTable:
     def __iter__(self) -> Iterator[Layer]: ...
     def __getitem__(self, index: int) -> Layer: ...
@@ -1264,6 +1342,8 @@ class File3dmLayerTable:
     def ToString(self) -> str: ...
 
 
+from Rhino.DocObjects import ModelComponentType
+from Rhino.DocObjects import Linetype
 from System import Guid
 class File3dmLinetypeTable:
     def __iter__(self) -> Iterator[Linetype]: ...
@@ -1303,6 +1383,8 @@ class File3dmLinetypeTable:
     def ToString(self) -> str: ...
 
 
+from Rhino.DocObjects import ModelComponentType
+from Rhino.DocObjects import Material
 from System import Guid
 class File3dmMaterialTable:
     def __iter__(self) -> Iterator[Material]: ...
@@ -1361,6 +1443,8 @@ class File3dmMeshModifiers:
     def ToString(self) -> str: ...
 
 
+from Rhino.DocObjects import ConstructionPlane
+from Rhino.Geometry import Plane
 class File3dmNamedConstructionPlanes:
     def __iter__(self) -> Iterator[ConstructionPlane]: ...
     def __getitem__(self, index: int) -> ConstructionPlane: ...
@@ -1399,6 +1483,7 @@ class File3dmNamedConstructionPlanes:
     def ToString(self) -> str: ...
 
 
+from System.Drawing import Rectangle
 class File3dmNotes:
     @overload
     def __init__(self): ...
@@ -1428,11 +1513,19 @@ class File3dmNotes:
     def ToString(self) -> str: ...
 
 
+from Rhino.Geometry import GeometryBase
+from Rhino.DocObjects import ObjectAttributes
+from Rhino.DocObjects import ModelComponentType
 from System import Guid
 from System import Func
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.Geometry import Transform
+from Rhino.Render import TextureMapping
+from Rhino.Geometry import ComponentStatus
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.DocObjects import ModelComponent
 class File3dmObject(ModelComponent):
     @overload
     def ClearId(self) -> None: ...
@@ -1536,7 +1629,38 @@ class File3dmObject(ModelComponent):
     def TryReadUserData(self, userDataId: Guid, readFromAttributes: bool, dataReader: Func) -> bool: ...
 
 
+from Rhino.DocObjects import ModelComponentType
+from Rhino.DocObjects import Layer
+from Rhino.DocObjects import Group
+from Rhino.Geometry import BoundingBox
+from Rhino.Geometry import GeometryBase
+from Rhino.DocObjects import ObjectAttributes
 from System import Guid
+from Rhino.Geometry import Point3d
+from Rhino.Geometry import Point3f
+from Rhino.Geometry import PointCloud
+from Rhino.Geometry import Plane
+from Rhino.Geometry import LinearDimension
+from Rhino.Geometry import AngularDimension
+from Rhino.Geometry import OrdinateDimension
+from Rhino.Geometry import RadialDimension
+from Rhino.Geometry import Line
+from Rhino.Geometry import Arc
+from Rhino.Geometry import Circle
+from Rhino.Geometry import Ellipse
+from Rhino.Geometry import Sphere
+from Rhino.Geometry import Curve
+from Rhino.Geometry import TextDot
+from Rhino.Geometry import InstanceReferenceGeometry
+from Rhino.Geometry import Transform
+from Rhino.Display import Text3d
+from Rhino.Geometry import TextJustification
+from Rhino.Geometry import Surface
+from Rhino.Geometry import Extrusion
+from Rhino.Geometry import Mesh
+from Rhino.Geometry import Brep
+from Rhino.Geometry import Hatch
+from Rhino.Geometry import SubD
 class File3dmObjectTable:
     def __iter__(self) -> Iterator[File3dmObject]: ...
     def __getitem__(self, index: int) -> File3dmObject: ...
@@ -1768,9 +1892,13 @@ class File3dmPlugInDataTable:
 
 from System import Guid
 from System import IConvertible
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.DocObjects import ModelComponentType
+from Rhino.Geometry import ComponentStatus
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from Rhino.DocObjects import ModelComponent
 class File3dmRenderContent(ModelComponent):
     @overload
     def ChildSlotOn(self, child_slot_name: str) -> bool: ...
@@ -1912,11 +2040,15 @@ class File3dmRenderContent(ModelComponent):
     def XML(self, recursive: bool) -> str: ...
 
 
+from Rhino.DocObjects import Environment
 from System import Guid
 from System import IConvertible
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.DocObjects import ModelComponentType
+from Rhino.Geometry import ComponentStatus
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 class File3dmRenderEnvironment(File3dmRenderContent):
     @overload
     def ChildSlotOn(self, child_slot_name: str) -> bool: ...
@@ -2079,11 +2211,15 @@ class File3dmRenderEnvironments:
     def ToString(self) -> str: ...
 
 
+from Rhino.DocObjects import Material
 from System import Guid
 from System import IConvertible
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.DocObjects import ModelComponentType
+from Rhino.Geometry import ComponentStatus
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 class File3dmRenderMaterial(File3dmRenderContent):
     @overload
     def ChildSlotOn(self, child_slot_name: str) -> bool: ...
@@ -2246,11 +2382,15 @@ class File3dmRenderMaterials:
     def ToString(self) -> str: ...
 
 
+from Rhino.DocObjects import Texture
 from System import Guid
 from System import IConvertible
-from .Custom import UserDataList
-from .Serialization import SerializationInfo
-from .Serialization import StreamingContext
+from Rhino.DocObjects import ModelComponentType
+from Rhino.Geometry import ComponentStatus
+from Rhino.DocObjects.Custom import UserDataList
+from Rhino.Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 class File3dmRenderTexture(File3dmRenderContent):
     @overload
     def ChildSlotOn(self, child_slot_name: str) -> bool: ...
@@ -2415,7 +2555,9 @@ class File3dmRenderTextures:
     def ToString(self) -> str: ...
 
 
+from Rhino.Geometry import Point3d
 from Rhino import UnitSystem
+from Rhino.Render import RenderSettings
 class File3dmSettings:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -2812,6 +2954,7 @@ class File3dmTypeCodes:
     def ToString(self) -> str: ...
 
 
+from Rhino.DocObjects import ViewInfo
 class File3dmViewTable:
     def __iter__(self) -> Iterator[ViewInfo]: ...
     def __getitem__(self, index: int) -> ViewInfo: ...
@@ -2848,6 +2991,7 @@ class File3dmViewTable:
     def ToString(self) -> str: ...
 
 
+from Rhino.DocObjects import ObjectType
 class File3dmWriteOptions:
     @overload
     def __init__(self): ...
@@ -2899,6 +3043,7 @@ class File3ds:
     def Write(path: str, doc: RhinoDoc, options: File3dsWriteOptions) -> bool: ...
 
 
+from Rhino.Collections import ArchivableDictionary
 class File3dsReadOptions:
     @overload
     def __init__(self): ...
@@ -2930,6 +3075,8 @@ class File3dsReadOptions:
     def ToString(self) -> str: ...
 
 
+from Rhino.Geometry import MeshingParameters
+from Rhino.Collections import ArchivableDictionary
 class File3dsWriteOptions:
     @overload
     def __init__(self): ...
@@ -2972,7 +3119,8 @@ class File3mf:
     def Write(path: str, doc: RhinoDoc, options: File3mfWriteOptions) -> bool: ...
 
 
-from .Generic import Dictionary
+from System.Collections.Generic import Dictionary
+from Rhino.Collections import ArchivableDictionary
 class File3mfWriteOptions:
     @overload
     def __init__(self): ...
@@ -3036,6 +3184,7 @@ class FileAi:
     def Write(path: str, doc: RhinoDoc, options: FileAiWriteOptions) -> bool: ...
 
 
+from Rhino.Collections import ArchivableDictionary
 class FileAiReadOptions:
     @overload
     def __init__(self): ...
@@ -3067,6 +3216,7 @@ class FileAiReadOptions:
     def ToString(self) -> str: ...
 
 
+from Rhino.Collections import ArchivableDictionary
 class FileAiWriteOptions:
     @overload
     def __init__(self): ...
@@ -3129,6 +3279,8 @@ class FileAmf:
     def Write(path: str, doc: RhinoDoc, options: FileAmfWriteOptions) -> bool: ...
 
 
+from Rhino.Geometry import MeshingParameters
+from Rhino.Collections import ArchivableDictionary
 class FileAmfWriteOptions:
     @overload
     def __init__(self): ...
@@ -3163,6 +3315,8 @@ class FileCd:
     def Write(path: str, doc: RhinoDoc, options: FileCdWriteOptions) -> bool: ...
 
 
+from Rhino.Geometry import MeshingParameters
+from Rhino.Collections import ArchivableDictionary
 class FileCdWriteOptions:
     @overload
     def __init__(self): ...
@@ -3197,6 +3351,7 @@ class FileCsv:
     def Write(path: str, doc: RhinoDoc, options: FileCsvWriteOptions) -> bool: ...
 
 
+from Rhino.Collections import ArchivableDictionary
 class FileCsvWriteOptions:
     @overload
     def __init__(self): ...
@@ -3331,6 +3486,7 @@ class FileDgn:
     def ToString(self) -> str: ...
 
 
+from Rhino.Collections import ArchivableDictionary
 class FileDgnReadOptions:
     @overload
     def __init__(self): ...
@@ -3381,6 +3537,7 @@ class FileDst:
     def ToString(self) -> str: ...
 
 
+from Rhino.Collections import ArchivableDictionary
 class FileDstReadOptions:
     @overload
     def __init__(self): ...
@@ -3419,6 +3576,7 @@ class FileDwg:
 
 
 from Rhino import UnitSystem
+from Rhino.Collections import ArchivableDictionary
 class FileDwgReadOptions:
     @overload
     def __init__(self): ...
@@ -3474,6 +3632,7 @@ class FileDwgReadOptions:
     def ToString(self) -> str: ...
 
 
+from Rhino.Collections import ArchivableDictionary
 class FileDwgWriteOptions:
     @overload
     def __init__(self): ...
@@ -3612,6 +3771,7 @@ class FileEps:
     def ToString(self) -> str: ...
 
 
+from Rhino.Collections import ArchivableDictionary
 class FileEpsReadOptions:
     @overload
     def __init__(self): ...
@@ -3661,6 +3821,7 @@ class FileFbx:
     def Write(path: str, doc: RhinoDoc, options: FileFbxWriteOptions) -> bool: ...
 
 
+from Rhino.Collections import ArchivableDictionary
 class FileFbxReadOptions:
     @overload
     def __init__(self): ...
@@ -3700,6 +3861,8 @@ class FileFbxReadOptions:
     def ToString(self) -> str: ...
 
 
+from Rhino.Geometry import MeshingParameters
+from Rhino.Collections import ArchivableDictionary
 class FileFbxWriteOptions:
     @overload
     def __init__(self): ...
@@ -3771,6 +3934,7 @@ class FileGHS:
     def ToString(self) -> str: ...
 
 
+from Rhino.Collections import ArchivableDictionary
 class FileGHSReadOptions:
     @overload
     def __init__(self): ...
@@ -3815,6 +3979,7 @@ class FileGltf:
     def Write(filename: str, doc: RhinoDoc, options: FileGltfWriteOptions) -> bool: ...
 
 
+from Rhino.Collections import ArchivableDictionary
 class FileGltfWriteOptions:
     @overload
     def __init__(self): ...
@@ -3909,6 +4074,8 @@ class FileGts:
     def Write(path: str, doc: RhinoDoc, options: FileGtsWriteOptions) -> bool: ...
 
 
+from Rhino.Geometry import MeshingParameters
+from Rhino.Collections import ArchivableDictionary
 class FileGtsWriteOptions:
     @overload
     def __init__(self): ...
@@ -3944,6 +4111,7 @@ class FileIgs:
 
 
 from Rhino import UnitSystem
+from Rhino.Collections import ArchivableDictionary
 class FileIgsWriteOptions:
     @overload
     def __init__(self): ...
@@ -4141,6 +4309,7 @@ class FileLwo:
     def Write(path: str, doc: RhinoDoc, options: FileLwoWriteOptions) -> bool: ...
 
 
+from Rhino.Collections import ArchivableDictionary
 class FileLwoReadOptions:
     @overload
     def __init__(self): ...
@@ -4164,6 +4333,8 @@ class FileLwoReadOptions:
     def ToString(self) -> str: ...
 
 
+from Rhino.Geometry import MeshingParameters
+from Rhino.Collections import ArchivableDictionary
 class FileLwoWriteOptions:
     @overload
     def __init__(self): ...
@@ -4188,6 +4359,8 @@ class FileLwoWriteOptions:
 
 
 from Rhino import RhinoDoc
+from Rhino.PlugIns import WriteFileResult
+from System.IO import StreamWriter
 class FileObj:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -4211,6 +4384,7 @@ class FileObj:
     def Write(filename: str, meshes: Iterable[Mesh], options: FileObjWriteOptions) -> WriteFileResult: ...
 
 
+from Rhino.Geometry import Transform
 class FileObjReadOptions:
     @overload
     def __init__(self, readOptions: FileReadOptions): ...
@@ -4259,6 +4433,8 @@ class FileObjReadOptions:
     def ToString(self) -> str: ...
 
 
+from Rhino.Geometry import MeshingParameters
+from Rhino.Geometry import Transform
 class FileObjWriteOptions:
     @overload
     def __init__(self, writeOptions: FileWriteOptions): ...
@@ -4409,6 +4585,14 @@ class FileObjWriteOptions:
 
 
 from System import EventHandler
+from Rhino.Display import ViewCaptureSettings
+from Rhino.DocObjects import Font
+from System.Drawing import Color
+from Rhino.DocObjects import TextHorizontalAlignment
+from Rhino.DocObjects import TextVerticalAlignment
+from System.Drawing import PointF
+from System.Drawing import Bitmap
+from System.IO import Stream
 from Rhino import RhinoDoc
 class FilePdf:
     @overload
@@ -4468,6 +4652,7 @@ class FilePdfEventArgs:
     def ToString(self) -> str: ...
 
 
+from Rhino.Collections import ArchivableDictionary
 class FilePdfReadOptions:
     @overload
     def __init__(self): ...
@@ -4508,6 +4693,7 @@ class FilePdfReadOptions:
 
 
 from Rhino import RhinoDoc
+from Rhino.PlugIns import WriteFileResult
 class FilePly:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -4526,6 +4712,7 @@ class FilePly:
 
 
 from Rhino import UnitSystem
+from Rhino.Collections import ArchivableDictionary
 class FilePlyReadOptions:
     @overload
     def __init__(self): ...
@@ -4545,6 +4732,7 @@ class FilePlyReadOptions:
     def ToString(self) -> str: ...
 
 
+from Rhino.Geometry import MeshingParameters
 class FilePlyWriteOptions:
     @overload
     def __init__(self, writeOptions: FileWriteOptions): ...
@@ -4602,6 +4790,8 @@ class FilePov:
     def Write(path: str, doc: RhinoDoc, options: FilePovWriteOptions) -> bool: ...
 
 
+from Rhino.Geometry import MeshingParameters
+from Rhino.Collections import ArchivableDictionary
 class FilePovWriteOptions:
     @overload
     def __init__(self): ...
@@ -4644,6 +4834,7 @@ class FileRaw:
 
 
 from Rhino import UnitSystem
+from Rhino.Collections import ArchivableDictionary
 class FileRawReadOptions:
     @overload
     def __init__(self): ...
@@ -4663,6 +4854,8 @@ class FileRawReadOptions:
     def ToString(self) -> str: ...
 
 
+from Rhino.Geometry import MeshingParameters
+from Rhino.Collections import ArchivableDictionary
 class FileRawWriteOptions:
     @overload
     def __init__(self): ...
@@ -4683,6 +4876,7 @@ class FileRawWriteOptions:
 
 
 from System import Guid
+from Rhino.Collections import ArchivableDictionary
 class FileReadOptions:
     @overload
     def __init__(self): ...
@@ -4790,6 +4984,7 @@ class FileSat:
     def Write(filename: str, doc: RhinoDoc, options: FileSatWriteOptions) -> bool: ...
 
 
+from Rhino.Collections import ArchivableDictionary
 class FileSatWriteOptions:
     @overload
     def __init__(self): ...
@@ -4827,6 +5022,7 @@ class FileSkp:
     def Write(filename: str, doc: RhinoDoc, options: FileSkpWriteOptions) -> bool: ...
 
 
+from Rhino.Collections import ArchivableDictionary
 class FileSkpReadOptions:
     @overload
     def __init__(self): ...
@@ -4882,6 +5078,7 @@ class FileSkpReadOptions:
     def ToString(self) -> str: ...
 
 
+from Rhino.Collections import ArchivableDictionary
 class FileSkpWriteOptions:
     @overload
     def __init__(self): ...
@@ -4920,6 +5117,7 @@ class FileSlc:
     def Write(filename: str, doc: RhinoDoc, options: FileSlcWriteOptions) -> bool: ...
 
 
+from Rhino.Geometry import Point3d
 class FileSlcWriteOptions:
     @overload
     def __init__(self): ...
@@ -4972,6 +5170,7 @@ class FileStl:
 
 
 from Rhino import UnitSystem
+from Rhino.Collections import ArchivableDictionary
 class FileStlReadOptions:
     @overload
     def __init__(self): ...
@@ -5003,6 +5202,8 @@ class FileStlReadOptions:
     def ToString(self) -> str: ...
 
 
+from Rhino.Geometry import MeshingParameters
+from Rhino.Collections import ArchivableDictionary
 class FileStlWriteOptions:
     @overload
     def __init__(self): ...
@@ -5048,6 +5249,7 @@ class FileStp:
     def Write(filename: str, doc: RhinoDoc, options: FileStpWriteOptions) -> bool: ...
 
 
+from Rhino.Collections import ArchivableDictionary
 class FileStpReadOptions:
     @overload
     def __init__(self): ...
@@ -5075,6 +5277,7 @@ class FileStpReadOptions:
     def ToString(self) -> str: ...
 
 
+from Rhino.Collections import ArchivableDictionary
 class FileStpWriteOptions:
     @overload
     def __init__(self): ...
@@ -5121,6 +5324,7 @@ class FileSvg:
     def ToString(self) -> str: ...
 
 
+from Rhino.Collections import ArchivableDictionary
 class FileSvgReadOptions:
     @overload
     def __init__(self): ...
@@ -5163,6 +5367,7 @@ class FileSW:
     def ToString(self) -> str: ...
 
 
+from Rhino.Collections import ArchivableDictionary
 class FileSwReadOptions:
     @overload
     def __init__(self): ...
@@ -5208,6 +5413,7 @@ class FileTxt:
     def Write(path: str, doc: RhinoDoc, options: FileTxtWriteOptions) -> bool: ...
 
 
+from Rhino.Collections import ArchivableDictionary
 class FileTxtReadOptions:
     @overload
     def __init__(self): ...
@@ -5235,6 +5441,7 @@ class FileTxtReadOptions:
     def ToString(self) -> str: ...
 
 
+from Rhino.Collections import ArchivableDictionary
 class FileTxtWriteOptions:
     @overload
     def __init__(self): ...
@@ -5309,6 +5516,8 @@ class FileUdo:
     def Write(path: str, doc: RhinoDoc, options: FileUdoWriteOptions) -> bool: ...
 
 
+from Rhino.Geometry import MeshingParameters
+from Rhino.Collections import ArchivableDictionary
 class FileUdoWriteOptions:
     @overload
     def __init__(self): ...
@@ -5343,6 +5552,8 @@ class FileUsd:
     def Write(path: str, doc: RhinoDoc, options: FileUsdWriteOptions) -> bool: ...
 
 
+from Rhino.Geometry import MeshingParameters
+from Rhino.Collections import ArchivableDictionary
 class FileUsdWriteOptions:
     @overload
     def __init__(self): ...
@@ -5377,6 +5588,7 @@ class FileVda:
     def Write(path: str, doc: RhinoDoc, options: FileVdaWriteOptions) -> bool: ...
 
 
+from Rhino.Collections import ArchivableDictionary
 class FileVdaWriteOptions:
     @overload
     def __init__(self): ...
@@ -5455,6 +5667,8 @@ class FileVrml:
     def Write(path: str, doc: RhinoDoc, options: FileVrmlWriteOptions) -> bool: ...
 
 
+from Rhino.Geometry import MeshingParameters
+from Rhino.Collections import ArchivableDictionary
 class FileVrmlWriteOptions:
     @overload
     def __init__(self): ...
@@ -5490,7 +5704,9 @@ class FileVrmlWriteOptions:
     def ToString(self) -> str: ...
 
 
+from Rhino.Geometry import Transform
 from Rhino import RhinoDoc
+from Rhino.Collections import ArchivableDictionary
 class FileWriteOptions:
     @overload
     def __init__(self): ...
@@ -5577,6 +5793,7 @@ class FileX_T:
     def Write(filename: str, doc: RhinoDoc, options: FileX_TWriteOptions) -> bool: ...
 
 
+from Rhino.Collections import ArchivableDictionary
 class FileX_TWriteOptions:
     @overload
     def __init__(self): ...
@@ -5611,6 +5828,8 @@ class FileX3dv:
     def Write(path: str, doc: RhinoDoc, options: FileX3dvWriteOptions) -> bool: ...
 
 
+from Rhino.Geometry import MeshingParameters
+from Rhino.Collections import ArchivableDictionary
 class FileX3dvWriteOptions:
     @overload
     def __init__(self): ...
@@ -5657,6 +5876,8 @@ class FileXaml:
     def Write(path: str, doc: RhinoDoc, options: FileFbxWriteOptions) -> bool: ...
 
 
+from Rhino.Geometry import MeshingParameters
+from Rhino.Collections import ArchivableDictionary
 class FileXamlWriteOptions:
     @overload
     def __init__(self): ...
@@ -5740,6 +5961,8 @@ class ImportFillMode(Enum):
 
 
 from System import Guid
+from Rhino.DocObjects import ModelComponent
+from Rhino.DocObjects import ModelComponentType
 class ManifestTable:
     def __iter__(self) -> Iterator[ModelComponent]: ...
     @overload
@@ -5819,6 +6042,7 @@ class MeshPrecisionMode(Enum):
 
 
 from System import Guid
+from Rhino.DocObjects import ModelComponentType
 class NameHash:
     @overload
     def __init__(self, name: str): ...
@@ -5978,6 +6202,7 @@ class SerializationOptions:
 
 
 from System import Nullable
+from System.IO import Stream
 class SHA1OpenNURBS:
     @overload
     def __init__(self): ...

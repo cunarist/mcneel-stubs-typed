@@ -49,7 +49,7 @@ class GH_Format:
     def ToString(self) -> str: ...
 
 
-from .ObjectModel import ReadOnlyCollection
+from System.Collections.ObjectModel import ReadOnlyCollection
 class GH_GlossaryItem:
     @overload
     def Equals(self, obj: object) -> bool: ...

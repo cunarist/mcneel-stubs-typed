@@ -322,11 +322,13 @@ class Attributes:
 
 
 from Rhino.Display import ColorGradient
+from Grasshopper.Kernel.Types import IGH_Goo
 from Rhino.Geometry import BoundingBox
 from Grasshopper.Kernel import GH_PreviewWireArgs
 from Grasshopper.Kernel import GH_PreviewMeshArgs
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from Grasshopper.Kernel.Types import IGH_GooProxy
 class DisplayColorGradient:
     @overload
     def __init__(self): ...
@@ -379,6 +381,10 @@ class DisplayColorGradient:
 
 
 from Rhino.Display import ColorStop
+from Grasshopper.Kernel.Types import IGH_Goo
+from Grasshopper.Kernel.Types import GH_QuickCastType
+from Grasshopper.Kernel.Types import IGH_QuickCast
+from Grasshopper.Kernel.Types import Complex
 from Rhino.Geometry import Matrix
 from Rhino.Geometry import Point3d
 from Rhino.Geometry import Vector3d
@@ -386,6 +392,7 @@ from System.Drawing import Color
 from Rhino.Geometry import Interval
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from Grasshopper.Kernel.Types import IGH_GooProxy
 class DisplayColorStop:
     @overload
     def __init__(self): ...
@@ -773,6 +780,7 @@ from Rhino.Display import RhinoViewport
 from System import Guid
 from Rhino.Geometry import Transform
 from Rhino.Geometry import BoundingBox
+from Grasshopper.Kernel.Types import IGH_GeometricGoo
 from Rhino.Geometry import SpaceMorph
 class ModelView:
     @overload

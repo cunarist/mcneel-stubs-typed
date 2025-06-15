@@ -292,6 +292,7 @@ class GetBaseClass:
 
 from System.Threading import CancellationToken
 from System import EventHandler
+from System.Threading.Tasks import Task
 from Rhino import RhinoDoc
 from Rhino.Commands import Result
 from System import IProgress
@@ -1344,6 +1345,8 @@ from Rhino.Geometry import GeometryBase
 from Rhino.Geometry import ComponentIndex
 from System import AsyncCallback
 from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from System.Reflection import MethodInfo
 class GetObjectGeometryFilter:
     @overload
@@ -2738,6 +2741,7 @@ class PickStyle(Enum):
     CrossingPick = 3
 
 
+from System.Threading.Tasks import Task
 from Rhino import RhinoDoc
 class TaskCompleteEventArgs:
     @overload

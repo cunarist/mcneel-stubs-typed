@@ -3,7 +3,9 @@ from enum import Enum
 
 
 
+from System.IO import Stream
 from System import Nullable
+from System.Reflection import Assembly
 from Eto import Platform
 from System import IntPtr
 from Eto import PropertyStore
@@ -1370,6 +1372,7 @@ class FillMode(Enum):
 
 
 from System import Nullable
+from System.IO import Stream
 from Eto import Platform
 from System import IntPtr
 from Eto import PropertyStore
@@ -1613,6 +1616,8 @@ class FontStyle(Enum):
     Italic = 2
 
 
+from System.IO import Stream
+from Eto.Forms import Range
 from Eto import Platform
 from System import IntPtr
 from Eto import PropertyStore
@@ -2125,6 +2130,8 @@ class GraphicsPathExtensions:
     def ToString(self) -> str: ...
 
 
+from System.IO import Stream
+from System.Reflection import Assembly
 from System import Nullable
 from Eto import Platform
 from System import IntPtr
@@ -2200,6 +2207,8 @@ class Icon(Image):
 
 
 from System import Func
+from System.IO import Stream
+from System.Reflection import Assembly
 class IconFrame:
     @overload
     def __init__(self, scale: float, load: Func): ...
@@ -2278,6 +2287,7 @@ class IGraphicsPath:
     def Transform(self, matrix: IMatrix) -> None: ...
 
 
+from System.IO import Stream
 from System import Func
 class IHandler:
     @overload
@@ -2330,6 +2340,7 @@ class IHandler:
     def SetColor(self, widget: SolidBrush, color: Color) -> None: ...
 
 
+from System.IO import Stream
 class IHandler:
     @overload
     def Create(self, stream: Stream) -> None: ...
@@ -2430,6 +2441,7 @@ class IHandler:
     def Wrap(self, value: FormattedTextWrapMode) -> None: ...
 
 
+from System.IO import Stream
 class IHandler:
     @overload
     def Create(self, family: FontFamily) -> None: ...
@@ -2515,6 +2527,7 @@ class IHandler:
     def ModifyComponent(self, controlObject: object, r: Nullable, g: Nullable, b: Nullable, a: Nullable) -> object: ...
 
 
+from System.IO import Stream
 from System import Nullable
 class IHandler:
     @overload
@@ -3122,7 +3135,9 @@ class PaddingF:
     def ToString(self) -> str: ...
 
 
-from .Specialized import NotifyCollectionChangedEventHandler
+from System.IO import BinaryWriter
+from System.IO import BinaryReader
+from System.Collections.Specialized import NotifyCollectionChangedEventHandler
 class Palette:
     @overload
     def __init__(self): ...

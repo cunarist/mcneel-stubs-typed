@@ -56,10 +56,30 @@ class GetResult(Enum):
     User1 = 4294967295
 
 
+from Rhino.UI import LocalizeStringPair
 from Rhino import RhinoDoc
+from Rhino.Geometry import Point3d
+from Rhino.Commands import Result
 from System import Guid
-from .Custom import GetObjectGeometryFilter
-from .Custom import GetFileNameMode
+from Rhino.DocObjects import MeshObject
+from System.Drawing import Color
+from Rhino.DocObjects import ObjectType
+from Rhino.DocObjects import ObjRef
+from Rhino.Input.Custom import GetObjectGeometryFilter
+from Rhino.Geometry import Plane
+from System.Drawing import Rectangle
+from Rhino.Display import RhinoView
+from Rhino.Geometry import Box
+from Rhino.Geometry import MeshingParameters
+from Rhino.DocObjects import GripObject
+from Rhino.Geometry import NurbsCurve
+from Rhino.Geometry import Line
+from Rhino.Geometry import Polyline
+from Rhino.Geometry import Arc
+from Rhino.Geometry import Circle
+from Rhino.Geometry import LinearDimension
+from Rhino.Input.Custom import GetFileNameMode
+from Rhino.Display import ViewCaptureSettings
 class RhinoGet:
     @overload
     def Equals(self, obj: object) -> bool: ...

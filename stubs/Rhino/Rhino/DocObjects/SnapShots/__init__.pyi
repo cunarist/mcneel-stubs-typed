@@ -11,6 +11,7 @@ from Rhino.FileIO import BinaryArchiveReader
 from Rhino.DocObjects import RhinoObject
 from Rhino.Geometry import Transform
 from Rhino.Geometry import BoundingBox
+from Rhino.Runtime.InteropWrappers import SimpleArrayBinaryArchiveReader
 from Rhino.FileIO import TextLog
 class SnapShotsClient:
     @overload

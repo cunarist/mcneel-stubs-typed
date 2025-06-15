@@ -40,10 +40,12 @@ from Grasshopper.Kernel import GH_ParameterSide
 from Grasshopper.Kernel import IGH_Param
 from Grasshopper.Kernel import GH_ComponentParamServer
 from Grasshopper.Kernel import GH_RuntimeMessageLevel
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_GuidTable
+from System.Windows.Forms import ToolStripDropDown
 from Grasshopper.Kernel import GH_DataComparison
 from System import TimeSpan
 from Rhino.Geometry import BoundingBox
@@ -64,6 +66,8 @@ from Grasshopper.Kernel import DisplayExpiredEventHandler
 from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -313,10 +317,12 @@ from Grasshopper.Kernel import GH_Exposure
 from System import Guid
 from Grasshopper.Kernel import GH_ComponentParamServer
 from Grasshopper.Kernel import GH_RuntimeMessageLevel
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_GuidTable
+from System.Windows.Forms import ToolStripDropDown
 from Grasshopper.Kernel import GH_DataComparison
 from System import TimeSpan
 from Rhino.Geometry import BoundingBox
@@ -337,6 +343,8 @@ from Grasshopper.Kernel import DisplayExpiredEventHandler
 from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -576,10 +584,12 @@ from Grasshopper.Kernel import GH_Exposure
 from System import Guid
 from Grasshopper.Kernel import GH_ComponentParamServer
 from Grasshopper.Kernel import GH_RuntimeMessageLevel
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_GuidTable
+from System.Windows.Forms import ToolStripDropDown
 from Grasshopper.Kernel import GH_DataComparison
 from System import TimeSpan
 from Rhino.Geometry import BoundingBox
@@ -600,6 +610,8 @@ from Grasshopper.Kernel import DisplayExpiredEventHandler
 from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -840,10 +852,12 @@ from Grasshopper.Kernel import GH_Exposure
 from System import Guid
 from Grasshopper.Kernel import GH_ComponentParamServer
 from Grasshopper.Kernel import GH_RuntimeMessageLevel
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_GuidTable
+from System.Windows.Forms import ToolStripDropDown
 from Grasshopper.Kernel import GH_DataComparison
 from System import TimeSpan
 from Rhino.Geometry import BoundingBox
@@ -863,6 +877,8 @@ from Grasshopper.Kernel import DisplayExpiredEventHandler
 from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -1109,10 +1125,12 @@ from Rhino import RhinoDoc
 from Rhino.DocObjects import ObjectAttributes
 from Grasshopper.Kernel import GH_ComponentParamServer
 from Grasshopper.Kernel import GH_RuntimeMessageLevel
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_GuidTable
+from System.Windows.Forms import ToolStripDropDown
 from Grasshopper.Kernel import GH_DataComparison
 from System import TimeSpan
 from Grasshopper.Kernel import GH_SolutionPhase
@@ -1126,6 +1144,8 @@ from Grasshopper.Kernel import DisplayExpiredEventHandler
 from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -1378,6 +1398,7 @@ from Rhino import RhinoDoc
 from Rhino.DocObjects import ObjectAttributes
 from System import Guid
 from Grasshopper.Kernel import IGH_PreviewData
+from Grasshopper.Kernel.Types import GH_Material
 from System.Drawing import Color
 from Rhino.Display import DisplayMaterial
 class GH_CustomPreviewItem:
@@ -1399,7 +1420,9 @@ class GH_CustomPreviewItem:
     def ToString(self) -> str: ...
 
 
+from Grasshopper.GUI.Canvas import GH_Canvas
 from Grasshopper.GUI import GH_CanvasMouseEvent
+from Grasshopper.GUI.Canvas import GH_ObjectResponse
 from System.Drawing import PointF
 from Grasshopper.GUI import GH_TooltipDisplayEventArgs
 from System.Drawing import RectangleF
@@ -1410,6 +1433,9 @@ from Grasshopper.Kernel import IGH_Component
 from System import Guid
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from Grasshopper.GUI.Canvas import GH_CanvasChannel
+from System.Windows.Forms import KeyEventArgs
+from Grasshopper.Kernel.Attributes import GH_ComponentAttributes
 class GH_DataDamAttributes(GH_ComponentAttributes):
     @overload
     def __init__(self, owner: GH_DataDamComponent): ...
@@ -1507,6 +1533,7 @@ class GH_DataDamAttributes(GH_ComponentAttributes):
 
 from Grasshopper.Kernel import GH_Exposure
 from System import Guid
+from System.Windows.Forms import ToolStripDropDown
 from System import TimeSpan
 from Grasshopper.Kernel import GH_Document
 from Grasshopper.Kernel import GH_DocumentContext
@@ -1516,6 +1543,7 @@ from Grasshopper.Kernel import GH_ParameterSide
 from Grasshopper.Kernel import IGH_Param
 from Grasshopper.Kernel import GH_ComponentParamServer
 from Grasshopper.Kernel import GH_RuntimeMessageLevel
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_GuidTable
 from Grasshopper.Kernel import GH_DataComparison
@@ -1535,6 +1563,8 @@ from Grasshopper.Kernel import DisplayExpiredEventHandler
 from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -1794,10 +1824,12 @@ from Grasshopper.Kernel import GH_Exposure
 from System import Guid
 from Grasshopper.Kernel import GH_ComponentParamServer
 from Grasshopper.Kernel import GH_RuntimeMessageLevel
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_GuidTable
+from System.Windows.Forms import ToolStripDropDown
 from Grasshopper.Kernel import GH_DataComparison
 from System import TimeSpan
 from Rhino.Geometry import BoundingBox
@@ -1818,6 +1850,8 @@ from Grasshopper.Kernel import DisplayExpiredEventHandler
 from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -2059,10 +2093,12 @@ from Grasshopper.Kernel import GH_ParameterSide
 from Grasshopper.Kernel import IGH_Param
 from Grasshopper.Kernel import GH_ComponentParamServer
 from Grasshopper.Kernel import GH_RuntimeMessageLevel
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_GuidTable
+from System.Windows.Forms import ToolStripDropDown
 from Grasshopper.Kernel import GH_DataComparison
 from System import TimeSpan
 from Rhino.Geometry import BoundingBox
@@ -2083,6 +2119,8 @@ from Grasshopper.Kernel import DisplayExpiredEventHandler
 from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -2336,10 +2374,12 @@ from Grasshopper.Kernel import GH_VarParamSide
 from Grasshopper.GUI import GH_VariableParameterManager
 from Grasshopper.Kernel import GH_ComponentParamServer
 from Grasshopper.Kernel import GH_RuntimeMessageLevel
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_GuidTable
+from System.Windows.Forms import ToolStripDropDown
 from Grasshopper.Kernel import GH_DataComparison
 from System import TimeSpan
 from Rhino.Geometry import BoundingBox
@@ -2360,6 +2400,8 @@ from Grasshopper.Kernel import DisplayExpiredEventHandler
 from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -2636,10 +2678,12 @@ from Grasshopper.Kernel import GH_Exposure
 from System import Guid
 from Grasshopper.Kernel import GH_ComponentParamServer
 from Grasshopper.Kernel import GH_RuntimeMessageLevel
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_GuidTable
+from System.Windows.Forms import ToolStripDropDown
 from Grasshopper.Kernel import GH_DataComparison
 from System import TimeSpan
 from Rhino.Geometry import BoundingBox
@@ -2660,6 +2704,8 @@ from Grasshopper.Kernel import DisplayExpiredEventHandler
 from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -2899,10 +2945,12 @@ from Grasshopper.Kernel import GH_Exposure
 from System import Guid
 from Grasshopper.Kernel import GH_ComponentParamServer
 from Grasshopper.Kernel import GH_RuntimeMessageLevel
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_GuidTable
+from System.Windows.Forms import ToolStripDropDown
 from Grasshopper.Kernel import GH_DataComparison
 from System import TimeSpan
 from Rhino.Geometry import BoundingBox
@@ -2923,6 +2971,8 @@ from Grasshopper.Kernel import DisplayExpiredEventHandler
 from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -3162,10 +3212,12 @@ from Grasshopper.Kernel import GH_Exposure
 from System import Guid
 from Grasshopper.Kernel import GH_ComponentParamServer
 from Grasshopper.Kernel import GH_RuntimeMessageLevel
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_GuidTable
+from System.Windows.Forms import ToolStripDropDown
 from Grasshopper.Kernel import GH_DataComparison
 from System import TimeSpan
 from Rhino.Geometry import BoundingBox
@@ -3186,6 +3238,8 @@ from Grasshopper.Kernel import DisplayExpiredEventHandler
 from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -3427,10 +3481,12 @@ from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from Grasshopper.Kernel import GH_ComponentParamServer
 from Grasshopper.Kernel import GH_RuntimeMessageLevel
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_GuidTable
+from System.Windows.Forms import ToolStripDropDown
 from Grasshopper.Kernel import GH_DataComparison
 from System import TimeSpan
 from Rhino.Geometry import BoundingBox
@@ -3449,6 +3505,8 @@ from Grasshopper.Kernel import DisplayExpiredEventHandler
 from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -3688,10 +3746,12 @@ from Grasshopper.Kernel import GH_Exposure
 from System import Guid
 from Grasshopper.Kernel import GH_ComponentParamServer
 from Grasshopper.Kernel import GH_RuntimeMessageLevel
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_GuidTable
+from System.Windows.Forms import ToolStripDropDown
 from Grasshopper.Kernel import GH_DataComparison
 from System import TimeSpan
 from Rhino.Geometry import BoundingBox
@@ -3712,6 +3772,8 @@ from Grasshopper.Kernel import DisplayExpiredEventHandler
 from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -4004,10 +4066,12 @@ from System import Guid
 from Grasshopper.Kernel import GH_Exposure
 from Grasshopper.Kernel import GH_ComponentParamServer
 from Grasshopper.Kernel import GH_RuntimeMessageLevel
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_GuidTable
+from System.Windows.Forms import ToolStripDropDown
 from Grasshopper.Kernel import GH_DataComparison
 from System import TimeSpan
 from Rhino.Geometry import BoundingBox
@@ -4028,6 +4092,8 @@ from Grasshopper.Kernel import DisplayExpiredEventHandler
 from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -4267,10 +4333,12 @@ from Grasshopper.Kernel import GH_Exposure
 from System import Guid
 from Grasshopper.Kernel import GH_ComponentParamServer
 from Grasshopper.Kernel import GH_RuntimeMessageLevel
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_GuidTable
+from System.Windows.Forms import ToolStripDropDown
 from Grasshopper.Kernel import GH_DataComparison
 from System import TimeSpan
 from Rhino.Geometry import BoundingBox
@@ -4291,6 +4359,8 @@ from Grasshopper.Kernel import DisplayExpiredEventHandler
 from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -4530,10 +4600,12 @@ from Grasshopper.Kernel import GH_Exposure
 from System import Guid
 from Grasshopper.Kernel import GH_ComponentParamServer
 from Grasshopper.Kernel import GH_RuntimeMessageLevel
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_GuidTable
+from System.Windows.Forms import ToolStripDropDown
 from Grasshopper.Kernel import GH_DataComparison
 from System import TimeSpan
 from Rhino.Geometry import BoundingBox
@@ -4554,6 +4626,8 @@ from Grasshopper.Kernel import DisplayExpiredEventHandler
 from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -4793,10 +4867,12 @@ from System import Guid
 from Grasshopper.Kernel import GH_Exposure
 from Grasshopper.Kernel import GH_ComponentParamServer
 from Grasshopper.Kernel import GH_RuntimeMessageLevel
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_GuidTable
+from System.Windows.Forms import ToolStripDropDown
 from Grasshopper.Kernel import GH_DataComparison
 from System import TimeSpan
 from Rhino.Geometry import BoundingBox
@@ -4817,6 +4893,8 @@ from Grasshopper.Kernel import DisplayExpiredEventHandler
 from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -5060,10 +5138,12 @@ from GH_Util.MetaBall import GH_Context
 from Rhino.Geometry import Plane
 from Grasshopper.Kernel import GH_ComponentParamServer
 from Grasshopper.Kernel import GH_RuntimeMessageLevel
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_GuidTable
+from System.Windows.Forms import ToolStripDropDown
 from Grasshopper.Kernel import GH_DataComparison
 from System import TimeSpan
 from Rhino.Geometry import BoundingBox
@@ -5084,6 +5164,8 @@ from Grasshopper.Kernel import DisplayExpiredEventHandler
 from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -5326,10 +5408,12 @@ from Grasshopper.Kernel import GH_Exposure
 from System import Guid
 from Grasshopper.Kernel import GH_ComponentParamServer
 from Grasshopper.Kernel import GH_RuntimeMessageLevel
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_GuidTable
+from System.Windows.Forms import ToolStripDropDown
 from Grasshopper.Kernel import GH_DataComparison
 from System import TimeSpan
 from Rhino.Geometry import BoundingBox
@@ -5350,6 +5434,8 @@ from Grasshopper.Kernel import DisplayExpiredEventHandler
 from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -5589,10 +5675,12 @@ from Grasshopper.Kernel import GH_Exposure
 from System import Guid
 from Grasshopper.Kernel import GH_ComponentParamServer
 from Grasshopper.Kernel import GH_RuntimeMessageLevel
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_GuidTable
+from System.Windows.Forms import ToolStripDropDown
 from Grasshopper.Kernel import GH_DataComparison
 from System import TimeSpan
 from Rhino.Geometry import BoundingBox
@@ -5613,6 +5701,8 @@ from Grasshopper.Kernel import DisplayExpiredEventHandler
 from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -5852,10 +5942,12 @@ from System import Guid
 from Grasshopper.Kernel import GH_Exposure
 from Grasshopper.Kernel import GH_ComponentParamServer
 from Grasshopper.Kernel import GH_RuntimeMessageLevel
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_GuidTable
+from System.Windows.Forms import ToolStripDropDown
 from Grasshopper.Kernel import GH_DataComparison
 from System import TimeSpan
 from Rhino.Geometry import BoundingBox
@@ -5876,6 +5968,8 @@ from Grasshopper.Kernel import DisplayExpiredEventHandler
 from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -6115,10 +6209,12 @@ from Grasshopper.Kernel import GH_Exposure
 from System import Guid
 from Grasshopper.Kernel import GH_ComponentParamServer
 from Grasshopper.Kernel import GH_RuntimeMessageLevel
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_GuidTable
+from System.Windows.Forms import ToolStripDropDown
 from Grasshopper.Kernel import GH_DataComparison
 from System import TimeSpan
 from Rhino.Geometry import BoundingBox
@@ -6139,6 +6235,8 @@ from Grasshopper.Kernel import DisplayExpiredEventHandler
 from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -6382,10 +6480,12 @@ from Rhino import RhinoDoc
 from Rhino.DocObjects import ObjectAttributes
 from Grasshopper.Kernel import GH_ComponentParamServer
 from Grasshopper.Kernel import GH_RuntimeMessageLevel
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_GuidTable
+from System.Windows.Forms import ToolStripDropDown
 from Grasshopper.Kernel import GH_DataComparison
 from System import TimeSpan
 from Grasshopper.Kernel import GH_RenderArgs
@@ -6402,6 +6502,8 @@ from Grasshopper.Kernel import DisplayExpiredEventHandler
 from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -6641,10 +6743,12 @@ from Grasshopper.Kernel import GH_Exposure
 from System import Guid
 from Grasshopper.Kernel import GH_ComponentParamServer
 from Grasshopper.Kernel import GH_RuntimeMessageLevel
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_GuidTable
+from System.Windows.Forms import ToolStripDropDown
 from Grasshopper.Kernel import GH_DataComparison
 from System import TimeSpan
 from Rhino.Geometry import BoundingBox
@@ -6665,6 +6769,8 @@ from Grasshopper.Kernel import DisplayExpiredEventHandler
 from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -6908,10 +7014,12 @@ from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from Grasshopper.Kernel import GH_ComponentParamServer
 from Grasshopper.Kernel import GH_RuntimeMessageLevel
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_GuidTable
+from System.Windows.Forms import ToolStripDropDown
 from Grasshopper.Kernel import GH_DataComparison
 from System import TimeSpan
 from Rhino.Geometry import BoundingBox
@@ -6930,6 +7038,8 @@ from Grasshopper.Kernel import DisplayExpiredEventHandler
 from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -7182,7 +7292,9 @@ class GH_ReadFileComponent(GH_Component):
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from Grasshopper.GUI.Canvas import GH_Canvas
 from Grasshopper.GUI import GH_CanvasMouseEvent
+from Grasshopper.GUI.Canvas import GH_ObjectResponse
 from System.Drawing import RectangleF
 from System.Drawing import PointF
 from Grasshopper.GUI import GH_TooltipDisplayEventArgs
@@ -7193,6 +7305,9 @@ from Grasshopper.Kernel import IGH_Component
 from System import Guid
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
+from Grasshopper.GUI.Canvas import GH_CanvasChannel
+from System.Windows.Forms import KeyEventArgs
+from Grasshopper.Kernel.Attributes import GH_ComponentAttributes
 class GH_ReadFileComponentAttributes(GH_ComponentAttributes):
     @overload
     def __init__(self, owner: GH_ReadFileComponent): ...
@@ -7292,10 +7407,12 @@ from Grasshopper.Kernel import GH_Exposure
 from System import Guid
 from Grasshopper.Kernel import GH_ComponentParamServer
 from Grasshopper.Kernel import GH_RuntimeMessageLevel
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_GuidTable
+from System.Windows.Forms import ToolStripDropDown
 from Grasshopper.Kernel import GH_DataComparison
 from System import TimeSpan
 from Rhino.Geometry import BoundingBox
@@ -7316,6 +7433,8 @@ from Grasshopper.Kernel import DisplayExpiredEventHandler
 from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -7555,10 +7674,12 @@ from System import Guid
 from Grasshopper.Kernel import GH_Exposure
 from Grasshopper.Kernel import GH_ComponentParamServer
 from Grasshopper.Kernel import GH_RuntimeMessageLevel
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_GuidTable
+from System.Windows.Forms import ToolStripDropDown
 from Grasshopper.Kernel import GH_DataComparison
 from System import TimeSpan
 from Rhino.Geometry import BoundingBox
@@ -7579,6 +7700,8 @@ from Grasshopper.Kernel import DisplayExpiredEventHandler
 from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -7844,9 +7967,11 @@ from System import Guid
 from Grasshopper.Kernel import GH_Document
 from Grasshopper.Kernel import GH_ComponentParamServer
 from Grasshopper.Kernel import GH_RuntimeMessageLevel
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_GuidTable
+from System.Windows.Forms import ToolStripDropDown
 from Grasshopper.Kernel import GH_DataComparison
 from System import TimeSpan
 from Rhino.Geometry import BoundingBox
@@ -7867,6 +7992,8 @@ from Grasshopper.Kernel import DisplayExpiredEventHandler
 from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -8106,10 +8233,12 @@ from Grasshopper.Kernel import GH_Exposure
 from System import Guid
 from Grasshopper.Kernel import GH_ComponentParamServer
 from Grasshopper.Kernel import GH_RuntimeMessageLevel
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_GuidTable
+from System.Windows.Forms import ToolStripDropDown
 from Grasshopper.Kernel import GH_DataComparison
 from System import TimeSpan
 from Rhino.Geometry import BoundingBox
@@ -8130,6 +8259,8 @@ from Grasshopper.Kernel import DisplayExpiredEventHandler
 from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -8371,10 +8502,12 @@ from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from Grasshopper.Kernel import GH_ComponentParamServer
 from Grasshopper.Kernel import GH_RuntimeMessageLevel
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_GuidTable
+from System.Windows.Forms import ToolStripDropDown
 from Grasshopper.Kernel import GH_DataComparison
 from System import TimeSpan
 from Rhino.Geometry import BoundingBox
@@ -8393,6 +8526,8 @@ from Grasshopper.Kernel import DisplayExpiredEventHandler
 from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -8632,10 +8767,12 @@ from System import Guid
 from Grasshopper.Kernel import GH_Exposure
 from Grasshopper.Kernel import GH_ComponentParamServer
 from Grasshopper.Kernel import GH_RuntimeMessageLevel
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_GuidTable
+from System.Windows.Forms import ToolStripDropDown
 from Grasshopper.Kernel import GH_DataComparison
 from System import TimeSpan
 from Rhino.Geometry import BoundingBox
@@ -8656,6 +8793,8 @@ from Grasshopper.Kernel import DisplayExpiredEventHandler
 from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -8897,10 +9036,12 @@ from Grasshopper.Kernel import GH_ParameterSide
 from Grasshopper.Kernel import IGH_Param
 from Grasshopper.Kernel import GH_ComponentParamServer
 from Grasshopper.Kernel import GH_RuntimeMessageLevel
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_GuidTable
+from System.Windows.Forms import ToolStripDropDown
 from Grasshopper.Kernel import GH_DataComparison
 from System import TimeSpan
 from Rhino.Geometry import BoundingBox
@@ -8921,6 +9062,8 @@ from Grasshopper.Kernel import DisplayExpiredEventHandler
 from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -9174,10 +9317,12 @@ from Grasshopper.Kernel import GH_VarParamSide
 from Grasshopper.GUI import GH_VariableParameterManager
 from Grasshopper.Kernel import GH_ComponentParamServer
 from Grasshopper.Kernel import GH_RuntimeMessageLevel
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_GuidTable
+from System.Windows.Forms import ToolStripDropDown
 from Grasshopper.Kernel import GH_DataComparison
 from System import TimeSpan
 from Rhino.Geometry import BoundingBox
@@ -9198,6 +9343,8 @@ from Grasshopper.Kernel import DisplayExpiredEventHandler
 from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -9451,10 +9598,12 @@ from Grasshopper.Kernel import GH_ParameterSide
 from Grasshopper.Kernel import IGH_Param
 from Grasshopper.Kernel import GH_ComponentParamServer
 from Grasshopper.Kernel import GH_RuntimeMessageLevel
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_GuidTable
+from System.Windows.Forms import ToolStripDropDown
 from Grasshopper.Kernel import GH_DataComparison
 from System import TimeSpan
 from Rhino.Geometry import BoundingBox
@@ -9475,6 +9624,8 @@ from Grasshopper.Kernel import DisplayExpiredEventHandler
 from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -9728,10 +9879,12 @@ from Grasshopper.Kernel import GH_VarParamSide
 from Grasshopper.GUI import GH_VariableParameterManager
 from Grasshopper.Kernel import GH_ComponentParamServer
 from Grasshopper.Kernel import GH_RuntimeMessageLevel
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_GuidTable
+from System.Windows.Forms import ToolStripDropDown
 from Grasshopper.Kernel import GH_DataComparison
 from System import TimeSpan
 from Rhino.Geometry import BoundingBox
@@ -9752,6 +9905,8 @@ from Grasshopper.Kernel import DisplayExpiredEventHandler
 from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -10007,10 +10162,12 @@ from Grasshopper.Kernel import GH_Exposure
 from System import Guid
 from Grasshopper.Kernel import GH_ComponentParamServer
 from Grasshopper.Kernel import GH_RuntimeMessageLevel
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_GuidTable
+from System.Windows.Forms import ToolStripDropDown
 from Grasshopper.Kernel import GH_DataComparison
 from System import TimeSpan
 from Grasshopper.Kernel import GH_RenderArgs
@@ -10027,6 +10184,8 @@ from Grasshopper.Kernel import DisplayExpiredEventHandler
 from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -10269,10 +10428,12 @@ from Grasshopper.Kernel import GH_Exposure
 from System import Guid
 from Grasshopper.Kernel import GH_ComponentParamServer
 from Grasshopper.Kernel import GH_RuntimeMessageLevel
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_GuidTable
+from System.Windows.Forms import ToolStripDropDown
 from Grasshopper.Kernel import GH_DataComparison
 from System import TimeSpan
 from Grasshopper.Kernel import GH_RenderArgs
@@ -10290,6 +10451,8 @@ from Grasshopper.Kernel import DisplayExpiredEventHandler
 from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -10533,10 +10696,12 @@ from Grasshopper.Kernel import GH_Exposure
 from System import Guid
 from Grasshopper.Kernel import GH_ComponentParamServer
 from Grasshopper.Kernel import GH_RuntimeMessageLevel
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_GuidTable
+from System.Windows.Forms import ToolStripDropDown
 from Grasshopper.Kernel import GH_DataComparison
 from System import TimeSpan
 from Grasshopper.Kernel import GH_RenderArgs
@@ -10553,6 +10718,8 @@ from Grasshopper.Kernel import DisplayExpiredEventHandler
 from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -10823,10 +10990,12 @@ from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from Grasshopper.Kernel import GH_ComponentParamServer
 from Grasshopper.Kernel import GH_RuntimeMessageLevel
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_GuidTable
+from System.Windows.Forms import ToolStripDropDown
 from Grasshopper.Kernel import GH_DataComparison
 from System import TimeSpan
 from Grasshopper.Kernel import GH_RenderArgs
@@ -10841,6 +11010,8 @@ from Grasshopper.Kernel import DisplayExpiredEventHandler
 from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -11089,10 +11260,12 @@ from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from Grasshopper.Kernel import GH_ComponentParamServer
 from Grasshopper.Kernel import GH_RuntimeMessageLevel
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_GuidTable
+from System.Windows.Forms import ToolStripDropDown
 from Grasshopper.Kernel import GH_DataComparison
 from System import TimeSpan
 from Grasshopper.Kernel import GH_RenderArgs
@@ -11108,6 +11281,8 @@ from Grasshopper.Kernel import DisplayExpiredEventHandler
 from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -11351,10 +11526,12 @@ from Grasshopper.Kernel import GH_Exposure
 from System import Guid
 from Grasshopper.Kernel import GH_ComponentParamServer
 from Grasshopper.Kernel import GH_RuntimeMessageLevel
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_GuidTable
+from System.Windows.Forms import ToolStripDropDown
 from Grasshopper.Kernel import GH_DataComparison
 from System import TimeSpan
 from Rhino.Geometry import BoundingBox
@@ -11375,6 +11552,8 @@ from Grasshopper.Kernel import DisplayExpiredEventHandler
 from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -11614,10 +11793,12 @@ from Grasshopper.Kernel import GH_Exposure
 from System import Guid
 from Grasshopper.Kernel import GH_ComponentParamServer
 from Grasshopper.Kernel import GH_RuntimeMessageLevel
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_GuidTable
+from System.Windows.Forms import ToolStripDropDown
 from Grasshopper.Kernel import GH_DataComparison
 from System import TimeSpan
 from Rhino.Geometry import BoundingBox
@@ -11638,6 +11819,8 @@ from Grasshopper.Kernel import DisplayExpiredEventHandler
 from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -11877,10 +12060,12 @@ from Grasshopper.Kernel import GH_Exposure
 from System import Guid
 from Grasshopper.Kernel import GH_ComponentParamServer
 from Grasshopper.Kernel import GH_RuntimeMessageLevel
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_GuidTable
+from System.Windows.Forms import ToolStripDropDown
 from Grasshopper.Kernel import GH_DataComparison
 from System import TimeSpan
 from Rhino.Geometry import BoundingBox
@@ -11901,6 +12086,8 @@ from Grasshopper.Kernel import DisplayExpiredEventHandler
 from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription
@@ -12140,10 +12327,12 @@ from System import Guid
 from Grasshopper.Kernel import GH_Exposure
 from Grasshopper.Kernel import GH_ComponentParamServer
 from Grasshopper.Kernel import GH_RuntimeMessageLevel
+from System.Collections.Generic import IList
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import GH_Document
 from Grasshopper.Kernel import GH_DocumentContext
 from Grasshopper.Kernel import GH_GuidTable
+from System.Windows.Forms import ToolStripDropDown
 from Grasshopper.Kernel import GH_DataComparison
 from System import TimeSpan
 from Rhino.Geometry import BoundingBox
@@ -12164,6 +12353,8 @@ from Grasshopper.Kernel import DisplayExpiredEventHandler
 from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import PingDocumentEventHandler
 from Grasshopper.Kernel import GH_AutoSaveTrigger
+from Grasshopper.Kernel.Undo import IGH_UndoAction
+from Grasshopper.Kernel.Undo import GH_UndoRecord
 from System.Drawing import Bitmap
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import IGH_InstanceDescription

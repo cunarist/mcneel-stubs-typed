@@ -16,8 +16,8 @@ class Branch(Enum):
     Release = 4
 
 
-from .Serialization import GH_IWriter
-from .Serialization import GH_IReader
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 class GH_ISerializable:
     @overload
     def Read(self, reader: GH_IReader) -> bool: ...
@@ -25,6 +25,8 @@ class GH_ISerializable:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import DateTime
+from System import Version
 class VersionNumber:
     @overload
     def __init__(self, version: Version): ...
