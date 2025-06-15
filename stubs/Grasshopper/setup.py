@@ -19,7 +19,7 @@ setuptools.setup(
     name="Grasshopper-stubs",
     version="8.20.25157",
     package_data=find_stubs("Grasshopper"),
-    packages=["Grasshopper-stubs"],
+    packages=["Grasshopper"],
     author="Robert McNeel & Associates",
     author_email="steve@mcneel.com",
     description="Stubs for Grasshopper",

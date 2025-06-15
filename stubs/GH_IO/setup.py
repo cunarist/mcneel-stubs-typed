@@ -19,7 +19,7 @@ setuptools.setup(
     name="GH_IO-stubs",
     version="8.20.25157",
     package_data=find_stubs("GH_IO"),
-    packages=["GH_IO-stubs"],
+    packages=["GH_IO"],
     author="Robert McNeel & Associates",
     author_email="steve@mcneel.com",
     description="Stubs for GH_IO",

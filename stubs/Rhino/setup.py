@@ -19,7 +19,7 @@ setuptools.setup(
     name="Rhino-stubs",
     version="8.20.25157",
     package_data=find_stubs("Rhino"),
-    packages=["Rhino-stubs"],
+    packages=["Rhino"],
     author="Robert McNeel & Associates",
     author_email="steve@mcneel.com",
     description="Stubs for RhinoCommon",

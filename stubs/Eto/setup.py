@@ -19,7 +19,7 @@ setuptools.setup(
     name="Eto-stubs",
     version="2.9.0",
     package_data=find_stubs("Eto"),
-    packages=["Eto-stubs"],
+    packages=["Eto"],
     author="Robert McNeel & Associates",
     author_email="steve@mcneel.com",
     description="Stubs for Eto",
