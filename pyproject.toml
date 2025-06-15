@@ -1,0 +1,9 @@
+[project]
+name = "mcneel-stubs"
+version = "0.1.0"
+description = "Python type stubs for McNeel products"
+requires-python = ">=3.9"
+dependencies = ["pyright>=1.1.402"]
+
+[tool.pyright]
+typeCheckingMode = "standard"
