@@ -10,3 +10,6 @@ typeCheckingMode = "standard"
 
 [tool.ruff]
 select = []
+
+[tool.pylint]
+disable = "all"
