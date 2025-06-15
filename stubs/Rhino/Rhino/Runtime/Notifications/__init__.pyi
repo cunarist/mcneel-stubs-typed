@@ -18,7 +18,6 @@ from System import DateTime
 from System.Collections.Generic import ICollection
 from System.Collections.Generic import IDictionary
 from System import Action
-from System import Nullable
 from System import Func
 from System.ComponentModel import PropertyChangedEventHandler
 class Notification:
@@ -61,7 +60,7 @@ class Notification:
     @property
     def SeverityLevel(self) -> Severity: ...
     @property
-    def ShowEventId(self) -> Nullable: ...
+    def ShowEventId(self) -> Guid | None: ...
     @property
     def Title(self) -> str: ...
     @overload

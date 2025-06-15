@@ -4154,7 +4154,6 @@ class RenderTabs:
 from Rhino import RhinoDoc
 from System.Drawing import Bitmap
 from Rhino.Geometry import Transform
-from System import Nullable
 from Rhino.DocObjects import RhinoObject
 from Rhino.Geometry import Vector3d
 from Rhino.Geometry import Point3d
@@ -4267,7 +4266,7 @@ class RenderTexture(RenderContent):
     @property
     def Parent(self) -> RenderContent: ...
     @property
-    def PixelSize2(self) -> Nullable: ...
+    def PixelSize2(self) -> ValueTuple | None: ...
     @property
     def ProxyType(self) -> ProxyTypes: ...
     @property
@@ -5788,7 +5787,6 @@ class TimeZone:
 
 from Rhino.Display import Color4f
 from Rhino.Geometry import Transform
-from System import Nullable
 from Rhino.DocObjects import RhinoObject
 from System.Drawing import Bitmap
 from Rhino.Geometry import Vector3d
@@ -5906,7 +5904,7 @@ class TwoColorRenderTexture(RenderTexture):
     @property
     def Parent(self) -> RenderContent: ...
     @property
-    def PixelSize2(self) -> Nullable: ...
+    def PixelSize2(self) -> ValueTuple | None: ...
     @property
     def ProxyType(self) -> ProxyTypes: ...
     @property

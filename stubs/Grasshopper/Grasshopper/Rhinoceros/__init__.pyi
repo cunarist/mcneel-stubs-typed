@@ -154,7 +154,6 @@ class ModelColor:
     def ToString(self) -> str: ...
 
 
-from System import Nullable
 class ModelComponentContent(ModelContent):
     @overload
     def CastTo(self) -> tuple[bool, T]: ...
@@ -167,7 +166,7 @@ class ModelComponentContent(ModelContent):
     @property
     def DisplayName(self) -> str: ...
     @property
-    def Id(self) -> Nullable: ...
+    def Id(self) -> Guid | None: ...
     @property
     def IsValid(self) -> bool: ...
     @property
@@ -204,7 +203,6 @@ class ModelComponentContent(ModelContent):
 
 from Rhino import RhinoDoc
 from System import Guid
-from System import Nullable
 class ModelContent(ModelData):
     @overload
     @staticmethod
@@ -223,7 +221,7 @@ class ModelContent(ModelData):
     @property
     def DisplayName(self) -> str: ...
     @property
-    def Id(self) -> Nullable: ...
+    def Id(self) -> Guid | None: ...
     @property
     def IsValid(self) -> bool: ...
     @property
@@ -681,7 +679,6 @@ class ModelValue:
 
 from Rhino.DocObjects import ActiveSpace
 from Rhino import UnitSystem
-from System import Nullable
 from Rhino import RhinoDoc
 class Value:
     @overload
@@ -691,7 +688,7 @@ class Value:
     @overload
     def __init__(self, unitSystem: UnitSystem, name: str, factor: float): ...
     @overload
-    def __init__(self, other: Value, name: str, factor: Nullable): ...
+    def __init__(self, other: Value, name: str, factor: float | None): ...
     _MetersPerUnit: float
     @overload
     def AdjustDocumentUnitSystem(self, document: RhinoDoc, space: ActiveSpace, scale: bool) -> None: ...

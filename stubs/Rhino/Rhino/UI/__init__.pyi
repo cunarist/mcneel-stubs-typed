@@ -362,7 +362,6 @@ class IPanelsService:
 
 from System.Collections import IList
 from System.Collections.Generic import IList
-from System import Nullable
 from Rhino import RhinoDoc
 from System import Guid
 from System.Reflection import Assembly
@@ -391,7 +390,7 @@ class IRhinoUiDialogService:
     @overload
     def ShowNumberBox(self, title: str, message: str, number: float, minimum: float, maximum: float) -> tuple[bool, float]: ...
     @overload
-    def ShowPopupMenu(self, arrItems: Iterable[str], arrModes: Iterable[int], screenPointX: Nullable, screenPointY: Nullable) -> int: ...
+    def ShowPopupMenu(self, arrItems: Iterable[str], arrModes: Iterable[int], screenPointX: int | None, screenPointY: int | None) -> int: ...
     @overload
     def ShowPrintWidths(self, title: str, message: str) -> float: ...
     @overload

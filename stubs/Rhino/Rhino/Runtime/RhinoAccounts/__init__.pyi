@@ -3,11 +3,10 @@ from enum import Enum
 
 
 
-from System import Nullable
 from System.Collections.Generic import IReadOnlyCollection
 class IOAuth2Token:
     @property
-    def Exp(self) -> Nullable: ...
+    def Exp(self) -> DateTime | None: ...
     @property
     def IsExpired(self) -> bool: ...
     @property
@@ -17,7 +16,6 @@ class IOAuth2Token:
 
 
 from System.Collections.Generic import IReadOnlyDictionary
-from System import Nullable
 from System.Collections.Generic import IReadOnlyCollection
 class IOpenIDConnectToken:
     @property
@@ -29,15 +27,15 @@ class IOpenIDConnectToken:
     @property
     def Aud(self) -> str: ...
     @property
-    def AuthTime(self) -> Nullable: ...
+    def AuthTime(self) -> DateTime | None: ...
     @property
     def Emails(self) -> IReadOnlyCollection: ...
     @property
-    def EmailVerified(self) -> Nullable: ...
+    def EmailVerified(self) -> bool | None: ...
     @property
-    def Exp(self) -> Nullable: ...
+    def Exp(self) -> DateTime | None: ...
     @property
-    def Iat(self) -> Nullable: ...
+    def Iat(self) -> DateTime | None: ...
     @property
     def IsExpired(self) -> bool: ...
     @property
@@ -63,7 +61,7 @@ class IOpenIDConnectToken:
     @property
     def Sub(self) -> str: ...
     @property
-    def UpdatedAt(self) -> Nullable: ...
+    def UpdatedAt(self) -> DateTime | None: ...
 
 
 from System import Func
@@ -71,7 +69,6 @@ from System.Threading.Tasks import Task
 from System import Action
 from System import Tuple
 from System.Threading import CancellationToken
-from System import Nullable
 from System import IProgress
 class IRhinoAccountsManager:
     @overload
@@ -81,7 +78,7 @@ class IRhinoAccountsManager:
     @overload
     def GetAuthTokensAsync(self, clientId: str, clientSecret: str, secretKey: SecretKey, cancellationToken: CancellationToken) -> Task: ...
     @overload
-    def GetAuthTokensAsync(self, clientId: str, clientSecret: str, scope: Iterable[str], prompt: str, maxAge: Nullable, showUI: bool, progress: IProgress, secretKey: SecretKey, cancellationToken: CancellationToken) -> Task: ...
+    def GetAuthTokensAsync(self, clientId: str, clientSecret: str, scope: Iterable[str], prompt: str, maxAge: int | None, showUI: bool, progress: IProgress, secretKey: SecretKey, cancellationToken: CancellationToken) -> Task: ...
     @overload
     def RevokeAuthTokenAsync(self, oauth2Token: IOAuth2Token, secretKey: SecretKey, cancellationToken: CancellationToken) -> Task: ...
     @overload
@@ -412,7 +409,6 @@ from System import Action
 from System import Func
 from System.Threading.Tasks import Task
 from System.Threading import CancellationToken
-from System import Nullable
 from System import IProgress
 from System import Tuple
 class RhinoAccountsManager:
@@ -429,7 +425,7 @@ class RhinoAccountsManager:
     def GetAuthTokensAsync(clientId: str, clientSecret: str, secretKey: SecretKey, cancellationToken: CancellationToken) -> Task: ...
     @overload
     @staticmethod
-    def GetAuthTokensAsync(clientId: str, clientSecret: str, scope: Iterable[str], prompt: str, maxAge: Nullable, showUI: bool, progress: IProgress, secretKey: SecretKey, cancellationToken: CancellationToken) -> Task: ...
+    def GetAuthTokensAsync(clientId: str, clientSecret: str, scope: Iterable[str], prompt: str, maxAge: int | None, showUI: bool, progress: IProgress, secretKey: SecretKey, cancellationToken: CancellationToken) -> Task: ...
     @overload
     def GetHashCode(self) -> int: ...
     @overload

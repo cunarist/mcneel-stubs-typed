@@ -610,6 +610,8 @@ namespace PyStubblerLib
                 return true;
             else if (s.Equals("Exception"))
                 return true;
+            else if (s.StartsWith("Nullable"))
+                return true;
             else if (s.StartsWith("IEnumerable") || s.StartsWith("IEnumerator"))
                 return true;
             else if (s.StartsWith("List"))
@@ -662,6 +664,15 @@ namespace PyStubblerLib
 
         private static string ToPythonType(Type t)
         {
+            if (t.Name.StartsWith("Nullable"))
+            {
+                if (t.IsGenericType) {
+                    string rc = ToPythonType(t.GenericTypeArguments[0]);
+                    return $"{rc} | None";
+                } else {
+                    return $"None";
+                }
+            }
             if (t.Name.StartsWith("IEnumerable"))
             {
                 if (t.IsGenericType) {

@@ -3,7 +3,6 @@ from enum import Enum
 
 
 
-from System import Nullable
 class CommandLineOption:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -12,7 +11,7 @@ class CommandLineOption:
     @property
     def CurrentNumericValue(self) -> float: ...
     @property
-    def CurrentToggleValue(self) -> Nullable: ...
+    def CurrentToggleValue(self) -> bool | None: ...
     @property
     def EnglishName(self) -> str: ...
     @property

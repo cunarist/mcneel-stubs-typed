@@ -6201,7 +6201,6 @@ class SerializationOptions:
     def ToString(self) -> str: ...
 
 
-from System import Nullable
 from System.IO import Stream
 class SHA1OpenNURBS:
     @overload
@@ -6220,7 +6219,7 @@ class SHA1OpenNURBS:
     def Equals(self, obj: object) -> bool: ...
     @overload
     @staticmethod
-    def FileSystemPathHash(path: str, ignoreCase: Nullable) -> Iterable[int]: ...
+    def FileSystemPathHash(path: str, ignoreCase: bool | None) -> Iterable[int]: ...
     @property
     def CanReuseTransform(self) -> bool: ...
     @property
