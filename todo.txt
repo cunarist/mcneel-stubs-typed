@@ -1,4 +1,0 @@
-./build-rhino-stubs.ps1
-
-IntPtr
-*
