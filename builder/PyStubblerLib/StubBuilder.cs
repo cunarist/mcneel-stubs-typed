@@ -623,6 +623,8 @@ namespace PyStubblerLib
                 return true;
             else if (s.Equals("int"))
                 return true;
+            else if (s.Equals("Enum"))
+                return true;
             else if (s.Equals("Exception"))
                 return true;
             else if (s.StartsWith("Nullable"))

@@ -40,7 +40,6 @@ from Rhino.Input import GetResult
 from Rhino.UI import CursorStyle
 from Rhino.UI import LocalizeStringPair
 from System import AsyncCallback
-from System import Enum
 from System import EventHandler
 from System import IAsyncResult
 from System import IFormatProvider

@@ -9,7 +9,6 @@ from Rhino.Geometry import MeshType
 from Rhino.Geometry import Transform
 from Rhino.PlugIns import PlugIn
 from Rhino.Render import RenderMaterial
-from System import Enum
 from System import Guid
 from System import IFormatProvider
 from System import TypeCode

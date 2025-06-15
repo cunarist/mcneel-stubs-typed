@@ -2,7 +2,6 @@ from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence,
 from enum import Enum
 
 from System import Action
-from System import Enum
 from System import IFormatProvider
 from System import IntPtr
 from System import TypeCode

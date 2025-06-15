@@ -8,7 +8,6 @@ from Rhino.Render import Channel
 from Rhino.Render import ChannelGPU
 from Rhino.Render import FreeFloatingBase
 from Rhino.UI.Controls import ICollapsibleSection
-from System import Enum
 from System import Guid
 from System import IConvertible
 from System import IFormatProvider

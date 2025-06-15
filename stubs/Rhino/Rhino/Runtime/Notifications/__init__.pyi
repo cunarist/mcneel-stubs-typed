@@ -3,7 +3,6 @@ from enum import Enum
 
 from System import Action
 from System import DateTime
-from System import Enum
 from System import IFormatProvider
 from System import TypeCode
 from System.Collections.Generic import ICollection

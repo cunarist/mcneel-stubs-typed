@@ -4,7 +4,6 @@ from enum import Enum
 from GH_IO.Serialization import GH_IReader
 from GH_IO.Serialization import GH_IWriter
 from Grasshopper.GUI.Canvas import GH_PaletteStyle
-from System import Enum
 from System import IFormatProvider
 from System import TypeCode
 from System.Drawing import Color

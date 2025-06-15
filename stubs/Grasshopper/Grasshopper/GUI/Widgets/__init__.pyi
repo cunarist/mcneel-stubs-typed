@@ -7,7 +7,6 @@ from Grasshopper.GUI.Canvas import GH_Canvas
 from Grasshopper.GUI.Canvas import GH_ObjectResponse
 from Grasshopper.GUI.Canvas import GH_Viewport
 from System import AsyncCallback
-from System import Enum
 from System import IAsyncResult
 from System import IFormatProvider
 from System import IntPtr

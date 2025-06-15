@@ -77,7 +77,6 @@ from Rhino.Render import TextureMapping
 from Rhino.Render.CustomRenderMeshes import Flags
 from Rhino.Render.CustomRenderMeshes import RenderMeshes
 from Rhino.UI.Gumball import GumballFrame
-from System import Enum
 from System import Guid
 from System import IConvertible
 from System import IFormatProvider

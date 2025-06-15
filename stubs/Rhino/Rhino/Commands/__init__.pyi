@@ -5,7 +5,6 @@ from Rhino import PersistentSettings
 from Rhino import RhinoDoc
 from Rhino.PlugIns import PlugIn
 from System import AsyncCallback
-from System import Enum
 from System import EventHandler
 from System import Guid
 from System import IAsyncResult

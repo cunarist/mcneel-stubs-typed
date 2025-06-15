@@ -4,7 +4,6 @@ from enum import Enum
 from System import AsyncCallback
 from System import DateTime
 from System import Delegate
-from System import Enum
 from System import EventHandler
 from System import IAsyncResult
 from System import IFormatProvider

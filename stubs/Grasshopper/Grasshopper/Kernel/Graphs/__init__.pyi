@@ -7,7 +7,6 @@ from Grasshopper.GUI import GH_CanvasMouseEvent
 from Grasshopper.GUI.Canvas import GH_Canvas
 from Grasshopper.GUI.Canvas import GH_ObjectResponse
 from System import AsyncCallback
-from System import Enum
 from System import Guid
 from System import IAsyncResult
 from System import IFormatProvider

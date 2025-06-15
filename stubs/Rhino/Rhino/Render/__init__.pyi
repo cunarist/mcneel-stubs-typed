@@ -59,7 +59,6 @@ from System import Comparison
 from System import Converter
 from System import DateTime
 from System import DateTimeKind
-from System import Enum
 from System import EventHandler
 from System import Guid
 from System import IConvertible

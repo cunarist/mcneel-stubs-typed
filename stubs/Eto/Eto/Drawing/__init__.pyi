@@ -5,7 +5,6 @@ from Eto import ITypeDescriptorContext
 from Eto import Platform
 from Eto import PropertyStore
 from Eto.Forms import Range
-from System import Enum
 from System import EventHandler
 from System import IDisposable
 from System import IFormatProvider

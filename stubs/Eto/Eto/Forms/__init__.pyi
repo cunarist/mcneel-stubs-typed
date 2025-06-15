@@ -28,7 +28,6 @@ from System import Action
 from System import Array
 from System import Comparison
 from System import DateTime
-from System import Enum
 from System import EventArgs
 from System import EventHandler
 from System import IFormatProvider

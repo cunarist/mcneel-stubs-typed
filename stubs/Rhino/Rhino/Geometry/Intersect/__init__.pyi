@@ -24,7 +24,6 @@ from Rhino.Geometry import Ray3d
 from Rhino.Geometry import Sphere
 from Rhino.Geometry import Surface
 from Rhino.Geometry import Vector3d
-from System import Enum
 from System import IFormatProvider
 from System import IProgress
 from System import TypeCode

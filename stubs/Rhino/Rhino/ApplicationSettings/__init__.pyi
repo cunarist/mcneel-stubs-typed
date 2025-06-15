@@ -7,7 +7,6 @@ from Rhino.Geometry import Interval
 from Rhino.Geometry import Vector3d
 from Rhino.UI import KeyboardKey
 from Rhino.UI import ModifierKey
-from System import Enum
 from System import IFormatProvider
 from System import TimeSpan
 from System import TypeCode

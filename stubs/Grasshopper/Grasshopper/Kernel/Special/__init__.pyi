@@ -82,7 +82,6 @@ from Rhino.Geometry import Polyline
 from Rhino.Geometry import Rectangle3d
 from Rhino.Geometry import Transform
 from System import Decimal
-from System import Enum
 from System import EventArgs
 from System import Guid
 from System import IFormatProvider

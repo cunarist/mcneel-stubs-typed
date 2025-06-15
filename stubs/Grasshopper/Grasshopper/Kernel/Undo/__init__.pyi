@@ -6,7 +6,6 @@ from GH_IO.Serialization import GH_IWriter
 from Grasshopper.Kernel import GH_DebugDescriptionWriter
 from Grasshopper.Kernel import GH_Document
 from System import DateTime
-from System import Enum
 from System import Guid
 from System import IFormatProvider
 from System import TypeCode

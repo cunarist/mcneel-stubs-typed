@@ -6,7 +6,6 @@ from System import Action
 from System import AsyncCallback
 from System import Comparison
 from System import Converter
-from System import Enum
 from System import IAsyncResult
 from System import IFormatProvider
 from System import IntPtr

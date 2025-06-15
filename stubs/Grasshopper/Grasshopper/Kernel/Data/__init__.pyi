@@ -8,7 +8,6 @@ from Grasshopper.GUI.Canvas import GH_Viewport
 from Grasshopper.Kernel import IGH_Param
 from Grasshopper.Kernel.Expressions import GH_ExpressionParser
 from System import AsyncCallback
-from System import Enum
 from System import IAsyncResult
 from System import IFormatProvider
 from System import IntPtr

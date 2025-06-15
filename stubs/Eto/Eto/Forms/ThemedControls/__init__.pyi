@@ -76,7 +76,6 @@ from Eto.Forms import ToolBar
 from Eto.Forms import Window
 from Eto.Forms import WindowState
 from Eto.Forms import WindowStyle
-from System import Enum
 from System import EventArgs
 from System import EventHandler
 from System import IFormatProvider

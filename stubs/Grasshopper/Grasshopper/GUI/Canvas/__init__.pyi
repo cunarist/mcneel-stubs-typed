@@ -25,7 +25,6 @@ from System import Action
 from System import AsyncCallback
 from System import DateTime
 from System import Delegate
-from System import Enum
 from System import EventArgs
 from System import EventHandler
 from System import Guid

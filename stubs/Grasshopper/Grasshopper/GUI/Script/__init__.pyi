@@ -10,7 +10,6 @@ from System import Comparison
 from System import Converter
 from System import DateTime
 from System import Delegate
-from System import Enum
 from System import EventArgs
 from System import EventHandler
 from System import IAsyncResult

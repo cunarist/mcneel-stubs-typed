@@ -64,7 +64,6 @@ from Rhino.Geometry import Transform
 from Rhino.Geometry import Vector3d
 from Rhino.Render import RenderMaterial
 from System import DateTime
-from System import Enum
 from System import Guid
 from System import IFormatProvider
 from System import Predicate

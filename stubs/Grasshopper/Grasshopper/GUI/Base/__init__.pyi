@@ -6,7 +6,6 @@ from Grasshopper.GUI.Gradient import GH_Gradient
 from Rhino.Geometry import Point4d
 from System import AsyncCallback
 from System import Decimal
-from System import Enum
 from System import EventArgs
 from System import IAsyncResult
 from System import IFormatProvider

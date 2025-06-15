@@ -55,7 +55,6 @@ from Rhino.DocObjects import ObjectAttributes
 from Rhino.Geometry import BoundingBox
 from Rhino.Geometry import Plane
 from System import DateTime
-from System import Enum
 from System import EventArgs
 from System import Guid
 from System import IFormatProvider

@@ -4,7 +4,6 @@ from enum import Enum
 from Grasshopper.Kernel import GH_DocumentObject
 from Grasshopper.Kernel import IGH_InstanceDescription
 from System import Delegate
-from System import Enum
 from System import EventHandler
 from System import IAsyncResult
 from System import IFormatProvider

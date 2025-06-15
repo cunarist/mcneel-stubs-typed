@@ -7,7 +7,6 @@ from Rhino.Render import RenderContent
 from Rhino.Render import RenderContentCollection
 from Rhino.Render import RenderContentKind
 from Rhino.Render import RenderSettings
-from System import Enum
 from System import Guid
 from System import IFormatProvider
 from System import IntPtr

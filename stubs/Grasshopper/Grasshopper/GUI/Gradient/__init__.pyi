@@ -4,7 +4,6 @@ from enum import Enum
 from GH_IO.Serialization import GH_IReader
 from GH_IO.Serialization import GH_IWriter
 from System import AsyncCallback
-from System import Enum
 from System import Guid
 from System import IAsyncResult
 from System import IFormatProvider

@@ -100,7 +100,6 @@ from Rhino.Geometry import BoundingBox
 from Rhino.Geometry import Line
 from Rhino.Geometry import Plane
 from Rhino.Geometry import PlaneSurface
-from System import Enum
 from System import Guid
 from System import IFormatProvider
 from System import TimeSpan

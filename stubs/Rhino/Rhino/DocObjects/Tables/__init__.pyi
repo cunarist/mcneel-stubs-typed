@@ -87,7 +87,6 @@ from Rhino.Render import RenderMaterial
 from Rhino.Render import Skylight
 from Rhino.Render import Sun
 from Rhino.Render import TextureMapping
-from System import Enum
 from System import Guid
 from System import IFormatProvider
 from System import TypeCode

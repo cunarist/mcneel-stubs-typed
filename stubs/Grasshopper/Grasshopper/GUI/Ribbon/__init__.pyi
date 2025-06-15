@@ -7,7 +7,6 @@ from Grasshopper.GUI import GH_TooltipDisplayEventArgs
 from Grasshopper.Kernel import GH_Exposure
 from Grasshopper.Kernel import IGH_ObjectProxy
 from System import Delegate
-from System import Enum
 from System import EventHandler
 from System import Guid
 from System import IAsyncResult

@@ -51,7 +51,6 @@ from Rhino.Geometry import Torus
 from Rhino.Geometry import Transform
 from Rhino.Geometry import Vector3d
 from Rhino.Render import RealtimeDisplayMode
-from System import Enum
 from System import EventHandler
 from System import Guid
 from System import IFormatProvider

@@ -25,7 +25,6 @@ from System import Action
 from System import AsyncCallback
 from System import Comparison
 from System import Converter
-from System import Enum
 from System import EventHandler
 from System import Guid
 from System import IAsyncResult

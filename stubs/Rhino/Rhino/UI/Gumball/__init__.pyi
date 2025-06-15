@@ -17,7 +17,6 @@ from Rhino.Geometry import Transform
 from Rhino.Geometry import Vector3d
 from Rhino.Input.Custom import GetPoint
 from Rhino.Input.Custom import PickContext
-from System import Enum
 from System import IFormatProvider
 from System import TypeCode
 from System.Drawing import Color

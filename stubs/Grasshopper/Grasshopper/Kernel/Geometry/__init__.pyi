@@ -13,7 +13,6 @@ from Rhino.Geometry import Vector2f
 from Rhino.Geometry import Vector3d
 from Rhino.Geometry import Vector3f
 from System import AsyncCallback
-from System import Enum
 from System import IAsyncResult
 from System import IFormatProvider
 from System import IntPtr

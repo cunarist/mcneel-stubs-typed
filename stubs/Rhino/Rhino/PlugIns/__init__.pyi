@@ -12,7 +12,6 @@ from Rhino.Runtime import Mode
 from Rhino.UI import MouseButton
 from System import AsyncCallback
 from System import DateTime
-from System import Enum
 from System import EventHandler
 from System import Guid
 from System import IAsyncResult

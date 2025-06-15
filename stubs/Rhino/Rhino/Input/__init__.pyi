@@ -24,7 +24,6 @@ from Rhino.Geometry import Polyline
 from Rhino.Input.Custom import GetFileNameMode
 from Rhino.Input.Custom import GetObjectGeometryFilter
 from Rhino.UI import LocalizeStringPair
-from System import Enum
 from System import Guid
 from System import IFormatProvider
 from System import TypeCode

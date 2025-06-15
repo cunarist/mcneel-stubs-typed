@@ -5,7 +5,6 @@ from Rhino.Render import PreviewAppearance
 from Rhino.Render import RenderContent
 from Rhino.Render.DataSources import Shapes
 from Rhino.Render.DataSources import Sizes
-from System import Enum
 from System import Guid
 from System import IFormatProvider
 from System import IntPtr

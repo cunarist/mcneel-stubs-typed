@@ -3,7 +3,6 @@ from enum import Enum
 
 from System import DateTime
 from System import Decimal
-from System import Enum
 from System import Guid
 from System import IFormatProvider
 from System import TypeCode

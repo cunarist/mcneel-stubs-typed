@@ -5,7 +5,6 @@ from System import Action
 from System import AsyncCallback
 from System import Comparison
 from System import Delegate
-from System import Enum
 from System import EventHandler
 from System import IAsyncResult
 from System import IDisposable

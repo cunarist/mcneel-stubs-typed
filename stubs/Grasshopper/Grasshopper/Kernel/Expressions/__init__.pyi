@@ -10,7 +10,6 @@ from System import Action
 from System import Comparison
 from System import Converter
 from System import DateTime
-from System import Enum
 from System import IFormatProvider
 from System import Predicate
 from System import TypeCode

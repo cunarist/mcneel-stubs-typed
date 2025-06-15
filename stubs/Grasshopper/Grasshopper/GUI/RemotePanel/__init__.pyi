@@ -9,7 +9,6 @@ from Grasshopper.Kernel import GH_Document
 from Rhino.ApplicationSettings import PaintColor
 from System import AsyncCallback
 from System import Delegate
-from System import Enum
 from System import EventArgs
 from System import EventHandler
 from System import Guid
