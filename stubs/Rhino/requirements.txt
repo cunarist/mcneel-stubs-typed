@@ -1,5 +1,5 @@
 --index-url https://pypi.python.org/simple/
 
-GH_IO-stubs==7.37.24107
-GH_Util-stubs==7.37.24107
-Grasshopper==7.37.24107
+GH_IO-stubs==8.20.25157
+GH_Util-stubs==8.20.25157
+Grasshopper-stubs==8.20.25157

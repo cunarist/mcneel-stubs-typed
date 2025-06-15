@@ -1,2 +1,2 @@
-include GH_Util-stubs/*.pyi
+include GH_Util/*.pyi
 

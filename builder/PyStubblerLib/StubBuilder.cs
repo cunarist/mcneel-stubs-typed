@@ -91,7 +91,7 @@ namespace PyStubblerLib
                 var version = assemblyToStub.GetName().Version;
                 contents.AppendLine($"GH_IO-stubs=={version.Major}.{version.Minor}.{version.Build}");
                 contents.AppendLine($"GH_Util-stubs=={version.Major}.{version.Minor}.{version.Build}");
-                contents.AppendLine($"Grasshopper=={version.Major}.{version.Minor}.{version.Build}");
+                contents.AppendLine($"Grasshopper-stubs=={version.Major}.{version.Minor}.{version.Build}");
                 string requirementsPath = Path.Combine(parentDirectory.FullName, "requirements.txt");
                 File.WriteAllText(requirementsPath, contents.ToString());
             }
@@ -150,7 +150,7 @@ namespace PyStubblerLib
             var sb = new System.Text.StringBuilder();
 
             string[] allChildNamespaces = GetChildNamespaces(stubTypes[0].Namespace, allNamespaces);
-            sb.AppendLine("from typing import overload, Tuple, Iterable, Iterator, Sequence, MutableSequence");
+            sb.AppendLine("from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence");
             sb.AppendLine("from enum import Enum");
             sb.Append("\n");
             if( allChildNamespaces.Length > 0 )
@@ -261,10 +261,14 @@ namespace PyStubblerLib
                 {
                     var relativeNamespace = paramImport.Item1;
                     var paramType = paramImport.Item2;
-                    if (paramType.EndsWith("]"))
+                    if (paramType.EndsWith("]") || ShouldAvoidImporting(paramType))
+                    {
                         continue;
-                    if (relativeNamespace != null && relativeNamespace != "" && relativeNamespace != ".")
+                    }
+                    if (relativeNamespace != "" && relativeNamespace != ".")
+                    {
                         sb.AppendLine($"from {relativeNamespace} import {paramType}");
+                    }
                 }
 
                 // write class definition
@@ -322,6 +326,7 @@ namespace PyStubblerLib
                 // make class iterable with `for i in instance` if it implements `IEnumerable`
                 if (typeof(IEnumerable).IsAssignableFrom(stubType))
                 {
+
                     Type ienumerableType = stubType.GetInterfaces()
                         .Where(t => t.IsGenericType && t.GetGenericTypeDefinition() == typeof(IEnumerable<>))
                         .FirstOrDefault();
@@ -393,7 +398,6 @@ namespace PyStubblerLib
                     }
                     int parameterCount = parameters.Length - outParamCount;
 
-                    sb.AppendLine("    @overload");
                     if (method.IsSpecialName && (method.Name.StartsWith("get_") || method.Name.StartsWith("set_")))
                     {
                         string propName;
@@ -413,7 +417,12 @@ namespace PyStubblerLib
                             else
                                 sb.AppendLine($"    @{propName}.setter");
                         }
-                        sb.Append($"    def {propName}(");
+                        if (method.IsStatic) {
+                            sb.AppendLine("    @classmethod");
+                            sb.Append($"    def {propName}(cls");
+                        } else {
+                            sb.Append($"    def {propName}(");
+                        }
                     }
                     else if (method.Name.StartsWith("op_")) {
                         var isRight = (
@@ -472,10 +481,12 @@ namespace PyStubblerLib
                             propName = "__bool__";
                         else 
                             propName = method.Name;
+                        sb.AppendLine("    @overload");
                         sb.Append($"    def {propName}(");
                     }
                     else
                     {
+                        sb.AppendLine("    @overload");
                         if (method.IsStatic)
                             sb.AppendLine("    @staticmethod");
                         sb.Append($"    def {method.Name}(");
@@ -603,41 +614,44 @@ namespace PyStubblerLib
             var fromParts = from.Split('.');
             var toParts = to.Split('.');
 
-            // Find the common prefix
-            int commonLength = 0;
-            int minLength = Math.Min(fromParts.Length, toParts.Length);
-            for (int i = 0; i < minLength; i++)
-            {
-                if (fromParts[i] == toParts[i])
+            if (fromParts.Length == toParts.Length) {
+                return "";
+            } else if (fromParts.Length > toParts.Length) {
+                return to;
+            } else {
+                var relativePathParts = new List<string>();
+                // Add the remaining parts of the 'to' path
+                for (int i = fromParts.Length; i < toParts.Length; i++)
                 {
-                    commonLength++;
+                    relativePathParts.Add("." + toParts[i]);
                 }
-                else
-                {
-                    break;
-                }
+                // Join the parts into a single string
+                return string.Join("", relativePathParts);
             }
+        }
 
-            if (commonLength == 0)
-                return null;
+        private static bool ShouldAvoidImporting(string s)
+        {
+            if (s.Equals("type"))
+                return true;
+            else if (s.Equals("object"))
+                return true;
+            else if (s.Equals("str"))
+                return true;
+            else if (s.Equals("float"))
+                return true;
+            else if (s.Equals("bool"))
+                return true;
+            else if (s.Equals("int"))
+                return true;
+            else if (s.Equals("Exception"))
+                return true;
+            else if (s.StartsWith("IEnumerable") || s.StartsWith("IEnumerator"))
+                return true;
+            else if (s.StartsWith("List"))
+                return true;
 
-            // Create the relative path
-            var relativePathParts = new List<string>();
-
-            // Add "." for each level up from the 'from' path
-            for (int i = commonLength; i < fromParts.Length; i++)
-            {
-                relativePathParts.Add(".");
-            }
-
-            // Add the remaining parts of the 'to' path
-            for (int i = commonLength; i < toParts.Length; i++)
-            {
-                relativePathParts.Add("." + toParts[i]);
-            }
-
-            // Join the parts into a single string
-            return string.Join("", relativePathParts);
+            return false;
         }
 
         private static string ToPythonType(string s)
@@ -662,13 +676,21 @@ namespace PyStubblerLib
             if (rc.EndsWith("*"))
                 return rc.Substring(0, rc.Length - 1); // ? not sure what we can do for pointers
 
-            if (rc.Equals("String"))
+            if (rc.Equals("Type"))
+                return "type";
+            else if (rc.Equals("Object"))
+                return "object";
+            else if (rc.Equals("Byte"))
+                return "int";
+            else if (rc.Equals("String") || rc.Equals("Char"))
                 return "str";
-            if (rc.Equals("Double"))
+            else if (rc.Equals("Single") || rc.Equals("Double"))
                 return "float";
-            if (rc.Equals("Boolean"))
+            else if (rc.Equals("Boolean"))
                 return "bool";
-            if (rc.Equals("Int32"))
+            else if (rc.Equals("Int16") || rc.Equals("Int32") || rc.Equals("Int64"))
+                return "int";
+            else if (rc.Equals("UInt16") || rc.Equals("UInt32") || rc.Equals("UInt64"))
                 return "int";
 
             return rc;
@@ -676,10 +698,32 @@ namespace PyStubblerLib
 
         private static string ToPythonType(Type t)
         {
-            if (t.IsGenericType && t.Name.StartsWith("IEnumerable"))
+            if (t.Name.StartsWith("IEnumerable"))
             {
-                string rc = ToPythonType(t.GenericTypeArguments[0]);
-                return $"Iterable[{rc}]";
+                if (t.IsGenericType) {
+                    string rc = ToPythonType(t.GenericTypeArguments[0]);
+                    return $"Iterable[{rc}]";
+                } else {
+                    return $"Iterable[Any]";
+                }
+            }
+            if (t.Name.StartsWith("IEnumerator"))
+            {
+                if (t.IsGenericType) {
+                    string rc = ToPythonType(t.GenericTypeArguments[0]);
+                    return $"Iterator[{rc}]";
+                } else {
+                    return $"Iterator[Any]";
+                }
+            }
+            if (t.Name.StartsWith("List"))
+            {
+                if (t.IsGenericType) {
+                    string rc = ToPythonType(t.GenericTypeArguments[0]);
+                    return $"MutableSequence[{rc}]";
+                } else {
+                    return $"MutableSequence[Any]";
+                }
             }
             // TODO: Figure out the right way to get at IEnumerable<T>
             if (t.FullName != null && t.FullName.StartsWith("System.Collections.Generic.IEnumerable`1[["))

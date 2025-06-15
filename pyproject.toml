@@ -1,0 +1,23 @@
+[project]
+name = "mcneel-stubs"
+version = "0.1.0"
+description = "Python type stubs for McNeel products"
+requires-python = ">=3.9"
+dependencies = [
+    "dotnet-stubs>=0.0.12",
+    "netstandard-stubs>=2.0.1",
+    "pyright>=1.1.402",
+]
+
+[tool.pyright]
+typeCheckingMode = "standard"
+reportInconsistentOverload = false
+reportSelfClsParameterName = false
+reportOverlappingOverload = false
+reportIncompatibleMethodOverride = false
+
+[tool.ruff]
+select = []
+
+[tool.pylint]
+disable = "all"

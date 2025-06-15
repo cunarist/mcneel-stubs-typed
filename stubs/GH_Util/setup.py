@@ -1,10 +1,10 @@
 import setuptools
 import os
 
-long_description = '''
+long_description = """
 # GH_Util-stubs
 Stubs for GH_Util
-'''
+"""
 
 
 def find_stubs(package):
@@ -17,9 +17,9 @@ def find_stubs(package):
 
 setuptools.setup(
     name="GH_Util-stubs",
-    version="7.37.24107",
-    package_data=find_stubs("GH_Util-stubs"),
-    packages=['GH_Util-stubs'],
+    version="8.20.25157",
+    package_data=find_stubs("GH_Util"),
+    packages=["GH_Util-stubs"],
     author="Robert McNeel & Associates",
     author_email="steve@mcneel.com",
     description="Stubs for GH_Util",
@@ -30,6 +30,6 @@ setuptools.setup(
         "Development Status :: 5 - Production/Stable",
         "Intended Audience :: Developers",
         "License :: OSI Approved :: MIT License",
-        "Programming Language :: Python"
+        "Programming Language :: Python",
     ],
 )
