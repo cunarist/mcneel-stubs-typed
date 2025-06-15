@@ -396,7 +396,6 @@ namespace PyStubblerLib
                     }
                     int parameterCount = parameters.Length - outParamCount;
 
-                    sb.AppendLine("    @overload");
                     if (method.IsSpecialName && (method.Name.StartsWith("get_") || method.Name.StartsWith("set_")))
                     {
                         string propName;
@@ -475,10 +474,12 @@ namespace PyStubblerLib
                             propName = "__bool__";
                         else 
                             propName = method.Name;
+                        sb.AppendLine("    @overload");
                         sb.Append($"    def {propName}(");
                     }
                     else
                     {
+                        sb.AppendLine("    @overload");
                         if (method.IsStatic)
                             sb.AppendLine("    @staticmethod");
                         sb.Append($"    def {method.Name}(");

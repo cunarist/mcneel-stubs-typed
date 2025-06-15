@@ -8,7 +8,6 @@ from System.Drawing import *
 class GH_TagArtist:
     @overload
     def Equals(self, obj: object) -> bool: ...
-    @overload
     @property
     def ID(self) -> Guid: ...
     @overload
@@ -27,10 +26,8 @@ class GH_TagArtist_WirePainter(GH_TagArtist):
     def __init__(self, source: IGH_Param, target: IGH_Param, colour: Color, width: int): ...
     @overload
     def Equals(self, obj: object) -> bool: ...
-    @overload
     @property
     def ID(self) -> Guid: ...
-    @overload
     @property
     def WirePainter_ID() -> Guid: ...
     @overload
@@ -44,7 +41,6 @@ class GH_TagArtist_WirePainter(GH_TagArtist):
 
 
 class IGH_TagArtist:
-    @overload
     @property
     def ID(self) -> Guid: ...
     @overload
