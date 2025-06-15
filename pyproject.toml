@@ -13,6 +13,7 @@ dependencies = [
 typeCheckingMode = "standard"
 reportInconsistentOverload = false
 reportSelfClsParameterName = false
+reportOverlappingOverload = false
 
 [tool.ruff]
 select = []
