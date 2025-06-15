@@ -67,7 +67,6 @@ class GH_CssConstants:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import IEnumerable
 from System.Collections.ObjectModel import ReadOnlyCollection
 class GH_CssProperty:
     @overload
@@ -102,7 +101,6 @@ class GH_CssProperty:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import IEnumerable
 from System.Collections.ObjectModel import ReadOnlyCollection
 class GH_CssStyle:
     @overload
@@ -172,7 +170,6 @@ class GH_CssStyleSheet:
 
 
 from ...Kernel import IGH_InstanceDescription
-from System.Collections.Generic import List
 class GH_HtmlFormatter:
     @overload
     def __init__(self): ...
@@ -236,7 +233,6 @@ class GH_HtmlFormatterPalette(Enum):
 
 
 from System.Drawing import Point
-from System.Collections.Generic import List
 from System.Windows.Forms import WebBrowser
 from ...Kernel import GH_DocumentObject
 from System.Drawing import Size

@@ -142,7 +142,6 @@ class GetArc:
 from ...Geometry import Point3d
 from System.Drawing import Color
 from ...UI import LocalizeStringPair
-from System.Collections.Generic import IEnumerable
 from ...Commands import Result
 from ...Geometry import Vector3d
 from ...Display import RhinoView
@@ -295,7 +294,6 @@ from System import EventHandler
 from System.Threading.Tasks import Task
 from .. import RhinoDoc
 from ...Commands import Result
-from System.Collections.Generic import IEnumerable
 from System import IProgress
 from ...Geometry import Point3d
 from System.Drawing import Color
@@ -705,7 +703,6 @@ class GetFileNameMode(Enum):
 from ...Geometry import Point3d
 from System.Drawing import Color
 from ...UI import LocalizeStringPair
-from System.Collections.Generic import IEnumerable
 from ...Commands import Result
 from ...Geometry import Vector3d
 from ...Display import RhinoView
@@ -935,7 +932,6 @@ class GetLineMode(Enum):
 from ...Geometry import Point3d
 from System.Drawing import Color
 from ...UI import LocalizeStringPair
-from System.Collections.Generic import IEnumerable
 from ...Commands import Result
 from ...Geometry import Vector3d
 from ...Display import RhinoView
@@ -1097,7 +1093,6 @@ from ...DocObjects import ObjRef
 from ...Geometry import Point3d
 from System.Drawing import Color
 from ...UI import LocalizeStringPair
-from System.Collections.Generic import IEnumerable
 from ...Commands import Result
 from ...Geometry import Vector3d
 from ...Display import RhinoView
@@ -1382,7 +1377,6 @@ class GetObjectGeometryFilter:
 from ...Geometry import Point3d
 from System.Drawing import Color
 from ...UI import LocalizeStringPair
-from System.Collections.Generic import IEnumerable
 from ...Commands import Result
 from ...Geometry import Vector3d
 from ...Display import RhinoView
@@ -1550,7 +1544,6 @@ from ...ApplicationSettings import OsnapModes
 from ...DocObjects import ObjRef
 from ...Geometry import BrepFace
 from ...UI import LocalizeStringPair
-from System.Collections.Generic import IEnumerable
 from ...Commands import Result
 from ...Geometry import Vector3d
 from ...Display import RhinoView
@@ -1965,7 +1958,6 @@ class GetSphere:
 from ...Geometry import Point3d
 from System.Drawing import Color
 from ...UI import LocalizeStringPair
-from System.Collections.Generic import IEnumerable
 from ...Commands import Result
 from ...Geometry import Vector3d
 from ...Display import RhinoView
@@ -2198,7 +2190,6 @@ from ...ApplicationSettings import OsnapModes
 from ...DocObjects import ObjRef
 from ...Geometry import BrepFace
 from ...UI import LocalizeStringPair
-from System.Collections.Generic import IEnumerable
 from ...Commands import Result
 from ...Geometry import Vector3d
 from ...Display import RhinoView

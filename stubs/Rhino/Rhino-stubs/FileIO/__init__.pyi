@@ -27,7 +27,6 @@ class AutocadVersion(Enum):
 
 
 from System.Collections import IDictionary
-from System import Exception
 from System.Reflection import MethodBase
 from System.Runtime.Serialization import SerializationInfo
 from System.Runtime.Serialization import StreamingContext
@@ -276,7 +275,6 @@ class BinaryArchiveReader:
 from ..Collections import ArchivableDictionary
 from System import SByte
 from System import Guid
-from System.Collections.Generic import IEnumerable
 from System.Drawing import Color
 from System.Drawing import Point
 from System.Drawing import PointF
@@ -645,7 +643,6 @@ class ExportSurfaceMode(Enum):
 from System import DateTime
 from ..DocObjects import EarthAnchorPoint
 from ..Geometry import GeometryBase
-from System.Collections.Generic import IEnumerable
 from System.Drawing import Bitmap
 from System.Collections.Generic import IList
 class File3dm:
@@ -1252,7 +1249,6 @@ class File3dmHatchPatternTable:
 from ..DocObjects import ModelComponentType
 from ..Geometry import InstanceDefinitionGeometry
 from ..Geometry import Point3d
-from System.Collections.Generic import IEnumerable
 from ..Geometry import GeometryBase
 from ..DocObjects import ObjectAttributes
 from System.Collections.Generic import IEnumerator
@@ -1651,7 +1647,6 @@ from ..DocObjects import ObjectAttributes
 from System import Guid
 from ..Geometry import Point3d
 from ..Geometry import Point3f
-from System.Collections.Generic import IEnumerable
 from ..Geometry import PointCloud
 from ..Geometry import Plane
 from ..Geometry import LinearDimension
@@ -1908,7 +1903,6 @@ class File3dmPlugInDataTable:
 
 from System import Guid
 from System import IConvertible
-from System.Collections.Generic import IEnumerable
 from ..DocObjects import ModelComponentType
 from ..Geometry import ComponentStatus
 from ..DocObjects.Custom import UserDataList
@@ -2060,7 +2054,6 @@ class File3dmRenderContent(ModelComponent):
 from ..DocObjects import Environment
 from System import Guid
 from System import IConvertible
-from System.Collections.Generic import IEnumerable
 from ..DocObjects import ModelComponentType
 from ..Geometry import ComponentStatus
 from ..DocObjects.Custom import UserDataList
@@ -2233,7 +2226,6 @@ class File3dmRenderEnvironments:
 from ..DocObjects import Material
 from System import Guid
 from System import IConvertible
-from System.Collections.Generic import IEnumerable
 from ..DocObjects import ModelComponentType
 from ..Geometry import ComponentStatus
 from ..DocObjects.Custom import UserDataList
@@ -2406,7 +2398,6 @@ class File3dmRenderMaterials:
 from ..DocObjects import Texture
 from System import Guid
 from System import IConvertible
-from System.Collections.Generic import IEnumerable
 from ..DocObjects import ModelComponentType
 from ..Geometry import ComponentStatus
 from ..DocObjects.Custom import UserDataList

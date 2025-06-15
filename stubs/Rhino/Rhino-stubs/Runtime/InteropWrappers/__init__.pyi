@@ -4,7 +4,6 @@ from enum import Enum
 
 
 from System import IntPtr
-from System.Collections.Generic import IEnumerable
 from ...DocObjects import ObjRef
 class ClassArrayObjRef:
     @overload
@@ -35,7 +34,6 @@ class ClassArrayObjRef:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import IEnumerable
 from System import IntPtr
 from ...DocObjects import ObjRef
 from .. import RhinoDoc
@@ -162,7 +160,6 @@ class RhDisplayPoint:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import IEnumerable
 from System import IntPtr
 class SimpleArray2dex:
     @overload
@@ -275,7 +272,6 @@ class SimpleArrayBrepPointer:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import IEnumerable
 from System import IntPtr
 class SimpleArrayByte:
     @overload
@@ -335,7 +331,6 @@ class SimpleArrayClippingPlaneObjectPointer:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import IEnumerable
 from System import IntPtr
 class SimpleArrayCurvePointer:
     @overload
@@ -360,7 +355,6 @@ class SimpleArrayCurvePointer:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import IEnumerable
 from System import IntPtr
 class SimpleArrayDouble:
     @overload
@@ -414,7 +408,6 @@ class SimpleArrayExtrusionPointer:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import IEnumerable
 from System import IntPtr
 class SimpleArrayFloat:
     @overload
@@ -449,8 +442,6 @@ class SimpleArrayFloat:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import IEnumerable
-from System.Collections import IEnumerable
 from System import IntPtr
 class SimpleArrayGeometryPointer:
     @overload
@@ -477,7 +468,6 @@ class SimpleArrayGeometryPointer:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import IEnumerable
 from System import IntPtr
 from System import Guid
 class SimpleArrayGuid:
@@ -540,7 +530,6 @@ class SimpleArrayGuidPointer:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import IEnumerable
 from System import IntPtr
 class SimpleArrayHatchLinePointer:
     @overload
@@ -563,7 +552,6 @@ class SimpleArrayHatchLinePointer:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import IEnumerable
 from System import IntPtr
 class SimpleArrayInt:
     @overload
@@ -788,7 +776,6 @@ class SimpleArrayPoint2d:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import IEnumerable
 from System import IntPtr
 from ...Geometry import Point3d
 class SimpleArrayPoint3d:
@@ -867,7 +854,6 @@ class SimpleArraySurfacePointer:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import IEnumerable
 from System import IntPtr
 class SimpleArrayUint:
     @overload
@@ -896,7 +882,6 @@ class SimpleArrayUint:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import IEnumerable
 from System import IntPtr
 class StdVectorByte:
     @overload
@@ -931,7 +916,6 @@ class StdVectorByte:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import IEnumerable
 from System import IntPtr
 class StdVectorFloat:
     @overload
@@ -966,7 +950,6 @@ class StdVectorFloat:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import IEnumerable
 from System import IntPtr
 from System import Guid
 class StdVectorGuid:

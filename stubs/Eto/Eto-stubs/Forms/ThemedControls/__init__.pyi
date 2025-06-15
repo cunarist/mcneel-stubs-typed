@@ -161,7 +161,6 @@ class ThemedButtonSegmentedItemHandler:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import IEnumerable
 from ...Drawing import Padding
 from ...Drawing import Size
 from .. import IStyleProvider
@@ -521,7 +520,6 @@ class ThemedCollectionEditor(Panel):
     def UpdateLayout(self) -> None: ...
 
 
-from System.Collections.Generic import IEnumerable
 from ...Drawing import Color
 from ...Drawing import Size
 from ...Drawing import SizeF
@@ -671,7 +669,6 @@ class ThemedCollectionEditorHandler:
 
 
 from ...Drawing import Color
-from System.Collections.Generic import IEnumerable
 from ...Drawing import Size
 from ...Drawing import SizeF
 from ...Drawing import Rectangle
@@ -826,7 +823,6 @@ from ...Drawing import Font
 from ...Drawing import Color
 from System import EventArgs
 from ...Drawing import Size
-from System.Collections.Generic import IEnumerable
 from ...Drawing import SizeF
 from ...Drawing import Rectangle
 from ...Drawing import PointF
@@ -1058,7 +1054,6 @@ from ...Drawing import Image
 from ...Drawing import Size
 from ...Drawing import Padding
 from ...Drawing import Color
-from System.Collections.Generic import IEnumerable
 from ...Drawing import SizeF
 from ...Drawing import Rectangle
 from System import EventArgs
@@ -1237,7 +1232,6 @@ class ThemedDocumentPageHandler:
 from ...Drawing import Padding
 from ...Drawing import Size
 from ...Drawing import Color
-from System.Collections.Generic import IEnumerable
 from ...Drawing import SizeF
 from ...Drawing import Rectangle
 from System import EventArgs
@@ -1416,7 +1410,6 @@ class ThemedExpanderHandler:
 
 from .. import FileAction
 from ...Drawing import Color
-from System.Collections.Generic import IEnumerable
 from ...Drawing import Size
 from ...Drawing import SizeF
 from ...Drawing import Rectangle
@@ -1580,7 +1573,6 @@ class ThemedFilePickerHandler:
 
 from ...Drawing import Font
 from ...Drawing import Color
-from System.Collections.Generic import IEnumerable
 from ...Drawing import Size
 from ...Drawing import SizeF
 from ...Drawing import Rectangle
@@ -1815,7 +1807,6 @@ from System import EventHandler
 from ...Drawing import Point
 from ...Drawing import Rectangle
 from ...Drawing import Icon
-from System.Collections.Generic import IEnumerable
 from ...Drawing import Padding
 from ...Drawing import Size
 from .. import IStyleProvider
@@ -2368,7 +2359,6 @@ class ThemedMessageBoxHandler:
 
 from System import EventHandler
 from System.Collections.Generic import IList
-from System.Collections.Generic import IEnumerable
 from ...Drawing import Padding
 from ...Drawing import Size
 from .. import IStyleProvider
@@ -2749,7 +2739,6 @@ class ThemedPropertyGrid(Panel):
     def UpdateLayout(self) -> None: ...
 
 
-from System.Collections.Generic import IEnumerable
 from ...Drawing import Color
 from ...Drawing import Size
 from ...Drawing import SizeF
@@ -2908,7 +2897,6 @@ class ThemedPropertyGridHandler:
     def UpdateLayout(self) -> None: ...
 
 
-from System.Collections.Generic import IEnumerable
 from System import EventArgs
 from ...Drawing import SizeF
 from ...Drawing import Color
@@ -3087,7 +3075,6 @@ class ThemedSpinnerDirection(Enum):
 from ...Drawing import Color
 from ...Drawing import PenLineCap
 from System import EventArgs
-from System.Collections.Generic import IEnumerable
 from ...Drawing import Size
 from ...Drawing import SizeF
 from ...Drawing import Rectangle
@@ -3277,7 +3264,6 @@ class ThemedSpinnerMode(Enum):
 
 from ...Drawing import Size
 from ...Drawing import Color
-from System.Collections.Generic import IEnumerable
 from ...Drawing import SizeF
 from ...Drawing import Rectangle
 from System import EventArgs
@@ -3462,7 +3448,6 @@ class ThemedSplitterHandler:
 
 from ...Drawing import Font
 from ...Drawing import Color
-from System.Collections.Generic import IEnumerable
 from ...Drawing import Size
 from ...Drawing import SizeF
 from ...Drawing import Rectangle
@@ -3624,7 +3609,6 @@ class ThemedStepperHandler:
 
 from ...Drawing import Font
 from ...Drawing import Color
-from System.Collections.Generic import IEnumerable
 from ...Drawing import Size
 from ...Drawing import SizeF
 from ...Drawing import Rectangle

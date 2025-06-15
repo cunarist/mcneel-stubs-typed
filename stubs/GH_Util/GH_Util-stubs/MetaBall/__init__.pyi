@@ -72,7 +72,6 @@ class GH_CellInfo:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import List
 class GH_Context:
     @overload
     def __init__(self): ...
@@ -134,11 +133,9 @@ class GH_Direction(Enum):
     up = 4
 
 
-from System.Collections.Generic import IEnumerable
 from System.Collections.ObjectModel import ReadOnlyCollection
 from System.Collections.Generic import IComparer
 from System import Predicate
-from System.Collections.Generic import List
 from System import Action
 from System.Collections.Generic import Enumerator
 from System import Comparison

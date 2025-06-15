@@ -114,7 +114,6 @@ class GH_MRU_Entry:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import List
 from System import DateTime
 class GH_MRU_Server:
     @overload
@@ -159,7 +158,6 @@ class GH_MRU_Server:
     def WriteList(self) -> None: ...
 
 
-from System.Collections.Generic import IEnumerable
 from System.Windows.Forms import KeyEventHandler
 from System.Windows.Forms import KeyPressEventHandler
 from System.Windows.Forms import AutoSizeMode
@@ -962,7 +960,6 @@ class GH_TimeLine(GH_DoubleBufferedPanel):
 
 from System import DateTime
 from System.Drawing import Rectangle
-from System.Collections.Generic import List
 from System.Drawing import Graphics
 class GH_TimeSpan:
     @overload

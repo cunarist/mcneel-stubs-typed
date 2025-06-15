@@ -5,7 +5,6 @@ from enum import Enum
 
 from System.Collections.Generic import IReadOnlyList
 from System import Guid
-from System.Collections import IEnumerable
 from System import Delegate
 class ComponentFunctionInfo:
     @overload
@@ -80,7 +79,6 @@ class Components:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import IEnumerable
 from System.Dynamic import GetMemberBinder
 from System.Dynamic import InvokeMemberBinder
 from System.Dynamic import GetIndexBinder

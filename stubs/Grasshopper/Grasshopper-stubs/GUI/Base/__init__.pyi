@@ -403,7 +403,6 @@ from System.Windows.Forms import Padding
 from ..Gradient import GH_Gradient
 from System.Drawing import Font
 from System.Drawing import Rectangle
-from System.Collections.Generic import List
 from System.Windows.Forms import MouseEventArgs
 from System.Drawing import PointF
 from System.Windows.Forms import Control
@@ -662,9 +661,7 @@ from System.Drawing import Font
 from System.Windows.Forms import Padding
 from System.Drawing import Rectangle
 from System.Drawing import RectangleF
-from System.Collections.Generic import List
 from System import Decimal
-from System.Collections.Generic import IEnumerable
 from System.Windows.Forms import MouseEventArgs
 from System.Drawing import PointF
 from System.Windows.Forms import KeyEventArgs

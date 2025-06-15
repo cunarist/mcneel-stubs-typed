@@ -43,7 +43,6 @@ from ...Display import DisplayPipelineAttributes
 from ...Render import RenderPrimitiveList
 from ...Render.CustomRenderMeshes import Flags
 from ...PlugIns import PlugIn
-from System.Collections.Generic import List
 from ...Render.CustomRenderMeshes import RenderMeshes
 from ...Geometry import BoundingBox
 from ...Render import TextureMapping
@@ -358,7 +357,6 @@ from ...Display import DisplayPipelineAttributes
 from ...Render import RenderPrimitiveList
 from ...Render.CustomRenderMeshes import Flags
 from ...PlugIns import PlugIn
-from System.Collections.Generic import List
 from ...Render.CustomRenderMeshes import RenderMeshes
 from ...Geometry import BoundingBox
 from ...Render import TextureMapping
@@ -680,7 +678,6 @@ from ...Display import DisplayPipelineAttributes
 from ...Render import RenderPrimitiveList
 from ...Render.CustomRenderMeshes import Flags
 from ...PlugIns import PlugIn
-from System.Collections.Generic import List
 from ...Render.CustomRenderMeshes import RenderMeshes
 from ...Geometry import BoundingBox
 from ...Render import TextureMapping
@@ -1041,7 +1038,6 @@ from ...Display import DisplayPipelineAttributes
 from ...Render import RenderPrimitiveList
 from ...Render.CustomRenderMeshes import Flags
 from ...PlugIns import PlugIn
-from System.Collections.Generic import List
 from ...Render.CustomRenderMeshes import RenderMeshes
 from ...Geometry import BoundingBox
 from ...Render import TextureMapping
@@ -1391,7 +1387,6 @@ from ...Display import DisplayPipelineAttributes
 from ...Render import RenderPrimitiveList
 from ...Render.CustomRenderMeshes import Flags
 from ...PlugIns import PlugIn
-from System.Collections.Generic import List
 from ...Render.CustomRenderMeshes import RenderMeshes
 from ...Geometry import BoundingBox
 from ...Render import TextureMapping

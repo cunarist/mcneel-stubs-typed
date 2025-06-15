@@ -588,7 +588,6 @@ from ..PlugIns import PreviewNotification
 from System.Drawing import Size
 from System.Drawing import Bitmap
 from System import Guid
-from System.Collections.Generic import List
 from ..DocObjects import ViewportInfo
 class CreatePreviewEventArgs:
     @overload
@@ -719,7 +718,6 @@ class CustomRenderContentAttribute:
 from System import Guid
 from ..Geometry import Point3d
 from ..Geometry import Vector3d
-from System.Collections.Generic import List
 from ..Display import Color4f
 from ..Geometry import Point2d
 from System import IntPtr
@@ -2267,7 +2265,6 @@ class RenderChannels(DocumentOrFreeFloatingBase):
 
 
 from System import Guid
-from System.Collections.Generic import IEnumerable
 from System.Drawing import Size
 from System.Drawing import Bitmap
 from System import EventHandler
@@ -2808,7 +2805,6 @@ class RenderContentManager:
 
 
 from System import Guid
-from System.Collections.Generic import IEnumerable
 class RenderContentSerializer:
     @overload
     def CanLoadMultiple(self) -> bool: ...
@@ -2913,7 +2909,6 @@ class RenderEndEventArgs:
 
 
 from System import Guid
-from System.Collections.Generic import IEnumerable
 from System.Drawing import Size
 from System.Drawing import Bitmap
 from .Fields import FieldDictionary
@@ -3189,7 +3184,6 @@ class RenderingSources(Enum):
 
 
 from ..DocObjects import Material
-from System.Collections.Generic import IEnumerable
 from ..DocObjects import ObjRef
 from System import Guid
 from ..DocObjects import TextureType
@@ -3642,11 +3636,9 @@ class RenderPlugInInfo:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import IEnumerable
 from System.Collections.ObjectModel import ReadOnlyCollection
 from System.Collections.Generic import IComparer
 from System import Predicate
-from System.Collections.Generic import List
 from System import Action
 from System.Collections.Generic import Enumerator
 from System import Comparison
@@ -4082,7 +4074,6 @@ from ..Geometry import Vector3d
 from ..Geometry import Point3d
 from System import IntPtr
 from System import Guid
-from System.Collections.Generic import IEnumerable
 from System.Drawing import Size
 from .Fields import FieldDictionary
 from .Fields import Field
@@ -5711,7 +5702,6 @@ from ..DocObjects import RhinoObject
 from System.Drawing import Bitmap
 from ..Geometry import Vector3d
 from System import Guid
-from System.Collections.Generic import IEnumerable
 from System.Drawing import Size
 from .Fields import FieldDictionary
 from System import IntPtr
@@ -6079,7 +6069,6 @@ class UndoRedo:
 
 
 from System import Guid
-from System.Collections.Generic import IEnumerable
 from System import IntPtr
 from System.Drawing import Rectangle
 from System.Drawing import Point

@@ -3,7 +3,6 @@ from enum import Enum
 
 
 
-from System.Collections.Generic import IEnumerable
 from System.Drawing import Color
 from System.Drawing import RectangleF
 from System.Drawing import PointF

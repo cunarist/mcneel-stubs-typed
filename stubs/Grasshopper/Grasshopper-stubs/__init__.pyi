@@ -1219,7 +1219,6 @@ class EtoWin32Window:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import List
 class Folders:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -1348,7 +1347,6 @@ class Global_Proc:
     def UiAdjust(value: float) -> float: ...
 
 
-from System.Collections.Generic import List
 from System import Guid
 from .GUI.RemotePanel import RemoteControlPanel
 from .GUI import GH_DocumentEditor
@@ -2038,7 +2036,6 @@ class TooltipWiggleRadiusChangedEventHandler:
 
 
 from System import Guid
-from System import Exception
 class Tracing:
     @overload
     @staticmethod

@@ -14,7 +14,6 @@ class Alignment(Enum):
 
 
 from System.Drawing import Color
-from System.Collections.Generic import List
 class BranchDisplay:
     MaskColor: Color
     Dots: List
@@ -62,7 +61,6 @@ class GH_BarData:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import List
 from System.Drawing import Color
 from System.Windows.Forms import ToolStripDropDown
 from System import Guid
@@ -71,14 +69,12 @@ from GH_IO.Serialization import GH_IReader
 from System.Collections.Generic import IList
 from ..Data import GH_Path
 from ..Types import GH_Number
-from System.Collections import IEnumerable
 from ..Data import IGH_Structure
 from ..Data import GH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
 from System.Drawing import Bitmap
-from System.Collections.Generic import IEnumerable
 class GH_BarGraph:
     @overload
     def __init__(self): ...
@@ -385,7 +381,6 @@ from System.Drawing import PointF
 from System.Drawing import RectangleF
 from ...GUI import GH_TooltipDisplayEventArgs
 from System import Guid
-from System.Collections.Generic import List
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from ...GUI.Canvas import GH_CanvasChannel
@@ -490,15 +485,12 @@ from GH_IO.Serialization import GH_IReader
 from System.Collections.Generic import IList
 from ..Data import GH_Path
 from ..Types import GH_Boolean
-from System.Collections import IEnumerable
-from System.Collections.Generic import List
 from ..Data import IGH_Structure
 from ..Data import GH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
 from System.Drawing import Bitmap
-from System.Collections.Generic import IEnumerable
 class GH_BooleanSwitch_Obsolete:
     @overload
     def __init__(self): ...
@@ -799,7 +791,6 @@ from System.Drawing import PointF
 from System.Drawing import RectangleF
 from ...GUI import GH_TooltipDisplayEventArgs
 from System import Guid
-from System.Collections.Generic import List
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from ...GUI.Canvas import GH_CanvasChannel
@@ -906,15 +897,12 @@ from ...GUI.RemotePanel import IRcpItem
 from System.Collections.Generic import IList
 from ..Data import GH_Path
 from ..Types import GH_Boolean
-from System.Collections import IEnumerable
-from System.Collections.Generic import List
 from ..Data import IGH_Structure
 from ..Data import GH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
 from System.Drawing import Bitmap
-from System.Collections.Generic import IEnumerable
 class GH_BooleanToggle:
     @overload
     def __init__(self): ...
@@ -1217,7 +1205,6 @@ from ...GUI import GH_CanvasMouseEvent
 from ...GUI.Canvas import GH_ObjectResponse
 from System.Drawing import RectangleF
 from System import Guid
-from System.Collections.Generic import List
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from ...GUI.Canvas import GH_CanvasChannel
@@ -1365,15 +1352,12 @@ from ...GUI.RemotePanel import IRcpItem
 from System.Collections.Generic import IList
 from ..Data import GH_Path
 from ..Types import IGH_Goo
-from System.Collections import IEnumerable
-from System.Collections.Generic import List
 from ..Data import IGH_Structure
 from ..Data import GH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
 from System.Drawing import Bitmap
-from System.Collections.Generic import IEnumerable
 class GH_ButtonObject:
     @overload
     def __init__(self): ...
@@ -1682,7 +1666,6 @@ from ...GUI import GH_CanvasMouseEvent
 from ...GUI.Canvas import GH_ObjectResponse
 from System.Drawing import RectangleF
 from System import Guid
-from System.Collections.Generic import List
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from ...GUI.Canvas import GH_CanvasChannel
@@ -1827,7 +1810,6 @@ from System.Drawing import Point
 from System.Collections.Generic import SortedDictionary
 from Rhino.Geometry import BoundingBox
 from Rhino import RhinoDoc
-from System.Collections.Generic import List
 from Rhino.DocObjects import ObjectAttributes
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
@@ -1837,7 +1819,6 @@ from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
 from System.Drawing import Bitmap
-from System.Collections.Generic import IEnumerable
 class GH_Cluster(GH_Component):
     @overload
     def __init__(self): ...
@@ -2144,14 +2125,12 @@ from GH_IO.Serialization import GH_IReader
 from System.Windows.Forms import ToolStripDropDown
 from Rhino.Geometry import BoundingBox
 from Rhino import RhinoDoc
-from System.Collections.Generic import List
 from Rhino.DocObjects import ObjectAttributes
 from System.Collections.Generic import IList
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
 from System.Drawing import Bitmap
-from System.Collections.Generic import IEnumerable
 class GH_Cluster_OBSOLETE(GH_Component):
     @overload
     def __init__(self): ...
@@ -2418,7 +2397,6 @@ from ...GUI import GH_TooltipDisplayEventArgs
 from ...GUI.Canvas import GH_Canvas
 from ...GUI import GH_CanvasMouseEvent
 from ...GUI.Canvas import GH_ObjectResponse
-from System.Collections.Generic import List
 from System.Drawing import RectangleF
 from System import Guid
 from GH_IO.Serialization import GH_IWriter
@@ -2526,7 +2504,6 @@ from ...GUI import GH_TooltipDisplayEventArgs
 from ...GUI.Canvas import GH_Canvas
 from ...GUI import GH_CanvasMouseEvent
 from ...GUI.Canvas import GH_ObjectResponse
-from System.Collections.Generic import List
 from System.Drawing import RectangleF
 from System import Guid
 from GH_IO.Serialization import GH_IWriter
@@ -2675,15 +2652,12 @@ from System.Collections.Generic import IList
 from System import Guid
 from ..Data import GH_Path
 from ..Types import IGH_Goo
-from System.Collections import IEnumerable
-from System.Collections.Generic import List
 from ..Data import IGH_Structure
 from ..Data import GH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
 from System.Drawing import Bitmap
-from System.Collections.Generic import IEnumerable
 class GH_ClusterHook:
     @overload
     def __init__(self, tag: IGH_InstanceDescription): ...
@@ -2991,14 +2965,11 @@ from GH_IO.Serialization import GH_IReader
 from System.Collections.Generic import IList
 from ..Data import GH_Path
 from ..Types import IGH_Goo
-from System.Collections import IEnumerable
-from System.Collections.Generic import List
 from ..Data import IGH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
 from System.Drawing import Bitmap
-from System.Collections.Generic import IEnumerable
 class GH_ClusterInputHook(GH_ClusterHook):
     @overload
     def __init__(self): ...
@@ -3311,7 +3282,6 @@ from ...GUI.Canvas import GH_Canvas
 from ...GUI import GH_CanvasMouseEvent
 from ...GUI.Canvas import GH_ObjectResponse
 from System import Guid
-from System.Collections.Generic import List
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from ...GUI.Canvas import GH_CanvasChannel
@@ -3420,15 +3390,12 @@ from GH_IO.Serialization import GH_IReader
 from System.Collections.Generic import IList
 from ..Data import GH_Path
 from ..Types import IGH_Goo
-from System.Collections import IEnumerable
-from System.Collections.Generic import List
 from ..Data import IGH_Structure
 from ..Data import GH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
 from System.Drawing import Bitmap
-from System.Collections.Generic import IEnumerable
 class GH_ClusterOutputHook(GH_ClusterHook):
     @overload
     def __init__(self): ...
@@ -3737,7 +3704,6 @@ from ...GUI.Canvas import GH_Canvas
 from ...GUI import GH_CanvasMouseEvent
 from ...GUI.Canvas import GH_ObjectResponse
 from System import Guid
-from System.Collections.Generic import List
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from ...GUI.Canvas import GH_CanvasChannel
@@ -3977,7 +3943,6 @@ from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from System.Drawing import RectangleF
 from System import Guid
-from System.Collections.Generic import List
 from ...GUI.Canvas import GH_CanvasChannel
 from System.Windows.Forms import KeyEventArgs
 class GH_ColourPickerAttributes:
@@ -4080,8 +4045,6 @@ from GH_IO.Serialization import GH_IReader
 from System.Collections.Generic import IList
 from ..Data import GH_Path
 from ..Types import GH_Colour
-from System.Collections import IEnumerable
-from System.Collections.Generic import List
 from ..Data import IGH_Structure
 from ..Data import GH_Structure
 from System import TimeSpan
@@ -4089,7 +4052,6 @@ from System.Windows.Forms import ToolStripDropDown
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
 from System.Drawing import Bitmap
-from System.Collections.Generic import IEnumerable
 class GH_ColourPickerObject:
     @overload
     def __init__(self): ...
@@ -4387,8 +4349,6 @@ from ...GUI.RemotePanel import IRcpItem
 from System.Collections.Generic import IList
 from ..Data import GH_Path
 from ..Types import GH_Colour
-from System.Collections import IEnumerable
-from System.Collections.Generic import List
 from ..Data import IGH_Structure
 from ..Data import GH_Structure
 from System import TimeSpan
@@ -4396,7 +4356,6 @@ from System.Windows.Forms import ToolStripDropDown
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
 from System.Drawing import Bitmap
-from System.Collections.Generic import IEnumerable
 class GH_ColourSwatch:
     @overload
     def __init__(self): ...
@@ -4699,7 +4658,6 @@ from System.Drawing import PointF
 from System.Drawing import RectangleF
 from ...GUI import GH_TooltipDisplayEventArgs
 from System import Guid
-from System.Collections.Generic import List
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from ...GUI.Canvas import GH_CanvasChannel
@@ -4847,15 +4805,12 @@ from GH_IO.Serialization import GH_IReader
 from System.Collections.Generic import IList
 from ..Data import GH_Path
 from ..Types import GH_Colour
-from System.Collections import IEnumerable
-from System.Collections.Generic import List
 from ..Data import IGH_Structure
 from ..Data import GH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
 from System.Drawing import Bitmap
-from System.Collections.Generic import IEnumerable
 class GH_ColourWheel:
     @overload
     def __init__(self): ...
@@ -5156,7 +5111,6 @@ from System.Drawing import PointF
 from System.Drawing import RectangleF
 from ...GUI import GH_TooltipDisplayEventArgs
 from System import Guid
-from System.Collections.Generic import List
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from ...GUI.Canvas import GH_CanvasChannel
@@ -5281,7 +5235,6 @@ from Rhino.Geometry import Point3d
 from Rhino.Geometry import Circle
 from Rhino.Geometry import Arc
 from System.Drawing import Graphics
-from System.Collections.Generic import List
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 class GH_ColourWheelState:
@@ -5377,8 +5330,6 @@ from System import Guid
 from System.Collections.Generic import IList
 from ..Data import GH_Path
 from ..Types import IGH_Goo
-from System.Collections import IEnumerable
-from System.Collections.Generic import List
 from ..Data import IGH_Structure
 from ..Data import GH_Structure
 from System import TimeSpan
@@ -5388,7 +5339,6 @@ from GH_IO.Serialization import GH_IReader
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
 from System.Drawing import Bitmap
-from System.Collections.Generic import IEnumerable
 class GH_ConstantObject:
     @overload
     def __init__(self): ...
@@ -5681,7 +5631,6 @@ from ...GUI import GH_CanvasMouseEvent
 from ...GUI.Canvas import GH_ObjectResponse
 from System.Drawing import RectangleF
 from System import Guid
-from System.Collections.Generic import List
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from ...GUI.Canvas import GH_CanvasChannel
@@ -5788,15 +5737,12 @@ from GH_IO.Serialization import GH_IReader
 from System.Collections.Generic import IList
 from ..Data import GH_Path
 from ..Types import IGH_Goo
-from System.Collections import IEnumerable
-from System.Collections.Generic import List
 from ..Data import IGH_Structure
 from ..Data import GH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
 from System.Drawing import Bitmap
-from System.Collections.Generic import IEnumerable
 class GH_DataRecorder:
     @overload
     def __init__(self): ...
@@ -6111,7 +6057,6 @@ from ...GUI import GH_CanvasMouseEvent
 from ...GUI.Canvas import GH_ObjectResponse
 from System.Drawing import RectangleF
 from System import Guid
-from System.Collections.Generic import List
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from ...GUI.Canvas import GH_CanvasChannel
@@ -6217,15 +6162,12 @@ from GH_IO.Serialization import GH_IReader
 from System.Collections.Generic import IList
 from ..Data import GH_Path
 from ..Types import GH_Number
-from System.Collections import IEnumerable
-from System.Collections.Generic import List
 from ..Data import IGH_Structure
 from ..Data import GH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
 from System.Drawing import Bitmap
-from System.Collections.Generic import IEnumerable
 class GH_DialKnob:
     @overload
     def __init__(self): ...
@@ -6556,7 +6498,6 @@ from ...GUI import GH_CanvasMouseEvent
 from ...GUI.Canvas import GH_ObjectResponse
 from ...GUI import GH_TooltipDisplayEventArgs
 from System import Guid
-from System.Collections.Generic import List
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from ...GUI.Canvas import GH_CanvasChannel
@@ -6662,15 +6603,12 @@ from GH_IO.Serialization import GH_IReader
 from System.Collections.Generic import IList
 from ..Data import GH_Path
 from ..Types import GH_Number
-from System.Collections import IEnumerable
-from System.Collections.Generic import List
 from ..Data import IGH_Structure
 from ..Data import GH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
 from System.Drawing import Bitmap
-from System.Collections.Generic import IEnumerable
 class GH_DigitScroller:
     @overload
     def __init__(self): ...
@@ -6973,7 +6911,6 @@ from ...GUI.Canvas import GH_ObjectResponse
 from System.Drawing import PointF
 from ...GUI import GH_TooltipDisplayEventArgs
 from System import Guid
-from System.Collections.Generic import List
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from ...GUI.Canvas import GH_CanvasChannel
@@ -7081,15 +7018,12 @@ from GH_IO.Serialization import GH_IReader
 from System.Collections.Generic import IList
 from ..Data import GH_Path
 from ..Types import IGH_GeometricGoo
-from System.Collections import IEnumerable
-from System.Collections.Generic import List
 from ..Data import IGH_Structure
 from ..Data import GH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
 from System.Drawing import Bitmap
-from System.Collections.Generic import IEnumerable
 class GH_GeometryCache:
     @overload
     def __init__(self): ...
@@ -7398,7 +7332,6 @@ from System.Drawing import PointF
 from ...GUI import GH_TooltipDisplayEventArgs
 from System.Drawing import RectangleF
 from System import Guid
-from System.Collections.Generic import List
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from ...GUI.Canvas import GH_CanvasChannel
@@ -7505,15 +7438,12 @@ from GH_IO.Serialization import GH_IReader
 from System.Collections.Generic import IList
 from ..Data import GH_Path
 from ..Types import IGH_GeometricGoo
-from System.Collections import IEnumerable
-from System.Collections.Generic import List
 from ..Data import IGH_Structure
 from ..Data import GH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
 from System.Drawing import Bitmap
-from System.Collections.Generic import IEnumerable
 class GH_GeometryPipeline:
     @overload
     def __init__(self): ...
@@ -7848,7 +7778,6 @@ from ...GUI import GH_CanvasMouseEvent
 from ...GUI.Canvas import GH_ObjectResponse
 from System.Drawing import RectangleF
 from System import Guid
-from System.Collections.Generic import List
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from ...GUI.Canvas import GH_CanvasChannel
@@ -7951,7 +7880,6 @@ from System.Windows.Forms import ToolStripDropDown
 from ...GUI.Gradient import GH_Gradient
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
-from System.Collections.Generic import List
 from System.Collections.Generic import IList
 from System import TimeSpan
 from Rhino.Geometry import BoundingBox
@@ -7960,7 +7888,6 @@ from Rhino.DocObjects import ObjectAttributes
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
 from System.Drawing import Bitmap
-from System.Collections.Generic import IEnumerable
 class GH_GradientControl(GH_Component):
     @overload
     def __init__(self): ...
@@ -8208,7 +8135,6 @@ class GH_GradientControl(GH_Component):
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
-from System.Collections.Generic import List
 from ...GUI.Canvas import GH_Canvas
 from ...GUI import GH_CanvasMouseEvent
 from ...GUI.Canvas import GH_ObjectResponse
@@ -8325,15 +8251,12 @@ from GH_IO.Serialization import GH_IReader
 from System.Collections.Generic import IList
 from ..Data import GH_Path
 from ..Types import IGH_Goo
-from System.Collections import IEnumerable
-from System.Collections.Generic import List
 from ..Data import IGH_Structure
 from ..Data import GH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
 from System.Drawing import Bitmap
-from System.Collections.Generic import IEnumerable
 class GH_GraphMapper:
     @overload
     def __init__(self): ...
@@ -8636,7 +8559,6 @@ from System.Drawing import PointF
 from System.Drawing import RectangleF
 from ...GUI import GH_TooltipDisplayEventArgs
 from System import Guid
-from System.Collections.Generic import List
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from ...GUI.Canvas import GH_CanvasChannel
@@ -8738,7 +8660,6 @@ class GH_GraphMapperAttributes:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
-from System.Collections.Generic import List
 from System.Drawing import Color
 from System.Collections.Generic import SortedDictionary
 from System import Guid
@@ -8748,7 +8669,6 @@ from GH_IO.Serialization import GH_IReader
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
 from System.Drawing import Bitmap
-from System.Collections.Generic import IEnumerable
 class GH_Group(GH_DocumentObject):
     @overload
     def __init__(self): ...
@@ -8936,7 +8856,6 @@ from System import Guid
 from System.Drawing import PointF
 from ...GUI import GH_TooltipDisplayEventArgs
 from System.Drawing import RectangleF
-from System.Collections.Generic import List
 from ...GUI.Canvas import GH_Canvas
 from ...GUI.Canvas import GH_CanvasChannel
 from ...GUI import GH_CanvasMouseEvent
@@ -9053,14 +8972,11 @@ from System.Drawing import PointF
 from System.Collections.Generic import IList
 from ..Data import GH_Path
 from ..Types import IGH_Goo
-from System.Collections import IEnumerable
-from System.Collections.Generic import List
 from ..Data import IGH_Structure
 from ..Data import GH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
-from System.Collections.Generic import IEnumerable
 class GH_ImageSampler:
     @overload
     def __init__(self): ...
@@ -9395,7 +9311,6 @@ from System.Drawing import PointF
 from System.Drawing import RectangleF
 from ...GUI import GH_TooltipDisplayEventArgs
 from System import Guid
-from System.Collections.Generic import List
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from ...GUI.Canvas import GH_CanvasChannel
@@ -9501,18 +9416,15 @@ from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from Rhino.Geometry import BoundingBox
 from Rhino import RhinoDoc
-from System.Collections.Generic import List
 from Rhino.DocObjects import ObjectAttributes
 from System.Collections.Generic import IList
 from ..Types import IGH_Goo
-from System.Collections import IEnumerable
 from ..Data import GH_Structure
 from System import TimeSpan
 from System.Windows.Forms import ToolStripDropDown
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
 from System.Drawing import Bitmap
-from System.Collections.Generic import IEnumerable
 class GH_ItemPicker:
     @overload
     def __init__(self): ...
@@ -9835,7 +9747,6 @@ from System.Drawing import PointF
 from ...GUI import GH_TooltipDisplayEventArgs
 from System.Drawing import RectangleF
 from System import Guid
-from System.Collections.Generic import List
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from ...GUI.Canvas import GH_CanvasChannel
@@ -9942,7 +9853,6 @@ from GH_IO.Serialization import GH_IReader
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
 from System.Drawing import Bitmap
-from System.Collections.Generic import IEnumerable
 class GH_JumpObject(GH_DocumentObject):
     @overload
     def __init__(self): ...
@@ -10112,7 +10022,6 @@ from ...GUI.Canvas import GH_Canvas
 from ...GUI import GH_CanvasMouseEvent
 from ...GUI.Canvas import GH_ObjectResponse
 from System import Guid
-from System.Collections.Generic import List
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from ...GUI.Canvas import GH_CanvasChannel
@@ -10218,12 +10127,10 @@ from System.Collections.Generic import IList
 from System.Windows.Forms import ToolStripDropDown
 from System import TimeSpan
 from Rhino import RhinoDoc
-from System.Collections.Generic import List
 from Rhino.DocObjects import ObjectAttributes
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
 from System.Drawing import Bitmap
-from System.Collections.Generic import IEnumerable
 class GH_Legend(GH_Component):
     @overload
     def __init__(self): ...
@@ -10461,7 +10368,6 @@ class GH_Legend(GH_Component):
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
-from System.Collections.Generic import List
 from ...GUI.Canvas import GH_Canvas
 from ...GUI import GH_CanvasMouseEvent
 from ...GUI.Canvas import GH_ObjectResponse
@@ -10566,7 +10472,6 @@ class GH_LegendAttributes:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
-from System.Collections.Generic import List
 from Rhino.Geometry import Rectangle3d
 from System.Drawing import Rectangle
 from System.Drawing import Graphics
@@ -10626,7 +10531,6 @@ from GH_IO.Serialization import GH_IReader
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
 from System.Drawing import Bitmap
-from System.Collections.Generic import IEnumerable
 class GH_Markup(GH_DocumentObject):
     @overload
     def __init__(self): ...
@@ -10796,7 +10700,6 @@ from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from ...GUI import GH_TooltipDisplayEventArgs
 from System import Guid
-from System.Collections.Generic import List
 from ...GUI.Canvas import GH_CanvasChannel
 from System.Windows.Forms import KeyEventArgs
 class GH_MarkupAttributes:
@@ -10997,8 +10900,6 @@ from GH_IO.Serialization import GH_IReader
 from System.Collections.Generic import IList
 from ..Data import GH_Path
 from ..Types import GH_Point
-from System.Collections import IEnumerable
-from System.Collections.Generic import List
 from ..Data import IGH_Structure
 from ..Data import GH_Structure
 from System import TimeSpan
@@ -11006,7 +10907,6 @@ from System.Windows.Forms import ToolStripDropDown
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
 from System.Drawing import Bitmap
-from System.Collections.Generic import IEnumerable
 class GH_MultiDimensionalSlider:
     @overload
     def __init__(self): ...
@@ -11331,7 +11231,6 @@ from System.Drawing import PointF
 from System.Drawing import RectangleF
 from ...GUI import GH_TooltipDisplayEventArgs
 from System import Guid
-from System.Collections.Generic import List
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from ...GUI.Canvas import GH_CanvasChannel
@@ -11440,15 +11339,12 @@ from ...GUI.RemotePanel import IRcpItem
 from System.Collections.Generic import IList
 from ..Data import GH_Path
 from ..Types import GH_Number
-from System.Collections import IEnumerable
-from System.Collections.Generic import List
 from ..Data import IGH_Structure
 from ..Data import GH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
 from System.Drawing import Bitmap
-from System.Collections.Generic import IEnumerable
 class GH_NumberSlider:
     @overload
     def __init__(self): ...
@@ -11786,7 +11682,6 @@ from System.Drawing import PointF
 from System.Drawing import RectangleF
 from ...GUI import GH_TooltipDisplayEventArgs
 from System import Guid
-from System.Collections.Generic import List
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from ...GUI.Canvas import GH_CanvasChannel
@@ -11934,15 +11829,12 @@ from ...GUI.RemotePanel import IRcpItem
 from System.Collections.Generic import IList
 from ..Data import GH_Path
 from ..Types import GH_String
-from System.Collections import IEnumerable
-from System.Collections.Generic import List
 from ..Data import IGH_Structure
 from ..Data import GH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
 from System.Drawing import Bitmap
-from System.Collections.Generic import IEnumerable
 class GH_Panel:
     @overload
     def __init__(self): ...
@@ -12267,7 +12159,6 @@ from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from System.Drawing import RectangleF
 from System import Guid
-from System.Collections.Generic import List
 from ...GUI.Canvas import GH_CanvasChannel
 from System.Windows.Forms import KeyEventArgs
 class GH_PanelAttributes:
@@ -12528,15 +12419,12 @@ from GH_IO.Serialization import GH_IReader
 from System.Collections.Generic import IList
 from ..Data import GH_Path
 from ..Types import GH_StructurePath
-from System.Collections import IEnumerable
-from System.Collections.Generic import List
 from ..Data import IGH_Structure
 from ..Data import GH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
 from System.Drawing import Bitmap
-from System.Collections.Generic import IEnumerable
 class GH_ParamViewer:
     @overload
     def __init__(self): ...
@@ -12844,7 +12732,6 @@ from System.Drawing import PointF
 from System.Drawing import RectangleF
 from ...GUI import GH_TooltipDisplayEventArgs
 from System import Guid
-from System.Collections.Generic import List
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from ...GUI.Canvas import GH_CanvasChannel
@@ -12951,21 +12838,18 @@ class GH_ParamViewerAttributes:
 
 
 from System import Guid
-from System.Collections.Generic import List
 from System.Windows.Forms import ToolStripDropDown
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from System.Collections.Generic import IList
 from ..Data import GH_Path
 from ..Types import IGH_Goo
-from System.Collections import IEnumerable
 from ..Data import IGH_Structure
 from ..Data import GH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
 from System.Drawing import Bitmap
-from System.Collections.Generic import IEnumerable
 class GH_PathMapper:
     @overload
     def __init__(self): ...
@@ -13274,7 +13158,6 @@ from System.Drawing import PointF
 from System.Drawing import RectangleF
 from ...GUI import GH_TooltipDisplayEventArgs
 from System import Guid
-from System.Collections.Generic import List
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from ...GUI.Canvas import GH_CanvasChannel
@@ -13373,11 +13256,9 @@ class GH_PathMapperAttributes:
 
 
 from System import Guid
-from System.Collections.Generic import List
 from System.Collections.Generic import IList
 from ..Data import GH_Path
 from ..Types import GH_String
-from System.Collections import IEnumerable
 from ..Data import IGH_Structure
 from ..Data import GH_Structure
 from System import TimeSpan
@@ -13387,7 +13268,6 @@ from GH_IO.Serialization import GH_IReader
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
 from System.Drawing import Bitmap
-from System.Collections.Generic import IEnumerable
 class GH_PieChart:
     @overload
     def __init__(self): ...
@@ -13684,7 +13564,6 @@ from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from ...GUI import GH_TooltipDisplayEventArgs
 from System import Guid
-from System.Collections.Generic import List
 from ...GUI.Canvas import GH_CanvasChannel
 from System.Windows.Forms import KeyEventArgs
 class GH_PieChartAttributes:
@@ -13819,7 +13698,6 @@ class GH_PieChartPair:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import List
 class GH_PolylineReductionSetManager:
     @overload
     def __init__(self, input: List): ...
@@ -13838,21 +13716,18 @@ class GH_PolylineReductionSetManager:
 
 
 from System import Guid
-from System.Collections.Generic import List
 from System.Windows.Forms import ToolStripDropDown
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from System.Collections.Generic import IList
 from ..Data import GH_Path
 from ..Types import GH_Number
-from System.Collections import IEnumerable
 from ..Data import IGH_Structure
 from ..Data import GH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
 from System.Drawing import Bitmap
-from System.Collections.Generic import IEnumerable
 class GH_QuickGraph:
     @overload
     def __init__(self): ...
@@ -14159,7 +14034,6 @@ from System.Drawing import PointF
 from System.Drawing import RectangleF
 from ...GUI import GH_TooltipDisplayEventArgs
 from System import Guid
-from System.Collections.Generic import List
 from ...GUI.Canvas import GH_CanvasChannel
 from System.Windows.Forms import KeyEventArgs
 class GH_QuickGraphAttributes:
@@ -14360,13 +14234,11 @@ class GH_QuickGraphTrack:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import List
 from System import Guid
 from System.Windows.Forms import ToolStripDropDown
 from System.Collections.Generic import IList
 from ..Data import GH_Path
 from ..Types import IGH_Goo
-from System.Collections import IEnumerable
 from ..Data import IGH_Structure
 from ..Data import GH_Structure
 from System import TimeSpan
@@ -14375,7 +14247,6 @@ from GH_IO.Serialization import GH_IReader
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
 from System.Drawing import Bitmap
-from System.Collections.Generic import IEnumerable
 class GH_Relay:
     @overload
     def __init__(self): ...
@@ -14679,7 +14550,6 @@ from System.Drawing import PointF
 from ...GUI import GH_TooltipDisplayEventArgs
 from System.Drawing import RectangleF
 from System import Guid
-from System.Collections.Generic import List
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from ...GUI.Canvas import GH_CanvasChannel
@@ -14798,7 +14668,6 @@ from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
 from System.Windows.Forms import ToolStripDropDown
 from System.Drawing import Bitmap
-from System.Collections.Generic import IEnumerable
 class GH_Scribble(GH_DocumentObject):
     @overload
     def __init__(self): ...
@@ -14984,7 +14853,6 @@ from ...GUI.Canvas import GH_ObjectResponse
 from System.Drawing.Drawing2D import GraphicsPath
 from ...GUI import GH_TooltipDisplayEventArgs
 from System import Guid
-from System.Collections.Generic import List
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from ...GUI.Canvas import GH_CanvasChannel
@@ -15148,8 +15016,6 @@ from System.Windows.Forms import ToolStripDropDown
 from System.Collections.Generic import IList
 from ..Data import GH_Path
 from ..Types import IGH_Goo
-from System.Collections import IEnumerable
-from System.Collections.Generic import List
 from ..Data import IGH_Structure
 from ..Data import GH_Structure
 from System import TimeSpan
@@ -15158,7 +15024,6 @@ from GH_IO.Serialization import GH_IReader
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
 from System.Drawing import Bitmap
-from System.Collections.Generic import IEnumerable
 class GH_SuireSimplifyNode:
     @overload
     def __init__(self): ...
@@ -15448,7 +15313,6 @@ from System.Drawing import PointF
 from System.Drawing import RectangleF
 from ...GUI import GH_TooltipDisplayEventArgs
 from System import Guid
-from System.Collections.Generic import List
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from ...GUI.Canvas import GH_Canvas
@@ -15565,7 +15429,6 @@ from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
 from System.Windows.Forms import ToolStripDropDown
 from System.Drawing import Bitmap
-from System.Collections.Generic import IEnumerable
 class GH_TextBalloon(GH_DocumentObject):
     @overload
     def __init__(self): ...
@@ -15738,7 +15601,6 @@ from ...GUI import GH_CanvasMouseEvent
 from ...GUI.Canvas import GH_ObjectResponse
 from ...GUI import GH_TooltipDisplayEventArgs
 from System import Guid
-from System.Collections.Generic import List
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from ...GUI.Canvas import GH_CanvasChannel
@@ -15839,7 +15701,6 @@ class GH_TextBalloonAttributes:
 
 
 from System import Guid
-from System.Collections.Generic import List
 from System.Collections.Generic import SortedDictionary
 from System.Windows.Forms import ToolStripDropDown
 from GH_IO.Serialization import GH_IWriter
@@ -15849,7 +15710,6 @@ from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
 from System.Drawing import Bitmap
-from System.Collections.Generic import IEnumerable
 class GH_Timer(GH_ActiveObject):
     @overload
     def __init__(self): ...
@@ -16105,7 +15965,6 @@ from System.Drawing import RectangleF
 from System.Drawing import Color
 from System.Drawing.Drawing2D import GraphicsPath
 from System import Guid
-from System.Collections.Generic import List
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from ...GUI.Canvas import GH_CanvasChannel
@@ -16261,7 +16120,6 @@ class GH_TimerTargetInteraction(GH_AbstractInteraction):
 
 
 from System import Guid
-from System.Collections.Generic import List
 from System.Windows.Forms import IWin32Window
 from System.Windows.Forms import ToolStripDropDown
 from Rhino.Geometry import BoundingBox
@@ -16272,14 +16130,12 @@ from GH_IO.Serialization import GH_IReader
 from System.Collections.Generic import IList
 from ..Data import GH_Path
 from ..Types import IGH_Goo
-from System.Collections import IEnumerable
 from ..Data import IGH_Structure
 from ..Data import GH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
 from System.Drawing import Bitmap
-from System.Collections.Generic import IEnumerable
 class GH_ValueList:
     @overload
     def __init__(self): ...
@@ -16618,7 +16474,6 @@ from System.Drawing import PointF
 from System.Drawing import RectangleF
 from ...GUI import GH_TooltipDisplayEventArgs
 from System import Guid
-from System.Collections.Generic import List
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from ...GUI.Canvas import GH_CanvasChannel
@@ -16777,14 +16632,12 @@ from System.Windows.Forms import ToolStripDropDown
 from System import TimeSpan
 from Rhino.Geometry import BoundingBox
 from Rhino import RhinoDoc
-from System.Collections.Generic import List
 from Rhino.DocObjects import ObjectAttributes
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
 from System.Drawing import Bitmap
-from System.Collections.Generic import IEnumerable
 class GH_ValueTimeline(GH_Component):
     @overload
     def __init__(self): ...
@@ -17035,15 +16888,12 @@ from GH_IO.Serialization import GH_IReader
 from System.Collections.Generic import IList
 from ..Data import GH_Path
 from ..Types import GH_Number
-from System.Collections import IEnumerable
-from System.Collections.Generic import List
 from ..Data import IGH_Structure
 from ..Data import GH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
 from System.Drawing import Bitmap
-from System.Collections.Generic import IEnumerable
 class GH_ValueTracker:
     @overload
     def __init__(self): ...
@@ -17360,7 +17210,6 @@ from System.Drawing import PointF
 from System.Drawing import RectangleF
 from ...GUI import GH_TooltipDisplayEventArgs
 from System import Guid
-from System.Collections.Generic import List
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from ...GUI.Canvas import GH_CanvasChannel

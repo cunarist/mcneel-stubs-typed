@@ -42,7 +42,6 @@ class GH_ColourBucketState(Enum):
     Active = 2
 
 
-from System.Collections.Generic import List
 from System.Drawing import Color
 from System.Windows.Forms import AutoValidate
 from System.Windows.Forms import ValidationConstraints
@@ -887,7 +886,6 @@ class GH_MultiColourPalette:
     def ValidateChildren(self, validationConstraints: ValidationConstraints) -> bool: ...
 
 
-from System.Collections.Generic import List
 class GH_MultiColourPaletteEventArgs:
     @overload
     def __init__(self, nBuckets: List): ...
@@ -907,7 +905,6 @@ class GH_MultiColourPaletteEventArgs:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import List
 from System.Drawing import Size
 from System.Windows.Forms import AutoValidate
 from System.Drawing import Color

@@ -80,8 +80,6 @@ from System import Guid
 from System.Collections.Generic import IList
 from ..Data import GH_Path
 from ..Types import GH_Guid
-from System.Collections import IEnumerable
-from System.Collections.Generic import List
 from ..Data import IGH_Structure
 from ..Data import GH_Structure
 from System import TimeSpan
@@ -91,7 +89,6 @@ from GH_IO.Serialization import GH_IReader
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
 from System.Drawing import Bitmap
-from System.Collections.Generic import IEnumerable
 class GH_ProxyParameter:
     @overload
     def __init__(self, nUUID: Guid): ...
@@ -383,7 +380,6 @@ from System.Drawing import PointF
 from System.Drawing import RectangleF
 from ...GUI import GH_TooltipDisplayEventArgs
 from System import Guid
-from System.Collections.Generic import List
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from ...GUI.Canvas import GH_Canvas
@@ -491,15 +487,12 @@ from GH_IO.Serialization import GH_IReader
 from System.Collections.Generic import IList
 from ..Data import GH_Path
 from ..Types import IGH_Goo
-from System.Collections import IEnumerable
-from System.Collections.Generic import List
 from ..Data import IGH_Structure
 from ..Data import GH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
 from System.Drawing import Bitmap
-from System.Collections.Generic import IEnumerable
 class GH_Receiver:
     @overload
     def __init__(self): ...
@@ -800,7 +793,6 @@ from ...GUI import GH_CanvasMouseEvent
 from ...GUI.Canvas import GH_ObjectResponse
 from System.Drawing import RectangleF
 from System import Guid
-from System.Collections.Generic import List
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from ...GUI.Canvas import GH_CanvasChannel
@@ -926,16 +918,13 @@ from System import Guid
 from GH_IO.Serialization import GH_IReader
 from Rhino.Geometry import BoundingBox
 from Rhino import RhinoDoc
-from System.Collections.Generic import List
 from Rhino.DocObjects import ObjectAttributes
 from ..Types import GH_AngularDimension
-from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
 from System.Windows.Forms import ToolStripDropDown
 from GH_IO.Serialization import GH_IWriter
 from System.Collections.Generic import IList
 from ..Data import GH_Path
-from System.Collections import IEnumerable
 from ..Data import IGH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
@@ -1262,18 +1251,15 @@ class Param_AngularDimension:
 
 from System import Guid
 from Rhino import RhinoDoc
-from System.Collections.Generic import List
 from Rhino.DocObjects import ObjectAttributes
 from Rhino.Geometry import BoundingBox
 from ..Types import GH_Arc
-from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
 from System.Windows.Forms import ToolStripDropDown
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from System.Collections.Generic import IList
 from ..Data import GH_Path
-from System.Collections import IEnumerable
 from ..Data import IGH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
@@ -1603,12 +1589,9 @@ from System import Guid
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from ..Types import GH_Boolean
-from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
-from System.Collections.Generic import List
 from System.Collections.Generic import IList
 from ..Data import GH_Path
-from System.Collections import IEnumerable
 from ..Data import IGH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
@@ -1921,18 +1904,15 @@ class Param_Boolean:
 
 from Rhino.Geometry import BoundingBox
 from Rhino import RhinoDoc
-from System.Collections.Generic import List
 from Rhino.DocObjects import ObjectAttributes
 from System import Guid
 from ..Types import GH_Box
-from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
 from System.Windows.Forms import ToolStripDropDown
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from System.Collections.Generic import IList
 from ..Data import GH_Path
-from System.Collections import IEnumerable
 from ..Data import IGH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
@@ -2259,18 +2239,15 @@ class Param_Box:
 
 from Rhino.Geometry import BoundingBox
 from Rhino import RhinoDoc
-from System.Collections.Generic import List
 from Rhino.DocObjects import ObjectAttributes
 from System import Guid
 from ..Types import GH_Brep
-from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
 from System.Windows.Forms import ToolStripDropDown
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from System.Collections.Generic import IList
 from ..Data import GH_Path
-from System.Collections import IEnumerable
 from ..Data import IGH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
@@ -2599,16 +2576,13 @@ from System import Guid
 from GH_IO.Serialization import GH_IReader
 from Rhino.Geometry import BoundingBox
 from Rhino import RhinoDoc
-from System.Collections.Generic import List
 from Rhino.DocObjects import ObjectAttributes
 from ..Types import GH_Centermark
-from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
 from System.Windows.Forms import ToolStripDropDown
 from GH_IO.Serialization import GH_IWriter
 from System.Collections.Generic import IList
 from ..Data import GH_Path
-from System.Collections import IEnumerable
 from ..Data import IGH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
@@ -2935,18 +2909,15 @@ class Param_Centermark:
 
 from Rhino.Geometry import BoundingBox
 from Rhino import RhinoDoc
-from System.Collections.Generic import List
 from Rhino.DocObjects import ObjectAttributes
 from System import Guid
 from ..Types import GH_Circle
-from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
 from System.Windows.Forms import ToolStripDropDown
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from System.Collections.Generic import IList
 from ..Data import GH_Path
-from System.Collections import IEnumerable
 from ..Data import IGH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
@@ -3273,15 +3244,12 @@ class Param_Circle:
 
 from System import Guid
 from ..Types import GH_Colour
-from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
-from System.Collections.Generic import List
 from System.Windows.Forms import ToolStripDropDown
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from System.Collections.Generic import IList
 from ..Data import GH_Path
-from System.Collections import IEnumerable
 from ..Data import IGH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
@@ -3593,12 +3561,9 @@ from System.Windows.Forms import ToolStripDropDown
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from ..Types import GH_ComplexNumber
-from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
-from System.Collections.Generic import List
 from System.Collections.Generic import IList
 from ..Data import GH_Path
-from System.Collections import IEnumerable
 from ..Data import IGH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
@@ -3912,14 +3877,11 @@ class Param_Complex:
 from System.Windows.Forms import ToolStripDropDown
 from System import Guid
 from ..Types import GH_Culture
-from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
-from System.Collections.Generic import List
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from System.Collections.Generic import IList
 from ..Data import GH_Path
-from System.Collections import IEnumerable
 from ..Data import IGH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
@@ -4229,17 +4191,14 @@ class Param_Culture:
 from System.Windows.Forms import ToolStripDropDown
 from Rhino.Geometry import BoundingBox
 from Rhino import RhinoDoc
-from System.Collections.Generic import List
 from Rhino.DocObjects import ObjectAttributes
 from System import Guid
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from ..Types import GH_Curve
-from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
 from System.Collections.Generic import IList
 from ..Data import GH_Path
-from System.Collections import IEnumerable
 from ..Data import IGH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
@@ -4570,18 +4529,15 @@ class Param_Curve:
 
 from Rhino.Geometry import BoundingBox
 from Rhino import RhinoDoc
-from System.Collections.Generic import List
 from Rhino.DocObjects import ObjectAttributes
 from System import Guid
 from ..Types import GH_Extrusion
-from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
 from System.Windows.Forms import ToolStripDropDown
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from System.Collections.Generic import IList
 from ..Data import GH_Path
-from System.Collections import IEnumerable
 from ..Data import IGH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
@@ -4911,8 +4867,6 @@ from Rhino.Geometry import BoundingBox
 from System.Collections.Generic import IList
 from ..Data import GH_Path
 from ..Types import GH_Field
-from System.Collections import IEnumerable
-from System.Collections.Generic import List
 from ..Data import IGH_Structure
 from ..Data import GH_Structure
 from System import TimeSpan
@@ -4922,7 +4876,6 @@ from GH_IO.Serialization import GH_IReader
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
 from System.Drawing import Bitmap
-from System.Collections.Generic import IEnumerable
 class Param_Field:
     @overload
     def __init__(self): ...
@@ -5225,12 +5178,9 @@ from System import Guid
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from ..Types import GH_String
-from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
-from System.Collections.Generic import List
 from System.Collections.Generic import IList
 from ..Data import GH_Path
-from System.Collections import IEnumerable
 from ..Data import IGH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
@@ -5551,16 +5501,13 @@ from ..Data import GH_Structure
 from System.Windows.Forms import ToolStripDropDown
 from Rhino.Geometry import BoundingBox
 from Rhino import RhinoDoc
-from System.Collections.Generic import List
 from Rhino.DocObjects import ObjectAttributes
 from System import Guid
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from ..Types import IGH_Goo
-from System.Collections.Generic import IEnumerable
 from System.Collections.Generic import IList
 from ..Data import GH_Path
-from System.Collections import IEnumerable
 from ..Data import IGH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
@@ -5898,18 +5845,15 @@ class Param_GenericObject:
 
 from Rhino.Geometry import BoundingBox
 from Rhino import RhinoDoc
-from System.Collections.Generic import List
 from Rhino.DocObjects import ObjectAttributes
 from System import Guid
 from ..Types import IGH_GeometricGoo
-from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
 from System.Windows.Forms import ToolStripDropDown
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from System.Collections.Generic import IList
 from ..Data import GH_Path
-from System.Collections import IEnumerable
 from ..Data import IGH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
@@ -6238,13 +6182,11 @@ class Param_Geometry:
 
 from Rhino.Geometry import BoundingBox
 from Rhino import RhinoDoc
-from System.Collections.Generic import List
 from Rhino.DocObjects import ObjectAttributes
 from System import Guid
 from System.Collections.Generic import IList
 from ..Data import GH_Path
 from ..Types import GH_GeometryGroup
-from System.Collections import IEnumerable
 from ..Data import IGH_Structure
 from ..Data import GH_Structure
 from System import TimeSpan
@@ -6254,7 +6196,6 @@ from GH_IO.Serialization import GH_IReader
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
 from System.Drawing import Bitmap
-from System.Collections.Generic import IEnumerable
 class Param_Group:
     @overload
     def __init__(self): ...
@@ -6560,15 +6501,12 @@ class Param_Group:
 
 from System import Guid
 from ..Types import GH_Guid
-from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
-from System.Collections.Generic import List
 from System.Windows.Forms import ToolStripDropDown
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from System.Collections.Generic import IList
 from ..Data import GH_Path
-from System.Collections import IEnumerable
 from ..Data import IGH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
@@ -6879,16 +6817,13 @@ from System import Guid
 from GH_IO.Serialization import GH_IReader
 from Rhino.Geometry import BoundingBox
 from Rhino import RhinoDoc
-from System.Collections.Generic import List
 from Rhino.DocObjects import ObjectAttributes
 from ..Types import GH_Hatch
-from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
 from System.Windows.Forms import ToolStripDropDown
 from GH_IO.Serialization import GH_IWriter
 from System.Collections.Generic import IList
 from ..Data import GH_Path
-from System.Collections import IEnumerable
 from ..Data import IGH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
@@ -7217,16 +7152,13 @@ from System import Guid
 from GH_IO.Serialization import GH_IReader
 from Rhino.Geometry import BoundingBox
 from Rhino import RhinoDoc
-from System.Collections.Generic import List
 from Rhino.DocObjects import ObjectAttributes
 from ..Types import GH_InstanceReference
-from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
 from System.Windows.Forms import ToolStripDropDown
 from GH_IO.Serialization import GH_IWriter
 from System.Collections.Generic import IList
 from ..Data import GH_Path
-from System.Collections import IEnumerable
 from ..Data import IGH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
@@ -7556,12 +7488,9 @@ from System import Guid
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from ..Types import GH_Integer
-from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
-from System.Collections.Generic import List
 from System.Collections.Generic import IList
 from ..Data import GH_Path
-from System.Collections import IEnumerable
 from ..Data import IGH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
@@ -7880,15 +7809,12 @@ class Param_Integer:
 
 from System import Guid
 from ..Types import GH_Interval
-from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
-from System.Collections.Generic import List
 from System.Windows.Forms import ToolStripDropDown
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from System.Collections.Generic import IList
 from ..Data import GH_Path
-from System.Collections import IEnumerable
 from ..Data import IGH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
@@ -8197,15 +8123,12 @@ class Param_Interval:
 
 from System import Guid
 from ..Types import GH_Interval2D
-from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
-from System.Collections.Generic import List
 from System.Windows.Forms import ToolStripDropDown
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from System.Collections.Generic import IList
 from ..Data import GH_Path
-from System.Collections import IEnumerable
 from ..Data import IGH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
@@ -8516,8 +8439,6 @@ from System import Guid
 from System.Collections.Generic import IList
 from ..Data import GH_Path
 from ..Types import GH_Interval2D
-from System.Collections import IEnumerable
-from System.Collections.Generic import List
 from ..Data import IGH_Structure
 from ..Data import GH_Structure
 from System import TimeSpan
@@ -8527,7 +8448,6 @@ from GH_IO.Serialization import GH_IReader
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
 from System.Drawing import Bitmap
-from System.Collections.Generic import IEnumerable
 class Param_Interval2D_OBSOLETE:
     @overload
     def __init__(self): ...
@@ -8815,15 +8735,12 @@ class Param_Interval2D_OBSOLETE:
 
 from System import Guid
 from ..Types import GH_LonLatCoordinate
-from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
-from System.Collections.Generic import List
 from System.Windows.Forms import ToolStripDropDown
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from System.Collections.Generic import IList
 from ..Data import GH_Path
-from System.Collections import IEnumerable
 from ..Data import IGH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
@@ -9134,16 +9051,13 @@ from System import Guid
 from GH_IO.Serialization import GH_IReader
 from Rhino.Geometry import BoundingBox
 from Rhino import RhinoDoc
-from System.Collections.Generic import List
 from Rhino.DocObjects import ObjectAttributes
 from ..Types import GH_Leader
-from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
 from System.Windows.Forms import ToolStripDropDown
 from GH_IO.Serialization import GH_IWriter
 from System.Collections.Generic import IList
 from ..Data import GH_Path
-from System.Collections import IEnumerable
 from ..Data import IGH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
@@ -9472,16 +9386,13 @@ from System import Guid
 from GH_IO.Serialization import GH_IReader
 from Rhino.Geometry import BoundingBox
 from Rhino import RhinoDoc
-from System.Collections.Generic import List
 from Rhino.DocObjects import ObjectAttributes
 from ..Types import GH_Light
-from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
 from System.Windows.Forms import ToolStripDropDown
 from GH_IO.Serialization import GH_IWriter
 from System.Collections.Generic import IList
 from ..Data import GH_Path
-from System.Collections import IEnumerable
 from ..Data import IGH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
@@ -9809,18 +9720,15 @@ class Param_Light:
 from System import Guid
 from Rhino.Geometry import BoundingBox
 from Rhino import RhinoDoc
-from System.Collections.Generic import List
 from Rhino.DocObjects import ObjectAttributes
 from Rhino.Geometry import Line
 from ..Types import GH_Line
-from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
 from System.Windows.Forms import ToolStripDropDown
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from System.Collections.Generic import IList
 from ..Data import GH_Path
-from System.Collections import IEnumerable
 from ..Data import IGH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
@@ -10152,16 +10060,13 @@ from System import Guid
 from GH_IO.Serialization import GH_IReader
 from Rhino.Geometry import BoundingBox
 from Rhino import RhinoDoc
-from System.Collections.Generic import List
 from Rhino.DocObjects import ObjectAttributes
 from ..Types import GH_LinearDimension
-from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
 from System.Windows.Forms import ToolStripDropDown
 from GH_IO.Serialization import GH_IWriter
 from System.Collections.Generic import IList
 from ..Data import GH_Path
-from System.Collections import IEnumerable
 from ..Data import IGH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
@@ -10488,15 +10393,12 @@ class Param_LinearDimension:
 
 from System import Guid
 from ..Types import GH_Matrix
-from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
-from System.Collections.Generic import List
 from System.Windows.Forms import ToolStripDropDown
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from System.Collections.Generic import IList
 from ..Data import GH_Path
-from System.Collections import IEnumerable
 from ..Data import IGH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
@@ -10806,17 +10708,14 @@ class Param_Matrix:
 from System import Guid
 from Rhino.Geometry import BoundingBox
 from Rhino import RhinoDoc
-from System.Collections.Generic import List
 from Rhino.DocObjects import ObjectAttributes
 from ..Types import GH_Mesh
-from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
 from System.Windows.Forms import ToolStripDropDown
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from System.Collections.Generic import IList
 from ..Data import GH_Path
-from System.Collections import IEnumerable
 from ..Data import IGH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
@@ -11143,15 +11042,12 @@ class Param_Mesh:
 
 from System import Guid
 from ..Types import GH_MeshFace
-from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
-from System.Collections.Generic import List
 from System.Windows.Forms import ToolStripDropDown
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from System.Collections.Generic import IList
 from ..Data import GH_Path
-from System.Collections import IEnumerable
 from ..Data import IGH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
@@ -11460,15 +11356,12 @@ class Param_MeshFace:
 
 from System import Guid
 from ..Types import GH_MeshingParameters
-from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
-from System.Collections.Generic import List
 from System.Windows.Forms import ToolStripDropDown
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from System.Collections.Generic import IList
 from ..Data import GH_Path
-from System.Collections import IEnumerable
 from ..Data import IGH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
@@ -11780,12 +11673,9 @@ from System import Guid
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from ..Types import GH_Number
-from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
-from System.Collections.Generic import List
 from System.Collections.Generic import IList
 from ..Data import GH_Path
-from System.Collections import IEnumerable
 from ..Data import IGH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
@@ -12106,15 +11996,12 @@ class Param_Number:
 
 from System import Guid
 from ..Types import GH_Material
-from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
-from System.Collections.Generic import List
 from System.Windows.Forms import ToolStripDropDown
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from System.Collections.Generic import IList
 from ..Data import GH_Path
-from System.Collections import IEnumerable
 from ..Data import IGH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
@@ -12425,16 +12312,13 @@ from System import Guid
 from GH_IO.Serialization import GH_IReader
 from Rhino.Geometry import BoundingBox
 from Rhino import RhinoDoc
-from System.Collections.Generic import List
 from Rhino.DocObjects import ObjectAttributes
 from ..Types import GH_OrdinateDimension
-from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
 from System.Windows.Forms import ToolStripDropDown
 from GH_IO.Serialization import GH_IWriter
 from System.Collections.Generic import IList
 from ..Data import GH_Path
-from System.Collections import IEnumerable
 from ..Data import IGH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
@@ -12761,20 +12645,17 @@ class Param_OrdinateDimension:
 
 from Rhino.Geometry import BoundingBox
 from Rhino import RhinoDoc
-from System.Collections.Generic import List
 from Rhino.DocObjects import ObjectAttributes
 from System import Guid
 from GH_IO.Serialization import GH_IReader
 from Rhino.Geometry import Plane
 from Rhino.Geometry import PlaneSurface
 from ..Types import GH_Plane
-from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
 from System.Windows.Forms import ToolStripDropDown
 from GH_IO.Serialization import GH_IWriter
 from System.Collections.Generic import IList
 from ..Data import GH_Path
-from System.Collections import IEnumerable
 from ..Data import IGH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
@@ -13108,14 +12989,11 @@ from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from Rhino.Geometry import BoundingBox
 from Rhino import RhinoDoc
-from System.Collections.Generic import List
 from Rhino.DocObjects import ObjectAttributes
 from ..Types import GH_Point
-from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
 from System.Collections.Generic import IList
 from ..Data import GH_Path
-from System.Collections import IEnumerable
 from ..Data import IGH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
@@ -13448,16 +13326,13 @@ from System import Guid
 from GH_IO.Serialization import GH_IReader
 from Rhino.Geometry import BoundingBox
 from Rhino import RhinoDoc
-from System.Collections.Generic import List
 from Rhino.DocObjects import ObjectAttributes
 from ..Types import GH_PointCloud
-from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
 from System.Windows.Forms import ToolStripDropDown
 from GH_IO.Serialization import GH_IWriter
 from System.Collections.Generic import IList
 from ..Data import GH_Path
-from System.Collections import IEnumerable
 from ..Data import IGH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
@@ -13789,15 +13664,12 @@ from GH_IO.Serialization import GH_IReader
 from System.Collections.Generic import IList
 from ..Data import GH_Path
 from ..Types import GH_Predicate
-from System.Collections import IEnumerable
-from System.Collections.Generic import List
 from ..Data import IGH_Structure
 from ..Data import GH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
 from System.Drawing import Bitmap
-from System.Collections.Generic import IEnumerable
 class Param_Predicate:
     @overload
     def __init__(self): ...
@@ -14091,16 +13963,13 @@ from System import Guid
 from GH_IO.Serialization import GH_IReader
 from Rhino.Geometry import BoundingBox
 from Rhino import RhinoDoc
-from System.Collections.Generic import List
 from Rhino.DocObjects import ObjectAttributes
 from ..Types import GH_RadialDimension
-from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
 from System.Windows.Forms import ToolStripDropDown
 from GH_IO.Serialization import GH_IWriter
 from System.Collections.Generic import IList
 from ..Data import GH_Path
-from System.Collections import IEnumerable
 from ..Data import IGH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
@@ -14427,18 +14296,15 @@ class Param_RadialDimension:
 
 from Rhino.Geometry import BoundingBox
 from Rhino import RhinoDoc
-from System.Collections.Generic import List
 from Rhino.DocObjects import ObjectAttributes
 from System import Guid
 from ..Types import GH_Rectangle
-from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
 from System.Windows.Forms import ToolStripDropDown
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from System.Collections.Generic import IList
 from ..Data import GH_Path
-from System.Collections import IEnumerable
 from ..Data import IGH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
@@ -14763,7 +14629,6 @@ class Param_Rectangle:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
-from System.Collections.Generic import List
 from System import Guid
 from System.Windows.Forms import ToolStripDropDown
 from GH_IO.Serialization import GH_IWriter
@@ -14772,11 +14637,9 @@ from Rhino.Geometry import BoundingBox
 from Rhino import RhinoDoc
 from Rhino.DocObjects import ObjectAttributes
 from ..Types import IGH_Goo
-from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
 from System.Collections.Generic import IList
 from ..Data import GH_Path
-from System.Collections import IEnumerable
 from ..Data import IGH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
@@ -15127,15 +14990,12 @@ class Param_ScriptVariable(Param_GenericObject):
 
 from System import Guid
 from ..Types import GH_String
-from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
-from System.Collections.Generic import List
 from System.Windows.Forms import ToolStripDropDown
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from System.Collections.Generic import IList
 from ..Data import GH_Path
-from System.Collections import IEnumerable
 from ..Data import IGH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
@@ -15444,15 +15304,12 @@ class Param_String:
 
 from System import Guid
 from ..Types import GH_StructurePath
-from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
-from System.Collections.Generic import List
 from System.Windows.Forms import ToolStripDropDown
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from System.Collections.Generic import IList
 from ..Data import GH_Path
-from System.Collections import IEnumerable
 from ..Data import IGH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
@@ -15761,18 +15618,15 @@ class Param_StructurePath:
 
 from Rhino.Geometry import BoundingBox
 from Rhino import RhinoDoc
-from System.Collections.Generic import List
 from Rhino.DocObjects import ObjectAttributes
 from System import Guid
 from ..Types import GH_SubD
-from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
 from System.Windows.Forms import ToolStripDropDown
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from System.Collections.Generic import IList
 from ..Data import GH_Path
-from System.Collections import IEnumerable
 from ..Data import IGH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
@@ -16100,17 +15954,14 @@ class Param_SubD:
 from System.Windows.Forms import ToolStripDropDown
 from Rhino.Geometry import BoundingBox
 from Rhino import RhinoDoc
-from System.Collections.Generic import List
 from Rhino.DocObjects import ObjectAttributes
 from System import Guid
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from ..Types import GH_Surface
-from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
 from System.Collections.Generic import IList
 from ..Data import GH_Path
-from System.Collections import IEnumerable
 from ..Data import IGH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
@@ -16443,16 +16294,13 @@ from System import Guid
 from GH_IO.Serialization import GH_IReader
 from Rhino.Geometry import BoundingBox
 from Rhino import RhinoDoc
-from System.Collections.Generic import List
 from Rhino.DocObjects import ObjectAttributes
 from ..Types import GH_TextDot
-from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
 from System.Windows.Forms import ToolStripDropDown
 from GH_IO.Serialization import GH_IWriter
 from System.Collections.Generic import IList
 from ..Data import GH_Path
-from System.Collections import IEnumerable
 from ..Data import IGH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
@@ -16781,16 +16629,13 @@ from System import Guid
 from GH_IO.Serialization import GH_IReader
 from Rhino.Geometry import BoundingBox
 from Rhino import RhinoDoc
-from System.Collections.Generic import List
 from Rhino.DocObjects import ObjectAttributes
 from ..Types import GH_TextEntity
-from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
 from System.Windows.Forms import ToolStripDropDown
 from GH_IO.Serialization import GH_IWriter
 from System.Collections.Generic import IList
 from ..Data import GH_Path
-from System.Collections import IEnumerable
 from ..Data import IGH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
@@ -17117,15 +16962,12 @@ class Param_TextEntity:
 
 from System import Guid
 from ..Types import GH_Time
-from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
-from System.Collections.Generic import List
 from System.Windows.Forms import ToolStripDropDown
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from System.Collections.Generic import IList
 from ..Data import GH_Path
-from System.Collections import IEnumerable
 from ..Data import IGH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
@@ -17434,15 +17276,12 @@ class Param_Time:
 
 from System import Guid
 from ..Types import GH_Transform
-from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
-from System.Collections.Generic import List
 from System.Windows.Forms import ToolStripDropDown
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from System.Collections.Generic import IList
 from ..Data import GH_Path
-from System.Collections import IEnumerable
 from ..Data import IGH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction
@@ -17754,12 +17593,9 @@ from System import Guid
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from ..Types import GH_Vector
-from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
-from System.Collections.Generic import List
 from System.Collections.Generic import IList
 from ..Data import GH_Path
-from System.Collections import IEnumerable
 from ..Data import IGH_Structure
 from System import TimeSpan
 from ..Undo import IGH_UndoAction

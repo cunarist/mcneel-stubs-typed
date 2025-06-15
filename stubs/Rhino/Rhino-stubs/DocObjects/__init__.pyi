@@ -48,7 +48,6 @@ from ..Display import DisplayPipelineAttributes
 from ..Render import RenderPrimitiveList
 from ..Render.CustomRenderMeshes import Flags
 from ..PlugIns import PlugIn
-from System.Collections.Generic import List
 from ..Render.CustomRenderMeshes import RenderMeshes
 from ..Geometry import BoundingBox
 from ..Render import TextureMapping
@@ -534,7 +533,6 @@ from ..Display import DisplayPipelineAttributes
 from ..Render import RenderPrimitiveList
 from ..Render.CustomRenderMeshes import Flags
 from ..PlugIns import PlugIn
-from System.Collections.Generic import List
 from ..Render.CustomRenderMeshes import RenderMeshes
 from ..Geometry import BoundingBox
 from ..Render import TextureMapping
@@ -993,7 +991,6 @@ from ..Display import DisplayPipelineAttributes
 from ..Render import RenderPrimitiveList
 from ..Render.CustomRenderMeshes import Flags
 from ..PlugIns import PlugIn
-from System.Collections.Generic import List
 from ..Render.CustomRenderMeshes import RenderMeshes
 from ..Geometry import BoundingBox
 from ..Render import TextureMapping
@@ -1319,7 +1316,6 @@ from ..Display import DisplayPipelineAttributes
 from ..Render import RenderPrimitiveList
 from ..Render.CustomRenderMeshes import Flags
 from ..PlugIns import PlugIn
-from System.Collections.Generic import List
 from ..Render.CustomRenderMeshes import RenderMeshes
 from ..Geometry import BoundingBox
 from ..Render import TextureMapping
@@ -1647,7 +1643,6 @@ from ..Display import DisplayPipelineAttributes
 from ..Render import RenderPrimitiveList
 from ..Render.CustomRenderMeshes import Flags
 from ..PlugIns import PlugIn
-from System.Collections.Generic import List
 from ..Render.CustomRenderMeshes import RenderMeshes
 from ..Geometry import BoundingBox
 from ..Render import TextureMapping
@@ -2088,7 +2083,6 @@ from ..Display import DisplayPipelineAttributes
 from ..Render import RenderPrimitiveList
 from ..Render.CustomRenderMeshes import Flags
 from ..PlugIns import PlugIn
-from System.Collections.Generic import List
 from ..Render.CustomRenderMeshes import RenderMeshes
 from ..Geometry import BoundingBox
 from ..Render import TextureMapping
@@ -2437,7 +2431,6 @@ from ..Display import DisplayPipelineAttributes
 from ..Render import RenderPrimitiveList
 from ..Render.CustomRenderMeshes import Flags
 from ..PlugIns import PlugIn
-from System.Collections.Generic import List
 from ..Render.CustomRenderMeshes import RenderMeshes
 from ..Geometry import BoundingBox
 from ..Render import TextureMapping
@@ -2771,7 +2764,6 @@ from ..Display import DisplayPipelineAttributes
 from ..Render import RenderPrimitiveList
 from ..Render.CustomRenderMeshes import Flags
 from ..PlugIns import PlugIn
-from System.Collections.Generic import List
 from ..Render.CustomRenderMeshes import RenderMeshes
 from ..Geometry import BoundingBox
 from ..Render import TextureMapping
@@ -3744,7 +3736,6 @@ from ..Display import DisplayPipelineAttributes
 from ..Render import RenderPrimitiveList
 from ..Render.CustomRenderMeshes import Flags
 from ..PlugIns import PlugIn
-from System.Collections.Generic import List
 from ..Render.CustomRenderMeshes import RenderMeshes
 from ..Geometry import BoundingBox
 from ..Render import TextureMapping
@@ -4331,7 +4322,6 @@ from ..Display import DisplayPipelineAttributes
 from ..Render import RenderPrimitiveList
 from ..Render.CustomRenderMeshes import Flags
 from ..PlugIns import PlugIn
-from System.Collections.Generic import List
 from ..Render.CustomRenderMeshes import RenderMeshes
 from ..Geometry import BoundingBox
 from ..Render import TextureMapping
@@ -4776,7 +4766,6 @@ class Group(ModelComponent):
 
 from ..Geometry import Point2d
 from ..Geometry import Vector2d
-from System.Collections.Generic import IEnumerable
 class HatchLine:
     @overload
     def __init__(self): ...
@@ -4838,7 +4827,6 @@ from ..Display import DisplayPipelineAttributes
 from ..Render import RenderPrimitiveList
 from ..Render.CustomRenderMeshes import Flags
 from ..PlugIns import PlugIn
-from System.Collections.Generic import List
 from ..Render.CustomRenderMeshes import RenderMeshes
 from ..Geometry import BoundingBox
 from ..Render import TextureMapping
@@ -5134,7 +5122,6 @@ class HatchObject(RhinoObject):
     def UnselectAllSubObjects(self) -> int: ...
 
 
-from System.Collections.Generic import IEnumerable
 from System.Collections.Specialized import NameValueCollection
 from System import Guid
 from ..Geometry import ComponentStatus
@@ -5304,7 +5291,6 @@ from ..Geometry import Curve
 from ..Geometry import Surface
 from ..Geometry import Brep
 from ..Geometry import Mesh
-from System.Collections.Generic import IEnumerable
 class HistoryRecord:
     @overload
     def __init__(self, command: Command, version: int): ...
@@ -5603,7 +5589,6 @@ from ..Display import DisplayPipelineAttributes
 from ..Render import RenderPrimitiveList
 from ..Render.CustomRenderMeshes import Flags
 from ..PlugIns import PlugIn
-from System.Collections.Generic import List
 from ..Render.CustomRenderMeshes import RenderMeshes
 from ..Geometry import BoundingBox
 from ..Render import TextureMapping
@@ -6238,7 +6223,6 @@ from ..Display import DisplayPipelineAttributes
 from ..Render import RenderPrimitiveList
 from ..Render.CustomRenderMeshes import Flags
 from ..PlugIns import PlugIn
-from System.Collections.Generic import List
 from ..Render.CustomRenderMeshes import RenderMeshes
 from ..Geometry import BoundingBox
 from ..Render import TextureMapping
@@ -6578,7 +6562,6 @@ from ..Display import DisplayPipelineAttributes
 from ..Render import RenderPrimitiveList
 from ..Render.CustomRenderMeshes import Flags
 from ..PlugIns import PlugIn
-from System.Collections.Generic import List
 from ..Render.CustomRenderMeshes import RenderMeshes
 from ..Geometry import BoundingBox
 from ..Render import TextureMapping
@@ -6895,7 +6878,6 @@ from ..Display import DisplayPipelineAttributes
 from ..Render import RenderPrimitiveList
 from ..Render.CustomRenderMeshes import Flags
 from ..PlugIns import PlugIn
-from System.Collections.Generic import List
 from ..Render.CustomRenderMeshes import RenderMeshes
 from ..Geometry import BoundingBox
 from ..Render import TextureMapping
@@ -7212,7 +7194,6 @@ class LineJoinStyle(Enum):
 
 
 from ..Geometry import Point2d
-from System.Collections.Generic import IEnumerable
 from System.Collections.Specialized import NameValueCollection
 from System import Guid
 from ..Geometry import ComponentStatus
@@ -7773,7 +7754,6 @@ class MaterialRefs:
 
 
 from ..Geometry import Mesh
-from System.Collections.Generic import IEnumerable
 from ..FileIO import TextLog
 from ..Geometry import MeshCheckParameters
 from ..Geometry import ComponentIndex
@@ -7792,7 +7772,6 @@ from ..Display import DisplayPipelineAttributes
 from ..Render import RenderPrimitiveList
 from ..Render.CustomRenderMeshes import Flags
 from ..PlugIns import PlugIn
-from System.Collections.Generic import List
 from ..Render.CustomRenderMeshes import RenderMeshes
 from ..Geometry import BoundingBox
 from ..Render import TextureMapping
@@ -8251,7 +8230,6 @@ from ..Display import DisplayPipelineAttributes
 from ..Render import RenderPrimitiveList
 from ..Render.CustomRenderMeshes import Flags
 from ..PlugIns import PlugIn
-from System.Collections.Generic import List
 from ..Render.CustomRenderMeshes import RenderMeshes
 from ..Geometry import BoundingBox
 from ..Render import TextureMapping
@@ -8562,7 +8540,6 @@ from ..Display import DisplayPipelineAttributes
 from ..Render import RenderPrimitiveList
 from ..Render.CustomRenderMeshes import Flags
 from ..PlugIns import PlugIn
-from System.Collections.Generic import List
 from ..Render.CustomRenderMeshes import RenderMeshes
 from ..Geometry import BoundingBox
 from ..Render import TextureMapping
@@ -9440,7 +9417,6 @@ from ..Display import DisplayPipelineAttributes
 from ..Render import RenderPrimitiveList
 from ..Render.CustomRenderMeshes import Flags
 from ..PlugIns import PlugIn
-from System.Collections.Generic import List
 from ..Render.CustomRenderMeshes import RenderMeshes
 from ..Geometry import BoundingBox
 from ..Render import TextureMapping
@@ -9872,7 +9848,6 @@ from ..Display import DisplayPipelineAttributes
 from ..Render import RenderPrimitiveList
 from ..Render.CustomRenderMeshes import Flags
 from ..PlugIns import PlugIn
-from System.Collections.Generic import List
 from ..Render.CustomRenderMeshes import RenderMeshes
 from ..Geometry import BoundingBox
 from ..Render import TextureMapping
@@ -10188,7 +10163,6 @@ from ..Display import DisplayPipelineAttributes
 from ..Render import RenderPrimitiveList
 from ..Render.CustomRenderMeshes import Flags
 from ..PlugIns import PlugIn
-from System.Collections.Generic import List
 from ..Render.CustomRenderMeshes import RenderMeshes
 from ..Geometry import BoundingBox
 from ..Render import TextureMapping
@@ -10503,7 +10477,6 @@ from ..Display import DisplayPipelineAttributes
 from ..Render import RenderPrimitiveList
 from ..Render.CustomRenderMeshes import Flags
 from ..PlugIns import PlugIn
-from System.Collections.Generic import List
 from ..Render.CustomRenderMeshes import RenderMeshes
 from ..Geometry import BoundingBox
 from ..Render import TextureMapping
@@ -10816,7 +10789,6 @@ from ..Display import DisplayPipelineAttributes
 from ..Render import RenderPrimitiveList
 from ..Render.CustomRenderMeshes import Flags
 from ..PlugIns import PlugIn
-from System.Collections.Generic import List
 from ..Render.CustomRenderMeshes import RenderMeshes
 from ..Geometry import BoundingBox
 from ..Render import TextureMapping
@@ -11121,7 +11093,6 @@ class RadialDimensionObject(DimensionObject):
 
 
 from System import Guid
-from System.Collections.Generic import IEnumerable
 from ..Geometry import Point3d
 from ..Geometry import Vector3d
 from ..Geometry import Transform
@@ -11179,7 +11150,6 @@ class ReplayHistoryData:
 
 from ..Geometry import Point3d
 from ..Geometry import PointCloud
-from System.Collections.Generic import IEnumerable
 from ..Geometry import Plane
 from System import Guid
 from ..Geometry import LinearDimension
@@ -11317,7 +11287,6 @@ from ..Geometry import ComponentIndex
 from System import Guid
 from System import IConvertible
 from ..Display import RhinoViewport
-from System.Collections.Generic import IEnumerable
 from ..Geometry import MeshingParameters
 from ..Commands import Result
 from ..Geometry import Transform
@@ -11333,7 +11302,6 @@ from ..Display import DisplayPipelineAttributes
 from ..Render import RenderPrimitiveList
 from ..Render.CustomRenderMeshes import Flags
 from ..PlugIns import PlugIn
-from System.Collections.Generic import List
 from ..Render.CustomRenderMeshes import RenderMeshes
 from ..Render import TextureMapping
 from ..Render import RenderMaterial
@@ -11957,7 +11925,6 @@ from ..Display import DisplayPipelineAttributes
 from ..Render import RenderPrimitiveList
 from ..Render.CustomRenderMeshes import Flags
 from ..PlugIns import PlugIn
-from System.Collections.Generic import List
 from ..Render.CustomRenderMeshes import RenderMeshes
 from ..Geometry import BoundingBox
 from ..Render import TextureMapping
@@ -12269,7 +12236,6 @@ from ..Display import DisplayPipelineAttributes
 from ..Render import RenderPrimitiveList
 from ..Render.CustomRenderMeshes import Flags
 from ..PlugIns import PlugIn
-from System.Collections.Generic import List
 from ..Render.CustomRenderMeshes import RenderMeshes
 from ..Geometry import BoundingBox
 from ..Render import TextureMapping
@@ -12591,7 +12557,6 @@ from ..Display import DisplayPipelineAttributes
 from ..Render import RenderPrimitiveList
 from ..Render.CustomRenderMeshes import Flags
 from ..PlugIns import PlugIn
-from System.Collections.Generic import List
 from ..Render.CustomRenderMeshes import RenderMeshes
 from ..Geometry import BoundingBox
 from ..Render import TextureMapping
@@ -12926,7 +12891,6 @@ from ..Display import DisplayPipelineAttributes
 from ..Render import RenderPrimitiveList
 from ..Render.CustomRenderMeshes import Flags
 from ..PlugIns import PlugIn
-from System.Collections.Generic import List
 from ..Render.CustomRenderMeshes import RenderMeshes
 from ..Geometry import BoundingBox
 from ..Render import TextureMapping
@@ -13525,7 +13489,6 @@ from ..Geometry import Transform
 from ..Geometry import Line
 from System.Drawing import Point
 from System.Drawing import PointF
-from System.Collections.Generic import IEnumerable
 from System.Drawing import SizeF
 from System import Guid
 from .Custom import UserDataList

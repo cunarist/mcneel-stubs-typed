@@ -68,8 +68,6 @@ class Containment(Enum):
 
 from Rhino.Geometry import Curve
 from Rhino.Geometry import Plane
-from System.Collections.Generic import IEnumerable
-from System.Collections.Generic import List
 class GH_CurveOffset:
     @overload
     def __init__(self, curve: Curve, offsetPlane: Plane): ...
@@ -428,7 +426,6 @@ class Node2:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import List
 class Node2Leaf:
     @overload
     def __init__(self): ...
@@ -488,8 +485,6 @@ class Node2Leaf:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import IEnumerable
-from System.Collections.Generic import List
 from System.Collections.Generic import IEnumerator
 from System.Collections import IEnumerator
 class Node2List:
@@ -568,7 +563,6 @@ class Node2List:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import List
 class Node2Proximity:
     @overload
     def __init__(self, search_start: Node2, search_start_index: int): ...
@@ -704,7 +698,6 @@ class Node3:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import List
 class Node3Leaf:
     @overload
     def __init__(self): ...
@@ -784,8 +777,6 @@ class Node3Leaf:
     def TrimExcess(self) -> None: ...
 
 
-from System.Collections.Generic import IEnumerable
-from System.Collections.Generic import List
 class Node3List:
     @overload
     def __init__(self): ...
@@ -861,7 +852,6 @@ class Node3List:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import List
 class Node3Proximity:
     @overload
     def __init__(self, search_start: Node3, search_start_index: int): ...
@@ -1065,7 +1055,6 @@ class Rectangle2:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import IEnumerable
 class Region2:
     @overload
     def __init__(self, nodes: Iterable[Node2]): ...
@@ -1081,7 +1070,6 @@ class Region2:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import IEnumerable
 class SamplingRegion:
     @overload
     def __init__(self, regions: Iterable[Curve]): ...

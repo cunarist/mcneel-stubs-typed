@@ -1804,7 +1804,6 @@ class GH_ExtrusionProxy:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import List
 from Rhino.Geometry import Point3d
 from Rhino.Geometry import Vector3d
 from Rhino.Collections import Point3dList
@@ -1984,7 +1983,6 @@ class GH_GeometricGooWrapper:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
-from System.Collections.Generic import List
 from Rhino.Geometry import Transform
 from Rhino.Geometry import BoundingBox
 from System import Guid
@@ -4645,9 +4643,7 @@ class GH_PointRefType(Enum):
     srf_param = 20
 
 
-from System.Collections.Generic import IEnumerable
 from Rhino.Geometry import Plane
-from System.Collections.Generic import List
 class GH_PointUtil:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -5796,7 +5792,6 @@ class GH_Time:
 
 from .Transforms import ITransform
 from Rhino.Geometry import Transform
-from System.Collections.Generic import List
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 class GH_Transform:

@@ -43,7 +43,6 @@ class GH_EquationFragment:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import List
 from System.Drawing import Font
 from System.Drawing import PointF
 from System.Drawing import Graphics

@@ -7,9 +7,7 @@ from System import Guid
 from ....Kernel import GH_Exposure
 from ....Kernel import GH_GuidTable
 from Rhino import RhinoDoc
-from System.Collections.Generic import List
 from Rhino.DocObjects import ObjectAttributes
-from System.Collections.Generic import IEnumerable
 from ....Kernel.Data import GH_Structure
 from ....Kernel import GH_ParamData
 from System.Windows.Forms import ToolStripDropDown
@@ -25,7 +23,6 @@ from ....Kernel import GH_StateTagList
 from ....Kernel import GH_ParamWireDisplay
 from ....Kernel import GH_DataMapping
 from ....Kernel.Data import GH_Path
-from System.Collections import IEnumerable
 from ....Kernel.Data import IGH_Structure
 from System import TimeSpan
 from ....Kernel import GH_PrincipalState
@@ -360,9 +357,7 @@ from Rhino.Geometry import BoundingBox
 from ....Kernel import IGH_PreviewArgs
 from ....Kernel import GH_GuidTable
 from Rhino import RhinoDoc
-from System.Collections.Generic import List
 from Rhino.DocObjects import ObjectAttributes
-from System.Collections.Generic import IEnumerable
 from ....Kernel.Data import GH_Structure
 from ....Kernel import GH_ParamData
 from System.Windows.Forms import ToolStripDropDown
@@ -378,7 +373,6 @@ from ....Kernel import GH_StateTagList
 from ....Kernel import GH_ParamWireDisplay
 from ....Kernel import GH_DataMapping
 from ....Kernel.Data import GH_Path
-from System.Collections import IEnumerable
 from ....Kernel.Data import IGH_Structure
 from System import TimeSpan
 from ....Kernel import GH_PrincipalState
@@ -723,9 +717,7 @@ from System import Guid
 from ....Kernel import GH_Exposure
 from ....Kernel import GH_GuidTable
 from Rhino import RhinoDoc
-from System.Collections.Generic import List
 from Rhino.DocObjects import ObjectAttributes
-from System.Collections.Generic import IEnumerable
 from ....Kernel.Data import GH_Structure
 from ....Kernel import GH_ParamData
 from System.Windows.Forms import ToolStripDropDown
@@ -741,7 +733,6 @@ from ....Kernel import GH_StateTagList
 from ....Kernel import GH_ParamWireDisplay
 from ....Kernel import GH_DataMapping
 from ....Kernel.Data import GH_Path
-from System.Collections import IEnumerable
 from ....Kernel.Data import IGH_Structure
 from System import TimeSpan
 from ....Kernel import GH_PrincipalState
@@ -1076,9 +1067,7 @@ from Rhino.Geometry import BoundingBox
 from ....Kernel import IGH_PreviewArgs
 from ....Kernel import GH_GuidTable
 from Rhino import RhinoDoc
-from System.Collections.Generic import List
 from Rhino.DocObjects import ObjectAttributes
-from System.Collections.Generic import IEnumerable
 from ....Kernel.Data import GH_Structure
 from ....Kernel import GH_ParamData
 from System.Windows.Forms import ToolStripDropDown
@@ -1094,7 +1083,6 @@ from ....Kernel import GH_StateTagList
 from ....Kernel import GH_ParamWireDisplay
 from ....Kernel import GH_DataMapping
 from ....Kernel.Data import GH_Path
-from System.Collections import IEnumerable
 from ....Kernel.Data import IGH_Structure
 from System import TimeSpan
 from ....Kernel import GH_PrincipalState

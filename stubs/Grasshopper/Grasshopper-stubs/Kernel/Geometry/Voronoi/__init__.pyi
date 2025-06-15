@@ -3,8 +3,6 @@ from enum import Enum
 
 
 
-from System.Collections.Generic import IEnumerable
-from System.Collections.Generic import List
 from Rhino.Geometry import Polyline
 from Rhino.Geometry import PolyCurve
 from System.Drawing.Drawing2D import GraphicsPath
@@ -46,9 +44,7 @@ class Cell2:
 
 from Rhino.Geometry import Point3d
 from Rhino.Geometry import Box
-from System.Collections.Generic import List
 from Rhino.Geometry import Plane
-from System.Collections.Generic import IEnumerable
 from Rhino.Geometry import Brep
 class Cell3:
     @overload
@@ -90,7 +86,6 @@ class Cell3:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import IEnumerable
 from Rhino.Geometry import Point3d
 from Rhino.Geometry import Line
 from Rhino.Geometry import Vector3d
@@ -104,7 +99,6 @@ from Rhino.Collections import YAccess
 from Rhino.Collections import ZAccess
 from Rhino.Geometry import Transform
 from Rhino.Collections import Point3dList
-from System.Collections import IEnumerable
 from System import Predicate
 from Rhino.Collections import RhinoList
 from System.Collections.Generic import IComparer
@@ -339,8 +333,6 @@ class Cell3Facet:
     def TrueForAll(self, match: Predicate) -> bool: ...
 
 
-from System.Collections.Generic import IEnumerable
-from System.Collections.Generic import List
 from ..Delaunay import Connectivity
 class Solver:
     @overload

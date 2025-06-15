@@ -152,7 +152,6 @@ class RcpDeadItem(RcpItem):
 
 from System.Drawing import Color
 from System.Drawing import Rectangle
-from System.Collections.Generic import IEnumerable
 from System.Drawing import Point
 from System.Drawing import Graphics
 from GH_IO.Serialization import GH_IWriter
@@ -356,7 +355,6 @@ class RcpLabelItem(RcpItem):
 
 
 from ...Kernel import GH_Document
-from System.Collections.Generic import IEnumerable
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from System.Collections.Generic import IEnumerator

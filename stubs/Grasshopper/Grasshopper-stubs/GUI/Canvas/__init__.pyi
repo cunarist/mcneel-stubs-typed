@@ -760,7 +760,6 @@ class DocumentObjectsDeletedEventHandler:
 from System.Drawing import RectangleF
 from System.Drawing import PointF
 from System.Windows.Forms import Cursor
-from System.Collections.Generic import List
 from System.Windows.Forms import Padding
 class GH_Border:
     @overload
@@ -811,7 +810,6 @@ class GH_BorderTopology(Enum):
 from System.Drawing import Point
 from System.Drawing import Rectangle
 from System.Drawing import Size
-from System.Collections.Generic import List
 from System.Drawing import Color
 from System.Drawing import Bitmap
 from System import Guid
@@ -2053,7 +2051,6 @@ from System.Drawing.Drawing2D import GraphicsPath
 from System.Drawing import Rectangle
 from System.Drawing import RectangleF
 from System.Drawing import Font
-from System.Collections.Generic import List
 from System.Drawing import Point
 from System.Drawing import PointF
 from System.Drawing import Graphics
@@ -2315,7 +2312,6 @@ from System.Drawing import RectangleF
 from System.Drawing import Rectangle
 from System.Drawing import Point
 from System.Drawing import PointF
-from System.Collections.Generic import IEnumerable
 class GH_DocDiagramPainter:
     @overload
     def __init__(self): ...
@@ -6097,7 +6093,6 @@ from System.Drawing import SizeF
 from System.Drawing import Rectangle
 from System.Drawing import PointF
 from ...Kernel import IGH_Attributes
-from System.Collections.Generic import List
 from System.Drawing.Drawing2D import Matrix
 from System.Drawing import Graphics
 from System.Drawing import RectangleF

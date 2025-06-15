@@ -3,8 +3,6 @@ from enum import Enum
 
 
 
-from System.Collections.Generic import List
-from System.Collections.Generic import IEnumerable
 from System import Guid
 from ...Kernel import GH_Exposure
 from GH_IO.Serialization import GH_IWriter
@@ -901,7 +899,6 @@ class GH_LayoutMenuItem(GH_DoubleBufferedPanel):
     def Update(self) -> None: ...
 
 
-from System.Collections.Generic import List
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 class GH_LayoutPanel:
@@ -935,7 +932,6 @@ class GH_LayoutPanel:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
-from System.Collections.Generic import List
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 class GH_LayoutTab:
@@ -979,7 +975,6 @@ class GH_LayoutTab:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
-from System.Collections.Generic import List
 from System.Drawing import Graphics
 from System.Windows.Forms import ToolStripDropDown
 from System import Guid
@@ -1875,7 +1870,6 @@ class GH_RibbonContentBase:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import List
 from System import Guid
 from System.Drawing import Rectangle
 from System.Drawing import Size
@@ -3140,7 +3134,6 @@ class GH_RibbonPainter:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import List
 from System.Drawing import Point
 from System import Guid
 from ...Kernel import GH_Exposure
@@ -3250,7 +3243,6 @@ class GH_RibbonPanel(GH_RibbonContentBase):
 
 from System.Drawing import Bitmap
 from System.Drawing import Rectangle
-from System.Collections.Generic import List
 from System.Drawing import Graphics
 from System.Windows.Forms import Padding
 from System.Drawing import Point

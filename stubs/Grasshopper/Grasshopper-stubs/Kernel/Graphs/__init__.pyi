@@ -5,7 +5,6 @@ from enum import Enum
 
 from System import Guid
 from System.Drawing import Image
-from System.Collections.Generic import List
 from System.Drawing import RectangleF
 from System.Drawing import Graphics
 from GH_IO.Serialization import GH_IWriter
@@ -77,7 +76,6 @@ from System import Guid
 from System.Drawing import Image
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
-from System.Collections.Generic import List
 class GH_BezierGraph(GH_AbstractGraph):
     @overload
     def __init__(self): ...
@@ -146,7 +144,6 @@ from System import Guid
 from System.Drawing import Image
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
-from System.Collections.Generic import List
 from System.Drawing import Graphics
 class GH_ConicGraph(GH_AbstractGraph):
     @overload
@@ -217,7 +214,6 @@ from System import Guid
 from System.Drawing import Image
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
-from System.Collections.Generic import List
 class GH_DoubleSineGraph(GH_AbstractGraph):
     @overload
     def __init__(self): ...
@@ -285,7 +281,6 @@ from System import Guid
 from System.Drawing import Image
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
-from System.Collections.Generic import List
 from System.Drawing import RectangleF
 from System.Drawing import Graphics
 class GH_GaussianGraph(GH_AbstractGraph):
@@ -357,7 +352,6 @@ from ...GUI import GH_CanvasMouseEvent
 from ...GUI.Canvas import GH_ObjectResponse
 from System.Windows.Forms import KeyEventArgs
 from System.Drawing import Graphics
-from System.Collections.Generic import List
 from System.Drawing import Pen
 from System.Drawing import PointF
 from GH_IO.Serialization import GH_IWriter
@@ -566,7 +560,6 @@ from System import Guid
 from System.Drawing import Image
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
-from System.Collections.Generic import List
 class GH_LinearGraph(GH_AbstractGraph):
     @overload
     def __init__(self): ...
@@ -664,7 +657,6 @@ from System import Guid
 from System.Drawing import Image
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
-from System.Collections.Generic import List
 from System.Drawing import RectangleF
 class GH_ParabolaGraph(GH_AbstractGraph):
     @overload
@@ -733,7 +725,6 @@ from System import Guid
 from System.Drawing import Image
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
-from System.Collections.Generic import List
 from System.Drawing import RectangleF
 from System.Drawing import Graphics
 class GH_PerlinGraph(GH_AbstractGraph):
@@ -803,7 +794,6 @@ from System import Guid
 from System.Drawing import Image
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
-from System.Collections.Generic import List
 from System.Drawing import RectangleF
 from System.Drawing import Graphics
 class GH_PowerGraph(GH_AbstractGraph):
@@ -874,7 +864,6 @@ from System import Guid
 from System.Drawing import Image
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
-from System.Collections.Generic import List
 from System.Drawing import Graphics
 class GH_SincGraph(GH_AbstractGraph):
     @overload
@@ -975,7 +964,6 @@ from System import Guid
 from System.Drawing import Image
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
-from System.Collections.Generic import List
 from System.Drawing import Graphics
 class GH_SineGraph(GH_AbstractGraph):
     @overload
@@ -1045,7 +1033,6 @@ from System import Guid
 from System.Drawing import Image
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
-from System.Collections.Generic import List
 from System.Drawing import RectangleF
 class GH_SquareRootGraph(GH_AbstractGraph):
     @overload
@@ -1221,7 +1208,6 @@ class GripChangedEventHandler:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import List
 from System import Guid
 from System.Drawing import Image
 from System.Drawing import RectangleF

@@ -25,9 +25,7 @@ from ...Kernel import GH_StateTagList
 from System.Windows.Forms import ToolStripDropDown
 from System.Globalization import CultureInfo
 from ...Kernel.Types import GH_String
-from System.Collections.Generic import IEnumerable
 from ...Kernel.Data import GH_Structure
-from System.Collections.Generic import List
 from ...Kernel import GH_ParamData
 from System.Collections.Generic import IList
 from ...Kernel import IGH_Param
@@ -38,7 +36,6 @@ from ...Kernel import GH_ParamAccess
 from ...Kernel import GH_ParamWireDisplay
 from ...Kernel import GH_DataMapping
 from ...Kernel.Data import GH_Path
-from System.Collections import IEnumerable
 from ...Kernel.Data import IGH_Structure
 from System import TimeSpan
 from ...Kernel import GH_PrincipalState
@@ -379,9 +376,7 @@ from ...Kernel import GH_StateTagList
 from GH_IO.Serialization import GH_IReader
 from GH_IO.Serialization import GH_IWriter
 from ...Kernel.Types import GH_String
-from System.Collections.Generic import IEnumerable
 from ...Kernel.Data import GH_Structure
-from System.Collections.Generic import List
 from ...Kernel import GH_ParamData
 from System.Windows.Forms import ToolStripDropDown
 from System.Collections.Generic import IList
@@ -392,7 +387,6 @@ from ...Kernel import GH_ParamAccess
 from ...Kernel import GH_ParamWireDisplay
 from ...Kernel import GH_DataMapping
 from ...Kernel.Data import GH_Path
-from System.Collections import IEnumerable
 from ...Kernel.Data import IGH_Structure
 from System import TimeSpan
 from ...Kernel import GH_PrincipalState
@@ -724,9 +718,7 @@ from System import Guid
 from ...Kernel import GH_Exposure
 from ...Kernel import GH_GuidTable
 from Rhino import RhinoDoc
-from System.Collections.Generic import List
 from Rhino.DocObjects import ObjectAttributes
-from System.Collections.Generic import IEnumerable
 from ...Kernel.Data import GH_Structure
 from ...Kernel import GH_ParamData
 from System.Windows.Forms import ToolStripDropDown
@@ -742,7 +734,6 @@ from ...Kernel import GH_StateTagList
 from ...Kernel import GH_ParamWireDisplay
 from ...Kernel import GH_DataMapping
 from ...Kernel.Data import GH_Path
-from System.Collections import IEnumerable
 from ...Kernel.Data import IGH_Structure
 from System import TimeSpan
 from ...Kernel import GH_PrincipalState
@@ -1073,9 +1064,7 @@ class Param_ModelContent:
 
 from System import Guid
 from ...Kernel import GH_Exposure
-from System.Collections.Generic import IEnumerable
 from ...Kernel.Data import GH_Structure
-from System.Collections.Generic import List
 from ...Kernel import GH_ParamData
 from System.Windows.Forms import ToolStripDropDown
 from GH_IO.Serialization import GH_IWriter
@@ -1090,7 +1079,6 @@ from ...Kernel import GH_StateTagList
 from ...Kernel import GH_ParamWireDisplay
 from ...Kernel import GH_DataMapping
 from ...Kernel.Data import GH_Path
-from System.Collections import IEnumerable
 from ...Kernel.Data import IGH_Structure
 from System import TimeSpan
 from ...Kernel import GH_PrincipalState
@@ -1416,9 +1404,7 @@ class Param_ModelFont:
 
 from System import Guid
 from ...Kernel import GH_Exposure
-from System.Collections.Generic import IEnumerable
 from ...Kernel.Data import GH_Structure
-from System.Collections.Generic import List
 from ...Kernel import GH_ParamData
 from System.Windows.Forms import ToolStripDropDown
 from GH_IO.Serialization import GH_IWriter
@@ -1433,7 +1419,6 @@ from ...Kernel import GH_StateTagList
 from ...Kernel import GH_ParamWireDisplay
 from ...Kernel import GH_DataMapping
 from ...Kernel.Data import GH_Path
-from System.Collections import IEnumerable
 from ...Kernel.Data import IGH_Structure
 from System import TimeSpan
 from ...Kernel import GH_PrincipalState
@@ -1759,9 +1744,7 @@ class Param_ModelMeshingParameters:
 
 from System import Guid
 from ...Kernel import GH_Exposure
-from System.Collections.Generic import IEnumerable
 from ...Kernel.Data import GH_Structure
-from System.Collections.Generic import List
 from ...Kernel import GH_ParamData
 from System.Windows.Forms import ToolStripDropDown
 from GH_IO.Serialization import GH_IWriter
@@ -1776,7 +1759,6 @@ from ...Kernel import GH_StateTagList
 from ...Kernel import GH_ParamWireDisplay
 from ...Kernel import GH_DataMapping
 from ...Kernel.Data import GH_Path
-from System.Collections import IEnumerable
 from ...Kernel.Data import IGH_Structure
 from System import TimeSpan
 from ...Kernel import GH_PrincipalState

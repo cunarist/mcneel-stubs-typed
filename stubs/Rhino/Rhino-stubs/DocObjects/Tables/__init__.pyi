@@ -180,7 +180,6 @@ class FontTable:
 
 
 from ...FileIO import NameHash
-from System.Collections.Generic import IEnumerable
 from System import Guid
 from System.Collections.Generic import Dictionary
 from .. import RhinoDoc
@@ -385,7 +384,6 @@ class HatchPatternTableEventType(Enum):
 from .. import RhinoDoc
 from System import Guid
 from ...Geometry import Point3d
-from System.Collections.Generic import IEnumerable
 from ...Geometry import GeometryBase
 from ..Custom import UserData
 from ...FileIO import FileReference
@@ -513,8 +511,6 @@ from .. import RhinoDoc
 from System import Guid
 from ...FileIO import NameHash
 from System.Drawing import Color
-from System.Collections.Generic import IEnumerable
-from System.Collections.Generic import List
 from System.Collections.Generic import IEnumerator
 class LayerTable:
     def __iter__(self) -> Iterator[Layer]: ...
@@ -767,7 +763,6 @@ class LightTableEventType(Enum):
 
 from .. import RhinoDoc
 from System import Guid
-from System.Collections.Generic import IEnumerable
 from System.Collections.Generic import IEnumerator
 class LinetypeTable:
     def __iter__(self) -> Iterator[Linetype]: ...
@@ -1055,7 +1050,6 @@ class NamedLayerStateTable:
 from .. import RhinoDoc
 from System import Guid
 from ...Geometry import Transform
-from System.Collections.Generic import IEnumerable
 class NamedPositionTable:
     @overload
     def Append(self, name: str, objects: Iterable[RhinoObject]) -> bool: ...
@@ -1172,7 +1166,6 @@ from System import Guid
 from ...Geometry import BoundingBox
 from ...Geometry import Transform
 from ...Input.Custom import PickContext
-from System.Collections.Generic import IEnumerable
 from System.Collections.Generic import IEnumerator
 from ...Geometry import Surface
 from ...Geometry import Extrusion
@@ -1928,7 +1921,6 @@ class StringTable:
 
 from .. import RhinoDoc
 from ...Display import RhinoView
-from System.Collections.Generic import IEnumerable
 from ...Display import ViewTypeFilter
 from System import Guid
 from ...Display import DefinedViewportProjection

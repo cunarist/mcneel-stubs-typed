@@ -146,7 +146,6 @@ from System import IntPtr
 from System import Guid
 from ...Display import RhinoView
 from ...DocObjects import ViewInfo
-from System.Collections.Generic import List
 class RhinoSettings:
     @overload
     def __init__(self, pRhinoSettings: IntPtr): ...

@@ -109,7 +109,6 @@ class ChangeQueue:
 from ...Geometry import Plane
 from ...DocObjects import ObjectAttributes
 from System import Guid
-from System.Collections.Generic import List
 class ClippingPlane:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -268,7 +267,6 @@ class MappingChannel:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import IEnumerable
 class MappingChannelCollection:
     @overload
     def Equals(self, obj: object) -> bool: ...

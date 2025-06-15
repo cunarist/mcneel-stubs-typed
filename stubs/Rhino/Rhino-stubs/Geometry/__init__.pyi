@@ -932,8 +932,6 @@ class Arc:
     def Trim(self, domain: Interval) -> bool: ...
 
 
-from System.Collections.Generic import IEnumerable
-from System.Collections.Generic import List
 from ..DocObjects import ObjectType
 from System.Collections.Specialized import NameValueCollection
 from ..DocObjects.Custom import UserDataList
@@ -1392,7 +1390,6 @@ class ArcCurve(Curve):
     def TryGetPolyline(self) -> Tuple[bool, Polyline, Iterable[float]]: ...
 
 
-from System.Collections.Generic import IEnumerable
 class AreaMassProperties:
     @overload
     def CentroidCoordinatesPrincipalMoments(self) -> Tuple[bool, float, Vector3d, float, Vector3d, float, Vector3d]: ...
@@ -1517,7 +1514,6 @@ class Attenuation(Enum):
     InverseSquared = 2
 
 
-from System.Collections.Generic import IEnumerable
 from System.Runtime.Serialization import SerializationInfo
 from System.Runtime.Serialization import StreamingContext
 class BezierCurve:
@@ -1587,7 +1583,6 @@ class BezierCurve:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import IEnumerable
 class BezierSurface:
     @overload
     def ControlVertexCount(self, direction: int) -> int: ...
@@ -1650,7 +1645,6 @@ class BlendType(Enum):
     Blend = 2
 
 
-from System.Collections.Generic import IEnumerable
 class BoundingBox:
     @overload
     def __init__(self, points: Iterable[Point3d]): ...
@@ -1739,7 +1733,6 @@ class BoundingBox:
     def Union(box: BoundingBox, point: Point3d) -> BoundingBox: ...
 
 
-from System.Collections.Generic import IEnumerable
 class Box:
     @overload
     def __init__(self, other: Box): ...
@@ -1831,10 +1824,8 @@ class Box:
     def Union(self, point: Point3d) -> None: ...
 
 
-from System.Collections.Generic import IEnumerable
 from ..Collections import CurveList
 from System.Collections.Generic import IDictionary
-from System.Collections.Generic import List
 from ..ApplicationSettings import CurvatureAnalysisSettingsState
 from .Collections import BrepVertexList
 from .Collections import BrepSurfaceList
@@ -2396,8 +2387,6 @@ class Brep(GeometryBase):
     def UnjoinEdges(self, edgesToUnjoin: Iterable[int]) -> Iterable[Brep]: ...
 
 
-from System.Collections.Generic import IEnumerable
-from System.Collections.Generic import List
 from ..DocObjects import ObjectType
 from System.Collections.Specialized import NameValueCollection
 from ..DocObjects.Custom import UserDataList
@@ -2890,10 +2879,8 @@ class BrepEdgeFilletDistance:
 
 
 from .Collections import BrepLoopList
-from System.Collections.Generic import IEnumerable
 from System import Guid
 from System.Drawing import Color
-from System.Collections.Generic import List
 from ..DocObjects import ObjectType
 from System.Collections.Specialized import NameValueCollection
 from ..DocObjects.Custom import UserDataList
@@ -3449,8 +3436,6 @@ class BrepSolidOrientation(Enum):
     Inward = -1
 
 
-from System.Collections.Generic import IEnumerable
-from System.Collections.Generic import List
 from ..DocObjects import ObjectType
 from System.Collections.Specialized import NameValueCollection
 from ..DocObjects.Custom import UserDataList
@@ -4527,7 +4512,6 @@ class Centermark(Dimension):
     def WrapText(self) -> None: ...
 
 
-from System.Collections.Generic import IEnumerable
 class Circle:
     @overload
     def __init__(self, radius: float): ...
@@ -4626,8 +4610,6 @@ class Circle:
 
 
 from System import Guid
-from System.Collections.Generic import IEnumerable
-from System.Collections.Generic import List
 from ..DocObjects import ObjectType
 from System.Collections.Specialized import NameValueCollection
 from ..DocObjects.Custom import UserDataList
@@ -5184,8 +5166,6 @@ class ConvexCornerOption(Enum):
     AtMeshCorner = 2
 
 
-from System.Collections.Generic import IEnumerable
-from System.Collections.Generic import List
 from ..DocObjects import ObjectType
 from System.Collections.Specialized import NameValueCollection
 from ..DocObjects.Custom import UserDataList
@@ -5875,8 +5855,6 @@ class CurveOrientation(Enum):
     Clockwise = -1
 
 
-from System.Collections.Generic import IEnumerable
-from System.Collections.Generic import List
 from ..DocObjects import ObjectType
 from System.Collections.Specialized import NameValueCollection
 from ..DocObjects.Custom import UserDataList
@@ -6502,7 +6480,6 @@ class DetailView(GeometryBase):
     def Translate(self, x: float, y: float, z: float) -> bool: ...
 
 
-from System.Collections.Generic import IEnumerable
 class DevelopableSrf:
     @overload
     def __init__(self): ...
@@ -7069,8 +7046,6 @@ class ExtrudeCornerType(Enum):
     Chamfer = 4
 
 
-from System.Collections.Generic import IEnumerable
-from System.Collections.Generic import List
 from ..DocObjects import ObjectType
 from System.Collections.Specialized import NameValueCollection
 from ..DocObjects.Custom import UserDataList
@@ -7516,7 +7491,6 @@ class GeometryBase(CommonObject):
     def Translate(self, x: float, y: float, z: float) -> bool: ...
 
 
-from System.Collections.Generic import IEnumerable
 from ..DocObjects import HatchPattern
 from ..Display import ColorGradient
 from ..DocObjects import ObjectType
@@ -7706,7 +7680,6 @@ class HermiteSurface:
 
 from System import IProgress
 from System.Threading import CancellationToken
-from System.Collections.Generic import IEnumerable
 from ..DocObjects import ViewportInfo
 class HiddenLineDrawing:
     @overload
@@ -7797,7 +7770,6 @@ class HiddenLineDrawingObjectCurve:
 
 from ..DocObjects import ViewportInfo
 from ..Display import RhinoViewport
-from System.Collections.Generic import List
 class HiddenLineDrawingParameters:
     @overload
     def __init__(self): ...
@@ -8137,8 +8109,6 @@ class InteriorCreaseOption(Enum):
 
 
 from ..Collections import RhinoList
-from System.Collections.Generic import IEnumerable
-from System.Collections import IEnumerable
 from System import Predicate
 from System.Collections.Generic import IComparer
 from System import Action
@@ -8406,7 +8376,6 @@ class Interval:
 
 
 from System.Collections import IDictionary
-from System import Exception
 from System.Reflection import MethodBase
 from System.Runtime.Serialization import SerializationInfo
 from System.Runtime.Serialization import StreamingContext
@@ -8774,7 +8743,6 @@ class Leader(AnnotationBase):
     def WrapText(self) -> None: ...
 
 
-from System.Collections.Generic import IEnumerable
 class LengthMassProperties:
     @overload
     def CentroidCoordinatesPrincipalMoments(self) -> Tuple[bool, float, Vector3d, float, Vector3d, float, Vector3d]: ...
@@ -9078,7 +9046,6 @@ class LightStyle(Enum):
     WorldRectangular = 12
 
 
-from System.Collections.Generic import IEnumerable
 from System import IFormatProvider
 class Line:
     @overload
@@ -9198,7 +9165,6 @@ class Line:
 
 
 from ..DocObjects import DimensionStyle
-from System.Collections.Generic import IEnumerable
 from ..DocObjects import ViewportInfo
 from System import Guid
 from ..DocObjects import ArrowFit
@@ -9713,8 +9679,6 @@ class LinearDimension(Dimension):
     def WrapText(self) -> None: ...
 
 
-from System.Collections.Generic import IEnumerable
-from System.Collections.Generic import List
 from ..DocObjects import ObjectType
 from System.Collections.Specialized import NameValueCollection
 from ..DocObjects.Custom import UserDataList
@@ -10255,12 +10219,10 @@ class MeasuredDirection(Enum):
 
 from ..Display import RhinoViewport
 from ..DocObjects import ViewportInfo
-from System.Collections.Generic import IEnumerable
 from System.Drawing import Color
 from ..FileIO import TextLog
 from System.Threading import CancellationToken
 from System import IProgress
-from System.Collections.Generic import List
 from ..Render import TextureMapping
 from System.Drawing import Bitmap
 from System.Threading.Tasks import Task
@@ -11000,8 +10962,6 @@ class MeshDisplacementInfo:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import IEnumerable
-from System.Collections.Generic import List
 class MeshExtruder:
     @overload
     def __init__(self, inputMesh: Mesh, componentIndices: Iterable[ComponentIndex]): ...
@@ -11439,7 +11399,6 @@ class MeshUnwrapMethod(Enum):
     ARAP = 2
 
 
-from System.Collections.Generic import IEnumerable
 class MeshUnwrapper:
     @overload
     def __init__(self, mesh: Mesh): ...
@@ -11569,11 +11528,9 @@ class MorphControl(GeometryBase):
     def Translate(self, x: float, y: float, z: float) -> bool: ...
 
 
-from System.Collections.Generic import IEnumerable
 from .Collections import NurbsCurveKnotList
 from .Collections import NurbsCurvePointList
 from ..Collections import Point3dList
-from System.Collections.Generic import List
 from ..DocObjects import ObjectType
 from System.Collections.Specialized import NameValueCollection
 from ..DocObjects.Custom import UserDataList
@@ -12135,10 +12092,8 @@ class NurbsCurveEndConditionType(Enum):
     Curvature = 3
 
 
-from System.Collections.Generic import IEnumerable
 from .Collections import NurbsSurfaceKnotList
 from .Collections import NurbsSurfacePointList
-from System.Collections.Generic import List
 from ..DocObjects import ObjectType
 from System.Collections.Specialized import NameValueCollection
 from ..DocObjects.Custom import UserDataList
@@ -12491,7 +12446,6 @@ class NurbsSurfaceType(Enum):
 
 
 from ..DocObjects import DimensionStyle
-from System.Collections.Generic import IEnumerable
 from ..DocObjects import ViewportInfo
 from System import Guid
 from ..DocObjects import ArrowFit
@@ -13078,7 +13032,6 @@ class PipeCapMode(Enum):
     Round = 2
 
 
-from System.Collections.Generic import IEnumerable
 from System import IFormatProvider
 class Plane:
     @overload
@@ -13219,8 +13172,6 @@ class PlaneFitResult(Enum):
     Failure = -1
 
 
-from System.Collections.Generic import IEnumerable
-from System.Collections.Generic import List
 from ..DocObjects import ObjectType
 from System.Collections.Specialized import NameValueCollection
 from ..DocObjects.Custom import UserDataList
@@ -13760,7 +13711,6 @@ class Point2f:
 
 
 from System import IFormatProvider
-from System.Collections.Generic import IEnumerable
 class Point3d:
     @overload
     def __init__(self, vector: Vector3d): ...
@@ -14136,7 +14086,6 @@ class Point4d:
     def Transform(self, xform: Transform) -> None: ...
 
 
-from System.Collections.Generic import IEnumerable
 from System.Drawing import Color
 from System.Threading import CancellationToken
 from System import IProgress
@@ -14417,8 +14366,6 @@ class PointFaceRelation(Enum):
     Boundary = 2
 
 
-from System.Collections.Generic import IEnumerable
-from System.Collections.Generic import List
 from ..DocObjects import ObjectType
 from System.Collections.Specialized import NameValueCollection
 from ..DocObjects.Custom import UserDataList
@@ -14891,12 +14838,10 @@ class PolyCurve(Curve):
     def TryGetPolyline(self) -> Tuple[bool, Polyline, Iterable[float]]: ...
 
 
-from System.Collections.Generic import IEnumerable
 from ..Collections import XAccess
 from ..Collections import YAccess
 from ..Collections import ZAccess
 from ..Collections import Point3dList
-from System.Collections import IEnumerable
 from System import Predicate
 from ..Collections import RhinoList
 from System.Collections.Generic import IComparer
@@ -15132,8 +15077,6 @@ class Polyline(Point3dList):
     def TrueForAll(self, match: Predicate) -> bool: ...
 
 
-from System.Collections.Generic import IEnumerable
-from System.Collections.Generic import List
 from ..DocObjects import ObjectType
 from System.Collections.Specialized import NameValueCollection
 from ..DocObjects.Custom import UserDataList
@@ -15792,7 +15735,6 @@ class Quaternion:
 
 
 from ..DocObjects import DimensionStyle
-from System.Collections.Generic import IEnumerable
 from ..DocObjects import TextHorizontalAlignment
 from ..DocObjects import ArrowType
 from System import Guid
@@ -16353,7 +16295,6 @@ class Ray3d:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import IEnumerable
 class Rectangle3d:
     @overload
     def __init__(self, plane: Plane, width: float, height: float): ...
@@ -16503,8 +16444,6 @@ class RegionContainment(Enum):
     BInsideA = 3
 
 
-from System.Collections.Generic import IEnumerable
-from System.Collections.Generic import List
 from ..DocObjects import ObjectType
 from System.Collections.Specialized import NameValueCollection
 from ..DocObjects.Custom import UserDataList
@@ -16852,7 +16791,6 @@ class RibbonOffsetSurfaceMethod(Enum):
     Sweep2NetworkSrf = 2
 
 
-from System.Collections.Generic import IEnumerable
 from System import IntPtr
 from System import EventHandler
 class RTree:
@@ -17009,7 +16947,6 @@ class ShrinkWrapParameters:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import IEnumerable
 from System.Collections.ObjectModel import ReadOnlyCollection
 class ShutLiningCurveInfo:
     @overload
@@ -17046,7 +16983,6 @@ class SideFill(Enum):
 
 
 from System.Threading import CancellationToken
-from System.Collections.Generic import IEnumerable
 from ..DocObjects import ViewportInfo
 class Silhouette:
     @overload
@@ -17142,7 +17078,6 @@ class SpaceMorph:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import IEnumerable
 class Sphere:
     @overload
     def __init__(self, center: Point3d, radius: float): ...
@@ -17236,8 +17171,6 @@ class SquishDeformation(Enum):
     Custom = 5
 
 
-from System.Collections.Generic import IEnumerable
-from System.Collections.Generic import List
 class Squisher:
     @overload
     def __init__(self): ...
@@ -17347,7 +17280,6 @@ class SquishParameters:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import IEnumerable
 from .Collections import SubDFaceList
 from .Collections import SubDVertexList
 from .Collections import SubDEdgeList
@@ -17877,7 +17809,6 @@ class SubDPatchStyle(Enum):
     Triangulated = 5
 
 
-from System.Collections.Generic import IEnumerable
 from System import Guid
 class SubDSurfaceInterpolator:
     @overload
@@ -17961,7 +17892,6 @@ class SubDToBrepOptions:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import IEnumerable
 class SubDVertex(SubDComponent):
     @overload
     def EdgeAt(self, index: int) -> SubDEdge: ...
@@ -18031,8 +17961,6 @@ class SubDVertexTag(Enum):
     Dart = 4
 
 
-from System.Collections.Generic import IEnumerable
-from System.Collections.Generic import List
 from ..DocObjects import ObjectType
 from System.Collections.Specialized import NameValueCollection
 from ..DocObjects.Custom import UserDataList
@@ -18291,8 +18219,6 @@ class SumSurface(Surface):
     def VariableOffset(self, uMinvMin: float, uMinvMax: float, uMaxvMin: float, uMaxvMax: float, interiorParameters: Iterable[Point2d], interiorDistances: Iterable[float], tolerance: float) -> Surface: ...
 
 
-from System.Collections.Generic import IEnumerable
-from System.Collections.Generic import List
 from ..DocObjects import ObjectType
 from System.Collections.Specialized import NameValueCollection
 from ..DocObjects.Custom import UserDataList
@@ -18599,7 +18525,6 @@ class SurfaceCurvature:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import List
 class SurfaceFilletBase:
     @overload
     @staticmethod
@@ -18657,8 +18582,6 @@ class SurfaceFilletBase:
     def TrimBreps(self, bExtend: bool, TrimmedBreps0: List, TrimmedBreps1: List) -> bool: ...
 
 
-from System.Collections.Generic import IEnumerable
-from System.Collections.Generic import List
 from ..DocObjects import ObjectType
 from System.Collections.Specialized import NameValueCollection
 from ..DocObjects.Custom import UserDataList
@@ -18927,7 +18850,6 @@ class SweepMiter(Enum):
     Untrimmed = 2
 
 
-from System.Collections.Generic import IEnumerable
 class SweepOneRail:
     @overload
     def __init__(self): ...
@@ -19009,7 +18931,6 @@ class SweepRebuild(Enum):
     Refit = 2
 
 
-from System.Collections.Generic import IEnumerable
 class SweepTwoRail:
     @overload
     def __init__(self): ...
@@ -19185,7 +19106,6 @@ from ..DocObjects import DimensionStyle
 from ..DocObjects import TextHorizontalAlignment
 from ..DocObjects import TextVerticalAlignment
 from ..DocObjects import TextOrientation
-from System.Collections.Generic import List
 from System import Guid
 from ..DocObjects import Field
 from ..DocObjects import MaskType
@@ -19552,7 +19472,6 @@ class Torus:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import IEnumerable
 class Transform:
     @overload
     def __init__(self, diagonalValue: float): ...
@@ -19808,7 +19727,6 @@ class TransformSimilarityType(Enum):
     OrientationReversing = -1
 
 
-from System.Collections.Generic import IEnumerable
 class Triangle3d:
     @overload
     def __init__(self, a: Point3d, b: Point3d, c: Point3d): ...
@@ -19899,8 +19817,6 @@ class Triangle3d:
     def WithC(self, c: Point3d) -> Triangle3d: ...
 
 
-from System.Collections.Generic import IEnumerable
-from System.Collections.Generic import List
 class Unroller:
     @overload
     def __init__(self, surface: Surface): ...
@@ -20446,7 +20362,6 @@ class Visibility(Enum):
     Clipped = 5
 
 
-from System.Collections.Generic import IEnumerable
 class VolumeMassProperties:
     @overload
     def CentroidCoordinatesPrincipalMoments(self) -> Tuple[bool, float, Vector3d, float, Vector3d, float, Vector3d]: ...

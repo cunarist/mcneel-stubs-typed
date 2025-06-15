@@ -19,9 +19,7 @@ class GH_Distribute(Enum):
     Horizontal = 2
 
 
-from System.Collections.Generic import IEnumerable
 from System.Drawing import RectangleF
-from System.Collections.Generic import List
 class GH_Solver:
     @overload
     def __init__(self): ...

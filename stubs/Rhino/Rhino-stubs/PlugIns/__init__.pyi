@@ -3,7 +3,6 @@ from enum import Enum
 
 
 
-from System.Collections.Generic import IEnumerable
 class CustomRenderSaveFileTypes:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -222,7 +221,6 @@ class FileImportPlugIn(PlugIn):
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import IEnumerable
 class FileTypeList:
     @overload
     def __init__(self): ...
@@ -960,7 +958,6 @@ class RenderFeature(Enum):
     LightMaterials = 23
 
 
-from System.Collections.Generic import List
 from System import IntPtr
 from ..DocObjects import Material
 from System.Reflection import Assembly

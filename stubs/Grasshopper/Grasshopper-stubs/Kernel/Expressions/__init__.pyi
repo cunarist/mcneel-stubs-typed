@@ -25,7 +25,6 @@ class GH_CharType(Enum):
     commentbody = 62
 
 
-from System.Collections.Generic import List
 class GH_CodeString:
     @overload
     def __init__(self, input: str): ...
@@ -149,11 +148,9 @@ class GH_ExpressionParser:
 
 
 from System import Char
-from System.Collections.Generic import IEnumerable
 from System.Collections.ObjectModel import ReadOnlyCollection
 from System.Collections.Generic import IComparer
 from System import Predicate
-from System.Collections.Generic import List
 from System import Action
 from System.Collections.Generic import Enumerator
 from System import Comparison
@@ -525,9 +522,7 @@ class GH_ScriptVariantType(Enum):
     object = 20
 
 
-from System.Collections.Generic import List
 from System.Collections import IDictionary
-from System import Exception
 from System.Reflection import MethodBase
 from System.Runtime.Serialization import SerializationInfo
 from System.Runtime.Serialization import StreamingContext
@@ -571,7 +566,6 @@ class GH_SignatureException:
 
 
 from System.Collections import IDictionary
-from System import Exception
 from System.Reflection import MethodBase
 from System.Runtime.Serialization import SerializationInfo
 from System.Runtime.Serialization import StreamingContext
@@ -615,7 +609,6 @@ class GH_SolverException:
 
 
 from System.Collections import IDictionary
-from System import Exception
 from System.Reflection import MethodBase
 from System.Runtime.Serialization import SerializationInfo
 from System.Runtime.Serialization import StreamingContext

@@ -207,7 +207,6 @@ class ColorCMYK:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import IEnumerable
 from ..Geometry import Point3d
 class ColorGradient:
     @overload
@@ -693,7 +692,6 @@ class CurveThicknessUse(Enum):
 from ..Geometry import BoundingBox
 from ..Geometry import Point3d
 from System.Drawing import Color
-from System.Collections.Generic import IEnumerable
 from ..Geometry import Line
 from ..Geometry import Vector3d
 from ..Geometry import Arc
@@ -826,7 +824,6 @@ class DisplayBitmap:
 
 from ..Geometry import BoundingBox
 from ..Geometry import Vector3d
-from System.Collections.Generic import IEnumerable
 from System.Drawing import Color
 class DisplayBitmapDrawList:
     @overload
@@ -861,7 +858,6 @@ class DisplayBitmapDrawList:
 
 from ..DocObjects import ObjectType
 from System import Guid
-from System.Collections.Generic import IEnumerable
 from ..DocObjects import ActiveSpace
 class DisplayConduit:
     @overload
@@ -1142,7 +1138,6 @@ from System.Drawing import Color
 from ..DocObjects import CoordinateSystem
 from ..DocObjects import LineCapStyle
 from ..DocObjects import LineJoinStyle
-from System.Collections.Generic import IEnumerable
 from ..Geometry import Point2f
 class DisplayPen:
     @overload
@@ -1220,7 +1215,6 @@ from ..Geometry import Brep
 from ..Geometry import Extrusion
 from ..Geometry import Mesh
 from ..Geometry import Point3d
-from System.Collections.Generic import IEnumerable
 from ..Geometry import PointCloud
 from ..Geometry import Vector3d
 from ..Geometry import Line
@@ -2724,7 +2718,6 @@ class DisplayPointAttributes:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import IEnumerable
 class DisplayPointSet:
     @overload
     @staticmethod
@@ -3349,7 +3342,6 @@ from ..Geometry import BoundingBox
 from ..Geometry import Point3d
 from System.Drawing import Size
 from ..Geometry import Vector3d
-from System.Collections.Generic import IEnumerable
 from ..DocObjects import ConstructionPlane
 from ..DocObjects import ViewportInfo
 from ..DocObjects import ViewInfo

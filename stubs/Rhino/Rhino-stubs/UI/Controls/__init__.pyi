@@ -350,7 +350,6 @@ class ICollapsibleSection3:
     def UpdateView(self, flags: int) -> None: ...
 
 
-from System.Collections.Generic import IEnumerable
 from System.Drawing import Color
 class ICollapsibleSectionHolder:
     @overload

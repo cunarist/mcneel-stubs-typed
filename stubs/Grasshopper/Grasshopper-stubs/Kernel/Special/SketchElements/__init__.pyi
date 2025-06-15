@@ -34,7 +34,6 @@ from System.Drawing import RectangleF
 from System.Drawing import PointF
 from .. import GH_PickBox
 from System.Drawing import Image
-from System.Collections.Generic import IEnumerable
 from System import Guid
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader

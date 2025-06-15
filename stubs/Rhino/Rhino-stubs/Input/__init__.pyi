@@ -66,7 +66,6 @@ from ..DocObjects import ObjectType
 from ..DocObjects import ObjRef
 from .Custom import GetObjectGeometryFilter
 from ..Geometry import Plane
-from System.Collections.Generic import IEnumerable
 from System.Drawing import Rectangle
 from ..Display import RhinoView
 from ..Geometry import Box

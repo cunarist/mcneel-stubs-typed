@@ -136,7 +136,6 @@ class RenderMeshes:
 
 
 from System import Guid
-from System.Collections.Generic import List
 from ...Geometry import MeshType
 from ...DocObjects import ViewportInfo
 from .. import RhinoDoc

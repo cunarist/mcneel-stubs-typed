@@ -4,7 +4,6 @@ from enum import Enum
 
 
 from System.Drawing import Rectangle
-from System.Collections.Generic import List
 class GH_GenericLayout:
     @overload
     def Equals(self, obj: object) -> bool: ...

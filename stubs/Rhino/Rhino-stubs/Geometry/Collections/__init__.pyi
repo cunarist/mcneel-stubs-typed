@@ -24,7 +24,6 @@ class BrepCurveList:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import IEnumerable
 from System.Collections.Generic import IEnumerator
 class BrepEdgeList:
     def __iter__(self) -> Iterator[BrepEdge]: ...
@@ -127,7 +126,6 @@ class BrepFaceList:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import IEnumerable
 from System.Collections.Generic import IEnumerator
 class BrepLoopList:
     def __iter__(self) -> Iterator[BrepLoop]: ...
@@ -238,8 +236,6 @@ class BrepVertexList:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import IEnumerable
-from System.Collections.Generic import List
 from System.Collections.Generic import IEnumerator
 class MeshFaceList:
     def __iter__(self) -> Iterator[MeshFace]: ...
@@ -400,7 +396,6 @@ class MeshFaceNormalList:
     def UnitizeFaceNormals(self) -> bool: ...
 
 
-from System.Collections.Generic import IEnumerable
 from ...FileIO import TextLog
 from System.Collections.Generic import IEnumerator
 class MeshNgonList:
@@ -630,7 +625,6 @@ class MeshTopologyVertexList:
 
 from System.Drawing import Color
 from ...Render import MappingTag
-from System.Collections.Generic import IEnumerable
 from System.Collections.Generic import IEnumerator
 class MeshVertexColorList:
     def __iter__(self) -> Iterator[Color]: ...
@@ -686,7 +680,6 @@ class MeshVertexColorList:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import IEnumerable
 from System.Collections.Generic import IEnumerator
 class MeshVertexList:
     def __iter__(self) -> Iterator[Point3f]: ...
@@ -840,7 +833,6 @@ class MeshVertexNormalList:
     def UnitizeNormals(self) -> bool: ...
 
 
-from System.Collections.Generic import IEnumerable
 from System.Collections.Generic import IEnumerator
 class MeshVertexStatusList:
     def __iter__(self) -> Iterator[bool]: ...
@@ -1093,7 +1085,6 @@ class NurbsSurfacePointList:
 
 
 from System.Collections.Generic import IEnumerator
-from System.Collections.Generic import IEnumerable
 class SubDEdgeList:
     def __iter__(self) -> Iterator[SubDEdge]: ...
     @overload

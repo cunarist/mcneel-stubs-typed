@@ -3,7 +3,6 @@ from enum import Enum
 
 
 
-from System.Collections.Generic import List
 from Rhino import RhinoDoc
 from Rhino.Commands import RunMode
 from ..Kernel import GH_Document

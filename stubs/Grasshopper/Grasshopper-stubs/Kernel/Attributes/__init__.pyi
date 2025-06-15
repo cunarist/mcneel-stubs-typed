@@ -4,7 +4,6 @@ from enum import Enum
 
 
 from System.Drawing import RectangleF
-from System.Collections.Generic import List
 from ...GUI.Canvas import GH_Canvas
 from ...GUI import GH_CanvasMouseEvent
 from ...GUI.Canvas import GH_ObjectResponse
@@ -134,7 +133,6 @@ from ...GUI import GH_CanvasMouseEvent
 from ...GUI.Canvas import GH_ObjectResponse
 from System.Drawing import RectangleF
 from System import Guid
-from System.Collections.Generic import List
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from ...GUI.Canvas import GH_CanvasChannel
@@ -239,7 +237,6 @@ from System.Drawing import PointF
 from ...GUI import GH_TooltipDisplayEventArgs
 from System.Drawing import RectangleF
 from System import Guid
-from System.Collections.Generic import List
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from ...GUI.Canvas import GH_Canvas

@@ -13,7 +13,6 @@ from ..Geometry import Vector3d
 from System import Guid
 from ..Geometry import Plane
 from System import SByte
-from System.Collections.Generic import IEnumerable
 from System.Drawing import Color
 from System.Drawing import Point
 from System.Drawing import PointF
@@ -276,14 +275,12 @@ class ArchivableDictionary:
     def TryGetVector3d(self, key: str) -> Tuple[bool, Vector3d]: ...
 
 
-from System.Collections.Generic import IEnumerable
 from ..Geometry import Line
 from ..Geometry import Circle
 from ..Geometry import Arc
 from ..Geometry import Ellipse
 from ..Geometry import Transform
 from ..Geometry import Curve
-from System.Collections import IEnumerable
 from System import Predicate
 from System.Collections.Generic import IComparer
 from System import Action
@@ -457,12 +454,10 @@ class CurveList:
 
 
 
-from System.Collections.Generic import IEnumerable
 from ..Geometry import BoundingBox
 from ..Geometry import Point3d
 from ..Geometry import Transform
 from System.Collections.Generic import IList
-from System.Collections import IEnumerable
 from System import Predicate
 from System.Collections.Generic import IComparer
 from System import Action
@@ -645,7 +640,6 @@ class Point3dList:
 
 
 from ..Geometry import PointCloud
-from System.Collections.Generic import IEnumerable
 class RhinoList:
     @overload
     def Equals(self, obj: object) -> bool: ...

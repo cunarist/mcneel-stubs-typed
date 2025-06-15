@@ -7,7 +7,6 @@ from System import Guid
 from System.Drawing import Size
 from System.Drawing import Point
 from System.Drawing import Bitmap
-from System.Collections.Generic import List
 from System.Drawing import PointF
 from System.Drawing import Graphics
 from GH_IO.Serialization import GH_IWriter
@@ -56,7 +55,6 @@ from GH_IO.Serialization import GH_IReader
 from System.Drawing import Size
 from System.Drawing import Point
 from System.Drawing import Bitmap
-from System.Collections.Generic import List
 class GH_IconObject_Rectangle(GH_IconObject):
     @overload
     def __init__(self): ...
@@ -101,7 +99,6 @@ from System.Drawing import Point
 from System.Drawing import Size
 from System.Drawing import Bitmap
 from System.Drawing import PointF
-from System.Collections.Generic import List
 from System.Drawing import Graphics
 class IGH_IconObject:
     @overload

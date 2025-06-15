@@ -661,7 +661,6 @@ from System import Guid
 from .Undo import IGH_UndoAction
 from .Undo import GH_UndoRecord
 from System.Drawing import Bitmap
-from System.Collections.Generic import IEnumerable
 class GH_ActiveObject(GH_DocumentObject):
     @overload
     def add_AttributesChanged(self, obj: AttributesChangedEventHandler) -> None: ...
@@ -891,7 +890,6 @@ class GH_ActiveObjectFilter:
 
 
 from System import Guid
-from System.Collections.Generic import IEnumerable
 class GH_Alias:
     @overload
     def __init__(self): ...
@@ -1248,7 +1246,6 @@ class GH_AutoSaveTrigger(Enum):
 
 from Rhino.DocObjects import ObjectAttributes
 from Rhino import RhinoDoc
-from System.Collections import IEnumerable
 class GH_BakeUtility:
     @overload
     def __init__(self, document: GH_Document): ...
@@ -1307,7 +1304,6 @@ from System.Windows.Forms import ToolStripDropDown
 from System import TimeSpan
 from Rhino.Geometry import BoundingBox
 from Rhino import RhinoDoc
-from System.Collections.Generic import List
 from Rhino.DocObjects import ObjectAttributes
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
@@ -1315,7 +1311,6 @@ from System import Guid
 from .Undo import IGH_UndoAction
 from .Undo import GH_UndoRecord
 from System.Drawing import Bitmap
-from System.Collections.Generic import IEnumerable
 class GH_Component(GH_ActiveObject):
     @overload
     def add_AttributesChanged(self, obj: AttributesChangedEventHandler) -> None: ...
@@ -1551,8 +1546,6 @@ class GH_ComponentPaletteStyle(Enum):
     Hue = 2
 
 
-from System.Collections.Generic import List
-from System.Collections.Generic import IEnumerable
 from System import Guid
 from System.IO import BinaryWriter
 from GH_IO.Serialization import GH_IWriter
@@ -1695,10 +1688,8 @@ from System.Collections.ObjectModel import ReadOnlyCollection
 from System import Guid
 from System.Windows.Forms import AutoCompleteStringCollection
 from System.Collections.Generic import IList
-from System.Collections.Generic import IEnumerable
 from System.Drawing import Bitmap
 from .Graphs import IGH_Graph
-from System.Collections.Generic import List
 from System import Char
 from ..GUI.Ribbon import GH_Layout
 class GH_ComponentServer:
@@ -1837,7 +1828,6 @@ class GH_ComponentServer:
 
 from System.Collections.ObjectModel import ReadOnlyCollection
 from System import Guid
-from System.Collections.Generic import List
 class GH_ConnectivityDiagram:
     @overload
     def __init__(self, doc: GH_Document): ...
@@ -1867,7 +1857,6 @@ class GH_ConnectivityDiagram:
 
 from System.Collections.ObjectModel import ReadOnlyCollection
 from System import Guid
-from System.Collections.Generic import List
 class GH_ConnectivityDisparity:
     @overload
     def __init__(self, topset: GH_ConnectivityDiagram, subset: GH_ConnectivityDiagram): ...
@@ -2953,7 +2942,6 @@ class GH_DocModifiedEventArgs:
 
 
 from System.Collections.ObjectModel import ReadOnlyCollection
-from System.Collections.Generic import List
 class GH_DocObjectEventArgs:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -2991,10 +2979,8 @@ class GH_DocSettingsEventArgs:
 
 
 from System.Drawing import PointF
-from System.Collections.Generic import IEnumerable
 from ..GUI.Alignment import GH_Align
 from ..GUI.Alignment import GH_Distribute
-from System.Collections.Generic import List
 from System.Drawing import Size
 from System import TimeSpan
 from System import Guid
@@ -3518,7 +3504,6 @@ class GH_Document:
     def Write(self, writer: GH_IWriter, objList: Iterable[IGH_DocumentObject]) -> bool: ...
 
 
-from System.Collections.Generic import List
 class GH_DocumentAssociations:
     @overload
     def __init__(self): ...
@@ -3577,7 +3562,6 @@ class GH_DocumentEventServer:
 
 
 from System.Windows.Forms import DialogResult
-from System.Collections.Generic import IEnumerable
 from System.Drawing import Bitmap
 from System.Drawing import Size
 from System import DateTime
@@ -3679,7 +3663,6 @@ from ..GUI import GH_ColourPicker
 from System.Drawing import Bitmap
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
-from System.Collections.Generic import IEnumerable
 class GH_DocumentObject(GH_InstanceDescription):
     @overload
     def add_AttributesChanged(self, obj: AttributesChangedEventHandler) -> None: ...
@@ -3882,7 +3865,6 @@ class GH_DocumentObject(GH_InstanceDescription):
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
-from System.Collections.Generic import List
 from System import DateTime
 from System.Drawing import Point
 from System.Drawing import Size
@@ -3954,7 +3936,6 @@ class GH_DocumentRank(Enum):
     Subsidiary = 2
 
 
-from System.Collections.Generic import List
 from System.Collections.Generic import IEnumerator
 from System.Collections import IEnumerator
 class GH_DocumentServer:
@@ -4022,7 +4003,6 @@ class GH_DocumentSettings(Enum):
     Properties = 1
 
 
-from System.Collections.Generic import IEnumerable
 class GH_DocumentTree:
     @overload
     def __init__(self, root: GH_Document): ...
@@ -4044,7 +4024,6 @@ class GH_DocumentTree:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import List
 class GH_DocumentTreeNode:
     @overload
     def __init__(self, node: GH_Document): ...
@@ -4128,7 +4107,6 @@ class GH_ExternalFileType(Enum):
     Cluster = 3
 
 
-from System.Collections.Generic import IEnumerable
 class GH_FileSystemEventServer:
     @overload
     @staticmethod
@@ -4219,7 +4197,6 @@ from System.Drawing import Font
 from System.Drawing import FontFamily
 from System.Drawing import Size
 from System.Drawing import SizeF
-from System.Collections.Generic import IEnumerable
 class GH_FontServer:
     @overload
     @staticmethod
@@ -4740,7 +4717,6 @@ class GH_GHALoadingEventArgs:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import List
 from GH_IO.Serialization import GH_Archive
 from GH_IO.Serialization import GH_IReader
 class GH_GHXHarvester:
@@ -4809,7 +4785,6 @@ class GH_GuidConflictSolution(Enum):
 
 
 from System import Guid
-from System.Collections.Generic import List
 class GH_GuidTable:
     @overload
     def __init__(self): ...
@@ -4866,7 +4841,6 @@ class GH_IncrementalParamNameConstructor:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import IEnumerable
 from System import Guid
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
@@ -4967,7 +4941,6 @@ class GH_LineParserAction(Enum):
     Abort = 2
 
 
-from System.Collections.Generic import List
 class GH_ListUtil:
     @overload
     @staticmethod
@@ -5020,7 +4993,6 @@ class GH_LoadingDemand(Enum):
     # None = -1
 
 
-from System import Exception
 class GH_LoadingException:
     @overload
     def __init__(self, name: str, message: str): ...
@@ -5055,7 +5027,6 @@ class GH_LoadingMechanism(Enum):
     Unknown = -1
 
 
-from System.Collections.Generic import List
 from System import Guid
 class GH_MarkovChain:
     @overload
@@ -5130,7 +5101,6 @@ class GH_MarkovOutcome:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import List
 from System import Guid
 class GH_MarkovPattern:
     @overload
@@ -7094,7 +7064,6 @@ class GH_ScheduleDelegate:
 
 
 from System.Reflection import Assembly
-from System.Collections.Generic import List
 class GH_ScriptComponentUtilities:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -7125,7 +7094,6 @@ class GH_ScriptComponentUtilities:
 
 
 from Rhino.Geometry import BoundingBox
-from System.Collections.Generic import List
 class GH_ScriptInstance:
     @overload
     def AfterRunScript(self) -> None: ...
@@ -7185,7 +7153,6 @@ class GH_SelectionTopology(Enum):
     Concave = 2
 
 
-from System.Collections.Generic import List
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from System import DateTime
@@ -7403,10 +7370,8 @@ class GH_State:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
-from System.Collections.Generic import List
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
-from System.Collections.Generic import IEnumerable
 from System.Collections.ObjectModel import ReadOnlyCollection
 from System.Collections.Generic import IComparer
 from System import Predicate
@@ -7587,11 +7552,9 @@ from System.Drawing import Rectangle
 from System.Drawing import Graphics
 from System.Drawing import PointF
 from ..GUI import GH_TooltipDisplayEventArgs
-from System.Collections.Generic import IEnumerable
 from System.Collections.ObjectModel import ReadOnlyCollection
 from System.Collections.Generic import IComparer
 from System import Predicate
-from System.Collections.Generic import List
 from System import Action
 from System.Collections.Generic import Enumerator
 from System import Comparison
@@ -7747,7 +7710,6 @@ class GH_StringMatcher:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import IEnumerable
 class GH_StringPattern:
     @overload
     def __init__(self): ...
@@ -8069,7 +8031,6 @@ class GH_UndoOperation(Enum):
 from .Undo import GH_UndoRecord
 from System import Guid
 from .Undo import IGH_UndoAction
-from System.Collections.Generic import IEnumerable
 class GH_UndoUtil:
     @overload
     def CreateAddObjectEvent(self, name: str, objs: Iterable[IGH_DocumentObject]) -> GH_UndoRecord: ...
@@ -8163,7 +8124,6 @@ class GH_UndoUtil:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import IEnumerable
 from System import Guid
 class GH_UpgradeUtil:
     @overload
@@ -8345,13 +8305,11 @@ class GH_WireTopology:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
-from System.Collections.Generic import IEnumerable
 from GH_IO.Serialization import GH_IWriter
 from GH_IO.Serialization import GH_IReader
 from System.Collections.ObjectModel import ReadOnlyCollection
 from System.Collections.Generic import IComparer
 from System import Predicate
-from System.Collections.Generic import List
 from System import Action
 from System.Collections.Generic import Enumerator
 from System import Comparison
@@ -8594,7 +8552,6 @@ from System.Drawing import RectangleF
 from ..GUI.Canvas import GH_Canvas
 from ..GUI.Canvas import GH_CanvasChannel
 from ..GUI import GH_CanvasMouseEvent
-from System.Collections.Generic import List
 from System import Guid
 class IGH_Attributes:
     @overload
@@ -8683,7 +8640,6 @@ class IGH_BakeAwareData:
 
 
 from Rhino import RhinoDoc
-from System.Collections.Generic import List
 from Rhino.DocObjects import ObjectAttributes
 class IGH_BakeAwareObject:
     @overload
@@ -8723,8 +8679,6 @@ class IGH_ContextualComponent:
     def Archive(self) -> GH_Archive: ...
 
 
-from System.Collections.Generic import IEnumerable
-from System.Collections import IEnumerable
 class IGH_ContextualParameter:
     @overload
     def AssignContextualData(self, data: Iterable[Any]) -> None: ...
@@ -8748,8 +8702,6 @@ class IGH_ContextualParameter2:
 
 
 from .Data import GH_Path
-from System.Collections.Generic import List
-from System.Collections import IEnumerable
 from .Data import IGH_DataTree
 from .Data import IGH_Structure
 from .Data import GH_Structure
@@ -8941,7 +8893,6 @@ class IGH_InitCodeAware:
     def SetInitCode(self, code: str) -> None: ...
 
 
-from System.Collections.Generic import IEnumerable
 from System import Guid
 class IGH_InstanceDescription:
     @property
@@ -9021,7 +8972,6 @@ from System import Guid
 from System.Collections.Generic import IList
 from .Data import IGH_Structure
 from .Data import GH_Path
-from System.Collections import IEnumerable
 class IGH_Param:
     @overload
     def AddSource(self, source: IGH_Param) -> None: ...
@@ -9186,7 +9136,6 @@ class IGH_RenderAwareData:
     def AppendRenderGeometry(self, args: GH_RenderArgs, material: RenderMaterial) -> None: ...
 
 
-from System.Collections.Generic import List
 class IGH_ScriptInstance:
     @overload
     def AfterRunScript(self) -> None: ...
@@ -9388,7 +9337,6 @@ from System.Drawing import PointF
 from System.Drawing import RectangleF
 from ..GUI import GH_TooltipDisplayEventArgs
 from System import Guid
-from System.Collections.Generic import List
 from ..GUI.Canvas import GH_Canvas
 from ..GUI.Canvas import GH_CanvasChannel
 from ..GUI import GH_CanvasMouseEvent

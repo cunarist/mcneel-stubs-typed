@@ -189,7 +189,6 @@ class CommandLineTextWriter:
     def WriteLineAsync(self, buffer: Iterable[Char], index: int, count: int) -> Task: ...
 
 
-from System.Collections.Generic import List
 class DisplayDeviceInfo:
     @overload
     def __init__(self): ...
@@ -422,7 +421,6 @@ class LengthValue:
 
 
 from System.Drawing import Point
-from System.Collections.Generic import IEnumerable
 from .Geometry import Point3d
 from System.Drawing import Size
 from System.Drawing import Rectangle
@@ -1306,7 +1304,6 @@ from .Render import RenderEnvironmentTable
 from .Render import RenderTextureTable
 from .Render import ICurrentEnvironment
 from .Render.PostEffects import IPostEffects
-from System.Collections.Generic import IEnumerable
 from .DocObjects import ViewportInfo
 from System import Guid
 from .Geometry import MeshType
@@ -1331,7 +1328,6 @@ from .DocObjects import ActiveSpace
 from .DocObjects import EarthAnchorPoint
 from .Render import RenderSettings
 from .DocObjects import AnimationProperties
-from System.Collections.Generic import List
 from .Geometry import MeshingParameterStyle
 from .Geometry import MeshingParameters
 from .DocObjects import Worksession

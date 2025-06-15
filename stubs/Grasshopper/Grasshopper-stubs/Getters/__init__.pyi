@@ -4,7 +4,6 @@ from enum import Enum
 
 
 from ..Kernel.Types import GH_AngularDimension
-from System.Collections.Generic import List
 class GH_AngularDimensionGetter:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -23,7 +22,6 @@ class GH_AngularDimensionGetter:
 
 
 from ..Kernel.Types import GH_Arc
-from System.Collections.Generic import List
 class GH_ArcGetter:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -42,7 +40,6 @@ class GH_ArcGetter:
 
 
 from ..Kernel.Types import GH_Box
-from System.Collections.Generic import List
 class GH_BoxGetter:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -61,7 +58,6 @@ class GH_BoxGetter:
 
 
 from ..Kernel.Types import GH_Brep
-from System.Collections.Generic import List
 class GH_BrepGetter:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -80,7 +76,6 @@ class GH_BrepGetter:
 
 
 from ..Kernel.Types import GH_Centermark
-from System.Collections.Generic import List
 class GH_CentermarkGetter:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -99,7 +94,6 @@ class GH_CentermarkGetter:
 
 
 from ..Kernel.Types import GH_Circle
-from System.Collections.Generic import List
 class GH_CircleGetter:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -118,7 +112,6 @@ class GH_CircleGetter:
 
 
 from ..Kernel.Types import GH_Curve
-from System.Collections.Generic import List
 class GH_CurveGetter:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -137,7 +130,6 @@ class GH_CurveGetter:
 
 
 from ..Kernel.Types import GH_Extrusion
-from System.Collections.Generic import List
 class GH_ExtrusionGetter:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -156,7 +148,6 @@ class GH_ExtrusionGetter:
 
 
 from ..Kernel.Types import IGH_GeometricGoo
-from System.Collections.Generic import List
 class GH_GeometryGetter:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -175,7 +166,6 @@ class GH_GeometryGetter:
 
 
 from ..Kernel.Types import GH_Hatch
-from System.Collections.Generic import List
 class GH_HatchGetter:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -194,7 +184,6 @@ class GH_HatchGetter:
 
 
 from ..Kernel.Types import GH_InstanceReference
-from System.Collections.Generic import List
 class GH_InstanceReferenceGetter:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -213,7 +202,6 @@ class GH_InstanceReferenceGetter:
 
 
 from ..Kernel.Types import GH_Leader
-from System.Collections.Generic import List
 class GH_LeaderGetter:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -232,7 +220,6 @@ class GH_LeaderGetter:
 
 
 from ..Kernel.Types import GH_Light
-from System.Collections.Generic import List
 class GH_LightGetter:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -251,7 +238,6 @@ class GH_LightGetter:
 
 
 from ..Kernel.Types import GH_LinearDimension
-from System.Collections.Generic import List
 class GH_LinearDimensionGetter:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -270,7 +256,6 @@ class GH_LinearDimensionGetter:
 
 
 from ..Kernel.Types import GH_Line
-from System.Collections.Generic import List
 class GH_LineGetter:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -289,7 +274,6 @@ class GH_LineGetter:
 
 
 from ..Kernel.Types import GH_Mesh
-from System.Collections.Generic import List
 class GH_MeshGetter:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -308,7 +292,6 @@ class GH_MeshGetter:
 
 
 from ..Kernel.Types import GH_OrdinateDimension
-from System.Collections.Generic import List
 class GH_OrdinateDimensionGetter:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -329,7 +312,6 @@ class GH_OrdinateDimensionGetter:
 from Rhino.Geometry import Plane
 from Rhino.Geometry import Point3d
 from ..Kernel.Types import GH_Plane
-from System.Collections.Generic import List
 class GH_PlaneGetter:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -354,7 +336,6 @@ class GH_PlaneGetter:
 
 
 from ..Kernel.Types import GH_PointCloud
-from System.Collections.Generic import List
 class GH_PointCloudGetter:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -376,7 +357,6 @@ from ..Kernel.Types import GH_PointRefType
 from ..Kernel.Types import GH_Point
 from Rhino.Geometry import Point3d
 from ..Kernel import GH_GetterResult
-from System.Collections.Generic import List
 class GH_PointGetter:
     @overload
     def __init__(self): ...
@@ -412,7 +392,6 @@ class GH_PointGetter:
 
 
 from ..Kernel.Types import GH_RadialDimension
-from System.Collections.Generic import List
 class GH_RadialDimensionGetter:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -431,7 +410,6 @@ class GH_RadialDimensionGetter:
 
 
 from ..Kernel.Types import GH_Rectangle
-from System.Collections.Generic import List
 class GH_RectangleGetter:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -450,7 +428,6 @@ class GH_RectangleGetter:
 
 
 from ..Kernel.Types import GH_SubD
-from System.Collections.Generic import List
 class GH_SubDGetter:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -469,7 +446,6 @@ class GH_SubDGetter:
 
 
 from ..Kernel.Types import GH_Surface
-from System.Collections.Generic import List
 class GH_SurfaceGetter:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -488,7 +464,6 @@ class GH_SurfaceGetter:
 
 
 from ..Kernel.Types import GH_TextDot
-from System.Collections.Generic import List
 class GH_TextDotGetter:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -507,7 +482,6 @@ class GH_TextDotGetter:
 
 
 from ..Kernel.Types import GH_TextEntity
-from System.Collections.Generic import List
 class GH_TextEntityGetter:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -537,7 +511,6 @@ class GH_TransformGetter:
 
 
 from ..Kernel.Types import GH_Vector
-from System.Collections.Generic import List
 class GH_VectorGetter:
     @overload
     def Equals(self, obj: object) -> bool: ...

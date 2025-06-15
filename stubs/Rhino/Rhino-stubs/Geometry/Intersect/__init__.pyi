@@ -42,7 +42,6 @@ class CurveIntersections:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import IEnumerable
 from ...FileIO import TextLog
 from System.Threading import CancellationToken
 from System import IProgress
@@ -290,7 +289,6 @@ class LineSphereIntersection(Enum):
     Multiple = 2
 
 
-from System.Collections.Generic import IEnumerable
 from ...DocObjects import RhinoObject
 class MeshClash:
     @overload

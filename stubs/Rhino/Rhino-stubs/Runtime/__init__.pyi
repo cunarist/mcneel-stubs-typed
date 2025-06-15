@@ -169,7 +169,6 @@ class CommonObject:
 
 from System import IntPtr
 from System.Collections import IDictionary
-from System import Exception
 from System.Reflection import MethodBase
 from System.Runtime.Serialization import SerializationInfo
 from System.Runtime.Serialization import StreamingContext
@@ -215,7 +214,6 @@ class CorruptGeometryException:
 
 
 from System.Collections import IDictionary
-from System import Exception
 from System.Reflection import MethodBase
 from System.Runtime.Serialization import SerializationInfo
 from System.Runtime.Serialization import StreamingContext
@@ -261,7 +259,6 @@ class DocumentCollectedException:
 
 
 from System import IntPtr
-from System import Exception
 from System import AsyncCallback
 from System import IAsyncResult
 from System.Runtime.Serialization import SerializationInfo
@@ -340,8 +337,6 @@ from System import Version
 from System import EventHandler
 from ..Geometry import GeometryBase
 from System import Guid
-from System.Collections.Generic import IEnumerable
-from System import Exception
 from System import IntPtr
 from ..Geometry import BezierCurve
 from ..PlugIns import PlugIn
@@ -747,7 +742,6 @@ class IPlatformServiceLocator:
 
 from ..Geometry import Mesh
 from ..Geometry import ShrinkWrapParameters
-from System.Collections.Generic import IEnumerable
 from ..Geometry import PointCloud
 from ..Geometry import MeshingParameters
 class IShrinkWrapService:
@@ -856,7 +850,6 @@ class Mode(Enum):
     InvalidMode = 100
 
 
-from System.Collections.Generic import IEnumerable
 from System.Drawing import Point
 from ..Geometry import Point3d
 from ..Geometry import Vector3d
@@ -980,7 +973,6 @@ class NamedParametersEventArgs:
     def TryGetWindowImageHandle(self, name: str) -> Tuple[bool, IntPtr]: ...
 
 
-from System import Exception
 from System.Collections import IDictionary
 from System.Reflection import MethodBase
 from System.Runtime.Serialization import SerializationInfo
@@ -1096,8 +1088,6 @@ class PythonCompiledCode:
 
 
 from System.Reflection import Assembly
-from System.Collections.Generic import IEnumerable
-from System import Exception
 from System import Action
 from ..Commands import Command
 class PythonScript:
@@ -1169,7 +1159,6 @@ class PythonScript:
 
 
 from System.Collections import IDictionary
-from System import Exception
 from System.Reflection import MethodBase
 from System.Runtime.Serialization import SerializationInfo
 from System.Runtime.Serialization import StreamingContext
@@ -1318,7 +1307,6 @@ class Skin:
 
 from ..DocObjects import TextObject
 from ..DocObjects import InstanceDefinition
-from System.Collections.Generic import List
 class TextFields:
     @overload
     @staticmethod

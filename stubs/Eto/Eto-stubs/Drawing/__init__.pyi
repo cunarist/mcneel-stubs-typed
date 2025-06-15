@@ -5,7 +5,6 @@ from enum import Enum
 
 from System.IO import Stream
 from System import Nullable
-from System.Collections.Generic import IEnumerable
 from System.Reflection import Assembly
 from System import IntPtr
 from System import EventHandler
@@ -101,7 +100,6 @@ class Bitmap(Image):
 
 
 from System import IntPtr
-from System.Collections.Generic import IEnumerable
 class BitmapData:
     @overload
     def Dispose(self) -> None: ...
@@ -1207,7 +1205,6 @@ class FontFamilies:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import IEnumerable
 from System import IntPtr
 from System import EventHandler
 class FontFamily(Widget):
@@ -1275,7 +1272,6 @@ class FontFamily(Widget):
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import IEnumerable
 class Fonts:
     @overload
     @staticmethod
@@ -1321,7 +1317,6 @@ class FontStyle(Enum):
 
 from System.IO import Stream
 from ..Forms import Range
-from System.Collections.Generic import IEnumerable
 from System import IntPtr
 from System import EventHandler
 class FontTypeface(Widget):
@@ -1497,7 +1492,6 @@ class GradientWrapMode(Enum):
     Reflect = 2
 
 
-from System.Collections.Generic import IEnumerable
 from System import IDisposable
 from System import IntPtr
 from System import EventHandler
@@ -1717,7 +1711,6 @@ class Graphics(Widget):
 
 
 from System import Func
-from System.Collections.Generic import IEnumerable
 class GraphicsPath:
     @overload
     def __init__(self): ...
@@ -1827,7 +1820,6 @@ class GraphicsPathExtensions:
 
 
 from System.IO import Stream
-from System.Collections.Generic import IEnumerable
 from System.Reflection import Assembly
 from System import Nullable
 from System import IntPtr
@@ -1937,7 +1929,6 @@ class IconFrame:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import IEnumerable
 class IGraphicsPath:
     @overload
     def AddArc(self, x: float, y: float, width: float, height: float, startAngle: float, sweepAngle: float) -> None: ...
@@ -2037,7 +2028,6 @@ class IHandler:
 
 
 from System.IO import Stream
-from System.Collections.Generic import IEnumerable
 class IHandler:
     @overload
     def Create(self, stream: Stream) -> None: ...
@@ -2139,7 +2129,6 @@ class IHandler:
 
 
 from System.IO import Stream
-from System.Collections.Generic import IEnumerable
 class IHandler:
     @overload
     def Create(self, family: FontFamily) -> None: ...
@@ -2161,7 +2150,6 @@ class IHandler:
     def HasCharacterRanges(self, ranges: Iterable[Range]) -> bool: ...
 
 
-from System.Collections.Generic import IEnumerable
 class IHandler:
     @overload
     def FontFamilyAvailable(self, fontFamily: str) -> bool: ...
@@ -2169,7 +2157,6 @@ class IHandler:
     def AvailableFontFamilies(self) -> Iterable[FontFamily]: ...
 
 
-from System.Collections.Generic import IEnumerable
 class IHandler:
     @overload
     def Create(self, familyName: str) -> None: ...
@@ -2284,7 +2271,6 @@ class IHandler:
     pass
 
 
-from System.Collections.Generic import IEnumerable
 class IHandler:
     @overload
     def Clear(self, brush: SolidBrush) -> None: ...
@@ -2828,7 +2814,6 @@ class PaddingF:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import IEnumerable
 from System.IO import BinaryWriter
 from System.IO import BinaryReader
 from System.Collections.Specialized import NotifyCollectionChangedEventHandler

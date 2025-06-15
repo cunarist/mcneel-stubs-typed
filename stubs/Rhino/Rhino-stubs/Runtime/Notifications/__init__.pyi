@@ -14,7 +14,6 @@ class IAssemblyRestrictedObject:
     def Editable(self) -> bool: ...
 
 
-from System.Collections.Generic import IEnumerable
 from System import DateTime
 from System.Collections.Generic import ICollection
 from System.Collections.Generic import IDictionary

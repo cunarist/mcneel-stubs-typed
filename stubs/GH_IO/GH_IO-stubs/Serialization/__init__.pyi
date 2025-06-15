@@ -165,7 +165,6 @@ class EncodedStringWriter:
 
 
 from ..Types import GH_Version
-from System.Collections.Generic import List
 from System.Windows.Forms import DialogResult
 class GH_Archive:
     @overload
@@ -244,7 +243,6 @@ class GH_Archive:
     def WriteToFile(self, fileName: str, overwrite: bool, rememberPath: bool) -> bool: ...
 
 
-from System.Collections.Generic import List
 from ..Types import GH_Item
 from System.IO import BinaryWriter
 from System.IO import BinaryReader
@@ -726,7 +724,6 @@ class GH_IBinarySupport:
     def Write(self, writer: BinaryWriter) -> None: ...
 
 
-from System.Collections.Generic import List
 class GH_IChunk:
     @overload
     def AddMessage(self, m: str, t: GH_Message_Type) -> None: ...
@@ -1184,7 +1181,6 @@ class GH_IXmlSupport:
     def Write(self, writer: XmlWriter) -> None: ...
 
 
-from System.Collections.Generic import List
 from ..Types import GH_Item
 from System.IO import BinaryWriter
 from System.IO import BinaryReader

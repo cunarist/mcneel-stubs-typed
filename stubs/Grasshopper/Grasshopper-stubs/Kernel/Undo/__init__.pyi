@@ -88,7 +88,6 @@ class GH_UndoAction:
 
 
 from System.Collections import IDictionary
-from System import Exception
 from System.Reflection import MethodBase
 from System.Runtime.Serialization import SerializationInfo
 from System.Runtime.Serialization import StreamingContext
@@ -133,7 +132,6 @@ class GH_UndoException:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import IEnumerable
 from System import Guid
 from System import DateTime
 from System.Collections.Generic import IList
@@ -182,7 +180,6 @@ class GH_UndoRecord:
     def Undo(self, doc: GH_Document) -> None: ...
 
 
-from System.Collections.Generic import List
 from System import Guid
 class GH_UndoServer:
     @overload

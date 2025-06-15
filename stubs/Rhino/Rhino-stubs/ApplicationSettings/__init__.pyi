@@ -786,7 +786,6 @@ class CursorTooltipSettingsState:
 
 
 from ..Geometry import Interval
-from System.Collections.Generic import IEnumerable
 class CurvatureAnalysisSettings:
     @overload
     @staticmethod
@@ -2427,7 +2426,6 @@ class ShortcutKey(Enum):
     MacControlShiftF12 = 477
 
 
-from System.Collections.Generic import IEnumerable
 from ..UI import KeyboardKey
 from ..UI import ModifierKey
 class ShortcutKeySettings:

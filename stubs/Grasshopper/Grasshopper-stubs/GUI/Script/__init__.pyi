@@ -41,7 +41,6 @@ class CompileCodeRequestEventHandler:
 
 
 from System.Collections.ObjectModel import ReadOnlyCollection
-from System.Collections.Generic import IEnumerable
 from System.Drawing import Size
 from System.Windows.Forms import AutoValidate
 from System.Drawing import Color
@@ -1181,7 +1180,6 @@ class GH_BeforeAfterSolveInstanceSnippetButton(GH_ScriptEditorButton):
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import IEnumerable
 class GH_CodeBlock:
     @overload
     def __init__(self): ...
@@ -1209,8 +1207,6 @@ class GH_CodeBlock:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import IEnumerable
-from System.Collections.Generic import List
 from System.Collections.ObjectModel import ReadOnlyCollection
 from System.Collections.Generic import IComparer
 from System import Predicate
@@ -1459,7 +1455,6 @@ class GH_PreviewSnippetButton(GH_ScriptEditorButton):
 
 from ...Kernel import IGH_DocumentObject
 from System import EventHandler
-from System.Collections.Generic import List
 from System.Threading.Tasks import Task
 from System.Drawing import Font
 from System.Drawing import Point

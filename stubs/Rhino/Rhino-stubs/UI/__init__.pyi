@@ -18,7 +18,6 @@ class CursorStyle(Enum):
     CrosshairCopy = 7
 
 
-from System.Collections.Generic import IEnumerable
 from System.Drawing import Point
 from System import EventHandler
 from System.Windows.Forms import Form
@@ -32,7 +31,6 @@ from ..Render import Sun
 from System.Collections import IList
 from System import Guid
 from System.Collections.Generic import IList
-from System.Collections.Generic import List
 class Dialogs:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -160,10 +158,8 @@ from System.Drawing import Icon
 from System.Drawing import Size
 from System.Drawing import Image
 from ..Geometry import Mesh
-from System.Collections.Generic import IEnumerable
 from ..Geometry import Curve
 from ..DocObjects import Linetype
-from System.Collections.Generic import List
 class DrawingUtilities:
     @overload
     @staticmethod
@@ -361,7 +357,6 @@ from System.Collections import IList
 from System.Collections.Generic import IList
 from System import Nullable
 from System import Guid
-from System.Collections.Generic import List
 from System.Reflection import Assembly
 from System.Drawing import Icon
 class IRhinoUiDialogService:
@@ -712,11 +707,9 @@ class NamedColor:
     def ToString(self) -> str: ...
 
 
-from System.Collections.Generic import IEnumerable
 from System.Collections.ObjectModel import ReadOnlyCollection
 from System.Collections.Generic import IComparer
 from System import Predicate
-from System.Collections.Generic import List
 from System import Action
 from System.Collections.Generic import Enumerator
 from System import Comparison
@@ -1062,7 +1055,6 @@ class OptionPageButtons(Enum):
 
 from ..Commands import RunMode
 from ..Commands import Result
-from System.Collections.Generic import List
 from System import IntPtr
 from System.Drawing import Image
 from System.Drawing import Color
@@ -1622,7 +1614,6 @@ class Size(Enum):
     Title = 3
 
 
-from System.Collections.Generic import List
 from System import IntPtr
 from System.Drawing import Image
 from System.Drawing import Color
