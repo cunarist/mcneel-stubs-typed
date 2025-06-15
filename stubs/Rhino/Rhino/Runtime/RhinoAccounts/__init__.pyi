@@ -1,4 +1,4 @@
-from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence
+from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
 
@@ -64,7 +64,6 @@ class IOpenIDConnectToken:
     def UpdatedAt(self) -> DateTime | None: ...
 
 
-from System import Func
 from System.Threading.Tasks import Task
 from System import Action
 from System import Tuple
@@ -74,7 +73,7 @@ class IRhinoAccountsManager:
     @overload
     def ExecuteProtectedCode(self, protectedCode: Action) -> None: ...
     @overload
-    def ExecuteProtectedCodeAsync(self, protectedCode: Func) -> Task: ...
+    def ExecuteProtectedCodeAsync(self, protectedCode: Callable[..., Any]) -> Task: ...
     @overload
     def GetAuthTokensAsync(self, clientId: str, clientSecret: str, secretKey: SecretKey, cancellationToken: CancellationToken) -> Task: ...
     @overload
@@ -406,7 +405,6 @@ class RhinoAccountsInvalidTokenException(RhinoAccountsException):
 
 
 from System import Action
-from System import Func
 from System.Threading.Tasks import Task
 from System.Threading import CancellationToken
 from System import IProgress
@@ -419,7 +417,7 @@ class RhinoAccountsManager:
     def ExecuteProtectedCode(protectedCode: Action) -> None: ...
     @overload
     @staticmethod
-    def ExecuteProtectedCodeAsync(protectedCode: Func) -> Task: ...
+    def ExecuteProtectedCodeAsync(protectedCode: Callable[..., Any]) -> Task: ...
     @overload
     @staticmethod
     def GetAuthTokensAsync(clientId: str, clientSecret: str, secretKey: SecretKey, cancellationToken: CancellationToken) -> Task: ...

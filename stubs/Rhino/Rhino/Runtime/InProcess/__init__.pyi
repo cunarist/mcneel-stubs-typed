@@ -1,11 +1,10 @@
-from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence
+from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
 
 
 from System import IntPtr
 from System import Action
-from System import Func
 class RhinoCore:
     @overload
     def __init__(self): ...
@@ -30,7 +29,7 @@ class RhinoCore:
     @overload
     def InvokeInHostContext(self, action: Action) -> None: ...
     @overload
-    def InvokeInHostContext(self, func: Func) -> T: ...
+    def InvokeInHostContext(self, func: Callable[..., Any]) -> T: ...
     @overload
     def RaiseIdle(self) -> None: ...
     @overload

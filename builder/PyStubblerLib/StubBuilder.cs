@@ -150,7 +150,7 @@ namespace PyStubblerLib
             var sb = new System.Text.StringBuilder();
 
             string[] allChildNamespaces = GetChildNamespaces(stubTypes[0].Namespace, allNamespaces);
-            sb.AppendLine("from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence");
+            sb.AppendLine("from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable");
             sb.AppendLine("from enum import Enum");
             sb.Append("\n");
             if( allChildNamespaces.Length > 0 )
@@ -616,6 +616,8 @@ namespace PyStubblerLib
                 return true;
             else if (s.StartsWith("List"))
                 return true;
+            else if (s.StartsWith("Func"))
+                return true;
 
             return false;
         }
@@ -673,7 +675,7 @@ namespace PyStubblerLib
                     return $"None";
                 }
             }
-            if (t.Name.StartsWith("IEnumerable"))
+            else if (t.Name.StartsWith("IEnumerable"))
             {
                 if (t.IsGenericType) {
                     string rc = ToPythonType(t.GenericTypeArguments[0]);
@@ -700,6 +702,11 @@ namespace PyStubblerLib
                     return $"MutableSequence[Any]";
                 }
             }
+            else if (t.Name.StartsWith("Func"))
+            {
+                return $"Callable[..., Any]";
+            }
+
             // TODO: Figure out the right way to get at IEnumerable<T>
             if (t.FullName != null && t.FullName.StartsWith("System.Collections.Generic.IEnumerable`1[["))
             {

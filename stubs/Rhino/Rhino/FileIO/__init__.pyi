@@ -1,4 +1,4 @@
-from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence
+from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
 
@@ -1517,7 +1517,6 @@ from Rhino.Geometry import GeometryBase
 from Rhino.DocObjects import ObjectAttributes
 from Rhino.DocObjects import ModelComponentType
 from System import Guid
-from System import Func
 from Rhino.Geometry import Transform
 from Rhino.Render import TextureMapping
 from Rhino.Geometry import ComponentStatus
@@ -1626,7 +1625,7 @@ class File3dmObject(ModelComponent):
     @overload
     def ToString(self) -> str: ...
     @overload
-    def TryReadUserData(self, userDataId: Guid, readFromAttributes: bool, dataReader: Func) -> bool: ...
+    def TryReadUserData(self, userDataId: Guid, readFromAttributes: bool, dataReader: Callable[..., Any]) -> bool: ...
 
 
 from Rhino.DocObjects import ModelComponentType
@@ -1865,7 +1864,6 @@ class File3dmPlugInData:
     def ToString(self) -> str: ...
 
 
-from System import Func
 class File3dmPlugInDataTable:
     def __iter__(self) -> Iterator[File3dmPlugInData]: ...
     @overload
@@ -1887,7 +1885,7 @@ class File3dmPlugInDataTable:
     @overload
     def ToString(self) -> str: ...
     @overload
-    def TryRead(self, pluginData: File3dmPlugInData, dataReader: Func) -> bool: ...
+    def TryRead(self, pluginData: File3dmPlugInData, dataReader: Callable[..., Any]) -> bool: ...
 
 
 from System import Guid

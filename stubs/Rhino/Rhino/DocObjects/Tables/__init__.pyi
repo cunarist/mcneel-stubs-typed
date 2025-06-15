@@ -1,4 +1,4 @@
-from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence
+from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
 
@@ -1846,7 +1846,6 @@ class RestoreLayerProperties(Enum):
 
 
 from Rhino import RhinoDoc
-from System import Func
 from System.Collections.Generic import IEqualityComparer
 from System.Collections.Generic import KeyCollection
 from System.Collections.Generic import ValueCollection
@@ -1886,7 +1885,7 @@ class RuntimeDocumentDataTable:
     @overload
     def GetType(self) -> type: ...
     @overload
-    def GetValue(self, key: object, newT: Func) -> T: ...
+    def GetValue(self, key: object, newT: Callable[..., Any]) -> T: ...
     @overload
     def OnDeserialization(self, sender: object) -> None: ...
     @overload

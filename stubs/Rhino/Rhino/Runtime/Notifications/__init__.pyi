@@ -1,4 +1,4 @@
-from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence
+from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
 
@@ -18,7 +18,6 @@ from System import DateTime
 from System.Collections.Generic import ICollection
 from System.Collections.Generic import IDictionary
 from System import Action
-from System import Func
 from System.ComponentModel import PropertyChangedEventHandler
 class Notification:
     @overload
@@ -36,7 +35,7 @@ class Notification:
     def ExecuteAssemblyProtectedCode(action: Action) -> None: ...
     @overload
     @staticmethod
-    def ExecuteAssemblyProtectedCode(func: Func) -> TResult: ...
+    def ExecuteAssemblyProtectedCode(func: Callable[..., Any]) -> TResult: ...
     @property
     def AllowedAssemblies(self) -> ICollection: ...
     @property
