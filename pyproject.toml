@@ -7,3 +7,6 @@ dependencies = ["pyright>=1.1.402"]
 
 [tool.pyright]
 typeCheckingMode = "standard"
+
+[tool.ruff]
+select = []
