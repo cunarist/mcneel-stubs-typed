@@ -417,7 +417,12 @@ namespace PyStubblerLib
                             else
                                 sb.AppendLine($"    @{propName}.setter");
                         }
-                        sb.Append($"    def {propName}(");
+                        if (method.IsStatic) {
+                            sb.AppendLine("    @classmethod");
+                            sb.Append($"    def {propName}(cls");
+                        } else {
+                            sb.Append($"    def {propName}(");
+                        }
                     }
                     else if (method.Name.StartsWith("op_")) {
                         var isRight = (
