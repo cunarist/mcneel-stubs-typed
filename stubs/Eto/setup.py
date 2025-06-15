@@ -1,10 +1,10 @@
 import os
 import setuptools
 
-long_description = '''
+long_description = """
 # Eto-stubs
 Stubs for Eto
-'''
+"""
 
 
 def find_stubs(package):
@@ -18,8 +18,8 @@ def find_stubs(package):
 setuptools.setup(
     name="Eto-stubs",
     version="2.9.0",
-    package_data=find_stubs("Eto-stubs"),
-    packages=['Eto-stubs'],
+    package_data=find_stubs("Eto"),
+    packages=["Eto-stubs"],
     author="Robert McNeel & Associates",
     author_email="steve@mcneel.com",
     description="Stubs for Eto",
@@ -30,6 +30,6 @@ setuptools.setup(
         "Development Status :: 5 - Production/Stable",
         "Intended Audience :: Developers",
         "License :: OSI Approved :: MIT License",
-        "Programming Language :: Python"
+        "Programming Language :: Python",
     ],
 )

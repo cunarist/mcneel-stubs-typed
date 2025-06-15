@@ -609,44 +609,20 @@ namespace PyStubblerLib
             var fromParts = from.Split('.');
             var toParts = to.Split('.');
 
-            // Find the common prefix
-            int commonLength = 0;
-            int minLength = Math.Min(fromParts.Length, toParts.Length);
-            for (int i = 0; i < minLength; i++)
-            {
-                if (fromParts[i] == toParts[i])
-                {
-                    commonLength++;
-                }
-                else
-                {
-                    break;
-                }
-            }
-
-            // If there is no common prefix, return full `to` path
-            if (commonLength == 0)
-            {
+            if (fromParts.Length == toParts.Length) {
+                return "";
+            } else if (fromParts.Length > toParts.Length) {
                 return to;
+            } else {
+                var relativePathParts = new List<string>();
+                // Add the remaining parts of the 'to' path
+                for (int i = fromParts.Length; i < toParts.Length; i++)
+                {
+                    relativePathParts.Add("." + toParts[i]);
+                }
+                // Join the parts into a single string
+                return string.Join("", relativePathParts);
             }
-
-            // Create the relative path
-            var relativePathParts = new List<string>();
-
-            // Add "." for each level up from the 'from' path
-            for (int i = commonLength; i < fromParts.Length; i++)
-            {
-                relativePathParts.Add(".");
-            }
-
-            // Add the remaining parts of the 'to' path
-            for (int i = commonLength; i < toParts.Length; i++)
-            {
-                relativePathParts.Add("." + toParts[i]);
-            }
-
-            // Join the parts into a single string
-            return string.Join("", relativePathParts);
         }
 
         private static bool ShouldAvoidImporting(string s)
