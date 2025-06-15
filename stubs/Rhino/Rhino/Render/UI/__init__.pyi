@@ -1,4 +1,5 @@
-from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable
+from typing import overload, Any
+from collections.abc import Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
 from Rhino.Geometry import Point2d

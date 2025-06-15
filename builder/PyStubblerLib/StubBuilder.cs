@@ -11,7 +11,11 @@ namespace PyStubblerLib
     {
         private static List<string> SearchPaths { get; set; } = new List<string>();
 
-        public static string BuildAssemblyStubs(string targetAssemblyPath, string destPath = null, string[] searchPaths = null, BuildConfig cfgs = null)
+        public static string BuildAssemblyStubs(
+            string targetAssemblyPath,
+            string destPath = null,
+            string[] searchPaths = null,
+            BuildConfig cfgs = null)
         {
             // prepare configs
             if (cfgs is null)
@@ -132,7 +136,10 @@ namespace PyStubblerLib
         }
 
 
-        private static void WriteStubList(DirectoryInfo rootDirectory, string[] allNamespaces, List<Type> stubTypes)
+        private static void WriteStubList(
+            DirectoryInfo rootDirectory,
+            string[] allNamespaces,
+            List<Type> stubTypes)
         {
             // sort the stub list so we get consistent output over time
             stubTypes.Sort((a, b) => { return a.Name.CompareTo(b.Name); });
@@ -150,7 +157,10 @@ namespace PyStubblerLib
             var sb = new System.Text.StringBuilder();
 
             // import standard types
-            sb.AppendLine("from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence, Callable");
+            sb.AppendLine("from typing import overload, Any");
+            sb.AppendLine(
+                "from collections.abc import Iterable, Iterator, Sequence, MutableSequence, Callable"
+            );
             sb.AppendLine("from enum import Enum");
             sb.Append("\n");
 
@@ -301,7 +311,9 @@ namespace PyStubblerLib
                     {
                         if (0 == i)
                             sb.Append(", ");
-                        sb.Append($"{SafePythonName(parameters[i].Name)}: {ToPythonType(parameters[i].ParameterType)}");
+                        var safePythonName = SafePythonName(parameters[i].Name);
+                        var pythonType = ToPythonType(parameters[i].ParameterType);
+                        sb.Append($"{safePythonName}: {pythonType}");
                         if (i < (parameters.Length - 1))
                             sb.Append(", ");
                     }
@@ -329,7 +341,8 @@ namespace PyStubblerLib
                 {
 
                     Type ienumerableType = stubType.GetInterfaces()
-                        .Where(t => t.IsGenericType && t.GetGenericTypeDefinition() == typeof(IEnumerable<>))
+                        .Where(t => t.IsGenericType)
+                        .Where(t => t.GetGenericTypeDefinition() == typeof(IEnumerable<>))
                         .FirstOrDefault();
 
                     string pythonType;
@@ -370,7 +383,9 @@ namespace PyStubblerLib
                         t.IsGenericType && t.GetGenericTypeDefinition() == typeof(IList<>)))
                     {
                         // Generate __setitem__
-                        sb.AppendLine($"    def __setitem__(self, index: int, value: {pythonType}): ...");
+                        sb.AppendLine(
+                            $"    def __setitem__(self, index: int, value: {pythonType}): ..."
+                        );
                     }
                 }
 
@@ -399,7 +414,8 @@ namespace PyStubblerLib
                     }
                     int parameterCount = parameters.Length - outParamCount;
 
-                    if (method.IsSpecialName && (method.Name.StartsWith("get_") || method.Name.StartsWith("set_")))
+                    var hasGetSet = method.Name.StartsWith("get_") || method.Name.StartsWith("set_");
+                    if (method.IsSpecialName && hasGetSet)
                     {
                         string propName;
                         if (method.Name.StartsWith("get_"))
@@ -515,7 +531,9 @@ namespace PyStubblerLib
                         if (addComma)
                             sb.Append(", ");
 
-                        sb.Append($"{SafePythonName(parameter.Name)}: {ToPythonType(parameter.ParameterType)}");
+                        var safePythonName = SafePythonName(parameter.Name);
+                        var pythonType = ToPythonType(parameter.ParameterType);
+                        sb.Append($"{safePythonName}: {pythonType}");
                         addComma = true;
                     }
                     sb.Append(")");
@@ -730,22 +748,28 @@ namespace PyStubblerLib
             }
 
             // TODO: Figure out the right way to get at IEnumerable<T>
-            if (t.FullName != null && t.FullName.StartsWith("System.Collections.Generic.IEnumerable`1[["))
+            String starting;
+
+            starting = "System.Collections.Generic.IEnumerable`1[[";
+            if (t.FullName != null && t.FullName.StartsWith(starting))
             {
-                string enumerableType = t.FullName.Substring("System.Collections.Generic.IEnumerable`1[[".Length);
+                string enumerableType = t.FullName.Substring(starting.Length);
                 enumerableType = enumerableType.Substring(0, enumerableType.IndexOf(','));
                 var pieces = enumerableType.Split('.');
                 string rc = ToPythonType(pieces[pieces.Length - 1]);
                 return $"Iterable[{rc}]";
             }
-            if (t.FullName != null && t.FullName.StartsWith("System.Collections.Generic.IList`1[["))
+
+            starting = "System.Collections.Generic.IList`1[[";
+            if (t.FullName != null && t.FullName.StartsWith(starting))
             {
-                string enumerableType = t.FullName.Substring("System.Collections.Generic.IList`1[[".Length);
+                string enumerableType = t.FullName.Substring(starting.Length);
                 enumerableType = enumerableType.Substring(0, enumerableType.IndexOf(','));
                 var pieces = enumerableType.Split('.');
                 string rc = ToPythonType(pieces[pieces.Length - 1]);
                 return $"Iterable[{rc}]";
             }
+
             return ToPythonType(t.Name);
         }
 
