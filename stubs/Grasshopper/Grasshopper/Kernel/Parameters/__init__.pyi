@@ -1,4 +1,4 @@
-from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
+from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
 
 import Hints
@@ -970,7 +970,7 @@ class IGH_ExpressionParameter:
 from System import Guid
 class IGH_TypeHint:
     @overload
-    def Cast(self, data: object) -> Tuple[bool, object]: ...
+    def Cast(self, data: object) -> tuple[bool, object]: ...
     @property
     def HintID(self) -> Guid: ...
     @property

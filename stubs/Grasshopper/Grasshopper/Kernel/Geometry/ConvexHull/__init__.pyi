@@ -1,4 +1,4 @@
-from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
+from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
 
 
@@ -18,7 +18,7 @@ class Solver:
     def ComputeHull(pts: Node2List) -> Polyline: ...
     @overload
     @staticmethod
-    def ComputeHull(GH_pts: Iterable[GH_Point], plane: Plane) -> Tuple[Polyline, Plane]: ...
+    def ComputeHull(GH_pts: Iterable[GH_Point], plane: Plane) -> tuple[Polyline, Plane]: ...
     @overload
     def Equals(self, obj: object) -> bool: ...
     @overload

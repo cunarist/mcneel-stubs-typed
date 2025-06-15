@@ -150,7 +150,7 @@ namespace PyStubblerLib
             var sb = new System.Text.StringBuilder();
 
             string[] allChildNamespaces = GetChildNamespaces(stubTypes[0].Namespace, allNamespaces);
-            sb.AppendLine("from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence");
+            sb.AppendLine("from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence");
             sb.AppendLine("from enum import Enum");
             sb.Append("\n");
             if( allChildNamespaces.Length > 0 )
@@ -539,7 +539,7 @@ namespace PyStubblerLib
                         }
                         else
                         {
-                            sb.Append("Tuple[");
+                            sb.Append("tuple[");
                             for (int i = 0; i < types.Count; i++)
                             {
                                 if (i > 0)
@@ -671,7 +671,7 @@ namespace PyStubblerLib
                     return $"Iterable[Any]";
                 }
             }
-            if (t.Name.StartsWith("IEnumerator"))
+            else if (t.Name.StartsWith("IEnumerator"))
             {
                 if (t.IsGenericType) {
                     string rc = ToPythonType(t.GenericTypeArguments[0]);
@@ -680,7 +680,7 @@ namespace PyStubblerLib
                     return $"Iterator[Any]";
                 }
             }
-            if (t.Name.StartsWith("List"))
+            else if (t.Name.StartsWith("List"))
             {
                 if (t.IsGenericType) {
                     string rc = ToPythonType(t.GenericTypeArguments[0]);

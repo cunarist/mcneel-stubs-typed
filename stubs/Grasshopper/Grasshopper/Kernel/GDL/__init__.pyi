@@ -1,4 +1,4 @@
-from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
+from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
 
 
@@ -13,6 +13,6 @@ class GH_GDLParser:
     def GetType(self) -> type: ...
     @overload
     @staticmethod
-    def ParseGDL(lines: Iterable[str]) -> Tuple[GH_Document, Iterable[str]]: ...
+    def ParseGDL(lines: Iterable[str]) -> tuple[GH_Document, Iterable[str]]: ...
     @overload
     def ToString(self) -> str: ...

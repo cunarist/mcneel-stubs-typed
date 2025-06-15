@@ -1,4 +1,4 @@
-from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
+from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
 
 import Documentation

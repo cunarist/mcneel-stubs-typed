@@ -1,4 +1,4 @@
-from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
+from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
 
 
@@ -376,7 +376,7 @@ class GH_PointGetter:
     def GetPoint(self, base: Point3d) -> GH_Point: ...
     @overload
     @staticmethod
-    def GetPoint(prompt: str, basePoint: Point3d, outPoint: Point3d) -> Tuple[GH_GetterResult, Point3d]: ...
+    def GetPoint(prompt: str, basePoint: Point3d, outPoint: Point3d) -> tuple[GH_GetterResult, Point3d]: ...
     @overload
     def GetPoints(self) -> MutableSequence[GH_Point]: ...
     @overload

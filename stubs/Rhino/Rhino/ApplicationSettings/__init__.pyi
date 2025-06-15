@@ -1,4 +1,4 @@
-from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
+from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
 
 
@@ -185,7 +185,7 @@ class AppearanceSettings:
     def GetWidgetColor(whichColor: WidgetColor) -> Color: ...
     @overload
     @staticmethod
-    def InitialMainWindowPosition() -> Tuple[bool, Rectangle]: ...
+    def InitialMainWindowPosition() -> tuple[bool, Rectangle]: ...
     @overload
     @staticmethod
     def RestoreDefaults() -> None: ...
@@ -936,7 +936,7 @@ from Rhino.Geometry import Interval
 class CurvatureAnalysisSettings:
     @overload
     @staticmethod
-    def CalculateCurvatureAutoRange(meshes: Iterable[Mesh], settings: CurvatureAnalysisSettingsState) -> Tuple[bool, CurvatureAnalysisSettingsState]: ...
+    def CalculateCurvatureAutoRange(meshes: Iterable[Mesh], settings: CurvatureAnalysisSettingsState) -> tuple[bool, CurvatureAnalysisSettingsState]: ...
     @overload
     def Equals(self, obj: object) -> bool: ...
     @property

@@ -1,4 +1,4 @@
-from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
+from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
 
 import DataSource
@@ -416,7 +416,7 @@ from System.Drawing import Bitmap
 from System.Drawing import Rectangle
 class IHeaderButtonHandler:
     @overload
-    def ButtonDetails(self, index: int, iconOut: Bitmap, sToolTipOut: str) -> Tuple[bool, Bitmap, str]: ...
+    def ButtonDetails(self, index: int, iconOut: Bitmap, sToolTipOut: str) -> tuple[bool, Bitmap, str]: ...
     @overload
     def ButtonRect(self, index: int, rectHeader: Rectangle) -> Rectangle: ...
     @overload

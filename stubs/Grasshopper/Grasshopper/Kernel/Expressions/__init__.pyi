@@ -1,4 +1,4 @@
-from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
+from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
 
 
@@ -110,7 +110,7 @@ class GH_ExpressionParser:
     def AddVariableEx(self, name: str, val: GH_Variant) -> None: ...
     @overload
     @staticmethod
-    def BalancedCharTest(str: str, char_open: str, char_close: str) -> Tuple[bool, int]: ...
+    def BalancedCharTest(str: str, char_open: str, char_close: str) -> tuple[bool, int]: ...
     @overload
     def CachedSymbols(self) -> Queue: ...
     @overload

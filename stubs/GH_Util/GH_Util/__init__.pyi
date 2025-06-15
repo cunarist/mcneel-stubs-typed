@@ -1,4 +1,4 @@
-from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
+from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
 
 import MetaBall
@@ -19,7 +19,7 @@ class BezierF:
     @overload
     def Equals(self, obj: object) -> bool: ...
     @overload
-    def Extremes(self) -> Tuple[Iterable[float], Iterable[float]]: ...
+    def Extremes(self) -> tuple[Iterable[float], Iterable[float]]: ...
     @property
     def Bounds(self) -> RectangleF: ...
     @property

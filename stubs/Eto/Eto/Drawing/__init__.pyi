@@ -1,4 +1,4 @@
-from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
+from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
 
 
@@ -717,10 +717,10 @@ class Color:
     def ToString(self) -> str: ...
     @overload
     @staticmethod
-    def TryParse(value: str) -> Tuple[bool, Color]: ...
+    def TryParse(value: str) -> tuple[bool, Color]: ...
     @overload
     @staticmethod
-    def TryParse(value: str, style: ColorStyles) -> Tuple[bool, Color]: ...
+    def TryParse(value: str, style: ColorStyles) -> tuple[bool, Color]: ...
 
 
 class ColorCMYK:
@@ -1337,7 +1337,7 @@ class DashStyle:
     def ToString(self) -> str: ...
     @overload
     @staticmethod
-    def TryParse(value: str) -> Tuple[bool, DashStyle]: ...
+    def TryParse(value: str) -> tuple[bool, DashStyle]: ...
 
 
 class DashStyles:

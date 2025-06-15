@@ -1,4 +1,4 @@
-from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
+from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
 
 
@@ -220,6 +220,6 @@ class Solver:
     def Solve_Faces(nodes: Node2List, jitter_amount: float) -> MutableSequence[Face]: ...
     @overload
     @staticmethod
-    def Solve_Mesh(nodes: Node2List, jitter_amount: float, faces: MutableSequence[Any]) -> Tuple[Mesh, MutableSequence[Any]]: ...
+    def Solve_Mesh(nodes: Node2List, jitter_amount: float, faces: MutableSequence[Any]) -> tuple[Mesh, MutableSequence[Any]]: ...
     @overload
     def ToString(self) -> str: ...

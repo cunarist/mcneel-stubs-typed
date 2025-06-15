@@ -1,4 +1,4 @@
-from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
+from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
 
 import Drawing
@@ -610,7 +610,7 @@ class PropertyStore:
     @overload
     def TriggerEvent(self, key: object, sender: object, args: T) -> None: ...
     @overload
-    def TryGetValue(self, key: object) -> Tuple[bool, object]: ...
+    def TryGetValue(self, key: object) -> tuple[bool, object]: ...
     @overload
     def TrySet(self, key: object, value: T, defaultValue: T) -> bool: ...
     @overload

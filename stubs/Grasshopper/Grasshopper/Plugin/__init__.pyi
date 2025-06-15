@@ -1,4 +1,4 @@
-from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
+from typing import overload, Any, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
 
 
@@ -85,7 +85,7 @@ class GH_PluginUtil:
     def GetType(self) -> type: ...
     @overload
     @staticmethod
-    def LoadGrasshopper(message: str) -> Tuple[bool, str]: ...
+    def LoadGrasshopper(message: str) -> tuple[bool, str]: ...
     @overload
     @staticmethod
     def SaveSettings() -> None: ...
