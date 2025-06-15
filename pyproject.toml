@@ -12,6 +12,7 @@ dependencies = [
 [tool.pyright]
 typeCheckingMode = "standard"
 reportInconsistentOverload = false
+reportSelfClsParameterName = false
 
 [tool.ruff]
 select = []

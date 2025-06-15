@@ -1,10 +1,10 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 
 
+from System.Drawing.Drawing2D import HatchStyle
+from System.Drawing import Color
 class GH_BackgroundSettings:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -39,6 +39,7 @@ class GH_BackgroundStyle(Enum):
     GradientTopBottom = 11
 
 
+from System.Drawing import Color
 class GH_ObjectSettings:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -66,6 +67,7 @@ class GH_ObjectSettings:
     def ToString(self) -> str: ...
 
 
+from System.Drawing import Color
 class GH_PageSettings:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -173,6 +175,8 @@ class GH_PaletteSettings:
     def ToString(self) -> str: ...
 
 
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 class GH_Theme:
     @overload
     def __init__(self): ...
@@ -208,6 +212,7 @@ class GH_Theme:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from System.Drawing import Color
 class GH_WireSettings:
     @overload
     def Equals(self, obj: object) -> bool: ...

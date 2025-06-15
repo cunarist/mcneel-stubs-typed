@@ -1,7 +1,5 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 import Params
 
@@ -45,6 +43,7 @@ class Attributes:
     def ToString(self) -> str: ...
 
 
+from Rhino.Render import RenderEnvironment
 class Attributes:
     @overload
     def __init__(self): ...
@@ -90,6 +89,7 @@ class Attributes:
     def ToString(self) -> str: ...
 
 
+from Rhino.Render import RenderMaterial
 class Attributes:
     @overload
     def __init__(self): ...
@@ -135,6 +135,7 @@ class Attributes:
     def ToString(self) -> str: ...
 
 
+from System import Nullable
 class Attributes:
     @overload
     def __init__(self): ...
@@ -186,6 +187,7 @@ class Attributes:
     def ToString(self) -> str: ...
 
 
+from System import Nullable
 class Attributes:
     @overload
     def __init__(self): ...
@@ -277,6 +279,7 @@ class Attributes:
     def ToString(self) -> str: ...
 
 
+from Rhino.Render import RenderTexture
 class Attributes:
     @overload
     def __init__(self): ...
@@ -322,6 +325,7 @@ class Attributes:
     def ToString(self) -> str: ...
 
 
+from System import Nullable
 class Attributes:
     @overload
     def Equals(self, other: object) -> bool: ...
@@ -351,6 +355,7 @@ class Attributes:
     def ToString(self) -> str: ...
 
 
+from System import Nullable
 class ModelRenderContent(ModelContent):
     @overload
     def CastTo(self) -> Tuple[bool, T]: ...
@@ -396,6 +401,10 @@ class ModelRenderContent(ModelContent):
     def ToString(self) -> str: ...
 
 
+from Rhino.Render import RenderEnvironment
+from System import Guid
+from Rhino.Display import ColorRGBA
+from System import Nullable
 class ModelRenderEnvironment(ModelRenderContent):
     @overload
     def __init__(self): ...
@@ -462,6 +471,11 @@ class ModelRenderEnvironment(ModelRenderContent):
     def ToString(self) -> str: ...
 
 
+from Rhino.DocObjects import Material
+from Rhino.Render import RenderMaterial
+from System import Guid
+from Rhino.Display import ColorRGBA
+from System import Nullable
 class ModelRenderMaterial(ModelRenderContent):
     @overload
     def __init__(self): ...
@@ -534,6 +548,7 @@ class ModelRenderMaterial(ModelRenderContent):
     def ToString(self) -> str: ...
 
 
+from System import Nullable
 class ModelRenderSkylight(ModelContent):
     @overload
     def __init__(self): ...
@@ -592,6 +607,7 @@ class ModelRenderSkylight(ModelContent):
     def ToString(self) -> str: ...
 
 
+from System import Nullable
 class ModelRenderSun(ModelContent):
     @overload
     def __init__(self): ...
@@ -670,6 +686,10 @@ class ModelRenderSun(ModelContent):
     def ToString(self) -> str: ...
 
 
+from Rhino.Render import RenderTexture
+from System import Guid
+from Rhino.Display import ColorRGBA
+from System import Nullable
 class ModelRenderTexture(ModelRenderContent):
     @overload
     def __init__(self): ...
@@ -736,6 +756,7 @@ class ModelRenderTexture(ModelRenderContent):
     def ToString(self) -> str: ...
 
 
+from System import Nullable
 class ObjectRender(ModelValue):
     @overload
     def __init__(self): ...
@@ -780,6 +801,7 @@ class ObjectRender(ModelValue):
     def ToString(self) -> str: ...
 
 
+from Rhino.DocObjects import ObjectMaterialSource
 class ObjectRenderMaterial(ModelValue):
     @overload
     def __init__(self): ...
@@ -818,6 +840,7 @@ class ObjectRenderMaterial(ModelValue):
     def ToString(self) -> str: ...
 
 
+from Rhino.DocObjects import ObjectMaterialSource
 class Value:
     @overload
     def __init__(self, source: ObjectMaterialSource): ...

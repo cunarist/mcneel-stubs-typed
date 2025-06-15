@@ -1,10 +1,10 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 
 
+from System.Drawing import Rectangle
+from System.Collections.Generic import List
 class GH_GenericLayout:
     @overload
     def Equals(self, obj: object) -> bool: ...

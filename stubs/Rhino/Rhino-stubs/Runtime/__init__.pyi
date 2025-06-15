@@ -1,7 +1,5 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 import InProcess
 import InteropWrappers
@@ -44,6 +42,8 @@ class AdvancedSetting(Enum):
     RecordAnimationTargetFolder = 29
 
 
+from System.Collections.Specialized import NameValueCollection
+from System import Guid
 class Analytics:
     @overload
     def __init__(self, TrackingID: str, Name: str): ...
@@ -93,6 +93,7 @@ class Analytics:
     def ToString(self) -> str: ...
 
 
+from System import ResolveEventHandler
 class AssemblyResolver:
     @overload
     @staticmethod
@@ -116,6 +117,9 @@ class AssemblyResolver:
 
 from ..DocObjects.Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Collections.Generic import Dictionary
 from ..FileIO import SerializationOptions
 class CommonObject:
     @overload
@@ -163,6 +167,12 @@ class CommonObject:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from System.Collections import IDictionary
+from System import Exception
+from System.Reflection import MethodBase
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 class CorruptGeometryException:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -204,6 +214,11 @@ class CorruptGeometryException:
     def ToString(self) -> str: ...
 
 
+from System.Collections import IDictionary
+from System import Exception
+from System.Reflection import MethodBase
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 class DocumentCollectedException:
     @overload
     def __init__(self): ...
@@ -245,6 +260,13 @@ class DocumentCollectedException:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from System import Exception
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class ExceptionReportDelegate:
     @overload
     def __init__(self, object: object, method: IntPtr): ...
@@ -276,6 +298,12 @@ class ExceptionReportDelegate:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class FillProc:
     @overload
     def __init__(self, object: object, method: IntPtr): ...
@@ -307,10 +335,18 @@ class FillProc:
     def ToString(self) -> str: ...
 
 
+from System.Reflection import Assembly
+from System import Version
+from System import EventHandler
 from ..Geometry import GeometryBase
+from System import Guid
+from System.Collections.Generic import IEnumerable
+from System import Exception
+from System import IntPtr
 from ..Geometry import BezierCurve
 from ..PlugIns import PlugIn
 from ..Commands import Command
+from System.Threading import ThreadExceptionEventArgs
 class HostUtils:
     @overload
     @staticmethod
@@ -581,6 +617,7 @@ class InstanceAttributeField:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
 from ..DocObjects import Font
 from ..Display import ViewCaptureSettings
 from ..Geometry import GeometryBase
@@ -710,6 +747,7 @@ class IPlatformServiceLocator:
 
 from ..Geometry import Mesh
 from ..Geometry import ShrinkWrapParameters
+from System.Collections.Generic import IEnumerable
 from ..Geometry import PointCloud
 from ..Geometry import MeshingParameters
 class IShrinkWrapService:
@@ -723,7 +761,10 @@ class IShrinkWrapService:
     def ShrinkWrap(self, geometryBases: Iterable[GeometryBase], parameters: ShrinkWrapParameters, meshingParameters: MeshingParameters) -> Mesh: ...
 
 
+from System import Guid
 from ..PlugIns import LicenseStatus
+from System.Drawing import Image
+from System import DateTime
 class IZooClientUtilities:
     @overload
     def AskUserForLicense(self, verify: object, parameters: ZooClientParameters) -> bool: ...
@@ -815,10 +856,15 @@ class Mode(Enum):
     InvalidMode = 100
 
 
+from System.Collections.Generic import IEnumerable
+from System.Drawing import Point
 from ..Geometry import Point3d
 from ..Geometry import Vector3d
+from System.Drawing import Color
+from System import Guid
 from ..DocObjects import ViewportInfo
 from ..Geometry import GeometryBase
+from System import IntPtr
 from ..Geometry import Line
 from ..Geometry import Arc
 from ..Geometry import Plane
@@ -934,6 +980,11 @@ class NamedParametersEventArgs:
     def TryGetWindowImageHandle(self, name: str) -> Tuple[bool, IntPtr]: ...
 
 
+from System import Exception
+from System.Collections import IDictionary
+from System.Reflection import MethodBase
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 class NotLicensedException:
     @overload
     def __init__(self): ...
@@ -977,6 +1028,7 @@ class NotLicensedException:
     def ToString(self) -> str: ...
 
 
+from System.Drawing import PointF
 class PathPoint:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -996,6 +1048,7 @@ class PathPoint:
     def ToString(self) -> str: ...
 
 
+from System.Drawing import Color
 from ..DocObjects import LineCapStyle
 from ..DocObjects import LineJoinStyle
 class Pen:
@@ -1042,6 +1095,10 @@ class PythonCompiledCode:
     def ToString(self) -> str: ...
 
 
+from System.Reflection import Assembly
+from System.Collections.Generic import IEnumerable
+from System import Exception
+from System import Action
 from ..Commands import Command
 class PythonScript:
     @overload
@@ -1111,6 +1168,11 @@ class PythonScript:
     def ToString(self) -> str: ...
 
 
+from System.Collections import IDictionary
+from System import Exception
+from System.Reflection import MethodBase
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 class RdkNotLoadedException:
     @overload
     def __init__(self): ...
@@ -1165,6 +1227,12 @@ class RiskyAction:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class SendLogMessageToCloudDelegate:
     @overload
     def __init__(self, object: object, method: IntPtr): ...
@@ -1196,6 +1264,12 @@ class SendLogMessageToCloudDelegate:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class SetClipRectProc:
     @overload
     def __init__(self, object: object, method: IntPtr): ...
@@ -1244,6 +1318,7 @@ class Skin:
 
 from ..DocObjects import TextObject
 from ..DocObjects import InstanceDefinition
+from System.Collections.Generic import List
 class TextFields:
     @overload
     @staticmethod
@@ -1399,7 +1474,13 @@ class TextFields:
     def Volume(id: str, unitSystem: str, allowOpenObjects: str) -> float: ...
 
 
+from System import IntPtr
 from ..Geometry import Arc
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class VectorArcProc:
     @overload
     def __init__(self, object: object, method: IntPtr): ...
@@ -1431,6 +1512,12 @@ class VectorArcProc:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class VectorBitmapProc:
     @overload
     def __init__(self, object: object, method: IntPtr): ...
@@ -1462,6 +1549,12 @@ class VectorBitmapProc:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class VectorClipPathProc:
     @overload
     def __init__(self, object: object, method: IntPtr): ...
@@ -1493,6 +1586,12 @@ class VectorClipPathProc:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class VectorFillPolygonProc:
     @overload
     def __init__(self, object: object, method: IntPtr): ...
@@ -1524,6 +1623,12 @@ class VectorFillPolygonProc:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class VectorGradientProc:
     @overload
     def __init__(self, object: object, method: IntPtr): ...
@@ -1555,6 +1660,12 @@ class VectorGradientProc:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class VectorPathProc:
     @overload
     def __init__(self, object: object, method: IntPtr): ...
@@ -1586,6 +1697,12 @@ class VectorPathProc:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class VectorPointProc:
     @overload
     def __init__(self, object: object, method: IntPtr): ...
@@ -1617,6 +1734,12 @@ class VectorPointProc:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class VectorPolylineProc:
     @overload
     def __init__(self, object: object, method: IntPtr): ...
@@ -1648,6 +1771,12 @@ class VectorPolylineProc:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class VectorRoundedRectProc:
     @overload
     def __init__(self, object: object, method: IntPtr): ...
@@ -1679,6 +1808,12 @@ class VectorRoundedRectProc:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class VectorStringProc:
     @overload
     def __init__(self, object: object, method: IntPtr): ...
@@ -1710,6 +1845,8 @@ class VectorStringProc:
     def ToString(self) -> str: ...
 
 
+from System.Drawing import Size
+from System import IntPtr
 class ViewCaptureWriter:
     @overload
     def __init__(self, dpi: float, pageSize: Size): ...
@@ -1725,11 +1862,13 @@ class ViewCaptureWriter:
     def ToString(self) -> str: ...
 
 
+from System import Guid
 from ..PlugIns import LicenseCapabilities
 from ..PlugIns import ValidateProductKeyDelegate
 from ..PlugIns import OnLeaseChangedDelegate
 from ..PlugIns import VerifyLicenseKeyDelegate
 from ..PlugIns import VerifyPreviousVersionLicenseDelegate
+from System import DateTime
 from ..PlugIns import LicenseData
 from ..PlugIns import ValidateResult
 class ZooClientParameters:

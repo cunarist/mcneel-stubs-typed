@@ -1,10 +1,15 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 
 
+from System.Collections.Generic import IEnumerable
+from System.Drawing import Color
+from System.Drawing import RectangleF
+from System.Drawing import PointF
+from System.Drawing import Graphics
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 class GH_Gradient:
     @overload
     def __init__(self): ...
@@ -143,6 +148,10 @@ class GH_GradientChangedEventArgs:
     def ToString(self) -> str: ...
 
 
+from System.Drawing import Color
+from System import Guid
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 class GH_Grip:
     @overload
     def __init__(self): ...
@@ -206,6 +215,12 @@ class GH_GripType(Enum):
     Discontinuous = 1
 
 
+from System import IntPtr
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class GradientChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -237,6 +252,12 @@ class GradientChangedEventHandler:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class SelectionChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...

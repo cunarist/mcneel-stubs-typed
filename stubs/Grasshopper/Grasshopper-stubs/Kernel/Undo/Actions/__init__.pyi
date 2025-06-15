@@ -1,12 +1,12 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 
 
 from .. import IGH_DocumentObject
 from .. import GH_Document
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 class GH_AddObjectAction(GH_UndoAction):
     @overload
     def __init__(self, obj: IGH_DocumentObject): ...
@@ -35,6 +35,8 @@ class GH_AddObjectAction(GH_UndoAction):
 
 
 from .. import GH_State
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from .. import GH_Document
 class GH_AddStateAction(GH_ArchivedUndoAction):
     @overload
@@ -65,6 +67,8 @@ class GH_AddStateAction(GH_ArchivedUndoAction):
 
 from .. import IGH_Component
 from .. import GH_Document
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 class GH_DataMatchingAction(GH_ObjectUndoAction):
     @overload
     def __init__(self, obj: IGH_Component): ...
@@ -94,6 +98,8 @@ class GH_DataMatchingAction(GH_ObjectUndoAction):
 
 from .. import IGH_Param
 from .. import GH_Document
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 class GH_DataModificationAction(GH_ObjectUndoAction):
     @overload
     def __init__(self, obj: IGH_Param): ...
@@ -122,6 +128,8 @@ class GH_DataModificationAction(GH_ObjectUndoAction):
 
 
 from .. import IGH_DocumentObject
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from .. import GH_Document
 class GH_GenericObjectAction(GH_ArchivedUndoAction):
     @overload
@@ -152,6 +160,8 @@ class GH_GenericObjectAction(GH_ArchivedUndoAction):
 
 from .. import IGH_ActiveObject
 from .. import GH_Document
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 class GH_HiddenAction(GH_ObjectUndoAction):
     @overload
     def __init__(self, obj: IGH_ActiveObject): ...
@@ -181,6 +191,8 @@ class GH_HiddenAction(GH_ObjectUndoAction):
 
 from .. import IGH_DocumentObject
 from .. import GH_Document
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 class GH_IconDisplayAction(GH_ObjectUndoAction):
     @overload
     def __init__(self, obj: IGH_DocumentObject): ...
@@ -210,6 +222,8 @@ class GH_IconDisplayAction(GH_ObjectUndoAction):
 
 from .. import IGH_DocumentObject
 from .. import GH_Document
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 class GH_IconOverrideAction(GH_ObjectUndoAction):
     @overload
     def __init__(self, obj: IGH_DocumentObject): ...
@@ -239,6 +253,8 @@ class GH_IconOverrideAction(GH_ObjectUndoAction):
 
 from .. import IGH_DocumentObject
 from .. import GH_Document
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 class GH_LayoutAction(GH_ObjectUndoAction):
     @overload
     def __init__(self, obj: IGH_DocumentObject): ...
@@ -268,6 +284,8 @@ class GH_LayoutAction(GH_ObjectUndoAction):
 
 from .. import IGH_ActiveObject
 from .. import GH_Document
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 class GH_LockedAction(GH_ObjectUndoAction):
     @overload
     def __init__(self, obj: IGH_ActiveObject): ...
@@ -297,6 +315,8 @@ class GH_LockedAction(GH_ObjectUndoAction):
 
 from .. import IGH_DocumentObject
 from .. import GH_Document
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 class GH_NickNameAction(GH_ObjectUndoAction):
     @overload
     def __init__(self, obj: IGH_DocumentObject): ...
@@ -328,6 +348,8 @@ class GH_NickNameAction(GH_ObjectUndoAction):
 
 from .. import IGH_DocumentObject
 from .. import GH_Document
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 class GH_PivotAction(GH_ObjectUndoAction):
     @overload
     def __init__(self, obj: IGH_DocumentObject): ...
@@ -356,6 +378,8 @@ class GH_PivotAction(GH_ObjectUndoAction):
 
 
 from .. import IGH_DocumentObject
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from .. import GH_Document
 class GH_RemoveObjectAction(GH_ArchivedUndoAction):
     @overload
@@ -385,6 +409,8 @@ class GH_RemoveObjectAction(GH_ArchivedUndoAction):
 
 
 from .. import GH_State
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from .. import GH_Document
 class GH_RemoveStateAction(GH_ArchivedUndoAction):
     @overload
@@ -415,6 +441,8 @@ class GH_RemoveStateAction(GH_ArchivedUndoAction):
 
 from .. import IGH_Param
 from .. import GH_Document
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 class GH_WireAction(GH_UndoAction):
     @overload
     def __init__(self, param: IGH_Param): ...
@@ -444,6 +472,8 @@ class GH_WireAction(GH_UndoAction):
 
 from .. import IGH_Param
 from .. import GH_Document
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 class GH_WireDisplayAction(GH_ObjectUndoAction):
     @overload
     def __init__(self, obj: IGH_Param): ...

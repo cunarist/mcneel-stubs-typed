@@ -1,7 +1,5 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 import Collections
 import Intersect
@@ -12,6 +10,7 @@ __all__ = ['Collections', 'Intersect', 'MeshRefinements', 'Morphs']
 
 
 from ..DocObjects import DimensionStyle
+from System import Guid
 from ..DocObjects import AngleDisplayFormat
 from ..DocObjects import ZeroSuppression
 from ..DocObjects import ViewportInfo
@@ -27,10 +26,15 @@ from ..DocObjects import LengthDisplay
 from ..DocObjects import Field
 from ..DocObjects import MaskType
 from ..DocObjects import MaskFrame
+from System.Drawing import Color
 from ..DocObjects import Font
+from System import Char
 from ..DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
 from ..DocObjects.Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class AngularDimension(Dimension):
     @overload
@@ -542,16 +546,22 @@ class AngularDimension(Dimension):
     def WrapText(self) -> None: ...
 
 
+from System import Guid
 from ..DocObjects import Field
 from ..DocObjects import DimensionStyle
 from ..DocObjects import MaskType
 from ..DocObjects import MaskFrame
+from System.Drawing import Color
 from ..Display import RhinoViewport
 from ..DocObjects import Font
 from ..DocObjects import LengthDisplay
+from System import Char
 from ..DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
 from ..DocObjects.Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class AnnotationBase(GeometryBase):
     @overload
@@ -922,9 +932,14 @@ class Arc:
     def Trim(self, domain: Interval) -> bool: ...
 
 
+from System.Collections.Generic import IEnumerable
+from System.Collections.Generic import List
 from ..DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
 from ..DocObjects.Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class ArcCurve(Curve):
     @overload
@@ -1377,6 +1392,7 @@ class ArcCurve(Curve):
     def TryGetPolyline(self) -> Tuple[bool, Polyline, Iterable[float]]: ...
 
 
+from System.Collections.Generic import IEnumerable
 class AreaMassProperties:
     @overload
     def CentroidCoordinatesPrincipalMoments(self) -> Tuple[bool, float, Vector3d, float, Vector3d, float, Vector3d]: ...
@@ -1475,6 +1491,7 @@ class AreaMassProperties:
 
 
 from ..DocObjects import ArrowType
+from System import Guid
 class Arrowhead:
     @overload
     def __init__(self): ...
@@ -1500,6 +1517,9 @@ class Attenuation(Enum):
     InverseSquared = 2
 
 
+from System.Collections.Generic import IEnumerable
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 class BezierCurve:
     @overload
     def __init__(self, controlPoints: Iterable[Point2d]): ...
@@ -1567,6 +1587,7 @@ class BezierCurve:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import IEnumerable
 class BezierSurface:
     @overload
     def ControlVertexCount(self, direction: int) -> int: ...
@@ -1629,6 +1650,7 @@ class BlendType(Enum):
     Blend = 2
 
 
+from System.Collections.Generic import IEnumerable
 class BoundingBox:
     @overload
     def __init__(self, points: Iterable[Point3d]): ...
@@ -1717,6 +1739,7 @@ class BoundingBox:
     def Union(box: BoundingBox, point: Point3d) -> BoundingBox: ...
 
 
+from System.Collections.Generic import IEnumerable
 class Box:
     @overload
     def __init__(self, other: Box): ...
@@ -1808,7 +1831,10 @@ class Box:
     def Union(self, point: Point3d) -> None: ...
 
 
+from System.Collections.Generic import IEnumerable
 from ..Collections import CurveList
+from System.Collections.Generic import IDictionary
+from System.Collections.Generic import List
 from ..ApplicationSettings import CurvatureAnalysisSettingsState
 from .Collections import BrepVertexList
 from .Collections import BrepSurfaceList
@@ -1818,8 +1844,11 @@ from .Collections import BrepLoopList
 from .Collections import BrepFaceList
 from .Collections import BrepCurveList
 from ..DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
 from ..DocObjects.Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class Brep(GeometryBase):
     @overload
@@ -2367,9 +2396,14 @@ class Brep(GeometryBase):
     def UnjoinEdges(self, edgesToUnjoin: Iterable[int]) -> Iterable[Brep]: ...
 
 
+from System.Collections.Generic import IEnumerable
+from System.Collections.Generic import List
 from ..DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
 from ..DocObjects.Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class BrepEdge(CurveProxy):
     @overload
@@ -2856,9 +2890,16 @@ class BrepEdgeFilletDistance:
 
 
 from .Collections import BrepLoopList
+from System.Collections.Generic import IEnumerable
+from System import Guid
+from System.Drawing import Color
+from System.Collections.Generic import List
 from ..DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
 from ..DocObjects.Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class BrepFace(SurfaceProxy):
     @overload
@@ -3191,8 +3232,11 @@ class BrepFace(SurfaceProxy):
 
 from .Collections import BrepTrimList
 from ..DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
 from ..DocObjects.Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class BrepLoop(GeometryBase):
     @overload
@@ -3302,6 +3346,8 @@ class BrepLoopType(Enum):
 
 from ..DocObjects.Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 from ..Runtime import CommonObject
 class BrepRegion(CommonObject):
@@ -3351,6 +3397,8 @@ class BrepRegion(CommonObject):
 
 from ..DocObjects.Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 from ..Runtime import CommonObject
 class BrepRegionFaceSide(CommonObject):
@@ -3401,9 +3449,14 @@ class BrepSolidOrientation(Enum):
     Inward = -1
 
 
+from System.Collections.Generic import IEnumerable
+from System.Collections.Generic import List
 from ..DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
 from ..DocObjects.Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class BrepTrim(CurveProxy):
     @overload
@@ -3886,8 +3939,11 @@ class BrepTrimType(Enum):
 
 
 from ..DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
 from ..DocObjects.Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class BrepVertex(Point):
     @overload
@@ -3986,6 +4042,7 @@ class BrepVertex(Point):
 
 from ..DocObjects import DimensionStyle
 from ..DocObjects import ViewportInfo
+from System import Guid
 from ..DocObjects import ArrowFit
 from ..DocObjects import TextFit
 from ..DocObjects import TextOrientation
@@ -3999,10 +4056,15 @@ from ..DocObjects import LengthDisplay
 from ..DocObjects import Field
 from ..DocObjects import MaskType
 from ..DocObjects import MaskFrame
+from System.Drawing import Color
 from ..DocObjects import Font
+from System import Char
 from ..DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
 from ..DocObjects.Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class Centermark(Dimension):
     @overload
@@ -4465,6 +4527,7 @@ class Centermark(Dimension):
     def WrapText(self) -> None: ...
 
 
+from System.Collections.Generic import IEnumerable
 class Circle:
     @overload
     def __init__(self, radius: float): ...
@@ -4562,9 +4625,15 @@ class Circle:
     def TrySmallestEnclosingCircle(points: Iterable[Point2d], tolerance: float) -> Tuple[bool, Circle, Iterable[int]]: ...
 
 
+from System import Guid
+from System.Collections.Generic import IEnumerable
+from System.Collections.Generic import List
 from ..DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
 from ..DocObjects.Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class ClippingPlaneSurface(PlaneSurface):
     @overload
@@ -5115,9 +5184,14 @@ class ConvexCornerOption(Enum):
     AtMeshCorner = 2
 
 
+from System.Collections.Generic import IEnumerable
+from System.Collections.Generic import List
 from ..DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
 from ..DocObjects.Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class Curve(GeometryBase):
     @overload
@@ -5801,9 +5875,14 @@ class CurveOrientation(Enum):
     Clockwise = -1
 
 
+from System.Collections.Generic import IEnumerable
+from System.Collections.Generic import List
 from ..DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
 from ..DocObjects.Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class CurveProxy(Curve):
     @overload
@@ -6320,8 +6399,11 @@ class Density(Enum):
 
 
 from ..DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
 from ..DocObjects.Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class DetailView(GeometryBase):
     @overload
@@ -6420,6 +6502,7 @@ class DetailView(GeometryBase):
     def Translate(self, x: float, y: float, z: float) -> bool: ...
 
 
+from System.Collections.Generic import IEnumerable
 class DevelopableSrf:
     @overload
     def __init__(self): ...
@@ -6447,6 +6530,7 @@ class DevelopableSrf:
 
 from ..DocObjects import ViewportInfo
 from ..DocObjects import DimensionStyle
+from System import Guid
 from ..DocObjects import ArrowFit
 from ..DocObjects import TextFit
 from ..DocObjects import TextOrientation
@@ -6460,10 +6544,15 @@ from ..DocObjects import LengthDisplay
 from ..DocObjects import Field
 from ..DocObjects import MaskType
 from ..DocObjects import MaskFrame
+from System.Drawing import Color
 from ..DocObjects import Font
+from System import Char
 from ..DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
 from ..DocObjects.Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class Dimension(AnnotationBase):
     @overload
@@ -6980,9 +7069,14 @@ class ExtrudeCornerType(Enum):
     Chamfer = 4
 
 
+from System.Collections.Generic import IEnumerable
+from System.Collections.Generic import List
 from ..DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
 from ..DocObjects.Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class Extrusion(Surface):
     @overload
@@ -7328,8 +7422,11 @@ class ForceText(Enum):
 
 
 from ..DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
 from ..DocObjects.Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 from ..Runtime import CommonObject
 class GeometryBase(CommonObject):
@@ -7419,11 +7516,15 @@ class GeometryBase(CommonObject):
     def Translate(self, x: float, y: float, z: float) -> bool: ...
 
 
+from System.Collections.Generic import IEnumerable
 from ..DocObjects import HatchPattern
 from ..Display import ColorGradient
 from ..DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
 from ..DocObjects.Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class Hatch(GeometryBase):
     @overload
@@ -7603,6 +7704,9 @@ class HermiteSurface:
     def VTangentAt(self, uIndex: int, vIndex: int) -> Vector3d: ...
 
 
+from System import IProgress
+from System.Threading import CancellationToken
+from System.Collections.Generic import IEnumerable
 from ..DocObjects import ViewportInfo
 class HiddenLineDrawing:
     @overload
@@ -7693,6 +7797,7 @@ class HiddenLineDrawingObjectCurve:
 
 from ..DocObjects import ViewportInfo
 from ..Display import RhinoViewport
+from System.Collections.Generic import List
 class HiddenLineDrawingParameters:
     @overload
     def __init__(self): ...
@@ -7799,8 +7904,12 @@ class HiddenLineDrawingSegment:
 
 
 from ..DocObjects import ModelComponentType
+from System.Collections.Specialized import NameValueCollection
+from System import Guid
 from ..DocObjects.Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 from ..DocObjects import ModelComponent
 class InstanceDefinitionGeometry(ModelComponent):
@@ -7926,9 +8035,13 @@ class InstanceDefinitionGeometry(ModelComponent):
     def ToString(self) -> str: ...
 
 
+from System import Guid
 from ..DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
 from ..DocObjects.Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class InstanceReferenceGeometry(GeometryBase):
     @overload
@@ -8024,6 +8137,15 @@ class InteriorCreaseOption(Enum):
 
 
 from ..Collections import RhinoList
+from System.Collections.Generic import IEnumerable
+from System.Collections import IEnumerable
+from System import Predicate
+from System.Collections.Generic import IComparer
+from System import Action
+from System import Comparison
+from System.Collections.ObjectModel import ReadOnlyCollection
+from System import Converter
+from System.Collections.Generic import IEnumerator
 class Interpolator:
     @overload
     def __init__(self): ...
@@ -8283,6 +8405,11 @@ class Interval:
     def ToString(self) -> str: ...
 
 
+from System.Collections import IDictionary
+from System import Exception
+from System.Reflection import MethodBase
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 class InvalidDimensionStyleIdException:
     @overload
     def __init__(self, msg: str): ...
@@ -8345,16 +8472,22 @@ from ..DocObjects import DimensionStyle
 from ..DocObjects import TextHorizontalAlignment
 from ..DocObjects import TextVerticalAlignment
 from ..DocObjects import ArrowType
+from System import Guid
 from ..DocObjects import LeaderCurveStyle
 from ..DocObjects import LeaderContentAngleStyle
 from ..DocObjects import Field
 from ..DocObjects import MaskType
 from ..DocObjects import MaskFrame
+from System.Drawing import Color
 from ..DocObjects import Font
 from ..DocObjects import LengthDisplay
+from System import Char
 from ..DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
 from ..DocObjects.Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class Leader(AnnotationBase):
     @overload
@@ -8641,6 +8774,7 @@ class Leader(AnnotationBase):
     def WrapText(self) -> None: ...
 
 
+from System.Collections.Generic import IEnumerable
 class LengthMassProperties:
     @overload
     def CentroidCoordinatesPrincipalMoments(self) -> Tuple[bool, float, Vector3d, float, Vector3d, float, Vector3d]: ...
@@ -8714,11 +8848,17 @@ class LengthMassProperties:
     def WorldCoordinatesPrincipalMomentsOfInertia(self) -> Tuple[bool, float, Vector3d, float, Vector3d, float, Vector3d]: ...
 
 
+from System import DateTime
 from ..Render import Sun
 from ..DocObjects import CoordinateSystem
+from System.Drawing import Color
+from System import Guid
 from ..DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
 from ..DocObjects.Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class Light(GeometryBase):
     @overload
@@ -8938,6 +9078,8 @@ class LightStyle(Enum):
     WorldRectangular = 12
 
 
+from System.Collections.Generic import IEnumerable
+from System import IFormatProvider
 class Line:
     @overload
     def __init__(self, from_: Point3d, to: Point3d): ...
@@ -9056,7 +9198,9 @@ class Line:
 
 
 from ..DocObjects import DimensionStyle
+from System.Collections.Generic import IEnumerable
 from ..DocObjects import ViewportInfo
+from System import Guid
 from ..DocObjects import ArrowFit
 from ..DocObjects import TextFit
 from ..DocObjects import TextOrientation
@@ -9070,10 +9214,15 @@ from ..DocObjects import LengthDisplay
 from ..DocObjects import Field
 from ..DocObjects import MaskType
 from ..DocObjects import MaskFrame
+from System.Drawing import Color
 from ..DocObjects import Font
+from System import Char
 from ..DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
 from ..DocObjects.Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class LinearDimension(Dimension):
     @overload
@@ -9564,9 +9713,14 @@ class LinearDimension(Dimension):
     def WrapText(self) -> None: ...
 
 
+from System.Collections.Generic import IEnumerable
+from System.Collections.Generic import List
 from ..DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
 from ..DocObjects.Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class LineCurve(Curve):
     @overload
@@ -10101,8 +10255,15 @@ class MeasuredDirection(Enum):
 
 from ..Display import RhinoViewport
 from ..DocObjects import ViewportInfo
+from System.Collections.Generic import IEnumerable
+from System.Drawing import Color
 from ..FileIO import TextLog
+from System.Threading import CancellationToken
+from System import IProgress
+from System.Collections.Generic import List
 from ..Render import TextureMapping
+from System.Drawing import Bitmap
+from System.Threading.Tasks import Task
 from .MeshRefinements import LoopFormula
 from .MeshRefinements import RefinementSettings
 from ..Commands import Result
@@ -10118,11 +10279,15 @@ from .Collections import MeshTextureCoordinateList
 from .Collections import MeshVertexStatusList
 from ..DocObjects import RhinoObject
 from ..DocObjects import Material
+from System import Guid
 from ..Render import CachedTextureCoordinates
 from ..DocObjects import Texture
 from ..DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
 from ..DocObjects.Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class Mesh(GeometryBase):
     @overload
@@ -10645,6 +10810,8 @@ class Mesh(GeometryBase):
 
 
 from ..FileIO import TextLog
+from System.Threading import CancellationToken
+from System import IProgress
 class MeshBooleanOptions:
     @overload
     def __init__(self): ...
@@ -10833,6 +11000,8 @@ class MeshDisplacementInfo:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import IEnumerable
+from System.Collections.Generic import List
 class MeshExtruder:
     @overload
     def __init__(self, inputMesh: Mesh, componentIndices: Iterable[ComponentIndex]): ...
@@ -10959,6 +11128,8 @@ class MeshFace:
     def ToString(self) -> str: ...
 
 
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 class MeshingParameters:
     @overload
     def __init__(self): ...
@@ -11108,6 +11279,7 @@ class MeshingParameterTextureRange(Enum):
     PackedScaledNormalized = 2
 
 
+from System.Collections.Generic import IList
 class MeshNgon:
     @overload
     def BoundaryVertexIndexList(self) -> Iterable[int]: ...
@@ -11174,6 +11346,7 @@ class MeshPipeCapStyle(Enum):
     Dome = 3
 
 
+from System import Char
 class MeshPoint:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -11234,6 +11407,7 @@ class MeshType(Enum):
     Any = 4
 
 
+from System import Int32
 class MeshUnsafeLock:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -11265,6 +11439,7 @@ class MeshUnwrapMethod(Enum):
     ARAP = 2
 
 
+from System.Collections.Generic import IEnumerable
 class MeshUnwrapper:
     @overload
     def __init__(self, mesh: Mesh): ...
@@ -11287,8 +11462,11 @@ class MeshUnwrapper:
 
 
 from ..DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
 from ..DocObjects.Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class MorphControl(GeometryBase):
     @overload
@@ -11391,12 +11569,17 @@ class MorphControl(GeometryBase):
     def Translate(self, x: float, y: float, z: float) -> bool: ...
 
 
+from System.Collections.Generic import IEnumerable
 from .Collections import NurbsCurveKnotList
 from .Collections import NurbsCurvePointList
 from ..Collections import Point3dList
+from System.Collections.Generic import List
 from ..DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
 from ..DocObjects.Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class NurbsCurve(Curve):
     @overload
@@ -11952,11 +12135,16 @@ class NurbsCurveEndConditionType(Enum):
     Curvature = 3
 
 
+from System.Collections.Generic import IEnumerable
 from .Collections import NurbsSurfaceKnotList
 from .Collections import NurbsSurfacePointList
+from System.Collections.Generic import List
 from ..DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
 from ..DocObjects.Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class NurbsSurface(Surface):
     @overload
@@ -12303,7 +12491,9 @@ class NurbsSurfaceType(Enum):
 
 
 from ..DocObjects import DimensionStyle
+from System.Collections.Generic import IEnumerable
 from ..DocObjects import ViewportInfo
+from System import Guid
 from ..DocObjects import ArrowFit
 from ..DocObjects import TextFit
 from ..DocObjects import TextOrientation
@@ -12317,10 +12507,15 @@ from ..DocObjects import LengthDisplay
 from ..DocObjects import Field
 from ..DocObjects import MaskType
 from ..DocObjects import MaskFrame
+from System.Drawing import Color
 from ..DocObjects import Font
+from System import Char
 from ..DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
 from ..DocObjects.Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class OrdinateDimension(Dimension):
     @overload
@@ -12806,6 +13001,7 @@ class OrdinateDimension(Dimension):
     def WrapText(self) -> None: ...
 
 
+from System.Drawing import Color
 class Particle:
     @overload
     def __init__(self): ...
@@ -12841,6 +13037,7 @@ class Particle:
     def Update(self) -> None: ...
 
 
+from System.Collections.Generic import IEnumerator
 class ParticleSystem:
     @overload
     def __init__(self): ...
@@ -12881,6 +13078,8 @@ class PipeCapMode(Enum):
     Round = 2
 
 
+from System.Collections.Generic import IEnumerable
+from System import IFormatProvider
 class Plane:
     @overload
     def __init__(self, other: Plane): ...
@@ -13020,9 +13219,14 @@ class PlaneFitResult(Enum):
     Failure = -1
 
 
+from System.Collections.Generic import IEnumerable
+from System.Collections.Generic import List
 from ..DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
 from ..DocObjects.Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class PlaneSurface(Surface):
     @overload
@@ -13292,8 +13496,11 @@ class PlaneSurface(Surface):
 
 
 from ..DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
 from ..DocObjects.Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class Point(GeometryBase):
     @overload
@@ -13382,6 +13589,7 @@ class Point(GeometryBase):
     def Translate(self, x: float, y: float, z: float) -> bool: ...
 
 
+from System import IFormatProvider
 class Point2d:
     @overload
     def __init__(self, vector: Vector2d): ...
@@ -13487,6 +13695,7 @@ class Point2d:
     def Transform(self, xform: Transform) -> None: ...
 
 
+from System import IFormatProvider
 class Point2f:
     @overload
     def __init__(self, x: float, y: float): ...
@@ -13550,6 +13759,8 @@ class Point2f:
     def ToString(self, format: str, formatProvider: IFormatProvider) -> str: ...
 
 
+from System import IFormatProvider
+from System.Collections.Generic import IEnumerable
 class Point3d:
     @overload
     def __init__(self, vector: Vector3d): ...
@@ -13694,8 +13905,11 @@ class Point3d:
 
 
 from ..DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
 from ..DocObjects.Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class Point3dGrid(GeometryBase):
     @overload
@@ -13782,6 +13996,7 @@ class Point3dGrid(GeometryBase):
     def Translate(self, x: float, y: float, z: float) -> bool: ...
 
 
+from System import IFormatProvider
 class Point3f:
     @overload
     def __init__(self, x: float, y: float, z: float): ...
@@ -13854,6 +14069,7 @@ class Point3f:
     def Transform(self, xform: Transform) -> None: ...
 
 
+from System import IFormatProvider
 class Point4d:
     @overload
     def __init__(self, point: Point3d): ...
@@ -13920,9 +14136,18 @@ class Point4d:
     def Transform(self, xform: Transform) -> None: ...
 
 
+from System.Collections.Generic import IEnumerable
+from System.Drawing import Color
+from System.Threading import CancellationToken
+from System import IProgress
+from System.Collections.Generic import IReadOnlyList
+from System.Collections.Generic import IEnumerator
 from ..DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
 from ..DocObjects.Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class PointCloud(GeometryBase):
     @overload
@@ -14110,6 +14335,7 @@ class PointCloud(GeometryBase):
     def Translate(self, x: float, y: float, z: float) -> bool: ...
 
 
+from System.Drawing import Color
 class PointCloudItem:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -14155,6 +14381,8 @@ class PointCloudItem:
     def ToString(self) -> str: ...
 
 
+from System import Int32
+from System import Double
 class PointCloudUnsafeLock:
     @overload
     def ColorArray(self) -> Tuple[Int32, int]: ...
@@ -14189,9 +14417,14 @@ class PointFaceRelation(Enum):
     Boundary = 2
 
 
+from System.Collections.Generic import IEnumerable
+from System.Collections.Generic import List
 from ..DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
 from ..DocObjects.Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class PolyCurve(Curve):
     @overload
@@ -14658,11 +14891,20 @@ class PolyCurve(Curve):
     def TryGetPolyline(self) -> Tuple[bool, Polyline, Iterable[float]]: ...
 
 
+from System.Collections.Generic import IEnumerable
 from ..Collections import XAccess
 from ..Collections import YAccess
 from ..Collections import ZAccess
 from ..Collections import Point3dList
+from System.Collections import IEnumerable
+from System import Predicate
 from ..Collections import RhinoList
+from System.Collections.Generic import IComparer
+from System import Action
+from System import Comparison
+from System.Collections.ObjectModel import ReadOnlyCollection
+from System import Converter
+from System.Collections.Generic import IEnumerator
 from ..Collections import Point3dList
 class Polyline(Point3dList):
     @overload
@@ -14890,9 +15132,14 @@ class Polyline(Point3dList):
     def TrueForAll(self, match: Predicate) -> bool: ...
 
 
+from System.Collections.Generic import IEnumerable
+from System.Collections.Generic import List
 from ..DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
 from ..DocObjects.Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class PolylineCurve(Curve):
     @overload
@@ -15545,8 +15792,10 @@ class Quaternion:
 
 
 from ..DocObjects import DimensionStyle
+from System.Collections.Generic import IEnumerable
 from ..DocObjects import TextHorizontalAlignment
 from ..DocObjects import ArrowType
+from System import Guid
 from ..DocObjects import LeaderCurveStyle
 from ..DocObjects import TextOrientation
 from ..DocObjects import TextLocation
@@ -15561,10 +15810,15 @@ from ..DocObjects import LengthDisplay
 from ..DocObjects import Field
 from ..DocObjects import MaskType
 from ..DocObjects import MaskFrame
+from System.Drawing import Color
 from ..DocObjects import Font
+from System import Char
 from ..DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
 from ..DocObjects.Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class RadialDimension(Dimension):
     @overload
@@ -16099,6 +16353,7 @@ class Ray3d:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import IEnumerable
 class Rectangle3d:
     @overload
     def __init__(self, plane: Plane, width: float, height: float): ...
@@ -16178,6 +16433,8 @@ class Rectangle3d:
     def Transform(self, xform: Transform) -> bool: ...
 
 
+from System.Threading import CancellationToken
+from System import IProgress
 class ReduceMeshParameters:
     @overload
     def __init__(self): ...
@@ -16246,9 +16503,14 @@ class RegionContainment(Enum):
     BInsideA = 3
 
 
+from System.Collections.Generic import IEnumerable
+from System.Collections.Generic import List
 from ..DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
 from ..DocObjects.Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class RevSurface(Surface):
     @overload
@@ -16590,6 +16852,9 @@ class RibbonOffsetSurfaceMethod(Enum):
     Sweep2NetworkSrf = 2
 
 
+from System.Collections.Generic import IEnumerable
+from System import IntPtr
+from System import EventHandler
 class RTree:
     @overload
     def __init__(self): ...
@@ -16663,6 +16928,7 @@ class RTree:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
 class RTreeEventArgs:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -16743,6 +17009,8 @@ class ShrinkWrapParameters:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import IEnumerable
+from System.Collections.ObjectModel import ReadOnlyCollection
 class ShutLiningCurveInfo:
     @overload
     def __init__(self, curve: Curve, radius: float, profile: int, pull: bool, isBump: bool, curveIntervals: Iterable[Interval], enabled: bool): ...
@@ -16777,6 +17045,8 @@ class SideFill(Enum):
     OtherSurface = 3
 
 
+from System.Threading import CancellationToken
+from System.Collections.Generic import IEnumerable
 from ..DocObjects import ViewportInfo
 class Silhouette:
     @overload
@@ -16872,6 +17142,7 @@ class SpaceMorph:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import IEnumerable
 class Sphere:
     @overload
     def __init__(self, center: Point3d, radius: float): ...
@@ -16965,6 +17236,8 @@ class SquishDeformation(Enum):
     Custom = 5
 
 
+from System.Collections.Generic import IEnumerable
+from System.Collections.Generic import List
 class Squisher:
     @overload
     def __init__(self): ...
@@ -17074,12 +17347,16 @@ class SquishParameters:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import IEnumerable
 from .Collections import SubDFaceList
 from .Collections import SubDVertexList
 from .Collections import SubDEdgeList
 from ..DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
 from ..DocObjects.Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class SubD(GeometryBase):
     @overload
@@ -17360,6 +17637,8 @@ class SubDCreationOptions:
     def ToString(self) -> str: ...
 
 
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 class SubDDisplayParameters:
     @overload
     def __init__(self): ...
@@ -17512,6 +17791,7 @@ class SubDEndCapStyle(Enum):
     Ngon = 4
 
 
+from System.Drawing import Color
 class SubDFace(SubDComponent):
     @overload
     def ComponentIndex(self) -> ComponentIndex: ...
@@ -17597,6 +17877,8 @@ class SubDPatchStyle(Enum):
     Triangulated = 5
 
 
+from System.Collections.Generic import IEnumerable
+from System import Guid
 class SubDSurfaceInterpolator:
     @overload
     def __init__(self): ...
@@ -17679,6 +17961,7 @@ class SubDToBrepOptions:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import IEnumerable
 class SubDVertex(SubDComponent):
     @overload
     def EdgeAt(self, index: int) -> SubDEdge: ...
@@ -17748,9 +18031,14 @@ class SubDVertexTag(Enum):
     Dart = 4
 
 
+from System.Collections.Generic import IEnumerable
+from System.Collections.Generic import List
 from ..DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
 from ..DocObjects.Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class SumSurface(Surface):
     @overload
@@ -18003,9 +18291,14 @@ class SumSurface(Surface):
     def VariableOffset(self, uMinvMin: float, uMinvMax: float, uMaxvMin: float, uMaxvMax: float, interiorParameters: Iterable[Point2d], interiorDistances: Iterable[float], tolerance: float) -> Surface: ...
 
 
+from System.Collections.Generic import IEnumerable
+from System.Collections.Generic import List
 from ..DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
 from ..DocObjects.Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class Surface(GeometryBase):
     @overload
@@ -18306,6 +18599,7 @@ class SurfaceCurvature:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import List
 class SurfaceFilletBase:
     @overload
     @staticmethod
@@ -18363,9 +18657,14 @@ class SurfaceFilletBase:
     def TrimBreps(self, bExtend: bool, TrimmedBreps0: List, TrimmedBreps1: List) -> bool: ...
 
 
+from System.Collections.Generic import IEnumerable
+from System.Collections.Generic import List
 from ..DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
 from ..DocObjects.Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class SurfaceProxy(Surface):
     @overload
@@ -18628,6 +18927,7 @@ class SweepMiter(Enum):
     Untrimmed = 2
 
 
+from System.Collections.Generic import IEnumerable
 class SweepOneRail:
     @overload
     def __init__(self): ...
@@ -18709,6 +19009,7 @@ class SweepRebuild(Enum):
     Refit = 2
 
 
+from System.Collections.Generic import IEnumerable
 class SweepTwoRail:
     @overload
     def __init__(self): ...
@@ -18771,8 +19072,11 @@ class SweepTwoRail:
 
 
 from ..DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
 from ..DocObjects.Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class TextDot(GeometryBase):
     @overload
@@ -18881,14 +19185,21 @@ from ..DocObjects import DimensionStyle
 from ..DocObjects import TextHorizontalAlignment
 from ..DocObjects import TextVerticalAlignment
 from ..DocObjects import TextOrientation
+from System.Collections.Generic import List
+from System import Guid
 from ..DocObjects import Field
 from ..DocObjects import MaskType
 from ..DocObjects import MaskFrame
+from System.Drawing import Color
 from ..DocObjects import Font
 from ..DocObjects import LengthDisplay
+from System import Char
 from ..DocObjects import ObjectType
+from System.Collections.Specialized import NameValueCollection
 from ..DocObjects.Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class TextEntity(AnnotationBase):
     @overload
@@ -19241,6 +19552,7 @@ class Torus:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import IEnumerable
 class Transform:
     @overload
     def __init__(self, diagonalValue: float): ...
@@ -19496,6 +19808,7 @@ class TransformSimilarityType(Enum):
     OrientationReversing = -1
 
 
+from System.Collections.Generic import IEnumerable
 class Triangle3d:
     @overload
     def __init__(self, a: Point3d, b: Point3d, c: Point3d): ...
@@ -19586,6 +19899,8 @@ class Triangle3d:
     def WithC(self, c: Point3d) -> Triangle3d: ...
 
 
+from System.Collections.Generic import IEnumerable
+from System.Collections.Generic import List
 class Unroller:
     @overload
     def __init__(self, surface: Surface): ...
@@ -19643,6 +19958,7 @@ class Unroller:
     def ToString(self) -> str: ...
 
 
+from System import IFormatProvider
 class Vector2d:
     @overload
     def __init__(self, x: float, y: float): ...
@@ -19737,6 +20053,7 @@ class Vector2d:
     def Unitize(self) -> bool: ...
 
 
+from System import IFormatProvider
 class Vector2f:
     @overload
     def __init__(self, x: float, y: float): ...
@@ -19827,6 +20144,7 @@ class Vector2f:
     def Unitize(self) -> bool: ...
 
 
+from System import IFormatProvider
 class Vector3d:
     @overload
     def __init__(self, point: Point3d): ...
@@ -19986,6 +20304,7 @@ class Vector3d:
     def VectorAngle(a: Vector3d, b: Vector3d, plane: Plane) -> float: ...
 
 
+from System import IFormatProvider
 class Vector3f:
     @overload
     def __init__(self, x: float, y: float, z: float): ...
@@ -20127,6 +20446,7 @@ class Visibility(Enum):
     Clipped = 5
 
 
+from System.Collections.Generic import IEnumerable
 class VolumeMassProperties:
     @overload
     def CentroidCoordinatesPrincipalMoments(self) -> Tuple[bool, float, Vector3d, float, Vector3d, float, Vector3d]: ...

@@ -1,7 +1,5 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 
 
@@ -108,6 +106,7 @@ class ByteArrayField(Field):
 
 
 from ...Display import Color4f
+from System.Drawing import Color
 class Color4fField(Field):
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -163,6 +162,7 @@ class Color4fField(Field):
     def ValueAsObject(self) -> object: ...
 
 
+from System import DateTime
 class DateTimeField(Field):
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -312,13 +312,17 @@ class Field:
     def ValueAsObject(self) -> object: ...
 
 
+from System import Guid
 from ...Geometry import Transform
+from System import DateTime
 from ...Display import Color4f
+from System.Drawing import Color
 from ...Geometry import Vector2d
 from ...Geometry import Vector3d
 from ...Geometry import Point2d
 from ...Geometry import Point3d
 from ...Geometry import Point4d
+from System.Collections.Generic import IEnumerator
 class FieldDictionary:
     def __iter__(self) -> Iterator[Any]: ...
     @overload
@@ -642,6 +646,7 @@ class FloatField(Field):
     def ValueAsObject(self) -> object: ...
 
 
+from System import Guid
 class GuidField(Field):
     @overload
     def Equals(self, obj: object) -> bool: ...

@@ -1,10 +1,9 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 
 
+from System.Collections.Generic import IEnumerator
 class ChunkKeyedCollection:
     @overload
     def __init__(self): ...
@@ -33,6 +32,13 @@ class ChunkKeyedCollection:
     def TryGetValue(self, id: ID) -> Tuple[bool, GH_Chunk]: ...
 
 
+from System.Text import Encoding
+from System.Text import StringBuilder
+from System import Char
+from System.Threading.Tasks import Task
+from System import IFormatProvider
+from System import Decimal
+from System.Runtime.Remoting import ObjRef
 class EncodedStringWriter:
     @overload
     def __init__(self): ...
@@ -159,6 +165,8 @@ class EncodedStringWriter:
 
 
 from ..Types import GH_Version
+from System.Collections.Generic import List
+from System.Windows.Forms import DialogResult
 class GH_Archive:
     @overload
     def __init__(self): ...
@@ -236,7 +244,23 @@ class GH_Archive:
     def WriteToFile(self, fileName: str, overwrite: bool, rememberPath: bool) -> bool: ...
 
 
+from System.Collections.Generic import List
 from ..Types import GH_Item
+from System.IO import BinaryWriter
+from System.IO import BinaryReader
+from System.Xml import XmlWriter
+from System.Xml import XmlNode
+from System import Decimal
+from System import DateTime
+from System import Guid
+from System.Drawing import Point
+from System.Drawing import PointF
+from System.Drawing import Size
+from System.Drawing import SizeF
+from System.Drawing import Rectangle
+from System.Drawing import RectangleF
+from System.Drawing import Color
+from System.Drawing import Bitmap
 from ..Types import GH_Point2D
 from ..Types import GH_Point3D
 from ..Types import GH_Point4D
@@ -693,6 +717,8 @@ class GH_Compression:
     def ToString(self) -> str: ...
 
 
+from System.IO import BinaryWriter
+from System.IO import BinaryReader
 class GH_IBinarySupport:
     @overload
     def Read(self, reader: BinaryReader) -> None: ...
@@ -700,6 +726,7 @@ class GH_IBinarySupport:
     def Write(self, writer: BinaryWriter) -> None: ...
 
 
+from System.Collections.Generic import List
 class GH_IChunk:
     @overload
     def AddMessage(self, m: str, t: GH_Message_Type) -> None: ...
@@ -722,6 +749,17 @@ class GH_IChunk:
 
 
 from ..Types import GH_Item
+from System import Decimal
+from System import DateTime
+from System import Guid
+from System.Drawing import Point
+from System.Drawing import PointF
+from System.Drawing import Size
+from System.Drawing import SizeF
+from System.Drawing import Rectangle
+from System.Drawing import RectangleF
+from System.Drawing import Color
+from System.Drawing import Bitmap
 from ..Types import GH_Point2D
 from ..Types import GH_Point3D
 from ..Types import GH_Point4D
@@ -974,6 +1012,17 @@ class GH_IReader:
     def TryGetVersion(self, item_name: str, item_index: int, value: GH_Version) -> Tuple[bool, GH_Version]: ...
 
 
+from System import Decimal
+from System import DateTime
+from System import Guid
+from System.Drawing import Point
+from System.Drawing import PointF
+from System.Drawing import Size
+from System.Drawing import SizeF
+from System.Drawing import Rectangle
+from System.Drawing import RectangleF
+from System.Drawing import Color
+from System.Drawing import Bitmap
 from ..Types import GH_Point2D
 from ..Types import GH_Point3D
 from ..Types import GH_Point4D
@@ -1126,6 +1175,8 @@ class GH_IWriter:
     def SetVersion(self, item_name: str, item_index: int, major: int, minor: int, revision: int) -> None: ...
 
 
+from System.Xml import XmlWriter
+from System.Xml import XmlNode
 class GH_IXmlSupport:
     @overload
     def Read(self, node: XmlNode) -> None: ...
@@ -1133,7 +1184,23 @@ class GH_IXmlSupport:
     def Write(self, writer: XmlWriter) -> None: ...
 
 
+from System.Collections.Generic import List
 from ..Types import GH_Item
+from System.IO import BinaryWriter
+from System.IO import BinaryReader
+from System.Xml import XmlWriter
+from System.Xml import XmlNode
+from System import Decimal
+from System import DateTime
+from System import Guid
+from System.Drawing import Point
+from System.Drawing import PointF
+from System.Drawing import Size
+from System.Drawing import SizeF
+from System.Drawing import Rectangle
+from System.Drawing import RectangleF
+from System.Drawing import Color
+from System.Drawing import Bitmap
 from ..Types import GH_Point2D
 from ..Types import GH_Point3D
 from ..Types import GH_Point4D

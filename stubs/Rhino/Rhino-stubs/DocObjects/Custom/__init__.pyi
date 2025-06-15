@@ -1,10 +1,9 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 
 
+from System import Guid
 class ClassIdAttribute:
     @overload
     def __init__(self, id: str): ...
@@ -28,6 +27,8 @@ class ClassIdAttribute:
 
 from ...Geometry import Brep
 from ...Geometry import ComponentIndex
+from System import Guid
+from System import IConvertible
 from ...Display import RhinoViewport
 from .. import RhinoDoc
 from ...Geometry import GeometryBase
@@ -42,12 +43,15 @@ from ...Display import DisplayPipelineAttributes
 from ...Render import RenderPrimitiveList
 from ...Render.CustomRenderMeshes import Flags
 from ...PlugIns import PlugIn
+from System.Collections.Generic import List
 from ...Render.CustomRenderMeshes import RenderMeshes
 from ...Geometry import BoundingBox
 from ...Render import TextureMapping
 from ...Render import RenderMaterial
 from ...Geometry import ComponentStatus
 from ...Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ...FileIO import SerializationOptions
 class CustomBrepObject(BrepObject):
     @overload
@@ -339,6 +343,8 @@ class CustomBrepObject(BrepObject):
 from ...Geometry import Curve
 from ...Display import RhinoViewport
 from ...Geometry import ComponentIndex
+from System import Guid
+from System import IConvertible
 from .. import RhinoDoc
 from ...Geometry import GeometryBase
 from ...Display import VisualAnalysisMode
@@ -352,12 +358,15 @@ from ...Display import DisplayPipelineAttributes
 from ...Render import RenderPrimitiveList
 from ...Render.CustomRenderMeshes import Flags
 from ...PlugIns import PlugIn
+from System.Collections.Generic import List
 from ...Render.CustomRenderMeshes import RenderMeshes
 from ...Geometry import BoundingBox
 from ...Render import TextureMapping
 from ...Render import RenderMaterial
 from ...Geometry import ComponentStatus
 from ...Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ...FileIO import SerializationOptions
 class CustomCurveObject(CurveObject):
     @overload
@@ -655,7 +664,9 @@ class CustomCurveObject(CurveObject):
 from ...Geometry import Point3d
 from ...Geometry import Transform
 from ...Geometry import Vector3d
+from System import Guid
 from ...Geometry import ComponentIndex
+from System import IConvertible
 from ...Display import RhinoViewport
 from .. import RhinoDoc
 from ...Geometry import GeometryBase
@@ -669,12 +680,15 @@ from ...Display import DisplayPipelineAttributes
 from ...Render import RenderPrimitiveList
 from ...Render.CustomRenderMeshes import Flags
 from ...PlugIns import PlugIn
+from System.Collections.Generic import List
 from ...Render.CustomRenderMeshes import RenderMeshes
 from ...Geometry import BoundingBox
 from ...Render import TextureMapping
 from ...Render import RenderMaterial
 from ...Geometry import ComponentStatus
 from ...Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ...FileIO import SerializationOptions
 class CustomGripObject(GripObject):
     @overload
@@ -1011,6 +1025,8 @@ class CustomGripObject(GripObject):
 
 from ...Geometry import Mesh
 from ...Geometry import ComponentIndex
+from System import Guid
+from System import IConvertible
 from ...Display import RhinoViewport
 from .. import RhinoDoc
 from ...Geometry import GeometryBase
@@ -1025,12 +1041,15 @@ from ...Display import DisplayPipelineAttributes
 from ...Render import RenderPrimitiveList
 from ...Render.CustomRenderMeshes import Flags
 from ...PlugIns import PlugIn
+from System.Collections.Generic import List
 from ...Render.CustomRenderMeshes import RenderMeshes
 from ...Geometry import BoundingBox
 from ...Render import TextureMapping
 from ...Render import RenderMaterial
 from ...Geometry import ComponentStatus
 from ...Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ...FileIO import SerializationOptions
 class CustomMeshObject(MeshObject):
     @overload
@@ -1356,6 +1375,8 @@ class CustomObjectGrips:
 
 from ...Geometry import Point
 from ...Geometry import ComponentIndex
+from System import Guid
+from System import IConvertible
 from ...Display import RhinoViewport
 from .. import RhinoDoc
 from ...Geometry import GeometryBase
@@ -1370,12 +1391,15 @@ from ...Display import DisplayPipelineAttributes
 from ...Render import RenderPrimitiveList
 from ...Render.CustomRenderMeshes import Flags
 from ...PlugIns import PlugIn
+from System.Collections.Generic import List
 from ...Render.CustomRenderMeshes import RenderMeshes
 from ...Geometry import BoundingBox
 from ...Render import TextureMapping
 from ...Render import RenderMaterial
 from ...Geometry import ComponentStatus
 from ...Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ...FileIO import SerializationOptions
 class CustomPointObject(PointObject):
     @overload
@@ -1666,6 +1690,7 @@ class CustomPointObject(PointObject):
     def UnselectAllSubObjects(self) -> int: ...
 
 
+from System.Drawing import Color
 from ...Geometry import Line
 from ...Geometry import Point3d
 from ...Display import RhinoViewport
@@ -1738,6 +1763,12 @@ class GripStatus:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class TurnOnGripsEventHandler:
     @overload
     def __init__(self, object: object, method: IntPtr): ...
@@ -1769,6 +1800,7 @@ class TurnOnGripsEventHandler:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
 from ...Geometry import Transform
 class UnknownUserData(UserData):
     @overload
@@ -1792,6 +1824,7 @@ class UnknownUserData(UserData):
 
 
 from ...Runtime import CommonObject
+from System import Guid
 from ...Geometry import Transform
 class UserData:
     @overload
@@ -1821,6 +1854,8 @@ class UserData:
     def ToString(self) -> str: ...
 
 
+from System import Guid
+from System.Collections.Generic import IEnumerator
 class UserDataList:
     def __iter__(self) -> Iterator[UserData]: ...
     @overload

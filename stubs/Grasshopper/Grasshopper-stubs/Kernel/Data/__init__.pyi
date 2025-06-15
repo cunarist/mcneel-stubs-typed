@@ -1,12 +1,15 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 
 
 
 
+from System.Collections import IDictionary
+from System import Exception
+from System.Reflection import MethodBase
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 class GH_BracketMismatchException:
     @overload
     def __init__(self): ...
@@ -52,6 +55,7 @@ class GH_BracketMismatchException:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import List
 from .. import DataTree
 class GH_DirtyCaster:
     @overload
@@ -84,6 +88,9 @@ class GH_GraftMode(Enum):
     GraftAll = 3
 
 
+from System.Collections import IList
+from System.Collections.Generic import List
+from System.Drawing import Graphics
 class GH_GraphicBranch:
     @overload
     def __init__(self): ...
@@ -163,6 +170,8 @@ class GH_GraphicBranch:
 
 
 from ...GUI.Canvas import GH_Viewport
+from System.Drawing import PointF
+from System.Drawing import RectangleF
 class GH_GraphicTreeDisplayArgs:
     @overload
     def __init__(self): ...
@@ -219,6 +228,8 @@ class GH_GraphicTreeDisplayArgs:
     def Visible(self, P0: PointF, P1: PointF, P2: PointF, P3: PointF, fuzz: float) -> bool: ...
 
 
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 class GH_IndexRange:
     @overload
     def __init__(self, index: int): ...
@@ -269,6 +280,8 @@ class GH_IndexRange:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 class GH_IndexRanges:
     @overload
     def __init__(self): ...
@@ -329,6 +342,7 @@ class GH_IndexRuleSet:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import List
 from ..Expressions import GH_ExpressionParser
 from .. import DataTree
 class GH_Lexer:
@@ -389,6 +403,8 @@ class GH_LexerCombo:
     def ToString(self) -> str: ...
 
 
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 class GH_Path:
     @overload
     def __init__(self): ...
@@ -467,6 +483,8 @@ class GH_Path:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from System.Collections.Generic import IEnumerable
+from System.Collections.Generic import List
 class GH_PathOffset:
     @overload
     def __init__(self): ...
@@ -545,6 +563,7 @@ class GH_RuleAnyNumbers:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import IEnumerable
 class GH_RuleComplex:
     @overload
     def __init__(self, fragments: Iterable[IGH_Rule], operators: Iterable[GH_RuleOperator]): ...
@@ -564,6 +583,7 @@ class GH_RuleComplex:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import IEnumerable
 class GH_RuleGroup:
     @overload
     def __init__(self, numbers: Iterable[int], negate: bool): ...
@@ -643,6 +663,7 @@ class GH_RuleResult(Enum):
     Exclude = -1
 
 
+from System.Collections.Generic import IEnumerable
 class GH_RuleSequence:
     @overload
     def __init__(self, sequence: Iterable[int], limit: int, negate: bool): ...
@@ -668,6 +689,11 @@ class GH_SimplificationMode(Enum):
     CollapseAllOverlaps = 2
 
 
+from System.Collections import IDictionary
+from System import Exception
+from System.Reflection import MethodBase
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 class GH_StringMismatchException:
     @overload
     def __init__(self): ...
@@ -711,6 +737,7 @@ class GH_StringMismatchException:
 
 
 
+from System.Collections.Generic import List
 class GH_TreeBuilder:
     @overload
     def __init__(self): ...
@@ -730,6 +757,8 @@ class GH_TreeBuilder:
     def ToString(self) -> str: ...
 
 
+from System import Char
+from System.Collections.Generic import List
 class GH_TreeFilter:
     @overload
     def __init__(self): ...
@@ -789,6 +818,8 @@ class GH_TreeIndex:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import IEnumerable
+from System import Char
 class GH_TreeRules:
     @overload
     def __init__(self, pathRules: Iterable[IGH_Rule], indexRule: IGH_Rule): ...
@@ -854,6 +885,8 @@ class IGH_Rule:
     def Notation(self) -> str: ...
 
 
+from System.Collections.Generic import IList
+from System.Collections import IList
 class IGH_Structure:
     @overload
     def AllData(self, skipNulls: bool) -> IGH_StructureEnumerator: ...

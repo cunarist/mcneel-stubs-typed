@@ -1,10 +1,10 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 
 
+from System import IntPtr
+from System import Guid
 from .. import RhinoDoc
 from ...FileIO import BinaryArchiveWriter
 from ...FileIO import BinaryArchiveReader

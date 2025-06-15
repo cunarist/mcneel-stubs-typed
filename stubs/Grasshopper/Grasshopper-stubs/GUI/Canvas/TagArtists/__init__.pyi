@@ -1,10 +1,9 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 
 
+from System import Guid
 class GH_TagArtist:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -21,6 +20,8 @@ class GH_TagArtist:
 
 
 from ....Kernel import IGH_Param
+from System.Drawing import Color
+from System import Guid
 class GH_TagArtist_WirePainter(GH_TagArtist):
     @overload
     def __init__(self, source: IGH_Param, target: IGH_Param, colour: Color, width: int): ...
@@ -40,6 +41,7 @@ class GH_TagArtist_WirePainter(GH_TagArtist):
     def ToString(self) -> str: ...
 
 
+from System import Guid
 class IGH_TagArtist:
     @property
     def ID(self) -> Guid: ...

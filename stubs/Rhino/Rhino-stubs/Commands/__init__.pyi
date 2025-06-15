@@ -1,11 +1,11 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 
 
+from System import Guid
 from ..PlugIns import PlugIn
+from System import EventHandler
 class Command:
     @overload
     @staticmethod
@@ -85,6 +85,7 @@ class Command:
     def ToString(self) -> str: ...
 
 
+from System import Guid
 class CommandEventArgs:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -133,6 +134,7 @@ class CommandStyleAttribute:
     def ToString(self) -> str: ...
 
 
+from System import Guid
 class CustomUndoEventArgs:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -187,6 +189,12 @@ class Result(Enum):
     ExitRhino = 268435455
 
 
+from System import IntPtr
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class RunCommandDelegate:
     @overload
     def __init__(self, object: object, method: IntPtr): ...
@@ -224,6 +232,7 @@ class RunMode(Enum):
 
 
 from ..PlugIns import PlugIn
+from System import Guid
 class SelCommand(Command):
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -267,6 +276,7 @@ class Style(Enum):
 
 
 from ..PlugIns import PlugIn
+from System import Guid
 class TransformCommand(Command):
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -288,6 +298,7 @@ class TransformCommand(Command):
     def ToString(self) -> str: ...
 
 
+from System import Guid
 class UndoRedoEventArgs:
     @overload
     def Equals(self, obj: object) -> bool: ...

@@ -1,13 +1,14 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 import MetaBall
 
 __all__ = ['MetaBall']
 
 
+from System.Drawing import PointF
+from System.Drawing import SizeF
+from System.Drawing import RectangleF
 class BezierF:
     @overload
     def __init__(self, p0: PointF, p1: PointF, p2: PointF, p3: PointF): ...

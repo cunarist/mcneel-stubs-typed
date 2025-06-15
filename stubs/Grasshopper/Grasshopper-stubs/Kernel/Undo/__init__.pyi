@@ -1,13 +1,13 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 import Actions
 
 __all__ = ['Actions']
 
 
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 class GH_ArchivedUndoAction(GH_UndoAction):
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -33,6 +33,8 @@ class GH_ArchivedUndoAction(GH_UndoAction):
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 class GH_ObjectUndoAction(GH_UndoAction):
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -58,6 +60,8 @@ class GH_ObjectUndoAction(GH_UndoAction):
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 class GH_UndoAction:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -83,6 +87,11 @@ class GH_UndoAction:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from System.Collections import IDictionary
+from System import Exception
+from System.Reflection import MethodBase
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 class GH_UndoException:
     @overload
     def __init__(self, message: str): ...
@@ -124,6 +133,10 @@ class GH_UndoException:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import IEnumerable
+from System import Guid
+from System import DateTime
+from System.Collections.Generic import IList
 class GH_UndoRecord:
     @overload
     def __init__(self): ...
@@ -169,6 +182,8 @@ class GH_UndoRecord:
     def Undo(self, doc: GH_Document) -> None: ...
 
 
+from System.Collections.Generic import List
+from System import Guid
 class GH_UndoServer:
     @overload
     def __init__(self, owner: GH_Document): ...

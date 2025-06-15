@@ -1,7 +1,5 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 import Transforms
 
@@ -117,7 +115,22 @@ class Complex:
     def ToString(self) -> str: ...
 
 
+from Rhino.Geometry import AngularDimension
 from ...Rhinoceros.Annotations import ModelAnnotationStyle
+from System import Guid
+from Rhino.Geometry import Arc
+from Rhino.Geometry import Point3d
+from Rhino.Geometry import Line
+from Rhino.Geometry import Dimension
+from Rhino.Geometry import BoundingBox
+from Rhino.Geometry import Transform
+from Rhino.DocObjects import DimensionStyle
+from Rhino import RhinoDoc
+from Rhino.Geometry import SpaceMorph
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from Rhino.DocObjects import ObjectAttributes
+from Rhino.Geometry import AnnotationBase
 class GH_AngularDimension(GH_Dimension):
     @overload
     def __init__(self): ...
@@ -227,7 +240,17 @@ class GH_AngularDimension(GH_Dimension):
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from Rhino.Geometry import BoundingBox
+from Rhino.Geometry import Transform
+from Rhino.DocObjects import DimensionStyle
 from ...Rhinoceros.Annotations import ModelAnnotationStyle
+from System import Guid
+from Rhino import RhinoDoc
+from Rhino.Geometry import SpaceMorph
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from Rhino.DocObjects import ObjectAttributes
+from Rhino.Geometry import AnnotationBase
 class GH_AnnotationBase:
     @overload
     def BakeGeometry(self, doc: RhinoDoc, att: ObjectAttributes, obj_guid: Guid) -> Tuple[bool, Guid]: ...
@@ -309,6 +332,15 @@ class GH_AnnotationBase:
 
 
 
+from Rhino.Geometry import Arc
+from Rhino.Geometry import BoundingBox
+from Rhino.Geometry import Transform
+from Rhino.Geometry import SpaceMorph
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from Rhino import RhinoDoc
+from Rhino.DocObjects import ObjectAttributes
+from System import Guid
 class GH_Arc:
     @overload
     def __init__(self): ...
@@ -388,6 +420,13 @@ class GH_Arc:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from Rhino.Geometry import Point3d
+from Rhino.Geometry import Vector3d
+from System.Drawing import Color
+from Rhino.Geometry import Interval
+from Rhino.Geometry import Matrix
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 class GH_Boolean:
     @overload
     def __init__(self): ...
@@ -461,6 +500,20 @@ class GH_Boolean:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from Rhino.Geometry import Box
+from Rhino.Geometry import BoundingBox
+from System import Guid
+from Rhino.Geometry import Transform
+from Rhino import RhinoDoc
+from Rhino.Geometry import SpaceMorph
+from Rhino.Geometry import Brep
+from Rhino.Geometry import Mesh
+from Rhino.Geometry import Curve
+from Rhino.Geometry import Point
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from Rhino.DocObjects import ObjectAttributes
+from Rhino.Render import RenderMaterial
 class GH_Box:
     @overload
     def __init__(self): ...
@@ -610,6 +663,16 @@ class GH_BoxProxy:
     def ToString(self) -> str: ...
 
 
+from Rhino.Geometry import Brep
+from System import Guid
+from Rhino.Geometry import BoundingBox
+from Rhino.Geometry import Transform
+from Rhino import RhinoDoc
+from Rhino.Geometry import SpaceMorph
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from Rhino.DocObjects import ObjectAttributes
+from Rhino.Render import RenderMaterial
 class GH_Brep:
     @overload
     def __init__(self): ...
@@ -753,7 +816,19 @@ class GH_BrepProxy:
     def ToString(self) -> str: ...
 
 
+from Rhino.Geometry import Centermark
 from ...Rhinoceros.Annotations import ModelAnnotationStyle
+from System import Guid
+from Rhino.Geometry import Dimension
+from Rhino.Geometry import BoundingBox
+from Rhino.Geometry import Transform
+from Rhino.DocObjects import DimensionStyle
+from Rhino import RhinoDoc
+from Rhino.Geometry import SpaceMorph
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from Rhino.DocObjects import ObjectAttributes
+from Rhino.Geometry import AnnotationBase
 class GH_Centermark(GH_Dimension):
     @overload
     def __init__(self): ...
@@ -853,6 +928,15 @@ class GH_Centermark(GH_Dimension):
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from Rhino.Geometry import Circle
+from Rhino.Geometry import BoundingBox
+from Rhino.Geometry import Transform
+from Rhino.Geometry import SpaceMorph
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from Rhino import RhinoDoc
+from Rhino.DocObjects import ObjectAttributes
+from System import Guid
 class GH_Circle:
     @overload
     def __init__(self): ...
@@ -983,6 +1067,13 @@ class GH_CircleProxy:
     def ToString(self) -> str: ...
 
 
+from System.Drawing import Color
+from Rhino.Geometry import Matrix
+from Rhino.Geometry import Point3d
+from Rhino.Geometry import Vector3d
+from Rhino.Geometry import Interval
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 class GH_Colour:
     @overload
     def __init__(self): ...
@@ -1056,6 +1147,13 @@ class GH_Colour:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from Rhino.Geometry import Matrix
+from Rhino.Geometry import Point3d
+from Rhino.Geometry import Vector3d
+from System.Drawing import Color
+from Rhino.Geometry import Interval
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 class GH_ComplexNumber:
     @overload
     def __init__(self): ...
@@ -1129,6 +1227,9 @@ class GH_ComplexNumber:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from System.Globalization import CultureInfo
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 class GH_Culture:
     @overload
     def __init__(self): ...
@@ -1174,6 +1275,15 @@ class GH_Culture:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from Rhino.Geometry import Curve
+from System import Guid
+from Rhino.Geometry import BoundingBox
+from Rhino.Geometry import Transform
+from Rhino import RhinoDoc
+from Rhino.Geometry import SpaceMorph
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from Rhino.DocObjects import ObjectAttributes
 class GH_Curve:
     @overload
     def __init__(self): ...
@@ -1316,6 +1426,14 @@ class GH_CurveProxy:
     def ToString(self) -> str: ...
 
 
+from Rhino.Geometry import DetailView
+from System import Guid
+from Rhino.Geometry import BoundingBox
+from Rhino.Geometry import Transform
+from Rhino import RhinoDoc
+from Rhino.Geometry import SpaceMorph
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 class GH_DetailView:
     @overload
     def __init__(self): ...
@@ -1395,7 +1513,18 @@ class GH_DifferentialSolver(Enum):
     RungeKutta4 = 4
 
 
+from System import Guid
+from Rhino.Geometry import Dimension
+from Rhino.Geometry import BoundingBox
+from Rhino.Geometry import Transform
+from Rhino.DocObjects import DimensionStyle
 from ...Rhinoceros.Annotations import ModelAnnotationStyle
+from Rhino import RhinoDoc
+from Rhino.Geometry import SpaceMorph
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from Rhino.DocObjects import ObjectAttributes
+from Rhino.Geometry import AnnotationBase
 class GH_Dimension(GH_AnnotationBase):
     @overload
     def __init__(self): ...
@@ -1483,6 +1612,7 @@ class GH_Dimension(GH_AnnotationBase):
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from Rhino.Geometry import AnnotationType
 class GH_DimensionProxy:
     @overload
     def __init__(self, Value: GH_Dimension): ...
@@ -1530,6 +1660,16 @@ class GH_DimensionProxy:
     def ToString(self) -> str: ...
 
 
+from Rhino.Geometry import Extrusion
+from System import Guid
+from Rhino.Geometry import BoundingBox
+from Rhino.Geometry import Transform
+from Rhino import RhinoDoc
+from Rhino.Geometry import SpaceMorph
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from Rhino.DocObjects import ObjectAttributes
+from Rhino.Render import RenderMaterial
 class GH_Extrusion:
     @overload
     def __init__(self): ...
@@ -1664,6 +1804,13 @@ class GH_ExtrusionProxy:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import List
+from Rhino.Geometry import Point3d
+from Rhino.Geometry import Vector3d
+from Rhino.Collections import Point3dList
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from Rhino.Geometry import BoundingBox
 class GH_Field:
     @overload
     def __init__(self): ...
@@ -1719,6 +1866,13 @@ class GH_Field:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
+from Rhino.Geometry import BoundingBox
+from Rhino.Geometry import Box
+from Rhino.Geometry import Point3d
+from Rhino.Geometry import Vector3d
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 class GH_FieldElement:
     @overload
     def DrawViewportMeshes(self, args: GH_PreviewMeshArgs) -> None: ...
@@ -1760,6 +1914,13 @@ class GH_FieldElement:
 
 
 
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from Rhino.Geometry import BoundingBox
+from Rhino.Geometry import Transform
+from Rhino import RhinoDoc
+from System import Guid
+from Rhino.Geometry import SpaceMorph
 class GH_GeometricGooWrapper:
     @overload
     def __init__(self): ...
@@ -1823,6 +1984,16 @@ class GH_GeometricGooWrapper:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from System.Collections.Generic import List
+from Rhino.Geometry import Transform
+from Rhino.Geometry import BoundingBox
+from System import Guid
+from Rhino import RhinoDoc
+from Rhino.Geometry import SpaceMorph
+from Rhino.DocObjects import ObjectAttributes
+from Rhino.Render import RenderMaterial
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 class GH_GeometryGroup:
     @overload
     def __init__(self): ...
@@ -1937,6 +2108,9 @@ class GH_GeometryGroupProxy:
 
 
 
+from System import Guid
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 class GH_Guid:
     @overload
     def __init__(self): ...
@@ -1982,7 +2156,17 @@ class GH_Guid:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from Rhino.Geometry import Hatch
 from ...Rhinoceros.Drafting import ModelHatchPattern
+from System import Guid
+from Rhino.Geometry import BoundingBox
+from Rhino.Geometry import Transform
+from System.Drawing import Color
+from Rhino import RhinoDoc
+from Rhino.Geometry import SpaceMorph
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from Rhino.DocObjects import ObjectAttributes
 class GH_Hatch:
     @overload
     def __init__(self): ...
@@ -2124,7 +2308,16 @@ class GH_HatchProxy:
     def ToString(self) -> str: ...
 
 
+from Rhino.Geometry import Transform
+from System import Guid
+from Rhino.Geometry import InstanceReferenceGeometry
 from ...Rhinoceros.Model import ModelInstanceDefinition
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from Rhino.Geometry import SpaceMorph
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from Rhino.DocObjects import ObjectAttributes
 class GH_InstanceReference:
     @overload
     def __init__(self): ...
@@ -2257,6 +2450,13 @@ class GH_InstanceReferenceProxy:
     def ToString(self) -> str: ...
 
 
+from Rhino.Geometry import Matrix
+from Rhino.Geometry import Point3d
+from Rhino.Geometry import Vector3d
+from System.Drawing import Color
+from Rhino.Geometry import Interval
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 class GH_Integer:
     @overload
     def __init__(self): ...
@@ -2330,6 +2530,13 @@ class GH_Integer:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from Rhino.Geometry import Interval
+from System.Drawing import Color
+from Rhino.Geometry import Matrix
+from Rhino.Geometry import Point3d
+from Rhino.Geometry import Vector3d
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 class GH_Interval:
     @overload
     def __init__(self): ...
@@ -2403,6 +2610,8 @@ class GH_Interval:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 class GH_Interval2D:
     @overload
     def __init__(self): ...
@@ -2525,7 +2734,18 @@ class GH_Interval2DProxy:
     def ToString(self) -> str: ...
 
 
+from Rhino.Geometry import Leader
 from ...Rhinoceros.Annotations import ModelAnnotationStyle
+from System import Guid
+from Rhino.Geometry import BoundingBox
+from Rhino.Geometry import Transform
+from Rhino.DocObjects import DimensionStyle
+from Rhino import RhinoDoc
+from Rhino.Geometry import SpaceMorph
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from Rhino.DocObjects import ObjectAttributes
+from Rhino.Geometry import AnnotationBase
 class GH_Leader(GH_AnnotationBase):
     @overload
     def __init__(self): ...
@@ -2621,6 +2841,15 @@ class GH_Leader(GH_AnnotationBase):
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from Rhino.Geometry import Light
+from System import Guid
+from Rhino.Geometry import BoundingBox
+from Rhino.Geometry import Transform
+from Rhino import RhinoDoc
+from Rhino.Geometry import SpaceMorph
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from Rhino.DocObjects import ObjectAttributes
 class GH_Light:
     @overload
     def __init__(self): ...
@@ -2700,6 +2929,15 @@ class GH_Light:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from Rhino.Geometry import Line
+from Rhino.Geometry import BoundingBox
+from Rhino.Geometry import Transform
+from Rhino.Geometry import SpaceMorph
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from Rhino import RhinoDoc
+from Rhino.DocObjects import ObjectAttributes
+from System import Guid
 class GH_Line:
     @overload
     def __init__(self): ...
@@ -2777,7 +3015,19 @@ class GH_Line:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from Rhino.Geometry import LinearDimension
 from ...Rhinoceros.Annotations import ModelAnnotationStyle
+from System import Guid
+from Rhino.Geometry import Dimension
+from Rhino.Geometry import BoundingBox
+from Rhino.Geometry import Transform
+from Rhino.DocObjects import DimensionStyle
+from Rhino import RhinoDoc
+from Rhino.Geometry import SpaceMorph
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from Rhino.DocObjects import ObjectAttributes
+from Rhino.Geometry import AnnotationBase
 class GH_LinearDimension(GH_Dimension):
     @overload
     def __init__(self): ...
@@ -2877,6 +3127,14 @@ class GH_LinearDimension(GH_Dimension):
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from Rhino.Geometry import Line
+from System import Guid
+from Rhino.Geometry import BoundingBox
+from Rhino.Geometry import Point3d
+from Rhino.Geometry import Vector3d
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from Rhino.Geometry import Box
 class GH_LineCharge(GH_FieldElement):
     @overload
     def __init__(self): ...
@@ -2989,6 +3247,8 @@ class GH_LineProxy:
     def ToString(self) -> str: ...
 
 
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 class GH_LonLatCoordinate:
     @overload
     def __init__(self): ...
@@ -3038,6 +3298,13 @@ class GH_LonLatCoordinate:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
+from System.Drawing import Color
+from Rhino.Display import DisplayMaterial
+from Rhino.Render import RenderMaterial
+from Rhino.DocObjects import Material
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 class GH_Material:
     @overload
     def __init__(self): ...
@@ -3113,6 +3380,7 @@ class GH_Material:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from System.Drawing import Color
 class GH_Material_Proxy:
     @overload
     def __init__(self, nValue: GH_Material): ...
@@ -3170,6 +3438,13 @@ class GH_Material_Proxy:
     def ToString(self) -> str: ...
 
 
+from Rhino.Geometry import Matrix
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from Rhino.Geometry import Point3d
+from Rhino.Geometry import Vector3d
+from System.Drawing import Color
+from Rhino.Geometry import Interval
 class GH_Matrix:
     @overload
     def __init__(self): ...
@@ -3246,6 +3521,16 @@ class GH_Matrix:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from Rhino.Geometry import Mesh
+from System import Guid
+from Rhino.Geometry import BoundingBox
+from Rhino.Geometry import Transform
+from Rhino import RhinoDoc
+from Rhino.Geometry import SpaceMorph
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from Rhino.DocObjects import ObjectAttributes
+from Rhino.Render import RenderMaterial
 class GH_Mesh:
     @overload
     def __init__(self): ...
@@ -3327,6 +3612,9 @@ class GH_Mesh:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from Rhino.Geometry import MeshFace
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 class GH_MeshFace:
     @overload
     def __init__(self): ...
@@ -3429,6 +3717,9 @@ class GH_MeshFaceProxy:
     def ToString(self) -> str: ...
 
 
+from Rhino.Geometry import MeshingParameters
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 class GH_MeshingParameters:
     @overload
     def __init__(self): ...
@@ -3527,6 +3818,13 @@ class GH_MeshProxy:
     def ToString(self) -> str: ...
 
 
+from Rhino.Geometry import Matrix
+from Rhino.Geometry import Point3d
+from Rhino.Geometry import Vector3d
+from System.Drawing import Color
+from Rhino.Geometry import Interval
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 class GH_Number:
     @overload
     def __init__(self): ...
@@ -3600,6 +3898,12 @@ class GH_Number:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from Rhino import RhinoDoc
+from Rhino.DocObjects import ObjectAttributes
+from System import Guid
+from Rhino.Geometry import BoundingBox
+from GH_IO.Serialization import GH_IReader
+from GH_IO.Serialization import GH_IWriter
 class GH_ObjectWrapper:
     @overload
     def __init__(self): ...
@@ -3651,7 +3955,19 @@ class GH_ObjectWrapper:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from Rhino.Geometry import OrdinateDimension
 from ...Rhinoceros.Annotations import ModelAnnotationStyle
+from System import Guid
+from Rhino.Geometry import Dimension
+from Rhino.Geometry import BoundingBox
+from Rhino.Geometry import Transform
+from Rhino.DocObjects import DimensionStyle
+from Rhino import RhinoDoc
+from Rhino.Geometry import SpaceMorph
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from Rhino.DocObjects import ObjectAttributes
+from Rhino.Geometry import AnnotationBase
 class GH_OrdinateDimension(GH_Dimension):
     @overload
     def __init__(self): ...
@@ -3751,6 +4067,17 @@ class GH_OrdinateDimension(GH_Dimension):
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from Rhino.Geometry import Plane
+from System import Guid
+from Rhino.Geometry import BoundingBox
+from Rhino.Geometry import Transform
+from Rhino.Geometry import SpaceMorph
+from Rhino import RhinoDoc
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from Rhino.DocObjects import ObjectAttributes
+from Rhino.Display import DisplayPipeline
+from System.Drawing import Color
 class GH_Plane:
     @overload
     def __init__(self): ...
@@ -3890,6 +4217,25 @@ class GH_PlaneProxy:
     def ToString(self) -> str: ...
 
 
+from Rhino.Geometry import Point3d
+from System import Guid
+from Rhino.Geometry import Curve
+from Rhino.Geometry import Surface
+from System.Windows.Forms import DialogResult
+from System.Windows.Forms import IWin32Window
+from Rhino import RhinoDoc
+from Rhino.DocObjects import RhinoObject
+from Rhino.Geometry import BrepFace
+from Rhino.Geometry import BoundingBox
+from Rhino.Geometry import Transform
+from Rhino.Geometry import SpaceMorph
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from Rhino.Geometry import Matrix
+from Rhino.Geometry import Vector3d
+from System.Drawing import Color
+from Rhino.Geometry import Interval
+from Rhino.DocObjects import ObjectAttributes
 class GH_Point:
     @overload
     def __init__(self): ...
@@ -4045,6 +4391,13 @@ class GH_Point:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from Rhino.Geometry import Point3d
+from System import Guid
+from Rhino.Geometry import BoundingBox
+from Rhino.Geometry import Vector3d
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from Rhino.Geometry import Box
 class GH_PointCharge(GH_FieldElement):
     @overload
     def __init__(self): ...
@@ -4098,6 +4451,15 @@ class GH_PointCharge(GH_FieldElement):
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from Rhino.Geometry import PointCloud
+from System import Guid
+from Rhino.Geometry import BoundingBox
+from Rhino.Geometry import Transform
+from Rhino import RhinoDoc
+from Rhino.Geometry import SpaceMorph
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from Rhino.DocObjects import ObjectAttributes
 class GH_PointCloud:
     @overload
     def __init__(self): ...
@@ -4241,6 +4603,10 @@ class GH_PointProxy:
     def ToString(self) -> str: ...
 
 
+from Rhino.Geometry import Curve
+from Rhino.Geometry import Surface
+from Rhino.Geometry import Point3d
+from System import Guid
 class GH_PointRefData:
     @overload
     def __init__(self): ...
@@ -4279,6 +4645,9 @@ class GH_PointRefType(Enum):
     srf_param = 20
 
 
+from System.Collections.Generic import IEnumerable
+from Rhino.Geometry import Plane
+from System.Collections.Generic import List
 class GH_PointUtil:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -4302,6 +4671,9 @@ class GH_PointUtil:
     def ToString(self) -> str: ...
 
 
+from System import Predicate
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 class GH_Predicate:
     @overload
     def __init__(self, predicate: Predicate, description: str): ...
@@ -4372,7 +4744,19 @@ class GH_QuickCastType(Enum):
     matrix = 9
 
 
+from Rhino.Geometry import RadialDimension
 from ...Rhinoceros.Annotations import ModelAnnotationStyle
+from System import Guid
+from Rhino.Geometry import Dimension
+from Rhino.Geometry import BoundingBox
+from Rhino.Geometry import Transform
+from Rhino.DocObjects import DimensionStyle
+from Rhino import RhinoDoc
+from Rhino.Geometry import SpaceMorph
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from Rhino.DocObjects import ObjectAttributes
+from Rhino.Geometry import AnnotationBase
 class GH_RadialDimension(GH_Dimension):
     @overload
     def __init__(self): ...
@@ -4472,6 +4856,15 @@ class GH_RadialDimension(GH_Dimension):
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from Rhino.Geometry import Rectangle3d
+from Rhino.Geometry import BoundingBox
+from Rhino.Geometry import Transform
+from Rhino.Geometry import SpaceMorph
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from Rhino import RhinoDoc
+from Rhino.DocObjects import ObjectAttributes
+from System import Guid
 class GH_Rectangle:
     @overload
     def __init__(self): ...
@@ -4603,6 +4996,14 @@ class GH_RectangleProxy:
     def ToString(self) -> str: ...
 
 
+from Rhino.Geometry import Plane
+from System import Guid
+from Rhino.Geometry import BoundingBox
+from Rhino.Geometry import Point3d
+from Rhino.Geometry import Vector3d
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from Rhino.Geometry import Box
 class GH_SpinForce(GH_FieldElement):
     @overload
     def __init__(self): ...
@@ -4660,6 +5061,13 @@ class GH_SpinForce(GH_FieldElement):
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from Rhino.Geometry import Matrix
+from Rhino.Geometry import Point3d
+from Rhino.Geometry import Vector3d
+from System.Drawing import Color
+from Rhino.Geometry import Interval
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 class GH_String:
     @overload
     def __init__(self): ...
@@ -4734,6 +5142,8 @@ class GH_String:
 
 
 from ..Data import GH_Path
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 class GH_StructurePath:
     @overload
     def __init__(self): ...
@@ -4779,6 +5189,16 @@ class GH_StructurePath:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from Rhino.Geometry import SubD
+from System import Guid
+from Rhino.Geometry import BoundingBox
+from Rhino.Geometry import Transform
+from Rhino import RhinoDoc
+from Rhino.Geometry import SpaceMorph
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from Rhino.DocObjects import ObjectAttributes
+from Rhino.Render import RenderMaterial
 class GH_SubD:
     @overload
     def __init__(self): ...
@@ -4915,6 +5335,18 @@ class GH_SubDProxy:
     def ToString(self) -> str: ...
 
 
+from Rhino.Geometry import Surface
+from Rhino.Geometry import Brep
+from System import Guid
+from Rhino.Geometry import BoundingBox
+from Rhino.Geometry import Transform
+from Rhino.Geometry import BrepFace
+from Rhino import RhinoDoc
+from Rhino.Geometry import SpaceMorph
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from Rhino.DocObjects import ObjectAttributes
+from Rhino.Render import RenderMaterial
 class GH_Surface:
     @overload
     def __init__(self): ...
@@ -5073,6 +5505,15 @@ class GH_SurfaceProxy:
     def ToString(self) -> str: ...
 
 
+from Rhino.Geometry import TextDot
+from System import Guid
+from Rhino.Geometry import BoundingBox
+from Rhino.Geometry import Transform
+from Rhino import RhinoDoc
+from Rhino.Geometry import SpaceMorph
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from Rhino.DocObjects import ObjectAttributes
 class GH_TextDot:
     @overload
     def __init__(self): ...
@@ -5198,7 +5639,18 @@ class GH_TextDotProxy:
     def ToString(self) -> str: ...
 
 
+from Rhino.Geometry import TextEntity
 from ...Rhinoceros.Annotations import ModelAnnotationStyle
+from System import Guid
+from Rhino.Geometry import BoundingBox
+from Rhino.Geometry import Transform
+from Rhino.DocObjects import DimensionStyle
+from Rhino import RhinoDoc
+from Rhino.Geometry import SpaceMorph
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from Rhino.DocObjects import ObjectAttributes
+from Rhino.Geometry import AnnotationBase
 class GH_TextEntity(GH_AnnotationBase):
     @overload
     def __init__(self): ...
@@ -5294,6 +5746,9 @@ class GH_TextEntity(GH_AnnotationBase):
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import DateTime
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 class GH_Time:
     @overload
     def __init__(self): ...
@@ -5340,6 +5795,10 @@ class GH_Time:
 
 
 from .Transforms import ITransform
+from Rhino.Geometry import Transform
+from System.Collections.Generic import List
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 class GH_Transform:
     @overload
     def __init__(self): ...
@@ -5391,6 +5850,13 @@ class GH_Transform:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from Rhino.Geometry import Vector3d
+from Rhino.Geometry import Matrix
+from Rhino.Geometry import Point3d
+from System.Drawing import Color
+from Rhino.Geometry import Interval
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 class GH_Vector:
     @overload
     def __init__(self): ...
@@ -5464,6 +5930,14 @@ class GH_Vector:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from Rhino.Geometry import Line
+from System import Guid
+from Rhino.Geometry import BoundingBox
+from Rhino.Geometry import Point3d
+from Rhino.Geometry import Vector3d
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from Rhino.Geometry import Box
 class GH_VectorForce(GH_FieldElement):
     @overload
     def __init__(self): ...
@@ -5562,6 +6036,11 @@ class GH_VectorProxy:
 
 
 
+from Rhino.Geometry import Point3d
+from Rhino.Geometry import Vector3d
+from System import Guid
+from Rhino.Geometry import BoundingBox
+from Rhino.Geometry import Box
 class IGH_FieldElement:
     @overload
     def Duplicate(self) -> IGH_FieldElement: ...
@@ -5583,6 +6062,11 @@ class IGH_FieldElement:
     def Limits(self, Value: Box) -> None: ...
 
 
+from Rhino.Geometry import BoundingBox
+from Rhino.Geometry import Transform
+from Rhino.Geometry import SpaceMorph
+from System import Guid
+from Rhino import RhinoDoc
 class IGH_GeometricGoo:
     @overload
     def ClearCaches(self) -> None: ...
@@ -5654,6 +6138,11 @@ class IGH_GooProxy:
     def UserString(self, Value: str) -> None: ...
 
 
+from System.Drawing import Color
+from Rhino.Geometry import Point3d
+from Rhino.Geometry import Vector3d
+from Rhino.Geometry import Matrix
+from Rhino.Geometry import Interval
 class IGH_QuickCast:
     @property
     def QC_Type(self) -> GH_QuickCastType: ...
@@ -5829,6 +6318,7 @@ class RhMesherSettings_Proxy:
     def ToString(self) -> str: ...
 
 
+from Rhino.Geometry import Interval
 class UVInterval:
     @overload
     def __init__(self, newU: Interval, newV: Interval): ...

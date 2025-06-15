@@ -1,15 +1,27 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 
 
 from ..DocObjects.Custom import UserData
+from System.Collections.Generic import IEnumerator
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..Geometry import Point3f
 from ..Geometry import Point3d
 from ..Geometry import Vector3d
+from System import Guid
 from ..Geometry import Plane
+from System import SByte
+from System.Collections.Generic import IEnumerable
+from System.Drawing import Color
+from System.Drawing import Point
+from System.Drawing import PointF
+from System.Drawing import Rectangle
+from System.Drawing import RectangleF
+from System.Drawing import Size
+from System.Drawing import SizeF
+from System.Drawing import Font
 from ..Geometry import Interval
 from ..Geometry import Point2d
 from ..Geometry import Point4d
@@ -264,12 +276,21 @@ class ArchivableDictionary:
     def TryGetVector3d(self, key: str) -> Tuple[bool, Vector3d]: ...
 
 
+from System.Collections.Generic import IEnumerable
 from ..Geometry import Line
 from ..Geometry import Circle
 from ..Geometry import Arc
 from ..Geometry import Ellipse
 from ..Geometry import Transform
 from ..Geometry import Curve
+from System.Collections import IEnumerable
+from System import Predicate
+from System.Collections.Generic import IComparer
+from System import Action
+from System import Comparison
+from System.Collections.ObjectModel import ReadOnlyCollection
+from System import Converter
+from System.Collections.Generic import IEnumerator
 class CurveList:
     @overload
     def __init__(self): ...
@@ -436,9 +457,19 @@ class CurveList:
 
 
 
+from System.Collections.Generic import IEnumerable
 from ..Geometry import BoundingBox
 from ..Geometry import Point3d
 from ..Geometry import Transform
+from System.Collections.Generic import IList
+from System.Collections import IEnumerable
+from System import Predicate
+from System.Collections.Generic import IComparer
+from System import Action
+from System import Comparison
+from System.Collections.ObjectModel import ReadOnlyCollection
+from System import Converter
+from System.Collections.Generic import IEnumerator
 class Point3dList:
     @overload
     def __init__(self): ...
@@ -614,6 +645,7 @@ class Point3dList:
 
 
 from ..Geometry import PointCloud
+from System.Collections.Generic import IEnumerable
 class RhinoList:
     @overload
     def Equals(self, obj: object) -> bool: ...

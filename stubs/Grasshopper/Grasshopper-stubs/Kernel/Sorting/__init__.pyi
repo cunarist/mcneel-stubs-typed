@@ -1,10 +1,9 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 
 
+from System.Collections.Generic import List
 class GH_NetworkSorter:
     @overload
     def __init__(self): ...
@@ -24,6 +23,7 @@ class GH_NetworkSorter:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import List
 class GH_NetworkSorterNode:
     @overload
     def __init__(self, obj_target: IGH_DocumentObject): ...

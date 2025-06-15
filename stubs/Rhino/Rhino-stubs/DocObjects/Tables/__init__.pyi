@@ -1,11 +1,11 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 
 
 from .. import RhinoDoc
+from System.Collections.Generic import IEnumerator
+from System import Guid
 class BitmapTable:
     def __iter__(self) -> Iterator[BitmapEntry]: ...
     def __getitem__(self, index: int) -> BitmapEntry: ...
@@ -48,7 +48,9 @@ class BitmapTable:
     def ToString(self) -> str: ...
 
 
+from System import Guid
 from ...Geometry import AnnotationBase
+from System.Collections.Generic import IEnumerator
 from .. import RhinoDoc
 class DimStyleTable:
     def __iter__(self) -> Iterator[DimensionStyle]: ...
@@ -150,6 +152,7 @@ class DimStyleTableEventType(Enum):
 
 
 from .. import RhinoDoc
+from System.Collections.Generic import IEnumerator
 class FontTable:
     def __iter__(self) -> Iterator[Font]: ...
     @overload
@@ -177,7 +180,11 @@ class FontTable:
 
 
 from ...FileIO import NameHash
+from System.Collections.Generic import IEnumerable
+from System import Guid
+from System.Collections.Generic import Dictionary
 from .. import RhinoDoc
+from System.Collections.Generic import IEnumerator
 class GroupTable:
     def __iter__(self) -> Iterator[Group]: ...
     def __getitem__(self, index: int) -> Group: ...
@@ -288,6 +295,8 @@ class GroupTableEventType(Enum):
 
 from ...FileIO import NameHash
 from .. import RhinoDoc
+from System.Collections.Generic import IEnumerator
+from System import Guid
 class HatchPatternTable:
     def __iter__(self) -> Iterator[HatchPattern]: ...
     def __getitem__(self, index: int) -> HatchPattern: ...
@@ -374,10 +383,13 @@ class HatchPatternTableEventType(Enum):
 
 
 from .. import RhinoDoc
+from System import Guid
 from ...Geometry import Point3d
+from System.Collections.Generic import IEnumerable
 from ...Geometry import GeometryBase
 from ..Custom import UserData
 from ...FileIO import FileReference
+from System.Collections.Generic import IEnumerator
 class InstanceDefinitionTable:
     def __iter__(self) -> Iterator[InstanceDefinition]: ...
     def __getitem__(self, index: int) -> InstanceDefinition: ...
@@ -498,7 +510,12 @@ class InstanceDefinitionTableEventType(Enum):
 
 
 from .. import RhinoDoc
+from System import Guid
 from ...FileIO import NameHash
+from System.Drawing import Color
+from System.Collections.Generic import IEnumerable
+from System.Collections.Generic import List
+from System.Collections.Generic import IEnumerator
 class LayerTable:
     def __iter__(self) -> Iterator[Layer]: ...
     def __getitem__(self, index: int) -> Layer: ...
@@ -657,8 +674,10 @@ class LayerType(Enum):
 from .. import RhinoDoc
 from ...Render import Sun
 from ...Render import Skylight
+from System import Guid
 from ...FileIO import NameHash
 from ...Geometry import Light
+from System.Collections.Generic import IEnumerator
 class LightTable:
     def __iter__(self) -> Iterator[LightObject]: ...
     def __getitem__(self, index: int) -> LightObject: ...
@@ -747,6 +766,9 @@ class LightTableEventType(Enum):
 
 
 from .. import RhinoDoc
+from System import Guid
+from System.Collections.Generic import IEnumerable
+from System.Collections.Generic import IEnumerator
 class LinetypeTable:
     def __iter__(self) -> Iterator[Linetype]: ...
     def __getitem__(self, index: int) -> Linetype: ...
@@ -866,7 +888,9 @@ class LinetypeTableEventType(Enum):
     Current = 5
 
 
+from System import Guid
 from .. import RhinoDoc
+from System.Collections.Generic import IEnumerator
 class MaterialTable:
     def __iter__(self) -> Iterator[Material]: ...
     def __getitem__(self, index: int) -> Material: ...
@@ -962,6 +986,7 @@ class ModifyType(Enum):
 
 from .. import RhinoDoc
 from ...Geometry import Plane
+from System.Collections.Generic import IEnumerator
 class NamedConstructionPlaneTable:
     def __iter__(self) -> Iterator[ConstructionPlane]: ...
     @overload
@@ -993,6 +1018,7 @@ class NamedConstructionPlaneTable:
 
 
 from .. import RhinoDoc
+from System import Guid
 class NamedLayerStateTable:
     @overload
     def Delete(self, name: str) -> bool: ...
@@ -1027,7 +1053,9 @@ class NamedLayerStateTable:
 
 
 from .. import RhinoDoc
+from System import Guid
 from ...Geometry import Transform
+from System.Collections.Generic import IEnumerable
 class NamedPositionTable:
     @overload
     def Append(self, name: str, objects: Iterable[RhinoObject]) -> bool: ...
@@ -1092,8 +1120,10 @@ class NamedPositionTable:
 
 
 from .. import RhinoDoc
+from System import Guid
 from ...Display import RhinoViewport
 from ...Display import RhinoView
+from System.Collections.Generic import IEnumerator
 class NamedViewTable:
     def __iter__(self) -> Iterator[ViewInfo]: ...
     @overload
@@ -1138,9 +1168,12 @@ class NamedViewTable:
     def ToString(self) -> str: ...
 
 
+from System import Guid
 from ...Geometry import BoundingBox
 from ...Geometry import Transform
 from ...Input.Custom import PickContext
+from System.Collections.Generic import IEnumerable
+from System.Collections.Generic import IEnumerator
 from ...Geometry import Surface
 from ...Geometry import Extrusion
 from ...Geometry import ClippingPlaneSurface
@@ -1165,6 +1198,7 @@ from ...Geometry import Curve
 from ...Geometry import SubD
 from ...Geometry import PointCloud
 from .. import RhinoDoc
+from System.Drawing import Color
 from ...Display import RhinoViewport
 from ...Geometry import Point2d
 from ..Custom import CustomMeshObject
@@ -1781,6 +1815,13 @@ class RestoreLayerProperties(Enum):
 
 
 from .. import RhinoDoc
+from System import Func
+from System.Collections.Generic import IEqualityComparer
+from System.Collections.Generic import KeyCollection
+from System.Collections.Generic import ValueCollection
+from System.Collections.Generic import Enumerator
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 class RuntimeDocumentDataTable:
     def __iter__(self) -> Iterator[KeyValuePair]: ...
     @overload
@@ -1887,9 +1928,13 @@ class StringTable:
 
 from .. import RhinoDoc
 from ...Display import RhinoView
+from System.Collections.Generic import IEnumerable
 from ...Display import ViewTypeFilter
+from System import Guid
 from ...Display import DefinedViewportProjection
+from System.Drawing import Rectangle
 from ...Display import RhinoPageView
+from System.Collections.Generic import IEnumerator
 class ViewTable:
     def __iter__(self) -> Iterator[RhinoView]: ...
     @overload

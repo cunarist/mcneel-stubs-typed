@@ -1,10 +1,11 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 
 
+from System.Resources import ResourceManager
+from System.Globalization import CultureInfo
+from System.Drawing import Bitmap
 class Res_CanvasToolbar:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -102,6 +103,9 @@ class Res_CanvasToolbar:
     def ToString(self) -> str: ...
 
 
+from System.Resources import ResourceManager
+from System.Globalization import CultureInfo
+from System.Drawing import Bitmap
 class Res_ContextMenu:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -323,6 +327,10 @@ class Res_ContextMenu:
     def ToString(self) -> str: ...
 
 
+from System.Resources import ResourceManager
+from System.Globalization import CultureInfo
+from System.Drawing import Bitmap
+from System.Drawing import Icon
 class Res_GUI:
     @overload
     def Equals(self, obj: object) -> bool: ...

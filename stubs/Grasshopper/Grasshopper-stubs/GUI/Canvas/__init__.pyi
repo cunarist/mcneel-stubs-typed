@@ -1,7 +1,5 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 import Interaction
 import TagArtists
@@ -9,6 +7,12 @@ import TagArtists
 __all__ = ['Interaction', 'TagArtists']
 
 
+from System import IntPtr
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class CanvasPaintBackgroundEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -40,6 +44,12 @@ class CanvasPaintBackgroundEventHandler:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class CanvasPaintBeginEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -71,6 +81,12 @@ class CanvasPaintBeginEventHandler:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class CanvasPaintEndEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -102,6 +118,12 @@ class CanvasPaintEndEventHandler:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class CanvasPostPaintGroupsEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -133,6 +155,12 @@ class CanvasPostPaintGroupsEventHandler:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class CanvasPostPaintObjectsEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -164,6 +192,12 @@ class CanvasPostPaintObjectsEventHandler:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class CanvasPostPaintOverlayEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -195,6 +229,12 @@ class CanvasPostPaintOverlayEventHandler:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class CanvasPostPaintWidgetsEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -226,6 +266,12 @@ class CanvasPostPaintWidgetsEventHandler:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class CanvasPostPaintWiresEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -257,6 +303,12 @@ class CanvasPostPaintWiresEventHandler:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class CanvasPrePaintGroupsEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -288,6 +340,12 @@ class CanvasPrePaintGroupsEventHandler:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class CanvasPrePaintObjectsEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -319,6 +377,12 @@ class CanvasPrePaintObjectsEventHandler:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class CanvasPrePaintOverlayEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -350,6 +414,12 @@ class CanvasPrePaintOverlayEventHandler:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class CanvasPrePaintWidgetsEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -381,6 +451,12 @@ class CanvasPrePaintWidgetsEventHandler:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class CanvasPrePaintWiresEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -412,8 +488,14 @@ class CanvasPrePaintWiresEventHandler:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
 from ...Kernel import GH_Document
 from ...Kernel import GH_DocModifiedEventArgs
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class Document_ModifiedChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -445,8 +527,14 @@ class Document_ModifiedChangedEventHandler:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
 from ...Kernel import GH_Document
 from ...Kernel import GH_DocObjectEventArgs
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class Document_ObjectsAddedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -478,8 +566,14 @@ class Document_ObjectsAddedEventHandler:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
 from ...Kernel import GH_Document
 from ...Kernel import GH_DocObjectEventArgs
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class Document_ObjectsDeletedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -511,8 +605,14 @@ class Document_ObjectsDeletedEventHandler:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
 from ...Kernel import GH_Document
 from ...Kernel import GH_DocSettingsEventArgs
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class Document_SettingsChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -544,6 +644,12 @@ class Document_SettingsChangedEventHandler:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class DocumentChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -575,6 +681,12 @@ class DocumentChangedEventHandler:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class DocumentObjectMouseDownEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -606,8 +718,14 @@ class DocumentObjectMouseDownEventHandler:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
 from ...Kernel import GH_Document
 from ...Kernel import GH_DocObjectEventArgs
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class DocumentObjectsDeletedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -639,6 +757,11 @@ class DocumentObjectsDeletedEventHandler:
     def ToString(self) -> str: ...
 
 
+from System.Drawing import RectangleF
+from System.Drawing import PointF
+from System.Windows.Forms import Cursor
+from System.Collections.Generic import List
+from System.Windows.Forms import Padding
 class GH_Border:
     @overload
     def __init__(self, rectangle: RectangleF, topology: GH_BorderTopology): ...
@@ -685,12 +808,73 @@ class GH_BorderTopology(Enum):
     All = -1
 
 
+from System.Drawing import Point
+from System.Drawing import Rectangle
+from System.Drawing import Size
+from System.Collections.Generic import List
+from System.Drawing import Color
+from System.Drawing import Bitmap
+from System import Guid
+from System.Drawing import PointF
+from System.Windows.Forms import ToolStripDropDownMenu
 from .TagArtists import IGH_TagArtist
+from System.Windows.Forms import Keys
+from System.Drawing import Graphics
 from .Interaction import IGH_MouseInteraction
 from ..Widgets import IGH_Widget
 from ...Kernel import IGH_DocumentObject
 from ...Kernel import GH_Document
 from ...Kernel import GH_AutoSaveTrigger
+from System.Windows.Forms import AnchorStyles
+from System.Windows.Forms.Layout import LayoutEngine
+from System.Drawing import Image
+from System.Windows.Forms import ImageLayout
+from System.Windows.Forms import BindingContext
+from System.Windows.Forms import ContextMenu
+from System.Windows.Forms import ContextMenuStrip
+from System.Windows.Forms import Cursor
+from System.Windows.Forms import ControlBindingsCollection
+from System.Windows.Forms import DockStyle
+from System.Drawing import Font
+from System.Windows.Forms import RightToLeft
+from System.ComponentModel import ISite
+from System import Delegate
+from System import IAsyncResult
+from System.Windows.Forms import Message
+from System.Windows.Forms import AccessibleObject
+from System.Windows.Forms import AccessibleRole
+from System import EventHandler
+from System.Windows.Forms import ControlCollection
+from System import IntPtr
+from System.Windows.Forms import Padding
+from System.Windows.Forms import Control
+from System.Drawing import Region
+from System.Windows.Forms import IWindowTarget
+from System.Windows.Forms import ControlEventHandler
+from System.Windows.Forms import DragEventHandler
+from System.Windows.Forms import GiveFeedbackEventHandler
+from System.Windows.Forms import HelpEventHandler
+from System.Windows.Forms import InvalidateEventHandler
+from System.Windows.Forms import PaintEventHandler
+from System.Windows.Forms import QueryContinueDragEventHandler
+from System.Windows.Forms import QueryAccessibilityHelpEventHandler
+from System.Windows.Forms import KeyEventHandler
+from System.Windows.Forms import KeyPressEventHandler
+from System.Windows.Forms import LayoutEventHandler
+from System.Windows.Forms import MouseEventHandler
+from System.Windows.Forms import PreviewKeyDownEventHandler
+from System.Windows.Forms import UICuesEventHandler
+from System.ComponentModel import CancelEventHandler
+from System.Windows.Forms import DragDropEffects
+from System.Windows.Forms import Form
+from System.Windows.Forms import GetChildAtPointSkip
+from System.Windows.Forms import IContainerControl
+from System.Windows.Forms import PreProcessControlState
+from System.Drawing import SizeF
+from System.Windows.Forms import BoundsSpecified
+from System.Windows.Forms import ImeMode
+from System.ComponentModel import IContainer
+from System.Runtime.Remoting import ObjRef
 class GH_Canvas:
     @overload
     def __init__(self): ...
@@ -1650,6 +1834,10 @@ class GH_CanvasDocumentChangedEventArgs:
     def ToString(self) -> str: ...
 
 
+from System.Drawing import RectangleF
+from System import Guid
+from System import Action
+from System.Drawing import PointF
 from ...Kernel import IGH_DocumentObject
 from ...Kernel import IGH_Param
 class GH_CanvasDropTargetValidator(GH_CanvasValidator):
@@ -1723,7 +1911,9 @@ class GH_CanvasNavigation(Enum):
     ZoomOut = 6
 
 
+from System import Guid
 from ...Kernel import IGH_DocumentObject
+from System.Drawing import PointF
 from ...Kernel import IGH_Param
 class GH_CanvasValidator:
     @overload
@@ -1791,6 +1981,9 @@ class GH_CanvasWidgetListEventArgs:
     def ToString(self) -> str: ...
 
 
+from System import Guid
+from System import Action
+from System.Drawing import PointF
 from ...Kernel import IGH_DocumentObject
 from ...Kernel import IGH_Param
 class GH_CanvasWireValidator(GH_CanvasValidator):
@@ -1856,6 +2049,16 @@ class GH_CanvasWireValidator(GH_CanvasValidator):
     def ToString(self) -> str: ...
 
 
+from System.Drawing.Drawing2D import GraphicsPath
+from System.Drawing import Rectangle
+from System.Drawing import RectangleF
+from System.Drawing import Font
+from System.Collections.Generic import List
+from System.Drawing import Point
+from System.Drawing import PointF
+from System.Drawing import Graphics
+from System.Drawing import Color
+from System.Drawing import Image
 class GH_Capsule:
     DefaultHighlight: int
     DefaultRadius: int
@@ -2015,8 +2218,15 @@ class GH_Capsule:
     def ToString(self) -> str: ...
 
 
+from System.Drawing import Graphics
+from System.Drawing import Color
+from System.Drawing import Image
+from System.Drawing import RectangleF
+from System.Drawing import Rectangle
+from System.Drawing.Drawing2D import GraphicsPath
 from ...Kernel import IGH_Attributes
 from ...Kernel import IGH_ActiveObject
+from System.Drawing import PointF
 class GH_CapsuleRenderEngine:
     @overload
     @staticmethod
@@ -2099,6 +2309,13 @@ class GH_DisplayMatrix(Enum):
     ControlToCanvas = 1
 
 
+from System.Drawing import Size
+from System.Drawing import Bitmap
+from System.Drawing import RectangleF
+from System.Drawing import Rectangle
+from System.Drawing import Point
+from System.Drawing import PointF
+from System.Collections.Generic import IEnumerable
 class GH_DocDiagramPainter:
     @overload
     def __init__(self): ...
@@ -2161,6 +2378,12 @@ class GH_DragDropFileAction(Enum):
     Cluster = 5
 
 
+from System import DateTime
+from System.Drawing import Color
+from System.Drawing import Bitmap
+from System.Drawing import Point
+from System.Drawing import Rectangle
+from System.Drawing import Graphics
 class GH_FilePanel:
     PanelPadding: int
     PanelWidth: int
@@ -2228,6 +2451,8 @@ class GH_FilePanel:
     def ToString(self) -> str: ...
 
 
+from System.Drawing import Size
+from System.Drawing import Color
 class GH_ImageSettings:
     @overload
     def __init__(self): ...
@@ -2267,6 +2492,12 @@ class GH_ImageSettings:
     def ToString(self) -> str: ...
 
 
+from System.Drawing import PointF
+from System.Drawing import Rectangle
+from System.Drawing import RectangleF
+from System.Drawing import Point
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 class GH_NamedView:
     @overload
     def __init__(self): ...
@@ -2320,6 +2551,86 @@ class GH_NamedView:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from System.Drawing import Size
+from System.Windows.Forms import AutoValidate
+from System.Drawing import Color
+from System.Windows.Forms import ValidationConstraints
+from System.Windows.Forms import IButtonControl
+from System.Windows.Forms import Form
+from System import EventHandler
+from System.Windows.Forms import AutoSizeMode
+from System.Windows.Forms import FormBorderStyle
+from System.Drawing import Rectangle
+from System.Drawing import Point
+from System.Windows.Forms import DialogResult
+from System.ComponentModel import CancelEventHandler
+from System.Drawing import Icon
+from System.Windows.Forms import MenuStrip
+from System.Windows.Forms import Padding
+from System.Windows.Forms import MainMenu
+from System.Windows.Forms import SizeGripStyle
+from System.Windows.Forms import FormStartPosition
+from System.Windows.Forms import FormWindowState
+from System.Windows.Forms import FormClosingEventHandler
+from System.Windows.Forms import FormClosedEventHandler
+from System.Windows.Forms import InputLanguageChangedEventHandler
+from System.Windows.Forms import InputLanguageChangingEventHandler
+from System.Windows.Forms import MdiLayout
+from System.Windows.Forms import DpiChangedEventHandler
+from System.Windows.Forms import IWin32Window
+from System.Windows.Forms import BindingContext
+from System.Windows.Forms import Control
+from System.Drawing import SizeF
+from System.Windows.Forms import AutoScaleMode
+from System.Windows.Forms import HScrollProperties
+from System.Windows.Forms import VScrollProperties
+from System.Windows.Forms import DockPaddingEdges
+from System.Windows.Forms import ScrollEventHandler
+from System.Windows.Forms import AnchorStyles
+from System.Windows.Forms.Layout import LayoutEngine
+from System.Drawing import Image
+from System.Windows.Forms import ImageLayout
+from System.Windows.Forms import ContextMenu
+from System.Windows.Forms import ContextMenuStrip
+from System.Windows.Forms import Cursor
+from System.Windows.Forms import ControlBindingsCollection
+from System.Windows.Forms import DockStyle
+from System.Drawing import Font
+from System.Windows.Forms import RightToLeft
+from System.ComponentModel import ISite
+from System import Delegate
+from System import IAsyncResult
+from System.Windows.Forms import Message
+from System.Windows.Forms import AccessibleObject
+from System.Windows.Forms import AccessibleRole
+from System.Windows.Forms import ControlCollection
+from System import IntPtr
+from System.Drawing import Region
+from System.Windows.Forms import IWindowTarget
+from System.Windows.Forms import ControlEventHandler
+from System.Windows.Forms import DragEventHandler
+from System.Windows.Forms import GiveFeedbackEventHandler
+from System.Windows.Forms import HelpEventHandler
+from System.Windows.Forms import InvalidateEventHandler
+from System.Windows.Forms import PaintEventHandler
+from System.Windows.Forms import QueryContinueDragEventHandler
+from System.Windows.Forms import QueryAccessibilityHelpEventHandler
+from System.Windows.Forms import KeyEventHandler
+from System.Windows.Forms import KeyPressEventHandler
+from System.Windows.Forms import LayoutEventHandler
+from System.Windows.Forms import MouseEventHandler
+from System.Windows.Forms import PreviewKeyDownEventHandler
+from System.Windows.Forms import UICuesEventHandler
+from System.Drawing import Graphics
+from System.Windows.Forms import DragDropEffects
+from System.Drawing import Bitmap
+from System.Windows.Forms import GetChildAtPointSkip
+from System.Windows.Forms import IContainerControl
+from System.Windows.Forms import PreProcessControlState
+from System.Windows.Forms import BoundsSpecified
+from System.Windows.Forms import ImeMode
+from System.ComponentModel import IContainer
+from System.Runtime.Remoting import ObjRef
 class GH_NamedViewEditor:
     @overload
     def __init__(self): ...
@@ -3346,6 +3657,86 @@ class GH_NamedViewType(Enum):
     center = 1
 
 
+from System.Drawing import Size
+from System.Windows.Forms import AutoValidate
+from System.Drawing import Color
+from System.Windows.Forms import ValidationConstraints
+from System.Windows.Forms import IButtonControl
+from System.Windows.Forms import Form
+from System import EventHandler
+from System.Windows.Forms import AutoSizeMode
+from System.Windows.Forms import FormBorderStyle
+from System.Drawing import Rectangle
+from System.Drawing import Point
+from System.Windows.Forms import DialogResult
+from System.ComponentModel import CancelEventHandler
+from System.Drawing import Icon
+from System.Windows.Forms import MenuStrip
+from System.Windows.Forms import Padding
+from System.Windows.Forms import MainMenu
+from System.Windows.Forms import SizeGripStyle
+from System.Windows.Forms import FormStartPosition
+from System.Windows.Forms import FormWindowState
+from System.Windows.Forms import FormClosingEventHandler
+from System.Windows.Forms import FormClosedEventHandler
+from System.Windows.Forms import InputLanguageChangedEventHandler
+from System.Windows.Forms import InputLanguageChangingEventHandler
+from System.Windows.Forms import MdiLayout
+from System.Windows.Forms import DpiChangedEventHandler
+from System.Windows.Forms import IWin32Window
+from System.Windows.Forms import BindingContext
+from System.Windows.Forms import Control
+from System.Drawing import SizeF
+from System.Windows.Forms import AutoScaleMode
+from System.Windows.Forms import HScrollProperties
+from System.Windows.Forms import VScrollProperties
+from System.Windows.Forms import DockPaddingEdges
+from System.Windows.Forms import ScrollEventHandler
+from System.Windows.Forms import AnchorStyles
+from System.Windows.Forms.Layout import LayoutEngine
+from System.Drawing import Image
+from System.Windows.Forms import ImageLayout
+from System.Windows.Forms import ContextMenu
+from System.Windows.Forms import ContextMenuStrip
+from System.Windows.Forms import Cursor
+from System.Windows.Forms import ControlBindingsCollection
+from System.Windows.Forms import DockStyle
+from System.Drawing import Font
+from System.Windows.Forms import RightToLeft
+from System.ComponentModel import ISite
+from System import Delegate
+from System import IAsyncResult
+from System.Windows.Forms import Message
+from System.Windows.Forms import AccessibleObject
+from System.Windows.Forms import AccessibleRole
+from System.Windows.Forms import ControlCollection
+from System import IntPtr
+from System.Drawing import Region
+from System.Windows.Forms import IWindowTarget
+from System.Windows.Forms import ControlEventHandler
+from System.Windows.Forms import DragEventHandler
+from System.Windows.Forms import GiveFeedbackEventHandler
+from System.Windows.Forms import HelpEventHandler
+from System.Windows.Forms import InvalidateEventHandler
+from System.Windows.Forms import PaintEventHandler
+from System.Windows.Forms import QueryContinueDragEventHandler
+from System.Windows.Forms import QueryAccessibilityHelpEventHandler
+from System.Windows.Forms import KeyEventHandler
+from System.Windows.Forms import KeyPressEventHandler
+from System.Windows.Forms import LayoutEventHandler
+from System.Windows.Forms import MouseEventHandler
+from System.Windows.Forms import PreviewKeyDownEventHandler
+from System.Windows.Forms import UICuesEventHandler
+from System.Drawing import Graphics
+from System.Windows.Forms import DragDropEffects
+from System.Drawing import Bitmap
+from System.Windows.Forms import GetChildAtPointSkip
+from System.Windows.Forms import IContainerControl
+from System.Windows.Forms import PreProcessControlState
+from System.Windows.Forms import BoundsSpecified
+from System.Windows.Forms import ImeMode
+from System.ComponentModel import IContainer
+from System.Runtime.Remoting import ObjRef
 class GH_NavigationPaneDialog:
     @overload
     def __init__(self): ...
@@ -4385,6 +4776,10 @@ class GH_Orientation(Enum):
 
 from ...Kernel.Data import IGH_Structure
 from ...Kernel import GH_Document
+from System.Drawing import PointF
+from GH_Util import BezierF
+from System.Drawing.Drawing2D import GraphicsPath
+from System.Drawing import Brush
 class GH_Painter:
     @overload
     def __init__(self, owner: GH_Canvas): ...
@@ -4442,6 +4837,9 @@ class GH_Palette(Enum):
     Transparent = 11
 
 
+from System.Drawing import Color
+from System.Drawing import RectangleF
+from System.Drawing import Brush
 class GH_PaletteStyle:
     @overload
     def __init__(self, fill: Color): ...
@@ -4476,6 +4874,86 @@ class GH_PaletteStyle:
     def ToString(self) -> str: ...
 
 
+from System.Drawing import Point
+from System.Drawing import Size
+from System.Windows.Forms import AutoValidate
+from System.Drawing import Color
+from System.Windows.Forms import ValidationConstraints
+from System.Windows.Forms import IButtonControl
+from System.Windows.Forms import Form
+from System import EventHandler
+from System.Windows.Forms import AutoSizeMode
+from System.Windows.Forms import FormBorderStyle
+from System.Drawing import Rectangle
+from System.Windows.Forms import DialogResult
+from System.ComponentModel import CancelEventHandler
+from System.Drawing import Icon
+from System.Windows.Forms import MenuStrip
+from System.Windows.Forms import Padding
+from System.Windows.Forms import MainMenu
+from System.Windows.Forms import SizeGripStyle
+from System.Windows.Forms import FormStartPosition
+from System.Windows.Forms import FormWindowState
+from System.Windows.Forms import FormClosingEventHandler
+from System.Windows.Forms import FormClosedEventHandler
+from System.Windows.Forms import InputLanguageChangedEventHandler
+from System.Windows.Forms import InputLanguageChangingEventHandler
+from System.Windows.Forms import MdiLayout
+from System.Windows.Forms import DpiChangedEventHandler
+from System.Windows.Forms import IWin32Window
+from System.Windows.Forms import BindingContext
+from System.Windows.Forms import Control
+from System.Drawing import SizeF
+from System.Windows.Forms import AutoScaleMode
+from System.Windows.Forms import HScrollProperties
+from System.Windows.Forms import VScrollProperties
+from System.Windows.Forms import DockPaddingEdges
+from System.Windows.Forms import ScrollEventHandler
+from System.Windows.Forms import AnchorStyles
+from System.Windows.Forms.Layout import LayoutEngine
+from System.Drawing import Image
+from System.Windows.Forms import ImageLayout
+from System.Windows.Forms import ContextMenu
+from System.Windows.Forms import ContextMenuStrip
+from System.Windows.Forms import Cursor
+from System.Windows.Forms import ControlBindingsCollection
+from System.Windows.Forms import DockStyle
+from System.Drawing import Font
+from System.Windows.Forms import RightToLeft
+from System.ComponentModel import ISite
+from System import Delegate
+from System import IAsyncResult
+from System.Windows.Forms import Message
+from System.Windows.Forms import AccessibleObject
+from System.Windows.Forms import AccessibleRole
+from System.Windows.Forms import ControlCollection
+from System import IntPtr
+from System.Drawing import Region
+from System.Windows.Forms import IWindowTarget
+from System.Windows.Forms import ControlEventHandler
+from System.Windows.Forms import DragEventHandler
+from System.Windows.Forms import GiveFeedbackEventHandler
+from System.Windows.Forms import HelpEventHandler
+from System.Windows.Forms import InvalidateEventHandler
+from System.Windows.Forms import PaintEventHandler
+from System.Windows.Forms import QueryContinueDragEventHandler
+from System.Windows.Forms import QueryAccessibilityHelpEventHandler
+from System.Windows.Forms import KeyEventHandler
+from System.Windows.Forms import KeyPressEventHandler
+from System.Windows.Forms import LayoutEventHandler
+from System.Windows.Forms import MouseEventHandler
+from System.Windows.Forms import PreviewKeyDownEventHandler
+from System.Windows.Forms import UICuesEventHandler
+from System.Drawing import Graphics
+from System.Windows.Forms import DragDropEffects
+from System.Drawing import Bitmap
+from System.Windows.Forms import GetChildAtPointSkip
+from System.Windows.Forms import IContainerControl
+from System.Windows.Forms import PreProcessControlState
+from System.Windows.Forms import BoundsSpecified
+from System.Windows.Forms import ImeMode
+from System.ComponentModel import IContainer
+from System.Runtime.Remoting import ObjRef
 class GH_PopupSearchDialog:
     @overload
     def __init__(self): ...
@@ -5505,7 +5983,11 @@ class GH_PopupSearchDialog:
     def ValidateChildren(self, validationConstraints: ValidationConstraints) -> bool: ...
 
 
+from System.Drawing import RectangleF
+from System.Drawing import PointF
+from System.Drawing import SizeF
 from ...Kernel import IGH_Attributes
+from System.Windows.Forms import Cursor
 class GH_ResizeBorder(GH_Border):
     @overload
     def __init__(self, borders: GH_Border): ...
@@ -5548,6 +6030,7 @@ class GH_ResizeBorder(GH_Border):
 
 
 from ...Kernel import IGH_ActiveObject
+from System.Drawing import Color
 class GH_Skin:
     canvas_mono: bool
     canvas_mono_color: Color
@@ -5608,7 +6091,16 @@ class GH_Skin:
     def ToString(self) -> str: ...
 
 
+from System.Drawing import Point
+from System.Drawing import Size
+from System.Drawing import SizeF
+from System.Drawing import Rectangle
+from System.Drawing import PointF
 from ...Kernel import IGH_Attributes
+from System.Collections.Generic import List
+from System.Drawing.Drawing2D import Matrix
+from System.Drawing import Graphics
+from System.Drawing import RectangleF
 class GH_Viewport:
     @overload
     def __init__(self): ...
@@ -5746,6 +6238,8 @@ class GH_WireType(Enum):
     dynamicAlternative1 = 8
 
 
+from System import Guid
+from System.Drawing import PointF
 from ...Kernel import IGH_Param
 from ...Kernel import IGH_DocumentObject
 class IGH_CanvasValidator:
@@ -5777,6 +6271,7 @@ class IGH_CanvasValidator:
     def RemovedFromCanvas(self, canvas: GH_Canvas) -> None: ...
 
 
+from System.Windows.Forms import KeyEventArgs
 class IGH_ResponsiveObject:
     @overload
     def RespondToKeyDown(self, sender: GH_Canvas, e: KeyEventArgs) -> GH_ObjectResponse: ...
@@ -5792,6 +6287,7 @@ class IGH_ResponsiveObject:
     def RespondToMouseUp(self, sender: GH_Canvas, e: GH_CanvasMouseEvent) -> GH_ObjectResponse: ...
 
 
+from System.Drawing import PointF
 class IGH_TooltipAwareObject:
     @property
     def TooltipEnabled(self) -> bool: ...
@@ -5801,6 +6297,13 @@ class IGH_TooltipAwareObject:
     def SetupTooltip(self, canvasPoint: PointF, e: GH_TooltipDisplayEventArgs) -> None: ...
 
 
+from System import IntPtr
+from System import EventArgs
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class ModifiersChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -5832,6 +6335,12 @@ class ModifiersChangedEventHandler:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class NamedViewChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -5863,6 +6372,12 @@ class NamedViewChangedEventHandler:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class NavigationSettingsChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -5894,6 +6409,12 @@ class NavigationSettingsChangedEventHandler:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class SmoothFrameEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -5925,6 +6446,12 @@ class SmoothFrameEventHandler:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class ViewportChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -5956,6 +6483,12 @@ class ViewportChangedEventHandler:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class WidgetListCreatedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...

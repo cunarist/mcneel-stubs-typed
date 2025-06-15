@@ -1,7 +1,5 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 
 
@@ -11,6 +9,9 @@ from System.Drawing import *
 
 
 
+from Rhino.Geometry import Point
+from Rhino.Geometry import Point3d
+from Rhino.Geometry import Point2d
 class TreeDelegates:
     @overload
     def Equals(self, obj: object) -> bool: ...

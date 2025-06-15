@@ -1,7 +1,5 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 
 
@@ -80,6 +78,7 @@ class Instance:
     def ToString(self) -> str: ...
 
 
+from System import Guid
 class MeshProviderIds:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -102,6 +101,8 @@ class MeshProviderIds:
 
 
 from .. import RhinoDoc
+from System import Guid
+from System.Collections.Generic import IEnumerator
 class RenderMeshes:
     @overload
     def __init__(self, doc: RhinoDoc, objectId: Guid, renderMeshProviderId: Guid, runningHash: int): ...
@@ -134,11 +135,14 @@ class RenderMeshes:
     def ToString(self) -> str: ...
 
 
+from System import Guid
+from System.Collections.Generic import List
 from ...Geometry import MeshType
 from ...DocObjects import ViewportInfo
 from .. import RhinoDoc
 from ...PlugIns import PlugIn
 from ...Display import DisplayPipelineAttributes
+from System.Reflection import Assembly
 class RenderMeshProvider:
     @overload
     def Dispose(self) -> None: ...
@@ -180,6 +184,7 @@ class RenderMeshProvider:
     def ToString(self) -> str: ...
 
 
+from System import Guid
 class RenderMeshProviderProgress:
     @overload
     def __init__(self): ...

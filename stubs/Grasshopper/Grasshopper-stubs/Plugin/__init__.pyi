@@ -1,10 +1,11 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 
 
+from System.Collections.Generic import List
+from Rhino import RhinoDoc
+from Rhino.Commands import RunMode
 from ..Kernel import GH_Document
 from ..Kernel import IGH_ActiveObject
 class Commands:
@@ -62,6 +63,8 @@ class Commands:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from System import Char
 class GH_PluginUtil:
     @overload
     @staticmethod
@@ -106,6 +109,7 @@ class GH_PluginUtil:
     def UnloadGrasshopper() -> bool: ...
 
 
+from System.Drawing import Bitmap
 class GH_ResourceGate:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -154,6 +158,10 @@ class GH_ResourceGate:
 
 
 from ..Kernel import GH_Document
+from Rhino.Commands import Command
+from Rhino import RhinoDoc
+from Rhino.Commands import RunMode
+from Rhino.Commands import Result
 class GH_RhinoScriptInterface:
     @overload
     def __init__(self): ...

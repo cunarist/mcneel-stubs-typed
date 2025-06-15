@@ -1,10 +1,9 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 
 
+from Rhino.Geometry import Interval
 class GH_Interval_Wrapper:
     @overload
     def __init__(self, interval: Interval, wrapperdelegate: GH_IntervalWrapperDelegate): ...
@@ -32,6 +31,12 @@ class GH_Interval_Wrapper:
     def ToString(self) -> str: ...
 
 
+from System.ComponentModel import ITypeDescriptorContext
+from System.Globalization import CultureInfo
+from System.ComponentModel import PropertyDescriptorCollection
+from System.Collections import IDictionary
+from System.Collections import ICollection
+from System.ComponentModel import StandardValuesCollection
 class GH_Interval_Wrapper_TypeConverter:
     @overload
     def __init__(self): ...
@@ -115,6 +120,13 @@ class GH_Interval_Wrapper_TypeConverter:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from Rhino.Geometry import Interval
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class GH_IntervalWrapperDelegate:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -146,6 +158,8 @@ class GH_IntervalWrapperDelegate:
     def ToString(self) -> str: ...
 
 
+from Rhino.Geometry import Plane
+from Rhino.Geometry import Vector3d
 class GH_PlaneModifier:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -166,6 +180,7 @@ class GH_PlaneModifier:
     def ToString(self) -> str: ...
 
 
+from Rhino.Geometry import Point3d
 class GH_Point3d_Wrapper:
     @overload
     def __init__(self, pt: Point3d, wrapperdelegate: GH_Point3dWrapperDelegate): ...
@@ -193,6 +208,12 @@ class GH_Point3d_Wrapper:
     def ToString(self) -> str: ...
 
 
+from System.ComponentModel import ITypeDescriptorContext
+from System.Globalization import CultureInfo
+from System.ComponentModel import PropertyDescriptorCollection
+from System.Collections import IDictionary
+from System.Collections import ICollection
+from System.ComponentModel import StandardValuesCollection
 class GH_Point3d_Wrapper_TypeConverter:
     @overload
     def __init__(self): ...
@@ -276,6 +297,13 @@ class GH_Point3d_Wrapper_TypeConverter:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from Rhino.Geometry import Point3d
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class GH_Point3dWrapperDelegate:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -331,6 +359,12 @@ class GH_PointRefUV_Wrapper:
     def ToString(self) -> str: ...
 
 
+from System.ComponentModel import ITypeDescriptorContext
+from System.Globalization import CultureInfo
+from System.ComponentModel import PropertyDescriptorCollection
+from System.Collections import IDictionary
+from System.Collections import ICollection
+from System.ComponentModel import StandardValuesCollection
 class GH_PointRefUV_Wrapper_TypeConverter:
     @overload
     def __init__(self): ...
@@ -414,7 +448,13 @@ class GH_PointRefUV_Wrapper_TypeConverter:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
 from ..Types import GH_PointRefData
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class GH_PointRefUVWrapperDelegate:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -446,6 +486,7 @@ class GH_PointRefUVWrapperDelegate:
     def ToString(self) -> str: ...
 
 
+from Rhino.Geometry import Vector3d
 class GH_Vector3d_Wrapper:
     @overload
     def __init__(self, vec: Vector3d, wrapperdelegate: GH_Vector3dWrapperDelegate): ...
@@ -477,6 +518,12 @@ class GH_Vector3d_Wrapper:
     def ToString(self) -> str: ...
 
 
+from System.ComponentModel import ITypeDescriptorContext
+from System.Globalization import CultureInfo
+from System.ComponentModel import PropertyDescriptorCollection
+from System.Collections import IDictionary
+from System.Collections import ICollection
+from System.ComponentModel import StandardValuesCollection
 class GH_Vector3d_Wrapper_TypeConverter:
     @overload
     def __init__(self): ...
@@ -560,6 +607,13 @@ class GH_Vector3d_Wrapper_TypeConverter:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from Rhino.Geometry import Vector3d
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class GH_Vector3dWrapperDelegate:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...

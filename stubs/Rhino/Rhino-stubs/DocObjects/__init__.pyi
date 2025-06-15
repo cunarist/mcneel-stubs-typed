@@ -1,7 +1,5 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 import Custom
 import SnapShots
@@ -34,6 +32,8 @@ class AngleDisplayMode(Enum):
 from ..Geometry import AngularDimension
 from ..Geometry import AnnotationBase
 from ..Geometry import ComponentIndex
+from System import Guid
+from System import IConvertible
 from ..Display import RhinoViewport
 from ..Geometry import GeometryBase
 from .Custom import CustomObjectGrips
@@ -48,6 +48,7 @@ from ..Display import DisplayPipelineAttributes
 from ..Render import RenderPrimitiveList
 from ..Render.CustomRenderMeshes import Flags
 from ..PlugIns import PlugIn
+from System.Collections.Generic import List
 from ..Render.CustomRenderMeshes import RenderMeshes
 from ..Geometry import BoundingBox
 from ..Render import TextureMapping
@@ -55,6 +56,8 @@ from ..Render import RenderMaterial
 from ..Geometry import ComponentStatus
 from .Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class AngularDimensionObject(DimensionObject):
     @overload
@@ -349,6 +352,7 @@ class AngularDimensionObject(DimensionObject):
     def UnselectAllSubObjects(self) -> int: ...
 
 
+from System import Guid
 class AnimationProperties:
     @overload
     def __init__(self): ...
@@ -514,6 +518,8 @@ class AnimationProperties:
 
 from ..Geometry import AnnotationBase
 from ..Geometry import ComponentIndex
+from System import Guid
+from System import IConvertible
 from ..Display import RhinoViewport
 from ..Geometry import GeometryBase
 from .Custom import CustomObjectGrips
@@ -528,6 +534,7 @@ from ..Display import DisplayPipelineAttributes
 from ..Render import RenderPrimitiveList
 from ..Render.CustomRenderMeshes import Flags
 from ..PlugIns import PlugIn
+from System.Collections.Generic import List
 from ..Render.CustomRenderMeshes import RenderMeshes
 from ..Geometry import BoundingBox
 from ..Render import TextureMapping
@@ -535,6 +542,8 @@ from ..Render import RenderMaterial
 from ..Geometry import ComponentStatus
 from .Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class AnnotationObjectBase(RhinoObject):
     @overload
@@ -857,9 +866,12 @@ class BackgroundProjections(Enum):
     Hemispherical = 9
 
 
+from System import Guid
 from ..Geometry import ComponentStatus
 from .Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class BitmapEntry(ModelComponent):
     @overload
@@ -965,6 +977,8 @@ class BRDFs(Enum):
 
 from ..Geometry import Brep
 from ..Geometry import ComponentIndex
+from System import Guid
+from System import IConvertible
 from ..Display import RhinoViewport
 from ..Geometry import GeometryBase
 from .Custom import CustomObjectGrips
@@ -979,6 +993,7 @@ from ..Display import DisplayPipelineAttributes
 from ..Render import RenderPrimitiveList
 from ..Render.CustomRenderMeshes import Flags
 from ..PlugIns import PlugIn
+from System.Collections.Generic import List
 from ..Render.CustomRenderMeshes import RenderMeshes
 from ..Geometry import BoundingBox
 from ..Render import TextureMapping
@@ -986,6 +1001,8 @@ from ..Render import RenderMaterial
 from ..Geometry import ComponentStatus
 from .Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class BrepObject(RhinoObject):
     @overload
@@ -1286,6 +1303,8 @@ class CaptureTypes(Enum):
 from ..Geometry import Centermark
 from ..Geometry import AnnotationBase
 from ..Geometry import ComponentIndex
+from System import Guid
+from System import IConvertible
 from ..Display import RhinoViewport
 from ..Geometry import GeometryBase
 from .Custom import CustomObjectGrips
@@ -1300,6 +1319,7 @@ from ..Display import DisplayPipelineAttributes
 from ..Render import RenderPrimitiveList
 from ..Render.CustomRenderMeshes import Flags
 from ..PlugIns import PlugIn
+from System.Collections.Generic import List
 from ..Render.CustomRenderMeshes import RenderMeshes
 from ..Geometry import BoundingBox
 from ..Render import TextureMapping
@@ -1307,6 +1327,8 @@ from ..Render import RenderMaterial
 from ..Geometry import ComponentStatus
 from .Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class CentermarkObject(DimensionObject):
     @overload
@@ -1610,6 +1632,8 @@ class CenterMarkStyle(Enum):
 from ..Geometry import ClippingPlaneSurface
 from ..Display import RhinoViewport
 from ..Geometry import ComponentIndex
+from System import Guid
+from System import IConvertible
 from ..Geometry import GeometryBase
 from .Custom import CustomObjectGrips
 from ..Display import VisualAnalysisMode
@@ -1623,6 +1647,7 @@ from ..Display import DisplayPipelineAttributes
 from ..Render import RenderPrimitiveList
 from ..Render.CustomRenderMeshes import Flags
 from ..PlugIns import PlugIn
+from System.Collections.Generic import List
 from ..Render.CustomRenderMeshes import RenderMeshes
 from ..Geometry import BoundingBox
 from ..Render import TextureMapping
@@ -1630,6 +1655,8 @@ from ..Render import RenderMaterial
 from ..Geometry import ComponentStatus
 from .Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class ClippingPlaneObject(RhinoObject):
     @overload
@@ -1921,6 +1948,7 @@ class ClippingPlaneObject(RhinoObject):
 
 
 from ..Geometry import Plane
+from System.Drawing import Color
 class ConstructionPlane:
     @overload
     def __init__(self): ...
@@ -2045,6 +2073,8 @@ class CoordinateSystem(Enum):
 from ..Geometry import Curve
 from ..Display import RhinoViewport
 from ..Geometry import ComponentIndex
+from System import Guid
+from System import IConvertible
 from ..Geometry import GeometryBase
 from .Custom import CustomObjectGrips
 from ..Display import VisualAnalysisMode
@@ -2058,6 +2088,7 @@ from ..Display import DisplayPipelineAttributes
 from ..Render import RenderPrimitiveList
 from ..Render.CustomRenderMeshes import Flags
 from ..PlugIns import PlugIn
+from System.Collections.Generic import List
 from ..Render.CustomRenderMeshes import RenderMeshes
 from ..Geometry import BoundingBox
 from ..Render import TextureMapping
@@ -2065,6 +2096,8 @@ from ..Render import RenderMaterial
 from ..Geometry import ComponentStatus
 from .Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class CurveObject(RhinoObject):
     @overload
@@ -2390,6 +2423,8 @@ from ..Geometry import DetailView
 from ..Display import RhinoViewport
 from ..Geometry import Transform
 from ..Geometry import ComponentIndex
+from System import Guid
+from System import IConvertible
 from ..Geometry import GeometryBase
 from .Custom import CustomObjectGrips
 from ..Display import VisualAnalysisMode
@@ -2402,6 +2437,7 @@ from ..Display import DisplayPipelineAttributes
 from ..Render import RenderPrimitiveList
 from ..Render.CustomRenderMeshes import Flags
 from ..PlugIns import PlugIn
+from System.Collections.Generic import List
 from ..Render.CustomRenderMeshes import RenderMeshes
 from ..Geometry import BoundingBox
 from ..Render import TextureMapping
@@ -2409,6 +2445,8 @@ from ..Render import RenderMaterial
 from ..Geometry import ComponentStatus
 from .Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class DetailViewObject(RhinoObject):
     @overload
@@ -2717,6 +2755,8 @@ class DetailViewObject(RhinoObject):
 
 from ..Geometry import AnnotationBase
 from ..Geometry import ComponentIndex
+from System import Guid
+from System import IConvertible
 from ..Display import RhinoViewport
 from ..Geometry import GeometryBase
 from .Custom import CustomObjectGrips
@@ -2731,6 +2771,7 @@ from ..Display import DisplayPipelineAttributes
 from ..Render import RenderPrimitiveList
 from ..Render.CustomRenderMeshes import Flags
 from ..PlugIns import PlugIn
+from System.Collections.Generic import List
 from ..Render.CustomRenderMeshes import RenderMeshes
 from ..Geometry import BoundingBox
 from ..Render import TextureMapping
@@ -2738,6 +2779,8 @@ from ..Render import RenderMaterial
 from ..Geometry import ComponentStatus
 from .Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class DimensionObject(AnnotationObjectBase):
     @overload
@@ -3030,9 +3073,16 @@ class DimensionObject(AnnotationObjectBase):
     def UnselectAllSubObjects(self) -> int: ...
 
 
+from System.Drawing import Color
+from System import Char
+from System import Guid
+from System.Collections.Specialized import NameValueCollection
+from System.Drawing import Bitmap
 from ..Geometry import ComponentStatus
 from .Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class DimensionStyle(ModelComponent):
     @overload
@@ -3628,8 +3678,11 @@ class EarthCoordinateSystem(Enum):
     EGM2008 = 6
 
 
+from System.Drawing import Color
 from .Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 from ..Runtime import CommonObject
 class Environment(CommonObject):
@@ -3675,6 +3728,8 @@ class Environment(CommonObject):
 
 from ..Geometry import Extrusion
 from ..Geometry import ComponentIndex
+from System import Guid
+from System import IConvertible
 from ..Display import RhinoViewport
 from ..Geometry import GeometryBase
 from .Custom import CustomObjectGrips
@@ -3689,6 +3744,7 @@ from ..Display import DisplayPipelineAttributes
 from ..Render import RenderPrimitiveList
 from ..Render.CustomRenderMeshes import Flags
 from ..PlugIns import PlugIn
+from System.Collections.Generic import List
 from ..Render.CustomRenderMeshes import RenderMeshes
 from ..Geometry import BoundingBox
 from ..Render import TextureMapping
@@ -3696,6 +3752,8 @@ from ..Render import RenderMaterial
 from ..Geometry import ComponentStatus
 from .Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class ExtrusionObject(RhinoObject):
     @overload
@@ -4099,6 +4157,8 @@ class Field(Enum):
     Count = 115
 
 
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 class Font:
     @overload
     def __init__(self, familyName: str): ...
@@ -4255,7 +4315,9 @@ class FontWeight(Enum):
 from ..Geometry import Point3d
 from ..Geometry import Transform
 from ..Geometry import Vector3d
+from System import Guid
 from ..Geometry import ComponentIndex
+from System import IConvertible
 from ..Display import RhinoViewport
 from ..Geometry import GeometryBase
 from .Custom import CustomObjectGrips
@@ -4269,6 +4331,7 @@ from ..Display import DisplayPipelineAttributes
 from ..Render import RenderPrimitiveList
 from ..Render.CustomRenderMeshes import Flags
 from ..PlugIns import PlugIn
+from System.Collections.Generic import List
 from ..Render.CustomRenderMeshes import RenderMeshes
 from ..Geometry import BoundingBox
 from ..Render import TextureMapping
@@ -4276,6 +4339,8 @@ from ..Render import RenderMaterial
 from ..Geometry import ComponentStatus
 from .Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class GripObject(RhinoObject):
     @overload
@@ -4596,9 +4661,13 @@ class GripObject(RhinoObject):
     def UnselectAllSubObjects(self) -> int: ...
 
 
+from System.Collections.Specialized import NameValueCollection
+from System import Guid
 from ..Geometry import ComponentStatus
 from .Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class Group(ModelComponent):
     @overload
@@ -4707,6 +4776,7 @@ class Group(ModelComponent):
 
 from ..Geometry import Point2d
 from ..Geometry import Vector2d
+from System.Collections.Generic import IEnumerable
 class HatchLine:
     @overload
     def __init__(self): ...
@@ -4752,6 +4822,8 @@ class HatchLine:
 
 from ..Geometry import Hatch
 from ..Geometry import ComponentIndex
+from System import Guid
+from System import IConvertible
 from ..Display import RhinoViewport
 from ..Geometry import GeometryBase
 from .Custom import CustomObjectGrips
@@ -4766,6 +4838,7 @@ from ..Display import DisplayPipelineAttributes
 from ..Render import RenderPrimitiveList
 from ..Render.CustomRenderMeshes import Flags
 from ..PlugIns import PlugIn
+from System.Collections.Generic import List
 from ..Render.CustomRenderMeshes import RenderMeshes
 from ..Geometry import BoundingBox
 from ..Render import TextureMapping
@@ -4773,6 +4846,8 @@ from ..Render import RenderMaterial
 from ..Geometry import ComponentStatus
 from .Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class HatchObject(RhinoObject):
     @overload
@@ -5059,9 +5134,14 @@ class HatchObject(RhinoObject):
     def UnselectAllSubObjects(self) -> int: ...
 
 
+from System.Collections.Generic import IEnumerable
+from System.Collections.Specialized import NameValueCollection
+from System import Guid
 from ..Geometry import ComponentStatus
 from .Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class HatchPattern(ModelComponent):
     @overload
@@ -5214,13 +5294,17 @@ class HatchPatternFillType(Enum):
 
 
 from ..Commands import Command
+from System import IntPtr
 from ..Geometry import Point3d
 from ..Geometry import Vector3d
 from ..Geometry import Transform
+from System.Drawing import Color
+from System import Guid
 from ..Geometry import Curve
 from ..Geometry import Surface
 from ..Geometry import Brep
 from ..Geometry import Mesh
+from System.Collections.Generic import IEnumerable
 class HistoryRecord:
     @overload
     def __init__(self, command: Command, version: int): ...
@@ -5291,10 +5375,16 @@ class HistoryRecord:
 
 
 from ..Display import DefinedViewportProjection
+from System.Drawing import Size
+from System.Drawing import Bitmap
+from System import Guid
 from ..Display import IsometricCamera
+from System.Collections.Specialized import NameValueCollection
 from ..Geometry import ComponentStatus
 from .Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 from ..Geometry import InstanceDefinitionGeometry
 class InstanceDefinition(InstanceDefinitionGeometry):
@@ -5497,7 +5587,9 @@ class InstanceDefinitionUpdateType(Enum):
 
 from ..Geometry import Transform
 from ..Geometry import Point3d
+from System import Guid
 from ..Geometry import ComponentIndex
+from System import IConvertible
 from ..Display import RhinoViewport
 from ..Geometry import GeometryBase
 from .Custom import CustomObjectGrips
@@ -5511,6 +5603,7 @@ from ..Display import DisplayPipelineAttributes
 from ..Render import RenderPrimitiveList
 from ..Render.CustomRenderMeshes import Flags
 from ..PlugIns import PlugIn
+from System.Collections.Generic import List
 from ..Render.CustomRenderMeshes import RenderMeshes
 from ..Geometry import BoundingBox
 from ..Render import TextureMapping
@@ -5518,6 +5611,8 @@ from ..Render import RenderMaterial
 from ..Geometry import ComponentStatus
 from .Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class InstanceObject(RhinoObject):
     @overload
@@ -5817,9 +5912,14 @@ class InstanceObject(RhinoObject):
 
 
 from ..Geometry import ComponentStatus
+from System import Guid
+from System.Drawing import Color
 from ..Render import RenderMaterial
+from System.Collections.Specialized import NameValueCollection
 from .Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class Layer(ModelComponent):
     @overload
@@ -6122,6 +6222,8 @@ class LeaderCurveStyle(Enum):
 from ..Geometry import Leader
 from ..Geometry import AnnotationBase
 from ..Geometry import ComponentIndex
+from System import Guid
+from System import IConvertible
 from ..Display import RhinoViewport
 from ..Geometry import GeometryBase
 from .Custom import CustomObjectGrips
@@ -6136,6 +6238,7 @@ from ..Display import DisplayPipelineAttributes
 from ..Render import RenderPrimitiveList
 from ..Render.CustomRenderMeshes import Flags
 from ..PlugIns import PlugIn
+from System.Collections.Generic import List
 from ..Render.CustomRenderMeshes import RenderMeshes
 from ..Geometry import BoundingBox
 from ..Render import TextureMapping
@@ -6143,6 +6246,8 @@ from ..Render import RenderMaterial
 from ..Geometry import ComponentStatus
 from .Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class LeaderObject(AnnotationObjectBase):
     @overload
@@ -6457,6 +6562,8 @@ class LengthDisplayFormat(Enum):
 
 from ..Geometry import Light
 from ..Geometry import ComponentIndex
+from System import Guid
+from System import IConvertible
 from ..Display import RhinoViewport
 from ..Geometry import GeometryBase
 from .Custom import CustomObjectGrips
@@ -6471,6 +6578,7 @@ from ..Display import DisplayPipelineAttributes
 from ..Render import RenderPrimitiveList
 from ..Render.CustomRenderMeshes import Flags
 from ..PlugIns import PlugIn
+from System.Collections.Generic import List
 from ..Render.CustomRenderMeshes import RenderMeshes
 from ..Geometry import BoundingBox
 from ..Render import TextureMapping
@@ -6478,6 +6586,8 @@ from ..Render import RenderMaterial
 from ..Geometry import ComponentStatus
 from .Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class LightObject(RhinoObject):
     @overload
@@ -6769,6 +6879,8 @@ class LightObject(RhinoObject):
 from ..Geometry import LinearDimension
 from ..Geometry import AnnotationBase
 from ..Geometry import ComponentIndex
+from System import Guid
+from System import IConvertible
 from ..Display import RhinoViewport
 from ..Geometry import GeometryBase
 from .Custom import CustomObjectGrips
@@ -6783,6 +6895,7 @@ from ..Display import DisplayPipelineAttributes
 from ..Render import RenderPrimitiveList
 from ..Render.CustomRenderMeshes import Flags
 from ..PlugIns import PlugIn
+from System.Collections.Generic import List
 from ..Render.CustomRenderMeshes import RenderMeshes
 from ..Geometry import BoundingBox
 from ..Render import TextureMapping
@@ -6790,6 +6903,8 @@ from ..Render import RenderMaterial
 from ..Geometry import ComponentStatus
 from .Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class LinearDimensionObject(DimensionObject):
     @overload
@@ -7097,9 +7212,14 @@ class LineJoinStyle(Enum):
 
 
 from ..Geometry import Point2d
+from System.Collections.Generic import IEnumerable
+from System.Collections.Specialized import NameValueCollection
+from System import Guid
 from ..Geometry import ComponentStatus
 from .Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class Linetype(ModelComponent):
     @overload
@@ -7287,10 +7407,15 @@ class MaskType(Enum):
     MaskColor = 1
 
 
+from System import Guid
 from ..Render import RenderMaterial
+from System.Drawing import Color
+from System.Collections.Specialized import NameValueCollection
 from ..Geometry import ComponentStatus
 from .Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class Material(ModelComponent):
     @overload
@@ -7533,6 +7658,7 @@ class Material(ModelComponent):
     def ToString(self) -> str: ...
 
 
+from System import Guid
 class MaterialRef:
     @overload
     def Dispose(self) -> None: ...
@@ -7558,6 +7684,7 @@ class MaterialRef:
     def ToString(self) -> str: ...
 
 
+from System import Guid
 class MaterialRefCreateParams:
     @overload
     def __init__(self): ...
@@ -7595,6 +7722,10 @@ class MaterialRefCreateParams:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import IEnumerator
+from System.Collections.Generic import KeyValuePair
+from System import Guid
+from System.Collections.Generic import ICollection
 class MaterialRefs:
     def __iter__(self) -> Iterator[KeyValuePair]: ...
     @overload
@@ -7642,9 +7773,12 @@ class MaterialRefs:
 
 
 from ..Geometry import Mesh
+from System.Collections.Generic import IEnumerable
 from ..FileIO import TextLog
 from ..Geometry import MeshCheckParameters
 from ..Geometry import ComponentIndex
+from System import Guid
+from System import IConvertible
 from ..Display import RhinoViewport
 from ..Geometry import GeometryBase
 from .Custom import CustomObjectGrips
@@ -7658,6 +7792,7 @@ from ..Display import DisplayPipelineAttributes
 from ..Render import RenderPrimitiveList
 from ..Render.CustomRenderMeshes import Flags
 from ..PlugIns import PlugIn
+from System.Collections.Generic import List
 from ..Render.CustomRenderMeshes import RenderMeshes
 from ..Geometry import BoundingBox
 from ..Render import TextureMapping
@@ -7665,6 +7800,8 @@ from ..Render import RenderMaterial
 from ..Geometry import ComponentStatus
 from .Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class MeshObject(RhinoObject):
     @overload
@@ -7958,9 +8095,12 @@ class MeshObject(RhinoObject):
     def UnselectAllSubObjects(self) -> int: ...
 
 
+from System import Guid
 from ..Geometry import ComponentStatus
 from .Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 from ..Runtime import CommonObject
 class ModelComponent(CommonObject):
@@ -8095,6 +8235,8 @@ class ModelComponentType(Enum):
 
 
 from ..Geometry import ComponentIndex
+from System import Guid
+from System import IConvertible
 from ..Display import RhinoViewport
 from ..Geometry import GeometryBase
 from .Custom import CustomObjectGrips
@@ -8109,6 +8251,7 @@ from ..Display import DisplayPipelineAttributes
 from ..Render import RenderPrimitiveList
 from ..Render.CustomRenderMeshes import Flags
 from ..PlugIns import PlugIn
+from System.Collections.Generic import List
 from ..Render.CustomRenderMeshes import RenderMeshes
 from ..Geometry import BoundingBox
 from ..Render import TextureMapping
@@ -8116,6 +8259,8 @@ from ..Render import RenderMaterial
 from ..Geometry import ComponentStatus
 from .Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class MorphControlObject(RhinoObject):
     @overload
@@ -8401,6 +8546,8 @@ class MorphControlObject(RhinoObject):
 
 
 from ..Geometry import ComponentIndex
+from System import Guid
+from System import IConvertible
 from ..Display import RhinoViewport
 from ..Geometry import GeometryBase
 from .Custom import CustomObjectGrips
@@ -8415,6 +8562,7 @@ from ..Display import DisplayPipelineAttributes
 from ..Render import RenderPrimitiveList
 from ..Render.CustomRenderMeshes import Flags
 from ..PlugIns import PlugIn
+from System.Collections.Generic import List
 from ..Render.CustomRenderMeshes import RenderMeshes
 from ..Geometry import BoundingBox
 from ..Render import TextureMapping
@@ -8422,6 +8570,8 @@ from ..Render import RenderMaterial
 from ..Geometry import ComponentStatus
 from .Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class NamedViewWidgetObject(RhinoObject):
     @overload
@@ -8709,14 +8859,19 @@ class NamedViewWidgetObject(RhinoObject):
 
 
 from ..Geometry import Transform
+from System.Drawing import Color
+from System import Guid
 from ..Display import DisplayModeDescription
 from ..Geometry import MeshingParameters
 from ..Render import RenderMaterial
 from ..Render import Decals
 from ..Geometry import Plane
 from ..FileIO import File3dmMeshModifiers
+from System.Collections.Specialized import NameValueCollection
 from .Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 from ..Runtime import CommonObject
 class ObjectAttributes(CommonObject):
@@ -9151,6 +9306,7 @@ class ObjectType(Enum):
     AnyObject = 4294967295
 
 
+from System import Guid
 from ..Geometry import ComponentIndex
 from ..Input.Custom import PickContext
 from ..Geometry import GeometryBase
@@ -9268,6 +9424,8 @@ class ObjRef:
 from ..Geometry import OrdinateDimension
 from ..Geometry import AnnotationBase
 from ..Geometry import ComponentIndex
+from System import Guid
+from System import IConvertible
 from ..Display import RhinoViewport
 from ..Geometry import GeometryBase
 from .Custom import CustomObjectGrips
@@ -9282,6 +9440,7 @@ from ..Display import DisplayPipelineAttributes
 from ..Render import RenderPrimitiveList
 from ..Render.CustomRenderMeshes import Flags
 from ..PlugIns import PlugIn
+from System.Collections.Generic import List
 from ..Render.CustomRenderMeshes import RenderMeshes
 from ..Geometry import BoundingBox
 from ..Render import TextureMapping
@@ -9289,6 +9448,8 @@ from ..Render import RenderMaterial
 from ..Geometry import ComponentStatus
 from .Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class OrdinateDimensionObject(DimensionObject):
     @overload
@@ -9695,6 +9856,8 @@ class PhysicallyBasedMaterial:
 
 from ..Geometry import PointCloud
 from ..Geometry import ComponentIndex
+from System import Guid
+from System import IConvertible
 from ..Display import RhinoViewport
 from ..Geometry import GeometryBase
 from .Custom import CustomObjectGrips
@@ -9709,6 +9872,7 @@ from ..Display import DisplayPipelineAttributes
 from ..Render import RenderPrimitiveList
 from ..Render.CustomRenderMeshes import Flags
 from ..PlugIns import PlugIn
+from System.Collections.Generic import List
 from ..Render.CustomRenderMeshes import RenderMeshes
 from ..Geometry import BoundingBox
 from ..Render import TextureMapping
@@ -9716,6 +9880,8 @@ from ..Render import RenderMaterial
 from ..Geometry import ComponentStatus
 from .Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class PointCloudObject(RhinoObject):
     @overload
@@ -10006,6 +10172,8 @@ class PointCloudObject(RhinoObject):
 
 from ..Geometry import Point
 from ..Geometry import ComponentIndex
+from System import Guid
+from System import IConvertible
 from ..Display import RhinoViewport
 from ..Geometry import GeometryBase
 from .Custom import CustomObjectGrips
@@ -10020,6 +10188,7 @@ from ..Display import DisplayPipelineAttributes
 from ..Render import RenderPrimitiveList
 from ..Render.CustomRenderMeshes import Flags
 from ..PlugIns import PlugIn
+from System.Collections.Generic import List
 from ..Render.CustomRenderMeshes import RenderMeshes
 from ..Geometry import BoundingBox
 from ..Render import TextureMapping
@@ -10027,6 +10196,8 @@ from ..Render import RenderMaterial
 from ..Geometry import ComponentStatus
 from .Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class PointObject(RhinoObject):
     @overload
@@ -10318,6 +10489,8 @@ class PointObject(RhinoObject):
 from ..Geometry import MeshType
 from ..Geometry import MeshingParameters
 from ..Geometry import ComponentIndex
+from System import Guid
+from System import IConvertible
 from ..Display import RhinoViewport
 from ..Geometry import GeometryBase
 from .Custom import CustomObjectGrips
@@ -10330,6 +10503,7 @@ from ..Display import DisplayPipelineAttributes
 from ..Render import RenderPrimitiveList
 from ..Render.CustomRenderMeshes import Flags
 from ..PlugIns import PlugIn
+from System.Collections.Generic import List
 from ..Render.CustomRenderMeshes import RenderMeshes
 from ..Geometry import BoundingBox
 from ..Render import TextureMapping
@@ -10337,6 +10511,8 @@ from ..Render import RenderMaterial
 from ..Geometry import ComponentStatus
 from .Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class ProxyObject(RhinoObject):
     @overload
@@ -10624,6 +10800,8 @@ class ProxyObject(RhinoObject):
 from ..Geometry import RadialDimension
 from ..Geometry import AnnotationBase
 from ..Geometry import ComponentIndex
+from System import Guid
+from System import IConvertible
 from ..Display import RhinoViewport
 from ..Geometry import GeometryBase
 from .Custom import CustomObjectGrips
@@ -10638,6 +10816,7 @@ from ..Display import DisplayPipelineAttributes
 from ..Render import RenderPrimitiveList
 from ..Render.CustomRenderMeshes import Flags
 from ..PlugIns import PlugIn
+from System.Collections.Generic import List
 from ..Render.CustomRenderMeshes import RenderMeshes
 from ..Geometry import BoundingBox
 from ..Render import TextureMapping
@@ -10645,6 +10824,8 @@ from ..Render import RenderMaterial
 from ..Geometry import ComponentStatus
 from .Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class RadialDimensionObject(DimensionObject):
     @overload
@@ -10939,9 +11120,12 @@ class RadialDimensionObject(DimensionObject):
     def UnselectAllSubObjects(self) -> int: ...
 
 
+from System import Guid
+from System.Collections.Generic import IEnumerable
 from ..Geometry import Point3d
 from ..Geometry import Vector3d
 from ..Geometry import Transform
+from System.Drawing import Color
 class ReplayHistoryData:
     @overload
     def AppendHistoryResult(self) -> ReplayHistoryResult: ...
@@ -10995,7 +11179,9 @@ class ReplayHistoryData:
 
 from ..Geometry import Point3d
 from ..Geometry import PointCloud
+from System.Collections.Generic import IEnumerable
 from ..Geometry import Plane
+from System import Guid
 from ..Geometry import LinearDimension
 from ..Geometry import RadialDimension
 from ..Geometry import AngularDimension
@@ -11128,7 +11314,10 @@ class RhinoModifyObjectAttributesEventArgs:
 
 
 from ..Geometry import ComponentIndex
+from System import Guid
+from System import IConvertible
 from ..Display import RhinoViewport
+from System.Collections.Generic import IEnumerable
 from ..Geometry import MeshingParameters
 from ..Commands import Result
 from ..Geometry import Transform
@@ -11144,12 +11333,15 @@ from ..Display import DisplayPipelineAttributes
 from ..Render import RenderPrimitiveList
 from ..Render.CustomRenderMeshes import Flags
 from ..PlugIns import PlugIn
+from System.Collections.Generic import List
 from ..Render.CustomRenderMeshes import RenderMeshes
 from ..Render import TextureMapping
 from ..Render import RenderMaterial
 from ..Geometry import ComponentStatus
 from .Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class RhinoObject(ModelComponent):
     @overload
@@ -11466,6 +11658,7 @@ class RhinoObject(ModelComponent):
     def UnselectAllSubObjects(self) -> int: ...
 
 
+from System import Guid
 class RhinoObjectEventArgs:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -11500,6 +11693,7 @@ class RhinoObjectSelectionEventArgs:
     def ToString(self) -> str: ...
 
 
+from System import Guid
 class RhinoReplaceObjectEventArgs:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -11570,9 +11764,13 @@ class SectionLabelStyle(Enum):
     TextFromName = 2
 
 
+from System.Drawing import Color
+from System import Guid
 from ..Geometry import ComponentStatus
 from .Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class SectionStyle(ModelComponent):
     @overload
@@ -11743,6 +11941,8 @@ class StackDisplayFormat(Enum):
 
 
 from ..Geometry import ComponentIndex
+from System import Guid
+from System import IConvertible
 from ..Display import RhinoViewport
 from ..Geometry import GeometryBase
 from .Custom import CustomObjectGrips
@@ -11757,6 +11957,7 @@ from ..Display import DisplayPipelineAttributes
 from ..Render import RenderPrimitiveList
 from ..Render.CustomRenderMeshes import Flags
 from ..PlugIns import PlugIn
+from System.Collections.Generic import List
 from ..Render.CustomRenderMeshes import RenderMeshes
 from ..Geometry import BoundingBox
 from ..Render import TextureMapping
@@ -11764,6 +11965,8 @@ from ..Render import RenderMaterial
 from ..Geometry import ComponentStatus
 from .Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class SubDObject(RhinoObject):
     @overload
@@ -12050,6 +12253,8 @@ class SubDObject(RhinoObject):
 
 from ..Geometry import Surface
 from ..Geometry import ComponentIndex
+from System import Guid
+from System import IConvertible
 from ..Display import RhinoViewport
 from ..Geometry import GeometryBase
 from .Custom import CustomObjectGrips
@@ -12064,6 +12269,7 @@ from ..Display import DisplayPipelineAttributes
 from ..Render import RenderPrimitiveList
 from ..Render.CustomRenderMeshes import Flags
 from ..PlugIns import PlugIn
+from System.Collections.Generic import List
 from ..Render.CustomRenderMeshes import RenderMeshes
 from ..Geometry import BoundingBox
 from ..Render import TextureMapping
@@ -12071,6 +12277,8 @@ from ..Render import RenderMaterial
 from ..Geometry import ComponentStatus
 from .Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class SurfaceObject(RhinoObject):
     @overload
@@ -12367,6 +12575,8 @@ class TextDisplayAlignment(Enum):
 
 
 from ..Geometry import ComponentIndex
+from System import Guid
+from System import IConvertible
 from ..Display import RhinoViewport
 from ..Geometry import GeometryBase
 from .Custom import CustomObjectGrips
@@ -12381,6 +12591,7 @@ from ..Display import DisplayPipelineAttributes
 from ..Render import RenderPrimitiveList
 from ..Render.CustomRenderMeshes import Flags
 from ..PlugIns import PlugIn
+from System.Collections.Generic import List
 from ..Render.CustomRenderMeshes import RenderMeshes
 from ..Geometry import BoundingBox
 from ..Render import TextureMapping
@@ -12388,6 +12599,8 @@ from ..Render import RenderMaterial
 from ..Geometry import ComponentStatus
 from .Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class TextDotObject(RhinoObject):
     @overload
@@ -12698,6 +12911,8 @@ from ..Geometry import TextEntity
 from ..Display import RhinoViewport
 from ..Geometry import AnnotationBase
 from ..Geometry import ComponentIndex
+from System import Guid
+from System import IConvertible
 from ..Geometry import GeometryBase
 from .Custom import CustomObjectGrips
 from ..Display import VisualAnalysisMode
@@ -12711,6 +12926,7 @@ from ..Display import DisplayPipelineAttributes
 from ..Render import RenderPrimitiveList
 from ..Render.CustomRenderMeshes import Flags
 from ..PlugIns import PlugIn
+from System.Collections.Generic import List
 from ..Render.CustomRenderMeshes import RenderMeshes
 from ..Geometry import BoundingBox
 from ..Render import TextureMapping
@@ -12718,6 +12934,8 @@ from ..Render import RenderMaterial
 from ..Geometry import ComponentStatus
 from .Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 class TextObject(AnnotationObjectBase):
     @overload
@@ -13018,10 +13236,14 @@ class TextOrientation(Enum):
 
 
 from ..FileIO import FileReference
+from System import Guid
 from ..Geometry import Transform
 from ..Geometry import Vector2d
+from System.Drawing import Color
 from .Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 from ..Runtime import CommonObject
 class Texture(CommonObject):
@@ -13224,6 +13446,7 @@ class ToleranceDisplayFormat(Enum):
 
 
 from ..Display import RhinoViewport
+from System import Guid
 class ViewInfo:
     @overload
     def __init__(self): ...
@@ -13297,10 +13520,18 @@ from ..Geometry import Point3d
 from ..Geometry import BoundingBox
 from ..Geometry import Sphere
 from ..Geometry import Plane
+from System.Drawing import Rectangle
 from ..Geometry import Transform
 from ..Geometry import Line
+from System.Drawing import Point
+from System.Drawing import PointF
+from System.Collections.Generic import IEnumerable
+from System.Drawing import SizeF
+from System import Guid
 from .Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 from ..Runtime import CommonObject
 class ViewportInfo(CommonObject):

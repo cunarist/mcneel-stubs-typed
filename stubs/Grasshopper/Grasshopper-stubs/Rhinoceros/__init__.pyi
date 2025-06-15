@@ -1,7 +1,5 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 import Annotations
 import Display
@@ -108,6 +106,8 @@ class Attributes:
     def ToString(self) -> str: ...
 
 
+from Rhino.Display import ColorRGBA
+from System.Drawing import Color
 class ModelColor:
     @overload
     def CompareTo(self, other: ModelColor) -> int: ...
@@ -154,6 +154,7 @@ class ModelColor:
     def ToString(self) -> str: ...
 
 
+from System import Nullable
 class ModelComponentContent(ModelContent):
     @overload
     def CastTo(self) -> Tuple[bool, T]: ...
@@ -201,6 +202,9 @@ class ModelComponentContent(ModelContent):
     def ToString(self) -> str: ...
 
 
+from Rhino import RhinoDoc
+from System import Guid
+from System import Nullable
 class ModelContent(ModelData):
     @overload
     @staticmethod
@@ -267,6 +271,7 @@ class ModelContentEnablerLoader(GH_AssemblyPriority):
     def ToString(self) -> str: ...
 
 
+from System import StringComparer
 class ModelContentName:
     Empty: ModelContentName
     Comparer: StringComparer
@@ -350,7 +355,11 @@ class ModelData:
     def ToString(self) -> str: ...
 
 
+from Rhino.DocObjects import Font
+from System.Collections.Generic import IReadOnlyList
 from ..Kernel.Types import IGH_Goo
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from ..Kernel.Types import IGH_GooProxy
 from ..Kernel.Types import Q
 class ModelFont:
@@ -415,6 +424,8 @@ class ModelFont:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from Rhino.Geometry import MeshingParameters
+from Rhino import RhinoDoc
 class ModelMeshingParameters(ModelValue):
     @overload
     def __init__(self): ...
@@ -457,6 +468,8 @@ class ModelMeshingParameters(ModelValue):
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import IEnumerable
+from System.Collections.Generic import IEnumerator
 class ModelTags:
     @overload
     def __init__(self, source: Iterable[str]): ...
@@ -506,6 +519,9 @@ class ModelTags:
     def ToString(self) -> str: ...
 
 
+from Rhino.DocObjects import ActiveSpace
+from Rhino import RhinoDoc
+from Rhino import UnitSystem
 class ModelUnitSystem(ModelValue):
     @overload
     def __init__(self): ...
@@ -557,6 +573,9 @@ class ModelUnitSystem(ModelValue):
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import IEnumerable
+from System.Collections.Generic import IEnumerator
+from System.Collections.Generic import KeyValuePair
 class ModelUserText:
     @overload
     def __init__(self, source: Iterable[KeyValuePair]): ...
@@ -656,6 +675,10 @@ class ModelValue:
     def ToString(self) -> str: ...
 
 
+from Rhino.DocObjects import ActiveSpace
+from Rhino import UnitSystem
+from System import Nullable
+from Rhino import RhinoDoc
 class Value:
     @overload
     def __init__(self, activeSpace: ActiveSpace, name: str): ...

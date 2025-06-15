@@ -1,10 +1,17 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 
 
+from System import Guid
+from System.Drawing import Size
+from System.Drawing import Point
+from System.Drawing import Bitmap
+from System.Collections.Generic import List
+from System.Drawing import PointF
+from System.Drawing import Graphics
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 class GH_IconObject:
     @overload
     def Contains(self, pt: PointF) -> bool: ...
@@ -40,6 +47,16 @@ class GH_IconObject:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
+from System.Drawing import Rectangle
+from System.Drawing import Graphics
+from System.Drawing import PointF
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from System.Drawing import Size
+from System.Drawing import Point
+from System.Drawing import Bitmap
+from System.Collections.Generic import List
 class GH_IconObject_Rectangle(GH_IconObject):
     @overload
     def __init__(self): ...
@@ -79,6 +96,13 @@ class GH_IconObject_Rectangle(GH_IconObject):
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
+from System.Drawing import Point
+from System.Drawing import Size
+from System.Drawing import Bitmap
+from System.Drawing import PointF
+from System.Collections.Generic import List
+from System.Drawing import Graphics
 class IGH_IconObject:
     @overload
     def Contains(self, pt: PointF) -> bool: ...
@@ -102,6 +126,8 @@ class IGH_IconObject:
     def Size(self, Value: Size) -> None: ...
 
 
+from System.Drawing import PointF
+from System.Drawing import Graphics
 class IGH_IconObjectGrip:
     @property
     def Index(self) -> int: ...

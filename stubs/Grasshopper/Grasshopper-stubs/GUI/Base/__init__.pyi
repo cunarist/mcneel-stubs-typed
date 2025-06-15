@@ -1,10 +1,14 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 
 
+from System import IntPtr
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class ColorChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -36,6 +40,13 @@ class ColorChangedEventHandler:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from System.Drawing import Graphics
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class DrawSliderChannel:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -67,6 +78,13 @@ class DrawSliderChannel:
     def ToString(self) -> str: ...
 
 
+from System.Drawing import Rectangle
+from Rhino.Geometry import Point4d
+from System.Drawing import Point
+from System.Drawing.Drawing2D import GraphicsPath
+from System.Drawing import PointF
+from System.Drawing import Graphics
+from System.Drawing import Color
 class GH_ColourCube:
     @overload
     def __init__(self, box: Rectangle, space: GH_ColourSpace, color: Point4d): ...
@@ -158,6 +176,16 @@ class GH_ColourCube:
     def ToString(self) -> str: ...
 
 
+from System.Drawing import Rectangle
+from System.Windows.Forms import Padding
+from System.Drawing import Color
+from System.Drawing import Font
+from Rhino.Geometry import Point4d
+from System.Windows.Forms import MouseEventArgs
+from System.Drawing import PointF
+from System.Windows.Forms import Control
+from System.Drawing.Drawing2D import Matrix
+from System.Drawing import Graphics
 class GH_ColourPickerBase:
     @overload
     def __init__(self): ...
@@ -271,6 +299,7 @@ class GH_ColourPickerBase:
     def ToString(self) -> str: ...
 
 
+from System.Drawing import Color
 class GH_ColourPickerEventArgs:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -303,6 +332,8 @@ class GH_DigitAlign(Enum):
     Right = 3
 
 
+from System import Decimal
+from System.Collections.Generic import IList
 class GH_DigitNumber:
     @overload
     def __init__(self, decimalPlaces: int): ...
@@ -366,7 +397,18 @@ class GH_DigitNumber:
     def ToString(self) -> str: ...
 
 
+from System import Decimal
+from System.Drawing import Color
+from System.Windows.Forms import Padding
 from ..Gradient import GH_Gradient
+from System.Drawing import Font
+from System.Drawing import Rectangle
+from System.Collections.Generic import List
+from System.Windows.Forms import MouseEventArgs
+from System.Drawing import PointF
+from System.Windows.Forms import Control
+from System.Drawing.Drawing2D import Matrix
+from System.Drawing import Graphics
 class GH_DigitScrollerBase(GH_TextBoxInputBase):
     @overload
     def __init__(self): ...
@@ -538,6 +580,7 @@ class GH_DigitScrollerBase(GH_TextBoxInputBase):
     def ToString(self) -> str: ...
 
 
+from System import Decimal
 class GH_DigitScrollerEventArgs:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -564,6 +607,8 @@ class GH_MouseAction(Enum):
     RadixDrag = 5
 
 
+from System.Drawing import Rectangle
+from System.Drawing import RectangleF
 class GH_ScrollBarVerticalBase:
     @overload
     def __init__(self): ...
@@ -612,6 +657,20 @@ class GH_SliderAccuracy(Enum):
     Odd = 3
 
 
+from System.Drawing import Color
+from System.Drawing import Font
+from System.Windows.Forms import Padding
+from System.Drawing import Rectangle
+from System.Drawing import RectangleF
+from System.Collections.Generic import List
+from System import Decimal
+from System.Collections.Generic import IEnumerable
+from System.Windows.Forms import MouseEventArgs
+from System.Drawing import PointF
+from System.Windows.Forms import KeyEventArgs
+from System.Windows.Forms import Control
+from System.Drawing.Drawing2D import Matrix
+from System.Drawing import Graphics
 class GH_SliderBase(GH_TextBoxInputBase):
     @overload
     def __init__(self): ...
@@ -842,6 +901,7 @@ class GH_SliderBase(GH_TextBoxInputBase):
     def ToString(self) -> str: ...
 
 
+from System import Decimal
 class GH_SliderEventArgs:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -879,6 +939,10 @@ class GH_SliderTickDisplay(Enum):
     Etched = 2
 
 
+from System.Drawing import Rectangle
+from System.Drawing import Font
+from System.Windows.Forms import Control
+from System.Drawing.Drawing2D import Matrix
 class GH_TextBoxInputBase:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -912,6 +976,13 @@ class GH_TextBoxInputBase:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from System import EventArgs
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class InvalidatedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -943,6 +1014,13 @@ class InvalidatedEventHandler:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from System import EventArgs
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class InvalidatedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -974,6 +1052,7 @@ class InvalidatedEventHandler:
     def ToString(self) -> str: ...
 
 
+from System import Decimal
 class SliderSnapRange:
     @overload
     def __init__(self, value: Decimal): ...
@@ -1005,6 +1084,12 @@ class SliderSnapRange:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class TextInputHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -1036,6 +1121,12 @@ class TextInputHandler:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class ValueChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -1067,6 +1158,12 @@ class ValueChangedEventHandler:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class ValueChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...

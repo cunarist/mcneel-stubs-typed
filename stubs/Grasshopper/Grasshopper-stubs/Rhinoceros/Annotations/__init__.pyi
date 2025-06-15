@@ -1,13 +1,13 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 import Params
 
 __all__ = ['Params']
 
 
+from Rhino.DocObjects import ArrowType
+from System import Nullable
 class AnnotationArrow(ModelData):
     @overload
     def __init__(self): ...
@@ -50,6 +50,8 @@ class AnnotationArrow(ModelData):
     def ToString(self) -> str: ...
 
 
+from Rhino.DocObjects import DimensionStyle
+from System import Nullable
 class AnnotationArrowSettings(ModelData):
     @overload
     def __init__(self): ...
@@ -109,6 +111,13 @@ from ...Kernel.Types import T
 from ...Kernel.Types import GH_QuickCastType
 from ...Kernel.Types import IGH_QuickCast
 from ...Kernel.Types import Complex
+from Rhino.Geometry import Matrix
+from Rhino.Geometry import Point3d
+from Rhino.Geometry import Vector3d
+from System.Drawing import Color
+from Rhino.Geometry import Interval
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from ...Kernel.Types import IGH_GooProxy
 from ...Kernel.Types import GH_String
 class AnnotationDateTimeFormat(GH_String):
@@ -188,6 +197,8 @@ class AnnotationDateTimeFormat(GH_String):
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from Rhino.DocObjects import DimensionStyle
+from System import Nullable
 class AnnotationDimensionSettings(ModelData):
     @overload
     def __init__(self): ...
@@ -261,6 +272,8 @@ class AnnotationDimensionSettings(ModelData):
     def ToString(self) -> str: ...
 
 
+from Rhino.DocObjects import DimensionStyle
+from System import Nullable
 class AnnotationLeaderSettings(ModelData):
     @overload
     def __init__(self): ...
@@ -314,6 +327,9 @@ class AnnotationLeaderSettings(ModelData):
     def ToString(self) -> str: ...
 
 
+from Rhino.DocObjects import DimensionStyle
+from Rhino.DocObjects import Font
+from System import Nullable
 class AnnotationTextSettings(ModelData):
     @overload
     def __init__(self): ...
@@ -379,6 +395,8 @@ class AnnotationTextSettings(ModelData):
     def ToString(self) -> str: ...
 
 
+from Rhino.DocObjects import DimensionStyle
+from System import Nullable
 class AnnotationToleranceSettings(ModelData):
     @overload
     def __init__(self): ...
@@ -430,6 +448,8 @@ class AnnotationToleranceSettings(ModelData):
     def ToString(self) -> str: ...
 
 
+from Rhino.DocObjects import DimensionStyle
+from System import Nullable
 class AnnotationUnitsSettings(ModelData):
     @overload
     def __init__(self): ...
@@ -495,6 +515,8 @@ class AnnotationUnitsSettings(ModelData):
     def ToString(self) -> str: ...
 
 
+from System import Nullable
+from Rhino.DocObjects import DimensionStyle
 class Attributes:
     @overload
     def __init__(self): ...
@@ -541,6 +563,9 @@ class Attributes:
     def ToString(self) -> str: ...
 
 
+from Rhino.DocObjects import Font
+from System import Nullable
+from Rhino.DocObjects import DimensionStyle
 class Attributes:
     @overload
     def __init__(self): ...
@@ -615,6 +640,8 @@ class Attributes:
     def ToString(self) -> str: ...
 
 
+from System import Nullable
+from Rhino.DocObjects import DimensionStyle
 class Attributes:
     @overload
     def __init__(self): ...
@@ -665,6 +692,7 @@ class Attributes:
     def ToString(self) -> str: ...
 
 
+from System import Nullable
 class Attributes:
     @overload
     def __init__(self): ...
@@ -738,6 +766,8 @@ class Attributes:
     def ToString(self) -> str: ...
 
 
+from System import Nullable
+from Rhino.DocObjects import DimensionStyle
 class Attributes:
     @overload
     def __init__(self): ...
@@ -788,6 +818,8 @@ class Attributes:
     def ToString(self) -> str: ...
 
 
+from System import Nullable
+from Rhino.DocObjects import ArrowType
 class Attributes:
     @overload
     def __init__(self): ...
@@ -814,6 +846,8 @@ class Attributes:
     def ToString(self) -> str: ...
 
 
+from System import Nullable
+from Rhino.DocObjects import DimensionStyle
 class Attributes:
     @overload
     def __init__(self): ...
@@ -888,6 +922,8 @@ class Attributes:
     def ToString(self) -> str: ...
 
 
+from System import Nullable
+from Rhino.DocObjects import DimensionStyle
 class Attributes:
     @overload
     def __init__(self): ...
@@ -978,6 +1014,9 @@ class Attributes:
     def ToString(self) -> str: ...
 
 
+from Rhino.DocObjects import DimensionStyle
+from System import Guid
+from System import Nullable
 class ModelAnnotationStyle(ModelComponentContent):
     @overload
     def __init__(self): ...

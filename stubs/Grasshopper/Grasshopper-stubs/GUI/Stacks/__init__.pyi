@@ -1,7 +1,5 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 
 
@@ -10,6 +8,7 @@ class GH_Interpolation(Enum):
     cubic = 2
 
 
+from System.Drawing import Rectangle
 class GH_Motion:
     @overload
     def __init__(self, rec_0: Rectangle, rec_1: Rectangle, duration: int): ...
@@ -45,6 +44,8 @@ class GH_Motion:
     def ToString(self) -> str: ...
 
 
+from System.Windows.Forms import Control
+from System.Drawing import Rectangle
 class GH_Stack:
     @overload
     def __init__(self): ...
@@ -116,6 +117,12 @@ class GH_Stack:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class GH_StackEventDelegate:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...

@@ -1,13 +1,12 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 import Params
 
 __all__ = ['Params']
 
 
+from System import Nullable
 class Attributes:
     @overload
     def Equals(self, other: object) -> bool: ...
@@ -33,6 +32,7 @@ class Attributes:
     def ToString(self) -> str: ...
 
 
+from System import Nullable
 class Attributes:
     @overload
     def Equals(self, other: object) -> bool: ...
@@ -160,6 +160,7 @@ class Attributes:
     def ToString(self) -> str: ...
 
 
+from System import Nullable
 class Attributes:
     @overload
     def __init__(self): ...
@@ -297,9 +298,13 @@ class Attributes:
     def ToString(self) -> str: ...
 
 
+from Rhino.Display import ColorGradient
 from ...Kernel.Types import IGH_Goo
+from Rhino.Geometry import BoundingBox
 from ...Kernel import GH_PreviewWireArgs
 from ...Kernel import GH_PreviewMeshArgs
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from ...Kernel.Types import IGH_GooProxy
 class DisplayColorGradient:
     @overload
@@ -352,10 +357,18 @@ class DisplayColorGradient:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from Rhino.Display import ColorStop
 from ...Kernel.Types import IGH_Goo
 from ...Kernel.Types import GH_QuickCastType
 from ...Kernel.Types import IGH_QuickCast
 from ...Kernel.Types import Complex
+from Rhino.Geometry import Matrix
+from Rhino.Geometry import Point3d
+from Rhino.Geometry import Vector3d
+from System.Drawing import Color
+from Rhino.Geometry import Interval
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from ...Kernel.Types import IGH_GooProxy
 class DisplayColorStop:
     @overload
@@ -430,6 +443,9 @@ class DisplayColorStop:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from Rhino.Display import DisplayModeDescription
+from System import Guid
+from System import Nullable
 class ModelDisplayMode(ModelContent):
     @overload
     def __init__(self): ...
@@ -496,6 +512,8 @@ class ModelDisplayMode(ModelContent):
     def ToString(self) -> str: ...
 
 
+from Rhino.DocObjects import ViewInfo
+from System import Nullable
 class ModelNamedView(ModelContent):
     @overload
     @staticmethod
@@ -550,6 +568,11 @@ class ModelNamedView(ModelContent):
     def ToString(self) -> str: ...
 
 
+from Rhino.Display import RhinoViewport
+from System import Guid
+from Rhino.Display import ViewportType
+from Rhino.DocObjects import ActiveSpace
+from System import Nullable
 class ModelPageViewport(ModelViewport):
     @overload
     def __init__(self): ...
@@ -624,6 +647,11 @@ class ModelPageViewport(ModelViewport):
     def ToString(self) -> str: ...
 
 
+from Rhino.Display import RhinoViewport
+from System import Guid
+from Rhino.Display import ViewportType
+from Rhino.DocObjects import ActiveSpace
+from System import Nullable
 class ModelStandardViewport(ModelViewport):
     @overload
     def __init__(self): ...
@@ -696,7 +724,15 @@ class ModelStandardViewport(ModelViewport):
     def ToString(self) -> str: ...
 
 
+from Rhino.DocObjects import ViewportInfo
+from Rhino.DocObjects import ViewInfo
+from Rhino.Display import RhinoView
+from Rhino.Display import RhinoViewport
+from System import Guid
+from Rhino.Geometry import Transform
+from Rhino.Geometry import BoundingBox
 from ...Kernel.Types import IGH_GeometricGoo
+from Rhino.Geometry import SpaceMorph
 class ModelView:
     @overload
     def __init__(self): ...
@@ -741,6 +777,10 @@ class ModelView:
     def Transform(self, xform: Transform) -> IGH_GeometricGoo: ...
 
 
+from Rhino.Display import ViewportType
+from Rhino.DocObjects import ActiveSpace
+from Rhino.Display import RhinoViewport
+from System import Nullable
 class ModelViewport(ModelContent):
     @overload
     @staticmethod
@@ -805,6 +845,7 @@ class ModelViewport(ModelContent):
     def ToString(self) -> str: ...
 
 
+from System import Nullable
 class ObjectDisplay(ModelValue):
     @overload
     def __init__(self): ...
@@ -847,6 +888,8 @@ class ObjectDisplay(ModelValue):
     def ToString(self) -> str: ...
 
 
+from Rhino.DocObjects import ObjectColorSource
+from System import Nullable
 class ObjectDisplayColor(ModelValue):
     @overload
     def __init__(self): ...
@@ -885,6 +928,7 @@ class ObjectDisplayColor(ModelValue):
     def ToString(self) -> str: ...
 
 
+from System import Nullable
 class ObjectVisibility(ModelValue):
     @overload
     def __init__(self): ...
@@ -927,6 +971,7 @@ class ObjectVisibility(ModelValue):
     def ToString(self) -> str: ...
 
 
+from Rhino.DocObjects import ObjectColorSource
 class Value:
     @overload
     def __init__(self, source: ObjectColorSource): ...

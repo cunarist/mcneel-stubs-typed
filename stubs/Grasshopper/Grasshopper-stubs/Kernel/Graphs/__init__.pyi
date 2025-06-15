@@ -1,10 +1,15 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 
 
+from System import Guid
+from System.Drawing import Image
+from System.Collections.Generic import List
+from System.Drawing import RectangleF
+from System.Drawing import Graphics
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 class GH_AbstractGraph:
     @overload
     def add_GraphChanged(self, obj: GraphChangedEventHandler) -> None: ...
@@ -66,6 +71,13 @@ class GH_AbstractGraph:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from System.Drawing import RectangleF
+from System.Drawing import Graphics
+from System import Guid
+from System.Drawing import Image
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import List
 class GH_BezierGraph(GH_AbstractGraph):
     @overload
     def __init__(self): ...
@@ -129,6 +141,13 @@ class GH_BezierGraph(GH_AbstractGraph):
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from System.Drawing import RectangleF
+from System import Guid
+from System.Drawing import Image
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import List
+from System.Drawing import Graphics
 class GH_ConicGraph(GH_AbstractGraph):
     @overload
     def __init__(self): ...
@@ -192,6 +211,13 @@ class GH_ConicGraph(GH_AbstractGraph):
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from System.Drawing import RectangleF
+from System.Drawing import Graphics
+from System import Guid
+from System.Drawing import Image
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import List
 class GH_DoubleSineGraph(GH_AbstractGraph):
     @overload
     def __init__(self): ...
@@ -255,6 +281,13 @@ class GH_DoubleSineGraph(GH_AbstractGraph):
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
+from System.Drawing import Image
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import List
+from System.Drawing import RectangleF
+from System.Drawing import Graphics
 class GH_GaussianGraph(GH_AbstractGraph):
     @overload
     def __init__(self): ...
@@ -318,9 +351,17 @@ class GH_GaussianGraph(GH_AbstractGraph):
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from System.Drawing import RectangleF
 from ...GUI.Canvas import GH_Canvas
 from ...GUI import GH_CanvasMouseEvent
 from ...GUI.Canvas import GH_ObjectResponse
+from System.Windows.Forms import KeyEventArgs
+from System.Drawing import Graphics
+from System.Collections.Generic import List
+from System.Drawing import Pen
+from System.Drawing import PointF
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 class GH_GraphContainer:
     @overload
     def __init__(self, n_graph: IGH_Graph): ...
@@ -442,6 +483,7 @@ class GH_GraphDrawInstruction(Enum):
     skip = 1
 
 
+from System.Drawing import PointF
 class GH_GraphGrip:
     @overload
     def __init__(self): ...
@@ -518,6 +560,13 @@ class GH_GripConstraint(Enum):
     vertical = 2
 
 
+from System.Drawing import RectangleF
+from System.Drawing import Graphics
+from System import Guid
+from System.Drawing import Image
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import List
 class GH_LinearGraph(GH_AbstractGraph):
     @overload
     def __init__(self): ...
@@ -610,6 +659,13 @@ class GH_LinearGraphProxy:
     def ToString(self) -> str: ...
 
 
+from System.Drawing import Graphics
+from System import Guid
+from System.Drawing import Image
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import List
+from System.Drawing import RectangleF
 class GH_ParabolaGraph(GH_AbstractGraph):
     @overload
     def __init__(self): ...
@@ -673,6 +729,13 @@ class GH_ParabolaGraph(GH_AbstractGraph):
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
+from System.Drawing import Image
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import List
+from System.Drawing import RectangleF
+from System.Drawing import Graphics
 class GH_PerlinGraph(GH_AbstractGraph):
     @overload
     def __init__(self): ...
@@ -736,6 +799,13 @@ class GH_PerlinGraph(GH_AbstractGraph):
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
+from System.Drawing import Image
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import List
+from System.Drawing import RectangleF
+from System.Drawing import Graphics
 class GH_PowerGraph(GH_AbstractGraph):
     @overload
     def __init__(self): ...
@@ -799,6 +869,13 @@ class GH_PowerGraph(GH_AbstractGraph):
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from System.Drawing import RectangleF
+from System import Guid
+from System.Drawing import Image
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import List
+from System.Drawing import Graphics
 class GH_SincGraph(GH_AbstractGraph):
     @overload
     def __init__(self): ...
@@ -862,6 +939,8 @@ class GH_SincGraph(GH_AbstractGraph):
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 class GH_SineEquation:
     @overload
     def __init__(self): ...
@@ -891,6 +970,13 @@ class GH_SineEquation:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from System.Drawing import RectangleF
+from System import Guid
+from System.Drawing import Image
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import List
+from System.Drawing import Graphics
 class GH_SineGraph(GH_AbstractGraph):
     @overload
     def __init__(self): ...
@@ -954,6 +1040,13 @@ class GH_SineGraph(GH_AbstractGraph):
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from System.Drawing import Graphics
+from System import Guid
+from System.Drawing import Image
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import List
+from System.Drawing import RectangleF
 class GH_SquareRootGraph(GH_AbstractGraph):
     @overload
     def __init__(self): ...
@@ -1017,6 +1110,12 @@ class GH_SquareRootGraph(GH_AbstractGraph):
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import IntPtr
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class GraphChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -1048,6 +1147,12 @@ class GraphChangedEventHandler:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class GraphChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -1079,6 +1184,12 @@ class GraphChangedEventHandler:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class GripChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -1110,6 +1221,11 @@ class GripChangedEventHandler:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import List
+from System import Guid
+from System.Drawing import Image
+from System.Drawing import RectangleF
+from System.Drawing import Graphics
 class IGH_Graph:
     @overload
     def add_GraphChanged(self, obj: GraphChangedEventHandler) -> None: ...

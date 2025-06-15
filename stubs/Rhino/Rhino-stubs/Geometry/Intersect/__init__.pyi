@@ -1,7 +1,5 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 
 
@@ -19,6 +17,7 @@ class CircleCircleIntersection(Enum):
     Overlap = 3
 
 
+from System.Collections.Generic import IEnumerator
 class CurveIntersections:
     def __iter__(self) -> Iterator[IntersectionEvent]: ...
     def __getitem__(self, index: int) -> IntersectionEvent: ...
@@ -43,7 +42,10 @@ class CurveIntersections:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import IEnumerable
 from ...FileIO import TextLog
+from System.Threading import CancellationToken
+from System import IProgress
 class Intersection:
     @overload
     @staticmethod
@@ -288,6 +290,7 @@ class LineSphereIntersection(Enum):
     Multiple = 2
 
 
+from System.Collections.Generic import IEnumerable
 from ...DocObjects import RhinoObject
 class MeshClash:
     @overload

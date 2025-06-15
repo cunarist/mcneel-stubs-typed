@@ -1,10 +1,14 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 
 
+from System.IO import Stream
+from System import Nullable
+from System.Collections.Generic import IEnumerable
+from System.Reflection import Assembly
+from System import IntPtr
+from System import EventHandler
 class Bitmap(Image):
     @overload
     def __init__(self, fileName: str): ...
@@ -96,6 +100,8 @@ class Bitmap(Image):
     def WithSize(self, width: int, height: int) -> Icon: ...
 
 
+from System import IntPtr
+from System.Collections.Generic import IEnumerable
 class BitmapData:
     @overload
     def Dispose(self) -> None: ...
@@ -459,6 +465,7 @@ class Brushes:
     def ToString(self) -> str: ...
 
 
+from System import Nullable
 class Color:
     @overload
     def __init__(self, color: Color, alpha: Nullable): ...
@@ -1077,6 +1084,10 @@ class FillMode(Enum):
     Winding = 1
 
 
+from System import Nullable
+from System.IO import Stream
+from System import IntPtr
+from System import EventHandler
 class Font(Widget):
     @overload
     def __init__(self, handler: IHandler): ...
@@ -1196,6 +1207,9 @@ class FontFamilies:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import IEnumerable
+from System import IntPtr
+from System import EventHandler
 class FontFamily(Widget):
     @overload
     def __init__(self, handler: IHandler): ...
@@ -1261,6 +1275,7 @@ class FontFamily(Widget):
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import IEnumerable
 class Fonts:
     @overload
     @staticmethod
@@ -1304,7 +1319,11 @@ class FontStyle(Enum):
     Italic = 2
 
 
+from System.IO import Stream
 from ..Forms import Range
+from System.Collections.Generic import IEnumerable
+from System import IntPtr
+from System import EventHandler
 class FontTypeface(Widget):
     @overload
     def __init__(self, fileName: str): ...
@@ -1374,6 +1393,8 @@ class FontTypeface(Widget):
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from System import EventHandler
 class FormattedText(Widget):
     @overload
     def __init__(self): ...
@@ -1476,6 +1497,10 @@ class GradientWrapMode(Enum):
     Reflect = 2
 
 
+from System.Collections.Generic import IEnumerable
+from System import IDisposable
+from System import IntPtr
+from System import EventHandler
 class Graphics(Widget):
     @overload
     def __init__(self, handler: IHandler): ...
@@ -1691,6 +1716,8 @@ class Graphics(Widget):
     def TranslateTransform(self, offsetX: float, offsetY: float) -> None: ...
 
 
+from System import Func
+from System.Collections.Generic import IEnumerable
 class GraphicsPath:
     @overload
     def __init__(self): ...
@@ -1799,6 +1826,12 @@ class GraphicsPathExtensions:
     def ToString(self) -> str: ...
 
 
+from System.IO import Stream
+from System.Collections.Generic import IEnumerable
+from System.Reflection import Assembly
+from System import Nullable
+from System import IntPtr
+from System import EventHandler
 class Icon(Image):
     @overload
     def __init__(self, handler: IHandler): ...
@@ -1868,6 +1901,9 @@ class Icon(Image):
     def WithSize(self, width: int, height: int) -> Icon: ...
 
 
+from System import Func
+from System.IO import Stream
+from System.Reflection import Assembly
 class IconFrame:
     @overload
     def __init__(self, scale: float, load: Func): ...
@@ -1901,6 +1937,7 @@ class IconFrame:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import IEnumerable
 class IGraphicsPath:
     @overload
     def AddArc(self, x: float, y: float, width: float, height: float, startAngle: float, sweepAngle: float) -> None: ...
@@ -1946,6 +1983,8 @@ class IGraphicsPath:
     def Transform(self, matrix: IMatrix) -> None: ...
 
 
+from System.IO import Stream
+from System import Func
 class IHandler:
     @overload
     def Create(self, frame: IconFrame, stream: Stream) -> object: ...
@@ -1997,6 +2036,8 @@ class IHandler:
     def SetColor(self, widget: SolidBrush, color: Color) -> None: ...
 
 
+from System.IO import Stream
+from System.Collections.Generic import IEnumerable
 class IHandler:
     @overload
     def Create(self, stream: Stream) -> None: ...
@@ -2097,6 +2138,8 @@ class IHandler:
     def Wrap(self, value: FormattedTextWrapMode) -> None: ...
 
 
+from System.IO import Stream
+from System.Collections.Generic import IEnumerable
 class IHandler:
     @overload
     def Create(self, family: FontFamily) -> None: ...
@@ -2118,6 +2161,7 @@ class IHandler:
     def HasCharacterRanges(self, ranges: Iterable[Range]) -> bool: ...
 
 
+from System.Collections.Generic import IEnumerable
 class IHandler:
     @overload
     def FontFamilyAvailable(self, fontFamily: str) -> bool: ...
@@ -2125,6 +2169,7 @@ class IHandler:
     def AvailableFontFamilies(self) -> Iterable[FontFamily]: ...
 
 
+from System.Collections.Generic import IEnumerable
 class IHandler:
     @overload
     def Create(self, familyName: str) -> None: ...
@@ -2140,6 +2185,7 @@ class IHandler:
     def Typefaces(self) -> Iterable[FontTypeface]: ...
 
 
+from System import Nullable
 class IHandler:
     @overload
     def Create(self, systemFont: SystemFont, size: Nullable, decoration: FontDecoration) -> None: ...
@@ -2175,11 +2221,14 @@ class IHandler:
     def MeasureString(self, text: str) -> SizeF: ...
 
 
+from System import Nullable
 class IHandler:
     @overload
     def ModifyComponent(self, controlObject: object, r: Nullable, g: Nullable, b: Nullable, a: Nullable) -> object: ...
 
 
+from System.IO import Stream
+from System import Nullable
 class IHandler:
     @overload
     def Clone(self, rectangle: Nullable) -> Bitmap: ...
@@ -2235,6 +2284,7 @@ class IHandler:
     pass
 
 
+from System.Collections.Generic import IEnumerable
 class IHandler:
     @overload
     def Clear(self, brush: SolidBrush) -> None: ...
@@ -2338,6 +2388,8 @@ class ILockableImage:
     def Unlock(self, bitmapData: BitmapData) -> None: ...
 
 
+from System import IntPtr
+from System import EventHandler
 class Image(Widget):
     @overload
     def add_StyleChanged(self, value: EventHandler) -> None: ...
@@ -2450,6 +2502,8 @@ class IMatrix:
     def Translate(self, offsetX: float, offsetY: float) -> None: ...
 
 
+from System import IntPtr
+from System import EventHandler
 class IndexedBitmap(Image):
     @overload
     def __init__(self, width: int, height: int, bitsPerPixel: int): ...
@@ -2512,6 +2566,7 @@ class ITransformBrush:
     def Transform(self, value: IMatrix) -> None: ...
 
 
+from System import Func
 class LinearGradientBrush(Brush):
     @overload
     def __init__(self, startColor: Color, endColor: Color, startPoint: PointF, endPoint: PointF): ...
@@ -2545,6 +2600,7 @@ class LinearGradientBrush(Brush):
     def ToString(self) -> str: ...
 
 
+from System import Func
 class Matrix:
     @overload
     @staticmethod
@@ -2772,6 +2828,11 @@ class PaddingF:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import IEnumerable
+from System.IO import BinaryWriter
+from System.IO import BinaryReader
+from System.Collections.Specialized import NotifyCollectionChangedEventHandler
+from System.Collections.Generic import IEnumerator
 class Palette:
     @overload
     def __init__(self): ...
@@ -2843,6 +2904,7 @@ class Palette:
     def ToString(self) -> str: ...
 
 
+from System import Func
 class Pen:
     @overload
     def __init__(self, color: Color, thickness: float): ...
@@ -3454,6 +3516,7 @@ class PointF:
     def UnitVectorAtAngle(angle: float) -> PointF: ...
 
 
+from System import Func
 class RadialGradientBrush(Brush):
     @overload
     def __init__(self, startColor: Color, endColor: Color, center: PointF, gradientOrigin: PointF, radius: SizeF): ...
@@ -3977,6 +4040,8 @@ class RectangleF:
     def Union(rect1: RectangleF, rect2: RectangleF) -> RectangleF: ...
 
 
+from System import IntPtr
+from System import EventHandler
 class Region(Widget):
     @overload
     def __init__(self): ...
@@ -4191,6 +4256,7 @@ class SizeF:
     def ToString(self) -> str: ...
 
 
+from System import Func
 class SolidBrush(Brush):
     @overload
     def __init__(self, color: Color): ...
@@ -4263,6 +4329,7 @@ class SystemFont(Enum):
     User = 10
 
 
+from System import Nullable
 class SystemFonts:
     @overload
     @staticmethod
@@ -4344,6 +4411,7 @@ class SystemIconType(Enum):
     Warning = 5
 
 
+from System import Func
 class TextureBrush(Brush):
     @overload
     def __init__(self, image: Image, opacity: float): ...

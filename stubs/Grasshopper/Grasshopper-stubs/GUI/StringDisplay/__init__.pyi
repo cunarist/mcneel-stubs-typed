@@ -1,10 +1,14 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 
 
+from System.Drawing import Font
+from System.Drawing import Size
+from System.Drawing import Graphics
+from System.Drawing import Rectangle
+from System.Drawing import Color
+from System.Drawing import StringAlignment
 class GH_FormattedListItem(GH_SimpleListItem):
     @overload
     def __init__(self): ...
@@ -50,6 +54,11 @@ class GH_FormattedListItem(GH_SimpleListItem):
     def ToString(self) -> str: ...
 
 
+from System.Drawing import Rectangle
+from System.Drawing import Color
+from System.Drawing import StringAlignment
+from System.Drawing import Size
+from System.Drawing import Graphics
 class GH_SimpleListItem:
     @overload
     def __init__(self): ...
@@ -85,6 +94,9 @@ class GH_SimpleListItem:
 
 
 
+from System.Drawing import Size
+from System.Drawing import Rectangle
+from System.Drawing import Graphics
 class IGH_ListItem:
     @overload
     def ComputeSize(self, layoutWidth: int) -> Size: ...

@@ -152,8 +152,6 @@ namespace PyStubblerLib
             string[] allChildNamespaces = GetChildNamespaces(stubTypes[0].Namespace, allNamespaces);
             sb.AppendLine("from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence");
             sb.AppendLine("from enum import Enum");
-            sb.AppendLine("from System import *");
-            sb.AppendLine("from System.Drawing import *");
             sb.Append("\n");
             if( allChildNamespaces.Length > 0 )
             {                
@@ -263,10 +261,14 @@ namespace PyStubblerLib
                 {
                     var relativeNamespace = paramImport.Item1;
                     var paramType = paramImport.Item2;
-                    if (paramType.EndsWith("]"))
+                    if (paramType.EndsWith("]") || ShouldAvoidImporting(paramType))
+                    {
                         continue;
-                    if (relativeNamespace != null && relativeNamespace != "" && relativeNamespace != ".")
+                    }
+                    if (relativeNamespace != "" && relativeNamespace != ".")
+                    {
                         sb.AppendLine($"from {relativeNamespace} import {paramType}");
+                    }
                 }
 
                 // write class definition
@@ -622,8 +624,11 @@ namespace PyStubblerLib
                 }
             }
 
+            // If there is no common prefix, return full `to` path
             if (commonLength == 0)
-                return null;
+            {
+                return to;
+            }
 
             // Create the relative path
             var relativePathParts = new List<string>();
@@ -642,6 +647,30 @@ namespace PyStubblerLib
 
             // Join the parts into a single string
             return string.Join("", relativePathParts);
+        }
+
+        private static bool ShouldAvoidImporting(string s)
+        {
+            if (s.Equals("type"))
+                return true;
+            else if (s.Equals("object"))
+                return true;
+            else if (s.Equals("str"))
+                return true;
+            else if (s.Equals("float"))
+                return true;
+            else if (s.Equals("bool"))
+                return true;
+            else if (s.Equals("int"))
+                return true;
+            else if (s.Equals("Exception"))
+                return true;
+            else if (s.StartsWith("IEnumerable"))
+                return true;
+            else if (s.StartsWith("List"))
+                return true;
+
+            return false;
         }
 
         private static string ToPythonType(string s)

@@ -1,7 +1,5 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 
 
@@ -96,6 +94,7 @@ class ClippingShadeColorUse(Enum):
     SolidColor = 2
 
 
+from System.Drawing import Color
 class Color4f:
     @overload
     def __init__(self, color: Color): ...
@@ -148,6 +147,7 @@ class Color4f:
     def ToString(self) -> str: ...
 
 
+from System.Drawing import Color
 class ColorCMYK:
     @overload
     def __init__(self, rgb: Color): ...
@@ -207,6 +207,7 @@ class ColorCMYK:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import IEnumerable
 from ..Geometry import Point3d
 class ColorGradient:
     @overload
@@ -243,6 +244,7 @@ class ColorGradient:
     def ToString(self) -> str: ...
 
 
+from System.Drawing import Color
 class ColorHSL:
     @overload
     def __init__(self, rgb: Color): ...
@@ -298,6 +300,7 @@ class ColorHSL:
     def ToString(self) -> str: ...
 
 
+from System.Drawing import Color
 class ColorHSV:
     @overload
     def __init__(self, rgb: Color): ...
@@ -353,6 +356,7 @@ class ColorHSV:
     def ToString(self) -> str: ...
 
 
+from System.Drawing import Color
 class ColorLAB:
     @overload
     def __init__(self, rgb: Color): ...
@@ -406,6 +410,7 @@ class ColorLAB:
     def ToString(self) -> str: ...
 
 
+from System.Drawing import Color
 class ColorLCH:
     @overload
     def __init__(self, rgb: Color): ...
@@ -464,6 +469,8 @@ class ColorMode(Enum):
     BlackAndWhite = 2
 
 
+from System.Drawing import Color
+from System import IFormatProvider
 class ColorRGBA:
     @overload
     def __init__(self, color: ColorRGBA): ...
@@ -560,6 +567,7 @@ class ColorRGBA:
     def ToString(self, format: str, formatProvider: IFormatProvider) -> str: ...
 
 
+from System.Drawing import Color
 class ColorStop:
     @overload
     def __init__(self, color: Color, t: float): ...
@@ -581,6 +589,7 @@ class ColorStop:
     def ToString(self) -> str: ...
 
 
+from System.Drawing import Color
 class ColorXYZ:
     @overload
     def __init__(self, rgb: Color): ...
@@ -683,6 +692,8 @@ class CurveThicknessUse(Enum):
 
 from ..Geometry import BoundingBox
 from ..Geometry import Point3d
+from System.Drawing import Color
+from System.Collections.Generic import IEnumerable
 from ..Geometry import Line
 from ..Geometry import Vector3d
 from ..Geometry import Arc
@@ -783,6 +794,8 @@ class DepthMode(Enum):
     AlwaysInBack = 2
 
 
+from System.Drawing import Bitmap
+from System.Drawing import Size
 class DisplayBitmap:
     @overload
     def __init__(self, bitmap: Bitmap): ...
@@ -813,6 +826,8 @@ class DisplayBitmap:
 
 from ..Geometry import BoundingBox
 from ..Geometry import Vector3d
+from System.Collections.Generic import IEnumerable
+from System.Drawing import Color
 class DisplayBitmapDrawList:
     @overload
     def __init__(self): ...
@@ -845,6 +860,8 @@ class DisplayBitmapDrawList:
 
 
 from ..DocObjects import ObjectType
+from System import Guid
+from System.Collections.Generic import IEnumerable
 from ..DocObjects import ActiveSpace
 class DisplayConduit:
     @overload
@@ -891,6 +908,7 @@ class DisplayEngine:
 
 
 from ..DocObjects import Material
+from System.Drawing import Color
 from ..DocObjects import Texture
 class DisplayMaterial:
     @overload
@@ -993,6 +1011,7 @@ class DisplayMaterial:
     def ToString(self) -> str: ...
 
 
+from System import Guid
 class DisplayModeChangedEventArgs:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -1012,6 +1031,7 @@ class DisplayModeChangedEventArgs:
     def ToString(self) -> str: ...
 
 
+from System import Guid
 class DisplayModeDescription:
     @overload
     @staticmethod
@@ -1118,9 +1138,11 @@ class DisplayModeDescription:
 
 
 from ..DocObjects import Linetype
+from System.Drawing import Color
 from ..DocObjects import CoordinateSystem
 from ..DocObjects import LineCapStyle
 from ..DocObjects import LineJoinStyle
+from System.Collections.Generic import IEnumerable
 from ..Geometry import Point2f
 class DisplayPen:
     @overload
@@ -1188,6 +1210,9 @@ class DisplayPen:
     def ToString(self) -> str: ...
 
 
+from System.Drawing import Point
+from System.Drawing import Color
+from System.Drawing import PointF
 from ..DocObjects import RhinoObject
 from ..DocObjects import ObjectAttributes
 from ..Geometry import Transform
@@ -1195,6 +1220,7 @@ from ..Geometry import Brep
 from ..Geometry import Extrusion
 from ..Geometry import Mesh
 from ..Geometry import Point3d
+from System.Collections.Generic import IEnumerable
 from ..Geometry import PointCloud
 from ..Geometry import Vector3d
 from ..Geometry import Line
@@ -1209,6 +1235,7 @@ from ..Geometry import Plane
 from ..DocObjects import TextHorizontalAlignment
 from ..DocObjects import TextVerticalAlignment
 from ..Geometry import TextEntity
+from System.Drawing import Rectangle
 from ..DocObjects import InstanceDefinition
 from ..Geometry import AnnotationBase
 from ..Geometry import Arrowhead
@@ -1221,6 +1248,9 @@ from ..Geometry import Cone
 from ..Geometry import Curve
 from ..Geometry import Surface
 from ..Geometry import ParticleSystem
+from System import EventHandler
+from System.Drawing import Size
+from System.Drawing import Bitmap
 from ..DocObjects import ViewportInfo
 from ..Geometry import SubD
 class DisplayPipeline:
@@ -1747,6 +1777,10 @@ class DisplayPipeline:
     def ToString(self) -> str: ...
 
 
+from System.Drawing import Color
+from System import Guid
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 class DisplayPipelineAttributes:
     @overload
     def Dispose(self) -> None: ...
@@ -2646,6 +2680,7 @@ class DisplayPoint:
     def WithAttributes(self, attributes: DisplayPointAttributes) -> DisplayPoint: ...
 
 
+from System import Nullable
 class DisplayPointAttributes:
     @overload
     def __init__(self): ...
@@ -2689,6 +2724,7 @@ class DisplayPointAttributes:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import IEnumerable
 class DisplayPointSet:
     @overload
     @staticmethod
@@ -2861,6 +2897,7 @@ class InferenceLineType(Enum):
     InfiniteLine = 2
 
 
+from System.Drawing import Color
 class InitFrameBufferEventArgs:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -2905,6 +2942,7 @@ class LockedObjectUse(Enum):
     UseAppSettings = 2
 
 
+from System.Drawing import Color
 class MeshDisplayAttributes:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -2955,6 +2993,7 @@ class PageViewPropertiesChangeEventArgs:
     def ToString(self) -> str: ...
 
 
+from System import Guid
 class PageViewSpaceChangeEventArgs:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -2999,9 +3038,17 @@ class PointStyle(Enum):
     # None = 1000
 
 
+from System import Guid
 from ..DocObjects import DetailViewObject
 from ..Geometry import Point2d
+from System.Drawing import Size
+from System.Drawing import Bitmap
+from System import EventHandler
+from System import IntPtr
 from ..Render import RealtimeDisplayMode
+from System.Drawing import Rectangle
+from System.Drawing import Point
+from System.Drawing import PointF
 class RhinoPageView(RhinoView):
     @overload
     @staticmethod
@@ -3147,8 +3194,16 @@ class RhinoPageView(RhinoView):
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
 from ..Render import RealtimeDisplayMode
+from System.Drawing import Rectangle
+from System.Drawing import Size
+from System.Drawing import Point
 from ..Geometry import Point2d
+from System.Drawing import Bitmap
+from System import Guid
+from System.Drawing import PointF
+from System import EventHandler
 class RhinoView:
     @overload
     @staticmethod
@@ -3285,16 +3340,22 @@ class RhinoView:
     def ToString(self) -> str: ...
 
 
+from System.Drawing import Point
 from ..Geometry import Line
 from ..Geometry import Point2d
 from ..Geometry import Plane
+from System import Guid
 from ..Geometry import BoundingBox
 from ..Geometry import Point3d
+from System.Drawing import Size
 from ..Geometry import Vector3d
+from System.Collections.Generic import IEnumerable
 from ..DocObjects import ConstructionPlane
 from ..DocObjects import ViewportInfo
 from ..DocObjects import ViewInfo
+from System.Drawing import Rectangle
 from ..Geometry import Transform
+from System.Collections.Specialized import NameValueCollection
 from ..Geometry import Sphere
 from ..DocObjects import CoordinateSystem
 class RhinoViewport:
@@ -3712,6 +3773,8 @@ class ViewAreaMapping(Enum):
     Window = 2
 
 
+from System.Drawing import Bitmap
+from System.Xml import XmlDocument
 class ViewCapture:
     @overload
     def __init__(self): ...
@@ -3775,6 +3838,8 @@ class ViewCapture:
     def ToString(self) -> str: ...
 
 
+from System.Drawing import Size
+from System.Drawing import Rectangle
 from ..Geometry import Point2d
 from ..Geometry import Point3d
 class ViewCaptureSettings:
@@ -3972,6 +4037,7 @@ class ViewCaptureSettings:
     def ToString(self) -> str: ...
 
 
+from System.Drawing import Color
 class ViewDisplayAttributes:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -4083,6 +4149,7 @@ class ViewTypeFilter(Enum):
     All = 268435455
 
 
+from System import Guid
 from ..DocObjects import RhinoObject
 class VisualAnalysisMode:
     @overload
@@ -4147,7 +4214,9 @@ class ZBiasMode(Enum):
     AwayFromCamera = 2
 
 
+from System import Guid
 from ..Geometry import Point3d
+from System.Drawing import Bitmap
 class ZBufferCapture:
     @overload
     def __init__(self, viewport: RhinoViewport): ...

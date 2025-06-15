@@ -1,13 +1,12 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 import Params
 
 __all__ = ['Params']
 
 
+from System import Nullable
 class Attributes:
     @overload
     def __init__(self): ...
@@ -67,6 +66,8 @@ class Attributes:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import IReadOnlyList
+from System import Nullable
 class Attributes:
     @overload
     def __init__(self): ...
@@ -136,6 +137,7 @@ class Attributes:
     def ToString(self) -> str: ...
 
 
+from System import Nullable
 from ..Drafting import ModelLinetype
 from ..Render import ModelRenderMaterial
 class Attributes:
@@ -219,6 +221,7 @@ class Attributes:
     def ToString(self) -> str: ...
 
 
+from System import Nullable
 from ..Display import ObjectVisibility
 from ..Display import ObjectDisplay
 from ..Drafting import ObjectDrafting
@@ -294,6 +297,8 @@ class Attributes:
     def ToString(self) -> str: ...
 
 
+from Rhino.DocObjects import EarthAnchorPoint
+from System import Nullable
 class ModelEarthAnchorPoint(ModelContent):
     @overload
     def __init__(self): ...
@@ -366,6 +371,14 @@ class ModelEarthAnchorPoint(ModelContent):
     def ToString(self) -> str: ...
 
 
+from Rhino.DocObjects import InstanceDefinition
+from System import Guid
+from Rhino.Geometry import Transform
+from Rhino.Geometry import BoundingBox
+from System.Collections.Generic import IReadOnlyList
+from System import Nullable
+from Rhino import RhinoDoc
+from Rhino.DocObjects import ObjectAttributes
 class ModelInstanceDefinition(ModelComponentContent):
     @overload
     def __init__(self): ...
@@ -450,6 +463,9 @@ class ModelInstanceDefinition(ModelComponentContent):
     def ToString(self) -> str: ...
 
 
+from Rhino.DocObjects import Layer
+from System import Guid
+from System import Nullable
 from ..Drafting import ModelLinetype
 from ..Render import ModelRenderMaterial
 class ModelLayer(ModelComponentContent):
@@ -538,10 +554,19 @@ class ModelLayer(ModelComponentContent):
     def ToString(self) -> str: ...
 
 
+from Rhino.DocObjects import RhinoObject
+from Rhino import RhinoDoc
+from Rhino.DocObjects import ObjectAttributes
+from Rhino.Geometry import GeometryBase
+from System import Guid
+from Rhino.DocObjects import ObjectType
 from ..Display import ObjectVisibility
 from ..Display import ObjectDisplay
 from ..Drafting import ObjectDrafting
 from ..Render import ObjectRender
+from System import Nullable
+from Rhino.Geometry import Transform
+from Rhino.Geometry import BoundingBox
 class ModelObject(ModelComponentContent):
     @overload
     def __init__(self): ...

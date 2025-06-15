@@ -1,10 +1,9 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 
 
+from System.Collections.Generic import List
 class Connectivity:
     @overload
     def __init__(self): ...
@@ -44,6 +43,7 @@ class Edge:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import List
 class EdgeList:
     @overload
     def __init__(self): ...
@@ -166,6 +166,7 @@ class FaceEx(Face):
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import List
 class FaceExList:
     @overload
     def __init__(self): ...
@@ -201,6 +202,8 @@ class FaceExList:
     def TrimNulls(self) -> int: ...
 
 
+from System.Collections.Generic import List
+from Rhino.Geometry import Mesh
 class Solver:
     @overload
     def Equals(self, obj: object) -> bool: ...

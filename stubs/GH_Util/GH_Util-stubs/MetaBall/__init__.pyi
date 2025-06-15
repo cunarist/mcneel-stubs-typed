@@ -1,10 +1,14 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 
 
+from System import IntPtr
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class FieldSolver:
     @overload
     def __init__(self, object: object, method: IntPtr): ...
@@ -68,6 +72,7 @@ class GH_CellInfo:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import List
 class GH_Context:
     @overload
     def __init__(self): ...
@@ -129,6 +134,15 @@ class GH_Direction(Enum):
     up = 4
 
 
+from System.Collections.Generic import IEnumerable
+from System.Collections.ObjectModel import ReadOnlyCollection
+from System.Collections.Generic import IComparer
+from System import Predicate
+from System.Collections.Generic import List
+from System import Action
+from System.Collections.Generic import Enumerator
+from System import Comparison
+from System import Converter
 class GH_IsoSurface:
     @overload
     def __init__(self): ...
@@ -290,6 +304,7 @@ class GH_Particle:
     def ToString(self) -> str: ...
 
 
+from System.Drawing import PointF
 class GH_Vertex:
     @overload
     def __init__(self): ...

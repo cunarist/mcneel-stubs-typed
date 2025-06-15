@@ -1,10 +1,9 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 
 
+from System import Guid
 class EventArgs:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -18,6 +17,8 @@ class EventArgs:
     def ToString(self) -> str: ...
 
 
+from System import Guid
+from System import IntPtr
 class EventInfoArgs:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -33,6 +34,7 @@ class EventInfoArgs:
     def ToString(self) -> str: ...
 
 
+from System import Guid
 class ProviderIds:
     @overload
     def __init__(self): ...

@@ -1,14 +1,21 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 
 
+from System import Guid
 from ....Kernel import GH_Exposure
 from ....Kernel import GH_GuidTable
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
+from System.Collections.Generic import IEnumerable
 from ....Kernel.Data import GH_Structure
 from ....Kernel import GH_ParamData
+from System.Windows.Forms import ToolStripDropDown
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import IList
 from ....Kernel import IGH_Param
 from ....Kernel import IGH_ActiveObject
 from ....Kernel import GH_Document
@@ -18,7 +25,9 @@ from ....Kernel import GH_StateTagList
 from ....Kernel import GH_ParamWireDisplay
 from ....Kernel import GH_DataMapping
 from ....Kernel.Data import GH_Path
+from System.Collections import IEnumerable
 from ....Kernel.Data import IGH_Structure
+from System import TimeSpan
 from ....Kernel import GH_PrincipalState
 from ....Kernel import GH_SolutionPhase
 from ....Kernel import GH_RuntimeMessageLevel
@@ -35,6 +44,7 @@ from ....Kernel import GH_DocumentContext
 from ....Kernel import GH_AutoSaveTrigger
 from ....Kernel.Undo import IGH_UndoAction
 from ....Kernel.Undo import GH_UndoRecord
+from System.Drawing import Bitmap
 from ....Kernel import GH_IconDisplayMode
 from ....Kernel import IGH_InstanceDescription
 class Param_EarthAnchorPoint:
@@ -344,11 +354,21 @@ class Param_EarthAnchorPoint:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
 from ....Kernel import GH_Exposure
+from Rhino.Geometry import BoundingBox
 from ....Kernel import IGH_PreviewArgs
 from ....Kernel import GH_GuidTable
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
+from System.Collections.Generic import IEnumerable
 from ....Kernel.Data import GH_Structure
 from ....Kernel import GH_ParamData
+from System.Windows.Forms import ToolStripDropDown
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import IList
 from ....Kernel import IGH_Param
 from ....Kernel import IGH_ActiveObject
 from ....Kernel import GH_Document
@@ -358,7 +378,9 @@ from ....Kernel import GH_StateTagList
 from ....Kernel import GH_ParamWireDisplay
 from ....Kernel import GH_DataMapping
 from ....Kernel.Data import GH_Path
+from System.Collections import IEnumerable
 from ....Kernel.Data import IGH_Structure
+from System import TimeSpan
 from ....Kernel import GH_PrincipalState
 from ....Kernel import GH_SolutionPhase
 from ....Kernel import GH_RuntimeMessageLevel
@@ -375,6 +397,7 @@ from ....Kernel import GH_DocumentContext
 from ....Kernel import GH_AutoSaveTrigger
 from ....Kernel.Undo import IGH_UndoAction
 from ....Kernel.Undo import GH_UndoRecord
+from System.Drawing import Bitmap
 from ....Kernel import GH_IconDisplayMode
 from ....Kernel import IGH_InstanceDescription
 class Param_ModelInstanceDefinition:
@@ -696,10 +719,19 @@ class Param_ModelInstanceDefinition:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
 from ....Kernel import GH_Exposure
 from ....Kernel import GH_GuidTable
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
+from System.Collections.Generic import IEnumerable
 from ....Kernel.Data import GH_Structure
 from ....Kernel import GH_ParamData
+from System.Windows.Forms import ToolStripDropDown
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import IList
 from ....Kernel import IGH_Param
 from ....Kernel import IGH_ActiveObject
 from ....Kernel import GH_Document
@@ -709,7 +741,9 @@ from ....Kernel import GH_StateTagList
 from ....Kernel import GH_ParamWireDisplay
 from ....Kernel import GH_DataMapping
 from ....Kernel.Data import GH_Path
+from System.Collections import IEnumerable
 from ....Kernel.Data import IGH_Structure
+from System import TimeSpan
 from ....Kernel import GH_PrincipalState
 from ....Kernel import GH_SolutionPhase
 from ....Kernel import GH_RuntimeMessageLevel
@@ -726,6 +760,7 @@ from ....Kernel import GH_DocumentContext
 from ....Kernel import GH_AutoSaveTrigger
 from ....Kernel.Undo import IGH_UndoAction
 from ....Kernel.Undo import GH_UndoRecord
+from System.Drawing import Bitmap
 from ....Kernel import GH_IconDisplayMode
 from ....Kernel import IGH_InstanceDescription
 class Param_ModelLayer:
@@ -1035,11 +1070,21 @@ class Param_ModelLayer:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
 from ....Kernel import GH_Exposure
+from Rhino.Geometry import BoundingBox
 from ....Kernel import IGH_PreviewArgs
 from ....Kernel import GH_GuidTable
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
+from System.Collections.Generic import IEnumerable
 from ....Kernel.Data import GH_Structure
 from ....Kernel import GH_ParamData
+from System.Windows.Forms import ToolStripDropDown
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import IList
 from ....Kernel import IGH_Param
 from ....Kernel import IGH_ActiveObject
 from ....Kernel import GH_Document
@@ -1049,7 +1094,9 @@ from ....Kernel import GH_StateTagList
 from ....Kernel import GH_ParamWireDisplay
 from ....Kernel import GH_DataMapping
 from ....Kernel.Data import GH_Path
+from System.Collections import IEnumerable
 from ....Kernel.Data import IGH_Structure
+from System import TimeSpan
 from ....Kernel import GH_PrincipalState
 from ....Kernel import GH_SolutionPhase
 from ....Kernel import GH_RuntimeMessageLevel
@@ -1066,6 +1113,7 @@ from ....Kernel import GH_DocumentContext
 from ....Kernel import GH_AutoSaveTrigger
 from ....Kernel.Undo import IGH_UndoAction
 from ....Kernel.Undo import GH_UndoRecord
+from System.Drawing import Bitmap
 from ....Kernel import GH_IconDisplayMode
 from ....Kernel import IGH_InstanceDescription
 class Param_ModelObject:

@@ -1,7 +1,5 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 
 
@@ -14,6 +12,8 @@ class AssignBys(Enum):
     PlugIn = 5
 
 
+from System import IntPtr
+from System import Guid
 class ContentFactories:
     @overload
     def __init__(self, pRdkContentFactories: IntPtr): ...
@@ -37,6 +37,8 @@ class ContentFactories:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from System import Guid
 class ContentFactory:
     @overload
     def __init__(self, pRdkContentFactory: IntPtr): ...
@@ -60,6 +62,8 @@ class ContentFactory:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from System import Guid
 class MetaData:
     @overload
     def __init__(self, pMetaData: IntPtr): ...
@@ -88,6 +92,7 @@ class Modes(Enum):
     Tree = 3
 
 
+from System import IntPtr
 class RdkEdit:
     @overload
     def __init__(self, pRdkEdit: IntPtr): ...
@@ -107,6 +112,7 @@ class RdkEdit:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
 class RdkSelectionNavigator:
     @overload
     def __init__(self, pRhinoSettings: IntPtr): ...
@@ -136,8 +142,11 @@ class RdkSelectionNavigator:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from System import Guid
 from ...Display import RhinoView
 from ...DocObjects import ViewInfo
+from System.Collections.Generic import List
 class RhinoSettings:
     @overload
     def __init__(self, pRhinoSettings: IntPtr): ...

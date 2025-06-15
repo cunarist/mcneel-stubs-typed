@@ -1,12 +1,12 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 
 
 from ...Drawing import Image
+from System import Uri
 from .. import ICallback
+from System import IntPtr
 class ThemedAboutDialogHandler:
     @overload
     def __init__(self): ...
@@ -95,6 +95,7 @@ class ThemedAboutDialogHandler:
 
 
 from ...Drawing import Image
+from System import IntPtr
 class ThemedButtonSegmentedItemHandler:
     @overload
     def __init__(self): ...
@@ -160,10 +161,12 @@ class ThemedButtonSegmentedItemHandler:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import IEnumerable
 from ...Drawing import Padding
 from ...Drawing import Size
 from .. import IStyleProvider
 from .. import DefaultStyleProvider
+from System import EventHandler
 from ...Drawing import Rectangle
 from ...Drawing import SizeF
 from ...Drawing import Color
@@ -173,6 +176,7 @@ from ...Drawing import Point
 from ...Drawing import Image
 from .. import Widget
 from .. import Platform
+from System import IntPtr
 from .. import PropertyStore
 class ThemedCollectionEditor(Panel):
     @overload
@@ -517,13 +521,16 @@ class ThemedCollectionEditor(Panel):
     def UpdateLayout(self) -> None: ...
 
 
+from System.Collections.Generic import IEnumerable
 from ...Drawing import Color
 from ...Drawing import Size
 from ...Drawing import SizeF
 from ...Drawing import Rectangle
+from System import EventArgs
 from ...Drawing import PointF
 from ...Drawing import Point
 from ...Drawing import Image
+from System import IntPtr
 class ThemedCollectionEditorHandler:
     @overload
     def __init__(self): ...
@@ -664,12 +671,15 @@ class ThemedCollectionEditorHandler:
 
 
 from ...Drawing import Color
+from System.Collections.Generic import IEnumerable
 from ...Drawing import Size
 from ...Drawing import SizeF
 from ...Drawing import Rectangle
+from System import EventArgs
 from ...Drawing import PointF
 from ...Drawing import Point
 from ...Drawing import Image
+from System import IntPtr
 class ThemedColorPickerHandler:
     @overload
     def __init__(self): ...
@@ -814,12 +824,15 @@ class ThemedColorPickerHandler:
 from ...Drawing import Padding
 from ...Drawing import Font
 from ...Drawing import Color
+from System import EventArgs
 from ...Drawing import Size
+from System.Collections.Generic import IEnumerable
 from ...Drawing import SizeF
 from ...Drawing import Rectangle
 from ...Drawing import PointF
 from ...Drawing import Point
 from ...Drawing import Image
+from System import IntPtr
 class ThemedDocumentControlHandler:
     @overload
     def __init__(self): ...
@@ -1045,10 +1058,13 @@ from ...Drawing import Image
 from ...Drawing import Size
 from ...Drawing import Padding
 from ...Drawing import Color
+from System.Collections.Generic import IEnumerable
 from ...Drawing import SizeF
 from ...Drawing import Rectangle
+from System import EventArgs
 from ...Drawing import PointF
 from ...Drawing import Point
+from System import IntPtr
 class ThemedDocumentPageHandler:
     @overload
     def __init__(self): ...
@@ -1221,11 +1237,14 @@ class ThemedDocumentPageHandler:
 from ...Drawing import Padding
 from ...Drawing import Size
 from ...Drawing import Color
+from System.Collections.Generic import IEnumerable
 from ...Drawing import SizeF
 from ...Drawing import Rectangle
+from System import EventArgs
 from ...Drawing import PointF
 from ...Drawing import Point
 from ...Drawing import Image
+from System import IntPtr
 class ThemedExpanderHandler:
     @overload
     def __init__(self): ...
@@ -1397,12 +1416,15 @@ class ThemedExpanderHandler:
 
 from .. import FileAction
 from ...Drawing import Color
+from System.Collections.Generic import IEnumerable
 from ...Drawing import Size
 from ...Drawing import SizeF
 from ...Drawing import Rectangle
+from System import EventArgs
 from ...Drawing import PointF
 from ...Drawing import Point
 from ...Drawing import Image
+from System import IntPtr
 class ThemedFilePickerHandler:
     @overload
     def __init__(self): ...
@@ -1558,12 +1580,15 @@ class ThemedFilePickerHandler:
 
 from ...Drawing import Font
 from ...Drawing import Color
+from System.Collections.Generic import IEnumerable
 from ...Drawing import Size
 from ...Drawing import SizeF
 from ...Drawing import Rectangle
+from System import EventArgs
 from ...Drawing import PointF
 from ...Drawing import Point
 from ...Drawing import Image
+from System import IntPtr
 class ThemedFontPickerHandler:
     @overload
     def __init__(self): ...
@@ -1699,7 +1724,9 @@ class ThemedFontPickerHandler:
     def UpdateLayout(self) -> None: ...
 
 
+from System import TimeSpan
 from ...Drawing import Image
+from System import IntPtr
 class ThemedMenuSegmentedItemHandler:
     @overload
     def __init__(self): ...
@@ -1782,9 +1809,13 @@ class ThemedMenuSegmentedItemHandler:
 
 
 from ...Drawing import Image
+from System.Collections.ObjectModel import Collection
+from System.Threading.Tasks import Task
+from System import EventHandler
 from ...Drawing import Point
 from ...Drawing import Rectangle
 from ...Drawing import Icon
+from System.Collections.Generic import IEnumerable
 from ...Drawing import Padding
 from ...Drawing import Size
 from .. import IStyleProvider
@@ -1795,6 +1826,7 @@ from ...Drawing import PointF
 from ...Drawing import RectangleF
 from .. import Widget
 from .. import Platform
+from System import IntPtr
 from .. import PropertyStore
 class ThemedMessageBox(Dialog):
     @overload
@@ -2282,6 +2314,7 @@ class ThemedMessageBox(Dialog):
 
 
 from .. import Widget
+from System import IntPtr
 class ThemedMessageBoxHandler:
     @overload
     def __init__(self): ...
@@ -2333,6 +2366,9 @@ class ThemedMessageBoxHandler:
     def ToString(self) -> str: ...
 
 
+from System import EventHandler
+from System.Collections.Generic import IList
+from System.Collections.Generic import IEnumerable
 from ...Drawing import Padding
 from ...Drawing import Size
 from .. import IStyleProvider
@@ -2346,6 +2382,7 @@ from ...Drawing import Point
 from ...Drawing import Image
 from .. import Widget
 from .. import Platform
+from System import IntPtr
 from .. import PropertyStore
 class ThemedPropertyGrid(Panel):
     @overload
@@ -2712,13 +2749,16 @@ class ThemedPropertyGrid(Panel):
     def UpdateLayout(self) -> None: ...
 
 
+from System.Collections.Generic import IEnumerable
 from ...Drawing import Color
 from ...Drawing import Size
 from ...Drawing import SizeF
 from ...Drawing import Rectangle
+from System import EventArgs
 from ...Drawing import PointF
 from ...Drawing import Point
 from ...Drawing import Image
+from System import IntPtr
 class ThemedPropertyGridHandler:
     @overload
     def __init__(self): ...
@@ -2868,6 +2908,8 @@ class ThemedPropertyGridHandler:
     def UpdateLayout(self) -> None: ...
 
 
+from System.Collections.Generic import IEnumerable
+from System import EventArgs
 from ...Drawing import SizeF
 from ...Drawing import Color
 from ...Drawing import Size
@@ -2875,6 +2917,7 @@ from ...Drawing import Rectangle
 from ...Drawing import PointF
 from ...Drawing import Point
 from ...Drawing import Image
+from System import IntPtr
 class ThemedSegmentedButtonHandler:
     @overload
     def __init__(self): ...
@@ -3043,12 +3086,15 @@ class ThemedSpinnerDirection(Enum):
 
 from ...Drawing import Color
 from ...Drawing import PenLineCap
+from System import EventArgs
+from System.Collections.Generic import IEnumerable
 from ...Drawing import Size
 from ...Drawing import SizeF
 from ...Drawing import Rectangle
 from ...Drawing import PointF
 from ...Drawing import Point
 from ...Drawing import Image
+from System import IntPtr
 class ThemedSpinnerHandler:
     @overload
     def __init__(self): ...
@@ -3231,11 +3277,14 @@ class ThemedSpinnerMode(Enum):
 
 from ...Drawing import Size
 from ...Drawing import Color
+from System.Collections.Generic import IEnumerable
 from ...Drawing import SizeF
 from ...Drawing import Rectangle
+from System import EventArgs
 from ...Drawing import PointF
 from ...Drawing import Point
 from ...Drawing import Image
+from System import IntPtr
 class ThemedSplitterHandler:
     @overload
     def __init__(self): ...
@@ -3413,12 +3462,15 @@ class ThemedSplitterHandler:
 
 from ...Drawing import Font
 from ...Drawing import Color
+from System.Collections.Generic import IEnumerable
 from ...Drawing import Size
 from ...Drawing import SizeF
 from ...Drawing import Rectangle
+from System import EventArgs
 from ...Drawing import PointF
 from ...Drawing import Point
 from ...Drawing import Image
+from System import IntPtr
 class ThemedStepperHandler:
     @overload
     def __init__(self): ...
@@ -3572,12 +3624,15 @@ class ThemedStepperHandler:
 
 from ...Drawing import Font
 from ...Drawing import Color
+from System.Collections.Generic import IEnumerable
 from ...Drawing import Size
 from ...Drawing import SizeF
 from ...Drawing import Rectangle
+from System import EventArgs
 from ...Drawing import PointF
 from ...Drawing import Point
 from ...Drawing import Image
+from System import IntPtr
 class ThemedTextStepperHandler:
     @overload
     def __init__(self): ...

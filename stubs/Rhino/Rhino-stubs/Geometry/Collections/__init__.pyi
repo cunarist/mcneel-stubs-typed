@@ -1,10 +1,9 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 
 
+from System.Collections.Generic import IEnumerator
 class BrepCurveList:
     def __iter__(self) -> Iterator[Curve]: ...
     @overload
@@ -25,6 +24,8 @@ class BrepCurveList:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import IEnumerable
+from System.Collections.Generic import IEnumerator
 class BrepEdgeList:
     def __iter__(self) -> Iterator[BrepEdge]: ...
     @overload
@@ -65,6 +66,7 @@ class BrepEdgeList:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import IEnumerator
 class BrepFaceList:
     def __iter__(self) -> Iterator[BrepFace]: ...
     @overload
@@ -125,6 +127,8 @@ class BrepFaceList:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import IEnumerable
+from System.Collections.Generic import IEnumerator
 class BrepLoopList:
     def __iter__(self) -> Iterator[BrepLoop]: ...
     @overload
@@ -151,6 +155,7 @@ class BrepLoopList:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import IEnumerator
 class BrepSurfaceList:
     def __iter__(self) -> Iterator[Surface]: ...
     @overload
@@ -169,6 +174,7 @@ class BrepSurfaceList:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import IEnumerator
 class BrepTrimList:
     def __iter__(self) -> Iterator[BrepTrim]: ...
     @overload
@@ -207,6 +213,7 @@ class BrepTrimList:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import IEnumerator
 class BrepVertexList:
     def __iter__(self) -> Iterator[BrepVertex]: ...
     @overload
@@ -231,6 +238,9 @@ class BrepVertexList:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import IEnumerable
+from System.Collections.Generic import List
+from System.Collections.Generic import IEnumerator
 class MeshFaceList:
     def __iter__(self) -> Iterator[MeshFace]: ...
     def __getitem__(self, index: int) -> MeshFace: ...
@@ -339,6 +349,7 @@ class MeshFaceList:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import IEnumerator
 class MeshFaceNormalList:
     def __iter__(self) -> Iterator[Vector3f]: ...
     def __getitem__(self, index: int) -> Vector3f: ...
@@ -389,7 +400,9 @@ class MeshFaceNormalList:
     def UnitizeFaceNormals(self) -> bool: ...
 
 
+from System.Collections.Generic import IEnumerable
 from ...FileIO import TextLog
+from System.Collections.Generic import IEnumerator
 class MeshNgonList:
     def __iter__(self) -> Iterator[MeshNgon]: ...
     def __getitem__(self, index: int) -> MeshNgon: ...
@@ -465,6 +478,7 @@ class MeshNgonList:
 
 
 from ...Render import TextureMapping
+from System.Collections.Generic import IEnumerator
 class MeshTextureCoordinateList:
     def __iter__(self) -> Iterator[Point2f]: ...
     def __getitem__(self, index: int) -> Point2f: ...
@@ -569,6 +583,7 @@ class MeshTopologyEdgeList:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import IEnumerator
 class MeshTopologyVertexList:
     def __iter__(self) -> Iterator[Point3f]: ...
     def __getitem__(self, index: int) -> Point3f: ...
@@ -613,7 +628,10 @@ class MeshTopologyVertexList:
     def ToString(self) -> str: ...
 
 
+from System.Drawing import Color
 from ...Render import MappingTag
+from System.Collections.Generic import IEnumerable
+from System.Collections.Generic import IEnumerator
 class MeshVertexColorList:
     def __iter__(self) -> Iterator[Color]: ...
     def __getitem__(self, index: int) -> Color: ...
@@ -668,6 +686,8 @@ class MeshVertexColorList:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import IEnumerable
+from System.Collections.Generic import IEnumerator
 class MeshVertexList:
     def __iter__(self) -> Iterator[Point3f]: ...
     def __getitem__(self, index: int) -> Point3f: ...
@@ -761,6 +781,7 @@ class MeshVertexList:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import IEnumerator
 class MeshVertexNormalList:
     def __iter__(self) -> Iterator[Vector3f]: ...
     def __getitem__(self, index: int) -> Vector3f: ...
@@ -819,6 +840,8 @@ class MeshVertexNormalList:
     def UnitizeNormals(self) -> bool: ...
 
 
+from System.Collections.Generic import IEnumerable
+from System.Collections.Generic import IEnumerator
 class MeshVertexStatusList:
     def __iter__(self) -> Iterator[bool]: ...
     def __getitem__(self, index: int) -> bool: ...
@@ -1069,6 +1092,8 @@ class NurbsSurfacePointList:
     def ValidateSpacing(self, closeTolerance: float, stackTolerance: float) -> Tuple[bool, Iterable[IndexPair], Iterable[IndexPair]]: ...
 
 
+from System.Collections.Generic import IEnumerator
+from System.Collections.Generic import IEnumerable
 class SubDEdgeList:
     def __iter__(self) -> Iterator[SubDEdge]: ...
     @overload
@@ -1095,6 +1120,7 @@ class SubDEdgeList:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import IEnumerator
 class SubDFaceList:
     def __iter__(self) -> Iterator[SubDFace]: ...
     @overload

@@ -1,10 +1,11 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 
 
+from System.Drawing import PointF
+from System.Drawing import Point
+from System.Windows.Forms import KeyEventArgs
 from .. import GH_CanvasMouseEvent
 from .. import GH_TooltipDisplayEventArgs
 class GH_AbstractInteraction:
@@ -48,7 +49,10 @@ class GH_AbstractInteraction:
     def ToString(self) -> str: ...
 
 
+from System.Windows.Forms import KeyEventArgs
 from .. import GH_CanvasMouseEvent
+from System.Drawing import PointF
+from System.Drawing import Point
 from .. import GH_TooltipDisplayEventArgs
 class GH_CycleInteraction(GH_AbstractInteraction):
     @overload
@@ -95,6 +99,9 @@ class GH_CycleInteraction(GH_AbstractInteraction):
 
 from .. import GH_CanvasMouseEvent
 from ....Kernel import IGH_Attributes
+from System.Windows.Forms import KeyEventArgs
+from System.Drawing import PointF
+from System.Drawing import Point
 from .. import GH_TooltipDisplayEventArgs
 class GH_DragInteraction(GH_AbstractInteraction):
     @overload
@@ -145,8 +152,12 @@ class GH_DragInteraction(GH_AbstractInteraction):
     def ToString(self) -> str: ...
 
 
+from System import Guid
 from ....Kernel import IGH_ObjectProxy
 from .. import GH_CanvasMouseEvent
+from System.Windows.Forms import KeyEventArgs
+from System.Drawing import PointF
+from System.Drawing import Point
 from .. import GH_TooltipDisplayEventArgs
 class GH_DumpInteraction(GH_AbstractInteraction):
     @overload
@@ -198,6 +209,9 @@ class GH_DumpInteraction(GH_AbstractInteraction):
 
 
 from .. import GH_CanvasMouseEvent
+from System.Drawing import PointF
+from System.Drawing import Point
+from System.Windows.Forms import KeyEventArgs
 from .. import GH_TooltipDisplayEventArgs
 class GH_PanInteraction(GH_AbstractInteraction):
     @overload
@@ -243,7 +257,10 @@ class GH_PanInteraction(GH_AbstractInteraction):
 
 
 from .. import GH_CanvasMouseEvent
+from System.Drawing import PointF
 from .. import GH_TooltipDisplayEventArgs
+from System.Drawing import Point
+from System.Windows.Forms import KeyEventArgs
 class GH_RadialMenuInteraction(GH_AbstractInteraction):
     @overload
     def __init__(self, canvas: GH_Canvas, e: GH_CanvasMouseEvent): ...
@@ -289,6 +306,9 @@ class GH_RadialMenuInteraction(GH_AbstractInteraction):
 
 from .. import GH_CanvasMouseEvent
 from ....Kernel import IGH_Param
+from System.Windows.Forms import KeyEventArgs
+from System.Drawing import PointF
+from System.Drawing import Point
 from .. import GH_TooltipDisplayEventArgs
 class GH_RewireInteraction(GH_AbstractInteraction):
     @overload
@@ -336,6 +356,9 @@ class GH_RewireInteraction(GH_AbstractInteraction):
 
 
 from .. import GH_CanvasMouseEvent
+from System.Windows.Forms import KeyEventArgs
+from System.Drawing import PointF
+from System.Drawing import Point
 from .. import GH_TooltipDisplayEventArgs
 class GH_SketchInteraction(GH_AbstractInteraction):
     @overload
@@ -382,6 +405,9 @@ class GH_SketchInteraction(GH_AbstractInteraction):
 
 from .. import GH_CanvasMouseEvent
 from ....Kernel import IGH_Attributes
+from System.Windows.Forms import KeyEventArgs
+from System.Drawing import PointF
+from System.Drawing import Point
 from .. import GH_TooltipDisplayEventArgs
 class GH_SplitInteraction(GH_AbstractInteraction):
     @overload
@@ -429,6 +455,9 @@ class GH_SplitInteraction(GH_AbstractInteraction):
 
 
 from .. import GH_CanvasMouseEvent
+from System.Windows.Forms import KeyEventArgs
+from System.Drawing import PointF
+from System.Drawing import Point
 from .. import GH_TooltipDisplayEventArgs
 class GH_WindowSelectInteraction(GH_AbstractInteraction):
     @overload
@@ -475,6 +504,9 @@ class GH_WindowSelectInteraction(GH_AbstractInteraction):
 
 from .. import GH_CanvasMouseEvent
 from ....Kernel import IGH_Param
+from System.Windows.Forms import KeyEventArgs
+from System.Drawing import PointF
+from System.Drawing import Point
 from .. import GH_TooltipDisplayEventArgs
 class GH_WireInteraction(GH_AbstractInteraction):
     @overload
@@ -520,6 +552,9 @@ class GH_WireInteraction(GH_AbstractInteraction):
 
 
 from .. import GH_CanvasMouseEvent
+from System.Drawing import PointF
+from System.Drawing import Point
+from System.Windows.Forms import KeyEventArgs
 from .. import GH_TooltipDisplayEventArgs
 class GH_ZoomInteraction(GH_AbstractInteraction):
     @overload
@@ -564,6 +599,8 @@ class GH_ZoomInteraction(GH_AbstractInteraction):
     def ToString(self) -> str: ...
 
 
+from System.Drawing import Point
+from System.Drawing import PointF
 class IGH_MouseInteraction:
     @overload
     def Destroy(self) -> None: ...

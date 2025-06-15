@@ -1,11 +1,14 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 
 
+from System.Collections.Generic import List
+from System.Collections.Generic import IEnumerable
+from System import Guid
 from ...Kernel import GH_Exposure
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 class GH_Layout:
     @overload
     def __init__(self): ...
@@ -62,7 +65,10 @@ class GH_Layout:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
 from ...Kernel import GH_Exposure
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 class GH_LayoutItem:
     @overload
     def __init__(self): ...
@@ -94,6 +100,68 @@ class GH_LayoutItem:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from System.Drawing import Rectangle
+from System.Windows.Forms import KeyEventHandler
+from System.Windows.Forms import KeyPressEventHandler
+from System.Windows.Forms import AutoSizeMode
+from System import EventHandler
+from System.Windows.Forms import BorderStyle
+from System.Drawing import Size
+from System.Drawing import Point
+from System.Windows.Forms import HScrollProperties
+from System.Windows.Forms import VScrollProperties
+from System.Windows.Forms import DockPaddingEdges
+from System.Windows.Forms import Control
+from System.Windows.Forms import ScrollEventHandler
+from System.Windows.Forms import AnchorStyles
+from System.Windows.Forms.Layout import LayoutEngine
+from System.Drawing import Image
+from System.Windows.Forms import ImageLayout
+from System.Windows.Forms import BindingContext
+from System.Windows.Forms import ContextMenu
+from System.Windows.Forms import ContextMenuStrip
+from System.Windows.Forms import Cursor
+from System.Windows.Forms import ControlBindingsCollection
+from System.Windows.Forms import DockStyle
+from System.Drawing import Font
+from System.Drawing import Color
+from System.Windows.Forms import RightToLeft
+from System.ComponentModel import ISite
+from System import Delegate
+from System import IAsyncResult
+from System.Windows.Forms import Message
+from System.Windows.Forms import AccessibleObject
+from System.Windows.Forms import AccessibleRole
+from System.Windows.Forms import ControlCollection
+from System import IntPtr
+from System.Windows.Forms import Padding
+from System.Drawing import Region
+from System.Windows.Forms import IWindowTarget
+from System.Windows.Forms import ControlEventHandler
+from System.Windows.Forms import DragEventHandler
+from System.Windows.Forms import GiveFeedbackEventHandler
+from System.Windows.Forms import HelpEventHandler
+from System.Windows.Forms import InvalidateEventHandler
+from System.Windows.Forms import PaintEventHandler
+from System.Windows.Forms import QueryContinueDragEventHandler
+from System.Windows.Forms import QueryAccessibilityHelpEventHandler
+from System.Windows.Forms import LayoutEventHandler
+from System.Windows.Forms import MouseEventHandler
+from System.Windows.Forms import PreviewKeyDownEventHandler
+from System.Windows.Forms import UICuesEventHandler
+from System.ComponentModel import CancelEventHandler
+from System.Drawing import Graphics
+from System.Windows.Forms import DragDropEffects
+from System.Drawing import Bitmap
+from System.Windows.Forms import Form
+from System.Windows.Forms import GetChildAtPointSkip
+from System.Windows.Forms import IContainerControl
+from System.Windows.Forms import PreProcessControlState
+from System.Drawing import SizeF
+from System.Windows.Forms import BoundsSpecified
+from System.Windows.Forms import ImeMode
+from System.ComponentModel import IContainer
+from System.Runtime.Remoting import ObjRef
 class GH_LayoutMenuItem(GH_DoubleBufferedPanel):
     @overload
     def __init__(self): ...
@@ -833,6 +901,9 @@ class GH_LayoutMenuItem(GH_DoubleBufferedPanel):
     def Update(self) -> None: ...
 
 
+from System.Collections.Generic import List
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 class GH_LayoutPanel:
     @overload
     def __init__(self): ...
@@ -864,6 +935,9 @@ class GH_LayoutPanel:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from System.Collections.Generic import List
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 class GH_LayoutTab:
     @overload
     def __init__(self): ...
@@ -905,6 +979,74 @@ class GH_LayoutTab:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from System.Collections.Generic import List
+from System.Drawing import Graphics
+from System.Windows.Forms import ToolStripDropDown
+from System import Guid
+from System.Drawing import Rectangle
+from System.Windows.Forms import AutoValidate
+from System.Windows.Forms import ValidationConstraints
+from System import EventHandler
+from System.Windows.Forms import AutoSizeMode
+from System.Windows.Forms import BorderStyle
+from System.Windows.Forms import BindingContext
+from System.Windows.Forms import Control
+from System.Drawing import SizeF
+from System.Windows.Forms import AutoScaleMode
+from System.Windows.Forms import Form
+from System.Drawing import Size
+from System.Drawing import Point
+from System.Windows.Forms import HScrollProperties
+from System.Windows.Forms import VScrollProperties
+from System.Windows.Forms import DockPaddingEdges
+from System.Windows.Forms import ScrollEventHandler
+from System.Windows.Forms import AnchorStyles
+from System.Windows.Forms.Layout import LayoutEngine
+from System.Drawing import Image
+from System.Windows.Forms import ImageLayout
+from System.Windows.Forms import ContextMenu
+from System.Windows.Forms import ContextMenuStrip
+from System.Windows.Forms import Cursor
+from System.Windows.Forms import ControlBindingsCollection
+from System.Windows.Forms import DockStyle
+from System.Drawing import Font
+from System.Drawing import Color
+from System.Windows.Forms import RightToLeft
+from System.ComponentModel import ISite
+from System import Delegate
+from System import IAsyncResult
+from System.Windows.Forms import Message
+from System.Windows.Forms import AccessibleObject
+from System.Windows.Forms import AccessibleRole
+from System.Windows.Forms import ControlCollection
+from System import IntPtr
+from System.Windows.Forms import Padding
+from System.Drawing import Region
+from System.Windows.Forms import IWindowTarget
+from System.Windows.Forms import ControlEventHandler
+from System.Windows.Forms import DragEventHandler
+from System.Windows.Forms import GiveFeedbackEventHandler
+from System.Windows.Forms import HelpEventHandler
+from System.Windows.Forms import InvalidateEventHandler
+from System.Windows.Forms import PaintEventHandler
+from System.Windows.Forms import QueryContinueDragEventHandler
+from System.Windows.Forms import QueryAccessibilityHelpEventHandler
+from System.Windows.Forms import KeyEventHandler
+from System.Windows.Forms import KeyPressEventHandler
+from System.Windows.Forms import LayoutEventHandler
+from System.Windows.Forms import MouseEventHandler
+from System.Windows.Forms import PreviewKeyDownEventHandler
+from System.Windows.Forms import UICuesEventHandler
+from System.ComponentModel import CancelEventHandler
+from System.Windows.Forms import DragDropEffects
+from System.Drawing import Bitmap
+from System.Windows.Forms import GetChildAtPointSkip
+from System.Windows.Forms import IContainerControl
+from System.Windows.Forms import PreProcessControlState
+from System.Windows.Forms import BoundsSpecified
+from System.Windows.Forms import ImeMode
+from System.ComponentModel import IContainer
+from System.Runtime.Remoting import ObjRef
 class GH_Ribbon:
     @overload
     def __init__(self): ...
@@ -1694,6 +1836,9 @@ class GH_Ribbon:
     def ValidateChildren(self, validationConstraints: ValidationConstraints) -> bool: ...
 
 
+from System.Windows.Forms import Padding
+from System.Drawing import Point
+from System.Drawing import Rectangle
 class GH_RibbonContentBase:
     Region: Rectangle
     @overload
@@ -1730,6 +1875,88 @@ class GH_RibbonContentBase:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import List
+from System import Guid
+from System.Drawing import Rectangle
+from System.Drawing import Size
+from System.Windows.Forms import AutoValidate
+from System.Drawing import Color
+from System.Windows.Forms import ValidationConstraints
+from System.Windows.Forms import IButtonControl
+from System.Windows.Forms import Form
+from System import EventHandler
+from System.Windows.Forms import AutoSizeMode
+from System.Windows.Forms import FormBorderStyle
+from System.Drawing import Point
+from System.Windows.Forms import DialogResult
+from System.ComponentModel import CancelEventHandler
+from System.Drawing import Icon
+from System.Windows.Forms import MenuStrip
+from System.Windows.Forms import Padding
+from System.Windows.Forms import MainMenu
+from System.Windows.Forms import SizeGripStyle
+from System.Windows.Forms import FormStartPosition
+from System.Windows.Forms import FormWindowState
+from System.Windows.Forms import FormClosingEventHandler
+from System.Windows.Forms import FormClosedEventHandler
+from System.Windows.Forms import InputLanguageChangedEventHandler
+from System.Windows.Forms import InputLanguageChangingEventHandler
+from System.Windows.Forms import MdiLayout
+from System.Windows.Forms import DpiChangedEventHandler
+from System.Windows.Forms import IWin32Window
+from System.Windows.Forms import BindingContext
+from System.Windows.Forms import Control
+from System.Drawing import SizeF
+from System.Windows.Forms import AutoScaleMode
+from System.Windows.Forms import HScrollProperties
+from System.Windows.Forms import VScrollProperties
+from System.Windows.Forms import DockPaddingEdges
+from System.Windows.Forms import ScrollEventHandler
+from System.Windows.Forms import AnchorStyles
+from System.Windows.Forms.Layout import LayoutEngine
+from System.Drawing import Image
+from System.Windows.Forms import ImageLayout
+from System.Windows.Forms import ContextMenu
+from System.Windows.Forms import ContextMenuStrip
+from System.Windows.Forms import Cursor
+from System.Windows.Forms import ControlBindingsCollection
+from System.Windows.Forms import DockStyle
+from System.Drawing import Font
+from System.Windows.Forms import RightToLeft
+from System.ComponentModel import ISite
+from System import Delegate
+from System import IAsyncResult
+from System.Windows.Forms import Message
+from System.Windows.Forms import AccessibleObject
+from System.Windows.Forms import AccessibleRole
+from System.Windows.Forms import ControlCollection
+from System import IntPtr
+from System.Drawing import Region
+from System.Windows.Forms import IWindowTarget
+from System.Windows.Forms import ControlEventHandler
+from System.Windows.Forms import DragEventHandler
+from System.Windows.Forms import GiveFeedbackEventHandler
+from System.Windows.Forms import HelpEventHandler
+from System.Windows.Forms import InvalidateEventHandler
+from System.Windows.Forms import PaintEventHandler
+from System.Windows.Forms import QueryContinueDragEventHandler
+from System.Windows.Forms import QueryAccessibilityHelpEventHandler
+from System.Windows.Forms import KeyEventHandler
+from System.Windows.Forms import KeyPressEventHandler
+from System.Windows.Forms import LayoutEventHandler
+from System.Windows.Forms import MouseEventHandler
+from System.Windows.Forms import PreviewKeyDownEventHandler
+from System.Windows.Forms import UICuesEventHandler
+from System.Drawing import Graphics
+from System.Windows.Forms import DragDropEffects
+from System.Drawing import Bitmap
+from System.Windows.Forms import GetChildAtPointSkip
+from System.Windows.Forms import IContainerControl
+from System.Windows.Forms import PreProcessControlState
+from System.Windows.Forms import BoundsSpecified
+from System.Windows.Forms import ImeMode
+from System.ComponentModel import IContainer
+from System.Runtime.Remoting import ObjRef
 class GH_RibbonDropdown:
     @overload
     def __init__(self): ...
@@ -2754,6 +2981,10 @@ class GH_RibbonDropdown:
 
 
 from ...Kernel import IGH_ObjectProxy
+from System.Drawing import Graphics
+from System.Windows.Forms import Padding
+from System.Drawing import Point
+from System.Drawing import Rectangle
 class GH_RibbonItem(GH_RibbonContentBase):
     @overload
     def __init__(self, item_proxy: IGH_ObjectProxy): ...
@@ -2823,6 +3054,9 @@ class GH_RibbonMouseEvent(Enum):
     Handled_Redraw = 3
 
 
+from System.Windows.Forms import MouseEventArgs
+from System.Windows.Forms import MouseButtons
+from System.Drawing import Point
 class GH_RibbonMouseEventArgs:
     @overload
     def __init__(self, e: MouseEventArgs): ...
@@ -2864,6 +3098,10 @@ class GH_RibbonMouseEventArgs:
     def ToString(self) -> str: ...
 
 
+from System.Drawing import Rectangle
+from System.Drawing import Color
+from System.Drawing import Brush
+from System.Drawing.Drawing2D import GraphicsPath
 class GH_RibbonPainter:
     @overload
     @staticmethod
@@ -2902,7 +3140,14 @@ class GH_RibbonPainter:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import List
+from System.Drawing import Point
+from System import Guid
 from ...Kernel import GH_Exposure
+from System.Drawing import Rectangle
+from System.Drawing import Font
+from System.Drawing import Graphics
+from System.Windows.Forms import Padding
 class GH_RibbonPanel(GH_RibbonContentBase):
     @overload
     def __init__(self): ...
@@ -3003,6 +3248,12 @@ class GH_RibbonPanel(GH_RibbonContentBase):
     def ToString(self) -> str: ...
 
 
+from System.Drawing import Bitmap
+from System.Drawing import Rectangle
+from System.Collections.Generic import List
+from System.Drawing import Graphics
+from System.Windows.Forms import Padding
+from System.Drawing import Point
 class GH_RibbonTab(GH_RibbonContentBase):
     @overload
     def __init__(self, owner: GH_Ribbon, name: str): ...

@@ -1,14 +1,16 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 import ThemedControls
 
 __all__ = ['ThemedControls']
 
 
+from System.Reflection import Assembly
 from ..Drawing import Image
+from System import Uri
+from System import IntPtr
+from System import EventHandler
 class AboutDialog(CommonDialog):
     @overload
     def __init__(self): ...
@@ -104,6 +106,12 @@ class AboutDialog(CommonDialog):
 
 
 
+from System import EventHandler
+from System.Collections.Generic import IEnumerable
+from System import Action
+from System import Func
+from System.Threading.Tasks import Task
+from System import IntPtr
 class Application(Widget):
     @overload
     def __init__(self): ...
@@ -241,6 +249,8 @@ class AutoSelectMode(Enum):
 
 
 
+from System.Linq.Expressions import Expression
+from System import Nullable
 class BindableExtensions:
     @overload
     @staticmethod
@@ -303,6 +313,9 @@ class BindableExtensions:
     def ToString(self) -> str: ...
 
 
+from System import EventHandler
+from System.Collections.Generic import IEnumerable
+from System import IntPtr
 class BindableWidget(Widget):
     @overload
     def add_DataContextChanged(self, value: EventHandler) -> None: ...
@@ -368,6 +381,10 @@ class BindableWidget(Widget):
     def UpdateBindings(self, mode: BindingUpdateMode) -> None: ...
 
 
+from System import EventHandler
+from System import Func
+from System import Action
+from System.Linq.Expressions import Expression
 class Binding:
     @overload
     def add_Changed(self, value: EventHandler) -> None: ...
@@ -466,6 +483,7 @@ class BindingChangingEventArgs:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import IEnumerator
 class BindingCollection:
     @overload
     def __init__(self): ...
@@ -533,15 +551,19 @@ class BorderType(Enum):
     # None = 2
 
 
+from System import EventHandler
+from System.Windows.Input import ICommand
 from ..Drawing import Image
 from ..Drawing import Size
 from ..Drawing import Color
 from ..Drawing import Font
+from System.Collections.Generic import IEnumerable
 from ..Drawing import Rectangle
 from ..Drawing import SizeF
 from ..Drawing import PointF
 from ..Drawing import RectangleF
 from ..Drawing import Point
+from System import IntPtr
 class Button(TextControl):
     @overload
     def __init__(self): ...
@@ -883,7 +905,11 @@ class ButtonImagePosition(Enum):
     Overlay = 4
 
 
+from System import EventHandler
 from ..Drawing import Image
+from System.Windows.Input import ICommand
+from System.Collections.Generic import IEnumerable
+from System import IntPtr
 class ButtonMenuItem(MenuItem):
     @overload
     def __init__(self): ...
@@ -1014,6 +1040,10 @@ class ButtonMenuItem(MenuItem):
 
 
 from ..Drawing import Image
+from System.Windows.Input import ICommand
+from System import EventHandler
+from System.Collections.Generic import IEnumerable
+from System import IntPtr
 class ButtonSegmentedItem(SegmentedItem):
     @overload
     def __init__(self): ...
@@ -1129,7 +1159,12 @@ class ButtonSegmentedItem(SegmentedItem):
     def UpdateBindings(self, mode: BindingUpdateMode) -> None: ...
 
 
+from System import EventHandler
+from System.Windows.Input import ICommand
+from System import EventArgs
 from ..Drawing import Image
+from System.Collections.Generic import IEnumerable
+from System import IntPtr
 class ButtonToolItem(ToolItem):
     @overload
     def __init__(self): ...
@@ -1243,6 +1278,9 @@ class ButtonToolItem(ToolItem):
     def UpdateBindings(self, mode: BindingUpdateMode) -> None: ...
 
 
+from System import EventHandler
+from System import DateTime
+from System.Collections.Generic import IEnumerable
 from ..Drawing import Rectangle
 from ..Drawing import Size
 from ..Drawing import SizeF
@@ -1251,6 +1289,7 @@ from ..Drawing import PointF
 from ..Drawing import RectangleF
 from ..Drawing import Point
 from ..Drawing import Image
+from System import IntPtr
 class Calendar(Control):
     @overload
     def __init__(self): ...
@@ -1573,6 +1612,8 @@ class CalendarMode(Enum):
     Range = 1
 
 
+from System import IntPtr
+from System import EventHandler
 class Cell(Widget):
     @overload
     def add_StyleChanged(self, value: EventHandler) -> None: ...
@@ -1611,6 +1652,7 @@ class Cell(Widget):
 
 
 from ..Drawing import Color
+from System.ComponentModel import PropertyChangedEventHandler
 class CellEventArgs:
     @overload
     def __init__(self, row: int, item: object, cellState: CellStates): ...
@@ -1691,8 +1733,11 @@ class CellStates(Enum):
     Editing = 2
 
 
+from System import EventHandler
+from System import Nullable
 from ..Drawing import Color
 from ..Drawing import Font
+from System.Collections.Generic import IEnumerable
 from ..Drawing import Rectangle
 from ..Drawing import Size
 from ..Drawing import SizeF
@@ -1700,6 +1745,7 @@ from ..Drawing import PointF
 from ..Drawing import RectangleF
 from ..Drawing import Point
 from ..Drawing import Image
+from System import IntPtr
 class CheckBox(TextControl):
     @overload
     def __init__(self): ...
@@ -2019,6 +2065,8 @@ class CheckBox(TextControl):
     def UpdateLayout(self) -> None: ...
 
 
+from System import IntPtr
+from System import EventHandler
 class CheckBoxCell:
     @overload
     def __init__(self): ...
@@ -2066,6 +2114,8 @@ class CheckBoxCell:
     def ToString(self) -> str: ...
 
 
+from System import EventHandler
+from System.Collections.Generic import IEnumerable
 from ..Drawing import Color
 from ..Drawing import Size
 from ..Drawing import Padding
@@ -2075,6 +2125,7 @@ from ..Drawing import PointF
 from ..Drawing import RectangleF
 from ..Drawing import Point
 from ..Drawing import Image
+from System import IntPtr
 class CheckBoxList(Panel):
     @overload
     def __init__(self): ...
@@ -2456,7 +2507,9 @@ class CheckBoxList(Panel):
     def UpdateLayout(self) -> None: ...
 
 
+from System import EventHandler
 from ..Drawing import Image
+from System.Windows.Input import ICommand
 class CheckCommand(Command):
     @overload
     def __init__(self): ...
@@ -2554,6 +2607,10 @@ class CheckCommand(Command):
     def ToString(self) -> str: ...
 
 
+from System import EventHandler
+from System.Windows.Input import ICommand
+from System.Collections.Generic import IEnumerable
+from System import IntPtr
 class CheckMenuItem(MenuItem):
     @overload
     def __init__(self): ...
@@ -2682,7 +2739,12 @@ class CheckMenuItem(MenuItem):
     def UpdateBindings(self, mode: BindingUpdateMode) -> None: ...
 
 
+from System import EventHandler
+from System import EventArgs
+from System.Windows.Input import ICommand
 from ..Drawing import Image
+from System.Collections.Generic import IEnumerable
+from System import IntPtr
 class CheckToolItem(ToolItem):
     @overload
     def __init__(self): ...
@@ -2804,7 +2866,10 @@ class CheckToolItem(ToolItem):
     def UpdateBindings(self, mode: BindingUpdateMode) -> None: ...
 
 
+from System.IO import Stream
 from ..Drawing import Image
+from System import IntPtr
+from System import EventHandler
 class Clipboard(Widget):
     @overload
     def __init__(self): ...
@@ -2896,6 +2961,8 @@ class Clipboard(Widget):
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import IEnumerable
+from System import EventHandler
 from ..Drawing import Rectangle
 from ..Drawing import Size
 from ..Drawing import SizeF
@@ -2904,6 +2971,7 @@ from ..Drawing import PointF
 from ..Drawing import RectangleF
 from ..Drawing import Point
 from ..Drawing import Image
+from System import IntPtr
 class CollectionEditor(Control):
     @overload
     def __init__(self): ...
@@ -3199,7 +3267,9 @@ class CollectionEditor(Control):
     def UpdateLayout(self) -> None: ...
 
 
+from System import EventHandler
 from ..Drawing import Color
+from System import IntPtr
 class ColorDialog(CommonDialog):
     @overload
     def __init__(self): ...
@@ -3257,7 +3327,9 @@ class ColorDialog(CommonDialog):
     def ToString(self) -> str: ...
 
 
+from System import EventHandler
 from ..Drawing import Color
+from System.Collections.Generic import IEnumerable
 from ..Drawing import Rectangle
 from ..Drawing import Size
 from ..Drawing import SizeF
@@ -3265,6 +3337,7 @@ from ..Drawing import PointF
 from ..Drawing import RectangleF
 from ..Drawing import Point
 from ..Drawing import Image
+from System import IntPtr
 class ColorPicker(Control):
     @overload
     def __init__(self): ...
@@ -3571,6 +3644,8 @@ class ColorPicker(Control):
 
 
 
+from System import EventHandler
+from System.Collections.Generic import IEnumerable
 from ..Drawing import Color
 from ..Drawing import Font
 from ..Drawing import Rectangle
@@ -3580,6 +3655,7 @@ from ..Drawing import PointF
 from ..Drawing import RectangleF
 from ..Drawing import Point
 from ..Drawing import Image
+from System import IntPtr
 class ComboBox(DropDown):
     @overload
     def __init__(self): ...
@@ -3964,6 +4040,9 @@ class ComboBox(DropDown):
     def UpdateLayout(self) -> None: ...
 
 
+from System.Collections.Generic import IEnumerable
+from System import IntPtr
+from System import EventHandler
 class ComboBoxCell:
     @overload
     def __init__(self): ...
@@ -4023,7 +4102,9 @@ class ComboBoxCell:
     def ToString(self) -> str: ...
 
 
+from System import EventHandler
 from ..Drawing import Image
+from System.Windows.Input import ICommand
 class Command:
     @overload
     def __init__(self): ...
@@ -4118,6 +4199,8 @@ class Command:
 
 
 from ..Drawing import Font
+from System.Collections.Generic import IEnumerable
+from System import EventHandler
 from ..Drawing import Rectangle
 from ..Drawing import Size
 from ..Drawing import SizeF
@@ -4126,6 +4209,7 @@ from ..Drawing import PointF
 from ..Drawing import RectangleF
 from ..Drawing import Point
 from ..Drawing import Image
+from System import IntPtr
 class CommonControl(Control):
     @overload
     def add_DataContextChanged(self, value: EventHandler) -> None: ...
@@ -4415,6 +4499,8 @@ class CommonControl(Control):
     def UpdateLayout(self) -> None: ...
 
 
+from System import IntPtr
+from System import EventHandler
 class CommonDialog(Widget):
     @overload
     def add_StyleChanged(self, value: EventHandler) -> None: ...
@@ -4457,6 +4543,8 @@ class CommonDialog(Widget):
 
 
 from ..Drawing import Size
+from System.Collections.Generic import IEnumerable
+from System import EventHandler
 from ..Drawing import Rectangle
 from ..Drawing import SizeF
 from ..Drawing import Color
@@ -4464,6 +4552,7 @@ from ..Drawing import PointF
 from ..Drawing import RectangleF
 from ..Drawing import Point
 from ..Drawing import Image
+from System import IntPtr
 class Container(Control):
     @overload
     def add_DataContextChanged(self, value: EventHandler) -> None: ...
@@ -4777,7 +4866,11 @@ class Container(Control):
     def UpdateLayout(self) -> None: ...
 
 
+from System.Collections.Generic import IEnumerable
 from ..Drawing import PointF
+from System import Nullable
+from System import EventHandler
+from System import IntPtr
 class ContextMenu(Menu):
     @overload
     def __init__(self): ...
@@ -4878,6 +4971,8 @@ class ContextMenu(Menu):
     def UpdateBindings(self, mode: BindingUpdateMode) -> None: ...
 
 
+from System.Collections.Generic import IEnumerable
+from System import EventHandler
 from ..Drawing import Rectangle
 from ..Drawing import Size
 from ..Drawing import SizeF
@@ -4886,6 +4981,7 @@ from ..Drawing import PointF
 from ..Drawing import RectangleF
 from ..Drawing import Point
 from ..Drawing import Image
+from System import IntPtr
 class Control(BindableWidget):
     @overload
     def __init__(self, handler: IHandler): ...
@@ -5214,9 +5310,13 @@ class CreateNativeControlArgs:
     def ToString(self) -> str: ...
 
 
+from System.IO import Stream
 from ..Drawing import Bitmap
 from ..Drawing import PointF
 from ..Drawing import Icon
+from System.Reflection import Assembly
+from System import IntPtr
+from System import EventHandler
 class Cursor(Widget):
     @overload
     def __init__(self, type: CursorType): ...
@@ -5343,6 +5443,10 @@ class CursorType(Enum):
     SizeBottomRight = 16
 
 
+from System import Func
+from System import Action
+from System import EventHandler
+from System import IntPtr
 class CustomCell(Cell):
     @overload
     def __init__(self): ...
@@ -5436,7 +5540,10 @@ class DataFormats:
     def ToString(self) -> str: ...
 
 
+from System.IO import Stream
 from ..Drawing import Image
+from System import IntPtr
+from System import EventHandler
 class DataObject(Widget):
     @overload
     def __init__(self): ...
@@ -5549,8 +5656,12 @@ class DataStoreExtensions:
 
 
 
+from System import EventHandler
+from System import DateTime
+from System import Nullable
 from ..Drawing import Color
 from ..Drawing import Font
+from System.Collections.Generic import IEnumerable
 from ..Drawing import Rectangle
 from ..Drawing import Size
 from ..Drawing import SizeF
@@ -5558,6 +5669,7 @@ from ..Drawing import PointF
 from ..Drawing import RectangleF
 from ..Drawing import Point
 from ..Drawing import Image
+from System import IntPtr
 class DateTimePicker(CommonControl):
     @overload
     def __init__(self): ...
@@ -5889,9 +6001,13 @@ class DateTimePickerMode(Enum):
 
 
 
+from System.Collections.ObjectModel import Collection
+from System.Threading.Tasks import Task
+from System import EventHandler
 from ..Drawing import Point
 from ..Drawing import Rectangle
 from ..Drawing import Icon
+from System.Collections.Generic import IEnumerable
 from ..Drawing import Padding
 from ..Drawing import Size
 from ..Drawing import SizeF
@@ -5899,6 +6015,7 @@ from ..Drawing import Color
 from ..Drawing import PointF
 from ..Drawing import RectangleF
 from ..Drawing import Image
+from System import IntPtr
 class Dialog(Window):
     @overload
     def __init__(self): ...
@@ -6395,6 +6512,9 @@ class DockPosition(Enum):
     Bottom = 3
 
 
+from System.Collections.Generic import IEnumerable
+from System import EventHandler
+from System.Collections.Generic import IList
 from ..Drawing import Size
 from ..Drawing import Rectangle
 from ..Drawing import SizeF
@@ -6403,6 +6523,7 @@ from ..Drawing import PointF
 from ..Drawing import RectangleF
 from ..Drawing import Point
 from ..Drawing import Image
+from System import IntPtr
 class DocumentControl(Container):
     @overload
     def __init__(self): ...
@@ -6751,7 +6872,10 @@ class DocumentControl(Container):
     def UpdateLayout(self) -> None: ...
 
 
+from System import Nullable
+from System import EventHandler
 from ..Drawing import Image
+from System.Collections.Generic import IEnumerable
 from ..Drawing import Padding
 from ..Drawing import Size
 from ..Drawing import Rectangle
@@ -6760,6 +6884,7 @@ from ..Drawing import Color
 from ..Drawing import PointF
 from ..Drawing import RectangleF
 from ..Drawing import Point
+from System import IntPtr
 class DocumentPage(Panel):
     @overload
     def __init__(self): ...
@@ -7214,8 +7339,10 @@ class DragEventArgs:
     def ToString(self) -> str: ...
 
 
+from System import EventHandler
 from ..Drawing import Graphics
 from ..Drawing import Rectangle
+from System.Collections.Generic import IEnumerable
 from ..Drawing import Padding
 from ..Drawing import Size
 from ..Drawing import SizeF
@@ -7224,6 +7351,7 @@ from ..Drawing import PointF
 from ..Drawing import RectangleF
 from ..Drawing import Point
 from ..Drawing import Image
+from System import IntPtr
 class Drawable(Panel):
     @overload
     def __init__(self): ...
@@ -7571,6 +7699,8 @@ class Drawable(Panel):
     def UpdateLayout(self) -> None: ...
 
 
+from System import EventHandler
+from System import IntPtr
 class DrawableCell(Cell):
     @overload
     def __init__(self): ...
@@ -7614,6 +7744,8 @@ class DrawableCell(Cell):
     def ToString(self) -> str: ...
 
 
+from System import EventHandler
+from System.Collections.Generic import IEnumerable
 from ..Drawing import Color
 from ..Drawing import Font
 from ..Drawing import Rectangle
@@ -7623,6 +7755,7 @@ from ..Drawing import PointF
 from ..Drawing import RectangleF
 from ..Drawing import Point
 from ..Drawing import Image
+from System import IntPtr
 class DropDown(ListControl):
     @overload
     def __init__(self): ...
@@ -8017,7 +8150,12 @@ class DropDownFormatEventArgs:
     def ToString(self) -> str: ...
 
 
+from System.Windows.Input import ICommand
+from System import EventHandler
+from System import EventArgs
 from ..Drawing import Image
+from System.Collections.Generic import IEnumerable
+from System import IntPtr
 class DropDownToolItem(ToolItem):
     @overload
     def __init__(self): ...
@@ -8143,6 +8281,7 @@ class DualBindingMode(Enum):
     Manual = 4
 
 
+from System import Nullable
 class DynamicControl(DynamicItem):
     @overload
     def __init__(self): ...
@@ -8172,6 +8311,8 @@ class DynamicControl(DynamicItem):
     def ToString(self) -> str: ...
 
 
+from System.Collections.ObjectModel import Collection
+from System import Nullable
 class DynamicGroup(DynamicTable):
     @overload
     def __init__(self): ...
@@ -8227,6 +8368,7 @@ class DynamicGroup(DynamicTable):
     def ToString(self) -> str: ...
 
 
+from System import Nullable
 class DynamicItem:
     @overload
     def Create(self, layout: DynamicLayout) -> Control: ...
@@ -8254,8 +8396,12 @@ class DynamicItem:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import IEnumerable
+from System.Collections.ObjectModel import Collection
+from System import Nullable
 from ..Drawing import Padding
 from ..Drawing import Size
+from System import EventHandler
 from ..Drawing import Rectangle
 from ..Drawing import SizeF
 from ..Drawing import Color
@@ -8263,6 +8409,7 @@ from ..Drawing import PointF
 from ..Drawing import RectangleF
 from ..Drawing import Point
 from ..Drawing import Image
+from System import IntPtr
 class DynamicLayout(Panel):
     @overload
     def __init__(self): ...
@@ -8670,6 +8817,10 @@ class DynamicLayout(Panel):
     def UpdateLayout(self) -> None: ...
 
 
+from System.Collections.Generic import IEnumerable
+from System import Nullable
+from System.Collections.ObjectModel import Collection
+from System.Collections.Generic import IEnumerator
 class DynamicRow:
     @overload
     def __init__(self): ...
@@ -8728,6 +8879,8 @@ class DynamicRow:
     def ToString(self) -> str: ...
 
 
+from System.Collections.ObjectModel import Collection
+from System import Nullable
 class DynamicScrollable(DynamicTable):
     @overload
     def __init__(self): ...
@@ -8783,6 +8936,9 @@ class DynamicScrollable(DynamicTable):
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import IEnumerable
+from System.Collections.ObjectModel import Collection
+from System import Nullable
 class DynamicTable(DynamicItem):
     @overload
     def __init__(self): ...
@@ -8842,6 +8998,8 @@ class DynamicTable(DynamicItem):
 
 
 
+from System import EventHandler
+from System.Collections.Generic import IEnumerable
 from ..Drawing import Padding
 from ..Drawing import Size
 from ..Drawing import Rectangle
@@ -8851,6 +9009,7 @@ from ..Drawing import PointF
 from ..Drawing import RectangleF
 from ..Drawing import Point
 from ..Drawing import Image
+from System import IntPtr
 class Expander(Panel):
     @overload
     def __init__(self): ...
@@ -9195,6 +9354,10 @@ class Expander(Panel):
     def UpdateLayout(self) -> None: ...
 
 
+from System.Collections.ObjectModel import Collection
+from System import Uri
+from System import IntPtr
+from System import EventHandler
 class FileDialog(CommonDialog):
     @overload
     def add_StyleChanged(self, value: EventHandler) -> None: ...
@@ -9287,6 +9450,9 @@ class FileFilter:
     def ToString(self) -> str: ...
 
 
+from System.Collections.ObjectModel import Collection
+from System import EventHandler
+from System.Collections.Generic import IEnumerable
 from ..Drawing import Rectangle
 from ..Drawing import Size
 from ..Drawing import SizeF
@@ -9295,6 +9461,7 @@ from ..Drawing import PointF
 from ..Drawing import RectangleF
 from ..Drawing import Point
 from ..Drawing import Image
+from System import IntPtr
 class FilePicker(Control):
     @overload
     def __init__(self): ...
@@ -9611,6 +9778,9 @@ class FilePicker(Control):
 
 
 
+from System.Globalization import CultureInfo
+from System import Char
+from System.Collections.Generic import IEnumerable
 class FixedMaskedTextProvider:
     @overload
     def __init__(self, mask: str, culture: CultureInfo, allowPromptAsInput: bool, restrictToAscii: bool): ...
@@ -9684,9 +9854,12 @@ class FixedMaskedTextProvider:
 
 
 
+from System.Threading.Tasks import Task
+from System import EventHandler
 from ..Drawing import Point
 from ..Drawing import Rectangle
 from ..Drawing import Icon
+from System.Collections.Generic import IEnumerable
 from ..Drawing import Padding
 from ..Drawing import Size
 from ..Drawing import SizeF
@@ -9694,6 +9867,7 @@ from ..Drawing import Color
 from ..Drawing import PointF
 from ..Drawing import RectangleF
 from ..Drawing import Image
+from System import IntPtr
 class FloatingForm(Form):
     @overload
     def __init__(self): ...
@@ -10149,7 +10323,9 @@ class FloatingForm(Form):
     def UpdateLayout(self) -> None: ...
 
 
+from System import EventHandler
 from ..Drawing import Font
+from System import IntPtr
 class FontDialog(CommonDialog):
     @overload
     def __init__(self): ...
@@ -10203,6 +10379,8 @@ class FontDialog(CommonDialog):
 
 
 from ..Drawing import Font
+from System import EventHandler
+from System.Collections.Generic import IEnumerable
 from ..Drawing import Rectangle
 from ..Drawing import Size
 from ..Drawing import SizeF
@@ -10211,6 +10389,7 @@ from ..Drawing import PointF
 from ..Drawing import RectangleF
 from ..Drawing import Point
 from ..Drawing import Image
+from System import IntPtr
 class FontPicker(Control):
     @overload
     def __init__(self): ...
@@ -10511,9 +10690,12 @@ class FontPicker(Control):
     def UpdateLayout(self) -> None: ...
 
 
+from System.Threading.Tasks import Task
+from System import EventHandler
 from ..Drawing import Point
 from ..Drawing import Rectangle
 from ..Drawing import Icon
+from System.Collections.Generic import IEnumerable
 from ..Drawing import Padding
 from ..Drawing import Size
 from ..Drawing import SizeF
@@ -10521,6 +10703,7 @@ from ..Drawing import Color
 from ..Drawing import PointF
 from ..Drawing import RectangleF
 from ..Drawing import Image
+from System import IntPtr
 class Form(Window):
     @overload
     def __init__(self): ...
@@ -10978,6 +11161,8 @@ class Form(Window):
     def UpdateLayout(self) -> None: ...
 
 
+from System import EventHandler
+from System.Collections.Generic import IEnumerable
 from ..Drawing import Rectangle
 from ..Drawing import Size
 from ..Drawing import SizeF
@@ -10986,6 +11171,7 @@ from ..Drawing import PointF
 from ..Drawing import RectangleF
 from ..Drawing import Point
 from ..Drawing import Image
+from System import IntPtr
 class Grid(Control):
     CellEditingEvent: str
     CellEditedEvent: str
@@ -11446,6 +11632,7 @@ class GridCellFormatEventArgs:
 
 
 from ..Drawing import PointF
+from System import Nullable
 from ..Drawing import SizeF
 class GridCellMouseEventArgs(MouseEventArgs):
     @overload
@@ -11488,6 +11675,8 @@ class GridCellType(Enum):
     ColumnHeader = 2
 
 
+from System import IntPtr
+from System import EventHandler
 class GridColumn(Widget):
     @overload
     def __init__(self): ...
@@ -11587,6 +11776,8 @@ class GridColumn(Widget):
     def ToString(self) -> str: ...
 
 
+from System.Collections.Specialized import NotifyCollectionChangedEventHandler
+from System.Collections.Generic import IEnumerator
 class GridColumnCollection:
     @overload
     def __init__(self): ...
@@ -11708,7 +11899,10 @@ class GridRowFormatEventArgs:
     def ToString(self) -> str: ...
 
 
+from System import Func
+from System.Collections.Generic import IEnumerable
 from ..Drawing import PointF
+from System import EventHandler
 from ..Drawing import Rectangle
 from ..Drawing import Size
 from ..Drawing import SizeF
@@ -11716,6 +11910,7 @@ from ..Drawing import Color
 from ..Drawing import RectangleF
 from ..Drawing import Point
 from ..Drawing import Image
+from System import IntPtr
 class GridView(Grid):
     @overload
     def __init__(self): ...
@@ -12207,14 +12402,17 @@ class GridViewDragInfo:
 
 from ..Drawing import Font
 from ..Drawing import Color
+from System.Collections.Generic import IEnumerable
 from ..Drawing import Padding
 from ..Drawing import Size
+from System import EventHandler
 from ..Drawing import Rectangle
 from ..Drawing import SizeF
 from ..Drawing import PointF
 from ..Drawing import RectangleF
 from ..Drawing import Point
 from ..Drawing import Image
+from System import IntPtr
 class GroupBox(Panel):
     @overload
     def __init__(self): ...
@@ -12565,6 +12763,7 @@ class HorizontalAlignment(Enum):
     Stretch = 3
 
 
+from System import EventHandler
 class IBindable:
     @overload
     def add_DataContextChanged(self, value: EventHandler) -> None: ...
@@ -12580,6 +12779,7 @@ class IBindable:
     def DataContext(self, value: object) -> None: ...
 
 
+from System.Collections.Generic import IEnumerable
 class IBindableWidgetContainer:
     @property
     def Children(self) -> Iterable[BindableWidget]: ...
@@ -12592,6 +12792,7 @@ class IBinding:
     def Update(self, mode: BindingUpdateMode) -> None: ...
 
 
+from System import EventArgs
 class ICallback:
     @overload
     def OnTextChanged(self, widget: TextControl, e: EventArgs) -> None: ...
@@ -12602,11 +12803,13 @@ class ICallback:
     def OnStep(self, widget: TextStepper, e: StepperEventArgs) -> None: ...
 
 
+from System import EventArgs
 class ICallback:
     @overload
     def OnCheckedChanged(self, widget: ToggleButton, e: EventArgs) -> None: ...
 
 
+from System import EventArgs
 class ICallback:
     @overload
     def OnActivated(self, widget: TreeView, e: TreeViewItemEventArgs) -> None: ...
@@ -12628,6 +12831,7 @@ class ICallback:
     def OnSelectionChanged(self, widget: TreeView, e: EventArgs) -> None: ...
 
 
+from System import EventArgs
 class ICallback:
     @overload
     def OnActivated(self, widget: TreeGridView, e: TreeGridViewItemEventArgs) -> None: ...
@@ -12658,6 +12862,8 @@ class ICallback:
     def OnOpenNewWindow(self, widget: WebView, e: WebViewNewWindowEventArgs) -> None: ...
 
 
+from System import EventArgs
+from System.ComponentModel import CancelEventArgs
 class ICallback:
     @overload
     def OnInitialized(self, widget: Application, e: EventArgs) -> None: ...
@@ -12671,6 +12877,8 @@ class ICallback:
     def OnUnhandledException(self, widget: Application, e: UnhandledExceptionEventArgs) -> None: ...
 
 
+from System import EventArgs
+from System.ComponentModel import CancelEventArgs
 class ICallback:
     @overload
     def OnClosed(self, widget: Window, e: EventArgs) -> None: ...
@@ -12686,6 +12894,7 @@ class ICallback:
     def OnWindowStateChanged(self, widget: Window, e: EventArgs) -> None: ...
 
 
+from System import EventArgs
 class ICallback:
     @overload
     def OnCellClick(self, widget: Grid, e: GridCellMouseEventArgs) -> None: ...
@@ -12709,6 +12918,7 @@ class ICallback:
     def OnSelectionChanged(self, widget: Grid, e: EventArgs) -> None: ...
 
 
+from System import EventArgs
 class ICallback:
     @overload
     def OnClick(self, widget: LinkButton, e: EventArgs) -> None: ...
@@ -12719,6 +12929,7 @@ class ICallback:
     def OnTextChanging(self, widget: TextBox, e: TextChangingEventArgs) -> None: ...
 
 
+from System import EventArgs
 class ICallback:
     @overload
     def OnCaretIndexChanged(self, widget: TextArea, e: EventArgs) -> None: ...
@@ -12738,11 +12949,13 @@ class ICallback:
     def OnItemShown(self, widget: Navigation, e: NavigationItemEventArgs) -> None: ...
 
 
+from System import EventArgs
 class ICallback:
     @overload
     def OnSelectedIndexChanged(self, widget: TabControl, e: EventArgs) -> None: ...
 
 
+from System import EventArgs
 class ICallback:
     @overload
     def OnValueChanged(self, widget: NumericStepper, e: EventArgs) -> None: ...
@@ -12758,6 +12971,7 @@ class ICallback:
     def OnPropertyValueChanged(self, widget: PropertyGrid, e: PropertyValueChangedEventArgs) -> None: ...
 
 
+from System import EventArgs
 class ICallback:
     @overload
     def OnCheckedChanged(self, widget: RadioButton, e: EventArgs) -> None: ...
@@ -12765,11 +12979,13 @@ class ICallback:
     def OnClick(self, widget: RadioButton, e: EventArgs) -> None: ...
 
 
+from System import EventArgs
 class ICallback:
     @overload
     def OnFontChanged(self, widget: FontDialog, e: EventArgs) -> None: ...
 
 
+from System import EventArgs
 class ICallback:
     @overload
     def OnPositionChangeCompleted(self, widget: Splitter, e: EventArgs) -> None: ...
@@ -12781,6 +12997,7 @@ class ICallback:
     def OnPositionChanging(self, widget: Splitter, e: SplitterPositionChangingEventArgs) -> None: ...
 
 
+from System import EventArgs
 class ICallback:
     @overload
     def OnSelectedIndexChanged(self, widget: ListControl, e: EventArgs) -> None: ...
@@ -12791,26 +13008,31 @@ class ICallback:
     def OnCreateNativeControl(self, widget: NativeControlHost, e: CreateNativeControlArgs) -> None: ...
 
 
+from System import EventArgs
 class ICallback:
     @overload
     def OnValueChanged(self, widget: Slider, e: EventArgs) -> None: ...
 
 
+from System import EventArgs
 class ICallback:
     @overload
     def OnActivated(self, widget: ListBox, e: EventArgs) -> None: ...
 
 
+from System import EventArgs
 class ICallback:
     @overload
     def OnValueChanged(self, widget: FontPicker, e: EventArgs) -> None: ...
 
 
+from System import EventArgs
 class ICallback:
     @overload
     def OnExpandedChanged(self, widget: Expander, e: EventArgs) -> None: ...
 
 
+from System import EventArgs
 class ICallback:
     @overload
     def OnActivated(self, widget: TrayIndicator, e: EventArgs) -> None: ...
@@ -12821,11 +13043,13 @@ class ICallback:
     def OnPaint(self, widget: Drawable, e: PaintEventArgs) -> None: ...
 
 
+from System import EventArgs
 class ICallback:
     @overload
     def OnCheckedChanged(self, widget: RadioMenuItem, e: EventArgs) -> None: ...
 
 
+from System import EventArgs
 class ICallback:
     @overload
     def OnClosed(self, widget: SubMenuItem, e: EventArgs) -> None: ...
@@ -12835,6 +13059,7 @@ class ICallback:
     def OnOpening(self, widget: SubMenuItem, e: EventArgs) -> None: ...
 
 
+from System import EventArgs
 class ICallback:
     @overload
     def OnPageClosed(self, widget: DocumentControl, e: DocumentPageEventArgs) -> None: ...
@@ -12846,21 +13071,25 @@ class ICallback:
     def OnSelectedIndexChanged(self, widget: DocumentControl, e: EventArgs) -> None: ...
 
 
+from System import EventArgs
 class ICallback:
     @overload
     def OnValueChanged(self, widget: DateTimePicker, e: EventArgs) -> None: ...
 
 
+from System import EventArgs
 class ICallback:
     @overload
     def OnElapsed(self, widget: UITimer, e: EventArgs) -> None: ...
 
 
+from System import EventArgs
 class ICallback:
     @overload
     def OnTextChanged(self, widget: ComboBox, e: EventArgs) -> None: ...
 
 
+from System import EventArgs
 class ICallback:
     @overload
     def OnClick(self, widget: MenuItem, e: EventArgs) -> None: ...
@@ -12868,16 +13097,19 @@ class ICallback:
     def OnValidate(self, widget: MenuItem, e: EventArgs) -> None: ...
 
 
+from System import EventArgs
 class ICallback:
     @overload
     def OnColorChanged(self, widget: ColorPicker, e: EventArgs) -> None: ...
 
 
+from System import EventArgs
 class ICallback:
     @overload
     def OnCheckedChanged(self, widget: CheckBox, e: EventArgs) -> None: ...
 
 
+from System import EventArgs
 class ICallback:
     @overload
     def OnSelectedDateChanged(self, widget: Calendar, e: EventArgs) -> None: ...
@@ -12909,11 +13141,13 @@ class ICallback:
     def OnPaint(self, widget: DrawableCell, e: DrawableCellPaintEventArgs) -> None: ...
 
 
+from System import EventArgs
 class ICallback:
     @overload
     def OnColorChanged(self, widget: ColorDialog, e: EventArgs) -> None: ...
 
 
+from System import EventArgs
 class ICallback:
     @overload
     def OnClick(self, widget: SegmentedItem, e: EventArgs) -> None: ...
@@ -12921,6 +13155,7 @@ class ICallback:
     def OnSelectedChanged(self, widget: SegmentedItem, e: EventArgs) -> None: ...
 
 
+from System import EventArgs
 class ICallback:
     @overload
     def OnItemClicked(self, widget: SegmentedButton, e: SegmentedItemClickEventArgs) -> None: ...
@@ -12928,6 +13163,7 @@ class ICallback:
     def OnSelectedIndexesChanged(self, widget: SegmentedButton, e: EventArgs) -> None: ...
 
 
+from System import EventArgs
 class ICallback:
     @overload
     def OnPrinted(self, widget: PrintDocument, e: EventArgs) -> None: ...
@@ -12937,6 +13173,7 @@ class ICallback:
     def OnPrintPage(self, widget: PrintDocument, e: PrintPageEventArgs) -> None: ...
 
 
+from System import EventArgs
 class ICallback:
     @overload
     def OnDropDownClosed(self, widget: DropDown, e: EventArgs) -> None: ...
@@ -12946,6 +13183,7 @@ class ICallback:
     def OnFormatItem(self, widget: DropDown, e: DropDownFormatEventArgs) -> None: ...
 
 
+from System import EventArgs
 class ICallback:
     @overload
     def OnDragDrop(self, widget: Control, e: DragEventArgs) -> None: ...
@@ -12989,11 +13227,13 @@ class ICallback:
     def OnTextInput(self, widget: Control, e: TextInputEventArgs) -> None: ...
 
 
+from System import EventArgs
 class ICallback:
     @overload
     def OnClick(self, widget: Button, e: EventArgs) -> None: ...
 
 
+from System import EventArgs
 class ICallback:
     @overload
     def OnClosed(self, widget: ContextMenu, e: EventArgs) -> None: ...
@@ -13003,11 +13243,13 @@ class ICallback:
     def OnOpening(self, widget: ContextMenu, e: EventArgs) -> None: ...
 
 
+from System import EventArgs
 class ICallback:
     @overload
     def OnCheckedChanged(self, widget: CheckMenuItem, e: EventArgs) -> None: ...
 
 
+from System import EventArgs
 class ICallback:
     @overload
     def OnFilePathChanged(self, widget: FilePicker, e: EventArgs) -> None: ...
@@ -13020,6 +13262,7 @@ class IColumnItem:
     def SetValue(self, column: int, value: object) -> None: ...
 
 
+from System import EventHandler
 class ICommandItem:
     @overload
     def add_Click(self, value: EventHandler) -> None: ...
@@ -13115,6 +13358,7 @@ class IHandler:
     def MinimumSize(self, value: Size) -> None: ...
 
 
+from System.Collections.Generic import IEnumerable
 class IHandler:
     @property
     def DataStore(self) -> Iterable[object]: ...
@@ -13214,6 +13458,7 @@ class IHandler:
     def TrySetObject(self, value: object, type: str) -> bool: ...
 
 
+from System.Collections.Generic import IEnumerable
 class IHandler:
     @overload
     def BeginEdit(self, row: int, column: int) -> None: ...
@@ -13267,6 +13512,7 @@ class IHandler:
     def UnselectRow(self, row: int) -> None: ...
 
 
+from System import Action
 class IHandler:
     @overload
     def AsyncInvoke(self, action: Action) -> None: ...
@@ -13327,6 +13573,7 @@ class IHandler:
     def ImageInterpolation(self, value: ImageInterpolation) -> None: ...
 
 
+from System import DateTime
 class IHandler:
     @property
     def MaxDate(self) -> DateTime: ...
@@ -13460,6 +13707,8 @@ class IHandler:
     def Wrap(self, value: WrapMode) -> None: ...
 
 
+from System import Nullable
+from System import DateTime
 from ..Drawing import Color
 class IHandler:
     @property
@@ -13575,6 +13824,8 @@ class IHandler:
 from ..Drawing import Color
 from ..Drawing import Size
 from ..Drawing import Rectangle
+from System import EventArgs
+from System.Collections.Generic import IEnumerable
 from ..Drawing import PointF
 from ..Drawing import Point
 from ..Drawing import Image
@@ -13701,6 +13952,7 @@ class IHandler:
     def Image(self, value: Image) -> None: ...
 
 
+from System.Collections.Generic import IEnumerable
 from ..Drawing import Color
 class IHandler:
     @property
@@ -13756,6 +14008,7 @@ class IHandler:
     def TextColor(self, value: Color) -> None: ...
 
 
+from System.Collections.Generic import IEnumerable
 from ..Drawing import PointF
 class IHandler:
     @property
@@ -13772,6 +14025,7 @@ class IHandler:
     def DataStore(self, value: Iterable[object]) -> None: ...
 
 
+from System.Collections.Generic import IEnumerable
 class IHandler:
     @property
     def DataStore(self) -> Iterable[object]: ...
@@ -13783,6 +14037,7 @@ class IHandler:
     def ElementType(self, value: type) -> None: ...
 
 
+from System import Nullable
 class IHandler:
     @property
     def Checked(self) -> Nullable: ...
@@ -13867,6 +14122,8 @@ class IHandler:
     def ClientSize(self, value: Size) -> None: ...
 
 
+from System import Uri
+from System.Threading.Tasks import Task
 class IHandler:
     @overload
     def ExecuteScript(self, script: str) -> str: ...
@@ -13901,6 +14158,7 @@ class IHandler:
 
 
 from ..Drawing import Color
+from System.Globalization import CultureInfo
 class IHandler:
     @property
     def CultureInfo(self) -> CultureInfo: ...
@@ -13955,6 +14213,7 @@ class IHandler:
     def FilePath(self, value: str) -> None: ...
 
 
+from System.Collections.Generic import IEnumerable
 class IHandler:
     @property
     def Filenames(self) -> Iterable[str]: ...
@@ -14073,6 +14332,7 @@ class IHandler:
     def Visible(self, value: bool) -> None: ...
 
 
+from System import Nullable
 class IHandler:
     @overload
     def Show(self, relativeTo: Control, location: Nullable) -> None: ...
@@ -14093,6 +14353,8 @@ class IHandler:
     def Image(self, value: Image) -> None: ...
 
 
+from System.Globalization import CultureInfo
+from System import Char
 class IHandler:
     @overload
     def Create(self, mask: str, culture: CultureInfo, allowPromptAsInput: bool, restrictToAscii: bool) -> None: ...
@@ -14152,6 +14414,8 @@ class IHandler:
     def Update(self) -> None: ...
 
 
+from System.Collections.Generic import IEnumerable
+from System import EventHandler
 class IHandler:
     @overload
     def add_ModifiersChanged(self, value: EventHandler) -> None: ...
@@ -14165,6 +14429,7 @@ class IHandler:
     def remove_ModifiersChanged(self, value: EventHandler) -> None: ...
 
 
+from System.Collections.Generic import IEnumerable
 class IHandler:
     @overload
     def CreateLegacySystemMenu(self) -> None: ...
@@ -14307,6 +14572,7 @@ class IHandler:
     def TextAlign(self, value: ToolBarTextAlign) -> None: ...
 
 
+from System import EventArgs
 class IHandler:
     @overload
     def OnLoad(self, e: EventArgs) -> None: ...
@@ -14396,6 +14662,7 @@ class IHandler:
     def Width(self, value: int) -> None: ...
 
 
+from System.Collections.Generic import IEnumerable
 class IHandler:
     @overload
     def ClearItems(self) -> None: ...
@@ -14645,6 +14912,7 @@ class IHandler:
     def Padding(self, value: Padding) -> None: ...
 
 
+from System.Collections.Generic import IEnumerable
 class IHandler:
     @property
     def SelectedObject(self) -> object: ...
@@ -14899,6 +15167,7 @@ class IHandler:
     def TextColor(self, value: Color) -> None: ...
 
 
+from System import Uri
 class IHandler:
     @overload
     def ClearFilters(self) -> None: ...
@@ -14928,6 +15197,7 @@ class IHandler:
     def Title(self, value: str) -> None: ...
 
 
+from System import Char
 class IHandler:
     @property
     def MaxLength(self) -> int: ...
@@ -14943,6 +15213,7 @@ class IHandler:
     def ReadOnly(self, value: bool) -> None: ...
 
 
+from System.Threading.Tasks import Task
 class IHandler:
     @property
     def AbortButton(self) -> Button: ...
@@ -14973,6 +15244,7 @@ class IHandler:
     def TrySetObject(self, value: object, type: str) -> bool: ...
 
 
+from System.Collections.Generic import IEnumerable
 from ..Drawing import PointF
 class IHandler:
     @property
@@ -15048,6 +15320,7 @@ class IHandler:
 
 from ..Drawing import Image
 from ..Drawing import PointF
+from System.IO import Stream
 class IHandler:
     @overload
     def Create(self, type: CursorType) -> None: ...
@@ -15079,6 +15352,7 @@ class IHandler:
 
 
 from ..Drawing import Image
+from System import Uri
 class IHandler:
     @property
     def Copyright(self) -> str: ...
@@ -15138,6 +15412,7 @@ class IImageListItem:
 
 
 
+from System import EventHandler
 class IKeyboardInputSource:
     @overload
     def add_KeyDown(self, value: EventHandler) -> None: ...
@@ -15193,6 +15468,8 @@ class ImageListItem(ListItem):
 
 
 from ..Drawing import ImageInterpolation
+from System import IntPtr
+from System import EventHandler
 class ImageTextCell(Cell):
     @overload
     def __init__(self): ...
@@ -15261,6 +15538,8 @@ class ImageTextCell(Cell):
 
 
 from ..Drawing import Image
+from System.Collections.Generic import IEnumerable
+from System import EventHandler
 from ..Drawing import Rectangle
 from ..Drawing import Size
 from ..Drawing import SizeF
@@ -15268,6 +15547,7 @@ from ..Drawing import Color
 from ..Drawing import PointF
 from ..Drawing import RectangleF
 from ..Drawing import Point
+from System import IntPtr
 class ImageView(Control):
     @overload
     def __init__(self): ...
@@ -15560,6 +15840,8 @@ class ImageView(Control):
 
 
 from ..Drawing import ImageInterpolation
+from System import IntPtr
+from System import EventHandler
 class ImageViewCell:
     @overload
     def __init__(self): ...
@@ -15611,6 +15893,8 @@ class ImageViewCell:
     def ToString(self) -> str: ...
 
 
+from System import Char
+from System.Collections.Generic import IEnumerable
 class IMaskedTextProvider:
     @overload
     def Clear(self, position: int, length: int, forward: bool) -> Tuple[bool, int]: ...
@@ -15636,6 +15920,7 @@ class IMaskedTextProvider:
 
 
 
+from System import EventHandler
 class IMouseInputSource:
     @overload
     def add_MouseDoubleClick(self, value: EventHandler) -> None: ...
@@ -15689,6 +15974,7 @@ class IPositionalLayoutHandler:
     def Remove(self, control: Control) -> None: ...
 
 
+from System.Collections.Generic import IEnumerable
 class IScreensHandler:
     @property
     def PrimaryScreen(self) -> Screen: ...
@@ -15700,6 +15986,7 @@ class IScreensHandler:
 
 
 
+from System.Collections.Generic import IEnumerable
 class ISelectionPreserver:
     @property
     def SelectedItems(self) -> Iterable[object]: ...
@@ -15726,6 +16013,8 @@ class ISubmenuHandler:
 from ..Drawing import Font
 from ..Drawing import Color
 from ..Drawing import FontFamily
+from System.Collections.Generic import IEnumerable
+from System.IO import Stream
 class ITextBuffer:
     @overload
     def Clear(self) -> None: ...
@@ -15777,6 +16066,7 @@ class ITreeStore:
 
 
 
+from System.Globalization import CultureInfo
 class IValueConverter:
     @overload
     def Convert(self, value: object, targetType: type, parameter: object, culture: CultureInfo) -> object: ...
@@ -15790,6 +16080,8 @@ class IWindowHandler:
     def FromPoint(self, point: PointF) -> Window: ...
 
 
+from System.Collections.Generic import IEnumerable
+from System import EventHandler
 class Keyboard:
     @overload
     @staticmethod
@@ -15814,6 +16106,8 @@ class Keyboard:
     def ToString(self) -> str: ...
 
 
+from System import Nullable
+from System import Char
 class KeyEventArgs:
     @overload
     def __init__(self, keyData: Keys, keyEventType: KeyEventType, keyChar: Nullable): ...
@@ -16005,8 +16299,10 @@ class KeysExtensions:
     def ToString(self) -> str: ...
 
 
+from System import EventHandler
 from ..Drawing import Color
 from ..Drawing import Font
+from System.Collections.Generic import IEnumerable
 from ..Drawing import Rectangle
 from ..Drawing import Size
 from ..Drawing import SizeF
@@ -16014,6 +16310,7 @@ from ..Drawing import PointF
 from ..Drawing import RectangleF
 from ..Drawing import Point
 from ..Drawing import Image
+from System import IntPtr
 class Label(TextControl):
     @overload
     def __init__(self): ...
@@ -16340,6 +16637,8 @@ class Label(TextControl):
 
 
 from ..Drawing import Size
+from System.Collections.Generic import IEnumerable
+from System import EventHandler
 from ..Drawing import Rectangle
 from ..Drawing import SizeF
 from ..Drawing import Color
@@ -16347,6 +16646,7 @@ from ..Drawing import PointF
 from ..Drawing import RectangleF
 from ..Drawing import Point
 from ..Drawing import Image
+from System import IntPtr
 class Layout(Container):
     @overload
     def add_DataContextChanged(self, value: EventHandler) -> None: ...
@@ -16666,8 +16966,11 @@ class Layout(Container):
     def UpdateLayout(self) -> None: ...
 
 
+from System import EventHandler
+from System.Windows.Input import ICommand
 from ..Drawing import Color
 from ..Drawing import Font
+from System.Collections.Generic import IEnumerable
 from ..Drawing import Rectangle
 from ..Drawing import Size
 from ..Drawing import SizeF
@@ -16675,6 +16978,7 @@ from ..Drawing import PointF
 from ..Drawing import RectangleF
 from ..Drawing import Point
 from ..Drawing import Image
+from System import IntPtr
 class LinkButton(TextControl):
     @overload
     def __init__(self): ...
@@ -16997,6 +17301,8 @@ class LinkButton(TextControl):
     def UpdateLayout(self) -> None: ...
 
 
+from System import EventHandler
+from System.Collections.Generic import IEnumerable
 from ..Drawing import Color
 from ..Drawing import Font
 from ..Drawing import Rectangle
@@ -17006,6 +17312,7 @@ from ..Drawing import PointF
 from ..Drawing import RectangleF
 from ..Drawing import Point
 from ..Drawing import Image
+from System import IntPtr
 class ListBox(ListControl):
     @overload
     def __init__(self): ...
@@ -17373,6 +17680,8 @@ class ListBox(ListControl):
     def UpdateLayout(self) -> None: ...
 
 
+from System import EventHandler
+from System.Collections.Generic import IEnumerable
 from ..Drawing import Color
 from ..Drawing import Font
 from ..Drawing import Rectangle
@@ -17382,6 +17691,7 @@ from ..Drawing import PointF
 from ..Drawing import RectangleF
 from ..Drawing import Point
 from ..Drawing import Image
+from System import IntPtr
 class ListControl(CommonControl):
     @overload
     def add_DataContextChanged(self, value: EventHandler) -> None: ...
@@ -17754,6 +18064,11 @@ class ListItem:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import IEnumerable
+from System.Collections.Generic import IComparer
+from System import Comparison
+from System.Collections.Specialized import NotifyCollectionChangedEventHandler
+from System.Collections.Generic import IEnumerator
 class ListItemCollection:
     @overload
     def __init__(self): ...
@@ -17831,8 +18146,10 @@ class LocalizeEventArgs:
     def ToString(self) -> str: ...
 
 
+from System import EventHandler
 from ..Drawing import Color
 from ..Drawing import Font
+from System.Collections.Generic import IEnumerable
 from ..Drawing import Rectangle
 from ..Drawing import Size
 from ..Drawing import SizeF
@@ -17840,6 +18157,7 @@ from ..Drawing import PointF
 from ..Drawing import RectangleF
 from ..Drawing import Point
 from ..Drawing import Image
+from System import IntPtr
 class MaskedTextBox(TextBox):
     @overload
     def __init__(self): ...
@@ -18215,8 +18533,10 @@ class MaskedTextBox(TextBox):
 
 
 
+from System import EventHandler
 from ..Drawing import Color
 from ..Drawing import Font
+from System.Collections.Generic import IEnumerable
 from ..Drawing import Rectangle
 from ..Drawing import Size
 from ..Drawing import SizeF
@@ -18224,6 +18544,7 @@ from ..Drawing import PointF
 from ..Drawing import RectangleF
 from ..Drawing import Point
 from ..Drawing import Image
+from System import IntPtr
 class MaskedTextStepper(TextStepper):
     @overload
     def __init__(self): ...
@@ -18611,6 +18932,9 @@ class MaskedTextStepper(TextStepper):
 
 
 
+from System import EventHandler
+from System.Collections.Generic import IEnumerable
+from System import IntPtr
 class Menu(BindableWidget):
     @overload
     def add_DataContextChanged(self, value: EventHandler) -> None: ...
@@ -18676,6 +19000,10 @@ class Menu(BindableWidget):
     def UpdateBindings(self, mode: BindingUpdateMode) -> None: ...
 
 
+from System.Collections.Generic import IEnumerable
+from System.Collections.ObjectModel import Collection
+from System import EventHandler
+from System import IntPtr
 class MenuBar(Menu):
     @overload
     def __init__(self): ...
@@ -18782,6 +19110,10 @@ class MenuBarSystemItems(Enum):
     All = 5
 
 
+from System.Windows.Input import ICommand
+from System import EventHandler
+from System.Collections.Generic import IEnumerable
+from System import IntPtr
 class MenuItem(Menu):
     ValidateEvent: str
     @overload
@@ -18896,6 +19228,8 @@ class MenuItem(Menu):
     def UpdateBindings(self, mode: BindingUpdateMode) -> None: ...
 
 
+from System.Collections.Generic import IEnumerable
+from System.Collections.Generic import IEnumerator
 class MenuItemCollection:
     def __iter__(self) -> Iterator[MenuItem]: ...
     def __getitem__(self, index: int) -> MenuItem: ...
@@ -18947,6 +19281,10 @@ class MenuItemCollection:
 
 
 from ..Drawing import Image
+from System.Windows.Input import ICommand
+from System import EventHandler
+from System.Collections.Generic import IEnumerable
+from System import IntPtr
 class MenuSegmentedItem(SegmentedItem):
     @overload
     def __init__(self): ...
@@ -19161,6 +19499,7 @@ class MouseButtons(Enum):
 
 
 from ..Drawing import PointF
+from System import Nullable
 from ..Drawing import SizeF
 class MouseEventArgs:
     @overload
@@ -19189,6 +19528,8 @@ class MouseEventArgs:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import IEnumerable
+from System import EventHandler
 from ..Drawing import Rectangle
 from ..Drawing import Size
 from ..Drawing import SizeF
@@ -19197,6 +19538,7 @@ from ..Drawing import PointF
 from ..Drawing import RectangleF
 from ..Drawing import Point
 from ..Drawing import Image
+from System import IntPtr
 class NativeControlHost(Control):
     @overload
     def __init__(self): ...
@@ -19486,6 +19828,8 @@ class NativeControlHost(Control):
     def UpdateLayout(self) -> None: ...
 
 
+from System.Collections.Generic import IEnumerable
+from System import EventHandler
 from ..Drawing import Size
 from ..Drawing import Rectangle
 from ..Drawing import SizeF
@@ -19494,6 +19838,7 @@ from ..Drawing import PointF
 from ..Drawing import RectangleF
 from ..Drawing import Point
 from ..Drawing import Image
+from System import IntPtr
 class Navigation(Container):
     @overload
     def __init__(self): ...
@@ -19877,6 +20222,8 @@ class NavigationItemEventArgs:
 
 from ..Drawing import Icon
 from ..Drawing import Image
+from System import EventHandler
+from System import IntPtr
 class Notification(Widget):
     @overload
     def __init__(self): ...
@@ -19964,6 +20311,10 @@ class NotificationEventArgs:
 
 
 
+from System import Func
+from System import Char
+from System.Globalization import CultureInfo
+from System.Collections.Generic import IEnumerable
 class NumericMaskedTextProvider(VariableMaskedTextProvider):
     @overload
     def __init__(self): ...
@@ -20029,8 +20380,11 @@ class NumericMaskedTextProvider(VariableMaskedTextProvider):
 
 
 
+from System import EventHandler
 from ..Drawing import Color
+from System.Globalization import CultureInfo
 from ..Drawing import Font
+from System.Collections.Generic import IEnumerable
 from ..Drawing import Rectangle
 from ..Drawing import Size
 from ..Drawing import SizeF
@@ -20038,6 +20392,7 @@ from ..Drawing import PointF
 from ..Drawing import RectangleF
 from ..Drawing import Point
 from ..Drawing import Image
+from System import IntPtr
 class NumericStepper(CommonControl):
     @overload
     def __init__(self): ...
@@ -20383,6 +20738,11 @@ class NumericStepper(CommonControl):
 
 
 
+from System.Collections.Generic import IEnumerable
+from System.Collections.ObjectModel import Collection
+from System import Uri
+from System import IntPtr
+from System import EventHandler
 class OpenFileDialog(FileDialog):
     @overload
     def __init__(self): ...
@@ -20458,6 +20818,8 @@ class OpenFileDialog(FileDialog):
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from System import EventHandler
 class OpenWithDialog(CommonDialog):
     @overload
     def __init__(self, filepath: str): ...
@@ -20512,6 +20874,8 @@ class PageOrientation(Enum):
 
 
 from ..Drawing import RectangleF
+from System import IntPtr
+from System import EventHandler
 class PageSettings(Widget):
     @overload
     def __init__(self): ...
@@ -20572,8 +20936,10 @@ class PaintEventArgs:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import IEnumerable
 from ..Drawing import Padding
 from ..Drawing import Size
+from System import EventHandler
 from ..Drawing import Rectangle
 from ..Drawing import SizeF
 from ..Drawing import Color
@@ -20581,6 +20947,7 @@ from ..Drawing import PointF
 from ..Drawing import RectangleF
 from ..Drawing import Point
 from ..Drawing import Image
+from System import IntPtr
 class Panel(Container):
     @overload
     def __init__(self): ...
@@ -20912,8 +21279,11 @@ class Panel(Container):
     def UpdateLayout(self) -> None: ...
 
 
+from System import Char
+from System import EventHandler
 from ..Drawing import Color
 from ..Drawing import Font
+from System.Collections.Generic import IEnumerable
 from ..Drawing import Rectangle
 from ..Drawing import Size
 from ..Drawing import SizeF
@@ -20921,6 +21291,7 @@ from ..Drawing import PointF
 from ..Drawing import RectangleF
 from ..Drawing import Point
 from ..Drawing import Image
+from System import IntPtr
 class PasswordBox(TextControl):
     @overload
     def __init__(self): ...
@@ -21238,14 +21609,18 @@ class PasswordBox(TextControl):
     def UpdateLayout(self) -> None: ...
 
 
+from System.Collections.Generic import IEnumerable
+from System.Collections.Generic import List
 from ..Drawing import Point
 from ..Drawing import Size
+from System import EventHandler
 from ..Drawing import Rectangle
 from ..Drawing import SizeF
 from ..Drawing import Color
 from ..Drawing import PointF
 from ..Drawing import RectangleF
 from ..Drawing import Image
+from System import IntPtr
 class PixelLayout(Layout):
     @overload
     def __init__(self): ...
@@ -21583,6 +21958,8 @@ class PixelLayout(Layout):
     def UpdateLayout(self) -> None: ...
 
 
+from System import IntPtr
+from System import EventHandler
 class PrintDialog(CommonDialog):
     @overload
     def __init__(self): ...
@@ -21640,6 +22017,8 @@ class PrintDialog(CommonDialog):
     def ToString(self) -> str: ...
 
 
+from System import EventHandler
+from System import IntPtr
 class PrintDocument(Widget):
     @overload
     def __init__(self): ...
@@ -21731,6 +22110,8 @@ class PrintPageEventArgs:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from System import EventHandler
 class PrintPreviewDialog(CommonDialog):
     @overload
     def __init__(self, document: PrintDocument): ...
@@ -21786,6 +22167,8 @@ class PrintSelection(Enum):
     SelectedPages = 2
 
 
+from System import IntPtr
+from System import EventHandler
 class PrintSettings(Widget):
     @overload
     def __init__(self): ...
@@ -21855,6 +22238,8 @@ class PrintSettings(Widget):
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import IEnumerable
+from System import EventHandler
 from ..Drawing import Rectangle
 from ..Drawing import Size
 from ..Drawing import SizeF
@@ -21863,6 +22248,7 @@ from ..Drawing import PointF
 from ..Drawing import RectangleF
 from ..Drawing import Point
 from ..Drawing import Image
+from System import IntPtr
 class ProgressBar(Control):
     @overload
     def __init__(self): ...
@@ -22166,6 +22552,8 @@ class ProgressBar(Control):
     def UpdateLayout(self) -> None: ...
 
 
+from System import IntPtr
+from System import EventHandler
 class ProgressCell:
     @overload
     def __init__(self): ...
@@ -22215,6 +22603,11 @@ class ProgressCell:
 
 
 
+from System import Exception
+from System.Collections import IDictionary
+from System.Reflection import MethodBase
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 class PropertyBindingException:
     @overload
     def __init__(self): ...
@@ -22258,6 +22651,11 @@ class PropertyBindingException:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import IList
+from System import Func
+from System import Action
+from System import EventHandler
+from System import IntPtr
 class PropertyCell(CustomCell):
     @overload
     def __init__(self): ...
@@ -22591,6 +22989,8 @@ class PropertyCellTypeString:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import IEnumerable
+from System import EventHandler
 from ..Drawing import Rectangle
 from ..Drawing import Size
 from ..Drawing import SizeF
@@ -22599,6 +22999,7 @@ from ..Drawing import PointF
 from ..Drawing import RectangleF
 from ..Drawing import Point
 from ..Drawing import Image
+from System import IntPtr
 class PropertyGrid(Control):
     @overload
     def __init__(self): ...
@@ -22943,8 +23344,11 @@ class PropertyValueChangedEventArgs:
     def ToString(self) -> str: ...
 
 
+from System import EventHandler
+from System.Windows.Input import ICommand
 from ..Drawing import Color
 from ..Drawing import Font
+from System.Collections.Generic import IEnumerable
 from ..Drawing import Rectangle
 from ..Drawing import Size
 from ..Drawing import SizeF
@@ -22952,6 +23356,7 @@ from ..Drawing import PointF
 from ..Drawing import RectangleF
 from ..Drawing import Point
 from ..Drawing import Image
+from System import IntPtr
 class RadioButton(TextControl):
     @overload
     def __init__(self): ...
@@ -23279,8 +23684,10 @@ class RadioButton(TextControl):
     def UpdateLayout(self) -> None: ...
 
 
+from System import EventHandler
 from ..Drawing import Color
 from ..Drawing import Size
+from System.Collections.Generic import IEnumerable
 from ..Drawing import Padding
 from ..Drawing import Rectangle
 from ..Drawing import SizeF
@@ -23288,6 +23695,7 @@ from ..Drawing import PointF
 from ..Drawing import RectangleF
 from ..Drawing import Point
 from ..Drawing import Image
+from System import IntPtr
 class RadioButtonList(Panel):
     @overload
     def __init__(self): ...
@@ -23687,7 +24095,9 @@ class RadioButtonList(Panel):
     def UpdateLayout(self) -> None: ...
 
 
+from System import EventHandler
 from ..Drawing import Image
+from System.Windows.Input import ICommand
 class RadioCommand(CheckCommand):
     @overload
     def __init__(self): ...
@@ -23789,6 +24199,10 @@ class RadioCommand(CheckCommand):
     def ToString(self) -> str: ...
 
 
+from System import EventHandler
+from System.Windows.Input import ICommand
+from System.Collections.Generic import IEnumerable
+from System import IntPtr
 class RadioMenuItem(MenuItem):
     @overload
     def __init__(self): ...
@@ -23917,7 +24331,12 @@ class RadioMenuItem(MenuItem):
     def UpdateBindings(self, mode: BindingUpdateMode) -> None: ...
 
 
+from System import EventHandler
+from System import EventArgs
+from System.Windows.Input import ICommand
 from ..Drawing import Image
+from System.Collections.Generic import IEnumerable
+from System import IntPtr
 class RadioToolItem(ToolItem):
     @overload
     def __init__(self): ...
@@ -24058,6 +24477,7 @@ class Range:
 
 
 
+from System import TimeSpan
 class RangeExtensions:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -24078,6 +24498,9 @@ class RangeExtensions:
     def WithLength(range: Range, length: int) -> Range: ...
 
 
+from System import Action
+from System import Func
+from System import EventHandler
 class RelayCommand:
     @overload
     def __init__(self, execute: Action): ...
@@ -24113,6 +24536,8 @@ from ..Drawing import Font
 from ..Drawing import Color
 from ..Drawing import FontFamily
 from ..Drawing import FontTypeface
+from System import EventHandler
+from System.Collections.Generic import IEnumerable
 from ..Drawing import Rectangle
 from ..Drawing import Size
 from ..Drawing import SizeF
@@ -24120,6 +24545,7 @@ from ..Drawing import PointF
 from ..Drawing import RectangleF
 from ..Drawing import Point
 from ..Drawing import Image
+from System import IntPtr
 class RichTextArea(TextArea):
     @overload
     def __init__(self): ...
@@ -24544,6 +24970,10 @@ class RichTextAreaFormat(Enum):
     PlainText = 1
 
 
+from System.Collections.ObjectModel import Collection
+from System import Uri
+from System import IntPtr
+from System import EventHandler
 class SaveFileDialog(FileDialog):
     @overload
     def __init__(self): ...
@@ -24613,9 +25043,12 @@ class SaveFileDialog(FileDialog):
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import IEnumerable
 from ..Drawing import RectangleF
 from ..Drawing import Image
 from ..Drawing import PointF
+from System import IntPtr
+from System import EventHandler
 class Screen(Widget):
     @overload
     def __init__(self): ...
@@ -24689,15 +25122,18 @@ class Screen(Widget):
     def ToString(self) -> str: ...
 
 
+from System import EventHandler
 from ..Drawing import Point
 from ..Drawing import Size
 from ..Drawing import Rectangle
+from System.Collections.Generic import IEnumerable
 from ..Drawing import Padding
 from ..Drawing import SizeF
 from ..Drawing import Color
 from ..Drawing import PointF
 from ..Drawing import RectangleF
 from ..Drawing import Image
+from System import IntPtr
 class Scrollable(Panel):
     @overload
     def __init__(self): ...
@@ -25086,8 +25522,10 @@ class ScrollEventArgs:
     def ToString(self) -> str: ...
 
 
+from System import EventHandler
 from ..Drawing import Color
 from ..Drawing import Font
+from System.Collections.Generic import IEnumerable
 from ..Drawing import Rectangle
 from ..Drawing import Size
 from ..Drawing import SizeF
@@ -25095,6 +25533,7 @@ from ..Drawing import PointF
 from ..Drawing import RectangleF
 from ..Drawing import Point
 from ..Drawing import Image
+from System import IntPtr
 class SearchBox(TextBox):
     @overload
     def __init__(self): ...
@@ -25442,6 +25881,8 @@ class SearchBox(TextBox):
     def UpdateLayout(self) -> None: ...
 
 
+from System import EventHandler
+from System.Collections.Generic import IEnumerable
 from ..Drawing import Rectangle
 from ..Drawing import Size
 from ..Drawing import SizeF
@@ -25450,6 +25891,7 @@ from ..Drawing import PointF
 from ..Drawing import RectangleF
 from ..Drawing import Point
 from ..Drawing import Image
+from System import IntPtr
 class SegmentedButton(Control):
     @overload
     def __init__(self): ...
@@ -25786,6 +26228,10 @@ class SegmentedButton(Control):
 
 
 from ..Drawing import Image
+from System.Windows.Input import ICommand
+from System import EventHandler
+from System.Collections.Generic import IEnumerable
+from System import IntPtr
 class SegmentedItem(BindableWidget):
     ClickEvent: str
     SelectedChangedEvent: str
@@ -25922,6 +26368,9 @@ class SegmentedItemClickEventArgs:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import IEnumerable
+from System.Collections.Specialized import NotifyCollectionChangedEventHandler
+from System.Collections.Generic import IEnumerator
 class SegmentedItemCollection:
     def __iter__(self) -> Iterator[SegmentedItem]: ...
     def __getitem__(self, index: int) -> SegmentedItem: ...
@@ -25974,6 +26423,8 @@ class SegmentedSelectionMode(Enum):
 
 
 
+from System import IntPtr
+from System import EventHandler
 class SelectFolderDialog(CommonDialog):
     @overload
     def __init__(self): ...
@@ -26025,6 +26476,10 @@ class SelectFolderDialog(CommonDialog):
     def ToString(self) -> str: ...
 
 
+from System.Windows.Input import ICommand
+from System import EventHandler
+from System.Collections.Generic import IEnumerable
+from System import IntPtr
 class SeparatorMenuItem(MenuItem):
     @overload
     def __init__(self): ...
@@ -26140,7 +26595,12 @@ class SeparatorMenuItem(MenuItem):
     def UpdateBindings(self, mode: BindingUpdateMode) -> None: ...
 
 
+from System.Windows.Input import ICommand
+from System import EventHandler
+from System import EventArgs
 from ..Drawing import Image
+from System.Collections.Generic import IEnumerable
+from System import IntPtr
 class SeparatorToolItem(ToolItem):
     @overload
     def __init__(self): ...
@@ -26268,6 +26728,8 @@ class ShowPromptMode(Enum):
 
 
 
+from System import EventHandler
+from System.Collections.Generic import IEnumerable
 from ..Drawing import Rectangle
 from ..Drawing import Size
 from ..Drawing import SizeF
@@ -26276,6 +26738,7 @@ from ..Drawing import PointF
 from ..Drawing import RectangleF
 from ..Drawing import Point
 from ..Drawing import Image
+from System import IntPtr
 class Slider(Control):
     @overload
     def __init__(self): ...
@@ -26593,6 +27056,8 @@ class Slider(Control):
     def UpdateLayout(self) -> None: ...
 
 
+from System.Collections.Generic import IEnumerable
+from System import EventHandler
 from ..Drawing import Rectangle
 from ..Drawing import Size
 from ..Drawing import SizeF
@@ -26601,6 +27066,7 @@ from ..Drawing import PointF
 from ..Drawing import RectangleF
 from ..Drawing import Point
 from ..Drawing import Image
+from System import IntPtr
 class Spinner(Control):
     @overload
     def __init__(self): ...
@@ -26888,6 +27354,8 @@ class Spinner(Control):
     def UpdateLayout(self) -> None: ...
 
 
+from System.Collections.Generic import IEnumerable
+from System import EventHandler
 from ..Drawing import Size
 from ..Drawing import Rectangle
 from ..Drawing import SizeF
@@ -26896,6 +27364,7 @@ from ..Drawing import PointF
 from ..Drawing import RectangleF
 from ..Drawing import Point
 from ..Drawing import Image
+from System import IntPtr
 class Splitter(Container):
     @overload
     def __init__(self): ...
@@ -27294,8 +27763,11 @@ class SplitterPositionChangingEventArgs:
     def ToString(self) -> str: ...
 
 
+from System.Collections.ObjectModel import Collection
+from System.Collections.Generic import IEnumerable
 from ..Drawing import Padding
 from ..Drawing import Size
+from System import EventHandler
 from ..Drawing import Rectangle
 from ..Drawing import SizeF
 from ..Drawing import Color
@@ -27303,6 +27775,7 @@ from ..Drawing import PointF
 from ..Drawing import RectangleF
 from ..Drawing import Point
 from ..Drawing import Image
+from System import IntPtr
 class StackLayout(Panel):
     @overload
     def __init__(self): ...
@@ -27658,6 +28131,7 @@ class StackLayout(Panel):
     def UpdateLayout(self) -> None: ...
 
 
+from System import Nullable
 from ..Drawing import Image
 class StackLayoutItem:
     @overload
@@ -27700,6 +28174,8 @@ class StackLayoutItem:
     def ToString(self) -> str: ...
 
 
+from System import EventHandler
+from System.Collections.Generic import IEnumerable
 from ..Drawing import Rectangle
 from ..Drawing import Size
 from ..Drawing import SizeF
@@ -27708,6 +28184,7 @@ from ..Drawing import PointF
 from ..Drawing import RectangleF
 from ..Drawing import Point
 from ..Drawing import Image
+from System import IntPtr
 class Stepper(Control):
     @overload
     def __init__(self): ...
@@ -28031,6 +28508,7 @@ class StepperValidDirections(Enum):
     Both = 3
 
 
+from System.Collections.Generic import IEnumerable
 class SubmenuExtensions:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -28045,7 +28523,11 @@ class SubmenuExtensions:
     def ToString(self) -> str: ...
 
 
+from System import EventHandler
 from ..Drawing import Image
+from System.Windows.Input import ICommand
+from System.Collections.Generic import IEnumerable
+from System import IntPtr
 class SubMenuItem(ButtonMenuItem):
     @overload
     def __init__(self): ...
@@ -28188,6 +28670,9 @@ class SubMenuItem(ButtonMenuItem):
     def UpdateBindings(self, mode: BindingUpdateMode) -> None: ...
 
 
+from System.Collections.Generic import IEnumerable
+from System import EventHandler
+from System.Collections.ObjectModel import Collection
 from ..Drawing import Size
 from ..Drawing import Rectangle
 from ..Drawing import SizeF
@@ -28196,6 +28681,7 @@ from ..Drawing import PointF
 from ..Drawing import RectangleF
 from ..Drawing import Point
 from ..Drawing import Image
+from System import IntPtr
 class TabControl(Container):
     @overload
     def __init__(self): ...
@@ -28566,14 +29052,19 @@ class TableCell:
 
 
 from ..Drawing import Size
+from System.Collections.Generic import IEnumerable
+from System.Collections.ObjectModel import Collection
+from System import Nullable
 from ..Drawing import Point
 from ..Drawing import Padding
+from System import EventHandler
 from ..Drawing import Rectangle
 from ..Drawing import SizeF
 from ..Drawing import Color
 from ..Drawing import PointF
 from ..Drawing import RectangleF
 from ..Drawing import Image
+from System import IntPtr
 class TableLayout(Layout):
     @overload
     def __init__(self): ...
@@ -28952,6 +29443,8 @@ class TableLayout(Layout):
     def UpdateLayout(self) -> None: ...
 
 
+from System.Collections.Generic import IEnumerable
+from System.Collections.ObjectModel import Collection
 from ..Drawing import Image
 class TableRow:
     @overload
@@ -28996,7 +29489,10 @@ class TableRow:
     def ToString(self) -> str: ...
 
 
+from System import Nullable
+from System import EventHandler
 from ..Drawing import Image
+from System.Collections.Generic import IEnumerable
 from ..Drawing import Padding
 from ..Drawing import Size
 from ..Drawing import Rectangle
@@ -29005,6 +29501,7 @@ from ..Drawing import Color
 from ..Drawing import PointF
 from ..Drawing import RectangleF
 from ..Drawing import Point
+from System import IntPtr
 class TabPage(Panel):
     @overload
     def __init__(self): ...
@@ -29378,8 +29875,10 @@ class TextAlignment(Enum):
     Right = 2
 
 
+from System import EventHandler
 from ..Drawing import Color
 from ..Drawing import Font
+from System.Collections.Generic import IEnumerable
 from ..Drawing import Rectangle
 from ..Drawing import Size
 from ..Drawing import SizeF
@@ -29387,6 +29886,7 @@ from ..Drawing import PointF
 from ..Drawing import RectangleF
 from ..Drawing import Point
 from ..Drawing import Image
+from System import IntPtr
 class TextArea(TextControl):
     @overload
     def __init__(self): ...
@@ -29766,8 +30266,10 @@ class TextArea(TextControl):
     def UpdateLayout(self) -> None: ...
 
 
+from System import EventHandler
 from ..Drawing import Color
 from ..Drawing import Font
+from System.Collections.Generic import IEnumerable
 from ..Drawing import Rectangle
 from ..Drawing import Size
 from ..Drawing import SizeF
@@ -29775,6 +30277,7 @@ from ..Drawing import PointF
 from ..Drawing import RectangleF
 from ..Drawing import Point
 from ..Drawing import Image
+from System import IntPtr
 class TextBox(TextControl):
     @overload
     def __init__(self): ...
@@ -30123,6 +30626,8 @@ class TextBox(TextControl):
     def UpdateLayout(self) -> None: ...
 
 
+from System import IntPtr
+from System import EventHandler
 class TextBoxCell:
     @overload
     def __init__(self): ...
@@ -30230,8 +30735,10 @@ class TextChangingEventArgs:
     def ToString(self) -> str: ...
 
 
+from System import EventHandler
 from ..Drawing import Color
 from ..Drawing import Font
+from System.Collections.Generic import IEnumerable
 from ..Drawing import Rectangle
 from ..Drawing import Size
 from ..Drawing import SizeF
@@ -30239,6 +30746,7 @@ from ..Drawing import PointF
 from ..Drawing import RectangleF
 from ..Drawing import Point
 from ..Drawing import Image
+from System import IntPtr
 class TextControl(CommonControl):
     TextChangedEvent: str
     @overload
@@ -30571,8 +31079,10 @@ class TextReplacements(Enum):
     All = 15
 
 
+from System import EventHandler
 from ..Drawing import Color
 from ..Drawing import Font
+from System.Collections.Generic import IEnumerable
 from ..Drawing import Rectangle
 from ..Drawing import Size
 from ..Drawing import SizeF
@@ -30580,6 +31090,7 @@ from ..Drawing import PointF
 from ..Drawing import RectangleF
 from ..Drawing import Point
 from ..Drawing import Image
+from System import IntPtr
 class TextStepper(TextBox):
     @overload
     def __init__(self): ...
@@ -30944,15 +31455,19 @@ class TextStepper(TextBox):
 
 
 
+from System import EventHandler
+from System.Windows.Input import ICommand
 from ..Drawing import Image
 from ..Drawing import Size
 from ..Drawing import Color
 from ..Drawing import Font
+from System.Collections.Generic import IEnumerable
 from ..Drawing import Rectangle
 from ..Drawing import SizeF
 from ..Drawing import PointF
 from ..Drawing import RectangleF
 from ..Drawing import Point
+from System import IntPtr
 class ToggleButton(Button):
     @overload
     def __init__(self): ...
@@ -31293,6 +31808,9 @@ class ToggleButton(Button):
     def UpdateLayout(self) -> None: ...
 
 
+from System import EventHandler
+from System.Collections.Generic import IEnumerable
+from System import IntPtr
 class Tool(BindableWidget):
     @overload
     def __init__(self): ...
@@ -31360,6 +31878,9 @@ class Tool(BindableWidget):
     def UpdateBindings(self, mode: BindingUpdateMode) -> None: ...
 
 
+from System import EventHandler
+from System.Collections.Generic import IEnumerable
+from System import IntPtr
 class ToolBar(Tool):
     @overload
     def __init__(self): ...
@@ -31447,7 +31968,12 @@ class ToolBarTextAlign(Enum):
     Underneath = 1
 
 
+from System.Windows.Input import ICommand
+from System import EventHandler
+from System import EventArgs
 from ..Drawing import Image
+from System.Collections.Generic import IEnumerable
+from System import IntPtr
 class ToolItem(Tool):
     @overload
     def add_Click(self, value: EventHandler) -> None: ...
@@ -31555,6 +32081,8 @@ class ToolItem(Tool):
     def UpdateBindings(self, mode: BindingUpdateMode) -> None: ...
 
 
+from System.Collections.Generic import IEnumerable
+from System.Collections.Generic import IEnumerator
 class ToolItemCollection:
     def __iter__(self) -> Iterator[ToolItem]: ...
     def __getitem__(self, index: int) -> ToolItem: ...
@@ -31603,6 +32131,8 @@ class ToolItemCollection:
 
 from ..Drawing import Icon
 from ..Drawing import Image
+from System import EventHandler
+from System import IntPtr
 class TrayIndicator(Widget):
     @overload
     def __init__(self): ...
@@ -31692,6 +32222,7 @@ class TreeGridCell:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import IEnumerable
 class TreeGridItem(GridItem):
     @overload
     def __init__(self): ...
@@ -31737,6 +32268,11 @@ class TreeGridItem(GridItem):
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import IEnumerable
+from System.Collections.Generic import IComparer
+from System import Comparison
+from System.Collections.Specialized import NotifyCollectionChangedEventHandler
+from System.Collections.Generic import IEnumerator
 class TreeGridItemCollection:
     @overload
     def __init__(self): ...
@@ -31789,6 +32325,8 @@ class TreeGridItemCollection:
     def ToString(self) -> str: ...
 
 
+from System import EventHandler
+from System.Collections.Generic import IEnumerable
 from ..Drawing import PointF
 from ..Drawing import Rectangle
 from ..Drawing import Size
@@ -31797,6 +32335,7 @@ from ..Drawing import Color
 from ..Drawing import RectangleF
 from ..Drawing import Point
 from ..Drawing import Image
+from System import IntPtr
 class TreeGridView(Grid):
     @overload
     def __init__(self): ...
@@ -32246,6 +32785,7 @@ class TreeGridView(Grid):
     def UpdateLayout(self) -> None: ...
 
 
+from System import Nullable
 class TreeGridViewDragInfo:
     @overload
     def __init__(self, control: TreeGridView, parent: object, item: object, childIndex: Nullable, position: GridDragPosition): ...
@@ -32319,6 +32859,8 @@ class TreeGridViewItemEventArgs:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import IEnumerable
+from System.Collections.Specialized import NotifyCollectionChangedEventHandler
 from ..Drawing import Image
 class TreeItem(ImageListItem):
     @overload
@@ -32373,6 +32915,11 @@ class TreeItem(ImageListItem):
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import IComparer
+from System import Comparison
+from System.Collections.Generic import IEnumerable
+from System.Collections.Specialized import NotifyCollectionChangedEventHandler
+from System.Collections.Generic import IEnumerator
 class TreeItemCollection:
     @overload
     def __init__(self): ...
@@ -32480,6 +33027,11 @@ class TreeViewItemEventArgs:
     def ToString(self) -> str: ...
 
 
+from System import Exception
+from System.Collections import IDictionary
+from System.Reflection import MethodBase
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 class UIThreadAccessException:
     @overload
     def __init__(self): ...
@@ -32529,6 +33081,8 @@ class UIThreadCheckMode(Enum):
     Error = 2
 
 
+from System import EventHandler
+from System import IntPtr
 class UITimer(Widget):
     @overload
     def __init__(self): ...
@@ -32586,6 +33140,8 @@ class UITimer(Widget):
 
 
 
+from System import Char
+from System.Collections.Generic import IEnumerable
 class VariableMaskedTextProvider:
     @overload
     def Clear(self, position: int, length: int, forward: bool) -> Tuple[bool, int]: ...
@@ -32624,6 +33180,11 @@ class VerticalAlignment(Enum):
     Stretch = 3
 
 
+from System import EventHandler
+from System import Uri
+from System.Threading.Tasks import Task
+from System.IO import Stream
+from System.Collections.Generic import IEnumerable
 from ..Drawing import Rectangle
 from ..Drawing import Size
 from ..Drawing import SizeF
@@ -32632,6 +33193,7 @@ from ..Drawing import PointF
 from ..Drawing import RectangleF
 from ..Drawing import Point
 from ..Drawing import Image
+from System import IntPtr
 class WebView(Control):
     @overload
     def __init__(self): ...
@@ -32981,6 +33543,7 @@ class WebView(Control):
     def UpdateLayout(self) -> None: ...
 
 
+from System import Uri
 class WebViewLoadedEventArgs:
     @overload
     def __init__(self, uri: Uri): ...
@@ -32996,6 +33559,7 @@ class WebViewLoadedEventArgs:
     def ToString(self) -> str: ...
 
 
+from System import Uri
 class WebViewLoadingEventArgs(WebViewLoadedEventArgs):
     @overload
     def __init__(self, uri: Uri, isMainFrame: bool): ...
@@ -33034,6 +33598,7 @@ class WebViewMessageEventArgs:
     def ToString(self) -> str: ...
 
 
+from System import Uri
 class WebViewNewWindowEventArgs(WebViewLoadingEventArgs):
     @overload
     def __init__(self, uri: Uri, newWindowName: str): ...
@@ -33074,6 +33639,7 @@ class WebViewTitleEventArgs:
     def ToString(self) -> str: ...
 
 
+from System import Action
 class WidgetExtensions:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -33088,16 +33654,19 @@ class WidgetExtensions:
     def With(widget: T, action: Action) -> T: ...
 
 
+from System import EventHandler
 from ..Drawing import PointF
 from ..Drawing import Point
 from ..Drawing import Rectangle
 from ..Drawing import Icon
+from System.Collections.Generic import IEnumerable
 from ..Drawing import Padding
 from ..Drawing import Size
 from ..Drawing import SizeF
 from ..Drawing import Color
 from ..Drawing import RectangleF
 from ..Drawing import Image
+from System import IntPtr
 class Window(Panel):
     ClosedEvent: str
     ClosingEvent: str

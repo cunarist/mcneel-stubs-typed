@@ -1,16 +1,22 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 
 
+from System.Drawing import RectangleF
+from System.Collections.Generic import List
 from ...GUI.Canvas import GH_Canvas
 from ...GUI import GH_CanvasMouseEvent
 from ...GUI.Canvas import GH_ObjectResponse
+from System.Drawing import PointF
 from ...GUI import GH_TooltipDisplayEventArgs
+from System.Drawing import Graphics
 from ...GUI.Canvas import GH_PaletteStyle
+from System import Guid
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from ...GUI.Canvas import GH_CanvasChannel
+from System.Windows.Forms import KeyEventArgs
 class GH_ComponentAttributes:
     @overload
     def __init__(self, component: IGH_Component): ...
@@ -121,11 +127,18 @@ class GH_ComponentAttributes:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from System.Drawing import PointF
 from ...GUI import GH_TooltipDisplayEventArgs
 from ...GUI.Canvas import GH_Canvas
 from ...GUI import GH_CanvasMouseEvent
 from ...GUI.Canvas import GH_ObjectResponse
+from System.Drawing import RectangleF
+from System import Guid
+from System.Collections.Generic import List
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from ...GUI.Canvas import GH_CanvasChannel
+from System.Windows.Forms import KeyEventArgs
 class GH_FloatingParamAttributes:
     @overload
     def __init__(self, param: IGH_Param): ...
@@ -222,10 +235,17 @@ class GH_FloatingParamAttributes:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from System.Drawing import PointF
 from ...GUI import GH_TooltipDisplayEventArgs
+from System.Drawing import RectangleF
+from System import Guid
+from System.Collections.Generic import List
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from ...GUI.Canvas import GH_Canvas
 from ...GUI.Canvas import GH_CanvasChannel
 from ...GUI import GH_CanvasMouseEvent
+from System.Windows.Forms import KeyEventArgs
 from ...GUI.Canvas import GH_ObjectResponse
 class GH_LinkedParamAttributes:
     @overload

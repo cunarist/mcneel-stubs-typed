@@ -1,10 +1,14 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 
 
+from System import IntPtr
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class DockCornerChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -36,8 +40,13 @@ class DockCornerChangedEventHandler:
     def ToString(self) -> str: ...
 
 
+from System.Drawing import Bitmap
 from ..Canvas import GH_Canvas
 from ..Canvas import GH_ObjectResponse
+from System.Drawing import Point
+from System.Drawing import PointF
+from System.Windows.Forms import ToolStripDropDownMenu
+from System.Windows.Forms import KeyEventArgs
 class GH_AlignWidget(GH_Widget):
     @overload
     def __init__(self): ...
@@ -102,7 +111,14 @@ class GH_AlignWidget(GH_Widget):
 
 
 from ..Canvas import GH_Viewport
+from System.Drawing import Point
+from System.Drawing import PointF
 from ..Canvas import GH_Canvas
+from System.Drawing import SizeF
+from System.Drawing import Size
+from System.Drawing import Bitmap
+from System.Windows.Forms import ToolStripDropDownMenu
+from System.Windows.Forms import KeyEventArgs
 from ..Canvas import GH_ObjectResponse
 class GH_CanvasWidget_FixedObject(GH_Widget):
     @overload
@@ -167,7 +183,14 @@ class GH_CanvasWidget_FixedObject(GH_Widget):
     def ToString(self) -> str: ...
 
 
+from System.Drawing import Bitmap
+from System.Drawing import Size
+from System.Drawing import Point
+from System.Drawing import PointF
+from System.Drawing import SizeF
+from System.Windows.Forms import ToolStripDropDownMenu
 from ..Canvas import GH_Canvas
+from System.Windows.Forms import KeyEventArgs
 from ..Canvas import GH_ObjectResponse
 from ..Canvas import GH_Viewport
 class GH_CompassWidget(GH_CanvasWidget_FixedObject):
@@ -261,8 +284,13 @@ class GH_CompassWidget(GH_CanvasWidget_FixedObject):
     def ToString(self) -> str: ...
 
 
+from System.Drawing import Bitmap
+from System.Drawing import Point
+from System.Drawing import PointF
 from ..Canvas import GH_Canvas
 from ..Canvas import GH_ObjectResponse
+from System.Windows.Forms import ToolStripDropDownMenu
+from System.Windows.Forms import KeyEventArgs
 class GH_MarkovWidget(GH_Widget):
     @overload
     def __init__(self): ...
@@ -353,8 +381,13 @@ class GH_MarkovWidgetDock(Enum):
     BottomRight = 3
 
 
+from System.Drawing import Bitmap
+from System.Drawing import PointF
+from System.Drawing import Point
 from ..Canvas import GH_Canvas
 from ..Canvas import GH_ObjectResponse
+from System.Windows.Forms import ToolStripDropDownMenu
+from System.Windows.Forms import KeyEventArgs
 class GH_MessageWidget(GH_Widget):
     @overload
     def __init__(self): ...
@@ -424,8 +457,13 @@ class GH_MessageWidget(GH_Widget):
     def ToString(self) -> str: ...
 
 
+from System.Windows.Forms import ToolStripDropDownMenu
 from ..Canvas import GH_Canvas
 from ..Canvas import GH_ObjectResponse
+from System.Drawing import Bitmap
+from System.Drawing import Point
+from System.Drawing import PointF
+from System.Windows.Forms import KeyEventArgs
 class GH_ProfilerWidget(GH_Widget):
     @overload
     def __init__(self): ...
@@ -510,6 +548,11 @@ class GH_ProfilerWidget(GH_Widget):
 
 
 from ..Canvas import GH_Canvas
+from System.Drawing import Point
+from System.Drawing import PointF
+from System.Drawing import Bitmap
+from System.Windows.Forms import ToolStripDropDownMenu
+from System.Windows.Forms import KeyEventArgs
 from ..Canvas import GH_ObjectResponse
 class GH_Widget:
     @overload
@@ -562,6 +605,12 @@ class GH_Widget:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class IconLimitChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -594,6 +643,10 @@ class IconLimitChangedEventHandler:
 
 
 from ..Canvas import GH_Canvas
+from System.Drawing import Bitmap
+from System.Drawing import Point
+from System.Drawing import PointF
+from System.Windows.Forms import ToolStripDropDownMenu
 class IGH_Widget:
     @overload
     def AppendToMenu(self, menu: ToolStripDropDownMenu) -> None: ...
@@ -619,6 +672,12 @@ class IGH_Widget:
     def Visible(self, Value: bool) -> None: ...
 
 
+from System import IntPtr
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class ProfilerThresholdChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -650,6 +709,12 @@ class ProfilerThresholdChangedEventHandler:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class ShowDurationChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -681,6 +746,12 @@ class ShowDurationChangedEventHandler:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class WidgetDrawModeChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -712,6 +783,12 @@ class WidgetDrawModeChangedEventHandler:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class WidgetLevelChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -743,6 +820,12 @@ class WidgetLevelChangedEventHandler:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class WidgetVisibleChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -774,6 +857,12 @@ class WidgetVisibleChangedEventHandler:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class WidgetVisibleChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -805,6 +894,12 @@ class WidgetVisibleChangedEventHandler:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class WidgetVisibleChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -836,6 +931,12 @@ class WidgetVisibleChangedEventHandler:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class WidgetVisibleChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...
@@ -867,6 +968,12 @@ class WidgetVisibleChangedEventHandler:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class WidgetVisibleChangedEventHandler:
     @overload
     def __init__(self, TargetObject: object, TargetMethod: IntPtr): ...

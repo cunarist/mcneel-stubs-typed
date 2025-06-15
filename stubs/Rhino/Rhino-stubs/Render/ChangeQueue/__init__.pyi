@@ -1,10 +1,9 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 
 
+from System import Guid
 from ...DocObjects import ObjectAttributes
 from ...Geometry import Transform
 class AncestryRecord:
@@ -41,6 +40,7 @@ class BakingFunctions(Enum):
     All = 4294967295
 
 
+from System import Guid
 from ...Geometry import Light
 from ...DocObjects import ViewInfo
 from ...Geometry import BoundingBox
@@ -108,6 +108,8 @@ class ChangeQueue:
 
 from ...Geometry import Plane
 from ...DocObjects import ObjectAttributes
+from System import Guid
+from System.Collections.Generic import List
 class ClippingPlane:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -225,6 +227,7 @@ class GroundPlane:
     def ToString(self) -> str: ...
 
 
+from System import Guid
 from ...Geometry import Light
 class Light:
     @overload
@@ -265,6 +268,7 @@ class MappingChannel:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import IEnumerable
 class MappingChannelCollection:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -302,6 +306,7 @@ class Material:
 
 
 from ...Geometry import Mesh
+from System import Guid
 from ...Geometry import Transform
 from ...DocObjects import ObjectAttributes
 from ...DocObjects import RhinoObject
@@ -334,6 +339,7 @@ class Mesh:
     def ToString(self) -> str: ...
 
 
+from System import Guid
 from ...Geometry import Transform
 from ...DocObjects import ObjectAttributes
 class MeshInstance:

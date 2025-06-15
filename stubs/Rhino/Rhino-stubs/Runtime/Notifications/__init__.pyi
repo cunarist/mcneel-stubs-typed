@@ -1,7 +1,5 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 
 
@@ -16,6 +14,14 @@ class IAssemblyRestrictedObject:
     def Editable(self) -> bool: ...
 
 
+from System.Collections.Generic import IEnumerable
+from System import DateTime
+from System.Collections.Generic import ICollection
+from System.Collections.Generic import IDictionary
+from System import Action
+from System import Nullable
+from System import Func
+from System.ComponentModel import PropertyChangedEventHandler
 class Notification:
     @overload
     def __init__(self): ...

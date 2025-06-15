@@ -1,7 +1,5 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 import Hints
 
@@ -11,6 +9,8 @@ __all__ = ['Hints']
 
 
 from ..Undo import GH_UndoState
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from ..Undo import GH_ObjectUndoAction
 class GH_ExpressionUndoAction(GH_ObjectUndoAction):
     @overload
@@ -76,12 +76,22 @@ class GH_GeometryProxy:
     def ToString(self) -> str: ...
 
 
+from System import Guid
+from System.Collections.Generic import IList
 from ..Data import GH_Path
 from ..Types import GH_Guid
+from System.Collections import IEnumerable
+from System.Collections.Generic import List
 from ..Data import IGH_Structure
 from ..Data import GH_Structure
+from System import TimeSpan
+from System.Windows.Forms import ToolStripDropDown
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
+from System.Collections.Generic import IEnumerable
 class GH_ProxyParameter:
     @overload
     def __init__(self, nUUID: Guid): ...
@@ -369,10 +379,17 @@ class GH_ProxyParameter:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System.Drawing import PointF
+from System.Drawing import RectangleF
 from ...GUI import GH_TooltipDisplayEventArgs
+from System import Guid
+from System.Collections.Generic import List
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from ...GUI.Canvas import GH_Canvas
 from ...GUI.Canvas import GH_CanvasChannel
 from ...GUI import GH_CanvasMouseEvent
+from System.Windows.Forms import KeyEventArgs
 from ...GUI.Canvas import GH_ObjectResponse
 class GH_ProxyParameterAttributes:
     @overload
@@ -467,12 +484,22 @@ class GH_ProxyParameterAttributes:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from System.Windows.Forms import ToolStripDropDown
+from System import Guid
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import IList
 from ..Data import GH_Path
 from ..Types import IGH_Goo
+from System.Collections import IEnumerable
+from System.Collections.Generic import List
 from ..Data import IGH_Structure
 from ..Data import GH_Structure
+from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
+from System.Collections.Generic import IEnumerable
 class GH_Receiver:
     @overload
     def __init__(self): ...
@@ -766,11 +793,18 @@ class GH_Receiver:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System.Drawing import PointF
 from ...GUI import GH_TooltipDisplayEventArgs
 from ...GUI.Canvas import GH_Canvas
 from ...GUI import GH_CanvasMouseEvent
 from ...GUI.Canvas import GH_ObjectResponse
+from System.Drawing import RectangleF
+from System import Guid
+from System.Collections.Generic import List
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from ...GUI.Canvas import GH_CanvasChannel
+from System.Windows.Forms import KeyEventArgs
 from ..Attributes import GH_FloatingParamAttributes
 class GH_ReceiverAttributes(GH_FloatingParamAttributes):
     @overload
@@ -878,6 +912,7 @@ class IGH_ExpressionParameter:
     def Expression(self, Value: str) -> None: ...
 
 
+from System import Guid
 class IGH_TypeHint:
     @overload
     def Cast(self, data: object) -> Tuple[bool, object]: ...
@@ -887,12 +922,25 @@ class IGH_TypeHint:
     def TypeName(self) -> str: ...
 
 
+from System import Guid
+from GH_IO.Serialization import GH_IReader
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
 from ..Types import GH_AngularDimension
+from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
+from System.Windows.Forms import ToolStripDropDown
+from GH_IO.Serialization import GH_IWriter
+from System.Collections.Generic import IList
 from ..Data import GH_Path
+from System.Collections import IEnumerable
 from ..Data import IGH_Structure
+from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
 class Param_AngularDimension:
     @overload
     def __init__(self): ...
@@ -1212,12 +1260,25 @@ class Param_AngularDimension:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
+from Rhino.Geometry import BoundingBox
 from ..Types import GH_Arc
+from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
+from System.Windows.Forms import ToolStripDropDown
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import IList
 from ..Data import GH_Path
+from System.Collections import IEnumerable
 from ..Data import IGH_Structure
+from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
 class Param_Arc:
     @overload
     def __init__(self): ...
@@ -1537,12 +1598,22 @@ class Param_Arc:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System.Windows.Forms import ToolStripDropDown
+from System import Guid
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from ..Types import GH_Boolean
+from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
+from System.Collections.Generic import List
+from System.Collections.Generic import IList
 from ..Data import GH_Path
+from System.Collections import IEnumerable
 from ..Data import IGH_Structure
+from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
 class Param_Boolean:
     @overload
     def __init__(self): ...
@@ -1848,12 +1919,25 @@ class Param_Boolean:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
+from System import Guid
 from ..Types import GH_Box
+from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
+from System.Windows.Forms import ToolStripDropDown
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import IList
 from ..Data import GH_Path
+from System.Collections import IEnumerable
 from ..Data import IGH_Structure
+from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
 class Param_Box:
     @overload
     def __init__(self): ...
@@ -2173,12 +2257,25 @@ class Param_Box:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
+from System import Guid
 from ..Types import GH_Brep
+from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
+from System.Windows.Forms import ToolStripDropDown
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import IList
 from ..Data import GH_Path
+from System.Collections import IEnumerable
 from ..Data import IGH_Structure
+from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
 class Param_Brep:
     @overload
     def __init__(self): ...
@@ -2498,12 +2595,25 @@ class Param_Brep:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
+from GH_IO.Serialization import GH_IReader
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
 from ..Types import GH_Centermark
+from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
+from System.Windows.Forms import ToolStripDropDown
+from GH_IO.Serialization import GH_IWriter
+from System.Collections.Generic import IList
 from ..Data import GH_Path
+from System.Collections import IEnumerable
 from ..Data import IGH_Structure
+from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
 class Param_Centermark:
     @overload
     def __init__(self): ...
@@ -2823,12 +2933,25 @@ class Param_Centermark:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
+from System import Guid
 from ..Types import GH_Circle
+from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
+from System.Windows.Forms import ToolStripDropDown
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import IList
 from ..Data import GH_Path
+from System.Collections import IEnumerable
 from ..Data import IGH_Structure
+from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
 class Param_Circle:
     @overload
     def __init__(self): ...
@@ -3148,12 +3271,22 @@ class Param_Circle:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
 from ..Types import GH_Colour
+from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
+from System.Collections.Generic import List
+from System.Windows.Forms import ToolStripDropDown
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import IList
 from ..Data import GH_Path
+from System.Collections import IEnumerable
 from ..Data import IGH_Structure
+from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
 class Param_Colour:
     @overload
     def __init__(self): ...
@@ -3455,12 +3588,22 @@ class Param_Colour:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
+from System.Windows.Forms import ToolStripDropDown
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from ..Types import GH_ComplexNumber
+from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
+from System.Collections.Generic import List
+from System.Collections.Generic import IList
 from ..Data import GH_Path
+from System.Collections import IEnumerable
 from ..Data import IGH_Structure
+from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
 class Param_Complex:
     @overload
     def __init__(self): ...
@@ -3766,12 +3909,22 @@ class Param_Complex:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System.Windows.Forms import ToolStripDropDown
+from System import Guid
 from ..Types import GH_Culture
+from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
+from System.Collections.Generic import List
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import IList
 from ..Data import GH_Path
+from System.Collections import IEnumerable
 from ..Data import IGH_Structure
+from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
 class Param_Culture:
     @overload
     def __init__(self): ...
@@ -4073,12 +4226,25 @@ class Param_Culture:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System.Windows.Forms import ToolStripDropDown
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
+from System import Guid
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from ..Types import GH_Curve
+from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
+from System.Collections.Generic import IList
 from ..Data import GH_Path
+from System.Collections import IEnumerable
 from ..Data import IGH_Structure
+from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
 class Param_Curve:
     @overload
     def __init__(self): ...
@@ -4402,12 +4568,25 @@ class Param_Curve:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
+from System import Guid
 from ..Types import GH_Extrusion
+from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
+from System.Windows.Forms import ToolStripDropDown
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import IList
 from ..Data import GH_Path
+from System.Collections import IEnumerable
 from ..Data import IGH_Structure
+from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
 class Param_Extrusion:
     @overload
     def __init__(self): ...
@@ -4727,12 +4906,23 @@ class Param_Extrusion:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
+from Rhino.Geometry import BoundingBox
+from System.Collections.Generic import IList
 from ..Data import GH_Path
 from ..Types import GH_Field
+from System.Collections import IEnumerable
+from System.Collections.Generic import List
 from ..Data import IGH_Structure
 from ..Data import GH_Structure
+from System import TimeSpan
+from System.Windows.Forms import ToolStripDropDown
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
+from System.Collections.Generic import IEnumerable
 class Param_Field:
     @overload
     def __init__(self): ...
@@ -5030,12 +5220,22 @@ class Param_Field:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System.Windows.Forms import ToolStripDropDown
+from System import Guid
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from ..Types import GH_String
+from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
+from System.Collections.Generic import List
+from System.Collections.Generic import IList
 from ..Data import GH_Path
+from System.Collections import IEnumerable
 from ..Data import IGH_Structure
+from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
 class Param_FilePath:
     @overload
     def __init__(self): ...
@@ -5348,11 +5548,24 @@ class Param_FilePath:
 
 
 from ..Data import GH_Structure
+from System.Windows.Forms import ToolStripDropDown
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
+from System import Guid
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from ..Types import IGH_Goo
+from System.Collections.Generic import IEnumerable
+from System.Collections.Generic import IList
 from ..Data import GH_Path
+from System.Collections import IEnumerable
 from ..Data import IGH_Structure
+from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
 class Param_GenericObject:
     @overload
     def __init__(self): ...
@@ -5683,12 +5896,25 @@ class Param_GenericObject:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
+from System import Guid
 from ..Types import IGH_GeometricGoo
+from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
+from System.Windows.Forms import ToolStripDropDown
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import IList
 from ..Data import GH_Path
+from System.Collections import IEnumerable
 from ..Data import IGH_Structure
+from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
 class Param_Geometry:
     @overload
     def __init__(self): ...
@@ -6010,12 +6236,25 @@ class Param_Geometry:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
+from System import Guid
+from System.Collections.Generic import IList
 from ..Data import GH_Path
 from ..Types import GH_GeometryGroup
+from System.Collections import IEnumerable
 from ..Data import IGH_Structure
 from ..Data import GH_Structure
+from System import TimeSpan
+from System.Windows.Forms import ToolStripDropDown
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
+from System.Collections.Generic import IEnumerable
 class Param_Group:
     @overload
     def __init__(self): ...
@@ -6319,12 +6558,22 @@ class Param_Group:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
 from ..Types import GH_Guid
+from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
+from System.Collections.Generic import List
+from System.Windows.Forms import ToolStripDropDown
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import IList
 from ..Data import GH_Path
+from System.Collections import IEnumerable
 from ..Data import IGH_Structure
+from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
 class Param_Guid:
     @overload
     def __init__(self): ...
@@ -6626,12 +6875,25 @@ class Param_Guid:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
+from GH_IO.Serialization import GH_IReader
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
 from ..Types import GH_Hatch
+from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
+from System.Windows.Forms import ToolStripDropDown
+from GH_IO.Serialization import GH_IWriter
+from System.Collections.Generic import IList
 from ..Data import GH_Path
+from System.Collections import IEnumerable
 from ..Data import IGH_Structure
+from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
 class Param_Hatch:
     @overload
     def __init__(self): ...
@@ -6951,12 +7213,25 @@ class Param_Hatch:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
+from GH_IO.Serialization import GH_IReader
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
 from ..Types import GH_InstanceReference
+from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
+from System.Windows.Forms import ToolStripDropDown
+from GH_IO.Serialization import GH_IWriter
+from System.Collections.Generic import IList
 from ..Data import GH_Path
+from System.Collections import IEnumerable
 from ..Data import IGH_Structure
+from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
 class Param_InstanceReference:
     @overload
     def __init__(self): ...
@@ -7276,12 +7551,22 @@ class Param_InstanceReference:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System.Windows.Forms import ToolStripDropDown
+from System import Guid
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from ..Types import GH_Integer
+from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
+from System.Collections.Generic import List
+from System.Collections.Generic import IList
 from ..Data import GH_Path
+from System.Collections import IEnumerable
 from ..Data import IGH_Structure
+from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
 class Param_Integer:
     @overload
     def __init__(self): ...
@@ -7593,12 +7878,22 @@ class Param_Integer:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
 from ..Types import GH_Interval
+from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
+from System.Collections.Generic import List
+from System.Windows.Forms import ToolStripDropDown
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import IList
 from ..Data import GH_Path
+from System.Collections import IEnumerable
 from ..Data import IGH_Structure
+from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
 class Param_Interval:
     @overload
     def __init__(self): ...
@@ -7900,12 +8195,22 @@ class Param_Interval:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
 from ..Types import GH_Interval2D
+from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
+from System.Collections.Generic import List
+from System.Windows.Forms import ToolStripDropDown
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import IList
 from ..Data import GH_Path
+from System.Collections import IEnumerable
 from ..Data import IGH_Structure
+from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
 class Param_Interval2D:
     @overload
     def __init__(self): ...
@@ -8207,12 +8512,22 @@ class Param_Interval2D:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
+from System.Collections.Generic import IList
 from ..Data import GH_Path
 from ..Types import GH_Interval2D
+from System.Collections import IEnumerable
+from System.Collections.Generic import List
 from ..Data import IGH_Structure
 from ..Data import GH_Structure
+from System import TimeSpan
+from System.Windows.Forms import ToolStripDropDown
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
+from System.Collections.Generic import IEnumerable
 class Param_Interval2D_OBSOLETE:
     @overload
     def __init__(self): ...
@@ -8498,12 +8813,22 @@ class Param_Interval2D_OBSOLETE:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
 from ..Types import GH_LonLatCoordinate
+from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
+from System.Collections.Generic import List
+from System.Windows.Forms import ToolStripDropDown
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import IList
 from ..Data import GH_Path
+from System.Collections import IEnumerable
 from ..Data import IGH_Structure
+from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
 class Param_LatLonLocation:
     @overload
     def __init__(self): ...
@@ -8805,12 +9130,25 @@ class Param_LatLonLocation:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
+from GH_IO.Serialization import GH_IReader
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
 from ..Types import GH_Leader
+from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
+from System.Windows.Forms import ToolStripDropDown
+from GH_IO.Serialization import GH_IWriter
+from System.Collections.Generic import IList
 from ..Data import GH_Path
+from System.Collections import IEnumerable
 from ..Data import IGH_Structure
+from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
 class Param_Leader:
     @overload
     def __init__(self): ...
@@ -9130,12 +9468,25 @@ class Param_Leader:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
+from GH_IO.Serialization import GH_IReader
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
 from ..Types import GH_Light
+from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
+from System.Windows.Forms import ToolStripDropDown
+from GH_IO.Serialization import GH_IWriter
+from System.Collections.Generic import IList
 from ..Data import GH_Path
+from System.Collections import IEnumerable
 from ..Data import IGH_Structure
+from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
 class Param_Light:
     @overload
     def __init__(self): ...
@@ -9455,12 +9806,26 @@ class Param_Light:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
+from Rhino.Geometry import Line
 from ..Types import GH_Line
+from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
+from System.Windows.Forms import ToolStripDropDown
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import IList
 from ..Data import GH_Path
+from System.Collections import IEnumerable
 from ..Data import IGH_Structure
+from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
 class Param_Line:
     @overload
     def __init__(self): ...
@@ -9783,12 +10148,25 @@ class Param_Line:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
+from GH_IO.Serialization import GH_IReader
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
 from ..Types import GH_LinearDimension
+from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
+from System.Windows.Forms import ToolStripDropDown
+from GH_IO.Serialization import GH_IWriter
+from System.Collections.Generic import IList
 from ..Data import GH_Path
+from System.Collections import IEnumerable
 from ..Data import IGH_Structure
+from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
 class Param_LinearDimension:
     @overload
     def __init__(self): ...
@@ -10108,12 +10486,22 @@ class Param_LinearDimension:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
 from ..Types import GH_Matrix
+from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
+from System.Collections.Generic import List
+from System.Windows.Forms import ToolStripDropDown
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import IList
 from ..Data import GH_Path
+from System.Collections import IEnumerable
 from ..Data import IGH_Structure
+from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
 class Param_Matrix:
     @overload
     def __init__(self): ...
@@ -10415,12 +10803,25 @@ class Param_Matrix:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
 from ..Types import GH_Mesh
+from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
+from System.Windows.Forms import ToolStripDropDown
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import IList
 from ..Data import GH_Path
+from System.Collections import IEnumerable
 from ..Data import IGH_Structure
+from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
 class Param_Mesh:
     @overload
     def __init__(self): ...
@@ -10740,12 +11141,22 @@ class Param_Mesh:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
 from ..Types import GH_MeshFace
+from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
+from System.Collections.Generic import List
+from System.Windows.Forms import ToolStripDropDown
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import IList
 from ..Data import GH_Path
+from System.Collections import IEnumerable
 from ..Data import IGH_Structure
+from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
 class Param_MeshFace:
     @overload
     def __init__(self): ...
@@ -11047,12 +11458,22 @@ class Param_MeshFace:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
 from ..Types import GH_MeshingParameters
+from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
+from System.Collections.Generic import List
+from System.Windows.Forms import ToolStripDropDown
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import IList
 from ..Data import GH_Path
+from System.Collections import IEnumerable
 from ..Data import IGH_Structure
+from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
 class Param_MeshParameters:
     @overload
     def __init__(self): ...
@@ -11354,12 +11775,22 @@ class Param_MeshParameters:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System.Windows.Forms import ToolStripDropDown
+from System import Guid
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from ..Types import GH_Number
+from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
+from System.Collections.Generic import List
+from System.Collections.Generic import IList
 from ..Data import GH_Path
+from System.Collections import IEnumerable
 from ..Data import IGH_Structure
+from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
 class Param_Number:
     @overload
     def __init__(self): ...
@@ -11673,12 +12104,22 @@ class Param_Number:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
 from ..Types import GH_Material
+from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
+from System.Collections.Generic import List
+from System.Windows.Forms import ToolStripDropDown
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import IList
 from ..Data import GH_Path
+from System.Collections import IEnumerable
 from ..Data import IGH_Structure
+from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
 class Param_OGLShader:
     @overload
     def __init__(self): ...
@@ -11980,12 +12421,25 @@ class Param_OGLShader:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
+from GH_IO.Serialization import GH_IReader
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
 from ..Types import GH_OrdinateDimension
+from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
+from System.Windows.Forms import ToolStripDropDown
+from GH_IO.Serialization import GH_IWriter
+from System.Collections.Generic import IList
 from ..Data import GH_Path
+from System.Collections import IEnumerable
 from ..Data import IGH_Structure
+from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
 class Param_OrdinateDimension:
     @overload
     def __init__(self): ...
@@ -12305,12 +12759,27 @@ class Param_OrdinateDimension:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
+from System import Guid
+from GH_IO.Serialization import GH_IReader
+from Rhino.Geometry import Plane
+from Rhino.Geometry import PlaneSurface
 from ..Types import GH_Plane
+from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
+from System.Windows.Forms import ToolStripDropDown
+from GH_IO.Serialization import GH_IWriter
+from System.Collections.Generic import IList
 from ..Data import GH_Path
+from System.Collections import IEnumerable
 from ..Data import IGH_Structure
+from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
 class Param_Plane:
     @overload
     def __init__(self): ...
@@ -12633,12 +13102,25 @@ class Param_Plane:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System.Windows.Forms import ToolStripDropDown
+from System import Guid
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
 from ..Types import GH_Point
+from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
+from System.Collections.Generic import IList
 from ..Data import GH_Path
+from System.Collections import IEnumerable
 from ..Data import IGH_Structure
+from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
 class Param_Point:
     @overload
     def __init__(self): ...
@@ -12962,12 +13444,25 @@ class Param_Point:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
+from GH_IO.Serialization import GH_IReader
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
 from ..Types import GH_PointCloud
+from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
+from System.Windows.Forms import ToolStripDropDown
+from GH_IO.Serialization import GH_IWriter
+from System.Collections.Generic import IList
 from ..Data import GH_Path
+from System.Collections import IEnumerable
 from ..Data import IGH_Structure
+from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
 class Param_PointCloud:
     @overload
     def __init__(self): ...
@@ -13287,12 +13782,22 @@ class Param_PointCloud:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
+from System.Windows.Forms import ToolStripDropDown
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import IList
 from ..Data import GH_Path
 from ..Types import GH_Predicate
+from System.Collections import IEnumerable
+from System.Collections.Generic import List
 from ..Data import IGH_Structure
 from ..Data import GH_Structure
+from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
+from System.Collections.Generic import IEnumerable
 class Param_Predicate:
     @overload
     def __init__(self): ...
@@ -13582,12 +14087,25 @@ class Param_Predicate:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
+from GH_IO.Serialization import GH_IReader
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
 from ..Types import GH_RadialDimension
+from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
+from System.Windows.Forms import ToolStripDropDown
+from GH_IO.Serialization import GH_IWriter
+from System.Collections.Generic import IList
 from ..Data import GH_Path
+from System.Collections import IEnumerable
 from ..Data import IGH_Structure
+from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
 class Param_RadialDimension:
     @overload
     def __init__(self): ...
@@ -13907,12 +14425,25 @@ class Param_RadialDimension:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
+from System import Guid
 from ..Types import GH_Rectangle
+from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
+from System.Windows.Forms import ToolStripDropDown
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import IList
 from ..Data import GH_Path
+from System.Collections import IEnumerable
 from ..Data import IGH_Structure
+from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
 class Param_Rectangle:
     @overload
     def __init__(self): ...
@@ -14232,12 +14763,25 @@ class Param_Rectangle:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System.Collections.Generic import List
+from System import Guid
+from System.Windows.Forms import ToolStripDropDown
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from Rhino.DocObjects import ObjectAttributes
 from ..Types import IGH_Goo
+from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
+from System.Collections.Generic import IList
 from ..Data import GH_Path
+from System.Collections import IEnumerable
 from ..Data import IGH_Structure
+from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
 class Param_ScriptVariable(Param_GenericObject):
     @overload
     def __init__(self): ...
@@ -14581,12 +15125,22 @@ class Param_ScriptVariable(Param_GenericObject):
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
 from ..Types import GH_String
+from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
+from System.Collections.Generic import List
+from System.Windows.Forms import ToolStripDropDown
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import IList
 from ..Data import GH_Path
+from System.Collections import IEnumerable
 from ..Data import IGH_Structure
+from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
 class Param_String:
     @overload
     def __init__(self): ...
@@ -14888,12 +15442,22 @@ class Param_String:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
 from ..Types import GH_StructurePath
+from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
+from System.Collections.Generic import List
+from System.Windows.Forms import ToolStripDropDown
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import IList
 from ..Data import GH_Path
+from System.Collections import IEnumerable
 from ..Data import IGH_Structure
+from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
 class Param_StructurePath:
     @overload
     def __init__(self): ...
@@ -15195,12 +15759,25 @@ class Param_StructurePath:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
+from System import Guid
 from ..Types import GH_SubD
+from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
+from System.Windows.Forms import ToolStripDropDown
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import IList
 from ..Data import GH_Path
+from System.Collections import IEnumerable
 from ..Data import IGH_Structure
+from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
 class Param_SubD:
     @overload
     def __init__(self): ...
@@ -15520,12 +16097,25 @@ class Param_SubD:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System.Windows.Forms import ToolStripDropDown
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
+from System import Guid
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from ..Types import GH_Surface
+from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
+from System.Collections.Generic import IList
 from ..Data import GH_Path
+from System.Collections import IEnumerable
 from ..Data import IGH_Structure
+from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
 class Param_Surface:
     @overload
     def __init__(self): ...
@@ -15849,12 +16439,25 @@ class Param_Surface:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
+from GH_IO.Serialization import GH_IReader
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
 from ..Types import GH_TextDot
+from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
+from System.Windows.Forms import ToolStripDropDown
+from GH_IO.Serialization import GH_IWriter
+from System.Collections.Generic import IList
 from ..Data import GH_Path
+from System.Collections import IEnumerable
 from ..Data import IGH_Structure
+from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
 class Param_TextDot:
     @overload
     def __init__(self): ...
@@ -16174,12 +16777,25 @@ class Param_TextDot:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
+from GH_IO.Serialization import GH_IReader
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
 from ..Types import GH_TextEntity
+from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
+from System.Windows.Forms import ToolStripDropDown
+from GH_IO.Serialization import GH_IWriter
+from System.Collections.Generic import IList
 from ..Data import GH_Path
+from System.Collections import IEnumerable
 from ..Data import IGH_Structure
+from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
 class Param_TextEntity:
     @overload
     def __init__(self): ...
@@ -16499,12 +17115,22 @@ class Param_TextEntity:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
 from ..Types import GH_Time
+from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
+from System.Collections.Generic import List
+from System.Windows.Forms import ToolStripDropDown
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import IList
 from ..Data import GH_Path
+from System.Collections import IEnumerable
 from ..Data import IGH_Structure
+from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
 class Param_Time:
     @overload
     def __init__(self): ...
@@ -16806,12 +17432,22 @@ class Param_Time:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
 from ..Types import GH_Transform
+from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
+from System.Collections.Generic import List
+from System.Windows.Forms import ToolStripDropDown
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import IList
 from ..Data import GH_Path
+from System.Collections import IEnumerable
 from ..Data import IGH_Structure
+from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
 class Param_Transform:
     @overload
     def __init__(self): ...
@@ -17113,12 +17749,22 @@ class Param_Transform:
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System.Windows.Forms import ToolStripDropDown
+from System import Guid
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from ..Types import GH_Vector
+from System.Collections.Generic import IEnumerable
 from ..Data import GH_Structure
+from System.Collections.Generic import List
+from System.Collections.Generic import IList
 from ..Data import GH_Path
+from System.Collections import IEnumerable
 from ..Data import IGH_Structure
+from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
 class Param_Vector:
     @overload
     def __init__(self): ...

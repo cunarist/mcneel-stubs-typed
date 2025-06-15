@@ -1,7 +1,5 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 
 
@@ -11,6 +9,7 @@ class GH_Audience(Enum):
     Expert = 2
 
 
+from System.Collections.Generic import List
 class GH_ContentCollection:
     @overload
     def __init__(self): ...
@@ -51,6 +50,8 @@ class GH_Format:
     def ToString(self) -> str: ...
 
 
+from System.Collections.ObjectModel import ReadOnlyCollection
+from System.Collections.Generic import List
 class GH_GlossaryItem:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -126,6 +127,8 @@ class GH_Link:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import IEnumerable
+from System.Collections.Generic import List
 class GH_List:
     @overload
     @staticmethod
@@ -203,6 +206,8 @@ class GH_Parser:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import List
+from System.Collections.Generic import IEnumerable
 class GH_RuntimeFile:
     TagAuthor: str
     TagContact: str

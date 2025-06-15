@@ -1,7 +1,5 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 import ChangeQueue
 import ChildSlotNames
@@ -20,6 +18,7 @@ class Accuracies(Enum):
     Maximum = 1
 
 
+from System import EventHandler
 class AddCustomUISections:
     @overload
     @staticmethod
@@ -38,6 +37,7 @@ class AddCustomUISections:
 
 
 from ..UI.Controls import ExpandableContentUI
+from System import Guid
 class AddCustomUISectionsEventArgs:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -65,6 +65,8 @@ class AssignToSubFaceChoices(Enum):
     Ask = 2
 
 
+from System.Threading import Thread
+from System.Threading import ThreadStart
 class AsyncRenderContext:
     @overload
     def Dispose(self) -> None: ...
@@ -133,9 +135,13 @@ class BasicMaterialParameterNames:
     def ToString(self) -> str: ...
 
 
+from System import Guid
 from ..Geometry import Point3d
+from System.Collections.Generic import IEnumerator
 from ..DocObjects.Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 from ..Runtime import CommonObject
 class CachedTextureCoordinates(CommonObject):
@@ -207,7 +213,10 @@ class ChangeContexts(Enum):
     Script = 9
 
 
+from System.Drawing import Rectangle
+from System.Drawing import Size
 from ..Display import Color4f
+from System import Guid
 class Channel:
     @overload
     def AddValue(self, x: int, y: int, value: Color4f) -> None: ...
@@ -256,6 +265,8 @@ class Channel(Enum):
 
 
 from ..Display import DisplayTechnology
+from System import Guid
+from System import IntPtr
 class ChannelGPU:
     @overload
     def Clone(self) -> ChannelGPU: ...
@@ -337,6 +348,7 @@ class ContentChooserFlags(Enum):
     DisableImportButton = 16
 
 
+from System import IntPtr
 class ContentCollectionIterator:
     @overload
     def __init__(self, pCollection: IntPtr): ...
@@ -404,6 +416,7 @@ class ContentUndoHelper:
     def TweakContent(self, content: RenderContent, parameterName: str) -> bool: ...
 
 
+from System import Guid
 class ContentUuids:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -537,6 +550,7 @@ class ContentUuids:
     def ToString(self) -> str: ...
 
 
+from System import IConvertible
 from ..Display import Color4f
 from ..Geometry import Vector2d
 from ..Geometry import Vector3d
@@ -571,6 +585,10 @@ class CrcRenderHashFlags(Enum):
 
 
 from ..PlugIns import PreviewNotification
+from System.Drawing import Size
+from System.Drawing import Bitmap
+from System import Guid
+from System.Collections.Generic import List
 from ..DocObjects import ViewportInfo
 class CreatePreviewEventArgs:
     @overload
@@ -623,6 +641,8 @@ class CreatePreviewReason(Enum):
     Other = 99
 
 
+from System.Drawing import Size
+from System.Drawing import Bitmap
 class CreateTexture2dPreviewEventArgs:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -640,6 +660,7 @@ class CreateTexture2dPreviewEventArgs:
     def ToString(self) -> str: ...
 
 
+from System import Guid
 class CustomRenderContentAttribute:
     @overload
     def __init__(self, renderEngineGuid: str, imageBased: bool, category: str, is_elevated: bool, is_built_in: bool, is_private: bool): ...
@@ -695,10 +716,13 @@ class CustomRenderContentAttribute:
     def ToString(self) -> str: ...
 
 
+from System import Guid
 from ..Geometry import Point3d
 from ..Geometry import Vector3d
+from System.Collections.Generic import List
 from ..Display import Color4f
 from ..Geometry import Point2d
+from System import IntPtr
 class Decal:
     @overload
     def ConstPointer(self) -> IntPtr: ...
@@ -773,6 +797,7 @@ class Decal:
     def VertSweep(self) -> Tuple[float, float]: ...
 
 
+from System import Guid
 from ..Geometry import Point3d
 from ..Geometry import Vector3d
 class DecalCreateParams:
@@ -874,6 +899,7 @@ class DecalProjection(Enum):
     # None = -1
 
 
+from System.Collections.Generic import IEnumerator
 class Decals:
     def __iter__(self) -> Iterator[Decal]: ...
     @overload
@@ -1077,6 +1103,8 @@ class FreeFloatingBase:
     def ToString(self) -> str: ...
 
 
+from System import EventHandler
+from System import Guid
 from ..Geometry import Vector2d
 class GroundPlane(DocumentOrFreeFloatingBase):
     @overload
@@ -1217,6 +1245,7 @@ class ImageAdjust:
     def ToString(self) -> str: ...
 
 
+from System import EventHandler
 class ImageFile:
     @overload
     @staticmethod
@@ -1252,6 +1281,7 @@ class ImageFileEvent(Enum):
     Deleted = 2
 
 
+from System import Guid
 class ImageFileEventArgs:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -1301,6 +1331,7 @@ class it_strategy(Enum):
     ContentSelection = 1
 
 
+from System import IntPtr
 from ..Geometry import Light
 class LightArray:
     @overload
@@ -1328,6 +1359,8 @@ class LightArray:
 
 
 from ..PlugIns import PlugIn
+from System.Reflection import Assembly
+from System import Guid
 from ..Geometry import Light
 class LightManagerSupport:
     @overload
@@ -1376,6 +1409,8 @@ class LightManagerSupport:
     def UnGroup(self, doc: RhinoDoc, light_array: LightArray) -> Tuple[LightArray]: ...
 
 
+from System import IntPtr
+from System import Guid
 from ..Geometry import Light
 from ..DocObjects import RhinoObject
 class LightManagerSupportClient:
@@ -1483,6 +1518,7 @@ class LoadMultipleFlags(Enum):
     Preload = 1
 
 
+from System import Guid
 from ..Geometry import Transform
 class MappingTag:
     @overload
@@ -1519,6 +1555,8 @@ class MatchDataResult(Enum):
     All = 2
 
 
+from System import IntPtr
+from System import Guid
 class MetaDataProxy:
     @overload
     def __init__(self): ...
@@ -1570,6 +1608,7 @@ class NamedValue:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
 class PixelBuffer:
     @overload
     def __init__(self, bufferPointer: IntPtr): ...
@@ -1585,6 +1624,7 @@ class PixelBuffer:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
 from .DataSources import MetaData
 class PreviewAppearance:
     @overload
@@ -1635,6 +1675,8 @@ class PreviewAppearance:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from System import Guid
 class PreviewBackground:
     @overload
     def __init__(self, pPreviewBackground: IntPtr): ...
@@ -1664,6 +1706,7 @@ class PreviewBackgroundType(Enum):
     Scene = 4
 
 
+from System import IntPtr
 class PreviewGeometry:
     @overload
     def __init__(self, pPreviewGeometry: IntPtr): ...
@@ -1693,6 +1736,7 @@ class PreviewGeometryType(Enum):
     Scene = 7
 
 
+from System import IntPtr
 class PreviewJobSignature:
     @overload
     def __init__(self): ...
@@ -1720,6 +1764,7 @@ class PreviewJobSignature:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
 class PreviewLighting:
     @overload
     def __init__(self, pPreviewLighting: IntPtr): ...
@@ -1747,6 +1792,7 @@ class PreviewQuality(Enum):
     Full = 4
 
 
+from System.Drawing import Bitmap
 class PreviewRenderedEventArgs:
     @overload
     def __init__(self): ...
@@ -1791,6 +1837,7 @@ class PreviewSceneQuality(Enum):
     Full = 4
 
 
+from System import IntPtr
 class PreviewSceneServer:
     @overload
     def __init__(self, pPreviewSceneServer: IntPtr): ...
@@ -1848,6 +1895,7 @@ class RdkTextureSize(Enum):
     Size5 = 2048
 
 
+from System import IntPtr
 class RdkUndo:
     @overload
     def __init__(self, pUndoRecord: IntPtr): ...
@@ -1865,6 +1913,7 @@ class RdkUndo:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
 class RdkUndoRecord:
     @overload
     def __init__(self, pUndoRecord: IntPtr): ...
@@ -1882,10 +1931,15 @@ class RdkUndoRecord:
     def ToString(self) -> str: ...
 
 
+from System import EventHandler
 from ..PlugIns import PlugIn
+from System.Reflection import Assembly
+from System import Guid
 from ..DocObjects import ViewInfo
+from System import IntPtr
 from ..Display import DisplayPipelineAttributes
 from ..DocObjects import ViewportInfo
+from System import DateTime
 class RealtimeDisplayMode:
     @overload
     def add_HudLockButtonDoubleClicked(self, value: EventHandler) -> None: ...
@@ -2154,6 +2208,7 @@ class RealtimeDisplayMode:
     def UseFastDraw(self) -> bool: ...
 
 
+from System import Guid
 class RealtimeDisplayModeClassInfo:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -2175,6 +2230,7 @@ class RealtimeDisplayModeClassInfo:
     def ToString(self) -> str: ...
 
 
+from System import EventHandler
 class RenderChannels(DocumentOrFreeFloatingBase):
     @overload
     def __init__(self): ...
@@ -2210,9 +2266,16 @@ class RenderChannels(DocumentOrFreeFloatingBase):
     def ToString(self) -> str: ...
 
 
+from System import Guid
+from System.Collections.Generic import IEnumerable
+from System.Drawing import Size
+from System.Drawing import Bitmap
+from System import EventHandler
 from ..PlugIns import PlugIn
+from System.Reflection import Assembly
 from ..Commands import Result
 from .Fields import FieldDictionary
+from System import IntPtr
 from .Fields import Field
 from .UI import UserInterfaceSection
 from ..UI.Controls import ICollapsibleSection
@@ -2584,6 +2647,9 @@ class RenderContentChangeReason(Enum):
     Delete = 8
 
 
+from System import IntPtr
+from System import Guid
+from System.Collections import IEnumerator
 class RenderContentCollection:
     @overload
     def __init__(self): ...
@@ -2695,6 +2761,7 @@ class RenderContentKind(Enum):
     Texture = 4
 
 
+from System import IntPtr
 class RenderContentKindList:
     @overload
     def __init__(self): ...
@@ -2740,6 +2807,8 @@ class RenderContentManager:
     def ToString(self) -> str: ...
 
 
+from System import Guid
+from System.Collections.Generic import IEnumerable
 class RenderContentSerializer:
     @overload
     def CanLoadMultiple(self) -> bool: ...
@@ -2795,6 +2864,7 @@ class RenderContentStyles(Enum):
     NameTypeSection = 2048
 
 
+from System import Guid
 class RenderContentType:
     @overload
     def __init__(self, typeId: Guid): ...
@@ -2842,7 +2912,12 @@ class RenderEndEventArgs:
     def ToString(self) -> str: ...
 
 
+from System import Guid
+from System.Collections.Generic import IEnumerable
+from System.Drawing import Size
+from System.Drawing import Bitmap
 from .Fields import FieldDictionary
+from System import IntPtr
 from .Fields import Field
 from .UI import UserInterfaceSection
 from ..UI.Controls import ICollapsibleSection
@@ -3076,6 +3151,8 @@ class RenderEnvironment(RenderContent):
     def VirtualIcon(self, size: Size) -> Tuple[bool, Bitmap]: ...
 
 
+from System import Guid
+from System.Collections.Generic import IEnumerator
 class RenderEnvironmentTable:
     def __iter__(self) -> Iterator[RenderEnvironment]: ...
     @overload
@@ -3112,10 +3189,15 @@ class RenderingSources(Enum):
 
 
 from ..DocObjects import Material
+from System.Collections.Generic import IEnumerable
 from ..DocObjects import ObjRef
+from System import Guid
 from ..DocObjects import TextureType
 from ..DocObjects import PhysicallyBasedMaterial
+from System.Drawing import Size
+from System.Drawing import Bitmap
 from .Fields import FieldDictionary
+from System import IntPtr
 from .Fields import Field
 from .UI import UserInterfaceSection
 from ..UI.Controls import ICollapsibleSection
@@ -3421,6 +3503,8 @@ class RenderMaterial(RenderContent):
     def VirtualIcon(self, size: Size) -> Tuple[bool, Bitmap]: ...
 
 
+from System import Guid
+from System.Collections.Generic import IEnumerator
 class RenderMaterialTable:
     def __iter__(self) -> Iterator[RenderMaterial]: ...
     @overload
@@ -3450,6 +3534,7 @@ class RenderMaterialTable:
 
 
 from ..PlugIns import PlugIn
+from System import Guid
 class RenderPanels:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -3473,7 +3558,10 @@ class RenderPanelType(Enum):
 
 
 from ..Commands import Result
+from System import Guid
 from ..Display import RhinoView
+from System.Drawing import Rectangle
+from System.Drawing import Size
 from ..DocObjects import ViewportInfo
 from ..PlugIns import PlugIn
 class RenderPipeline:
@@ -3534,6 +3622,7 @@ class RenderPipeline:
     def ToString(self) -> str: ...
 
 
+from System import Guid
 class RenderPlugInInfo:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -3553,6 +3642,15 @@ class RenderPlugInInfo:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import IEnumerable
+from System.Collections.ObjectModel import ReadOnlyCollection
+from System.Collections.Generic import IComparer
+from System import Predicate
+from System.Collections.Generic import List
+from System import Action
+from System.Collections.Generic import Enumerator
+from System import Comparison
+from System import Converter
 class RenderPlugInList:
     @overload
     def __init__(self): ...
@@ -3750,10 +3848,15 @@ class RenderReturnCode(Enum):
     InternalError = 11
 
 
+from System.Drawing import Color
+from System.Drawing import Size
 from ..Display import BackgroundStyle
+from System import Guid
 from .PostEffects import PostEffectCollection
 from ..DocObjects.Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 from ..Runtime import CommonObject
 class RenderSettings(CommonObject):
@@ -3947,6 +4050,8 @@ class RenderSuccessCode(Enum):
 
 
 from ..PlugIns import PlugIn
+from System import Guid
+from System.Drawing import Icon
 class RenderTabs:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -3969,10 +4074,16 @@ class RenderTabs:
     def ToString(self) -> str: ...
 
 
+from System.Drawing import Bitmap
 from ..Geometry import Transform
+from System import Nullable
 from ..DocObjects import RhinoObject
 from ..Geometry import Vector3d
 from ..Geometry import Point3d
+from System import IntPtr
+from System import Guid
+from System.Collections.Generic import IEnumerable
+from System.Drawing import Size
 from .Fields import FieldDictionary
 from .Fields import Field
 from .UI import UserInterfaceSection
@@ -4317,6 +4428,8 @@ class RenderTexture(RenderContent):
     def VirtualIcon(self, size: Size) -> Tuple[bool, Bitmap]: ...
 
 
+from System import Guid
+from System.Collections.Generic import IEnumerator
 class RenderTextureTable:
     def __iter__(self) -> Iterator[RenderTexture]: ...
     @overload
@@ -4345,8 +4458,13 @@ class RenderTextureTable:
     def ToString(self) -> str: ...
 
 
+from System.Drawing import Size
+from System import Guid
+from System import EventHandler
 from ..DocObjects import ViewInfo
+from System.Drawing import Bitmap
 from ..DocObjects import ViewportInfo
+from System.Drawing import Rectangle
 from .PostEffects import PostEffectExecutionControl
 class RenderWindow:
     @overload
@@ -4427,6 +4545,7 @@ class RenderWindow:
     def ToString(self) -> str: ...
 
 
+from System import Guid
 class RenderWindowClonedEventArgs:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -4446,6 +4565,7 @@ class RenderWindowClonedEventArgs:
     def ToString(self) -> str: ...
 
 
+from System import EventHandler
 class SafeFrame(DocumentOrFreeFloatingBase):
     @overload
     def __init__(self): ...
@@ -4541,6 +4661,7 @@ class SceneObject:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
 class SceneServerData:
     @overload
     def __init__(self, appearance: PreviewAppearance, usage: SceneServerDataUsage): ...
@@ -4579,6 +4700,8 @@ class ShowContentChooserResults(Enum):
     Instance = 3
 
 
+from System.Drawing import Color
+from System import IntPtr
 class SimulatedEnvironment:
     @overload
     def __init__(self): ...
@@ -4618,6 +4741,7 @@ from ..DocObjects import Texture
 from ..Geometry import Transform
 from ..Geometry import Vector2d
 from ..Display import Color4f
+from System import IntPtr
 class SimulatedTexture:
     @overload
     def __init__(self): ...
@@ -4701,6 +4825,8 @@ class SimulatedTexture:
     def UnitsToMeters(self, doc: RhinoDoc, units: float) -> float: ...
 
 
+from System import EventHandler
+from System import Guid
 class Skylight(DocumentOrFreeFloatingBase):
     @overload
     def __init__(self): ...
@@ -4808,8 +4934,12 @@ class StandardChildSlots(Enum):
     PbrAlpha = 123
 
 
+from System import EventHandler
+from System import DateTime
 from ..Geometry import Vector3d
 from ..Geometry import Light
+from System import DateTimeKind
+from System.Drawing import Color
 class Sun(DocumentOrFreeFloatingBase):
     @overload
     def __init__(self): ...
@@ -5269,6 +5399,7 @@ class TextureGeneration(Enum):
     Disallow = 2
 
 
+from System import IntPtr
 class TextureGraphInfo:
     @overload
     def __init__(self): ...
@@ -5306,6 +5437,7 @@ class TextureGraphInfo:
     def ToString(self) -> str: ...
 
 
+from System import Guid
 from ..Geometry import Transform
 from ..DocObjects import ModelComponentType
 from ..Geometry import Point3d
@@ -5318,6 +5450,8 @@ from ..Geometry import Mesh
 from ..Geometry import ComponentStatus
 from ..DocObjects.Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..FileIO import SerializationOptions
 from ..DocObjects import ModelComponent
 class TextureMapping(ModelComponent):
@@ -5572,9 +5706,15 @@ class TimeZone:
 
 from ..Display import Color4f
 from ..Geometry import Transform
+from System import Nullable
 from ..DocObjects import RhinoObject
+from System.Drawing import Bitmap
 from ..Geometry import Vector3d
+from System import Guid
+from System.Collections.Generic import IEnumerable
+from System.Drawing import Size
 from .Fields import FieldDictionary
+from System import IntPtr
 from .Fields import Field
 from .UI import UserInterfaceSection
 from ..UI.Controls import ICollapsibleSection
@@ -5914,6 +6054,7 @@ class TwoColorRenderTexture(RenderTexture):
     def VirtualIcon(self, size: Size) -> Tuple[bool, Bitmap]: ...
 
 
+from System import EventHandler
 class UndoRedo:
     @overload
     @staticmethod
@@ -5937,6 +6078,11 @@ class UndoRedo:
     def ToString(self) -> str: ...
 
 
+from System import Guid
+from System.Collections.Generic import IEnumerable
+from System import IntPtr
+from System.Drawing import Rectangle
+from System.Drawing import Point
 class Utilities:
     @overload
     @staticmethod

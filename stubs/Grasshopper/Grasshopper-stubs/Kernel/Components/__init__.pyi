@@ -1,7 +1,5 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 
 
@@ -11,6 +9,8 @@ class BufferMode(Enum):
     Delay = 2
 
 
+from System import Guid
+from System import DateTime
 class GH_CleanComponentUpgrader:
     @overload
     def __init__(self): ...
@@ -32,8 +32,20 @@ class GH_CleanComponentUpgrader:
     def Upgrade(self, target: IGH_DocumentObject, document: GH_Document) -> IGH_DocumentObject: ...
 
 
+from System import Guid
+from System.Collections.Generic import IList
+from System.Windows.Forms import ToolStripDropDown
+from System import TimeSpan
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
+from System.Collections.Generic import IEnumerable
 class GH_CleanTreeComponent(GH_Component):
     @overload
     def __init__(self): ...
@@ -275,8 +287,20 @@ class GH_CleanTreeComponent(GH_Component):
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
+from System.Collections.Generic import IList
+from System.Windows.Forms import ToolStripDropDown
+from System import TimeSpan
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
+from System.Collections.Generic import IEnumerable
 class GH_CleanTreeComponent_OBSOLETE(GH_Component):
     @overload
     def __init__(self): ...
@@ -508,8 +532,20 @@ class GH_CleanTreeComponent_OBSOLETE(GH_Component):
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
+from System.Collections.Generic import IList
+from System.Windows.Forms import ToolStripDropDown
+from System import TimeSpan
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
+from System.Collections.Generic import IEnumerable
 class GH_CleanTreeComponent_OSBOLETE_AS_WELL(GH_Component):
     @overload
     def __init__(self): ...
@@ -741,8 +777,20 @@ class GH_CleanTreeComponent_OSBOLETE_AS_WELL(GH_Component):
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
+from System.Collections.Generic import IList
+from System.Windows.Forms import ToolStripDropDown
+from System import TimeSpan
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
+from System.Collections.Generic import IEnumerable
 class GH_CurvatureGraphComponent(GH_Component):
     @overload
     def __init__(self): ...
@@ -974,8 +1022,20 @@ class GH_CurvatureGraphComponent(GH_Component):
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
+from System.Collections.Generic import IEnumerable
+from Rhino.Geometry import BoundingBox
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from Rhino import RhinoDoc
+from Rhino.DocObjects import ObjectAttributes
+from System.Collections.Generic import List
+from System.Collections.Generic import IList
+from System.Windows.Forms import ToolStripDropDown
+from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
 class GH_CustomPreviewComponent(GH_Component):
     @overload
     def __init__(self): ...
@@ -1219,7 +1279,12 @@ class GH_CustomPreviewComponent(GH_Component):
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from Rhino import RhinoDoc
+from Rhino.DocObjects import ObjectAttributes
+from System import Guid
 from ..Types import GH_Material
+from System.Drawing import Color
+from Rhino.Display import DisplayMaterial
 class GH_CustomPreviewItem:
     Geometry: IGH_PreviewData
     Material: GH_Material
@@ -1242,8 +1307,15 @@ class GH_CustomPreviewItem:
 from ...GUI.Canvas import GH_Canvas
 from ...GUI import GH_CanvasMouseEvent
 from ...GUI.Canvas import GH_ObjectResponse
+from System.Drawing import PointF
 from ...GUI import GH_TooltipDisplayEventArgs
+from System.Collections.Generic import List
+from System.Drawing import RectangleF
+from System import Guid
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from ...GUI.Canvas import GH_CanvasChannel
+from System.Windows.Forms import KeyEventArgs
 from ..Attributes import GH_ComponentAttributes
 class GH_DataDamAttributes(GH_ComponentAttributes):
     @overload
@@ -1340,8 +1412,20 @@ class GH_DataDamAttributes(GH_ComponentAttributes):
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
+from System.Windows.Forms import ToolStripDropDown
+from System import TimeSpan
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import IList
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
+from System.Collections.Generic import IEnumerable
 class GH_DataDamComponent(GH_Component):
     @overload
     def __init__(self): ...
@@ -1593,8 +1677,20 @@ class GH_DataDamComponent(GH_Component):
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
+from System.Collections.Generic import IList
+from System.Windows.Forms import ToolStripDropDown
+from System import TimeSpan
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
+from System.Collections.Generic import IEnumerable
 class GH_DocExampleComponent(GH_Component):
     @overload
     def __init__(self): ...
@@ -1826,8 +1922,20 @@ class GH_DocExampleComponent(GH_Component):
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
+from System.Collections.Generic import IList
+from System.Windows.Forms import ToolStripDropDown
+from System import TimeSpan
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
+from System.Collections.Generic import IEnumerable
 class GH_ExplodeTreeComponent(GH_Component):
     @overload
     def __init__(self): ...
@@ -2069,9 +2177,21 @@ class GH_ExplodeTreeComponent(GH_Component):
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
 from ...GUI import GH_VariableParameterManager
+from System.Collections.Generic import IList
+from System.Windows.Forms import ToolStripDropDown
+from System import TimeSpan
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
+from System.Collections.Generic import IEnumerable
 class GH_ExplodeTreeComponent_OBSOLETE(GH_Component):
     @overload
     def __init__(self): ...
@@ -2315,6 +2435,8 @@ class GH_ExplodeTreeComponent_OBSOLETE(GH_Component):
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
+from System import DateTime
 class GH_FlattenComponentUpgrader:
     @overload
     def __init__(self): ...
@@ -2336,8 +2458,20 @@ class GH_FlattenComponentUpgrader:
     def Upgrade(self, target: IGH_DocumentObject, document: GH_Document) -> IGH_DocumentObject: ...
 
 
+from System import Guid
+from System.Collections.Generic import IList
+from System.Windows.Forms import ToolStripDropDown
+from System import TimeSpan
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
+from System.Collections.Generic import IEnumerable
 class GH_FlattenTreeComponent(GH_Component):
     @overload
     def __init__(self): ...
@@ -2569,8 +2703,20 @@ class GH_FlattenTreeComponent(GH_Component):
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
+from System.Collections.Generic import IList
+from System.Windows.Forms import ToolStripDropDown
+from System import TimeSpan
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
+from System.Collections.Generic import IEnumerable
 class GH_FlattenTreeComponent_OBSOLETE(GH_Component):
     @overload
     def __init__(self): ...
@@ -2802,8 +2948,20 @@ class GH_FlattenTreeComponent_OBSOLETE(GH_Component):
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
+from System.Collections.Generic import IList
+from System.Windows.Forms import ToolStripDropDown
+from System import TimeSpan
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
+from System.Collections.Generic import IEnumerable
 class GH_FlipDataMatrixComponent(GH_Component):
     @overload
     def __init__(self): ...
@@ -3035,8 +3193,20 @@ class GH_FlipDataMatrixComponent(GH_Component):
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import IList
+from System.Windows.Forms import ToolStripDropDown
+from System import TimeSpan
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
+from System.Collections.Generic import IEnumerable
 class GH_GraftTreeComponent(GH_Component):
     @overload
     def __init__(self): ...
@@ -3268,8 +3438,20 @@ class GH_GraftTreeComponent(GH_Component):
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
+from System.Collections.Generic import IList
+from System.Windows.Forms import ToolStripDropDown
+from System import TimeSpan
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
+from System.Collections.Generic import IEnumerable
 class GH_GraftTreeComponent_OBSOLETE(GH_Component):
     @overload
     def __init__(self): ...
@@ -3501,6 +3683,9 @@ class GH_GraftTreeComponent_OBSOLETE(GH_Component):
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System.Drawing import Bitmap
+from System import Guid
+from System.Reflection import Assembly
 class GH_GrasshopperLibraryInfo(GH_AssemblyInfo):
     @overload
     def __init__(self): ...
@@ -3548,8 +3733,20 @@ class GH_GrasshopperLibraryInfo(GH_AssemblyInfo):
     def ToString(self) -> str: ...
 
 
+from System import Guid
+from System.Collections.Generic import IList
+from System.Windows.Forms import ToolStripDropDown
+from System import TimeSpan
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
+from System.Collections.Generic import IEnumerable
 class GH_GroupGeometryComponent(GH_Component):
     @overload
     def __init__(self): ...
@@ -3781,8 +3978,20 @@ class GH_GroupGeometryComponent(GH_Component):
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
+from System.Collections.Generic import IList
+from System.Windows.Forms import ToolStripDropDown
+from System import TimeSpan
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
+from System.Collections.Generic import IEnumerable
 class GH_IsNullDataComponent_OBSOLETE(GH_Component):
     @overload
     def __init__(self): ...
@@ -4014,8 +4223,20 @@ class GH_IsNullDataComponent_OBSOLETE(GH_Component):
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
+from System.Collections.Generic import IList
+from System.Windows.Forms import ToolStripDropDown
+from System import TimeSpan
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
+from System.Collections.Generic import IEnumerable
 class GH_MatchTreeComponent(GH_Component):
     @overload
     def __init__(self): ...
@@ -4247,8 +4468,20 @@ class GH_MatchTreeComponent(GH_Component):
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
+from System.Collections.Generic import IList
+from System.Windows.Forms import ToolStripDropDown
+from System import TimeSpan
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
+from System.Collections.Generic import IEnumerable
 class GH_MergeGroupComponent(GH_Component):
     @overload
     def __init__(self): ...
@@ -4480,8 +4713,22 @@ class GH_MergeGroupComponent(GH_Component):
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
+from GH_Util.MetaBall import GH_Context
+from Rhino.Geometry import Plane
+from System.Collections.Generic import IList
+from System.Windows.Forms import ToolStripDropDown
+from System import TimeSpan
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
+from System.Collections.Generic import IEnumerable
 class GH_MetaBallComponent(GH_Component):
     @overload
     def __init__(self): ...
@@ -4716,8 +4963,20 @@ class GH_MetaBallComponent(GH_Component):
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
+from System.Collections.Generic import IList
+from System.Windows.Forms import ToolStripDropDown
+from System import TimeSpan
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
+from System.Collections.Generic import IEnumerable
 class GH_MetaBallComponentThreshold(GH_Component):
     @overload
     def __init__(self): ...
@@ -4949,8 +5208,20 @@ class GH_MetaBallComponentThreshold(GH_Component):
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
+from System.Collections.Generic import IList
+from System.Windows.Forms import ToolStripDropDown
+from System import TimeSpan
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
+from System.Collections.Generic import IEnumerable
 class GH_MetaBallComponentThresholdEx(GH_Component):
     @overload
     def __init__(self): ...
@@ -5182,8 +5453,20 @@ class GH_MetaBallComponentThresholdEx(GH_Component):
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
+from System.Collections.Generic import IList
+from System.Windows.Forms import ToolStripDropDown
+from System import TimeSpan
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
+from System.Collections.Generic import IEnumerable
 class GH_NamedGroupComponent(GH_Component):
     @overload
     def __init__(self): ...
@@ -5415,8 +5698,20 @@ class GH_NamedGroupComponent(GH_Component):
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
+from System.Collections.Generic import IList
+from System.Windows.Forms import ToolStripDropDown
+from System import TimeSpan
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
+from System.Collections.Generic import IEnumerable
 class GH_PathCompareComponent(GH_Component):
     @overload
     def __init__(self): ...
@@ -5648,8 +5943,20 @@ class GH_PathCompareComponent(GH_Component):
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from Rhino.DocObjects import ObjectAttributes
+from System.Collections.Generic import List
+from System.Collections.Generic import IList
+from System.Windows.Forms import ToolStripDropDown
+from System import TimeSpan
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
+from System.Collections.Generic import IEnumerable
 class GH_PointListComponent(GH_Component):
     @overload
     def __init__(self): ...
@@ -5881,8 +6188,20 @@ class GH_PointListComponent(GH_Component):
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
+from System.Collections.Generic import IList
+from System.Windows.Forms import ToolStripDropDown
+from System import TimeSpan
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
+from System.Collections.Generic import IEnumerable
 class GH_PruneTreeComponent(GH_Component):
     @overload
     def __init__(self): ...
@@ -6114,8 +6433,21 @@ class GH_PruneTreeComponent(GH_Component):
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
+from System import EventArgs
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import IList
+from System.Windows.Forms import ToolStripDropDown
+from System import TimeSpan
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
+from System.Collections.Generic import IEnumerable
 class GH_ReadFileComponent(GH_Component):
     @overload
     def __init__(self): ...
@@ -6367,8 +6699,15 @@ class GH_ReadFileComponent(GH_Component):
 from ...GUI.Canvas import GH_Canvas
 from ...GUI import GH_CanvasMouseEvent
 from ...GUI.Canvas import GH_ObjectResponse
+from System.Collections.Generic import List
+from System.Drawing import RectangleF
+from System.Drawing import PointF
 from ...GUI import GH_TooltipDisplayEventArgs
+from System import Guid
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from ...GUI.Canvas import GH_CanvasChannel
+from System.Windows.Forms import KeyEventArgs
 from ..Attributes import GH_ComponentAttributes
 class GH_ReadFileComponentAttributes(GH_ComponentAttributes):
     @overload
@@ -6465,8 +6804,20 @@ class GH_ReadFileComponentAttributes(GH_ComponentAttributes):
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
+from System.Collections.Generic import IList
+from System.Windows.Forms import ToolStripDropDown
+from System import TimeSpan
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
+from System.Collections.Generic import IEnumerable
 class GH_ReplacePathComponent(GH_Component):
     @overload
     def __init__(self): ...
@@ -6698,8 +7049,20 @@ class GH_ReplacePathComponent(GH_Component):
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
+from System.Collections.Generic import IList
+from System.Windows.Forms import ToolStripDropDown
+from System import TimeSpan
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
+from System.Collections.Generic import IEnumerable
 class GH_ShiftDataPathComponent(GH_Component):
     @overload
     def __init__(self): ...
@@ -6931,6 +7294,8 @@ class GH_ShiftDataPathComponent(GH_Component):
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
+from System import DateTime
 class GH_SimplifyComponentUpgrader:
     @overload
     def __init__(self): ...
@@ -6952,8 +7317,20 @@ class GH_SimplifyComponentUpgrader:
     def Upgrade(self, target: IGH_DocumentObject, document: GH_Document) -> IGH_DocumentObject: ...
 
 
+from System import Guid
+from System.Collections.Generic import IList
+from System.Windows.Forms import ToolStripDropDown
+from System import TimeSpan
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
+from System.Collections.Generic import IEnumerable
 class GH_SimplifyTreeComponent(GH_Component):
     @overload
     def __init__(self): ...
@@ -7185,8 +7562,20 @@ class GH_SimplifyTreeComponent(GH_Component):
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
+from System.Collections.Generic import IList
+from System.Windows.Forms import ToolStripDropDown
+from System import TimeSpan
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
+from System.Collections.Generic import IEnumerable
 class GH_SimplifyTreeComponent_OBSOLETE(GH_Component):
     @overload
     def __init__(self): ...
@@ -7418,8 +7807,20 @@ class GH_SimplifyTreeComponent_OBSOLETE(GH_Component):
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import IList
+from System.Windows.Forms import ToolStripDropDown
+from System import TimeSpan
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
+from System.Collections.Generic import IEnumerable
 class GH_SmoothNumbersComponent(GH_Component):
     @overload
     def __init__(self): ...
@@ -7651,8 +8052,20 @@ class GH_SmoothNumbersComponent(GH_Component):
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
+from System.Collections.Generic import IList
+from System.Windows.Forms import ToolStripDropDown
+from System import TimeSpan
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
+from System.Collections.Generic import IEnumerable
 class GH_SplitGroupComponent(GH_Component):
     @overload
     def __init__(self): ...
@@ -7884,8 +8297,20 @@ class GH_SplitGroupComponent(GH_Component):
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
+from System.Collections.Generic import IList
+from System.Windows.Forms import ToolStripDropDown
+from System import TimeSpan
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
+from System.Collections.Generic import IEnumerable
 class GH_StreamFilterComponent(GH_Component):
     @overload
     def __init__(self): ...
@@ -8127,9 +8552,21 @@ class GH_StreamFilterComponent(GH_Component):
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
 from ...GUI import GH_VariableParameterManager
+from System.Collections.Generic import IList
+from System.Windows.Forms import ToolStripDropDown
+from System import TimeSpan
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
+from System.Collections.Generic import IEnumerable
 class GH_StreamFilterComponent_OBSOLETE(GH_Component):
     @overload
     def __init__(self): ...
@@ -8373,8 +8810,20 @@ class GH_StreamFilterComponent_OBSOLETE(GH_Component):
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
+from System.Collections.Generic import IList
+from System.Windows.Forms import ToolStripDropDown
+from System import TimeSpan
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
+from System.Collections.Generic import IEnumerable
 class GH_StreamGateComponent(GH_Component):
     @overload
     def __init__(self): ...
@@ -8616,9 +9065,21 @@ class GH_StreamGateComponent(GH_Component):
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
 from ...GUI import GH_VariableParameterManager
+from System.Collections.Generic import IList
+from System.Windows.Forms import ToolStripDropDown
+from System import TimeSpan
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
+from System.Collections.Generic import IEnumerable
 class GH_StreamGateComponent_OBSOLETE(GH_Component):
     @overload
     def __init__(self): ...
@@ -8862,8 +9323,20 @@ class GH_StreamGateComponent_OBSOLETE(GH_Component):
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
+from Rhino.Geometry import BoundingBox
+from System import Guid
+from System.Collections.Generic import IList
+from System.Windows.Forms import ToolStripDropDown
+from System import TimeSpan
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
+from System.Collections.Generic import IEnumerable
 class GH_TextTag3DComponent(GH_Component):
     @overload
     def __init__(self): ...
@@ -9095,8 +9568,20 @@ class GH_TextTag3DComponent(GH_Component):
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.Geometry import BoundingBox
+from System import Guid
+from System.Collections.Generic import IList
+from System.Windows.Forms import ToolStripDropDown
+from System import TimeSpan
+from Rhino.DocObjects import ObjectAttributes
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
+from System.Collections.Generic import IEnumerable
 class GH_TextTag3DComponent_OBSOLETE(GH_Component):
     @overload
     def __init__(self): ...
@@ -9328,8 +9813,20 @@ class GH_TextTag3DComponent_OBSOLETE(GH_Component):
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
+from Rhino.Geometry import BoundingBox
+from System import Guid
+from System.Collections.Generic import IList
+from System.Windows.Forms import ToolStripDropDown
+from System import TimeSpan
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
+from System.Collections.Generic import IEnumerable
 class GH_TextTag3DComponent_OBSOLETE_AS_WELL(GH_Component):
     @overload
     def __init__(self): ...
@@ -9561,6 +10058,8 @@ class GH_TextTag3DComponent_OBSOLETE_AS_WELL(GH_Component):
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
+from System import DateTime
 class GH_TextTag3DUpgrader:
     @overload
     def __init__(self): ...
@@ -9582,8 +10081,20 @@ class GH_TextTag3DUpgrader:
     def Upgrade(self, target: IGH_DocumentObject, document: GH_Document) -> IGH_DocumentObject: ...
 
 
+from System import Guid
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
+from Rhino.Geometry import BoundingBox
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import IList
+from System.Windows.Forms import ToolStripDropDown
+from System import TimeSpan
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
+from System.Collections.Generic import IEnumerable
 class GH_TextTagComponent(GH_Component):
     @overload
     def __init__(self): ...
@@ -9819,8 +10330,20 @@ class GH_TextTagComponent(GH_Component):
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.Geometry import BoundingBox
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
+from System.Collections.Generic import IList
+from System.Windows.Forms import ToolStripDropDown
+from System import TimeSpan
+from Rhino.DocObjects import ObjectAttributes
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
+from System.Collections.Generic import IEnumerable
 class GH_TextTagComponent_OBSOLETE(GH_Component):
     @overload
     def __init__(self): ...
@@ -10056,8 +10579,20 @@ class GH_TextTagComponent_OBSOLETE(GH_Component):
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
+from System.Collections.Generic import IList
+from System.Windows.Forms import ToolStripDropDown
+from System import TimeSpan
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
+from System.Collections.Generic import IEnumerable
 class GH_TreeSplitComponent(GH_Component):
     @overload
     def __init__(self): ...
@@ -10289,8 +10824,20 @@ class GH_TreeSplitComponent(GH_Component):
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
+from System.Collections.Generic import IList
+from System.Windows.Forms import ToolStripDropDown
+from System import TimeSpan
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
+from System.Collections.Generic import IEnumerable
 class GH_TrimTreeComponent(GH_Component):
     @overload
     def __init__(self): ...
@@ -10522,8 +11069,20 @@ class GH_TrimTreeComponent(GH_Component):
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
+from System.Collections.Generic import IList
+from System.Windows.Forms import ToolStripDropDown
+from System import TimeSpan
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
+from System.Collections.Generic import IEnumerable
 class GH_UnflattenTreeComponent(GH_Component):
     @overload
     def __init__(self): ...
@@ -10755,8 +11314,20 @@ class GH_UnflattenTreeComponent(GH_Component):
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
+from System.Collections.Generic import IList
+from System.Windows.Forms import ToolStripDropDown
+from System import TimeSpan
+from Rhino.Geometry import BoundingBox
+from Rhino import RhinoDoc
+from System.Collections.Generic import List
+from Rhino.DocObjects import ObjectAttributes
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from ..Undo import IGH_UndoAction
 from ..Undo import GH_UndoRecord
+from System.Drawing import Bitmap
+from System.Collections.Generic import IEnumerable
 class GH_UngroupGeometryComponent(GH_Component):
     @overload
     def __init__(self): ...
@@ -10988,6 +11559,8 @@ class GH_UngroupGeometryComponent(GH_Component):
     def WriteFull(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Guid
+from System import DateTime
 class GH_UpgradeExplodeComponent:
     @overload
     def __init__(self): ...
@@ -11009,6 +11582,8 @@ class GH_UpgradeExplodeComponent:
     def Upgrade(self, target: IGH_DocumentObject, document: GH_Document) -> IGH_DocumentObject: ...
 
 
+from System import Guid
+from System import DateTime
 class Upgrade_StreamGateComponent:
     @overload
     def __init__(self): ...

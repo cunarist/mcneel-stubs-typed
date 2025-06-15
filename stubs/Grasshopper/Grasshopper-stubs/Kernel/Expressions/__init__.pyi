@@ -1,7 +1,5 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 
 
@@ -27,6 +25,7 @@ class GH_CharType(Enum):
     commentbody = 62
 
 
+from System.Collections.Generic import List
 class GH_CodeString:
     @overload
     def __init__(self, input: str): ...
@@ -77,8 +76,15 @@ class GH_CodeStringSegment:
     def ToString(self) -> str: ...
 
 
+from System.Windows.Forms import IWin32Window
 from ..Types import Complex
+from Rhino.Geometry import Vector3d
+from Rhino.Geometry import Point3d
+from Rhino.Geometry import Plane
 from ..Types import IGH_Goo
+from System.Collections.Generic import SortedDictionary
+from System.Collections.Generic import Queue
+from System import Char
 class GH_ExpressionParser:
     @overload
     def __init__(self): ...
@@ -142,6 +148,16 @@ class GH_ExpressionParser:
     def ToString(self) -> str: ...
 
 
+from System import Char
+from System.Collections.Generic import IEnumerable
+from System.Collections.ObjectModel import ReadOnlyCollection
+from System.Collections.Generic import IComparer
+from System import Predicate
+from System.Collections.Generic import List
+from System import Action
+from System.Collections.Generic import Enumerator
+from System import Comparison
+from System import Converter
 class GH_ExpressionString:
     @overload
     def __init__(self, in_: str): ...
@@ -300,6 +316,7 @@ class GH_OperatorType(Enum):
     Binary = 2
 
 
+from System import Char
 class GH_ParserOperator:
     @overload
     def __init__(self, name: str, symbol: Char, precedence: GH_ParserPrecedence, type: GH_OperatorType, description: str): ...
@@ -360,6 +377,10 @@ class GH_ParserTokenClass(Enum):
     Punctuation = 6
 
 
+from System import DateTime
+from Rhino.Geometry import Point3d
+from Rhino.Geometry import Vector3d
+from Rhino.Geometry import Plane
 class GH_ScriptVariant:
     @overload
     def __init__(self): ...
@@ -504,6 +525,12 @@ class GH_ScriptVariantType(Enum):
     object = 20
 
 
+from System.Collections.Generic import List
+from System.Collections import IDictionary
+from System import Exception
+from System.Reflection import MethodBase
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 class GH_SignatureException:
     @overload
     def __init__(self, args: List, name: str): ...
@@ -543,6 +570,11 @@ class GH_SignatureException:
     def ToString(self) -> str: ...
 
 
+from System.Collections import IDictionary
+from System import Exception
+from System.Reflection import MethodBase
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 class GH_SolverException:
     @overload
     def __init__(self, nMessage: str): ...
@@ -582,6 +614,11 @@ class GH_SolverException:
     def ToString(self) -> str: ...
 
 
+from System.Collections import IDictionary
+from System import Exception
+from System.Reflection import MethodBase
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 class GH_SyntaxException:
     @overload
     def __init__(self, nMessage: str): ...
@@ -622,6 +659,9 @@ class GH_SyntaxException:
 
 
 from ..Types import Complex
+from Rhino.Geometry import Point3d
+from Rhino.Geometry import Vector3d
+from Rhino.Geometry import Plane
 from ..Types import IGH_Goo
 class GH_Variant:
     @overload

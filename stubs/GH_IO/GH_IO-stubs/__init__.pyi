@@ -1,7 +1,5 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 import Serialization
 import Types
@@ -27,6 +25,8 @@ class GH_ISerializable:
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import DateTime
+from System import Version
 class VersionNumber:
     @overload
     def __init__(self, version: Version): ...

@@ -1,13 +1,15 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 import Params
 
 __all__ = ['Params']
 
 
+from Rhino.Geometry import Point2d
+from Rhino.Geometry import Vector2d
+from System.Collections.Generic import IReadOnlyList
+from Rhino.DocObjects import HatchLine
 class Attributes:
     @overload
     def Equals(self, other: object) -> bool: ...
@@ -42,6 +44,7 @@ class Attributes:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import IReadOnlyList
 class Attributes:
     @overload
     def __init__(self): ...
@@ -91,6 +94,8 @@ class Attributes:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import IReadOnlyList
+from System import Nullable
 class Attributes:
     @overload
     def __init__(self): ...
@@ -160,6 +165,7 @@ class Attributes:
     def ToString(self) -> str: ...
 
 
+from System import Nullable
 class Attributes:
     @overload
     def Equals(self, other: object) -> bool: ...
@@ -193,6 +199,10 @@ class Attributes:
     def ToString(self) -> str: ...
 
 
+from Rhino.DocObjects import HatchLine
+from Rhino.Geometry import Point2d
+from Rhino.Geometry import Vector2d
+from System.Collections.Generic import IReadOnlyList
 class ModelHatchLine(ModelValue):
     @overload
     def __init__(self): ...
@@ -241,6 +251,10 @@ class ModelHatchLine(ModelValue):
     def ToString(self) -> str: ...
 
 
+from Rhino.DocObjects import HatchPattern
+from System import Guid
+from System.Collections.Generic import IReadOnlyList
+from System import Nullable
 class ModelHatchPattern(ModelComponentContent):
     @overload
     def __init__(self): ...
@@ -313,6 +327,10 @@ class ModelHatchPattern(ModelComponentContent):
     def ToString(self) -> str: ...
 
 
+from Rhino.DocObjects import Linetype
+from System import Guid
+from System.Collections.Generic import IReadOnlyList
+from System import Nullable
 class ModelLinetype(ModelComponentContent):
     @overload
     def __init__(self): ...
@@ -399,6 +417,13 @@ from ...Kernel.Types import T
 from ...Kernel.Types import GH_QuickCastType
 from ...Kernel.Types import IGH_QuickCast
 from ...Kernel.Types import Complex
+from Rhino.Geometry import Matrix
+from Rhino.Geometry import Point3d
+from Rhino.Geometry import Vector3d
+from System.Drawing import Color
+from Rhino.Geometry import Interval
+from GH_IO.Serialization import GH_IWriter
+from GH_IO.Serialization import GH_IReader
 from ...Kernel.Types import IGH_GooProxy
 from ...Kernel.Types import GH_Number
 class ModelLineWidth(GH_Number):
@@ -474,6 +499,7 @@ class ModelLineWidth(GH_Number):
     def Write(self, writer: GH_IWriter) -> bool: ...
 
 
+from System import Nullable
 class ObjectDrafting(ModelValue):
     @overload
     def __init__(self): ...
@@ -520,6 +546,8 @@ class ObjectDrafting(ModelValue):
     def ToString(self) -> str: ...
 
 
+from Rhino.DocObjects import ObjectPlotColorSource
+from System import Nullable
 class ObjectDraftingColor(ModelValue):
     @overload
     def __init__(self): ...
@@ -560,6 +588,7 @@ class ObjectDraftingColor(ModelValue):
     def ToString(self) -> str: ...
 
 
+from Rhino.DocObjects import ObjectLinetypeSource
 class ObjectDraftingLinetype(ModelValue):
     @overload
     def __init__(self): ...
@@ -598,6 +627,8 @@ class ObjectDraftingLinetype(ModelValue):
     def ToString(self) -> str: ...
 
 
+from Rhino.DocObjects import ObjectPlotWeightSource
+from System import Nullable
 class ObjectDraftingLineWidth(ModelValue):
     @overload
     def __init__(self): ...
@@ -638,6 +669,7 @@ class ObjectDraftingLineWidth(ModelValue):
     def ToString(self) -> str: ...
 
 
+from Rhino.DocObjects import ObjectPlotColorSource
 class Value:
     @overload
     def __init__(self, source: ObjectPlotColorSource): ...
@@ -681,6 +713,7 @@ class Value:
     def ToString(self) -> str: ...
 
 
+from Rhino.DocObjects import ObjectLinetypeSource
 class Value:
     @overload
     def __init__(self, source: ObjectLinetypeSource): ...
@@ -724,6 +757,7 @@ class Value:
     def ToString(self) -> str: ...
 
 
+from Rhino.DocObjects import ObjectPlotWeightSource
 class Value:
     @overload
     def __init__(self, source: ObjectPlotWeightSource): ...

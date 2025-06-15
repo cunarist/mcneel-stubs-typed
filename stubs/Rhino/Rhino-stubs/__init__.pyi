@@ -1,7 +1,5 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 import ApplicationSettings
 import Collections
@@ -38,6 +36,7 @@ class AntialiasLevel(Enum):
     High = 3
 
 
+from System.Drawing import Bitmap
 from .FileIO import FileReference
 class BitmapExtensions:
     @overload
@@ -59,6 +58,12 @@ class BitmapExtensions:
     def ToString(self) -> str: ...
 
 
+from System.Text import Encoding
+from System import Char
+from System import IFormatProvider
+from System import Decimal
+from System.Threading.Tasks import Task
+from System.Runtime.Remoting import ObjRef
 class CommandLineTextWriter:
     @overload
     def __init__(self): ...
@@ -184,6 +189,7 @@ class CommandLineTextWriter:
     def WriteLineAsync(self, buffer: Iterable[Char], index: int, count: int) -> Task: ...
 
 
+from System.Collections.Generic import List
 class DisplayDeviceInfo:
     @overload
     def __init__(self): ...
@@ -289,6 +295,7 @@ class GpuDeviceInfo:
 
 
 
+from System.Collections.Generic import IEnumerator
 class IndexPair:
     @overload
     def __init__(self, i: int, j: int): ...
@@ -332,6 +339,12 @@ class IRhinoDocObserver:
     def RhinoDocClosed(self, e: RhinoDocObserverArgs) -> None: ...
 
 
+from System import IntPtr
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class KeyboardHookEvent:
     @overload
     def __init__(self, object: object, method: IntPtr): ...
@@ -408,7 +421,18 @@ class LengthValue:
     def ToString(self) -> str: ...
 
 
+from System.Drawing import Point
+from System.Collections.Generic import IEnumerable
 from .Geometry import Point3d
+from System.Drawing import Size
+from System.Drawing import Rectangle
+from System import Char
+from System import DateTime
+from System.Drawing import Color
+from System import Guid
+from System import Nullable
+from System.Collections.Generic import ICollection
+from System import EventHandler
 class PersistentSettings:
     @overload
     def AddChild(self, key: str) -> PersistentSettings: ...
@@ -851,6 +875,7 @@ class RenderContentTableEventType(Enum):
     MaterialAssignmentChanged = 3
 
 
+from System import Guid
 class RenderMaterialAssignmentChangedEventArgs:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -878,13 +903,23 @@ class RenderMaterialAssignmentChangedEventArgs:
     def ToString(self) -> str: ...
 
 
+from System import EventHandler
 from .UI import ToolbarFileCollection
 from .DocObjects import Font
 from .DocObjects import RhinoObject
 from .DocObjects import InstanceObject
+from System import DateTime
+from System import Version
 from .ApplicationSettings import LicenseNode
 from .ApplicationSettings import Installation
+from System.IO import DirectoryInfo
+from System import Guid
 from .Commands import Result
+from System import Delegate
+from System import Action
+from System import IntPtr
+from System.Windows.Forms import IWin32Window
+from System.Drawing import Image
 class RhinoApp:
     @overload
     @staticmethod
@@ -1244,6 +1279,7 @@ class RhinoApp:
     def WriteLine(format: str, arg0: object, arg1: object, arg2: object) -> None: ...
 
 
+from System import EventHandler
 from .DocObjects.Tables import ViewTable
 from .DocObjects.Tables import ObjectTable
 from .FileIO import ManifestTable
@@ -1270,7 +1306,9 @@ from .Render import RenderEnvironmentTable
 from .Render import RenderTextureTable
 from .Render import ICurrentEnvironment
 from .Render.PostEffects import IPostEffects
+from System.Collections.Generic import IEnumerable
 from .DocObjects import ViewportInfo
+from System import Guid
 from .Geometry import MeshType
 from .Render.CustomRenderMeshes import Flags
 from .PlugIns import PlugIn
@@ -1278,11 +1316,13 @@ from .Display import DisplayPipelineAttributes
 from .Geometry import BoundingBox
 from .Render import GroundPlane
 from .FileIO import TextLog
+from System.Drawing import Bitmap
 from .Render import RenderContentCollection
 from .Render import RenderPrimitiveList
 from .FileIO import FileReadOptions
 from .Collections import ArchivableDictionary
 from .FileIO import FileWriteOptions
+from System import DateTime
 from .Geometry import Plane
 from .Geometry import Point3d
 from .Geometry import SubDComponentLocation
@@ -1291,6 +1331,7 @@ from .DocObjects import ActiveSpace
 from .DocObjects import EarthAnchorPoint
 from .Render import RenderSettings
 from .DocObjects import AnimationProperties
+from System.Collections.Generic import List
 from .Geometry import MeshingParameterStyle
 from .Geometry import MeshingParameters
 from .DocObjects import Worksession
@@ -1974,6 +2015,8 @@ class RhinoMath:
     def Wrap(value: float, bound1: float, bound2: float) -> float: ...
 
 
+from System import IntPtr
+from System import Delegate
 class RhinoWindow:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -2053,6 +2096,7 @@ class StringFormat(Enum):
     CleanImproperFraction = 5
 
 
+from System import Char
 class Symbols:
     @overload
     def Equals(self, obj: object) -> bool: ...

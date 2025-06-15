@@ -1,7 +1,5 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 import Controls
 import Gumball
@@ -20,8 +18,21 @@ class CursorStyle(Enum):
     CrosshairCopy = 7
 
 
+from System.Collections.Generic import IEnumerable
+from System.Drawing import Point
+from System import EventHandler
+from System.Windows.Forms import Form
+from System.Windows.Forms import DialogResult
+from System.Windows.Forms import MessageBoxButtons
+from System.Windows.Forms import MessageBoxIcon
+from System.Drawing import Color
+from System.Windows.Forms import IWin32Window
 from ..Display import Color4f
 from ..Render import Sun
+from System.Collections import IList
+from System import Guid
+from System.Collections.Generic import IList
+from System.Collections.Generic import List
 class Dialogs:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -141,9 +152,18 @@ class DistanceDisplayMode(Enum):
     FeetInches = 2
 
 
+from System.Drawing import Color
+from System.Drawing import Bitmap
+from System import IntPtr
+from System.Reflection import Assembly
+from System.Drawing import Icon
+from System.Drawing import Size
+from System.Drawing import Image
 from ..Geometry import Mesh
+from System.Collections.Generic import IEnumerable
 from ..Geometry import Curve
 from ..DocObjects import Linetype
+from System.Collections.Generic import List
 class DrawingUtilities:
     @overload
     @staticmethod
@@ -215,6 +235,7 @@ class FloatPanelMode(Enum):
     Toggle = 2
 
 
+from System.Drawing import Font
 class Fonts:
     @overload
     def __init__(self): ...
@@ -241,6 +262,7 @@ class Fonts:
     def ToString(self) -> str: ...
 
 
+from System.Drawing import Color
 class GetColorEventArgs:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -262,6 +284,8 @@ class GetColorEventArgs:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import IList
+from System import IntPtr
 from ..Display import Color4f
 class IDialogService:
     @overload
@@ -279,6 +303,7 @@ class IHelp:
     def HelpUrl(self) -> str: ...
 
 
+from System.Reflection import Assembly
 class ILocalizationService:
     @overload
     def LocalizeCommandName(self, assembly: Assembly, languageId: int, english: str) -> str: ...
@@ -299,6 +324,10 @@ class IPanel:
     def PanelShown(self, documentSerialNumber: int, reason: ShowPanelReason) -> None: ...
 
 
+from System import EventHandler
+from System import Guid
+from System.Drawing import Point
+from System.Drawing import Size
 class IPanelsService:
     @overload
     def CreateDockBar(self, options: object) -> bool: ...
@@ -328,6 +357,13 @@ class IPanelsService:
     def UnhookDeleteAndDestroyDockBar(self, id: Guid) -> bool: ...
 
 
+from System.Collections import IList
+from System.Collections.Generic import IList
+from System import Nullable
+from System import Guid
+from System.Collections.Generic import List
+from System.Reflection import Assembly
+from System.Drawing import Icon
 class IRhinoUiDialogService:
     @overload
     def DetectColorScheme(self) -> Tuple[bool, bool]: ...
@@ -363,6 +399,10 @@ class IRhinoUiDialogService:
     def ShowPropertyListBox(self, title: str, message: str, items: IList, values: Iterable[str]) -> Iterable[str]: ...
 
 
+from System.Drawing import Image
+from System import IntPtr
+from System.Drawing import Icon
+from System.Drawing import SizeF
 class IStackedDialogPageService:
     @overload
     def GetImageHandle(self, image: Image, canBeNull: bool) -> IntPtr: ...
@@ -605,6 +645,8 @@ class MouseCallback:
 
 
 from ..Display import RhinoView
+from System.Windows.Forms import MouseButtons
+from System.Drawing import Point
 from .Gumball import GumballMode
 class MouseCallbackEventArgs:
     @overload
@@ -652,6 +694,7 @@ class MouseCursor:
     def ToString(self) -> str: ...
 
 
+from System.Drawing import Color
 class NamedColor:
     @overload
     def __init__(self, name: str, color: Color): ...
@@ -669,6 +712,15 @@ class NamedColor:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import IEnumerable
+from System.Collections.ObjectModel import ReadOnlyCollection
+from System.Collections.Generic import IComparer
+from System import Predicate
+from System.Collections.Generic import List
+from System import Action
+from System.Collections.Generic import Enumerator
+from System import Comparison
+from System import Converter
 class NamedColorList:
     @overload
     def __init__(self, name: str): ...
@@ -793,8 +845,12 @@ class NamedColorList:
     def TrueForAll(self, match: Predicate) -> bool: ...
 
 
+from System.Drawing import Size
+from System.Drawing import Icon
 from ..DocObjects import ObjectType
+from System import IntPtr
 from ..DocObjects import RhinoObject
+from System import Action
 from ..Commands import Result
 class ObjectPropertiesPage:
     @overload
@@ -918,7 +974,13 @@ class ObjectPropertiesPageEventArgs:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
 from ..Display import Color4f
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class OnColorChangedEvent:
     @overload
     def __init__(self, object: object, method: IntPtr): ...
@@ -950,6 +1012,7 @@ class OnColorChangedEvent:
     def ToString(self) -> str: ...
 
 
+from System.Windows.Forms import DialogResult
 class OpenFileDialog:
     @overload
     def __init__(self): ...
@@ -999,6 +1062,10 @@ class OptionPageButtons(Enum):
 
 from ..Commands import RunMode
 from ..Commands import Result
+from System.Collections.Generic import List
+from System import IntPtr
+from System.Drawing import Image
+from System.Drawing import Color
 class OptionsDialogPage(StackedDialogPage):
     @overload
     def AddChildPage(self, pageToAdd: StackedDialogPage) -> None: ...
@@ -1073,6 +1140,7 @@ class PageType(Enum):
     DocumentProperties = 1
 
 
+from System import Guid
 class PanelEventArgs:
     @overload
     def __init__(self, panelId: Guid, documentSerialNumber: int): ...
@@ -1092,6 +1160,7 @@ class PanelEventArgs:
     def ToString(self) -> str: ...
 
 
+from System import Guid
 class PanelIds:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -1133,7 +1202,12 @@ class PanelIds:
     def ToString(self) -> str: ...
 
 
+from System import Guid
 from ..PlugIns import PlugIn
+from System.Drawing import Icon
+from System.Reflection import Assembly
+from System.Drawing import Size
+from System import EventHandler
 class Panels:
     @overload
     @staticmethod
@@ -1339,6 +1413,7 @@ class RhinoHelp:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
 class RhinoPageInterop:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -1374,6 +1449,8 @@ class RhinoPlotWidthValue(Enum):
     # None = -1
 
 
+from System import Guid
+from System import IntPtr
 class RuiUpdateUi:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -1419,6 +1496,7 @@ class RuiUpdateUi:
     def ToString(self) -> str: ...
 
 
+from System.Windows.Forms import DialogResult
 class SaveFileDialog:
     @overload
     def __init__(self): ...
@@ -1508,6 +1586,7 @@ class ShowMessageResult(Enum):
     No = 7
 
 
+from System import Guid
 class ShowPanelEventArgs(PanelEventArgs):
     @overload
     def __init__(self, panelId: Guid, documentSerialNumber: int, show: bool): ...
@@ -1543,6 +1622,10 @@ class Size(Enum):
     Title = 3
 
 
+from System.Collections.Generic import List
+from System import IntPtr
+from System.Drawing import Image
+from System.Drawing import Color
 class StackedDialogPage:
     @overload
     def AddChildPage(self, pageToAdd: StackedDialogPage) -> None: ...
@@ -1667,6 +1750,8 @@ class Style(Enum):
     Strikeout = 8
 
 
+from System import Guid
+from System.Drawing import Size
 class Toolbar:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -1690,6 +1775,7 @@ class Toolbar:
     def ToString(self) -> str: ...
 
 
+from System import Guid
 class ToolbarFile:
     @overload
     def Close(self, prompt: bool) -> bool: ...
@@ -1723,6 +1809,7 @@ class ToolbarFile:
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import IEnumerator
 class ToolbarFileCollection:
     def __iter__(self) -> Iterator[ToolbarFile]: ...
     @overload
@@ -1755,6 +1842,7 @@ class ToolbarFileCollection:
     def ToString(self) -> str: ...
 
 
+from System import Guid
 class ToolbarGroup:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -1776,6 +1864,12 @@ class ToolbarGroup:
     def ToString(self) -> str: ...
 
 
+from System import IntPtr
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class UpdateMenuItemEventHandler:
     @overload
     def __init__(self, object: object, method: IntPtr): ...

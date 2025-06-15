@@ -1,7 +1,5 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 
 
@@ -28,6 +26,11 @@ class AutocadVersion(Enum):
     Acad2018 = 2018
 
 
+from System.Collections import IDictionary
+from System import Exception
+from System.Reflection import MethodBase
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 class BinaryArchiveException:
     @overload
     def __init__(self, message: str): ...
@@ -100,6 +103,16 @@ class BinaryArchiveMode(Enum):
 
 
 from ..Collections import ArchivableDictionary
+from System import SByte
+from System import Guid
+from System.Drawing import Color
+from System.Drawing import Point
+from System.Drawing import PointF
+from System.Drawing import Rectangle
+from System.Drawing import RectangleF
+from System.Drawing import Size
+from System.Drawing import SizeF
+from System.Drawing import Font
 from ..DocObjects import ObjRef
 from ..Geometry import Interval
 from ..Geometry import Point2d
@@ -261,6 +274,17 @@ class BinaryArchiveReader:
 
 
 from ..Collections import ArchivableDictionary
+from System import SByte
+from System import Guid
+from System.Collections.Generic import IEnumerable
+from System.Drawing import Color
+from System.Drawing import Point
+from System.Drawing import PointF
+from System.Drawing import Rectangle
+from System.Drawing import RectangleF
+from System.Drawing import Size
+from System.Drawing import SizeF
+from System.Drawing import Font
 from ..DocObjects import ObjRef
 from ..Geometry import Interval
 from ..Geometry import Point2d
@@ -421,6 +445,7 @@ class ColorMethodType(Enum):
 
 
 
+from System import DateTime
 class ContentHash:
     @overload
     def Clone(self) -> ContentHash: ...
@@ -617,8 +642,12 @@ class ExportSurfaceMode(Enum):
     Meshes = 2
 
 
+from System import DateTime
 from ..DocObjects import EarthAnchorPoint
 from ..Geometry import GeometryBase
+from System.Collections.Generic import IEnumerable
+from System.Drawing import Bitmap
+from System.Collections.Generic import IList
 class File3dm:
     @overload
     def __init__(self): ...
@@ -831,6 +860,8 @@ class File3dmCurvePiping:
 
 from ..DocObjects import ModelComponentType
 from ..DocObjects import DimensionStyle
+from System.Collections.Generic import IEnumerator
+from System import Guid
 class File3dmDimStyleTable:
     def __iter__(self) -> Iterator[DimensionStyle]: ...
     def __getitem__(self, index: int) -> DimensionStyle: ...
@@ -869,6 +900,7 @@ class File3dmDimStyleTable:
     def ToString(self) -> str: ...
 
 
+from System import Guid
 class File3dmDisplacement:
     @overload
     def AddSubItem(self, face_index: int, on: bool, texture: Guid, mapping_channel: int, black_point: float, white_point: float) -> bool: ...
@@ -1004,9 +1036,12 @@ class File3dmEdgeSoftening:
 
 
 from ..DocObjects import ModelComponentType
+from System import Guid
 from ..Geometry import ComponentStatus
 from ..DocObjects.Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..DocObjects import ModelComponent
 class File3dmEmbeddedFile(ModelComponent):
     @overload
@@ -1107,6 +1142,7 @@ class File3dmEmbeddedFile(ModelComponent):
     def ToString(self) -> str: ...
 
 
+from System.Collections.Generic import IEnumerator
 class File3dmEmbeddedFiles:
     @overload
     def __init__(self, f: File3dm): ...
@@ -1127,6 +1163,8 @@ class File3dmEmbeddedFiles:
 
 from ..DocObjects import ModelComponentType
 from ..DocObjects import Group
+from System.Collections.Generic import IEnumerator
+from System import Guid
 class File3dmGroupTable:
     def __iter__(self) -> Iterator[Group]: ...
     def __getitem__(self, index: int) -> Group: ...
@@ -1171,6 +1209,8 @@ class File3dmGroupTable:
 
 from ..DocObjects import ModelComponentType
 from ..DocObjects import HatchPattern
+from System.Collections.Generic import IEnumerator
+from System import Guid
 class File3dmHatchPatternTable:
     def __iter__(self) -> Iterator[HatchPattern]: ...
     def __getitem__(self, index: int) -> HatchPattern: ...
@@ -1212,8 +1252,11 @@ class File3dmHatchPatternTable:
 from ..DocObjects import ModelComponentType
 from ..Geometry import InstanceDefinitionGeometry
 from ..Geometry import Point3d
+from System.Collections.Generic import IEnumerable
 from ..Geometry import GeometryBase
 from ..DocObjects import ObjectAttributes
+from System.Collections.Generic import IEnumerator
+from System import Guid
 class File3dmInstanceDefinitionTable:
     def __iter__(self) -> Iterator[InstanceDefinitionGeometry]: ...
     def __getitem__(self, index: int) -> InstanceDefinitionGeometry: ...
@@ -1261,7 +1304,10 @@ class File3dmInstanceDefinitionTable:
 
 
 from ..DocObjects import ModelComponentType
+from System.Drawing import Color
+from System import Guid
 from ..DocObjects import Layer
+from System.Collections.Generic import IEnumerator
 class File3dmLayerTable:
     def __iter__(self) -> Iterator[Layer]: ...
     def __getitem__(self, index: int) -> Layer: ...
@@ -1308,6 +1354,8 @@ class File3dmLayerTable:
 
 from ..DocObjects import ModelComponentType
 from ..DocObjects import Linetype
+from System.Collections.Generic import IEnumerator
+from System import Guid
 class File3dmLinetypeTable:
     def __iter__(self) -> Iterator[Linetype]: ...
     def __getitem__(self, index: int) -> Linetype: ...
@@ -1348,6 +1396,8 @@ class File3dmLinetypeTable:
 
 from ..DocObjects import ModelComponentType
 from ..DocObjects import Material
+from System.Collections.Generic import IEnumerator
+from System import Guid
 class File3dmMaterialTable:
     def __iter__(self) -> Iterator[Material]: ...
     def __getitem__(self, index: int) -> Material: ...
@@ -1407,6 +1457,7 @@ class File3dmMeshModifiers:
 
 from ..DocObjects import ConstructionPlane
 from ..Geometry import Plane
+from System.Collections.Generic import IEnumerator
 class File3dmNamedConstructionPlanes:
     def __iter__(self) -> Iterator[ConstructionPlane]: ...
     def __getitem__(self, index: int) -> ConstructionPlane: ...
@@ -1445,6 +1496,7 @@ class File3dmNamedConstructionPlanes:
     def ToString(self) -> str: ...
 
 
+from System.Drawing import Rectangle
 class File3dmNotes:
     @overload
     def __init__(self): ...
@@ -1477,11 +1529,15 @@ class File3dmNotes:
 from ..Geometry import GeometryBase
 from ..DocObjects import ObjectAttributes
 from ..DocObjects import ModelComponentType
+from System import Guid
+from System import Func
 from ..Geometry import Transform
 from ..Render import TextureMapping
 from ..Geometry import ComponentStatus
 from ..DocObjects.Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..DocObjects import ModelComponent
 class File3dmObject(ModelComponent):
     @overload
@@ -1592,8 +1648,10 @@ from ..DocObjects import Group
 from ..Geometry import BoundingBox
 from ..Geometry import GeometryBase
 from ..DocObjects import ObjectAttributes
+from System import Guid
 from ..Geometry import Point3d
 from ..Geometry import Point3f
+from System.Collections.Generic import IEnumerable
 from ..Geometry import PointCloud
 from ..Geometry import Plane
 from ..Geometry import LinearDimension
@@ -1617,6 +1675,7 @@ from ..Geometry import Mesh
 from ..Geometry import Brep
 from ..Geometry import Hatch
 from ..Geometry import SubD
+from System.Collections.Generic import IEnumerator
 class File3dmObjectTable:
     def __iter__(self) -> Iterator[File3dmObject]: ...
     def __getitem__(self, index: int) -> File3dmObject: ...
@@ -1807,6 +1866,7 @@ class File3dmObjectTable:
     def ToString(self) -> str: ...
 
 
+from System import Guid
 class File3dmPlugInData:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -1820,6 +1880,8 @@ class File3dmPlugInData:
     def ToString(self) -> str: ...
 
 
+from System import Func
+from System.Collections.Generic import IEnumerator
 class File3dmPlugInDataTable:
     def __iter__(self) -> Iterator[File3dmPlugInData]: ...
     @overload
@@ -1844,10 +1906,15 @@ class File3dmPlugInDataTable:
     def TryRead(self, pluginData: File3dmPlugInData, dataReader: Func) -> bool: ...
 
 
+from System import Guid
+from System import IConvertible
+from System.Collections.Generic import IEnumerable
 from ..DocObjects import ModelComponentType
 from ..Geometry import ComponentStatus
 from ..DocObjects.Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 from ..DocObjects import ModelComponent
 class File3dmRenderContent(ModelComponent):
     @overload
@@ -1991,10 +2058,15 @@ class File3dmRenderContent(ModelComponent):
 
 
 from ..DocObjects import Environment
+from System import Guid
+from System import IConvertible
+from System.Collections.Generic import IEnumerable
 from ..DocObjects import ModelComponentType
 from ..Geometry import ComponentStatus
 from ..DocObjects.Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 class File3dmRenderEnvironment(File3dmRenderContent):
     @overload
     def ChildSlotOn(self, child_slot_name: str) -> bool: ...
@@ -2138,6 +2210,8 @@ class File3dmRenderEnvironment(File3dmRenderContent):
     def XML(self, recursive: bool) -> str: ...
 
 
+from System.Collections.Generic import IEnumerator
+from System import Guid
 class File3dmRenderEnvironments:
     @overload
     def __init__(self, f: File3dm): ...
@@ -2157,10 +2231,15 @@ class File3dmRenderEnvironments:
 
 
 from ..DocObjects import Material
+from System import Guid
+from System import IConvertible
+from System.Collections.Generic import IEnumerable
 from ..DocObjects import ModelComponentType
 from ..Geometry import ComponentStatus
 from ..DocObjects.Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 class File3dmRenderMaterial(File3dmRenderContent):
     @overload
     def ChildSlotOn(self, child_slot_name: str) -> bool: ...
@@ -2304,6 +2383,8 @@ class File3dmRenderMaterial(File3dmRenderContent):
     def XML(self, recursive: bool) -> str: ...
 
 
+from System.Collections.Generic import IEnumerator
+from System import Guid
 class File3dmRenderMaterials:
     @overload
     def __init__(self, f: File3dm): ...
@@ -2323,10 +2404,15 @@ class File3dmRenderMaterials:
 
 
 from ..DocObjects import Texture
+from System import Guid
+from System import IConvertible
+from System.Collections.Generic import IEnumerable
 from ..DocObjects import ModelComponentType
 from ..Geometry import ComponentStatus
 from ..DocObjects.Custom import UserDataList
 from ..Collections import ArchivableDictionary
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
 class File3dmRenderTexture(File3dmRenderContent):
     @overload
     def ChildSlotOn(self, child_slot_name: str) -> bool: ...
@@ -2472,6 +2558,8 @@ class File3dmRenderTexture(File3dmRenderContent):
     def XML(self, recursive: bool) -> str: ...
 
 
+from System.Collections.Generic import IEnumerator
+from System import Guid
 class File3dmRenderTextures:
     @overload
     def __init__(self, f: File3dm): ...
@@ -2553,6 +2641,7 @@ class File3dmSettings:
     def ToString(self) -> str: ...
 
 
+from System import Guid
 class File3dmShutLining:
     @overload
     def AddCurve(self) -> Guid: ...
@@ -2888,6 +2977,7 @@ class File3dmTypeCodes:
 
 
 from ..DocObjects import ViewInfo
+from System.Collections.Generic import IEnumerator
 class File3dmViewTable:
     def __iter__(self) -> Iterator[ViewInfo]: ...
     def __getitem__(self, index: int) -> ViewInfo: ...
@@ -3050,6 +3140,7 @@ class File3mf:
     def Write(path: str, doc: RhinoDoc, options: File3mfWriteOptions) -> bool: ...
 
 
+from System.Collections.Generic import Dictionary
 from ..Collections import ArchivableDictionary
 class File3mfWriteOptions:
     @overload
@@ -4273,6 +4364,7 @@ class FileLwoWriteOptions:
 
 
 from ..PlugIns import WriteFileResult
+from System.IO import StreamWriter
 class FileObj:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -4496,10 +4588,15 @@ class FileObjWriteOptions:
     def ToString(self) -> str: ...
 
 
+from System import EventHandler
 from ..Display import ViewCaptureSettings
 from ..DocObjects import Font
+from System.Drawing import Color
 from ..DocObjects import TextHorizontalAlignment
 from ..DocObjects import TextVerticalAlignment
+from System.Drawing import PointF
+from System.Drawing import Bitmap
+from System.IO import Stream
 class FilePdf:
     @overload
     @staticmethod
@@ -4776,6 +4873,7 @@ class FileRawWriteOptions:
     def ToString(self) -> str: ...
 
 
+from System import Guid
 from ..Collections import ArchivableDictionary
 class FileReadOptions:
     @overload
@@ -5304,6 +5402,7 @@ class FileTxt:
     def Write(path: str, doc: RhinoDoc, options: FileTxtWriteOptions) -> bool: ...
 
 
+from System import Char
 from ..Collections import ArchivableDictionary
 class FileTxtReadOptions:
     @overload
@@ -5332,6 +5431,7 @@ class FileTxtReadOptions:
     def ToString(self) -> str: ...
 
 
+from System import Char
 from ..Collections import ArchivableDictionary
 class FileTxtWriteOptions:
     @overload
@@ -5843,8 +5943,10 @@ class ImportFillMode(Enum):
     AsTrimmedPlanes = 2
 
 
+from System import Guid
 from ..DocObjects import ModelComponent
 from ..DocObjects import ModelComponentType
+from System.Collections.Generic import IEnumerator
 class ManifestTable:
     def __iter__(self) -> Iterator[ModelComponent]: ...
     @overload
@@ -5923,6 +6025,7 @@ class MeshPrecisionMode(Enum):
     SinglePrecision = 2
 
 
+from System import Guid
 from ..DocObjects import ModelComponentType
 class NameHash:
     @overload
@@ -6080,6 +6183,8 @@ class SerializationOptions:
     def ToString(self) -> str: ...
 
 
+from System import Nullable
+from System.IO import Stream
 class SHA1OpenNURBS:
     @overload
     def __init__(self): ...
@@ -6201,6 +6306,7 @@ class TableTypeFilter(Enum):
     UserTable = 65536
 
 
+from System import IntPtr
 class TextLog:
     @overload
     def __init__(self): ...

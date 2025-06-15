@@ -1,11 +1,12 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 
 
+from System.Drawing import Image
+from System import DateTime
 from ...Geometry import Point2d
+from System.Drawing import Point
 class WorldMapDayNight:
     @overload
     def __init__(self): ...

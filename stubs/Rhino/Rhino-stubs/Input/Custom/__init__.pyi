@@ -1,10 +1,9 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 
 
+from System import Nullable
 class CommandLineOption:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -141,10 +140,14 @@ class GetArc:
 
 
 from ...Geometry import Point3d
+from System.Drawing import Color
 from ...UI import LocalizeStringPair
+from System.Collections.Generic import IEnumerable
 from ...Commands import Result
 from ...Geometry import Vector3d
 from ...Display import RhinoView
+from System.Drawing import Rectangle
+from System.Drawing import Point
 class GetBaseClass:
     @overload
     def AcceptColor(self, enable: bool) -> None: ...
@@ -287,12 +290,20 @@ class GetBaseClass:
     def View(self) -> RhinoView: ...
 
 
+from System.Threading import CancellationToken
+from System import EventHandler
+from System.Threading.Tasks import Task
 from .. import RhinoDoc
 from ...Commands import Result
+from System.Collections.Generic import IEnumerable
+from System import IProgress
 from ...Geometry import Point3d
+from System.Drawing import Color
 from ...UI import LocalizeStringPair
 from ...Geometry import Vector3d
 from ...Display import RhinoView
+from System.Drawing import Rectangle
+from System.Drawing import Point
 class GetCancel(GetBaseClass):
     @overload
     def __init__(self): ...
@@ -692,10 +703,14 @@ class GetFileNameMode(Enum):
 
 
 from ...Geometry import Point3d
+from System.Drawing import Color
 from ...UI import LocalizeStringPair
+from System.Collections.Generic import IEnumerable
 from ...Commands import Result
 from ...Geometry import Vector3d
 from ...Display import RhinoView
+from System.Drawing import Rectangle
+from System.Drawing import Point
 class GetInteger(GetBaseClass):
     @overload
     def __init__(self): ...
@@ -847,6 +862,7 @@ class GetInteger(GetBaseClass):
 
 from ...Geometry import Line
 from ...Commands import Result
+from System.Drawing import Color
 from ...Geometry import Point3d
 class GetLine:
     @overload
@@ -917,10 +933,14 @@ class GetLineMode(Enum):
 
 
 from ...Geometry import Point3d
+from System.Drawing import Color
 from ...UI import LocalizeStringPair
+from System.Collections.Generic import IEnumerable
 from ...Commands import Result
 from ...Geometry import Vector3d
 from ...Display import RhinoView
+from System.Drawing import Rectangle
+from System.Drawing import Point
 class GetNumber(GetBaseClass):
     @overload
     def __init__(self): ...
@@ -1075,10 +1095,14 @@ from ...Geometry import GeometryBase
 from ...Geometry import ComponentIndex
 from ...DocObjects import ObjRef
 from ...Geometry import Point3d
+from System.Drawing import Color
 from ...UI import LocalizeStringPair
+from System.Collections.Generic import IEnumerable
 from ...Commands import Result
 from ...Geometry import Vector3d
 from ...Display import RhinoView
+from System.Drawing import Rectangle
+from System.Drawing import Point
 class GetObject(GetBaseClass):
     @overload
     def __init__(self): ...
@@ -1315,9 +1339,15 @@ class GetObject(GetBaseClass):
     def View(self) -> RhinoView: ...
 
 
+from System import IntPtr
 from ...DocObjects import RhinoObject
 from ...Geometry import GeometryBase
 from ...Geometry import ComponentIndex
+from System import AsyncCallback
+from System import IAsyncResult
+from System.Runtime.Serialization import SerializationInfo
+from System.Runtime.Serialization import StreamingContext
+from System.Reflection import MethodInfo
 class GetObjectGeometryFilter:
     @overload
     def __init__(self, object: object, method: IntPtr): ...
@@ -1350,10 +1380,14 @@ class GetObjectGeometryFilter:
 
 
 from ...Geometry import Point3d
+from System.Drawing import Color
 from ...UI import LocalizeStringPair
+from System.Collections.Generic import IEnumerable
 from ...Commands import Result
 from ...Geometry import Vector3d
 from ...Display import RhinoView
+from System.Drawing import Rectangle
+from System.Drawing import Point
 class GetOption(GetBaseClass):
     @overload
     def __init__(self): ...
@@ -1500,6 +1534,7 @@ class GetOption(GetBaseClass):
 from ...Geometry import Point3d
 from ...Display import RhinoViewport
 from ...Geometry import Plane
+from System.Drawing import Color
 from ...UI import CursorStyle
 from ...Geometry import Line
 from ...Geometry import Arc
@@ -1510,13 +1545,17 @@ from ...Geometry import Curve
 from ...Geometry import Surface
 from ...Geometry import Brep
 from ...Geometry import Mesh
+from System import EventHandler
 from ...ApplicationSettings import OsnapModes
 from ...DocObjects import ObjRef
 from ...Geometry import BrepFace
 from ...UI import LocalizeStringPair
+from System.Collections.Generic import IEnumerable
 from ...Commands import Result
 from ...Geometry import Vector3d
 from ...Display import RhinoView
+from System.Drawing import Rectangle
+from System.Drawing import Point
 class GetPoint(GetBaseClass):
     @overload
     def __init__(self): ...
@@ -1818,6 +1857,7 @@ class GetPointDrawEventArgs(DrawEventArgs):
 
 from ...Display import RhinoViewport
 from ...Geometry import Point3d
+from System.Drawing import Point
 class GetPointMouseEventArgs:
     @overload
     def Equals(self, obj: object) -> bool: ...
@@ -1923,10 +1963,14 @@ class GetSphere:
 
 
 from ...Geometry import Point3d
+from System.Drawing import Color
 from ...UI import LocalizeStringPair
+from System.Collections.Generic import IEnumerable
 from ...Commands import Result
 from ...Geometry import Vector3d
 from ...Display import RhinoView
+from System.Drawing import Rectangle
+from System.Drawing import Point
 class GetString(GetBaseClass):
     @overload
     def __init__(self): ...
@@ -2138,6 +2182,7 @@ from ...Display import RhinoViewport
 from ...Geometry import Point3d
 from ...Geometry import Transform
 from ...Geometry import Plane
+from System.Drawing import Color
 from ...UI import CursorStyle
 from ...Geometry import Line
 from ...Geometry import Arc
@@ -2148,13 +2193,17 @@ from ...Geometry import Curve
 from ...Geometry import Surface
 from ...Geometry import Brep
 from ...Geometry import Mesh
+from System import EventHandler
 from ...ApplicationSettings import OsnapModes
 from ...DocObjects import ObjRef
 from ...Geometry import BrepFace
 from ...UI import LocalizeStringPair
+from System.Collections.Generic import IEnumerable
 from ...Commands import Result
 from ...Geometry import Vector3d
 from ...Display import RhinoView
+from System.Drawing import Rectangle
+from System.Drawing import Point
 class GetTransform(GetPoint):
     @overload
     def AcceptColor(self, enable: bool) -> None: ...
@@ -2509,6 +2558,7 @@ class MeshSphereStyle(Enum):
     Quad = 2
 
 
+from System.Drawing import Color
 class OptionColor:
     @overload
     def __init__(self, initialValue: Color): ...
@@ -2691,6 +2741,7 @@ class PickStyle(Enum):
     CrossingPick = 3
 
 
+from System.Threading.Tasks import Task
 from .. import RhinoDoc
 class TaskCompleteEventArgs:
     @overload

@@ -1,10 +1,11 @@
 from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence
 from enum import Enum
-from System import *
-from System.Drawing import *
 
 
 
+from System.Collections.Generic import List
+from System.Collections.Generic import IEnumerable
+from Rhino.Geometry import Polyline
 class Solver:
     @overload
     @staticmethod
