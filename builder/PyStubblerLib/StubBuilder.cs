@@ -210,7 +210,7 @@ namespace PyStubblerLib
             {
                 var paramNamespace = paramImport.Item1;
                 var paramType = paramImport.Item2;
-                if (paramType.EndsWith("]") || ShouldAvoidImporting(paramType))
+                if (ShouldAvoidImporting(paramType))
                 {
                     continue;
                 }
@@ -611,6 +611,11 @@ namespace PyStubblerLib
 
         private static bool ShouldAvoidImporting(string s)
         {
+            if (s.EndsWith("]"))
+                return true; // avoid importing generic types
+            else if (s.Contains("|"))
+                return true; // avoid importing union types
+            
             if (s.Equals("type"))
                 return true;
             else if (s.Equals("object"))
