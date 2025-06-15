@@ -662,15 +662,17 @@ namespace PyStubblerLib
             if (rc.EndsWith("*"))
                 return rc.Substring(0, rc.Length - 1); // ? not sure what we can do for pointers
 
-            if (rc.Equals("String"))
+            if (rc.Equals("Type"))
+                return "type";
+            else if (rc.Equals("String"))
                 return "str";
-            if (rc.Equals("Single"))
+            else if (rc.Equals("Single"))
                 return "float";
-            if (rc.Equals("Double"))
+            else if (rc.Equals("Double"))
                 return "float";
-            if (rc.Equals("Boolean"))
+            else if (rc.Equals("Boolean"))
                 return "bool";
-            if (rc.Equals("Int32"))
+            else if (rc.Equals("Int32"))
                 return "int";
 
             return rc;
