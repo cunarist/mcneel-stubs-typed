@@ -152,6 +152,8 @@ namespace PyStubblerLib
             string[] allChildNamespaces = GetChildNamespaces(stubTypes[0].Namespace, allNamespaces);
             sb.AppendLine("from typing import overload, Any, Tuple, Iterable, Iterator, Sequence, MutableSequence");
             sb.AppendLine("from enum import Enum");
+            sb.AppendLine("from System import *");
+            sb.AppendLine("from System.Drawing import *");
             sb.Append("\n");
             if( allChildNamespaces.Length > 0 )
             {                
