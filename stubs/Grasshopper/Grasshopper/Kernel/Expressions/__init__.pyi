@@ -19,6 +19,7 @@ from System.Collections.Generic import Enumerator
 from System.Collections.Generic import IComparer
 from System.Collections.Generic import Queue
 from System.Collections.Generic import SortedDictionary
+from System.Collections.Generic import TOutput
 from System.Collections.ObjectModel import ReadOnlyCollection
 from System.Reflection import MethodBase
 from System.Runtime.Serialization import SerializationInfo

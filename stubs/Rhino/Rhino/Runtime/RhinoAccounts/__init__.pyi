@@ -3,6 +3,7 @@ from collections.abc import Iterable, Iterator, Sequence, MutableSequence, Calla
 from enum import Enum
 
 from System import Action
+from System import DateTime
 from System import IFormatProvider
 from System import IProgress
 from System import Tuple

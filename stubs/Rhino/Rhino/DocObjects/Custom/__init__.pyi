@@ -10,6 +10,7 @@ from Rhino.Display import RhinoViewport
 from Rhino.Display import VisualAnalysisMode
 from Rhino.DocObjects import GripObject
 from Rhino.DocObjects import HistoryRecord
+from Rhino.DocObjects import InstanceObject
 from Rhino.DocObjects import Material
 from Rhino.DocObjects import ModelComponentType
 from Rhino.DocObjects import ObjectAttributes

@@ -179,10 +179,7 @@ namespace PyStubblerLib
                     for (int i = 0; i < parameters.Length; i++)
                     {
                         var param = parameters[i];
-                        var paramType = param.ParameterType;
-                        reqImports.Add(
-                            Tuple.Create(paramType.Namespace, ToPythonType(paramType.Name))
-                        );
+                        FillImports(reqImports, param.ParameterType);
                     }
                 }
 
@@ -192,26 +189,17 @@ namespace PyStubblerLib
                     for (int i = 0; i < parameters.Length; i++)
                     {
                         var param = parameters[i];
-                        var paramType = param.ParameterType;
-                        reqImports.Add(
-                            Tuple.Create(paramType.Namespace, ToPythonType(paramType.Name))
-                        );
+                        FillImports(reqImports, param.ParameterType);
                     }
                     if (method.ReturnType != typeof(void))
                     {
-                        var returnType = method.ReturnType;
-                        reqImports.Add(
-                            Tuple.Create(returnType.Namespace, ToPythonType(returnType.Name))
-                        );
+                        FillImports(reqImports, method.ReturnType);
                     }
                 }
 
                 foreach (var field in fields)
                 {
-                    var fieldType = field.FieldType;
-                    reqImports.Add(
-                        Tuple.Create(fieldType.Namespace, ToPythonType(fieldType.Name))
-                    );
+                    FillImports(reqImports, field.FieldType);
                 }
             }
 
@@ -783,5 +771,23 @@ namespace PyStubblerLib
                 bSignature += $"_{parameter.GetType().Name}";
             return aSignature.CompareTo(bSignature);
         }
+
+        public static void FillImports(
+            SortedSet<Tuple<string, string>> reqImports,
+            Type varType
+        )
+        {
+            reqImports.Add(
+                Tuple.Create(varType.Namespace, ToPythonType(varType.Name))
+            );
+            if (varType.IsGenericType) {
+                foreach (var genericArg in varType.GetGenericArguments()) {
+                    reqImports.Add(
+                        Tuple.Create(genericArg.Namespace, ToPythonType(genericArg.Name))
+                    );
+                }
+            }
+        }
     }
+    
 }

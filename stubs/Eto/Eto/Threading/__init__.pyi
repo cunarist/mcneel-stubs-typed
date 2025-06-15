@@ -5,6 +5,7 @@ from enum import Enum
 from Eto import Platform
 from Eto import PropertyStore
 from System import Action
+from System import EventArgs
 from System import EventHandler
 from System import IntPtr
 

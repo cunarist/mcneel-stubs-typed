@@ -20,8 +20,12 @@ from Grasshopper.Rhinoceros import ModelTags
 from Grasshopper.Rhinoceros import ModelUserText
 from Grasshopper.Rhinoceros import ModelValue
 from Grasshopper.Rhinoceros import T
+from Grasshopper.Rhinoceros import Value
 from Rhino.DocObjects import HatchLine
 from Rhino.DocObjects import HatchPattern
+from Rhino.DocObjects import HatchPatternFillType
+from Rhino.DocObjects import LineCapStyle
+from Rhino.DocObjects import LineJoinStyle
 from Rhino.DocObjects import Linetype
 from Rhino.DocObjects import ObjectLinetypeSource
 from Rhino.DocObjects import ObjectPlotColorSource

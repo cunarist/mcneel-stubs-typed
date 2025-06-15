@@ -3,12 +3,14 @@ from collections.abc import Iterable, Iterator, Sequence, MutableSequence, Calla
 from enum import Enum
 
 from Grasshopper.Rhinoceros import Attributes
+from Grasshopper.Rhinoceros import ModelColor
 from Grasshopper.Rhinoceros import ModelContent
 from Grasshopper.Rhinoceros import ModelContentName
 from Grasshopper.Rhinoceros import ModelData
 from Grasshopper.Rhinoceros import ModelTags
 from Grasshopper.Rhinoceros import ModelUserText
 from Grasshopper.Rhinoceros import T
+from Grasshopper.Rhinoceros import Value
 from Grasshopper.Rhinoceros.Display import ObjectDisplay
 from Grasshopper.Rhinoceros.Display import ObjectVisibility
 from Grasshopper.Rhinoceros.Drafting import ModelLinetype
@@ -17,13 +19,16 @@ from Grasshopper.Rhinoceros.Render import ModelRenderMaterial
 from Grasshopper.Rhinoceros.Render import ObjectRender
 from Rhino import RhinoDoc
 from Rhino.DocObjects import EarthAnchorPoint
+from Rhino.DocObjects import EarthCoordinateSystem
 from Rhino.DocObjects import InstanceDefinition
+from Rhino.DocObjects import InstanceDefinitionUpdateType
 from Rhino.DocObjects import Layer
 from Rhino.DocObjects import ObjectAttributes
 from Rhino.DocObjects import ObjectType
 from Rhino.DocObjects import RhinoObject
 from Rhino.Geometry import BoundingBox
 from Rhino.Geometry import GeometryBase
+from Rhino.Geometry import Plane
 from Rhino.Geometry import Transform
 from System import Guid
 from System.Collections.Generic import IReadOnlyList

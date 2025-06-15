@@ -5,6 +5,7 @@ from enum import Enum
 from Rhino import AntialiasLevel
 from Rhino.DocObjects import ObjectType
 from Rhino.Geometry import Interval
+from Rhino.Geometry import Mesh
 from Rhino.Geometry import Vector3d
 from Rhino.UI import KeyboardKey
 from Rhino.UI import ModifierKey

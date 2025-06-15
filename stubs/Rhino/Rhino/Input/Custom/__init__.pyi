@@ -7,6 +7,7 @@ from Rhino.ApplicationSettings import OsnapModes
 from Rhino.Collections import TransformObjectList
 from Rhino.Commands import Result
 from Rhino.Display import DisplayPipeline
+from Rhino.Display import DrawEventArgs
 from Rhino.Display import RhinoView
 from Rhino.Display import RhinoViewport
 from Rhino.DocObjects import ObjectType

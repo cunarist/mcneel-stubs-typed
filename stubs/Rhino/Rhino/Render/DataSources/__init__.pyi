@@ -12,6 +12,7 @@ from System import Guid
 from System import IFormatProvider
 from System import IntPtr
 from System import TypeCode
+from System.Drawing import Size
 
 
 

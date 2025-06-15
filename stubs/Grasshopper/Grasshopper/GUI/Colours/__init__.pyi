@@ -2,6 +2,7 @@ from typing import overload, Any
 from collections.abc import Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
+from Grasshopper.Kernel.Types import GH_Colour
 from System import AsyncCallback
 from System import Delegate
 from System import EventHandler

@@ -13,6 +13,7 @@ from Rhino.DocObjects import Font
 from Rhino.DocObjects import InstanceDefinition
 from Rhino.DocObjects import LineCapStyle
 from Rhino.DocObjects import LineJoinStyle
+from Rhino.DocObjects import ObjRef
 from Rhino.DocObjects import RhinoObject
 from Rhino.DocObjects import TextObject
 from Rhino.DocObjects import ViewportInfo
@@ -65,6 +66,7 @@ from System.Drawing import Image
 from System.Drawing import Point
 from System.Drawing import PointF
 from System.Drawing import Size
+from System.IO import DirectoryInfo
 from System.Reflection import Assembly
 from System.Reflection import MethodBase
 from System.Reflection import MethodInfo

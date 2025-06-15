@@ -4,6 +4,7 @@ from enum import Enum
 
 from Rhino import RhinoDoc
 from Rhino.Display import DisplayPipelineAttributes
+from Rhino.DocObjects import InstanceObject
 from Rhino.DocObjects import ViewportInfo
 from Rhino.Geometry import Mesh
 from Rhino.Geometry import MeshType

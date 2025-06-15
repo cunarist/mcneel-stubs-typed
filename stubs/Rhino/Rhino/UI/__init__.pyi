@@ -37,6 +37,8 @@ from System.Collections import IList
 from System.Collections.Generic import Enumerator
 from System.Collections.Generic import IComparer
 from System.Collections.Generic import IList
+from System.Collections.Generic import KeyValuePair
+from System.Collections.Generic import TOutput
 from System.Collections.ObjectModel import ReadOnlyCollection
 from System.Drawing import Bitmap
 from System.Drawing import Color

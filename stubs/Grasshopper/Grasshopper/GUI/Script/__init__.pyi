@@ -4,6 +4,7 @@ from enum import Enum
 
 from Grasshopper.GUI import GH_DocumentEditor
 from Grasshopper.GUI import GH_TooltipDisplayEventArgs
+from Grasshopper.GUI.MRU import GH_MRU_Entry
 from Grasshopper.Kernel import IGH_DocumentObject
 from System import Action
 from System import AsyncCallback
@@ -20,6 +21,7 @@ from System import Predicate
 from System import TypeCode
 from System.Collections.Generic import Enumerator
 from System.Collections.Generic import IComparer
+from System.Collections.Generic import TOutput
 from System.Collections.ObjectModel import ReadOnlyCollection
 from System.ComponentModel import CancelEventHandler
 from System.ComponentModel import IContainer

@@ -67,8 +67,10 @@ from System import IFormatProvider
 from System import IntPtr
 from System import Predicate
 from System import TypeCode
+from System import ValueTuple
 from System.Collections.Generic import Enumerator
 from System.Collections.Generic import IComparer
+from System.Collections.Generic import TOutput
 from System.Collections.ObjectModel import ReadOnlyCollection
 from System.Drawing import Bitmap
 from System.Drawing import Color

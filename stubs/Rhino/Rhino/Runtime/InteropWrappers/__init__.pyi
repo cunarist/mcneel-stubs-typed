@@ -2,12 +2,16 @@ from typing import overload, Any
 from collections.abc import Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
+from Rhino import IndexPair
 from Rhino import RhinoDoc
 from Rhino.DocObjects import ClippingPlaneObject
+from Rhino.DocObjects import HatchLine
 from Rhino.DocObjects import ObjRef
 from Rhino.FileIO import BinaryArchiveReader
 from Rhino.Geometry import Brep
+from Rhino.Geometry import Curve
 from Rhino.Geometry import Extrusion
+from Rhino.Geometry import GeometryBase
 from Rhino.Geometry import Interval
 from Rhino.Geometry import Mesh
 from Rhino.Geometry import Point3d

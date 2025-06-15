@@ -4,6 +4,7 @@ from enum import Enum
 
 from Grasshopper.Kernel.Geometry import Node2List
 from Grasshopper.Kernel.Geometry import Plane
+from Grasshopper.Kernel.Types import GH_Point
 from Rhino.Geometry import Polyline
 
 

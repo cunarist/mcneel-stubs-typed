@@ -14,6 +14,7 @@ from System import Predicate
 from System import TypeCode
 from System.Collections.Generic import Enumerator
 from System.Collections.Generic import IComparer
+from System.Collections.Generic import TOutput
 from System.Collections.ObjectModel import ReadOnlyCollection
 from System.Drawing import PointF
 from System.Reflection import MethodInfo

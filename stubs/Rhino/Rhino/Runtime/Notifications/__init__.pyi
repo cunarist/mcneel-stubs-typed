@@ -4,12 +4,14 @@ from enum import Enum
 
 from System import Action
 from System import DateTime
+from System import Guid
 from System import IFormatProvider
 from System import TypeCode
 from System.Collections.Generic import ICollection
 from System.Collections.Generic import IDictionary
 from System.Collections.Specialized import NotifyCollectionChangedEventHandler
 from System.ComponentModel import PropertyChangedEventHandler
+from System.Reflection import Assembly
 
 
 

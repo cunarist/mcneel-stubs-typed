@@ -57,6 +57,7 @@ from System import Guid
 from System import IFormatProvider
 from System import IntPtr
 from System import TypeCode
+from System.Collections.Generic import KeyValuePair
 from System.Collections.Specialized import NameValueCollection
 from System.Drawing import Bitmap
 from System.Drawing import Color

@@ -12,6 +12,7 @@ from Rhino.Geometry import BrepFace
 from Rhino.Geometry import Circle
 from Rhino.Geometry import Curve
 from Rhino.Geometry import Cylinder
+from Rhino.Geometry import GeometryBase
 from Rhino.Geometry import Interval
 from Rhino.Geometry import Line
 from Rhino.Geometry import Mesh

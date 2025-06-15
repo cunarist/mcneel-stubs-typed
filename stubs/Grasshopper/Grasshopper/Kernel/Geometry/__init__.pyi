@@ -2,7 +2,9 @@ from typing import overload, Any
 from collections.abc import Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
+from Grasshopper.Kernel.Types import GH_Point
 from Grasshopper.Kernel.Types import IGH_GeometricGoo
+from Rhino.Collections import Point3dList
 from Rhino.Geometry import BoundingBox
 from Rhino.Geometry import Curve
 from Rhino.Geometry import GeometryBase

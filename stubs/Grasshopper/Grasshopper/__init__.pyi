@@ -19,6 +19,7 @@ from Grasshopper.GUI import GH_PruderyFilter
 from Grasshopper.GUI.Canvas import GH_Canvas
 from Grasshopper.GUI.MRU import GH_MRU_Server
 from Grasshopper.GUI.RemotePanel import RemoteControlPanel
+from Grasshopper.Kernel import GH_AssemblyFolderInfo
 from Grasshopper.Kernel import GH_ComponentServer
 from Grasshopper.Kernel import GH_Document
 from Grasshopper.Kernel import GH_DocumentAssociations

@@ -16,6 +16,7 @@ from Rhino.Geometry import Line
 from Rhino.Geometry import MeshingParameters
 from Rhino.Geometry import Plane
 from Rhino.Geometry import Point2d
+from Rhino.Geometry import Point2f
 from Rhino.Geometry import Point3d
 from Rhino.Geometry import Point3f
 from Rhino.Geometry import Point4d
@@ -34,6 +35,7 @@ from System import Predicate
 from System import SByte
 from System.Collections.Generic import IComparer
 from System.Collections.Generic import IList
+from System.Collections.Generic import KeyValuePair
 from System.Collections.ObjectModel import ReadOnlyCollection
 from System.Drawing import Color
 from System.Drawing import Font

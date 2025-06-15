@@ -9,6 +9,7 @@ from Rhino.Collections import ArchivableDictionary
 from Rhino.Collections import CurveList
 from Rhino.Collections import Point3dList
 from Rhino.Collections import RhinoList
+from Rhino.Collections import TOutput
 from Rhino.Collections import XAccess
 from Rhino.Collections import YAccess
 from Rhino.Collections import ZAccess

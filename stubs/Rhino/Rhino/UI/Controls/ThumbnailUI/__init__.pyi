@@ -2,6 +2,7 @@ from typing import overload, Any
 from collections.abc import Iterable, Iterator, Sequence, MutableSequence, Callable
 from enum import Enum
 
+from Rhino.Display import Color4f
 from Rhino.Render import PreviewAppearance
 from Rhino.Render import RenderContent
 from Rhino.Render.DataSources import Shapes

@@ -4,6 +4,7 @@ from enum import Enum
 
 from Rhino.PlugIns import PlugIn
 from Rhino.UI import LocalizeStringPair
+from Rhino.UI.Controls.DataSource import EventArgs
 from System import AsyncCallback
 from System import EventHandler
 from System import Guid

@@ -53,6 +53,7 @@ from Grasshopper.Kernel import PreviewExpiredEventHandler
 from Grasshopper.Kernel import SolutionExpiredEventHandler
 from Grasshopper.Kernel.Data import GH_GraphicBranch
 from Grasshopper.Kernel.Data import GH_GraphicTreeDisplayArgs
+from Grasshopper.Kernel.Data import GH_LexerCombo
 from Grasshopper.Kernel.Data import GH_Path
 from Grasshopper.Kernel.Data import GH_Structure
 from Grasshopper.Kernel.Data import IGH_Structure

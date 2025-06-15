@@ -41,6 +41,7 @@ from Eto.Forms import DialogResult
 from Eto.Forms import DocumentControl
 from Eto.Forms import DocumentPage
 from Eto.Forms import DragEffects
+from Eto.Forms import DragEventArgs
 from Eto.Forms import Drawable
 from Eto.Forms import Expander
 from Eto.Forms import FileFilter
@@ -48,14 +49,18 @@ from Eto.Forms import FilePicker
 from Eto.Forms import FontPicker
 from Eto.Forms import ICallback
 from Eto.Forms import IndirectBinding
+from Eto.Forms import KeyEventArgs
 from Eto.Forms import MenuBar
 from Eto.Forms import MenuSegmentedItem
 from Eto.Forms import MessageBoxButtons
 from Eto.Forms import MessageBoxDefaultButton
 from Eto.Forms import MessageBoxType
+from Eto.Forms import MouseEventArgs
 from Eto.Forms import Orientation
 from Eto.Forms import Panel
+from Eto.Forms import PropertyCellType
 from Eto.Forms import PropertyGrid
+from Eto.Forms import PropertyValueChangedEventArgs
 from Eto.Forms import Range
 from Eto.Forms import Screen
 from Eto.Forms import SegmentedButton
@@ -71,6 +76,7 @@ from Eto.Forms import T
 from Eto.Forms import TableLayout
 from Eto.Forms import TextAlignment
 from Eto.Forms import TextBox
+from Eto.Forms import TextInputEventArgs
 from Eto.Forms import TextStepper
 from Eto.Forms import ToggleButton
 from Eto.Forms import ToolBar
@@ -86,6 +92,7 @@ from System import TypeCode
 from System import Uri
 from System.Collections.Generic import IList
 from System.Collections.ObjectModel import Collection
+from System.ComponentModel import CancelEventArgs
 from System.Threading.Tasks import Task
 
 

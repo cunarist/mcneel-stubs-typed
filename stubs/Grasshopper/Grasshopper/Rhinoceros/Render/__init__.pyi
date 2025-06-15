@@ -13,9 +13,11 @@ from Grasshopper.Rhinoceros import T
 from Rhino.Display import ColorRGBA
 from Rhino.DocObjects import Material
 from Rhino.DocObjects import ObjectMaterialSource
+from Rhino.Geometry import Vector3d
 from Rhino.Render import RenderEnvironment
 from Rhino.Render import RenderMaterial
 from Rhino.Render import RenderTexture
+from System import DateTime
 from System import Guid
 
 from . import Params

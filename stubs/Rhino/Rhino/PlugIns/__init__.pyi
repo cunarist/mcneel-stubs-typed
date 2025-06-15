@@ -3,6 +3,7 @@ from collections.abc import Iterable, Iterator, Sequence, MutableSequence, Calla
 from enum import Enum
 
 from Rhino import PersistentSettings
+from Rhino import PersistentSettingsSavedEventArgs
 from Rhino import RhinoDoc
 from Rhino.DocObjects import Material
 from Rhino.Geometry import Point3d
@@ -11,6 +12,7 @@ from Rhino.Render import RenderTexture
 from Rhino.Render import RenderWindow
 from Rhino.Runtime import Mode
 from Rhino.UI import MouseButton
+from Rhino.UI.Controls import ICollapsibleSection
 from System import AsyncCallback
 from System import DateTime
 from System import EventHandler

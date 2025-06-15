@@ -20,6 +20,7 @@ from Grasshopper.Kernel import GH_Document
 from Grasshopper.Kernel import IGH_ActiveObject
 from Grasshopper.Kernel import IGH_Attributes
 from Grasshopper.Kernel import IGH_DocumentObject
+from Grasshopper.Kernel import IGH_ObjectProxy
 from Grasshopper.Kernel import IGH_Param
 from Grasshopper.Kernel.Data import IGH_Structure
 from System import Action

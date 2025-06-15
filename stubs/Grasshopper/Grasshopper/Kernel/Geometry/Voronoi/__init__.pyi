@@ -9,6 +9,7 @@ from Grasshopper.Kernel.Geometry import Side2
 from Grasshopper.Kernel.Geometry.Delaunay import Connectivity
 from Rhino.Collections import Point3dList
 from Rhino.Collections import RhinoList
+from Rhino.Collections import TOutput
 from Rhino.Collections import XAccess
 from Rhino.Collections import YAccess
 from Rhino.Collections import ZAccess

@@ -28,9 +28,13 @@ from Eto.Forms import Cursor
 from Eto.Forms import DataObject
 from Eto.Forms import DialogDisplayMode
 from Eto.Forms import DragEffects
+from Eto.Forms import DragEventArgs
+from Eto.Forms import KeyEventArgs
 from Eto.Forms import MenuBar
+from Eto.Forms import MouseEventArgs
 from Eto.Forms import Screen
 from Eto.Forms import T
+from Eto.Forms import TextInputEventArgs
 from Eto.Forms import ToolBar
 from Eto.Forms import Window
 from Eto.Forms import WindowState
@@ -60,6 +64,7 @@ from Grasshopper.Kernel import GH_Exposure
 from Grasshopper.Kernel import GH_GuidConflictSolution
 from Grasshopper.Kernel import GH_IconDisplayMode
 from Grasshopper.Kernel import GH_InstanceDescription
+from Grasshopper.Kernel import GH_LoadingException
 from Grasshopper.Kernel import GH_MemoryBitmap
 from Grasshopper.Kernel import GH_RelevantObjectData
 from Grasshopper.Kernel import GH_RuntimeMessage
@@ -69,10 +74,13 @@ from Grasshopper.Kernel import IGH_DocumentObject
 from Grasshopper.Kernel import IGH_ObjectProxy
 from Grasshopper.Kernel import IGH_Param
 from Grasshopper.Kernel import IGH_ParamNameConstructor
+from Grasshopper.Kernel import IGH_UpgradeObject
 from Grasshopper.Kernel import IGH_VarParamComponent
+from Grasshopper.Kernel.Data import GH_LexerCombo
 from Grasshopper.Kernel.Data import GH_Path
 from Grasshopper.Kernel.Data import GH_Structure
 from Grasshopper.Kernel.Data import IGH_Structure
+from Grasshopper.Kernel.Expressions import GH_Variant
 from Grasshopper.Kernel.Graphs import GH_GraphContainer
 from Grasshopper.Kernel.Special import GH_BooleanSwitch_Obsolete
 from Grasshopper.Kernel.Special import GH_Cluster
@@ -84,6 +92,7 @@ from Grasshopper.Kernel.Special import GH_MultiDimensionalSlider
 from Grasshopper.Kernel.Special import GH_NumberSlider
 from Grasshopper.Kernel.Special import GH_PanelProperties
 from Grasshopper.Kernel.Special import GH_SliderAnimator
+from Grasshopper.Kernel.Special import GH_ValueListItem
 from Grasshopper.Kernel.Types import GH_Point
 from Grasshopper.Kernel.Types import IGH_Goo
 from Grasshopper.Kernel.Types import UVInterval
@@ -116,8 +125,10 @@ from System.Collections.Generic import Dictionary
 from System.Collections.Generic import Enumerator
 from System.Collections.Generic import IComparer
 from System.Collections.Generic import IList
+from System.Collections.Generic import TOutput
 from System.Collections.ObjectModel import Collection
 from System.Collections.ObjectModel import ReadOnlyCollection
+from System.ComponentModel import CancelEventArgs
 from System.ComponentModel import CancelEventHandler
 from System.ComponentModel import IContainer
 from System.ComponentModel import ISite

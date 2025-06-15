@@ -17,10 +17,12 @@ from Grasshopper.GUI.Base import GH_ColourPickerEventArgs
 from Grasshopper.GUI.Base import GH_DigitScrollerBase
 from Grasshopper.GUI.Canvas import GH_Canvas
 from Grasshopper.GUI.Canvas import GH_CanvasChannel
+from Grasshopper.GUI.Canvas import GH_NamedView
 from Grasshopper.GUI.Canvas import GH_ObjectResponse
 from Grasshopper.GUI.RemotePanel import IRcpItem
 from Grasshopper.GUI.RemotePanel import RcpLayout
 from Grasshopper.GUI.Ribbon import GH_Layout
+from Grasshopper.Kernel.Components import GH_CustomPreviewComponent
 from Grasshopper.Kernel.Data import GH_Path
 from Grasshopper.Kernel.Data import GH_Structure
 from Grasshopper.Kernel.Data import IGH_DataTree
@@ -28,6 +30,7 @@ from Grasshopper.Kernel.Data import IGH_Structure
 from Grasshopper.Kernel.Expressions import GH_ExpressionParser
 from Grasshopper.Kernel.Expressions import GH_Variant
 from Grasshopper.Kernel.Graphs import IGH_Graph
+from Grasshopper.Kernel.Special import GH_Cluster
 from Grasshopper.Kernel.Special import GH_Group
 from Grasshopper.Kernel.Types import Complex
 from Grasshopper.Kernel.Types import GH_AngularDimension
@@ -147,6 +150,7 @@ from System.Collections.Generic import IComparer
 from System.Collections.Generic import IList
 from System.Collections.Generic import SortedDictionary
 from System.Collections.Generic import SortedList
+from System.Collections.Generic import TOutput
 from System.Collections.ObjectModel import ReadOnlyCollection
 from System.ComponentModel import CancelEventHandler
 from System.ComponentModel import IContainer

@@ -31,6 +31,7 @@ from System import Comparison
 from System import DateTime
 from System import EventArgs
 from System import EventHandler
+from System import IDisposable
 from System import IFormatProvider
 from System import IntPtr
 from System import Predicate
