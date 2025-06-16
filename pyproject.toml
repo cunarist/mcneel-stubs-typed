@@ -13,6 +13,13 @@ dependencies = [
 typeCheckingMode = "basic"
 reportInconsistentOverload = false
 reportSelfClsParameterName = false
+extraPaths = [
+    "stubs/Eto",
+    "stubs/GH_IO",
+    "stubs/GH_Util",
+    "stubs/Grasshopper",
+    "stubs/Rhino",
+]
 
 [tool.ruff]
 select = []
