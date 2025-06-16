@@ -26,7 +26,6 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/mcneel/pythonstubs",
-    install_requires=["Grasshopper-stubs", "GH_Util-stubs", "GH_IO-stubs"],
     classifiers=[
         "Development Status :: 5 - Production/Stable",
         "Intended Audience :: Developers",
