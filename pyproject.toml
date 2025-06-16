@@ -1,3 +1,8 @@
+# To create the Python virtual environment, run `uv sync`.
+# Use Pyright for type checking.
+# `uv` can be installed from the link below:
+# https://docs.astral.sh/uv/getting-started/installation/
+
 [project]
 name = "mcneel-stubs"
 version = "0.1.0"
