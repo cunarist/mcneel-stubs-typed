@@ -18,6 +18,7 @@ dependencies = [
 typeCheckingMode = "basic"
 reportInconsistentOverload = false
 reportSelfClsParameterName = false
+reportRedeclaration = false
 extraPaths = [
     "stubs/Eto",
     "stubs/GH_IO",
