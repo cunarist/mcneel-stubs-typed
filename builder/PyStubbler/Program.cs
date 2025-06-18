@@ -15,7 +15,13 @@ namespace PyStubbler
 Usage:
     pystubsbuilder (-h | --help)
     pystubsbuilder (-V | --version)
-    pystubsbuilder [--dest=<dest_path>] [--search=<search_path>...] [--prefix=<prefix>] [--postfix=<postfix>] [--dest-is-root] <target_dll>...
+    pystubsbuilder
+        [--dest=<dest_path>]
+        [--search=<search_path>...]
+        [--prefix=<prefix>]
+        [--postfix=<postfix>]
+        [--dest-is-root]
+        <target_dll>...
 
 Options:
     -h --help                   Show this help
@@ -29,7 +35,12 @@ Options:
 
         static void Main(string[] args)
         {
-            var arguments = new Docopt().Apply(UsagePatterns, args, version: Assembly.GetExecutingAssembly().GetName().Version, exit: true);
+            var arguments = new Docopt().Apply(
+                UsagePatterns,
+                args,
+                version: Assembly.GetExecutingAssembly().GetName().Version,
+                exit: true
+            );
 
             if (arguments.ContainsKey("<target_dll>"))
                 foreach (ValueObject targetDll in (ArrayList)arguments["<target_dll>"].Value)
@@ -60,9 +71,15 @@ Options:
                         // grab pre and postfixes for root namespace dir names
                         var genCfg = new BuildConfig
                         {
-                            Prefix = arguments["--prefix"] != null ? (string)arguments["--prefix"].Value : string.Empty,
-                            Postfix = arguments["--postfix"] != null ? (string)arguments["--postfix"].Value : string.Empty,
-                            DestPathIsRoot = arguments["--dest-is-root"] != null ? (bool)arguments["--dest-is-root"].Value : false,
+                            Prefix = arguments["--prefix"] != null
+                                ? (string)arguments["--prefix"].Value
+                                : string.Empty,
+                            Postfix = arguments["--postfix"] != null
+                                ? (string)arguments["--postfix"].Value
+                                : string.Empty,
+                            DestPathIsRoot = arguments["--dest-is-root"] != null
+                                ? (bool)arguments["--dest-is-root"].Value
+                                : false,
                         };
 
                         Console.WriteLine($"building stubs for {assmPath}");
