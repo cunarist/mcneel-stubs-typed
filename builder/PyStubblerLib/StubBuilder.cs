@@ -68,13 +68,13 @@ namespace PyStubblerLib
             // update the setup.py version with the matching version of the assembly
             var parentDirectory = stubsDirectory.Parent;
             string setup_py = Path.Combine(parentDirectory.FullName, "setup.py");
-            if( File.Exists(setup_py))
+            if (File.Exists(setup_py))
             {
                 string[] contents = File.ReadAllLines(setup_py);
-                for( int i=0; i<contents.Length; i++ )
+                for (int i = 0; i < contents.Length; i++ )
                 {
                     string line = contents[i].Trim();
-                    if( line.StartsWith("version=") )
+                    if (line.StartsWith("version=") )
                     {
                         line = contents[i].Substring(0, contents[i].IndexOf("="));
                         var version = assemblyToStub.GetName().Version;
@@ -122,9 +122,9 @@ namespace PyStubblerLib
         private static string[] GetChildNamespaces(string parentNamespace, string[] allNamespaces)
         {
             List<string> childNamespaces = new List<string>();
-            foreach(var ns in allNamespaces)
+            foreach (var ns in allNamespaces)
             {
-                if( ns.StartsWith(parentNamespace + "."))
+                if (ns.StartsWith(parentNamespace + "."))
                 {
                     string childNamespace = ns.Substring(parentNamespace.Length + 1);
                     if (!childNamespace.Contains("."))
@@ -223,13 +223,13 @@ namespace PyStubblerLib
             string[] allChildNamespaces = GetChildNamespaces(thisNamespace, allNamespaces);
             if ( allChildNamespaces.Length > 0 )
             {                
-                for(int i=0; i<allChildNamespaces.Length; i++)
+                for (int i=0; i<allChildNamespaces.Length; i++)
                 {
                     sb.AppendLine($"from . import {allChildNamespaces[i]}");
                 }
                 sb.Append("\n");
                 sb.Append("__all__ = [");
-                for(int i=0; i<allChildNamespaces.Length; i++)
+                for (int i=0; i<allChildNamespaces.Length; i++)
                 {
                     if (i > 0)
                         sb.Append(", ");
