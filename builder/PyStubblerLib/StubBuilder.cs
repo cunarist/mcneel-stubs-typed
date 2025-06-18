@@ -139,7 +139,8 @@ namespace PyStubblerLib
         private static void WriteStubList(
             DirectoryInfo rootDirectory,
             string[] allNamespaces,
-            List<Type> stubTypes)
+            List<Type> stubTypes
+        )
         {
             // sort the stub list so we get consistent output over time
             stubTypes.Sort((a, b) => { return a.Name.CompareTo(b.Name); });
