@@ -1,4 +1,4 @@
-> This is a fork of the original `mcneel/pythonstubs` repository, intended for use by Edit Collective. Modifications are currently focused on improving type hint support.
+> This is a fork of the original `mcneel/pythonstubs` repository. Modifications are focused on improving type hint support.
 
 # McNeel Python Stubs
 
@@ -23,10 +23,10 @@ For more details about the purpose of these packages, see the following posts:
 2. Open a terminal.
 3. Depending on the Python package manager you are using, install the stub packages into your project environment. While using `pip` is possible, we recommend using the `poetry` or `pipenv` package manager.
 
-    ```sh
-    pip install Rhino-stubs
-    ```
+   ```sh
+   pip install Rhino-stubs
+   ```
 
 4. Now you can import `Rhino` or `Grasshopper` and use the autocomplete feature as well as type prediction.
 
-    ![Stub preview](static/rhino-stub-vscode.gif)
+   ![Stub preview](static/rhino-stub-vscode.gif)
