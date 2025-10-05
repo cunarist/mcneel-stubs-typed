@@ -7,7 +7,7 @@ import subprocess
 from pathlib import Path
 from typing import Optional
 
-ROOT_DIR = Path(__file__).parent
+ROOT_DIR = Path(__file__).parent.parent
 RHINO_BASE = Path("C:\\") / "Program Files" / "Rhino 8"
 
 
