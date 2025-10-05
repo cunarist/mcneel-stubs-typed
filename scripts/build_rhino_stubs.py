@@ -5,10 +5,15 @@ where `PyStubbler.exe` is available in `builder/bin`.
 
 import subprocess
 from pathlib import Path
-from typing import Optional
+from typing import NamedTuple, Optional
 
 ROOT_DIR = Path(__file__).parent.parent
 RHINO_BASE = Path("C:\\") / "Program Files" / "Rhino 8"
+
+
+class AssemblyPlan(NamedTuple):
+    dest_sub: str
+    assembly_path: Path
 
 
 def build_commands() -> list[list[str]]:
@@ -29,12 +34,12 @@ def build_commands() -> list[list[str]]:
         raise FileNotFoundError("Please compile PyStubbler with Visual Studio first")
 
     # Verify common assembly locations
-    targets: list[tuple[str, Path]] = [
-        ("Eto", rhino_system / "Eto.dll"),
-        ("Rhino", rhino_system / "RhinoCommon.dll"),
-        ("Grasshopper", rhino_plugins / "Grasshopper" / "Grasshopper.dll"),
-        ("GH_IO", rhino_plugins / "Grasshopper" / "GH_IO.dll"),
-        ("GH_Util", rhino_plugins / "Grasshopper" / "GH_Util.dll"),
+    targets: list[AssemblyPlan] = [
+        AssemblyPlan("Eto", rhino_system / "Eto.dll"),
+        AssemblyPlan("Rhino", rhino_system / "RhinoCommon.dll"),
+        AssemblyPlan("Grasshopper", rhino_plugins / "Grasshopper" / "Grasshopper.dll"),
+        AssemblyPlan("GH_IO", rhino_plugins / "Grasshopper" / "GH_IO.dll"),
+        AssemblyPlan("GH_Util", rhino_plugins / "Grasshopper" / "GH_Util.dll"),
     ]
 
     commands: list[list[str]] = []
