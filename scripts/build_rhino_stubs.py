@@ -11,7 +11,7 @@ ROOT_DIR = Path(__file__).parent.parent
 RHINO_BASE = Path("C:\\") / "Program Files" / "Rhino 8"
 
 
-class AssemblyPlan(NamedTuple):
+class GenPlan(NamedTuple):
     dest_sub: str
     assembly_path: Path
 
@@ -34,12 +34,12 @@ def build_commands() -> list[list[str]]:
         raise FileNotFoundError("Please compile PyStubbler with Visual Studio first")
 
     # Verify common assembly locations
-    targets: list[AssemblyPlan] = [
-        AssemblyPlan("Eto", rhino_system / "Eto.dll"),
-        AssemblyPlan("Rhino", rhino_system / "RhinoCommon.dll"),
-        AssemblyPlan("Grasshopper", rhino_plugins / "Grasshopper" / "Grasshopper.dll"),
-        AssemblyPlan("GH_IO", rhino_plugins / "Grasshopper" / "GH_IO.dll"),
-        AssemblyPlan("GH_Util", rhino_plugins / "Grasshopper" / "GH_Util.dll"),
+    targets: list[GenPlan] = [
+        GenPlan("Eto", rhino_system / "Eto.dll"),
+        GenPlan("Rhino", rhino_system / "RhinoCommon.dll"),
+        GenPlan("Grasshopper", rhino_plugins / "Grasshopper" / "Grasshopper.dll"),
+        GenPlan("GH_IO", rhino_plugins / "Grasshopper" / "GH_IO.dll"),
+        GenPlan("GH_Util", rhino_plugins / "Grasshopper" / "GH_Util.dll"),
     ]
 
     commands: list[list[str]] = []
