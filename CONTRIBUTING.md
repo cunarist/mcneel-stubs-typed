@@ -8,8 +8,21 @@ Install system dependencies.
 
 ## Commands
 
+Create the Python virtual environment.
+
+```shell
+uv sync
+```
+
 Generate Python stubs code from Binary files.
 
 ```shell
 uv run scripts/build_rhino_stubs.py
+```
+
+Publish packages.
+
+```shell
+uv build --all-packages
+uv publish
 ```
