@@ -3,16 +3,17 @@
 # `uv` can be installed from the link below:
 # https://docs.astral.sh/uv/getting-started/installation/
 
-[project]
-name = "mcneel-stubs"
-version = "0.1.0"
-description = "Python type stubs for McNeel products"
-requires-python = "==3.9.*"
-dependencies = [
-    "dotnet-stubs>=0.0.12",
-    "netstandard-stubs>=2.0.1",
-    "pyright>=1.1.402",
+[tool.uv.workspace]
+members = [
+    "stubs/Eto",
+    "stubs/GH_IO",
+    "stubs/GH_Util",
+    "stubs/Grasshopper",
+    "stubs/Rhino",
 ]
+
+[dependency-groups]
+dev = ["pyright>=1.1.402"]
 
 [tool.pyright]
 typeCheckingMode = "basic"

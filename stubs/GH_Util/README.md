@@ -1,2 +1,3 @@
 # GH_Util-stubs
-stubs package for GH_Util
+
+Typed stubs package for GH_Util

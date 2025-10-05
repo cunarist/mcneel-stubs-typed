@@ -1,0 +1,12 @@
+[project]
+name = "gh-io-stubs-typed"
+version = "8.20.25157"
+description = "Typed stubs for Grasshopper IO"
+authors = [{ name = "Cunarist", email = "cunarist@gmail.com" }]
+urls = { "source" = "https://github.com/cunarist/mcneel-stubs-typed" }
+requires-python = ">=3.9.*"
+dependencies = ["dotnet-stubs>=0.0.12", "netstandard-stubs>=2.0.1"]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"

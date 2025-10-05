@@ -1,2 +1,3 @@
 # Eto-stubs
-stubs package for Eto
+
+Typed stubs package for Eto

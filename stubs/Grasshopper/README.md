@@ -1,2 +1,3 @@
 # Grasshopper-stubs
-stubs package for Grasshopper
+
+Typed stubs package for Grasshopper

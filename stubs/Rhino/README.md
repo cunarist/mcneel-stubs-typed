@@ -1,2 +1,3 @@
 # Rhino-stubs
-stubs package for RhinoCommon
+
+Typed stubs package for RhinoCommon
