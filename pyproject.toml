@@ -12,8 +12,16 @@ members = [
     "stubs/Rhino",
 ]
 
-[dependency-groups]
-dev = ["pyright>=1.1.402"]
+[tool.uv.sources]
+"eto-stubs-typed" = { workspace = true }
+"gh-io-stubs-typed" = { workspace = true }
+"gh-util-stubs-typed" = { workspace = true }
+"grasshopper-stubs-typed" = { workspace = true }
+"rhino-stubs-typed" = { workspace = true }
+
+[tool.ruff.lint]
+extend-select = ["N", "I", "RUF", "SLF", "INP"]
+exclude = ["stubs/"]
 
 [tool.pyright]
 typeCheckingMode = "basic"
@@ -27,9 +35,3 @@ extraPaths = [
     "stubs/Grasshopper",
     "stubs/Rhino",
 ]
-
-[tool.ruff]
-select = []
-
-[tool.pylint]
-disable = "all"

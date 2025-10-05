@@ -4,13 +4,13 @@ version = "8.20.25157"
 description = "Typed stubs for Rhino"
 authors = [{ name = "Cunarist", email = "cunarist@gmail.com" }]
 urls = { "source" = "https://github.com/cunarist/mcneel-stubs-typed" }
-requires-python = ">=3.9.*"
+requires-python = ">=3.9.0"
 dependencies = [
     "dotnet-stubs>=0.0.12",
     "netstandard-stubs>=2.0.1",
-    "GH_IO-stubs>=8.20.25157",
-    "GH_Util-stubs>=8.20.25157",
-    "Grasshopper-stubs>=8.20.25157",
+    "gh-io-stubs-typed>=8.20.25157",
+    "gh-util-stubs-typed>=8.20.25157",
+    "grasshopper-stubs-typed>=8.20.25157",
 ]
 
 [build-system]
