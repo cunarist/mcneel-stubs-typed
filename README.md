@@ -25,6 +25,7 @@ For more details about the purpose of these packages, see the following posts:
    pip install rhino-stubs-typed
    ```
 
-4. Now you can import `Rhino` or `Grasshopper` and use the autocomplete feature as well as type prediction.
+4. Now you can import `Rhino` or `Grasshopper` and use the autocomplete feature as well as type prediction. Note that advanced type mechanisms work, including operators and overloads that were not supported in the original `mcneel/pythonstubs`.
 
    ![Stub preview](static/rhino-stub-vscode.gif)
+   ![Type preview](static/vscode-type-checking.webp)
