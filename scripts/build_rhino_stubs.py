@@ -1,25 +1,27 @@
-"""
-This script is intended to be run on Windows
-where `PyStubbler.exe` is available in `builder/bin`.
+"""Build Rhino stubs using PyStubbler on Windows.
+
+Run this script on Windows where `PyStubbler.exe` is available in `builder/bin`.
 """
 
 import subprocess
 from pathlib import Path
-from typing import NamedTuple, Optional
+from typing import NamedTuple
 
 ROOT_DIR = Path(__file__).parent.parent
 RHINO_BASE = Path("C:\\") / "Program Files" / "Rhino 8"
 
 
 class GenPlan(NamedTuple):
+    """Generation plan for building stubs from an assembly."""
+
     dest_sub: str
     assembly_path: Path
 
 
 def build_commands() -> list[list[str]]:
-    """
-    Build the list of commands to run,
-    each command as a list of argv parts.
+    """Build the list of commands to run.
+
+    Each command is returned as a list of argv parts.
     """
     # Paths derived from the Rhino base
     rhino_plugins = RHINO_BASE / "Plug-ins"
@@ -31,7 +33,8 @@ def build_commands() -> list[list[str]]:
 
     # Check if PyStubbler exists
     if not py_stubbler.exists():
-        raise FileNotFoundError("Please compile PyStubbler with Visual Studio first")
+        msg = "Please compile PyStubbler with Visual Studio first"
+        raise FileNotFoundError(msg)
 
     # Verify common assembly locations
     targets: list[GenPlan] = [
@@ -57,11 +60,8 @@ def build_commands() -> list[list[str]]:
     return commands
 
 
-def main(argv: Optional[list[str]] = None):
-    """
-    Main entrypoint.
-    """
-
+def main() -> None:
+    """Run PyStubbler to generate stubs for all Rhino assemblies."""
     # Get the directory of PyStubbler.exe
     builder_bin = ROOT_DIR / "builder" / "bin"
 
@@ -69,8 +69,8 @@ def main(argv: Optional[list[str]] = None):
     commands = build_commands()
 
     # Run each command
-    for argv in commands:
-        subprocess.run(argv, cwd=builder_bin, check=True)
+    for cmd in commands:
+        subprocess.run(cmd, cwd=builder_bin, check=True)
 
 
 if __name__ == "__main__":

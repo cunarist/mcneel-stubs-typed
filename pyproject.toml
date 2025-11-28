@@ -19,9 +19,12 @@ members = [
 "grasshopper-stubs-typed" = { workspace = true }
 "rhino-stubs-typed" = { workspace = true }
 
-[tool.ruff.lint]
-extend-select = ["N", "I", "RUF", "SLF", "INP"]
+[tool.ruff]
 exclude = ["stubs/"]
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = ["TC", "BLE", "S603"]
 
 [tool.pyright]
 typeCheckingMode = "basic"
@@ -35,3 +38,6 @@ extraPaths = [
     "stubs/Grasshopper",
     "stubs/Rhino",
 ]
+
+[dependency-groups]
+dev = ["ruff>=0.14.6"]
