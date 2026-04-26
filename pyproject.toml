@@ -1,5 +1,5 @@
 # To create the Python virtual environment, run `uv sync`.
-# Use Pyright for type checking.
+# Use Ty for type checking.
 # `uv` can be installed from the link below:
 # https://docs.astral.sh/uv/getting-started/installation/
 
@@ -26,12 +26,12 @@ exclude = ["stubs/"]
 select = ["ALL"]
 ignore = ["TC", "BLE", "S603"]
 
-[tool.pyright]
-typeCheckingMode = "basic"
-reportInconsistentOverload = false
-reportSelfClsParameterName = false
-reportRedeclaration = false
-extraPaths = [
+[tool.ty.rules]
+all = "error"
+invalid-overload = "ignore"
+
+[tool.ty.environment]
+extra-paths = [
     "stubs/Eto",
     "stubs/GH_IO",
     "stubs/GH_Util",
@@ -40,4 +40,4 @@ extraPaths = [
 ]
 
 [dependency-groups]
-dev = ["ruff>=0.14.6"]
+dev = ["ruff>=0.14.6", "ty>=0.0.32"]
